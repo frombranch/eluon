@@ -9,20 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
-</head>
-<body>
-
-<div class="gbar">
-  <a class="logo" href="index.html">eluon</a>
-  <nav>
-    <a href="index.html">디자인 시스템</a>
-    <a href="prompt-builder.html">프롬프트 빌더</a>
-    <a href="guide.html" aria-current="page">사용설명서</a>
-  </nav>
-</div>
-
-
-
 <style>
 :root{
   --paper:#FFFFFF;
@@ -74,8 +60,14 @@
 *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
 body{
   background:var(--paper);color:var(--ink);
-  font-family:var(--sans);font-size:15px;line-height:25px;letter-spacing:-.16px;
+  font-family:var(--sans);font-size:12px;line-height:20px;letter-spacing:-.16px;
   -webkit-font-smoothing:antialiased;
+  /* 한글 조판 — CLAUDE.md §0-8. 이 문서가 가르치는 규칙을 이 문서에도 겁니다.
+     keep-all 만 걸면 긴 영문·URL 이 컨테이너를 넘치고,
+     overflow-wrap 만 걸면 한글이 낱자에서 잘립니다. 둘은 짝입니다. */
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+  text-wrap:pretty;
 }
 [data-lucide]{stroke-width:1.2}
 .wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:48px}
@@ -84,11 +76,11 @@ body{
 /* ── 머리 ── */
 header{padding:96px 0 40px}
 h1{font-size:56px;font-weight:700;line-height:1.15;letter-spacing:-2.24px;text-wrap:balance}
-.tagline{margin-top:24px;max-width:62ch;color:var(--muted);font-size:17px;line-height:29px}
+.tagline{margin-top:24px;max-width:62ch;color:var(--muted);font-size:13.6px;line-height:23.2px}
 .stamp{
   margin-top:32px;padding-top:20px;border-top:1px solid var(--rule);
   display:flex;flex-wrap:wrap;gap:8px 32px;
-  font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:0;
+  font-family:var(--mono);font-size:9.6px;color:var(--faint);letter-spacing:0;
 }
 .stamp b{color:var(--muted);font-weight:500}
 
@@ -103,7 +95,7 @@ h2{font-size:32px;font-weight:700;line-height:1.3;letter-spacing:-1.28px;text-wr
 h3{font-size:19px;font-weight:700;line-height:1.4;letter-spacing:-.4px;margin-top:40px}
 h4{font-size:15px;font-weight:700;line-height:24px;margin-top:28px}
 p{margin-top:16px;max-width:68ch}
-p.lead{margin-top:20px;font-size:17px;line-height:29px;color:var(--muted);max-width:64ch}
+p.lead{margin-top:20px;font-size:13.6px;line-height:23.2px;color:var(--muted);max-width:64ch}
 strong{font-weight:700}
 code{font-family:var(--mono);font-size:.88em;background:var(--mist);padding:2px 5px;letter-spacing:0}
 a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
@@ -120,11 +112,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 }
 .flow .node:last-child{border-right:0}
 .flow .node.is-tool{background:var(--mist)}
-.flow .n{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:0}
-.flow .t{font-size:14px;font-weight:700;line-height:21px}
-.flow .d{font-size:13px;line-height:21px;color:var(--muted)}
+.flow .n{font-family:var(--mono);font-size:8.8px;color:var(--faint);letter-spacing:0}
+.flow .t{font-size:11.2px;font-weight:700;line-height:16.8px}
+.flow .d{font-size:10.4px;line-height:16.8px;color:var(--muted)}
 .flow .who{
-  margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:0;
+  margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:8.8px;letter-spacing:0;
   color:var(--accent);
 }
 @media (max-width:720px){
@@ -134,9 +126,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 /* ── 표 ── */
 .scroller{overflow-x:auto;margin-top:24px;border-top:1px solid var(--rule)}
-table{width:100%;border-collapse:collapse;font-size:14px;line-height:22px}
+table{width:100%;border-collapse:collapse;font-size:11.2px;line-height:17.6px}
 th{
-  text-align:left;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  text-align:left;font-weight:700;font-size:9.6px;letter-spacing:.08em;text-transform:uppercase;
   color:var(--muted);padding:14px 16px 14px 0;border-bottom:1px solid var(--rule);
   white-space:nowrap;
 }
@@ -149,7 +141,7 @@ td code{white-space:nowrap}
 .steps{margin-top:32px;border-top:1px solid var(--rule)}
 .step{display:flex;gap:28px;padding:28px 0;border-bottom:1px solid var(--hair)}
 .step .no{
-  flex:none;width:32px;font-family:var(--mono);font-size:13px;color:var(--faint);
+  flex:none;width:32px;font-family:var(--mono);font-size:10.4px;color:var(--faint);
   letter-spacing:0;padding-top:2px;
 }
 .step .body{flex:1;min-width:0}
@@ -159,7 +151,7 @@ td code{white-space:nowrap}
 /* ── 코드 블록 ── */
 pre{
   margin-top:20px;background:var(--ink);color:var(--paper);padding:20px 22px;
-  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:22px;letter-spacing:0;
+  overflow-x:auto;font-family:var(--mono);font-size:10px;line-height:17.6px;letter-spacing:0;
 }
 :root[data-theme="dark"] pre,
 :root:not([data-theme="light"]) pre{background:#000;color:#EDEDED}
@@ -168,7 +160,7 @@ pre{
 /* ── 주의 박스 ── */
 .note{
   margin-top:24px;padding:18px 20px;border-left:2px solid var(--accent);
-  background:var(--accent-soft);font-size:14px;line-height:24px;
+  background:var(--accent-soft);font-size:11.2px;line-height:19.2px;
 }
 .note.warn{border-left-color:var(--warn);background:var(--warn-soft)}
 .note b{display:block;margin-bottom:4px}
@@ -177,9 +169,9 @@ pre{
 /* ── 정의 목록 ── */
 .defs{margin-top:24px;border-top:1px solid var(--rule)}
 .def{padding:20px 0;border-bottom:1px solid var(--hair)}
-.def .k{font-size:15px;font-weight:700;line-height:24px}
-.def .k span{font-family:var(--mono);font-size:12px;color:var(--faint);margin-left:10px;letter-spacing:0;font-weight:400}
-.def .v{margin-top:6px;font-size:14px;line-height:23px;color:var(--muted);max-width:70ch}
+.def .k{font-size:12px;font-weight:700;line-height:19.2px}
+.def .k span{font-family:var(--mono);font-size:9.6px;color:var(--faint);margin-left:10px;letter-spacing:0;font-weight:400}
+.def .v{margin-top:6px;font-size:11.2px;line-height:18.4px;color:var(--muted);max-width:70ch}
 .def .v em{font-style:normal;color:var(--ink);font-weight:500}
 
 .tag{
@@ -187,14 +179,21 @@ pre{
   padding:2px 7px;border:1px solid var(--hair);color:var(--muted);white-space:nowrap;
 }
 footer{padding:56px 0 96px;border-top:1px solid var(--rule);margin-top:64px;
-  font-size:13px;line-height:23px;color:var(--faint)}
+  font-size:10.4px;line-height:18.4px;color:var(--faint)}
 footer p{max-width:68ch}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ─────────────────────────────────────────────────────────────
+   상단 바 · 왼쪽 차례 — build_guide.py 가 얹습니다.
+   색과 활자는 본문이 이미 선언한 변수만 씁니다. 새 색을 들이지 않습니다.
+   ───────────────────────────────────────────────────────────── */
+:root{ --gbar:64px; --gside:264px; --gpad:clamp(20px,5vw,120px) }
+@media (max-width:640px){ :root{ --gbar:56px } }
 
 /* 상단 바 — docs/index.html 과 같은 모양. 설명서가 사이트의 일부로 읽히게 합니다. */
 .gbar{
   position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:28px;
-  height:64px;padding:0 clamp(20px,5vw,120px);
+  height:var(--gbar);padding:0 var(--gpad);
   background:var(--paper);border-bottom:1px solid var(--rule);
 }
 .gbar .logo{
@@ -209,11 +208,140 @@ footer p{max-width:68ch}
 .gbar nav a:hover{color:var(--ink)}
 .gbar nav a[aria-current=page]{color:var(--ink)}
 @media (max-width:640px){
-  .gbar{gap:16px;height:56px}
+  .gbar{gap:16px}
   .gbar nav{gap:14px}
   .gbar nav a{font-size:12px}
 }
+
+/* 본문으로 건너뛰기 — 차례가 본문 앞에 오므로 키보드 사용자에게 필요합니다. */
+.gskip{
+  position:absolute;left:-9999px;top:0;z-index:60;
+  padding:10px 16px;background:var(--ink);color:var(--paper);
+  font-size:13px;font-weight:700;text-decoration:none;
+}
+.gskip:focus{left:var(--gpad);top:8px}
+
+/* 두 칼럼 — 프롬프트 빌더의 .shell 과 같은 폭·여백 눈금 */
+.gshell{
+  width:100%;max-width:1440px;margin-inline:auto;padding-inline:var(--gpad);
+  display:grid;grid-template-columns:var(--gside) minmax(0,1fr);gap:40px;
+  align-items:start;
+}
+
+/* 왼쪽 차례 */
+.gside{
+  position:sticky;top:var(--gbar);align-self:start;
+  max-height:calc(100vh - var(--gbar));overflow-y:auto;overscroll-behavior:contain;
+  padding:40px 24px 56px 0;border-right:1px solid var(--hair);
+}
+.gside::-webkit-scrollbar{width:6px}
+.gside::-webkit-scrollbar-thumb{background:var(--hair)}
+.gtoggle{display:none}
+.gnavttl{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:14px;
+}
+.gnav ol{list-style:none}
+.gnav > ol > li + li{margin-top:2px}
+.gnav .kicker{
+  display:block;margin:18px 0 2px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);
+}
+.gnav > ol > li:first-child .kicker{margin-top:0}
+.gnav a{
+  display:block;padding:5px 0;color:var(--muted);text-decoration:none;
+  font-size:14px;line-height:21px;letter-spacing:-.2px;
+}
+.gnav a:hover{color:var(--ink)}
+.gnav > ol > li > a[aria-current=true]{color:var(--ink);font-weight:700}
+.gnav .sub{display:none;margin:2px 0 4px;padding-left:12px;border-left:1px solid var(--hair)}
+.gnav li.is-open > .sub{display:block}
+.gnav .sub a{font-size:13px;line-height:20px;padding:4px 0;color:var(--faint)}
+.gnav .sub a:hover{color:var(--ink)}
+.gnav .sub a[aria-current=true]{color:var(--accent);font-weight:700}
+
+/* 본문 칼럼 — 폭은 이제 셸이 정하므로 .wrap 의 자기 폭을 풉니다. */
+.gmain{min-width:0}
+.gmain .wrap{max-width:none;margin-inline:0;padding-inline:0}
+.gmain header{padding-top:56px}
+/* 상단 바에 제목이 가리지 않도록 */
+.gmain section,.gmain h3{scroll-margin-top:calc(var(--gbar) + 20px)}
+
+/* 좁은 화면 — 차례를 접어 상단 바 아래 토글로 */
+@media (max-width:1023px){
+  .gshell{grid-template-columns:minmax(0,1fr);gap:0}
+  .gside{
+    position:sticky;top:var(--gbar);z-index:30;
+    max-height:none;overflow:visible;padding:0;
+    border-right:0;border-bottom:1px solid var(--hair);background:var(--paper);
+  }
+  .gtoggle{
+    display:flex;align-items:center;gap:10px;width:100%;
+    height:56px;padding:0;border:0;background:none;cursor:pointer;
+    font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink);
+    letter-spacing:-.2px;
+  }
+  /* 아이콘 — CLAUDE.md 규칙: Lucide · 24 기준 · fill 없음 · 굵기 1.2 · 불투명도 .7 */
+  .gtoggle [data-lucide]{
+    width:var(--size-icon-md,24px);height:var(--size-icon-md,24px);flex:0 0 auto;
+    fill:var(--icon-fill,none);stroke:var(--icon-stroke,currentColor);
+    stroke-width:var(--icon-strokewidth,1.2);opacity:var(--icon-opacity,.7);
+  }
+  .gtoggle .caret{margin-left:auto;transition:transform .18s ease}
+  .gtoggle[aria-expanded=true] .caret{transform:rotate(180deg)}
+  .gnavttl{display:none}   /* 토글 버튼이 이미 "차례"라고 적혀 있습니다 */
+  .gtoc{display:none;max-height:min(60vh,420px);overflow-y:auto;padding:4px 0 24px}
+  .gside.is-open .gtoc{display:block}
+  .gnav li.is-open > .sub{display:block}
+  .gmain header{padding-top:40px}
+}
+@media (prefers-reduced-motion:reduce){ .gtoggle .caret{transition:none} }
 </style>
+</head>
+<body>
+
+<a class="gskip" href="#gmain">본문으로 건너뛰기</a>
+
+<div class="gbar">
+  <a class="logo" href="index.html">eluon</a>
+  <nav>
+    <a href="index.html">디자인 시스템</a>
+    <a href="prompt-builder.html">프롬프트 빌더</a>
+    <a href="guide.html" aria-current="page">사용설명서</a>
+  </nav>
+</div>
+
+<div class="gshell">
+  <aside class="gside" id="gside">
+    <button class="gtoggle" type="button" aria-expanded="false" aria-controls="gtoc">
+      <i data-lucide="list"></i><span>차례</span>
+      <i class="caret" data-lucide="chevron-down"></i>
+    </button>
+    <div class="gtoc" id="gtoc">
+  <nav class="gnav" aria-label="차례">
+    <p class="gnavttl">차례</p>
+    <ol>
+      <li data-sec="overview"><span class="kicker">전체 그림</span><a href="#overview">무엇이 무엇을 만드는가</a>
+        <ol class="sub"><li><a href="#overview-1">왜 이렇게 만들었나</a></li></ol></li>
+      <li data-sec="system"><span class="kicker">1부 · 디자인 시스템</span><a href="#system">저장소에 무엇이 들어 있나</a>
+        <ol class="sub"><li><a href="#system-1">테마 = 그 고객의 데이터</a></li><li><a href="#system-2">테마마다 얼마나 믿을 수 있나</a></li><li><a href="#system-3">반응형도 자산이 갖습니다</a></li><li><a href="#system-4">레이아웃과 활자도 시스템이 정합니다</a></li><li><a href="#system-5">페이지를 이루는 덩어리</a></li><li><a href="#system-6">상태는 자산이 아닙니다</a></li><li><a href="#system-7">한글 조판</a></li><li><a href="#system-8">보조 어휘</a></li><li><a href="#system-9">파이프라인 — 순서가 중요합니다</a></li><li><a href="#system-10">GitHub에 올리기</a></li></ol></li>
+      <li data-sec="connect"><span class="kicker">2부 · 피그마 자산 탭</span><a href="#connect">빌더에 자산을 연결한다</a>
+        <ol class="sub"><li><a href="#connect-1">이미 연결돼 있습니다</a></li><li><a href="#connect-2">소스 바 읽는 법</a></li></ol></li>
+      <li data-sec="settings"><span class="kicker">3부 · 빌더 탭</span><a href="#settings">설정이 각각 무엇을 바꾸는가</a>
+        <ol class="sub"><li><a href="#settings-1">작업 유형 — 프롬프트의 뼈대를 정합니다</a></li><li><a href="#settings-2">테마</a></li><li><a href="#settings-3">조건 입력칸</a></li><li><a href="#settings-4">자산 미리 지정</a></li><li><a href="#settings-5">팀 프리셋</a></li><li><a href="#settings-6">근거 보기</a></li><li><a href="#settings-7">프롬프트 복사</a></li></ol></li>
+      <li data-sec="discover"><span class="kicker">4부 · URL 자산 탭</span><a href="#discover">사이트에서 자산 후보 찾기</a>
+        <ol class="sub"><li><a href="#discover-1">결과는 표 두 개로 나옵니다</a></li><li><a href="#discover-2">찾은 다음 — 저장소에 올라가기까지</a></li><li><a href="#discover-3">실제로 이렇게 나왔습니다</a></li></ol></li>
+      <li data-sec="walkthrough"><span class="kicker">5부 · 실제로 해보기</span><a href="#walkthrough">시안 한 장을 뽑는 흐름</a></li>
+      <li data-sec="troubleshoot"><span class="kicker">막히는 곳</span><a href="#troubleshoot">자주 걸리는 여덟 가지</a></li>
+      <li data-sec="never"><span class="kicker">규칙</span><a href="#never">하지 않을 것</a></li>
+    </ol>
+  </nav>
+    </div>
+  </aside>
+
+  <div class="gmain" id="gmain">
+
 
 
 
@@ -229,7 +357,7 @@ footer p{max-width:68ch}
   </div>
 </header>
 
-<section>
+<section id="overview">
   <p class="eyebrow">전체 그림</p>
   <h2>무엇이 무엇을 만드는가</h2>
   <p class="lead">이 시스템에서 사람이 직접 쓰는 파일은 딱 둘입니다. 나머지는 전부 그 둘에서 자동으로 나옵니다. 이 사실 하나만 잡고 있으면 나머지가 다 따라옵니다.</p>
@@ -273,7 +401,7 @@ footer p{max-width:68ch}
     </div>
   </div>
 
-  <h3>왜 이렇게 만들었나</h3>
+  <h3 id="overview-1">왜 이렇게 만들었나</h3>
   <p>보통의 UI 킷은 피그마 파일과 이미지를 줍니다. 그러면 <strong>이미지와 규격이 따로 놉니다.</strong> 버튼 높이를 56에서 52로 바꾸려면 피그마에서 다시 뽑고, 이미지 파일을 갈아끼우고, 문서의 숫자도 고쳐야 합니다. 셋 중 하나만 빠뜨리면 어긋납니다.</p>
   <p>Eluon은 <strong>규격을 코드에 적으면 이미지가 나옵니다.</strong> 한 곳을 고치면 CSS·PNG·문서가 같이 바뀝니다. 어긋날 방법이 없습니다.</p>
   <p>그리고 이 시스템의 진짜 독자는 사람이 아니라 <strong>AI 에이전트</strong>입니다. 그래서 각 자산에 규격뿐 아니라 <em>언제 쓰는지</em>(<code>usage</code>)와 <em>언제 쓰면 안 되는지</em>(<code>dont</code>)가 같이 적혀 있습니다. 에이전트가 고를 근거가 되라고 넣은 것입니다.</p>
@@ -285,7 +413,7 @@ footer p{max-width:68ch}
   </div>
 </section>
 
-<section>
+<section id="system">
   <p class="eyebrow">1부 · 디자인 시스템</p>
   <h2>저장소에 무엇이 들어 있나</h2>
 
@@ -308,7 +436,7 @@ footer p{max-width:68ch}
     </table>
   </div>
 
-  <h3>테마 = 그 고객의 데이터</h3>
+  <h3 id="system-1">테마 = 그 고객의 데이터</h3>
   <p class="lead">우리는 대행사입니다. 작업 기준은 고객 데이터여야 합니다. 그래서 테마는 색만이 아니라 <strong>색 · 라운드 · 크기</strong>를 갖습니다. 같은 <code>btn-primary-lg</code>라도 고객사마다 높이와 패딩이 다르게 렌더됩니다.</p>
 
   <div class="scroller">
@@ -333,11 +461,11 @@ footer p{max-width:68ch}
       <tbody>
         <tr><td><code>eluo</code></td><td>네이비 <span class="num">#000080</span></td><td class="num">4 / 6 / 8 / 12</td><td class="num">h56 · padX24</td><td class="num">320</td></tr>
         <tr><td><code>atlas</code></td><td>딥네이비 <span class="num">#001F45</span></td><td class="num">2 / 4 / 4 / 14</td><td class="num">h56 · padX24</td><td class="num">345</td></tr>
-        <tr><td colspan="5" style="color:var(--warn);font-size:13px;line-height:22px;padding-top:0"><strong>↑ atlas의 h56 · padX24는 고객사 값이 아닙니다.</strong> 원본 실측이 보류 상태라 Eluon 기본값을 쓰고 있습니다. 카드 폭 345와 라운드만 고객사 값입니다.</td></tr>
+        <tr><td colspan="5" style="color:var(--warn);font-size:10.4px;line-height:17.6px;padding-top:0"><strong>↑ atlas의 h56 · padX24는 고객사 값이 아닙니다.</strong> 원본 실측이 보류 상태라 Eluon 기본값을 쓰고 있습니다. 카드 폭 345와 라운드만 고객사 값입니다.</td></tr>
         <tr><td><code>ember</code></td><td>딥그린 <span class="num">#12503C</span></td><td class="num">2 / 2 / 2 / 3</td><td class="num">h52 · padX44</td><td class="num">287.5</td></tr>
         <tr><td><code>harbor</code></td><td>웜 토프 <span class="num">#816C58</span></td><td class="num">0 / 4 / 4 / 4</td><td class="num">h56 · padX40</td><td>—</td></tr>
         <tr><td><code>tideland</code></td><td>테라코타 <span class="num">#B44E2B</span></td><td class="num">8 / 14 / 20 / 28</td><td class="num">h56 · padX24</td><td class="num">320</td></tr>
-        <tr><td colspan="5" style="color:var(--warn);font-size:13px;line-height:22px;padding-top:0"><strong>↑ tideland는 색조차 추정값입니다.</strong> BI 가이드도 기존 사이트도 없이 브랜드 맥락만으로 도출했습니다. 치수는 실측 축이 하나도 없어 전부 Eluon 기본값입니다. 대외 제출물에 쓰지 마십시오.</td></tr>
+        <tr><td colspan="5" style="color:var(--warn);font-size:10.4px;line-height:17.6px;padding-top:0"><strong>↑ tideland는 색조차 추정값입니다.</strong> BI 가이드도 기존 사이트도 없이 브랜드 맥락만으로 도출했습니다. 치수는 실측 축이 하나도 없어 전부 Eluon 기본값입니다. 대외 제출물에 쓰지 마십시오.</td></tr>
       </tbody>
     </table>
   </div>
@@ -410,7 +538,7 @@ footer p{max-width:68ch}
     고객사 테마의 id는 고객사를 특정할 수 없게 지은 <strong>가명</strong>입니다. <code>ember</code>는 잉걸불이라는 뜻이지만 실제 색은 딥그린입니다. <strong>브랜드색은 이름으로 짐작하지 말고 언제나 <code>--color-brand-primary</code>에서 읽으십시오.</strong> 어느 고객사인지는 저장소가 아니라 로컬 private 노트에 있습니다.
   </div>
 
-  <h3>테마마다 얼마나 믿을 수 있나 <span class="tag">v1.11.0</span></h3>
+  <h3 id="system-2">테마마다 얼마나 믿을 수 있나 <span class="tag">v1.11.0</span></h3>
   <p class="lead"><code>$measured</code>는 산문이라 <strong>사람이 읽어야 알고, 안 적힌 축은 아예 보이지 않았습니다.</strong> "아틀라스는 25축 중 1축만 실측" 같은 상태를 파악할 방법이 없었습니다.</p>
   <div class="scroller">
     <table>
@@ -446,7 +574,7 @@ footer p{max-width:68ch}
 ...</pre>
   <p>치수 밖(레이아웃·활자·폰트)도 함께 나옵니다. <strong>고객사명은 들어가지 않습니다</strong> — 가명과 축 이름뿐이라 공개 저장소에 둡니다.</p>
 
-  <h3>반응형도 자산이 갖습니다 <span class="tag">v1.4.0</span></h3>
+  <h3 id="system-3">반응형도 자산이 갖습니다 <span class="tag">v1.4.0</span></h3>
   <p class="lead">좁은 폭에서 어떻게 접히는지가 <strong>자산마다 정해져 있습니다.</strong> 화면마다 다르게 접히면 시스템이 아니라서 한 표에 모아 뒀습니다.</p>
   <div class="scroller">
     <table>
@@ -470,7 +598,7 @@ footer p{max-width:68ch}
     <p>시스템이 알고는 있었습니다. <code>table-basic-lg</code>의 <code>dont</code>에 <em>"모바일에서 그대로 쓰지 않음. 카드로 전환"</em>이 적혀 있었는데, <strong>산문이라 검사할 수가 없었습니다.</strong> 지금은 프롬프트가 자산별 규칙을 싣고 QA가 대조합니다.</p>
   </div>
 
-  <h3>레이아웃과 활자도 시스템이 정합니다 <span class="tag">v1.7.0</span></h3>
+  <h3 id="system-4">레이아웃과 활자도 시스템이 정합니다 <span class="tag">v1.7.0</span></h3>
   <p class="lead">v1.6.0까지는 <strong>규격은 맞는데 성의 없어 보이는 화면</strong>이 나왔습니다. 원인이 시스템에 있었습니다.</p>
   <div class="defs">
     <div class="def">
@@ -514,7 +642,7 @@ footer p{max-width:68ch}
     <p>섞으면 사고가 납니다. 알약 버튼을 쓰는 테마는 <code>sm/md/lg</code>가 전부 999px이라, <code>lg</code>를 쓰던 표와 토스트까지 알약이 됐습니다. 표가 알약일 리는 없습니다. <code>build_manifest.py</code>가 이제 검사합니다.</p>
   </div>
 
-  <h3>페이지를 이루는 덩어리 <span class="tag">v1.8.0</span></h3>
+  <h3 id="system-5">페이지를 이루는 덩어리 <span class="tag">v1.8.0</span></h3>
   <p class="lead">원자(버튼·입력·칩)는 충분한데 <strong>원자를 놓을 판이 없었습니다.</strong> <code>layout</code> 그룹에 <code>section-header-md</code> 하나뿐이라, 화면마다 헤더·히어로·푸터를 손으로 그렸고 그릴 때마다 모양이 달라졌습니다.</p>
   <div class="scroller">
     <table>
@@ -532,7 +660,7 @@ footer p{max-width:68ch}
   </div>
   <p>이 덩어리들은 <strong>콘텐츠 폭 자체가 규격</strong>이라 <code>spec.width</code>가 <code>container.max</code>를 가리킵니다 — 크기 토큰이 아니라 레이아웃 토큰입니다.</p>
 
-  <h3>상태는 자산이 아닙니다 <span class="tag">v1.9.0</span></h3>
+  <h3 id="system-6">상태는 자산이 아닙니다 <span class="tag">v1.9.0</span></h3>
   <p class="lead">목록에 <code>btn-primary-lg-disabled</code>, <code>input-text-md-error</code> 같은 항목이 자산처럼 섞여 있었습니다. 다섯 개 다 <strong>규격은 부모와 같고 토큰만 다릅니다.</strong> 자산이 아니라 상태 그림입니다.</p>
   <p>지우지 않고 <strong>부모에 접었습니다.</strong> 지우면 "에러일 때 테두리가 <code>danger</code>"를 다시 알 방법이 없고, 이미 배포된 태그에서 그 ID를 참조할 수도 있습니다.</p>
   <pre>"input-text-md": {
@@ -560,7 +688,7 @@ footer p{max-width:68ch}
     <code>상태는 따로 고르는 자산이 아니야. 위에 적힌 토큰만 바꿔서 그려.</code></p>
   </div>
 
-  <h3>한글 조판 <span class="tag">v1.10.0</span></h3>
+  <h3 id="system-7">한글 조판 <span class="tag">v1.10.0</span></h3>
   <p class="lead">시스템에 <strong>한글 규칙이 한 줄도 없었습니다.</strong> 그래서 화면마다 다르게 끊겼고, 이 문서를 만드는 동안에도 어중간한 줄바꿈으로 여러 번 걸렸습니다.</p>
   <div class="scroller">
     <table>
@@ -589,7 +717,7 @@ text-wrap: var(--text-wrap);</pre>
   </div>
   <p>값은 <code>foundationByTheme.&lt;테마&gt;.text</code>에 실리고, 프롬프트에 <strong>한글 조판 절</strong>이 따로 붙습니다. 테마가 덮어쓸 수 있습니다 — 영문 위주 산출물이면 다른 값을 줄 수 있습니다.</p>
 
-  <h3>보조 어휘 <span class="tag">v1.10.0</span></h3>
+  <h3 id="system-8">보조 어휘 <span class="tag">v1.10.0</span></h3>
   <p class="lead">전부 <strong>한글 본문이 실제로 들어가는 자리</strong>라, 위 규칙을 처음부터 안고 만들었습니다.</p>
   <div class="scroller">
     <table>
@@ -604,7 +732,7 @@ text-wrap: var(--text-wrap);</pre>
     </table>
   </div>
 
-  <h3>파이프라인 — 순서가 중요합니다</h3>
+  <h3 id="system-9">파이프라인 — 순서가 중요합니다</h3>
   <p>컴포넌트나 테마를 추가하면 이 순서로 돌립니다. 앞 단계의 산출물을 뒤 단계가 먹기 때문에 <strong>순서를 바꾸면 조용히 어긋납니다.</strong></p>
   <pre>python3 scripts/build_tokens.py       # 토큰 JSON → CSS 변수
 python3 scripts/check_contrast.py    # WCAG AA 대비비 검사
@@ -617,7 +745,7 @@ python3 scripts/build_docs.py        # → 문서 사이트
 python3 scripts/build_guide.py       # → 이 설명서</pre>
   <p><code>check_contrast.py</code>가 특히 중요합니다. 새 테마에서 가장 자주 나는 사고가 <strong>브랜드색 위 흰 텍스트가 안 읽히는 것</strong>인데, 이 스크립트가 배포 전에 잡습니다.</p>
 
-  <h3>GitHub에 올리기</h3>
+  <h3 id="system-10">GitHub에 올리기</h3>
   <p>자산 이미지 주소는 <strong>릴리즈 태그에 고정</strong>됩니다. 그래서 버전을 올리지 않으면 CDN이 옛 이미지를 계속 내보냅니다.</p>
   <pre># eluon.config.json 의 version 을 v1.11.2 로 수정
 python3 scripts/build_manifest.py &amp;&amp; python3 scripts/build_pb_manifest.py
@@ -629,12 +757,12 @@ git commit -am "release: v1.11.2" &amp;&amp; git tag v1.11.2 &amp;&amp; git push
   </div>
 </section>
 
-<section>
+<section id="connect">
   <p class="eyebrow">2부 · 피그마 자산 탭</p>
   <h2>빌더에 자산을 연결한다</h2>
   <p class="lead">빌더는 자산 목록을 코드에 갖고 있지 않습니다. 자산 파일을 읽어서 그 안에 있는 것만 씁니다. 그래서 처음 한 번은 연결이 필요합니다.</p>
 
-  <h3>이미 연결돼 있습니다</h3>
+  <h3 id="connect-1">이미 연결돼 있습니다</h3>
   <p><a href="https://frombranch.github.io/eluon/prompt-builder.html">frombranch.github.io/eluon/prompt-builder.html</a>을 열면 <strong>같은 폴더의 <code>eluon.json</code>을 자동으로 읽습니다.</strong> 우리 팀은 이 단계를 할 일이 없습니다. 아래 3단계는 <strong>다른 팀이 자기 디자인 시스템으로 이 빌더를 쓸 때</strong>의 절차입니다.</p>
 
   <div class="steps">
@@ -665,7 +793,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     </div>
   </div>
 
-  <h3>소스 바 읽는 법</h3>
+  <h3 id="connect-2">소스 바 읽는 법</h3>
   <p>연결되면 빌더 탭 맨 위에 이렇게 뜹니다.</p>
   <pre>Eluon Design System        36개 자산 · 12개 그룹 · v1.11.2</pre>
   <p>여기 <strong>경고가 뜨면 무시하지 마십시오.</strong> 실제로 겪은 두 가지입니다.</p>
@@ -681,12 +809,12 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
   </div>
 </section>
 
-<section>
+<section id="settings">
   <p class="eyebrow">3부 · 빌더 탭</p>
   <h2>설정이 각각 무엇을 바꾸는가</h2>
   <p class="lead">왼쪽에서 조건을 고르면 오른쪽 프롬프트가 실시간으로 바뀝니다. 설정마다 프롬프트의 어느 부분이 달라지는지를 아래에 적었습니다.</p>
 
-  <h3>작업 유형 — 프롬프트의 뼈대를 정합니다</h3>
+  <h3 id="settings-1">작업 유형 — 프롬프트의 뼈대를 정합니다</h3>
   <p>가장 크게 바뀌는 설정입니다. 유형에 따라 <strong>지시 문단 자체가 통째로 달라지고</strong>, 아래에 뜨는 입력칸도 달라집니다.</p>
 
   <div class="scroller">
@@ -732,7 +860,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     QA에서 자동 수정은 검수가 아니라 새로운 변경입니다. 고쳐 놓으면 그것을 다시 검수해야 합니다. 그래서 표만 받습니다. 이런 <strong>금지 문장이 이 빌더의 핵심</strong>입니다 — 무엇을 시킬지보다 무엇을 못 하게 할지가 결과를 좌우합니다.
   </div>
 
-  <h3>테마</h3>
+  <h3 id="settings-2">테마</h3>
   <p>고른 테마가 프롬프트 두 곳에 들어갑니다. <code>테마: eluo</code> 한 줄과, 불러올 토큰 CSS 주소입니다. <strong>시스템 주소는 테마와 무관하게 늘 Eluon을 가리킵니다</strong> — 컴포넌트는 저장소에서 오고 테마는 색만 갈아끼우기 때문입니다.</p>
   <p>테마 버튼은 <strong>모든 작업 유형에서 늘 보입니다.</strong> 어떤 테마가 있는지 자체가 정보이기 때문입니다. 다만 <code>고객사 테마</code>와 <code>신규 컴포넌트 추가</code>에서는 골라도 프롬프트가 바뀌지 않고, 그 사실이 아래 줄에 적힙니다.</p>
   <h4>안 쓰는 테마 숨기기</h4>
@@ -743,7 +871,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     <p>저장소에서 진짜 지우려면 <code>eluon.config.json</code>의 <code>themes</code>에서 빼고 파이프라인을 돌려야 합니다.</p>
   </div>
 
-  <h3>조건 입력칸</h3>
+  <h3 id="settings-3">조건 입력칸</h3>
   <p>작업 유형에 따라 나타나는 칸이 다릅니다. <strong>비워 두면 <code>(미입력 — 물어볼 것)</code>으로 나갑니다.</strong></p>
   <div class="note warn">
     <b>비운 칸은 예시로 채워지지 않습니다</b>
@@ -758,7 +886,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     <p>비워 두면 자료 후보를 묻고, 자료가 아예 없으면 <em>추정이라는 걸 남기고 대외 제출물에 쓰지 말라</em>고 지시합니다.</p>
   </div>
 
-  <h3>자산 미리 지정 <span class="tag">선택</span></h3>
+  <h3 id="settings-4">자산 미리 지정 <span class="tag">선택</span></h3>
   <p>기본은 <strong>비워 두는 것</strong>입니다. 비워 두면 Claude가 manifest를 읽고 직접 고른 뒤 승인을 받습니다. 그게 이 시스템이 의도한 흐름입니다.</p>
   <p>체크하는 경우는 <strong>쓸 자산이 이미 정해졌을 때</strong>뿐입니다. 체크하면 프롬프트 끝에 규격까지 붙은 목록이 들어가고, <em>이 안에서 쓰고 부족하면 보고하라</em>는 지시가 따라붙습니다.</p>
   <pre>미리 지정한 자산 (이 안에서 쓰고, 부족하면 보고해)
@@ -784,18 +912,18 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
   <pre>prompt-builder.html?tab=builder&amp;theme=cobalt&amp;picked=btn-primary-lg,card-stat-md</pre>
   <p>넘어온 ID 중 지금 목록에 없는 것이 있으면 <strong>조용히 버리지 않고</strong> 몇 개가 안 맞았는지 알립니다. 자산 파일 버전이 다를 때 실제로 생깁니다.</p>
 
-  <h3>팀 프리셋</h3>
+  <h3 id="settings-5">팀 프리셋</h3>
   <p>지금 고른 조건 전체(작업 유형·테마·입력값·체크한 자산)를 이름 붙여 저장합니다. <strong>브라우저에만 저장됩니다</strong> — 다른 사람에게는 안 보입니다.</p>
   <p>공유하려면 <strong>파일로 내보내기</strong>로 <code>.json</code>을 뽑아 전달하고, 받은 사람은 <strong>파일 불러오기</strong>로 넣습니다. 매번 같은 조건으로 시안을 뽑는 프로젝트라면 한 번 만들어 돌려쓰는 게 낫습니다.</p>
 
-  <h3>근거 보기</h3>
+  <h3 id="settings-6">근거 보기</h3>
   <p>각 문단이 <em>왜</em> 들어갔는지를 회색 글로 보여주는 토글입니다. <strong>복사할 때는 빠지고 프롬프트만 나갑니다.</strong> 프롬프트를 손보고 싶을 때 어느 줄을 건드리면 안 되는지 판단하는 데 씁니다.</p>
 
-  <h3>프롬프트 복사</h3>
+  <h3 id="settings-7">프롬프트 복사</h3>
   <p>복사한 문장은 <strong>Claude Code(터미널·웹·데스크톱 앱)든 Claude 앱이든 똑같이 동작합니다.</strong> 다만 시안 HTML을 실제 파일로 받으려면 Claude Code 쪽이 편합니다.</p>
 </section>
 
-<section>
+<section id="discover">
   <p class="eyebrow">4부 · URL 자산 탭</p>
   <h2>사이트에서 자산 후보 찾기 <span class="tag">v1.5.0</span></h2>
   <p class="lead">고객사 웹사이트 주소만 넣으면 <strong>반복되는 UI 조각을 재서</strong> 지금 라이브러리와 대조합니다. <strong>덮이는 표가 본론입니다</strong> — 그 목록이 곧 기존 컴포넌트를 재배치해 페이지를 만들 재료입니다.</p>
@@ -813,7 +941,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
 
   <p>화면에는 <strong>주소 입력 하나와 프롬프트</strong>뿐입니다. 빌더의 조건 칸들(화면 이름·목적·섹션·폭)은 이 일에 필요 없어서 없습니다.</p>
 
-  <h3>결과는 표 두 개로 나옵니다</h3>
+  <h3 id="discover-1">결과는 표 두 개로 나옵니다</h3>
   <div class="scroller">
     <table>
       <thead><tr><th>표</th><th>무엇</th><th>왜 나눴나</th></tr></thead>
@@ -846,7 +974,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     프롬프트가 <em>"아직 레시피는 쓰지 마"</em>라고 막습니다. <strong>저장소는 아무것도 바뀌지 않습니다</strong> — 표 두 개가 화면에 나올 뿐, 파일도 커밋도 없습니다.
   </div>
 
-  <h3>찾은 다음 — 저장소에 올라가기까지</h3>
+  <h3 id="discover-2">찾은 다음 — 저장소에 올라가기까지</h3>
   <p>"프롬프트를 Claude에서 받아서 다시 GitHub에 올리는 것인가"라는 질문을 자주 받습니다. <strong>맞습니다. 다만 발견 단계가 아니라 제작 단계에서 올라갑니다.</strong></p>
   <p>그리고 여기는 <strong>직선 5단계가 아니라 갈래 둘</strong>입니다. <strong>기본 경로</strong>는 A표를 들고 시안 제작으로 가는 것이고 — 거의 모든 경우 여기서 끝납니다 — <strong>예외 경로</strong>가 아래입니다.</p>
   <div class="steps">
@@ -873,7 +1001,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     <strong>한 번 들어온 자산은 모든 고객사 시안이 함께 쓰게 됩니다.</strong> 승인 없이 늘어나면 나중에 빼기가 훨씬 어렵습니다. 그래서 발견은 읽기만 하고, 제작에만 승인을 겁니다.
   </div>
 
-  <h3>실제로 이렇게 나왔습니다</h3>
+  <h3 id="discover-3">실제로 이렇게 나왔습니다</h3>
   <p>고객사 사이트 메인 한 장에서 찾은 결과입니다.</p>
   <div class="scroller">
     <table>
@@ -888,7 +1016,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
   </div>
 </section>
 
-<section>
+<section id="walkthrough">
   <p class="eyebrow">5부 · 실제로 해보기</p>
   <h2>시안 한 장을 뽑는 흐름</h2>
 
@@ -932,7 +1060,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
   </div>
 </section>
 
-<section>
+<section id="troubleshoot">
   <p class="eyebrow">막히는 곳</p>
   <h2>자주 걸리는 여덟 가지</h2>
 
@@ -980,7 +1108,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
   </div>
 </section>
 
-<section>
+<section id="never">
   <p class="eyebrow">규칙</p>
   <h2>하지 않을 것</h2>
   <p>에이전트에게도, 사람에게도 똑같이 적용됩니다.</p>
@@ -1033,6 +1161,81 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
 </div>
 
 
-<script>lucide.createIcons();</script>
+  </div>
+</div>
+
+<script>
+lucide.createIcons();
+
+/* 왼쪽 차례 — 지금 읽는 자리를 표시하고, 그 절의 소제목만 펼칩니다. */
+(function () {
+  var side   = document.getElementById('gside');
+  var toggle = side.querySelector('.gtoggle');
+  var links  = Array.prototype.slice.call(document.querySelectorAll('.gnav a'));
+  if (!links.length) return;
+
+  var marks = Array.prototype.slice.call(
+    document.querySelectorAll('.gmain section[id], .gmain h3[id]'));
+  var byId = {};
+  links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+
+  var bar = 0, ticking = false, current = null;
+  function measure() {
+    bar = parseInt(getComputedStyle(document.documentElement)
+            .getPropertyValue('--gbar'), 10) + 24;
+  }
+
+  function sync() {
+    ticking = false;
+    var cur = marks[0];
+    for (var i = 0; i < marks.length; i++) {
+      if (marks[i].getBoundingClientRect().top <= bar) cur = marks[i];
+      else break;
+    }
+    if (!cur || cur === current) return;
+    current = cur;
+
+    links.forEach(function (a) { a.removeAttribute('aria-current'); });
+    var here = byId[cur.id];
+    if (here) here.setAttribute('aria-current', 'true');
+
+    var sec = cur.tagName === 'SECTION' ? cur : cur.closest('section');
+    var secLink = sec && byId[sec.id];
+    if (secLink) secLink.setAttribute('aria-current', 'true');
+
+    document.querySelectorAll('.gnav > ol > li').forEach(function (li) {
+      li.classList.toggle('is-open', !!sec && li.dataset.sec === sec.id);
+    });
+
+    /* 차례가 길어 활성 항목이 시야 밖일 수 있습니다 */
+    if (here && window.matchMedia('(min-width:1024px)').matches) {
+      var r = here.getBoundingClientRect(), s = side.getBoundingClientRect();
+      if (r.top < s.top + 8 || r.bottom > s.bottom - 8) {
+        here.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(sync); }
+  }
+
+  measure();
+  sync();
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', function () { measure(); current = null; sync(); });
+
+  toggle.addEventListener('click', function () {
+    var open = side.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  links.forEach(function (a) {
+    a.addEventListener('click', function () {
+      side.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>
