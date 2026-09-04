@@ -257,22 +257,39 @@ def main() -> int:
     assets, errors = collect()
     # 파이프라인이 안 건드리는 수기 문서. 버전을 올리면 여기도 같이 고쳐야 하는데
     # 매번 빠뜨립니다. 실제로 v1.3.1 에서 config 만 되돌아가 태그와 내용이 어긋났습니다.
+    #
+    # 다만 문서 안의 버전이 전부 "지금 버전"이어야 하는 것은 아닙니다.
+    # 사람이 복사해 쓰는 것 — CDN 주소와 clone 명령 — 만 틀리면 실제로 깨집니다.
+    # "언제 바뀌었다"는 이력 서술까지 싸잡아 올리면 역사가 현재 버전으로 덮입니다.
+    # 실제로 v1.12.0 에서 v1.11.1 이전의 변경 이력이 전부 v1.12.0 으로 바뀌었습니다.
+    # 그래서 나누어 봅니다 — 따라 하면 깨지는 것은 실패, 나머지는 알림만.
     import re
+    LIVE = re.compile(r"(?:@|--branch\s+)(v\d+\.\d+\.\d+)")
+    ANY = re.compile(r"v\d+\.\d+\.\d+")
+    version_notes = []
     for f in ["README.md", "CLAUDE.md", "prompts/01-시안제작.md", "prompts/03-일관성QA.md"]:
         path = ROOT / f
         if not path.exists():
             continue
-        stale = sorted(set(re.findall(r"v\d+\.\d+\.\d+", path.read_text(encoding="utf-8")))
-                       - {CONFIG["version"]})
-        if stale:
-            errors.append(f"{f}: 버전이 어긋납니다 — {', '.join(stale)} "
-                          f"(config 는 {CONFIG['version']})")
+        text = path.read_text(encoding="utf-8")
+        live_stale = sorted(set(LIVE.findall(text)) - {CONFIG["version"]})
+        if live_stale:
+            errors.append(f"{f}: 따라 하면 깨지는 버전이 있습니다 — {', '.join(live_stale)} "
+                          f"(config 는 {CONFIG['version']}). CDN 주소와 clone 명령을 고치세요.")
+        other_stale = sorted(set(ANY.findall(text)) - set(LIVE.findall(text))
+                             - {CONFIG["version"]})
+        if other_stale:
+            version_notes.append(f"{f}: {', '.join(other_stale)}")
 
     # 몽타주 시트는 여기서 검사하지 않습니다 — make_montage.py 가 이 뒤에 돌기 때문에
     # 새 테마 첫 빌드가 반드시 실패합니다. 시트 검사는 build_docs.py(마지막 단계)에 있습니다.
     for th in CONFIG["themes"]:
         if not (ROOT / "docs" / "tokens" / f"eluon-{th}.css").exists():
             errors.append(f"docs/tokens/eluon-{th}.css 없음 (build_tokens.py 를 돌리세요)")
+    if version_notes:
+        print("알림 — 이력으로 보이는 옛 버전 표기가 있습니다. 사실이면 그대로 두세요:")
+        for n in version_notes:
+            print(f"  · {n}")
     if errors:
         print("빌드 실패:\n" + "\n".join(f"  ✗ {e}" for e in errors))
         return 1
