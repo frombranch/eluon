@@ -146,7 +146,7 @@ prompts/                   ← 검증된 프롬프트 템플릿
 이미지를 붙이지 말고 **토큰 CSS + spec으로 실제 컴포넌트를 만듭니다.**
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.0/docs/tokens/eluon-eluo.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/docs/tokens/eluon-eluo.css">
 <style>
 .btn-primary-lg{
   height:56px; padding:0 24px; border-radius:var(--radius-lg);
@@ -164,7 +164,7 @@ manifest의 `cdn.<theme>` 값을 그대로 `<img src>`에 씁니다. 손으로 U
 
 ### 경로 C — 저장소 클론 (시각 검수·인라인)
 ```bash
-git clone --depth 1 --branch v1.12.0 https://github.com/frombranch/eluon.git
+git clone --depth 1 --branch v1.12.1 https://github.com/frombranch/eluon.git
 ```
 이미지를 실제로 봐야 할 때, 또는 base64로 인라인해야 할 때만.
 
@@ -313,8 +313,12 @@ position:relative;
 ## 6. 모션 (테마 무관)
 
 1. **모션은 사람의 행동에 대한 대답이다.** hover · focus · press · 상태를 바꾸는 클릭에만 건다.
-2. **시간을 숫자로 쓰지 않는다.** `var(--motion-fast|base|slow|exit)` 넷뿐이다. **280ms가 천장**이다.
-   더 길어야 할 것 같으면 그건 모션을 넣지 말아야 할 것이다.
+2. **시간을 숫자로 쓰지 않는다.** 축약형 다섯 중에서 고른다 —
+   반응은 `var(--motion-fast|base|slow|exit)`, 등장은 `var(--motion-entrance)`.
+   **반응은 280ms가 천장이다.** 사람이 누른 것에 대한 대답은 빨라야 한다.
+   **등장(`--motion-entrance` 420ms)만 그보다 길다.** 처음 나타나는 것은 여유가 있어야 눈에 밟힌다.
+   이 둘을 섞지 않는다 — hover 에 `--motion-entrance` 를 쓰면 굼떠 보이고,
+   등장에 `--motion-fast` 를 쓰면 나타난 줄도 모른다.
 3. **움직일 수 있는 속성은 다섯뿐.** `opacity` · `transform` · `background-color` · `border-color` · `color`.
    `height` · `width` · `top/left` · `box-shadow` · `filter`는 애니메이션하지 않는다. 레이아웃이 흔들린다.
 4. **어디에 무엇을 쓰나**
@@ -325,12 +329,44 @@ position:relative;
    | 열고 닫기 — 아코디언 아이콘, 메뉴 토글, 탭 인디케이터 | `--motion-base` |
    | 화면을 덮는 것 — 모달·토스트 등장, 전면 이미지 전환 | `--motion-slow` |
    | 사라지는 것 — 모달·토스트 퇴장 | `--motion-exit` |
+   | 사진 hover 확대 | `--motion-base` + `--motion-scale-hover` |
+   | 스크롤 진입 등장 | `--motion-entrance` + `--motion-distance-reveal` |
 
    `transition`은 `:hover` 규칙이 아니라 **기본 상태에** 건다. 그래야 돌아올 때도 같은 속도다.
-5. **넣지 않는 것.** 스크롤 진입 페이드·슬라이드업, 페이지 로드 시퀀스, 카드 hover 확대·부양,
-   패럴랙스, 숫자 카운트업, 타이핑 효과, 무한 마퀴, 장식용 `@keyframes`.
-   ⚠️ 섹션마다 페이드업과 카드마다 hover 확대는 **기계가 만든 화면의 가장 흔한 표식**이다.
-   클릭할 수 없는 요소에는 hover 효과를 아예 걸지 않는다(§7-9).
+5. **사진 hover 확대 — 규격대로 쓴다.** 흔히 기대하는 움직임이라 금지하지 않는다. 대신 규격이 있다.
+
+   | 항목 | 값 |
+   |---|---|
+   | 배율 | `var(--motion-scale-hover)` (1.03). 더 키우지 않는다 |
+   | 시간 | `var(--motion-base)` |
+   | 거는 대상 | **사진에만.** 카드 전체를 키우지 않는다 — 옆 카드와 간격이 흔들린다 |
+   | 자르기 | 부모에 `overflow:hidden`. 사진이 틀 밖으로 나오지 않는다 |
+   | 조건 | **감싼 요소가 링크·버튼일 때만**(§7-9). 아무 데도 안 가는 카드는 반응하지 않는다 |
+
+   `transform:scale()` 만 쓴다. `width`·`height` 로 키우면 레이아웃이 밀린다(§6-3).
+   ⚠️ 링크가 없는 `<article>` 카드에 hover 확대가 걸린 시안이 나왔다. iOS 의 sticky `:hover` 때문에
+   탭한 뒤 확대된 채로 남았다.
+
+5-1. **스크롤 진입 등장 — 규격대로 쓴다.** 이것도 금지하지 않는다.
+
+   | 항목 | 값 |
+   |---|---|
+   | 무엇이 움직이나 | `opacity` 0→1 과 `translateY(var(--motion-distance-reveal))` (16px). 둘뿐이다 |
+   | 시간·커브 | `var(--motion-entrance)` |
+   | 몇 번 | **한 번.** `IntersectionObserver` 로 한 번 보이면 관찰을 끊는다. 되감기지 않는다 |
+   | 단위 | **섹션 단위.** 문단·글자마다 걸지 않는다 |
+   | 시차 | 한 섹션 안에서 나란한 것들만 `var(--motion-stagger)`(60ms) 씩. **최대 4개까지** |
+   | 첫 화면 | **히어로에는 걸지 않는다.** 처음 보이는 것이 늦게 나타나면 느린 사이트로 읽힌다 |
+
+   ⚠️ **JS 가 죽어도 내용은 보여야 한다.** 숨기는 클래스를 HTML 에 박지 말고 JS 가 붙인다.
+   `document.documentElement.classList.add('reveal-ready')` 를 먼저 하고 CSS 는 그 안에서만 숨긴다.
+   그래야 스크립트가 실패해도 빈 페이지가 되지 않는다.
+   감속 설정에서는 토큰 CSS 가 거리를 0 으로, 시간을 1ms 로 만들어 **자동으로 그냥 나타난다.**
+
+5-2. **그래도 넣지 않는 것.** 페이지 로드 시퀀스(요소들이 차례로 튀어나오는 것), 패럴랙스,
+   숫자 카운트업, 타이핑 효과, 무한 마퀴, 장식용 `@keyframes`, 커서를 따라다니는 것.
+   ⚠️ 5·5-1 은 **규격 안에서만** 허용이다. 배율을 1.08 로 올리고 문단마다 페이드를 걸면
+   그때부터는 기계가 만든 화면으로 읽힌다. 값은 토큰에 있고 토큰을 바꾸지 않는다.
 6. **자동 재생은 조건부로만 허용한다.** 셋을 다 갖추지 않으면 쓰지 않는다.
    1. 멈춤 버튼. **`mouseenter`로 멈추는 것은 터치에서 아예 동작하지 않으므로 이를 대신하지 못한다**
    2. `matchMedia('(prefers-reduced-motion: reduce)').matches`면 시작하지 않는다
@@ -343,6 +379,11 @@ position:relative;
    단 하나, **JS 자동 재생은 CSS가 못 막는다** — 6번이 그 자리다.
 8. **사람이 건드려서 움직이는 것에는 제한이 없다.**
    이 장은 움직임의 총량을 줄이려는 게 아니라, 그 움직임이 무엇에 대한 대답인지를 묻는다.
+9. **움직일 것이 있어야 움직인다.** 규칙을 다 지켜도 화면이 정적으로 짜였으면 정적으로 나온다.
+   탭·필터 칩·아코디언·모달·토스트가 라이브러리에 있다. 한 화면을 짤 때 **누를 것이 무엇인지**
+   먼저 정한다.
+   ⚠️ 실제로 자산 규격을 다 지키고도 칩 0개·탭 0개·모달 0개인 시안이 나왔다.
+   모션 규칙이 아니라 화면 구성이 문제였다.
 
 ---
 

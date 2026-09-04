@@ -1107,12 +1107,22 @@ var RESP_KO={fill:"폭을 100% 로",toCard:"카드 목록으로 전환",scrollX:
 /* 모션 — CLAUDE.md §6 이 본문이고 여기엔 가장 자주 어기는 넷만 둡니다.
    계약을 다 읽고도 .9s 크로스페이드와 카드 hover 확대가 나온 적이 있습니다. */
 function motionBlock(){
-  return {text:"모션 — 시간을 숫자로 쓰지 마. var(--motion-fast|base|slow|exit) 넷뿐이고 280ms 가 천장이야.\n"+
-    "  스크롤 진입 페이드·카드 hover 확대·페이지 로드 시퀀스는 만들지 마.\n"+
+  return {text:"모션 — 시간을 숫자로 쓰지 마. 반응은 var(--motion-fast|base|slow|exit) 로 280ms 가 천장,\n"+
+    "    등장만 var(--motion-entrance)(420ms) 를 써. 둘을 섞지 마.\n"+
+    "  사진 hover 확대: 사진에만 scale(var(--motion-scale-hover)) + var(--motion-base),\n"+
+    "    부모에 overflow:hidden. 링크·버튼 안의 사진일 때만. 카드 전체를 키우지 마.\n"+
+    "  스크롤 진입 등장: 섹션 단위로 opacity + translateY(var(--motion-distance-reveal)),\n"+
+    "    var(--motion-entrance), IntersectionObserver 로 한 번만. 히어로에는 걸지 마.\n"+
+    "    나란한 것만 var(--motion-stagger) 씩 최대 4개. 숨기는 클래스는 JS 가 붙여 —\n"+
+    "    JS 가 죽어도 내용은 보여야 해.\n"+
+    "  페이지 로드 시퀀스·패럴랙스·카운트업·타이핑·마퀴는 만들지 마.\n"+
     "  reduced-motion 은 토큰 CSS 가 처리해. @media 를 따로 쓰지 말고,\n"+
-    "    대신 자동 재생(setInterval)은 matchMedia 로 막고 멈춤 버튼을 붙여.",
+    "    대신 자동 재생(setInterval)은 matchMedia 로 막고 멈춤 버튼을 붙여.\n"+
+    "  그리고 움직일 것을 만들어 — 탭·필터 칩·아코디언·모달이 라이브러리에 있어.\n"+
+    "    누를 것이 없으면 규칙을 다 지켜도 정적인 화면이 나와.",
     why:"쓸 토큰이 없으면 지속시간을 그 자리에서 지어냅니다. 실제로 한 파일에 "+
-        ".15s · .2s · .4s · .9s 가 제각각 들어간 시안이 나왔습니다."};
+        ".15s · .2s · .4s · .9s 가 제각각 들어간 시안이 나왔고, 반대로 규칙만 지키다 "+
+        "칩 0개 · 탭 0개인 정적인 시안도 나왔습니다."};
 }
 function respBlock(){
   if(!M._assets) return null;

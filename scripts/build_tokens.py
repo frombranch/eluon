@@ -88,7 +88,8 @@ def to_css(tokens, theme):
         lines.append(f"  --layout-{key.replace('.', '-')}:{val}{unit};")
     # 모션. 단위가 섞여 있어(ms · px · 무단위) 다른 그룹처럼 한 단위로 못 붙입니다.
     for key, val in sem.get("motion", {}).items():
-        unit = "ms" if key.startswith("duration.") else ("px" if key.startswith("distance.") else "")
+        unit = ("ms" if key.startswith("duration.") or key == "stagger"
+                else "px" if key.startswith("distance.") else "")
         lines.append(f"  --motion-{key.replace('.', '-')}:{val}{unit};")
     # 한 줄로 쓰는 축약형. --type-heading1 과 같은 방식입니다.
     # 시간과 커브를 매번 두 번 쓰다 하나를 빠뜨리는 걸 막습니다.
@@ -99,6 +100,10 @@ def to_css(tokens, theme):
                           ("slow", "duration.slow")):
             lines.append(f"  --motion-{name}:{mo[dur]}ms {std};")
         lines.append(f"  --motion-exit:{mo['duration.fast']}ms {ext};")
+        # 등장은 반응과 시계가 다릅니다. 280ms 천장은 반응에만 걸립니다.
+        if "duration.entrance" in mo:
+            lines.append(f"  --motion-entrance:{mo['duration.entrance']}ms "
+                         f"{mo['easing.entrance']};")
     # 이미지. 비율과 스크림은 CSS 값 그대로, density 는 배수라 무단위입니다.
     for key, val in sem.get("media", {}).items():
         lines.append(f"  --media-{key.replace('.', '-')}:{val};")
@@ -124,9 +129,12 @@ def to_css(tokens, theme):
             "@media (prefers-reduced-motion: reduce){",
             "  :root{",
             "    --motion-duration-fast:1ms; --motion-duration-base:1ms;",
-            "    --motion-duration-slow:1ms; --motion-distance-rise:0px;",
+            "    --motion-duration-slow:1ms; --motion-duration-entrance:1ms;",
+            "    --motion-distance-rise:0px; --motion-distance-reveal:0px;",
+            "    --motion-scale-hover:1; --motion-stagger:0ms;",
             "    --motion-fast:1ms linear; --motion-base:1ms linear;",
             "    --motion-slow:1ms linear; --motion-exit:1ms linear;",
+            "    --motion-entrance:1ms linear;",
             "  }",
             "  *,*::before,*::after{",
             "    animation-duration:1ms!important; animation-iteration-count:1!important;",
