@@ -22,6 +22,12 @@ Eluon(엘루온)은 디자인포지션의 디자인 시스템입니다.
    이미지에서 눈대중으로 재지 않는다. 값은 이미 적혀 있다.
    ⚠️ **치수는 테마마다 다르다.** `spec`은 토큰 이름(`control.lg.height`)이고,
    실제 px는 **`specByTheme.<테마>`**에 있다. 고른 테마의 값을 읽는다.
+4-1. **자산 spec 의 값이 곧 CSS 변수인 것은 아니다.** `--size-*` 는 `semantic.size` 에 있는 것뿐이다.
+   자산에만 있는 항목(`header-gnb-lg.actionHeight` 같은 것)에는 대응하는 변수가 없다.
+   `specByTheme` 에서 실제 값을 읽고, **같은 값을 가진 semantic 토큰을 찾아 쓴다**
+   (`actionHeight` 48 → `--size-control-md-height`). 없으면 그 자산의 다른 spec 항목으로 짠다.
+   ⚠️ 존재하지 않는 변수는 조용히 빈 값이 되어 높이가 무너진다. 에러가 나지 않으므로 눈으로 봐야 안다.
+   실제로 `var(--size-header-actionHeight)` 를 쓴 헤더 버튼이 48px 대신 21.75px 로 찌그러졌다.
 5. **색은 헥스로 쓰지 않는다.** `tokens` 필드의 시맨틱 토큰명을 CSS 변수로 선언해 쓴다.
 5-1. **자산을 놓기 전에 `foundationByTheme.<테마>`를 읽는다.**
    `layout`이 폭·그리드·여백을 정하고, `typography`의 `role`이 어느 자리에 어떤 활자를 쓸지 정한다.
@@ -359,9 +365,10 @@ position:relative;
    빈 화면은 사과문이 아니라 다음 행동이다 — "조건을 지우고 전체 보기".
 8. **긴 값은 자르지 말고 흘린다.** 한글 제목에 `white-space:nowrap` + 말줄임을 쓰지 않는다.
    두 줄까지 허용(`-webkit-line-clamp:2`)하고 그 이상만 자른다. 한 줄 고정은 숫자·날짜·금액에만.
-   폭 제한은 `var(--layout-text-measure)`다.
+   폭 제한은 자산의 `leadMaxWidth` 같은 spec 값이 있으면 그것을, 없으면 `var(--layout-text-measure)`를 쓴다.
    ⚠️ 실제로 한글 공지 제목에 `nowrap`과 `max-width:44ch`가 걸려 제목이 통째로 잘렸다.
-   같은 파일에 `60ch`·`58ch`·`52ch`가 따로 등장했다. **`ch` 숫자를 새로 만들지 않는다.**
+   `44ch`·`52ch`는 spec 에 없는 값이었다. **spec 에 없는 `ch` 숫자를 새로 만들지 않는다.**
+   (`hero-split-lg`의 `60ch`, `section-header-md`의 `58ch`는 spec 값이니 그대로 쓴다.)
 9. **hover로만 알 수 있는 정보를 만들지 않는다.** 터치에는 hover가 없다.
    클릭 가능한 것은 hover 없이도 클릭 가능해 보여야 한다. hover는 이미 보이는 것을 밝히는 데만 쓴다.
    **클릭할 수 없는 요소에는 hover 효과를 걸지 않는다.**
