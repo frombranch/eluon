@@ -496,6 +496,18 @@ td.n{font-variant-numeric:tabular-nums;color:var(--tx2);text-align:right}
 h4 + .tw{border-top:0;margin-top:0}
 .tw thead td{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2)}
 
+/* 아이콘 — 채우지 않고, 선으로, 70% 로. 값은 토큰에서 옵니다. */
+/* lucide.createIcons() 는 <i data-lucide> 를 <svg class="lucide …"> 로 바꿉니다.
+   생성 전후 둘 다 잡아야 규칙이 적용됩니다. */
+[data-lucide],svg.lucide{fill:var(--icon-fill,none);stroke:currentColor;
+  stroke-width:var(--icon-strokewidth,1.2);opacity:var(--icon-opacity,.7)}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  border-top:1px solid var(--ln);border-left:1px solid var(--ln)}
+.icons div{display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:22px 12px;border-right:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.icons b{font-size:11px;font-weight:600;color:var(--tx2);letter-spacing:.02em}
+.iconrule td:first-child{width:34%}
+
 /* 스와치 */
 .swrow{margin-top:44px}
 .swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));
@@ -600,6 +612,7 @@ def main():
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 {all_theme_css}
 {BASE_CSS}
@@ -663,6 +676,26 @@ def main():
     <h4>Semantic — ELUO 테마가 덮어쓰는 값</h4>
     <div class="tw"><table><thead><tr><td>토큰</td><td>코어</td>
       <td>ELUO 오버라이드</td></tr></thead><tbody>{semantic_table()}</tbody></table></div>
+  </div>
+
+  <div data-r style="margin-top:56px">
+    <h4>Icons — 만들 때 지키는 것</h4>
+    <div class="tw"><table class="iconrule"><tbody>
+      <tr><td>출처</td><td>Lucide. 다른 아이콘 세트를 섞지 않습니다</td></tr>
+      <tr><td>크기</td><td>32×32 기준, 2의 배수로만 — <code>--size-icon-md</code> 32 · <code>--size-icon-lg</code> 64</td></tr>
+      <tr><td>스타일</td><td>채우지 않습니다. <code>fill:none</code> 에 선만 — 버튼처럼 채운 아이콘은 쓰지 않습니다</td></tr>
+      <tr><td>선 굵기</td><td><code>--icon-strokewidth</code> 1.2. Lucide 기본값 2 는 무겁습니다</td></tr>
+      <tr><td>불투명도</td><td><code>--icon-opacity</code> 0.7. 글자보다 한 단계 물러나야 옆의 문장이 읽힙니다</td></tr>
+      <tr><td>색</td><td><code>currentColor</code>. 부모의 색을 따르므로 테마가 바뀌면 함께 바뀝니다</td></tr>
+    </tbody></table></div>
+    <div class="icons" style="margin-top:20px">
+      <div><i data-lucide="search" width="32" height="32"></i><b>32 · search</b></div>
+      <div><i data-lucide="check" width="32" height="32"></i><b>32 · check</b></div>
+      <div><i data-lucide="settings" width="32" height="32"></i><b>32 · settings</b></div>
+      <div><i data-lucide="arrow-right" width="64" height="64"></i><b>64 · arrow-right</b></div>
+      <div><i data-lucide="bell" width="64" height="64"></i><b>64 · bell</b></div>
+      <div><i data-lucide="layout-grid" width="64" height="64"></i><b>64 · layout-grid</b></div>
+    </div>
   </div>
 
   <div data-r style="margin-top:56px">

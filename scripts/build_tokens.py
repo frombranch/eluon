@@ -78,6 +78,11 @@ def to_css(tokens, theme):
     # 한글 조판. 값이 CSS 키워드라 단위를 붙이지 않습니다.
     for key, val in sem.get("text", {}).items():
         lines.append(f"  --text-{key}:{val};")
+    # 아이콘. 크기는 size 로, 나머지 규칙(선 굵기·불투명도)은 여기서 변수로 나갑니다.
+    icon = sem.get("icon", {})
+    for key in ("strokeWidth", "opacity", "fill", "stroke"):
+        if key in icon:
+            lines.append(f"  --icon-{key.lower()}:{icon[key]};")
     for key, val in sem.get("layout", {}).items():
         unit = "" if key == "grid.columns" else ("ch" if key == "text.measure" else "px")
         lines.append(f"  --layout-{key.replace('.', '-')}:{val}{unit};")

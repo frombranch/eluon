@@ -52,7 +52,7 @@ SIZE_GROUP_KO = {
     "field": "입력 필드", "table": "테이블", "tab": "탭", "toast": "토스트",
     "modal": "모달", "pagination": "페이지네이션", "toggle": "토글",
     "section": "섹션 헤더", "price": "가격", "border": "테두리 두께",
-    "focusRing": "포커스 링",
+    "focusRing": "포커스 링", "icon": "아이콘",
     # v1.8.0 페이지 블록 · v1.10.0 보조 어휘
     "header": "헤더", "hero": "히어로", "footer": "푸터", "ctaBand": "CTA 띠",
     "listRow": "목록 행", "accordion": "아코디언", "breadcrumb": "경로",

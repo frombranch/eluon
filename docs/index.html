@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 /* Eluon tokens — theme: eluo. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
 [data-eluon-theme="eluo"]{
@@ -164,6 +165,8 @@
   --size-stepFlow-gap:16px;
   --size-stepFlow-numberSize:28px;
   --size-stepFlow-rowGap:24px;
+  --size-icon-md:32px;
+  --size-icon-lg:64px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -189,6 +192,10 @@
   --text-overflowWrap:anywhere;
   --text-wrap:pretty;
   --text-numeric:tabular-nums;
+  --icon-strokewidth:1.2;
+  --icon-opacity:0.7;
+  --icon-fill:none;
+  --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
   --layout-grid-columns:12;
@@ -411,6 +418,8 @@
   --size-stepFlow-gap:16px;
   --size-stepFlow-numberSize:28px;
   --size-stepFlow-rowGap:24px;
+  --size-icon-md:32px;
+  --size-icon-lg:64px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -436,6 +445,10 @@
   --text-overflowWrap:anywhere;
   --text-wrap:pretty;
   --text-numeric:tabular-nums;
+  --icon-strokewidth:1.2;
+  --icon-opacity:0.7;
+  --icon-fill:none;
+  --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
   --layout-grid-columns:12;
@@ -658,6 +671,8 @@
   --size-stepFlow-gap:16px;
   --size-stepFlow-numberSize:28px;
   --size-stepFlow-rowGap:24px;
+  --size-icon-md:32px;
+  --size-icon-lg:64px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -683,6 +698,10 @@
   --text-overflowWrap:anywhere;
   --text-wrap:pretty;
   --text-numeric:tabular-nums;
+  --icon-strokewidth:1.2;
+  --icon-opacity:0.7;
+  --icon-fill:none;
+  --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
   --layout-grid-columns:12;
@@ -900,6 +919,8 @@
   --size-stepFlow-gap:16px;
   --size-stepFlow-numberSize:28px;
   --size-stepFlow-rowGap:24px;
+  --size-icon-md:32px;
+  --size-icon-lg:64px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -925,6 +946,10 @@
   --text-overflowWrap:anywhere;
   --text-wrap:pretty;
   --text-numeric:tabular-nums;
+  --icon-strokewidth:1.2;
+  --icon-opacity:0.7;
+  --icon-fill:none;
+  --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
   --layout-grid-columns:12;
@@ -1143,6 +1168,8 @@
   --size-stepFlow-gap:16px;
   --size-stepFlow-numberSize:28px;
   --size-stepFlow-rowGap:24px;
+  --size-icon-md:32px;
+  --size-icon-lg:64px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -1168,6 +1195,10 @@
   --text-overflowWrap:anywhere;
   --text-wrap:pretty;
   --text-numeric:tabular-nums;
+  --icon-strokewidth:1.2;
+  --icon-opacity:0.7;
+  --icon-fill:none;
+  --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
   --layout-grid-columns:12;
@@ -1390,6 +1421,8 @@
   --size-stepFlow-gap:16px;
   --size-stepFlow-numberSize:28px;
   --size-stepFlow-rowGap:24px;
+  --size-icon-md:32px;
+  --size-icon-lg:64px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -1415,6 +1448,10 @@
   --text-overflowWrap:anywhere;
   --text-wrap:pretty;
   --text-numeric:tabular-nums;
+  --icon-strokewidth:1.2;
+  --icon-opacity:0.7;
+  --icon-fill:none;
+  --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
   --layout-grid-columns:12;
@@ -1726,6 +1763,18 @@ td.n{font-variant-numeric:tabular-nums;color:var(--tx2);text-align:right}
 h4 + .tw{border-top:0;margin-top:0}
 .tw thead td{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2)}
 
+/* 아이콘 — 채우지 않고, 선으로, 70% 로. 값은 토큰에서 옵니다. */
+/* lucide.createIcons() 는 <i data-lucide> 를 <svg class="lucide …"> 로 바꿉니다.
+   생성 전후 둘 다 잡아야 규칙이 적용됩니다. */
+[data-lucide],svg.lucide{fill:var(--icon-fill,none);stroke:currentColor;
+  stroke-width:var(--icon-strokewidth,1.2);opacity:var(--icon-opacity,.7)}
+.icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  border-top:1px solid var(--ln);border-left:1px solid var(--ln)}
+.icons div{display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:22px 12px;border-right:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.icons b{font-size:11px;font-weight:600;color:var(--tx2);letter-spacing:.02em}
+.iconrule td:first-child{width:34%}
+
 /* 스와치 */
 .swrow{margin-top:44px}
 .swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));
@@ -1856,6 +1905,26 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
     <h4>Semantic — ELUO 테마가 덮어쓰는 값</h4>
     <div class="tw"><table><thead><tr><td>토큰</td><td>코어</td>
       <td>ELUO 오버라이드</td></tr></thead><tbody><tr><td><code>color.brand.primary</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.brand.primary.hover</code></td><td><span class="dot" style="background:#2B45D4"></span><code>{primitive.blue.600}</code></td><td><span class="dot" style="background:#00006B"></span><code>{primitive.navy.600}</code></td></tr><tr><td><code>color.brand.primary.press</code></td><td><span class="dot" style="background:#1F33A6"></span><code>{primitive.blue.700}</code></td><td><span class="dot" style="background:#000052"></span><code>{primitive.navy.700}</code></td></tr><tr><td><code>color.brand.subtle</code></td><td><span class="dot" style="background:#EEF3FF"></span><code>{primitive.blue.50}</code></td><td><span class="dot" style="background:#EDEEF7"></span><code>{primitive.navy.50}</code></td></tr><tr><td><code>color.brand.onSubtle</code></td><td><span class="dot" style="background:#1F33A6"></span><code>{primitive.blue.700}</code></td><td><span class="dot" style="background:#000052"></span><code>{primitive.navy.700}</code></td></tr><tr><td><code>color.surface.default</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.subtle</code></td><td><span class="dot" style="background:#F7F8FA"></span><code>{primitive.gray.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.sunken</code></td><td><span class="dot" style="background:#EFF1F4"></span><code>{primitive.gray.100}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.disabled</code></td><td><span class="dot" style="background:#EFF1F4"></span><code>{primitive.gray.100}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.inverse</code></td><td><span class="dot" style="background:#171B21"></span><code>{primitive.gray.900}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.primary</code></td><td><span class="dot" style="background:#171B21"></span><code>{primitive.gray.900}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.secondary</code></td><td><span class="dot" style="background:#59626F"></span><code>{primitive.gray.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.tertiary</code></td><td><span class="dot" style="background:#6E7784"></span><code>{primitive.gray.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.disabled</code></td><td><span class="dot" style="background:#8D949E"></span><code>{primitive.gray.400}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.inverse</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.brand</code></td><td><span class="dot" style="background:#2B45D4"></span><code>{primitive.blue.600}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.border.default</code></td><td><span class="dot" style="background:#8D949E"></span><code>{primitive.gray.400}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.subtle</code></td><td><span class="dot" style="background:#E2E5EA"></span><code>{primitive.gray.200}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.strong</code></td><td><span class="dot" style="background:#6E7784"></span><code>{primitive.gray.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.brand</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.border.danger</code></td><td><span class="dot" style="background:#D83C3C"></span><code>{primitive.red.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.default</code></td><td><span class="dot" style="background:#D83C3C"></span><code>{primitive.red.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.hover</code></td><td><span class="dot" style="background:#BC2E2E"></span><code>{primitive.red.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.subtle</code></td><td><span class="dot" style="background:#FDF0EF"></span><code>{primitive.red.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.text</code></td><td><span class="dot" style="background:#BC2E2E"></span><code>{primitive.red.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.success.default</code></td><td><span class="dot" style="background:#1F7A54"></span><code>{primitive.green.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.success.subtle</code></td><td><span class="dot" style="background:#EEF8F3"></span><code>{primitive.green.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.warning.default</code></td><td><span class="dot" style="background:#9A6100"></span><code>{primitive.amber.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.warning.subtle</code></td><td><span class="dot" style="background:#FDF6E8"></span><code>{primitive.amber.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.focusRing</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr></tbody></table></div>
+  </div>
+
+  <div data-r style="margin-top:56px">
+    <h4>Icons — 만들 때 지키는 것</h4>
+    <div class="tw"><table class="iconrule"><tbody>
+      <tr><td>출처</td><td>Lucide. 다른 아이콘 세트를 섞지 않습니다</td></tr>
+      <tr><td>크기</td><td>32×32 기준, 2의 배수로만 — <code>--size-icon-md</code> 32 · <code>--size-icon-lg</code> 64</td></tr>
+      <tr><td>스타일</td><td>채우지 않습니다. <code>fill:none</code> 에 선만 — 버튼처럼 채운 아이콘은 쓰지 않습니다</td></tr>
+      <tr><td>선 굵기</td><td><code>--icon-strokewidth</code> 1.2. Lucide 기본값 2 는 무겁습니다</td></tr>
+      <tr><td>불투명도</td><td><code>--icon-opacity</code> 0.7. 글자보다 한 단계 물러나야 옆의 문장이 읽힙니다</td></tr>
+      <tr><td>색</td><td><code>currentColor</code>. 부모의 색을 따르므로 테마가 바뀌면 함께 바뀝니다</td></tr>
+    </tbody></table></div>
+    <div class="icons" style="margin-top:20px">
+      <div><i data-lucide="search" width="32" height="32"></i><b>32 · search</b></div>
+      <div><i data-lucide="check" width="32" height="32"></i><b>32 · check</b></div>
+      <div><i data-lucide="settings" width="32" height="32"></i><b>32 · settings</b></div>
+      <div><i data-lucide="arrow-right" width="64" height="64"></i><b>64 · arrow-right</b></div>
+      <div><i data-lucide="bell" width="64" height="64"></i><b>64 · bell</b></div>
+      <div><i data-lucide="layout-grid" width="64" height="64"></i><b>64 · layout-grid</b></div>
+    </div>
   </div>
 
   <div data-r style="margin-top:56px">

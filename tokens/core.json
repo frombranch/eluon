@@ -162,7 +162,9 @@
       "descList.gap": 20,
       "stepFlow.gap": 16,
       "stepFlow.numberSize": 28,
-      "stepFlow.rowGap": 24
+      "stepFlow.rowGap": 24,
+      "icon.md": 32,
+      "icon.lg": 64
     },
     "breakpoint": {
       "sm": 480,
@@ -210,6 +212,15 @@
       "overflowWrap": "anywhere",
       "wrap": "pretty",
       "numeric": "tabular-nums"
+    },
+    "icon": {
+      "source": "lucide",
+      "base": 32,
+      "scale": "32 기준 2의 배수 (32 · 64)",
+      "fill": "none",
+      "stroke": "currentColor",
+      "strokeWidth": 1.2,
+      "opacity": 0.7
     }
   },
   "typography": {

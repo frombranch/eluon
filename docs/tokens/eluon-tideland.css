@@ -149,6 +149,8 @@
   --size-stepFlow-gap:16px;
   --size-stepFlow-numberSize:28px;
   --size-stepFlow-rowGap:24px;
+  --size-icon-md:32px;
+  --size-icon-lg:64px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -174,6 +176,10 @@
   --text-overflowWrap:anywhere;
   --text-wrap:pretty;
   --text-numeric:tabular-nums;
+  --icon-strokewidth:1.2;
+  --icon-opacity:0.7;
+  --icon-fill:none;
+  --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
   --layout-grid-columns:12;

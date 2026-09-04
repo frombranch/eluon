@@ -193,6 +193,29 @@ git clone --depth 1 --branch v1.11.2 https://github.com/frombranch/eluon.git
 
 이 덩어리들은 콘텐츠 폭 자체가 규격이라 `spec.width`가 `container.max`를 가리킵니다 — 크기 토큰이 아니라 `semantic.layout` 값입니다.
 
+### 아이콘
+
+아이콘은 자산으로 렌더하지 않습니다. 화면을 만들 때 **Lucide** 에서 가져다 쓰고, 이 규칙을 지킵니다.
+
+| 항목 | 값 | 토큰 |
+|---|---|---|
+| 출처 | Lucide 한 세트만 | `semantic.icon.source` |
+| 크기 | 32×32 기준, 2의 배수(32 · 64) | `--size-icon-md` · `--size-icon-lg` |
+| 스타일 | 채우지 않음(`fill:none`), 선만 | `--icon-fill` |
+| 선 굵기 | 1.2 (Lucide 기본 2 는 무겁습니다) | `--icon-strokewidth` |
+| 불투명도 | 0.7 | `--icon-opacity` |
+| 색 | `currentColor` — 부모 색을 따라 테마와 함께 바뀜 | `--icon-stroke` |
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>[data-lucide]{fill:none;stroke:currentColor;stroke-width:1.2;opacity:.7}</style>
+<i data-lucide="arrow-right" width="32" height="32"></i>
+<script>lucide.createIcons();</script>
+```
+
+채운 아이콘(버튼처럼 면으로 찬 것)은 쓰지 않습니다. 아이콘이 글자보다 앞으로 나오면
+옆의 문장이 안 읽힙니다.
+
 ### 상태를 다루는 법 (v1.11.2)
 
 `btn-primary-lg-disabled` 같은 항목은 **자산이 아니라 `btn-primary-lg`의 상태 그림**입니다.
