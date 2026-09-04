@@ -299,6 +299,11 @@ a{color:inherit}
 .bar nav{display:flex;gap:24px;flex-wrap:wrap;margin:0 auto}
 .bar nav a{color:var(--tx);text-decoration:none;font-size:14px;font-weight:600}
 .bar nav a:hover{color:var(--tx2)}
+/* 다른 페이지로 나가는 링크. 섹션 앵커와 성격이 달라 세로줄로 갈라 둡니다. */
+.bar nav.pages{margin:0;flex:none;gap:18px;padding-left:22px;
+  border-left:1px solid var(--ln)}
+.bar nav.pages a{font-size:13px;color:var(--tx2)}
+.bar nav.pages a:hover{color:var(--tx)}
 .themes{display:flex;flex:none}
 .navtog{display:none;flex:none;margin-left:auto;width:40px;height:40px;
   align-items:center;justify-content:center;padding:0;
@@ -312,6 +317,9 @@ a{color:inherit}
     border-bottom:1px solid var(--ln2);padding:4px var(--pad) 20px}
   .barmenu[data-open]{display:flex}
   .bar nav{flex-direction:column;gap:0;margin:0}
+  /* 접힌 메뉴에서는 세로줄이 의미가 없습니다. 위쪽 경계로 갈라 둡니다. */
+  .bar nav.pages{padding-left:0;border-left:0;border-top:1px solid var(--ln2);
+    margin-top:10px;padding-top:4px}
   .bar nav a{padding:13px 0;border-bottom:1px solid var(--ln)}
   /* 접힌 메뉴 안에서도 같은 처리 — 줄바꿈에 맡기면 가로 경계가 두 겹이 됩니다. */
   .barmenu .themes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;
@@ -563,7 +571,10 @@ def main():
   <button class="navtog" id="navtog" type="button"
     aria-expanded="false" aria-controls="barmenu" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>
   <div class="barmenu" id="barmenu">
-    <nav><a href="#foundation">파운데이션</a>{nav}<a href="#agent">에이전트</a><a href="guide.html">사용설명서</a><a href="prompt-builder.html">프롬프트 빌더</a></nav>
+    <nav><a href="#foundation">파운데이션</a>{nav}<a href="#agent">에이전트</a></nav>
+    <nav class="pages" aria-label="다른 페이지">
+      <a href="guide.html">사용설명서</a><a href="prompt-builder.html">프롬프트 빌더</a>
+    </nav>
     <div class="themes" role="group" aria-label="테마 전환">
       {theme_btns}
     </div>
