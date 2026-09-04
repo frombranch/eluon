@@ -38,6 +38,9 @@ jobs:
       - name: 문서 사이트 최신 여부
         run: python3 scripts/build_docs.py --check
 
+      - name: 사용설명서 최신 여부
+        run: python3 scripts/build_guide.py --check
+
       # 실측 현황이 낡으면 "무엇을 더 받아야 하는지" 를 잘못 봅니다.
       - name: 실측 현황 최신 여부
         run: |

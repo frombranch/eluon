@@ -8,7 +8,7 @@
 - 자산 목록 → [`index/ASSETS.md`](./index/ASSETS.md)
 - 몽타주 시트 → [`index/sheet-eluo.png`](./index/sheet-eluo.png)
 
-컴포넌트 30개 · 테마 6종(ELUO / 아틀라스 / 엠버 / 하버 / 타이드랜드 / 코발트) · v1.11.1
+컴포넌트 30개 · 테마 6종(ELUO / 아틀라스 / 엠버 / 하버 / 타이드랜드 / 코발트) · v1.11.2
 
 ---
 
@@ -116,9 +116,9 @@ python3 scripts/check_contrast.py  # 대비비 검사
 자산 URL은 릴리즈 태그에 고정됩니다.
 
 ```bash
-# eluon.config.json 의 version 을 v1.11.1 으로 수정
+# eluon.config.json 의 version 을 v1.11.2 으로 수정
 python3 scripts/build_manifest.py && python3 scripts/build_pb_manifest.py
-git commit -am "release: v1.11.1" && git tag v1.11.1 && git push --tags
+git commit -am "release: v1.11.2" && git tag v1.11.2 && git push --tags
 ```
 
 `@main`을 쓰지 않는 이유: jsDelivr가 브랜치 URL을 길게 캐싱해서, 자산을 교체해도

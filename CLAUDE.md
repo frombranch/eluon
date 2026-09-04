@@ -48,6 +48,8 @@ manifest.json              ← 단일 진실 공급원(SSOT). 항상 여기부�
                               foundationByTheme = 활자(role 포함)·레이아웃·간격·그림자
 docs/eluon.json            ← [생성됨] 프롬프트 빌더가 읽는 변환본. manifest 에서 파생
 docs/prompt-builder.html   ← 프롬프트 빌더. Pages 로 서빙됨
+docs/guide.src.html        ← 사용설명서 본문. 사람이 씀
+docs/guide.html            ← [생성됨] 사용설명서. 버전·개수는 manifest 에서 채움
 tokens/core.json           ← 브랜드 중립 파운데이션
 tokens/theme-eluo.json     ← ELUO 오버라이드 (고객사 테마도 이 형식으로 복제)
 docs/tokens/eluon-*.css    ← [생성됨] 테마별 CSS 변수. 코드에 그대로 붙여 쓴다
@@ -75,9 +77,9 @@ prompts/                   ← 검증된 프롬프트 템플릿
 | `tideland` | 고객사 테마(가명). 테라코타 `#B44E2B`, 라운드 확대 | 해당 고객사 건 — **⛔ 추정값. 대외 제출 금지** |
 | `cobalt` | 고객사 테마(가명). 네이비 `#051469`, 알약 라운드 | 해당 고객사 건 |
 
-> `core`는 v1.11.1에서 **테마 목록에서 뺐습니다.** `tokens/core.json`은 그대로 있습니다 — 모든 테마가 `extends: core`로 이 파일 위에 얹히는 파운데이션이라 지울 수 없습니다. 뺀 것은 "브랜드 없이 파운데이션만 렌더한 결과물"이고, 실제로 고를 일이 없어 혼란만 줬습니다.
+> `core`는 v1.11.2에서 **테마 목록에서 뺐습니다.** `tokens/core.json`은 그대로 있습니다 — 모든 테마가 `extends: core`로 이 파일 위에 얹히는 파운데이션이라 지울 수 없습니다. 뺀 것은 "브랜드 없이 파운데이션만 렌더한 결과물"이고, 실제로 고를 일이 없어 혼란만 줬습니다.
 
-> ⚠️ `ember`는 **가명이라 이름과 색이 다릅니다** — 잉걸불이라는 이름과 달리 실제 브랜드색은 딥그린 `#12503C`입니다. 브랜드색은 언제나 `--color-brand-primary`에서 읽으십시오. (v1.11.1에서는 이 테마 id가 `amber`였는데, `core.json`의 `primitive.amber`(경고색 램프)와 이름이 겹쳐 v1.11.1에서 바꿨습니다.)
+> ⚠️ `ember`는 **가명이라 이름과 색이 다릅니다** — 잉걸불이라는 이름과 달리 실제 브랜드색은 딥그린 `#12503C`입니다. 브랜드색은 언제나 `--color-brand-primary`에서 읽으십시오. (v1.11.2에서는 이 테마 id가 `amber`였는데, `core.json`의 `primitive.amber`(경고색 램프)와 이름이 겹쳐 v1.11.2에서 바꿨습니다.)
 
 ### 테마마다 얼마나 믿을 수 있나
 
@@ -128,7 +130,7 @@ prompts/                   ← 검증된 프롬프트 템플릿
 이미지를 붙이지 말고 **토큰 CSS + spec으로 실제 컴포넌트를 만듭니다.**
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/docs/tokens/eluon-eluo.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.2/docs/tokens/eluon-eluo.css">
 <style>
 .btn-primary-lg{
   height:56px; padding:0 24px; border-radius:var(--radius-lg);
@@ -146,7 +148,7 @@ manifest의 `cdn.<theme>` 값을 그대로 `<img src>`에 씁니다. 손으로 U
 
 ### 경로 C — 저장소 클론 (시각 검수·인라인)
 ```bash
-git clone --depth 1 --branch v1.11.1 https://github.com/frombranch/eluon.git
+git clone --depth 1 --branch v1.11.2 https://github.com/frombranch/eluon.git
 ```
 이미지를 실제로 봐야 할 때, 또는 base64로 인라인해야 할 때만.
 
@@ -175,7 +177,7 @@ git clone --depth 1 --branch v1.11.1 https://github.com/frombranch/eluon.git
 4. `자산ID / 기대값 / 실제값 / 위치 / 심각도` 표로 보고
 5. **자동 수정하지 않는다.** 표만 낸다.
 
-### 페이지를 이루는 덩어리 (v1.11.1)
+### 페이지를 이루는 덩어리 (v1.11.2)
 
 원자만 있고 판이 없으면 화면마다 헤더·히어로·푸터를 새로 그리게 됩니다. `layout` 그룹이 그 자리입니다.
 
@@ -191,7 +193,7 @@ git clone --depth 1 --branch v1.11.1 https://github.com/frombranch/eluon.git
 
 이 덩어리들은 콘텐츠 폭 자체가 규격이라 `spec.width`가 `container.max`를 가리킵니다 — 크기 토큰이 아니라 `semantic.layout` 값입니다.
 
-### 상태를 다루는 법 (v1.11.1)
+### 상태를 다루는 법 (v1.11.2)
 
 `btn-primary-lg-disabled` 같은 항목은 **자산이 아니라 `btn-primary-lg`의 상태 그림**입니다.
 `variantOf`로 부모에 매달려 있어 자산 수(31)에 세지 않고, 몽타주 시트와 빌더 목록에도 나오지 않습니다.
@@ -213,7 +215,7 @@ git clone --depth 1 --branch v1.11.1 https://github.com/frombranch/eluon.git
 python3 scripts/build_tokens.py && python3 scripts/render.py \
   && python3 scripts/build_manifest.py && python3 scripts/build_pb_manifest.py \
   && python3 scripts/make_montage.py && python3 scripts/build_measure.py \
-  && python3 scripts/build_docs.py
+  && python3 scripts/build_docs.py && python3 scripts/build_guide.py
 ```
 
 ---

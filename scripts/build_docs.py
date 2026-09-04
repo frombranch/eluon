@@ -262,6 +262,262 @@ def component_sections(comps, manifest):
     return "".join(html), "\n".join(css)
 
 
+SITE_CSS = """/* ── 문서 사이트 껍데기 (컴포넌트 토큰과 분리) ──────────────────────────
+   무채색 · 헤어라인 그리드 · 대형 영문 그로테스크. 라운드와 그림자는 쓰지 않습니다.
+   컴포넌트 프리뷰 안쪽은 manifest의 spec을 그대로 따르므로 여기서 건드리지 않습니다. */
+:root{
+  --pg:#FFFFFF; --tx:#141414; --tx2:#757575; --ln:#DCDCDC; --ln2:#141414;
+  --pad:clamp(20px,5vw,120px);
+  --disp:'Helvetica Neue',Helvetica,Arial,'Pretendard Variable',Pretendard,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--pg:#0A0A0A;--tx:#F0F0F0;--tx2:#78787E;--ln:#2B2B2B;--ln2:#F0F0F0}
+}
+body{background:var(--pg);color:var(--tx);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo',sans-serif;
+  line-height:1.65;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{padding:0 var(--pad)}
+
+/* 상단 고정 바 */
+.barwrap{position:sticky;top:0;z-index:20;margin:0 calc(var(--pad) * -1)}
+.bar{display:flex;align-items:center;gap:28px;
+  height:66px;padding:0 var(--pad);
+  background:color-mix(in srgb,var(--pg) 88%,transparent);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--ln2)}
+/* 색만 바뀌면 어느 테마를 보고 있는지 알 수 없습니다. 이름과 성격을 글로 답니다. */
+.themestrip{display:flex;align-items:baseline;gap:10px;padding:9px var(--pad);
+  background:color-mix(in srgb,var(--pg) 88%,transparent);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--ln);font-size:12.5px;line-height:1.5;
+  white-space:nowrap;overflow:hidden}
+.themestrip .tskey{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx2);font-weight:700;flex:none}
+.themestrip b{font-weight:700;flex:none}
+.themestrip span.tshint{color:var(--tx2);overflow:hidden;text-overflow:ellipsis}
+.logo{font-family:var(--disp);font-size:19px;font-weight:700;letter-spacing:-.03em;
+  text-decoration:none;flex:none}
+.bar nav{display:flex;gap:24px;flex-wrap:wrap;margin:0 auto}
+.bar nav a{color:var(--tx);text-decoration:none;font-size:14px;font-weight:600}
+.bar nav a:hover{color:var(--tx2)}
+.themes{display:flex;flex:none}
+.navtog{display:none;flex:none;margin-left:auto;width:40px;height:40px;
+  align-items:center;justify-content:center;padding:0;
+  border:1px solid var(--ln2);background:transparent;color:var(--tx);cursor:pointer}
+/* 좁은 화면 — 링크와 테마 전환을 햄버거 안으로 접습니다. */
+@media(max-width:899px){
+  .navtog{display:inline-flex}
+  .barmenu{display:none;position:absolute;top:100%;left:0;right:0;z-index:19;
+    flex-direction:column;background:var(--pg);
+    max-height:calc(100dvh - 66px);overflow-y:auto;
+    border-bottom:1px solid var(--ln2);padding:4px var(--pad) 20px}
+  .barmenu[data-open]{display:flex}
+  .bar nav{flex-direction:column;gap:0;margin:0}
+  .bar nav a{padding:13px 0;border-bottom:1px solid var(--ln)}
+  /* 접힌 메뉴 안에서도 같은 처리 — 줄바꿈에 맡기면 가로 경계가 두 겹이 됩니다. */
+  .barmenu .themes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;
+    border-top:1px solid var(--ln2);border-left:1px solid var(--ln2)}
+  .barmenu .themes button{margin:0;border:0;
+    border-right:1px solid var(--ln2);border-bottom:1px solid var(--ln2)}
+}
+/* 넓은 화면에서는 같은 마크업을 왼쪽 레일로 세웁니다.
+   가로 바에 링크 14개를 늘어놓으면 하나하나가 작아지고 순서가 안 읽힙니다.
+   순서는 고르는 차례 그대로 — 로고 → 테마 → 지금 테마 → 링크. */
+@media(min-width:900px){
+  :root{--pad:clamp(24px,3vw,72px);--rail:236px}
+  .barwrap{position:fixed;top:0;left:0;bottom:0;width:var(--rail);margin:0;
+    display:flex;flex-direction:column;overflow-y:auto;
+    background:var(--pg);border-right:1px solid var(--ln2)}
+  /* 바와 메뉴는 껍데기만 벗겨 레일이 직접 순서를 잡게 합니다. */
+  .bar,.barmenu{display:contents}
+  .logo{order:1;padding:28px 24px 20px}
+  .barwrap .themes{order:2;margin:0 24px;
+    display:grid;grid-template-columns:1fr 1fr;
+    border-top:1px solid var(--ln2);border-left:1px solid var(--ln2)}
+  /* 헤어라인이 겹쳐 두 줄로 보이던 것 — 바깥은 컨테이너가, 안쪽은 칸의 오른쪽·아래만. */
+  .barwrap .themes button{margin:0;border:0;
+    border-right:1px solid var(--ln2);border-bottom:1px solid var(--ln2)}
+  .themestrip{order:3;margin:16px 0 0;padding:14px 24px;
+    flex-direction:column;align-items:flex-start;gap:2px;
+    white-space:normal;overflow:visible;font-size:11.5px;line-height:1.5;
+    border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);backdrop-filter:none}
+  .themestrip span.tshint{overflow:visible;text-overflow:clip;line-height:1.5}
+  .bar nav{order:4;flex-direction:column;gap:0;margin:0;padding:20px 24px 28px;width:auto}
+  .bar nav a{display:block;padding:7px 0;font-size:14px}
+  .wrap{margin-left:var(--rail)}
+  .sec{scroll-margin-top:28px}
+}
+.themes button{font:inherit;font-size:12px;font-weight:700;padding:7px 14px;
+  border:1px solid var(--ln2);background:transparent;color:var(--tx);
+  cursor:pointer;margin-left:-1px}
+.themes button[aria-pressed="true"]{background:var(--ln2);color:var(--pg)}
+
+/* 히어로 */
+header.site{padding:clamp(24px,4.3vh,50px) 0 clamp(72px,11vh,130px)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(40px,7.5vw,112px);
+  line-height:.9;letter-spacing:-.045em;margin:0}
+.hero-b{display:grid;grid-template-columns:1fr;gap:22px 48px;margin-top:clamp(40px,6vh,72px)}
+@media(min-width:900px){.hero-b{grid-template-columns:minmax(240px,1fr) 1.1fr 1.1fr}}
+.lead{font-size:clamp(18px,2vw,23px);font-weight:700;letter-spacing:-.03em;
+  line-height:1.5;margin:0;max-width:24ch}
+.body-t{font-size:14.5px;color:var(--tx2);line-height:1.85;margin:0;max-width:44ch}
+/* 한글은 기본값이 어절 중간에서도 끊깁니다. "만든 자/산" 같은 줄바꿈을 막습니다. */
+.lead,.body-t{word-break:keep-all;text-wrap:pretty}
+/* 문서 사이트도 같은 규칙으로. 한 군데씩 고치면 계속 새어 나옵니다. */
+p,li,dd,h3,h4,.use,.dont,caption{word-break:keep-all;text-wrap:pretty}
+/* 히어로는 폭 제한을 걸지 않습니다. 문장이 짧아 열 안에서 한 줄로 앉습니다. */
+.hero-b .lead,.hero-b .body-t{max-width:none}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  margin:clamp(52px,8vh,88px) 0 0;border-top:1px solid var(--ln2)}
+.meta div{padding:18px 20px 0;border-right:1px solid var(--ln)}
+.meta div:first-child{padding-left:0}
+.meta div:last-child{border-right:0}
+.meta dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx2);font-weight:700}
+.meta dd{margin:8px 0 0;font-family:var(--disp);font-size:clamp(26px,3vw,36px);
+  font-weight:700;letter-spacing:-.03em;line-height:1}
+.meta dd a{text-decoration:none;border-bottom:2px solid var(--tx)}
+
+/* 섹션 머리 */
+.sec{padding:clamp(70px,10vh,120px) 0 0;scroll-margin-top:116px}
+.sec-head{display:grid;grid-template-columns:1fr;gap:24px 48px}
+@media(min-width:900px){.sec-head{grid-template-columns:minmax(240px,1fr) 1.1fr 1.1fr}}
+.sec-head .lbl{display:block;font-size:13px;font-weight:700;padding-bottom:14px;
+  border-bottom:1px solid var(--ln2)}
+.sec-head .col-b{border-top:1px solid var(--ln2);padding-top:20px}
+.sec-head .lbl:empty{display:none}
+/* 3열로 펼쳐질 때만 — 빈 레이블이 자리를 잡아 세 열의 헤어라인이 같은 줄에 놓입니다. */
+@media(min-width:900px){
+  .sec-head .col-b{border-top:0;padding-top:0}
+  .sec-head .lbl:empty{display:block}
+  .sec-head .lbl:empty::before{content:"\\00a0"}
+  .sec-head .col-b p{margin-top:20px}
+}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(44px,7.5vw,96px);
+  line-height:.88;letter-spacing:-.045em;margin:24px 0 0;
+  hyphens:manual;overflow-wrap:break-word}
+h3{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0}
+h4{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx);margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--ln2)}
+/* 표만 있으면 "이 숫자를 어디에 쓰나" 가 안 보입니다. 표 위에 한 줄로 답니다. */
+p.note{font-size:14px;line-height:24px;color:var(--tx2);margin:-4px 0 18px;
+  max-width:76ch;word-break:keep-all;text-wrap:pretty}
+
+/* 상태는 자산이 아니라 부모의 변형입니다. 카드 안에 함께 둡니다. */
+.states-row{margin-top:20px;padding-top:16px;border-top:1px solid var(--ln)}
+.shd{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tx2);margin-bottom:12px}
+.stiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}
+.stile{display:flex;flex-direction:column;gap:6px;min-width:0}
+.slabel{font-size:12px;font-weight:700;color:var(--tx)}
+.stile .preview{margin:0;overflow-x:auto;padding:24px 16px;min-height:0}
+.sid{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--tx2);
+  overflow:hidden;text-overflow:ellipsis}
+
+/* 고르기 → 빌더. 링크만 걸어두면 보러 갔다가 돌아올 길이 없습니다. */
+.pick{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;
+  font-size:12px;color:var(--tx2);cursor:pointer;user-select:none}
+.pick input{width:15px;height:15px;accent-color:var(--tx);cursor:pointer;margin:0}
+.cmp:has(.pickbox:checked){outline:2px solid var(--ln2);outline-offset:8px}
+.cmp:has(.pickbox:checked) .pick{color:var(--tx);font-weight:700}
+.sendbar{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:40;
+  display:flex;align-items:center;gap:16px;max-width:calc(100vw - 32px);
+  background:var(--tx);color:var(--pg);padding:12px 12px 12px 20px;
+}
+.sendbar[hidden]{display:none}
+.sbcount{font-size:13px;white-space:nowrap}
+.sbids{font-family:ui-monospace,Menlo,monospace;font-size:11px;opacity:.6;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:38vw}
+.sbclear,.sbgo{
+  font-family:inherit;font-size:13px;font-weight:600;padding:8px 14px;
+  border:1px solid var(--pg);background:transparent;color:var(--pg);cursor:pointer;
+  text-decoration:none;white-space:nowrap;
+}
+.sbgo{background:var(--pg);color:var(--tx)}
+@media (max-width:640px){ .sbids{display:none} }
+
+/* 표 · 코드 */
+code{font-family:ui-monospace,Menlo,monospace;font-size:.86em;
+  background:none;border:0;padding:0;color:var(--tx2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+caption{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx);font-weight:700;padding-bottom:10px}
+td{padding:8px 12px 8px 0;border-bottom:1px solid var(--ln);vertical-align:top}
+td:last-child{padding-right:0}
+td.n{font-variant-numeric:tabular-nums;color:var(--tx2);text-align:right}
+.tw{overflow-x:auto;border-top:1px solid var(--ln2);margin-top:16px}
+/* 예외 — h4 바로 아래 표는 h4의 선을 쓰고 자기 선을 지웁니다. 검은 선이 두 줄로 겹치지 않게. */
+h4 + .tw{border-top:0;margin-top:0}
+.tw thead td{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2)}
+
+/* 스와치 */
+.swrow{margin-top:44px}
+.swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));
+  border-top:1px solid var(--ln);border-left:1px solid var(--ln)}
+.sw{display:flex;align-items:center;gap:10px;font-size:12px;padding:12px 14px;
+  border-right:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.sw span{width:20px;height:20px;border:1px solid var(--ln);flex:none}
+.sw em{font-style:normal;color:var(--tx2);font-variant-numeric:tabular-nums;margin-left:auto}
+.dot{display:inline-block;width:11px;height:11px;border:1px solid var(--ln);
+  margin-right:7px;vertical-align:-1px}
+
+/* 컴포넌트 */
+.cmps{margin-top:clamp(48px,8vh,88px)}
+.cmp{display:grid;grid-template-columns:1fr;gap:24px;
+  border-top:1px solid var(--ln);padding:32px 0 40px}
+@media(min-width:900px){
+  .cmp{grid-template-columns:240px 1fr;gap:0}
+  .c-body{border-left:1px solid var(--ln);padding-left:44px}
+  .c-meta{padding-right:32px}
+}
+.cid{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;
+  color:var(--tx2);margin:7px 0 0}
+.states{margin:16px 0 0;font-size:11px;font-weight:600;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--tx2);line-height:1.9}
+/* 프리뷰는 spec 대로의 실제 폭을 가집니다. 화면보다 넓으면 페이지가 아니라 이 상자가 스크롤합니다. */
+.c-body{min-width:0}
+.preview{display:flex;align-items:center;justify-content:safe center;min-height:160px;
+  padding:44px 24px;border:1px solid var(--ln);background:#FFFFFF;overflow-x:auto}
+.c-detail{display:grid;grid-template-columns:1fr;gap:26px 40px;margin-top:32px}
+@media(min-width:760px){.c-detail{grid-template-columns:1fr 1fr}}
+@media(min-width:1180px){.c-detail{grid-template-columns:1.2fr 1fr 1fr}}
+.usage p{margin:0 0 16px;font-size:14px;color:var(--tx2);line-height:1.75}
+.usage b{display:block;font-size:11px;letter-spacing:.08em;color:var(--tx);
+  font-weight:700;margin-bottom:4px}
+.specs td{padding:6px 12px 6px 0}
+/* 레일이 생겨 본문이 좁아지면서 드러난 넘침 — 그리드 칸은 기본이 min-width:auto 라
+   표가 칸보다 넓어지면 페이지가 밀립니다. 칸은 줄어들 수 있게, 긴 토큰명은 접히게. */
+.c-detail>*{min-width:0}
+.specs td{overflow-wrap:anywhere}
+.url{margin-top:26px;font-size:12.5px;color:var(--tx2)}
+.url summary{cursor:pointer;font-weight:600;color:var(--tx)}
+.url pre{margin:12px 0 0;padding:14px 16px;border:1px solid var(--ln);
+  overflow-x:auto;font-size:11.5px;font-family:ui-monospace,Menlo,monospace}
+pre.prompt{padding:26px 28px;border:1px solid var(--ln);font-size:13px;line-height:1.85;
+  font-family:ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-x:auto}
+
+/* 맨 위로 — 스크롤이 길어 아래에서 올라올 방법이 필요합니다. */
+.totop{position:fixed;right:clamp(16px,3vw,40px);bottom:clamp(16px,3vw,40px);z-index:30;
+  width:48px;height:48px;display:flex;align-items:center;justify-content:center;padding:0;
+  border:1px solid var(--ln2);background:var(--pg);color:var(--tx);cursor:pointer;
+  opacity:0;transform:translateY(8px);pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease}
+.totop.on{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{background:var(--ln2);color:var(--pg)}
+
+footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
+  border-top:1px solid var(--ln2);font-size:12.5px;color:var(--tx2);
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* 스크롤 등장 */
+[data-r]{opacity:0;transform:translateY(28px);
+  transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+[data-r].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  [data-r]{opacity:1;transform:none;transition:none}
+}"""
+
+
 def main():
     manifest = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     comps = build(CORE)
@@ -295,260 +551,7 @@ def main():
 {BASE_CSS}
 {comp_css}
 
-/* ── 문서 사이트 껍데기 (컴포넌트 토큰과 분리) ──────────────────────────
-   무채색 · 헤어라인 그리드 · 대형 영문 그로테스크. 라운드와 그림자는 쓰지 않습니다.
-   컴포넌트 프리뷰 안쪽은 manifest의 spec을 그대로 따르므로 여기서 건드리지 않습니다. */
-:root{{
-  --pg:#FFFFFF; --tx:#141414; --tx2:#757575; --ln:#DCDCDC; --ln2:#141414;
-  --pad:clamp(20px,5vw,120px);
-  --disp:'Helvetica Neue',Helvetica,Arial,'Pretendard Variable',Pretendard,sans-serif;
-}}
-@media (prefers-color-scheme:dark){{
-  :root{{--pg:#0A0A0A;--tx:#F0F0F0;--tx2:#78787E;--ln:#2B2B2B;--ln2:#F0F0F0}}
-}}
-body{{background:var(--pg);color:var(--tx);
-  font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo',sans-serif;
-  line-height:1.65;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}}
-a{{color:inherit}}
-.wrap{{padding:0 var(--pad)}}
-
-/* 상단 고정 바 */
-.barwrap{{position:sticky;top:0;z-index:20;margin:0 calc(var(--pad) * -1)}}
-.bar{{display:flex;align-items:center;gap:28px;
-  height:66px;padding:0 var(--pad);
-  background:color-mix(in srgb,var(--pg) 88%,transparent);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--ln2)}}
-/* 색만 바뀌면 어느 테마를 보고 있는지 알 수 없습니다. 이름과 성격을 글로 답니다. */
-.themestrip{{display:flex;align-items:baseline;gap:10px;padding:9px var(--pad);
-  background:color-mix(in srgb,var(--pg) 88%,transparent);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--ln);font-size:12.5px;line-height:1.5;
-  white-space:nowrap;overflow:hidden}}
-.themestrip .tskey{{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--tx2);font-weight:700;flex:none}}
-.themestrip b{{font-weight:700;flex:none}}
-.themestrip span.tshint{{color:var(--tx2);overflow:hidden;text-overflow:ellipsis}}
-.logo{{font-family:var(--disp);font-size:19px;font-weight:700;letter-spacing:-.03em;
-  text-decoration:none;flex:none}}
-.bar nav{{display:flex;gap:24px;flex-wrap:wrap;margin:0 auto}}
-.bar nav a{{color:var(--tx);text-decoration:none;font-size:14px;font-weight:600}}
-.bar nav a:hover{{color:var(--tx2)}}
-.themes{{display:flex;flex:none}}
-.navtog{{display:none;flex:none;margin-left:auto;width:40px;height:40px;
-  align-items:center;justify-content:center;padding:0;
-  border:1px solid var(--ln2);background:transparent;color:var(--tx);cursor:pointer}}
-/* 좁은 화면 — 링크와 테마 전환을 햄버거 안으로 접습니다. */
-@media(max-width:899px){{
-  .navtog{{display:inline-flex}}
-  .barmenu{{display:none;position:absolute;top:100%;left:0;right:0;z-index:19;
-    flex-direction:column;background:var(--pg);
-    max-height:calc(100dvh - 66px);overflow-y:auto;
-    border-bottom:1px solid var(--ln2);padding:4px var(--pad) 20px}}
-  .barmenu[data-open]{{display:flex}}
-  .bar nav{{flex-direction:column;gap:0;margin:0}}
-  .bar nav a{{padding:13px 0;border-bottom:1px solid var(--ln)}}
-  /* 접힌 메뉴 안에서도 같은 처리 — 줄바꿈에 맡기면 가로 경계가 두 겹이 됩니다. */
-  .barmenu .themes{{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;
-    border-top:1px solid var(--ln2);border-left:1px solid var(--ln2)}}
-  .barmenu .themes button{{margin:0;border:0;
-    border-right:1px solid var(--ln2);border-bottom:1px solid var(--ln2)}}
-}}
-/* 넓은 화면에서는 같은 마크업을 왼쪽 레일로 세웁니다.
-   가로 바에 링크 14개를 늘어놓으면 하나하나가 작아지고 순서가 안 읽힙니다.
-   순서는 고르는 차례 그대로 — 로고 → 테마 → 지금 테마 → 링크. */
-@media(min-width:900px){{
-  :root{{--pad:clamp(24px,3vw,72px);--rail:236px}}
-  .barwrap{{position:fixed;top:0;left:0;bottom:0;width:var(--rail);margin:0;
-    display:flex;flex-direction:column;overflow-y:auto;
-    background:var(--pg);border-right:1px solid var(--ln2)}}
-  /* 바와 메뉴는 껍데기만 벗겨 레일이 직접 순서를 잡게 합니다. */
-  .bar,.barmenu{{display:contents}}
-  .logo{{order:1;padding:28px 24px 20px}}
-  .barwrap .themes{{order:2;margin:0 24px;
-    display:grid;grid-template-columns:1fr 1fr;
-    border-top:1px solid var(--ln2);border-left:1px solid var(--ln2)}}
-  /* 헤어라인이 겹쳐 두 줄로 보이던 것 — 바깥은 컨테이너가, 안쪽은 칸의 오른쪽·아래만. */
-  .barwrap .themes button{{margin:0;border:0;
-    border-right:1px solid var(--ln2);border-bottom:1px solid var(--ln2)}}
-  .themestrip{{order:3;margin:16px 0 0;padding:14px 24px;
-    flex-direction:column;align-items:flex-start;gap:2px;
-    white-space:normal;overflow:visible;font-size:11.5px;line-height:1.5;
-    border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);backdrop-filter:none}}
-  .themestrip span.tshint{{overflow:visible;text-overflow:clip;line-height:1.5}}
-  .bar nav{{order:4;flex-direction:column;gap:0;margin:0;padding:20px 24px 28px;width:auto}}
-  .bar nav a{{display:block;padding:7px 0;font-size:14px}}
-  .wrap{{margin-left:var(--rail)}}
-  .sec{{scroll-margin-top:28px}}
-}}
-.themes button{{font:inherit;font-size:12px;font-weight:700;padding:7px 14px;
-  border:1px solid var(--ln2);background:transparent;color:var(--tx);
-  cursor:pointer;margin-left:-1px}}
-.themes button[aria-pressed="true"]{{background:var(--ln2);color:var(--pg)}}
-
-/* 히어로 */
-header.site{{padding:clamp(24px,4.3vh,50px) 0 clamp(72px,11vh,130px)}}
-h1{{font-family:var(--disp);font-weight:700;font-size:clamp(40px,7.5vw,112px);
-  line-height:.9;letter-spacing:-.045em;margin:0}}
-.hero-b{{display:grid;grid-template-columns:1fr;gap:22px 48px;margin-top:clamp(40px,6vh,72px)}}
-@media(min-width:900px){{.hero-b{{grid-template-columns:minmax(240px,1fr) 1.1fr 1.1fr}}}}
-.lead{{font-size:clamp(18px,2vw,23px);font-weight:700;letter-spacing:-.03em;
-  line-height:1.5;margin:0;max-width:24ch}}
-.body-t{{font-size:14.5px;color:var(--tx2);line-height:1.85;margin:0;max-width:44ch}}
-/* 한글은 기본값이 어절 중간에서도 끊깁니다. "만든 자/산" 같은 줄바꿈을 막습니다. */
-.lead,.body-t{{word-break:keep-all;text-wrap:pretty}}
-/* 문서 사이트도 같은 규칙으로. 한 군데씩 고치면 계속 새어 나옵니다. */
-p,li,dd,h3,h4,.use,.dont,caption{{word-break:keep-all;text-wrap:pretty}}
-/* 히어로는 폭 제한을 걸지 않습니다. 문장이 짧아 열 안에서 한 줄로 앉습니다. */
-.hero-b .lead,.hero-b .body-t{{max-width:none}}
-.meta{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  margin:clamp(52px,8vh,88px) 0 0;border-top:1px solid var(--ln2)}}
-.meta div{{padding:18px 20px 0;border-right:1px solid var(--ln)}}
-.meta div:first-child{{padding-left:0}}
-.meta div:last-child{{border-right:0}}
-.meta dt{{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--tx2);font-weight:700}}
-.meta dd{{margin:8px 0 0;font-family:var(--disp);font-size:clamp(26px,3vw,36px);
-  font-weight:700;letter-spacing:-.03em;line-height:1}}
-.meta dd a{{text-decoration:none;border-bottom:2px solid var(--tx)}}
-
-/* 섹션 머리 */
-.sec{{padding:clamp(70px,10vh,120px) 0 0;scroll-margin-top:116px}}
-.sec-head{{display:grid;grid-template-columns:1fr;gap:24px 48px}}
-@media(min-width:900px){{.sec-head{{grid-template-columns:minmax(240px,1fr) 1.1fr 1.1fr}}}}
-.sec-head .lbl{{display:block;font-size:13px;font-weight:700;padding-bottom:14px;
-  border-bottom:1px solid var(--ln2)}}
-.sec-head .col-b{{border-top:1px solid var(--ln2);padding-top:20px}}
-.sec-head .lbl:empty{{display:none}}
-/* 3열로 펼쳐질 때만 — 빈 레이블이 자리를 잡아 세 열의 헤어라인이 같은 줄에 놓입니다. */
-@media(min-width:900px){{
-  .sec-head .col-b{{border-top:0;padding-top:0}}
-  .sec-head .lbl:empty{{display:block}}
-  .sec-head .lbl:empty::before{{content:"\\00a0"}}
-  .sec-head .col-b p{{margin-top:20px}}
-}}
-h2{{font-family:var(--disp);font-weight:700;font-size:clamp(44px,7.5vw,96px);
-  line-height:.88;letter-spacing:-.045em;margin:24px 0 0;
-  hyphens:manual;overflow-wrap:break-word}}
-h3{{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0}}
-h4{{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--tx);margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--ln2)}}
-/* 표만 있으면 "이 숫자를 어디에 쓰나" 가 안 보입니다. 표 위에 한 줄로 답니다. */
-p.note{{font-size:14px;line-height:24px;color:var(--tx2);margin:-4px 0 18px;
-  max-width:76ch;word-break:keep-all;text-wrap:pretty}}
-
-/* 상태는 자산이 아니라 부모의 변형입니다. 카드 안에 함께 둡니다. */
-.states-row{{margin-top:20px;padding-top:16px;border-top:1px solid var(--ln)}}
-.shd{{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--tx2);margin-bottom:12px}}
-.stiles{{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}}
-.stile{{display:flex;flex-direction:column;gap:6px;min-width:0}}
-.slabel{{font-size:12px;font-weight:700;color:var(--tx)}}
-.stile .preview{{margin:0;overflow-x:auto;padding:24px 16px;min-height:0}}
-.sid{{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--tx2);
-  overflow:hidden;text-overflow:ellipsis}}
-
-/* 고르기 → 빌더. 링크만 걸어두면 보러 갔다가 돌아올 길이 없습니다. */
-.pick{{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;
-  font-size:12px;color:var(--tx2);cursor:pointer;user-select:none}}
-.pick input{{width:15px;height:15px;accent-color:var(--tx);cursor:pointer;margin:0}}
-.cmp:has(.pickbox:checked){{outline:2px solid var(--ln2);outline-offset:8px}}
-.cmp:has(.pickbox:checked) .pick{{color:var(--tx);font-weight:700}}
-.sendbar{{
-  position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:40;
-  display:flex;align-items:center;gap:16px;max-width:calc(100vw - 32px);
-  background:var(--tx);color:var(--pg);padding:12px 12px 12px 20px;
-}}
-.sendbar[hidden]{{display:none}}
-.sbcount{{font-size:13px;white-space:nowrap}}
-.sbids{{font-family:ui-monospace,Menlo,monospace;font-size:11px;opacity:.6;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:38vw}}
-.sbclear,.sbgo{{
-  font-family:inherit;font-size:13px;font-weight:600;padding:8px 14px;
-  border:1px solid var(--pg);background:transparent;color:var(--pg);cursor:pointer;
-  text-decoration:none;white-space:nowrap;
-}}
-.sbgo{{background:var(--pg);color:var(--tx)}}
-@media (max-width:640px){{ .sbids{{display:none}} }}
-
-/* 표 · 코드 */
-code{{font-family:ui-monospace,Menlo,monospace;font-size:.86em;
-  background:none;border:0;padding:0;color:var(--tx2)}}
-table{{width:100%;border-collapse:collapse;font-size:13.5px}}
-caption{{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--tx);font-weight:700;padding-bottom:10px}}
-td{{padding:8px 12px 8px 0;border-bottom:1px solid var(--ln);vertical-align:top}}
-td:last-child{{padding-right:0}}
-td.n{{font-variant-numeric:tabular-nums;color:var(--tx2);text-align:right}}
-.tw{{overflow-x:auto;border-top:1px solid var(--ln2);margin-top:16px}}
-/* 예외 — h4 바로 아래 표는 h4의 선을 쓰고 자기 선을 지웁니다. 검은 선이 두 줄로 겹치지 않게. */
-h4 + .tw{{border-top:0;margin-top:0}}
-.tw thead td{{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2)}}
-
-/* 스와치 */
-.swrow{{margin-top:44px}}
-.swgrid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));
-  border-top:1px solid var(--ln);border-left:1px solid var(--ln)}}
-.sw{{display:flex;align-items:center;gap:10px;font-size:12px;padding:12px 14px;
-  border-right:1px solid var(--ln);border-bottom:1px solid var(--ln)}}
-.sw span{{width:20px;height:20px;border:1px solid var(--ln);flex:none}}
-.sw em{{font-style:normal;color:var(--tx2);font-variant-numeric:tabular-nums;margin-left:auto}}
-.dot{{display:inline-block;width:11px;height:11px;border:1px solid var(--ln);
-  margin-right:7px;vertical-align:-1px}}
-
-/* 컴포넌트 */
-.cmps{{margin-top:clamp(48px,8vh,88px)}}
-.cmp{{display:grid;grid-template-columns:1fr;gap:24px;
-  border-top:1px solid var(--ln);padding:32px 0 40px}}
-@media(min-width:900px){{
-  .cmp{{grid-template-columns:240px 1fr;gap:0}}
-  .c-body{{border-left:1px solid var(--ln);padding-left:44px}}
-  .c-meta{{padding-right:32px}}
-}}
-.cid{{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;
-  color:var(--tx2);margin:7px 0 0}}
-.states{{margin:16px 0 0;font-size:11px;font-weight:600;letter-spacing:.05em;
-  text-transform:uppercase;color:var(--tx2);line-height:1.9}}
-/* 프리뷰는 spec 대로의 실제 폭을 가집니다. 화면보다 넓으면 페이지가 아니라 이 상자가 스크롤합니다. */
-.c-body{{min-width:0}}
-.preview{{display:flex;align-items:center;justify-content:safe center;min-height:160px;
-  padding:44px 24px;border:1px solid var(--ln);background:#FFFFFF;overflow-x:auto}}
-.c-detail{{display:grid;grid-template-columns:1fr;gap:26px 40px;margin-top:32px}}
-@media(min-width:760px){{.c-detail{{grid-template-columns:1fr 1fr}}}}
-@media(min-width:1180px){{.c-detail{{grid-template-columns:1.2fr 1fr 1fr}}}}
-.usage p{{margin:0 0 16px;font-size:14px;color:var(--tx2);line-height:1.75}}
-.usage b{{display:block;font-size:11px;letter-spacing:.08em;color:var(--tx);
-  font-weight:700;margin-bottom:4px}}
-.specs td{{padding:6px 12px 6px 0}}
-/* 레일이 생겨 본문이 좁아지면서 드러난 넘침 — 그리드 칸은 기본이 min-width:auto 라
-   표가 칸보다 넓어지면 페이지가 밀립니다. 칸은 줄어들 수 있게, 긴 토큰명은 접히게. */
-.c-detail>*{{min-width:0}}
-.specs td{{overflow-wrap:anywhere}}
-.url{{margin-top:26px;font-size:12.5px;color:var(--tx2)}}
-.url summary{{cursor:pointer;font-weight:600;color:var(--tx)}}
-.url pre{{margin:12px 0 0;padding:14px 16px;border:1px solid var(--ln);
-  overflow-x:auto;font-size:11.5px;font-family:ui-monospace,Menlo,monospace}}
-pre.prompt{{padding:26px 28px;border:1px solid var(--ln);font-size:13px;line-height:1.85;
-  font-family:ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-x:auto}}
-
-/* 맨 위로 — 스크롤이 길어 아래에서 올라올 방법이 필요합니다. */
-.totop{{position:fixed;right:clamp(16px,3vw,40px);bottom:clamp(16px,3vw,40px);z-index:30;
-  width:48px;height:48px;display:flex;align-items:center;justify-content:center;padding:0;
-  border:1px solid var(--ln2);background:var(--pg);color:var(--tx);cursor:pointer;
-  opacity:0;transform:translateY(8px);pointer-events:none;
-  transition:opacity .25s ease,transform .25s ease}}
-.totop.on{{opacity:1;transform:none;pointer-events:auto}}
-.totop:hover{{background:var(--ln2);color:var(--pg)}}
-
-footer{{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
-  border-top:1px solid var(--ln2);font-size:12.5px;color:var(--tx2);
-  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}}
-
-/* 스크롤 등장 */
-[data-r]{{opacity:0;transform:translateY(28px);
-  transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}}
-[data-r].in{{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){{
-  [data-r]{{opacity:1;transform:none;transition:none}}
-}}
+{SITE_CSS}
 </style>
 </head>
 <body>
@@ -560,7 +563,7 @@ footer{{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
   <button class="navtog" id="navtog" type="button"
     aria-expanded="false" aria-controls="barmenu" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>
   <div class="barmenu" id="barmenu">
-    <nav><a href="#foundation">파운데이션</a>{nav}<a href="#agent">에이전트</a></nav>
+    <nav><a href="#foundation">파운데이션</a>{nav}<a href="#agent">에이전트</a><a href="guide.html">사용설명서</a><a href="prompt-builder.html">프롬프트 빌더</a></nav>
     <div class="themes" role="group" aria-label="테마 전환">
       {theme_btns}
     </div>

@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eluon — 사용설명서</title>
+<meta name="description" content="Eluon 디자인 시스템 사용설명서. v1.11.2 기준.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<div class="gbar">
+  <a class="logo" href="index.html">eluon</a>
+  <nav>
+    <a href="index.html">디자인 시스템</a>
+    <a href="prompt-builder.html">프롬프트 빌더</a>
+    <a href="guide.html" aria-current="page">사용설명서</a>
+  </nav>
+</div>
+
+
+
+<style>
+:root{
+  --paper:#FFFFFF;
+  --ink:#141414;
+  --mist:#F5F5F5;
+  --hair:#E2E2E2;
+  --rule:#141414;
+  --muted:#5A5A5A;
+  --faint:#9D9D9D;
+  --accent:#000080;
+  --accent-soft:#EDEEF7;
+  --warn:#7C4E00;
+  --warn-soft:#FDF6E8;
+  --sans:"Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#141414;
+    --ink:#F2F2F2;
+    --mist:#1E1E1E;
+    --hair:#333333;
+    --rule:#4A4A4A;
+    --muted:#A8A8A8;
+    --faint:#767676;
+    --accent:#8FAAF5;
+    --accent-soft:#1B2033;
+    --warn:#E0B457;
+    --warn-soft:#2A2113;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141414;
+  --ink:#F2F2F2;
+  --mist:#1E1E1E;
+  --hair:#333333;
+  --rule:#4A4A4A;
+  --muted:#A8A8A8;
+  --faint:#767676;
+  --accent:#8FAAF5;
+  --accent-soft:#1B2033;
+  --warn:#E0B457;
+  --warn-soft:#2A2113;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:15px;line-height:25px;letter-spacing:-.16px;
+  -webkit-font-smoothing:antialiased;
+}
+[data-lucide]{stroke-width:1.2}
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:48px}
+@media (max-width:720px){.wrap{padding-inline:20px}}
+
+/* ── 머리 ── */
+header{padding:96px 0 40px}
+h1{font-size:56px;font-weight:700;line-height:1.15;letter-spacing:-2.24px;text-wrap:balance}
+.tagline{margin-top:24px;max-width:62ch;color:var(--muted);font-size:17px;line-height:29px}
+.stamp{
+  margin-top:32px;padding-top:20px;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:8px 32px;
+  font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:0;
+}
+.stamp b{color:var(--muted);font-weight:500}
+
+/* ── 절 ── */
+section{padding:64px 0;border-top:1px solid var(--hair)}
+section:first-of-type{border-top:0}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+h2{font-size:32px;font-weight:700;line-height:1.3;letter-spacing:-1.28px;text-wrap:balance}
+h3{font-size:19px;font-weight:700;line-height:1.4;letter-spacing:-.4px;margin-top:40px}
+h4{font-size:15px;font-weight:700;line-height:24px;margin-top:28px}
+p{margin-top:16px;max-width:68ch}
+p.lead{margin-top:20px;font-size:17px;line-height:29px;color:var(--muted);max-width:64ch}
+strong{font-weight:700}
+code{font-family:var(--mono);font-size:.88em;background:var(--mist);padding:2px 5px;letter-spacing:0}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ── 흐름도 ── */
+.flow{
+  display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin-top:32px;
+  border:1px solid var(--rule);
+}
+.flow .node{
+  flex:1 1 150px;min-width:0;padding:20px 18px;
+  border-right:1px solid var(--hair);display:flex;flex-direction:column;gap:8px;
+}
+.flow .node:last-child{border-right:0}
+.flow .node.is-tool{background:var(--mist)}
+.flow .n{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:0}
+.flow .t{font-size:14px;font-weight:700;line-height:21px}
+.flow .d{font-size:13px;line-height:21px;color:var(--muted)}
+.flow .who{
+  margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:0;
+  color:var(--accent);
+}
+@media (max-width:720px){
+  .flow .node{border-right:0;border-bottom:1px solid var(--hair)}
+  .flow .node:last-child{border-bottom:0}
+}
+
+/* ── 표 ── */
+.scroller{overflow-x:auto;margin-top:24px;border-top:1px solid var(--rule)}
+table{width:100%;border-collapse:collapse;font-size:14px;line-height:22px}
+th{
+  text-align:left;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);padding:14px 16px 14px 0;border-bottom:1px solid var(--rule);
+  white-space:nowrap;
+}
+td{padding:16px 16px 16px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+td code{white-space:nowrap}
+.num{font-variant-numeric:tabular-nums}
+
+/* ── 단계 ── */
+.steps{margin-top:32px;border-top:1px solid var(--rule)}
+.step{display:flex;gap:28px;padding:28px 0;border-bottom:1px solid var(--hair)}
+.step .no{
+  flex:none;width:32px;font-family:var(--mono);font-size:13px;color:var(--faint);
+  letter-spacing:0;padding-top:2px;
+}
+.step .body{flex:1;min-width:0}
+.step .body > p:first-child{margin-top:0}
+@media (max-width:600px){.step{flex-direction:column;gap:8px}.step .no{width:auto}}
+
+/* ── 코드 블록 ── */
+pre{
+  margin-top:20px;background:var(--ink);color:var(--paper);padding:20px 22px;
+  overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:22px;letter-spacing:0;
+}
+:root[data-theme="dark"] pre,
+:root:not([data-theme="light"]) pre{background:#000;color:#EDEDED}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) pre{background:var(--ink);color:#FFF}}
+
+/* ── 주의 박스 ── */
+.note{
+  margin-top:24px;padding:18px 20px;border-left:2px solid var(--accent);
+  background:var(--accent-soft);font-size:14px;line-height:24px;
+}
+.note.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+.note b{display:block;margin-bottom:4px}
+.note p{margin-top:8px;max-width:none}
+
+/* ── 정의 목록 ── */
+.defs{margin-top:24px;border-top:1px solid var(--rule)}
+.def{padding:20px 0;border-bottom:1px solid var(--hair)}
+.def .k{font-size:15px;font-weight:700;line-height:24px}
+.def .k span{font-family:var(--mono);font-size:12px;color:var(--faint);margin-left:10px;letter-spacing:0;font-weight:400}
+.def .v{margin-top:6px;font-size:14px;line-height:23px;color:var(--muted);max-width:70ch}
+.def .v em{font-style:normal;color:var(--ink);font-weight:500}
+
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:0;
+  padding:2px 7px;border:1px solid var(--hair);color:var(--muted);white-space:nowrap;
+}
+footer{padding:56px 0 96px;border-top:1px solid var(--rule);margin-top:64px;
+  font-size:13px;line-height:23px;color:var(--faint)}
+footer p{max-width:68ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* 상단 바 — docs/index.html 과 같은 모양. 설명서가 사이트의 일부로 읽히게 합니다. */
+.gbar{
+  position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:28px;
+  height:64px;padding:0 clamp(20px,5vw,120px);
+  background:var(--paper);border-bottom:1px solid var(--rule);
+}
+.gbar .logo{
+  font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:-.04em;
+  color:var(--ink);text-decoration:none;
+}
+.gbar nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+.gbar nav a{
+  font-size:13px;font-weight:700;color:var(--muted);text-decoration:none;
+  white-space:nowrap;letter-spacing:-.01em;
+}
+.gbar nav a:hover{color:var(--ink)}
+.gbar nav a[aria-current=page]{color:var(--ink)}
+@media (max-width:640px){
+  .gbar{gap:16px;height:56px}
+  .gbar nav{gap:14px}
+  .gbar nav a{font-size:12px}
+}
+</style>
+
+
+
+<div class="wrap">
+
+<header>
+  <h1>Eluon 사용설명서</h1>
+  <p class="tagline">디자인 시스템을 코드로 만들고, GitHub에 올리고, 자산 파일로 바꿔서, 빌더로 프롬프트를 뽑기까지. 각 단계에서 무엇이 무엇을 만드는지와, 빌더 화면의 설정이 각각 무엇을 바꾸는지를 적었습니다.</p>
+  <div class="stamp">
+    <span><b>대상</b> Eluon v1.11.2 · 컴포넌트 36개(상태 5개 별도) · 테마 6종</span>
+    <span><b>저장소</b> github.com/frombranch/eluon</span>
+    <span><b>빌더</b> frombranch.github.io/eluon/prompt-builder.html</span>
+  </div>
+</header>
+
+<section>
+  <p class="eyebrow">전체 그림</p>
+  <h2>무엇이 무엇을 만드는가</h2>
+  <p class="lead">이 시스템에서 사람이 직접 쓰는 파일은 딱 둘입니다. 나머지는 전부 그 둘에서 자동으로 나옵니다. 이 사실 하나만 잡고 있으면 나머지가 다 따라옵니다.</p>
+
+  <div class="flow">
+    <div class="node">
+      <span class="n">01</span>
+      <span class="t">레시피</span>
+      <span class="d">버튼 높이 56, 라운드 lg 같은 규격을 파이썬 dict로 적습니다.</span>
+      <span class="who">사람이 씀</span>
+    </div>
+    <div class="node">
+      <span class="n">02</span>
+      <span class="t">파이프라인</span>
+      <span class="d">스크립트 9개가 CSS·PNG·manifest·문서를 한꺼번에 만듭니다.</span>
+      <span class="who">자동</span>
+    </div>
+    <div class="node">
+      <span class="n">03</span>
+      <span class="t">manifest.json</span>
+      <span class="d">자산 36개의 규격·토큰·용도. 수치·활자·레이아웃·조판이 테마별로 갈라져 담깁니다.</span>
+      <span class="who">자동</span>
+    </div>
+    <div class="node">
+      <span class="n">04</span>
+      <span class="t">eluon.json</span>
+      <span class="d">manifest를 빌더가 읽는 형식으로 옮긴 변환본.</span>
+      <span class="who">자동</span>
+    </div>
+    <div class="node is-tool">
+      <span class="n">05</span>
+      <span class="t">프롬프트 빌더</span>
+      <span class="d">조건을 고르면 자산 계약을 지키는 프롬프트가 나옵니다.</span>
+      <span class="who">사람이 씀</span>
+    </div>
+    <div class="node is-tool">
+      <span class="n">06</span>
+      <span class="t">Claude</span>
+      <span class="d">그 프롬프트를 받아 실제 시안 HTML을 만듭니다.</span>
+      <span class="who">사람이 씀</span>
+    </div>
+  </div>
+
+  <h3>왜 이렇게 만들었나</h3>
+  <p>보통의 UI 킷은 피그마 파일과 이미지를 줍니다. 그러면 <strong>이미지와 규격이 따로 놉니다.</strong> 버튼 높이를 56에서 52로 바꾸려면 피그마에서 다시 뽑고, 이미지 파일을 갈아끼우고, 문서의 숫자도 고쳐야 합니다. 셋 중 하나만 빠뜨리면 어긋납니다.</p>
+  <p>Eluon은 <strong>규격을 코드에 적으면 이미지가 나옵니다.</strong> 한 곳을 고치면 CSS·PNG·문서가 같이 바뀝니다. 어긋날 방법이 없습니다.</p>
+  <p>그리고 이 시스템의 진짜 독자는 사람이 아니라 <strong>AI 에이전트</strong>입니다. 그래서 각 자산에 규격뿐 아니라 <em>언제 쓰는지</em>(<code>usage</code>)와 <em>언제 쓰면 안 되는지</em>(<code>dont</code>)가 같이 적혀 있습니다. 에이전트가 고를 근거가 되라고 넣은 것입니다.</p>
+
+  <div class="note">
+    <b>사람이 고치는 파일은 둘뿐입니다</b>
+    <code>tokens/</code>(색·라운드·타이포) 와 <code>recipes/components.py</code>(컴포넌트 정의).
+    <p><code>manifest.json</code>·<code>docs/</code>·<code>index/</code>·모든 PNG는 <strong>생성물</strong>입니다. 손으로 고치면 다음 빌드에 되돌아갑니다.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">1부 · 디자인 시스템</p>
+  <h2>저장소에 무엇이 들어 있나</h2>
+
+  <div class="scroller">
+    <table>
+      <thead><tr><th>경로</th><th>무엇</th><th>누가 고치나</th></tr></thead>
+      <tbody>
+        <tr><td><code>tokens/core.json</code></td><td>브랜드 중립 파운데이션. 모든 테마가 이 위에 얹힙니다</td><td>사람</td></tr>
+        <tr><td><code>tokens/theme-*.json</code></td><td>테마별 색·라운드·<strong>크기</strong> 덮어쓰기 = 그 고객의 데이터</td><td>사람</td></tr>
+        <tr><td><code>recipes/components.py</code></td><td>컴포넌트 정의. 규격이 곧 CSS이고 곧 이미지입니다</td><td>사람</td></tr>
+        <tr><td><code>eluon.config.json</code></td><td>조직·저장소·버전·테마 목록</td><td>사람</td></tr>
+        <tr><td><code>manifest.json</code></td><td>자산 36개. <code>spec</code>=토큰 이름 · <code>specByTheme</code>=테마별 실제 수치</td><td>자동</td></tr>
+        <tr><td><code>docs/tokens/eluon-*.css</code></td><td>테마별 CSS 변수. 시안에 그대로 붙여 씁니다</td><td>자동</td></tr>
+        <tr><td><code>docs/eluon.json</code></td><td>빌더가 읽는 변환본</td><td>자동</td></tr>
+        <tr><td><code>docs/prompt-builder.html</code></td><td>프롬프트 빌더 자체</td><td>사람</td></tr>
+        <tr><td><code>assets/components/</code></td><td>테마별 @2x PNG + 사이드카 JSON</td><td>자동</td></tr>
+        <tr><td><code>index/sheet-*.png</code></td><td>36개가 라벨과 함께 든 몽타주 시트. 상태 변형은 빠져 있습니다</td><td>자동</td></tr>
+        <tr><td><code>CLAUDE.md</code></td><td>에이전트가 먼저 읽는 작업 계약서</td><td>사람</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>테마 = 그 고객의 데이터</h3>
+  <p class="lead">우리는 대행사입니다. 작업 기준은 고객 데이터여야 합니다. 그래서 테마는 색만이 아니라 <strong>색 · 라운드 · 크기</strong>를 갖습니다. 같은 <code>btn-primary-lg</code>라도 고객사마다 높이와 패딩이 다르게 렌더됩니다.</p>
+
+  <div class="scroller">
+    <table>
+      <thead><tr><th>무엇</th><th>어디서 오나</th><th>고객사마다 다른가</th></tr></thead>
+      <tbody>
+        <tr><td>색</td><td><code>semantic.color</code></td><td><strong>예</strong></td></tr>
+        <tr><td>라운드</td><td><code>semantic.radius</code></td><td><strong>예</strong></td></tr>
+        <tr><td>높이 · 패딩 · 폭 · 간격</td><td><code>semantic.size</code></td><td><strong>예</strong></td></tr>
+        <tr><td>타이포 스케일</td><td><code>typography</code></td><td>아니오 — 공유</td></tr>
+        <tr><td>그림자</td><td><code>semantic.elevation</code></td><td>아니오 — 공유</td></tr>
+        <tr><td>컴포넌트 목록 · 절차</td><td>레시피 · 파이프라인</td><td>아니오 — 공유</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>즉 <strong>공유되는 것은 "무엇이 있는가"와 "어떻게 만드는가"</strong>이고, <strong>값은 고객사가 갖습니다.</strong></p>
+
+  <div class="scroller">
+    <table>
+      <thead><tr><th>id</th><th>브랜드색</th><th>라운드 sm/md/lg/xl</th><th>주요 버튼</th><th>카드 폭</th></tr></thead>
+      <tbody>
+        <tr><td><code>eluo</code></td><td>네이비 <span class="num">#000080</span></td><td class="num">4 / 6 / 8 / 12</td><td class="num">h56 · padX24</td><td class="num">320</td></tr>
+        <tr><td><code>atlas</code></td><td>딥네이비 <span class="num">#001F45</span></td><td class="num">2 / 4 / 4 / 14</td><td class="num">h56 · padX24</td><td class="num">345</td></tr>
+        <tr><td colspan="5" style="color:var(--warn);font-size:13px;line-height:22px;padding-top:0"><strong>↑ atlas의 h56 · padX24는 고객사 값이 아닙니다.</strong> 원본 실측이 보류 상태라 Eluon 기본값을 쓰고 있습니다. 카드 폭 345와 라운드만 고객사 값입니다.</td></tr>
+        <tr><td><code>ember</code></td><td>딥그린 <span class="num">#12503C</span></td><td class="num">2 / 2 / 2 / 3</td><td class="num">h52 · padX44</td><td class="num">287.5</td></tr>
+        <tr><td><code>harbor</code></td><td>웜 토프 <span class="num">#816C58</span></td><td class="num">0 / 4 / 4 / 4</td><td class="num">h56 · padX40</td><td>—</td></tr>
+        <tr><td><code>tideland</code></td><td>테라코타 <span class="num">#B44E2B</span></td><td class="num">8 / 14 / 20 / 28</td><td class="num">h56 · padX24</td><td class="num">320</td></tr>
+        <tr><td colspan="5" style="color:var(--warn);font-size:13px;line-height:22px;padding-top:0"><strong>↑ tideland는 색조차 추정값입니다.</strong> BI 가이드도 기존 사이트도 없이 브랜드 맥락만으로 도출했습니다. 치수는 실측 축이 하나도 없어 전부 Eluon 기본값입니다. 대외 제출물에 쓰지 마십시오.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><code>ember</code>의 <span class="num">h52 · padX44</span>와 <span class="num">287.5</span>는 <strong>고객사 화면에서 실제로 잰 값</strong>입니다. 원본 피그마 좌표로 14개 값을 역산 대조해 전부 일치를 확인했습니다. 자산 36개 중 <strong>27개가 테마마다 치수가 다릅니다.</strong></p>
+
+  <h4>그래서 spec 읽는 법이 바뀌었습니다 <span class="tag">v1.1.0</span></h4>
+  <p>치수가 테마마다 다르므로, <code>manifest.json</code>의 <code>spec</code>은 <strong>토큰 이름</strong>만 말하고 실제 수치는 <code>specByTheme</code>에 테마별로 들어 있습니다.</p>
+  <pre>"spec": { "height": "control.lg.height", "paddingX": "control.lg.paddingX" }
+
+"specByTheme": {
+  "eluo":  { "height": 56, "paddingX": 24 },
+  "atlas": { "height": 56, "paddingX": 24 },
+  "ember": { "height": 52, "paddingX": 44 }    ← 고객사 실측
+}</pre>
+  <div class="note warn">
+    <b>테마를 모르면 규격도 모릅니다</b>
+    <strong>"버튼 높이가 몇이냐"에 테마 없이는 답할 수 없습니다.</strong> 그래서 일관성 QA 절차의 1단계가 <em>테마 확정</em>입니다. (QA는 빌더 버튼에서는 빠졌습니다 — 절차는 <code>CLAUDE.md</code> §4에 그대로 있어 에이전트에게 직접 시킵니다.) 대조할 기준은 <code>spec</code>이 아니라 <code>specByTheme.&lt;테마&gt;</code>입니다.
+    <p>빌더도 마찬가지입니다 — 자산을 미리 지정하면 <strong>고른 테마의 수치</strong>가 프롬프트에 실립니다.</p>
+  </div>
+
+  <h4>고객사에 있는 축이 우리에게 없으면, 토큰을 늘립니다 <span class="tag">v1.1.1</span></h4>
+  <p>탭이 실제 사례입니다. 같은 간격처럼 보여도 <strong>간격을 만드는 방식이 달랐습니다.</strong></p>
+  <pre>Eluon 기본   항목 패딩 없음 · gap 28 로 벌림
+원본         항목마다 좌우 22 · 항목끼리는 붙임 (gap 0)</pre>
+  <p><code>gap</code>만 0으로 맞추면 라벨이 서로 붙어버립니다. <strong>"항목 좌우 패딩"이라는 축이 Eluon에 아예 없었기 때문</strong>입니다. 그래서 <code>tab.itemPaddingX</code> 토큰을 새로 만들고 기본값을 0으로 뒀습니다 — 기본이 0이라 기존 테마 렌더는 한 픽셀도 안 바뀝니다.</p>
+  <div class="note">
+    <b>고객사 값이 안 들어가면 값을 구부리지 말고 축을 늘리십시오</b>
+    비슷한 숫자로 억지로 맞추면 그때는 비슷해 보여도 다음 화면에서 어긋납니다. 새 토큰의 <strong>기본값을 0이나 현재 값으로 두면</strong> 기존 테마는 그대로이고 그 고객사만 달라집니다.
+  </div>
+
+  <h4>테마로는 못 바꾸는 것 — 구조</h4>
+  <p>크기까지 테마가 갖게 됐지만, <strong>구조는 여전히 수치가 아닙니다.</strong> <code>atlas</code> 테마 파일에 실제 사례가 적혀 있습니다.</p>
+  <div class="note">
+    원본의 주요 버튼은 <strong>흰 배경 + 검정 1px 테두리</strong>인데 Eluon의 <code>btn-primary</code>는 <strong>채움형</strong>입니다. 채움이냐 테두리냐는 토큰으로 안 담깁니다. 이럴 때는 <code>btn-outline-lg</code> 같은 다른 자산을 쓰거나 새 컴포넌트를 만듭니다.
+  </div>
+
+  <h4>값은 피그마에서도, 웹사이트에서도 뽑습니다</h4>
+  <p>고객사 피그마를 못 받았어도 <strong>공개 웹사이트가 있으면 거기서 뽑습니다.</strong> 브라우저가 계산한 값은 설계값이 아니라 실제로 그려진 값이라, 오히려 정확한 축도 있습니다. <code>harbor</code>가 그렇게 만든 테마입니다.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th></th><th>피그마</th><th>웹사이트</th></tr></thead>
+      <tbody>
+        <tr><td>치수</td><td>설계값. 오토레이아웃 계산 잔여값이 섞임</td><td><strong>실제 렌더값</strong></td></tr>
+        <tr><td>상태 (hover · error)</td><td>프레임이 있으면 읽힘</td><td>강제로 만들어야 읽힘</td></tr>
+        <tr><td><code>usage</code> · <code>dont</code></td><td>레이어 이름·설명에 남아 있음</td><td><strong>없음 — 사람이 채워야 함</strong></td></tr>
+        <tr><td>미출시 화면</td><td>있음</td><td>없음</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note warn">
+    <b>뷰포트 비례 사이트는 기준 폭을 정하고 환산해야 합니다</b>
+    <code>harbor</code>의 원본이 그랬습니다 — <code>html { font-size: calc(0px + 0.520833vw) }</code>라 화면 폭에 따라 모든 수치가 연속으로 변합니다. 측정 창이 1038px이라 루트가 6.24px로 잡혀 <strong>처음엔 폰트가 6.24px로 나왔습니다.</strong> 1920 기준으로 환산해서야 제 값이 됐습니다.
+    <p>그리고 <strong>리뉴얼 제안이면 현재 사이트는 바꿀 대상이지 따를 기준이 아닐 수 있습니다.</strong> 기준으로 삼기 전에 확인하십시오.</p>
+  </div>
+  <div class="note">
+    <b>원본을 그대로 옮기지 않는 경우가 있습니다 — 접근성</b>
+    <code>harbor</code> 원본의 연한 회색 <code>#999999</code>는 흰 배경 대비 <span class="num">2.85:1</span>로 본문 기준(4.5)뿐 아니라 UI 경계 기준(3.0)도 못 넘깁니다. 그대로 넣지 않고 <code>text.tertiary</code>는 <span class="num">#666666</span>, <code>border.default</code>는 3:1을 넘는 가장 밝은 값 <span class="num">#939393</span>을 넣었습니다. <strong>무엇을 왜 바꿨는지는 테마 파일의 <code>$measured</code>에 적습니다.</strong>
+  </div>
+
+  <h4>실측 기록이 없는 축은 비워 둡니다</h4>
+  <p>고객사 원본에 대응 요소가 없으면 <strong>지어내지 않고</strong> core 기본값을 씁니다. 무엇을 옮겼고 무엇을 안 옮겼는지는 각 테마 파일의 <code>$measured</code>에 적습니다. <code>ember</code>는 입력 필드·모달·토스트·테이블에, <code>harbor</code>는 카드·입력 필드·테이블 등에 원본이 없어 기본값을 쓰고 있습니다.</p>
+  <div class="note warn">
+    <b>기본값을 실측으로 오해하지 마십시오</b>
+    <code>specByTheme</code>는 실측값이든 기본값이든 <strong>똑같이 숫자로 보입니다.</strong> 어느 쪽인지는 테마 파일의 <code>$measured</code>에만 적혀 있습니다.
+    <p>지금 <code>atlas</code>가 그 상태입니다 — 색·라운드·카드 폭은 고객사 값이지만 버튼 높이·패딩·칩·배지·탭은 Eluon 기본값입니다. <strong>정확한 재현이 필요한 작업이면 원본 실측이 먼저입니다.</strong></p>
+  </div>
+
+  <div class="note warn">
+    <b>가명은 이름과 색이 다릅니다</b>
+    고객사 테마의 id는 고객사를 특정할 수 없게 지은 <strong>가명</strong>입니다. <code>ember</code>는 잉걸불이라는 뜻이지만 실제 색은 딥그린입니다. <strong>브랜드색은 이름으로 짐작하지 말고 언제나 <code>--color-brand-primary</code>에서 읽으십시오.</strong> 어느 고객사인지는 저장소가 아니라 로컬 private 노트에 있습니다.
+  </div>
+
+  <h3>테마마다 얼마나 믿을 수 있나 <span class="tag">v1.11.0</span></h3>
+  <p class="lead"><code>$measured</code>는 산문이라 <strong>사람이 읽어야 알고, 안 적힌 축은 아예 보이지 않았습니다.</strong> "아틀라스는 25축 중 1축만 실측" 같은 상태를 파악할 방법이 없었습니다.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>상태</th><th>뜻</th><th>지금</th></tr></thead>
+      <tbody>
+        <tr><td><code>measured</code></td><td>색·치수 모두 실측</td><td><code>eluo</code></td></tr>
+        <tr><td><code>partial</code></td><td>색은 실측, 치수는 일부만. 안 잰 축은 우리 기본값</td><td><code>atlas</code> <code>ember</code> <code>harbor</code> <code>cobalt</code></td></tr>
+        <tr><td><code>estimated</code></td><td><strong>색부터 추정. 대외 제출물에 쓰지 않습니다</strong></td><td><code>tideland</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>모든 고객사 테마가 <code>$status</code>를 갖습니다. 없거나 값이 이상하면 <strong>빌드가 실패합니다.</strong> <code>$measured</code>가 비어 있어도 실패합니다.</p>
+
+  <div class="note warn">
+    <b>추정 테마는 프롬프트 맨 앞에서 막습니다</b>
+    <code>estimated</code> 테마를 고르면 프롬프트 첫머리에 이렇게 실립니다 — <em>"⛔ 이 테마는 실측이 아니라 추정이야. 내부 검토용으로만 쓰고, 대외 제출물에는 쓰지 마. 결과 맨 위에 '추정 테마로 만든 시안'이라고 적어줘."</em>
+    <p>실측 경고(⚠)보다 <strong>앞</strong>에 세웠습니다. 뒤에 묻히면 그대로 제출됩니다. 빌더 화면의 테마 설명줄에도 같은 경고가 붙습니다.</p>
+  </div>
+
+  <h4>무엇을 더 받아야 하는지 <code>index/MEASURE.md</code></h4>
+  <p><code>build_measure.py</code>가 core의 축 목록과 테마가 실제로 덮어쓴 것을 대조해 <strong>빠진 축을 체크리스트로</strong> 냅니다. 축마다 무엇을 받아야 하는지 한 줄로 적혀 있어 <strong>그대로 요청서로 씁니다.</strong></p>
+  <pre>| 테마     | 상태      | 치수         |
+| eluo     | 실측      | 기본값이 정답 |
+| atlas    | 일부 실측 | 1/25         |
+| ember    | 일부 실측 | 6/25         |
+| harbor   | 일부 실측 | 5/25         |
+| tideland | 추정      | 0/25         |
+| cobalt   | 일부 실측 | 3/25         |
+
+### 더 받아야 하는 것 — 치수 24축
+- [ ] 입력 필드 — 입력 필드 높이·좌우 패딩·폭
+- [ ] 버튼 — 버튼 3단(대·중·소)의 높이와 좌우 패딩
+...</pre>
+  <p>치수 밖(레이아웃·활자·폰트)도 함께 나옵니다. <strong>고객사명은 들어가지 않습니다</strong> — 가명과 축 이름뿐이라 공개 저장소에 둡니다.</p>
+
+  <h3>반응형도 자산이 갖습니다 <span class="tag">v1.4.0</span></h3>
+  <p class="lead">좁은 폭에서 어떻게 접히는지가 <strong>자산마다 정해져 있습니다.</strong> 화면마다 다르게 접히면 시스템이 아니라서 한 표에 모아 뒀습니다.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>동작</th><th>무엇</th><th>어떤 자산에</th></tr></thead>
+      <tbody>
+        <tr><td><code>fill</code></td><td>폭을 100%로</td><td>고정폭 카드·입력·토스트·모달·주요 버튼</td></tr>
+        <tr><td><code>toCard</code></td><td>표를 카드 목록으로</td><td><code>table-basic-lg</code></td></tr>
+        <tr><td><code>scrollX</code></td><td>가로 스크롤로</td><td>탭·페이지네이션 — 순서가 의미 있는 것</td></tr>
+        <tr><td><code>stack</code> <span class="tag">v1.8.0</span></td><td>가로 칼럼을 세로로 쌓기</td><td>히어로·CTA 띠·푸터·목록 행</td></tr>
+        <tr><td><code>menuNav</code> <span class="tag">v1.8.0</span></td><td>메뉴를 접어 토글 버튼으로</td><td><code>header-gnb-lg</code></td></tr>
+        <tr><td>(없음)</td><td>그대로 둠</td><td>폭이 hug 인 칩·배지·토글 등</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>브레이크포인트도 <strong>고객사가 갖습니다.</strong> <code>semantic.breakpoint</code>(기본 sm 480 · md 768 · lg 1024)를 테마가 덮어쓸 수 있습니다 — 실제로 고객사마다 다릅니다.</p>
+  <pre>"responsive":        { "md": "toCard" }          ← 토큰 이름
+"responsiveByTheme": { "eluo": { "768": "toCard" } }  ← 테마별 실제 px</pre>
+  <div class="note warn">
+    <b>규칙이 없으면 1440 고정폭 시안이 나옵니다</b>
+    실제로 겪었습니다 — 받아본 시안에 <code>@media</code>가 <strong>0곳</strong>, <code>repeat(4,1fr)</code>이 4곳이라 모바일에서도 4열이었고 375px에서 전부 넘쳤습니다.
+    <p>시스템이 알고는 있었습니다. <code>table-basic-lg</code>의 <code>dont</code>에 <em>"모바일에서 그대로 쓰지 않음. 카드로 전환"</em>이 적혀 있었는데, <strong>산문이라 검사할 수가 없었습니다.</strong> 지금은 프롬프트가 자산별 규칙을 싣고 QA가 대조합니다.</p>
+  </div>
+
+  <h3>레이아웃과 활자도 시스템이 정합니다 <span class="tag">v1.7.0</span></h3>
+  <p class="lead">v1.6.0까지는 <strong>규격은 맞는데 성의 없어 보이는 화면</strong>이 나왔습니다. 원인이 시스템에 있었습니다.</p>
+  <div class="defs">
+    <div class="def">
+      <div class="k">활자는 있었지만 manifest에 없었습니다</div>
+      <div class="v"><code>core.json</code>에 활자 11종이 있고 CSS 변수로도 나갔는데, 에이전트가 단일 진실 공급원으로 읽는 <code>manifest.json</code>에는 없었습니다. <strong>manifest를 먼저 읽으라고 해놓고 활자 위계를 안 준 셈</strong>이라, 매번 자기 기본값으로 그렸습니다.</div>
+    </div>
+    <div class="def">
+      <div class="k">레이아웃 토큰은 아예 없었습니다</div>
+      <div class="v">콘텐츠 최대폭·그리드 열·거터·섹션 여백이 정의된 적이 없습니다. "1440 데스크톱"이라고만 주면 <strong>폭도 리듬도 없이</strong> 조립됩니다.</div>
+    </div>
+  </div>
+
+  <p>둘 다 채웠습니다. <code>semantic.layout</code>이 새로 생겼고, <strong>테마가 덮어씁니다</strong> — 고객사 실측 폭이 곧 그 고객 값입니다.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>토큰</th><th>무엇</th><th>기본값</th></tr></thead>
+      <tbody>
+        <tr><td><code>container.max</code></td><td>콘텐츠 최대폭. 캔버스가 넓어도 본문은 이 안</td><td>1200</td></tr>
+        <tr><td><code>container.gutter</code></td><td>좌우 최소 여백</td><td>24</td></tr>
+        <tr><td><code>grid.columns</code> · <code>grid.gap</code></td><td>본문 그리드</td><td>12 · 24</td></tr>
+        <tr><td><code>section.padY</code> · <code>padYSm</code></td><td>섹션 상하 여백</td><td>96 · 56</td></tr>
+        <tr><td><code>section.headGap</code></td><td>섹션 제목 ↔ 본문</td><td>40</td></tr>
+        <tr><td><code>card.gap</code> · <code>block.gap</code></td><td>카드·블록 사이</td><td>24 · 24</td></tr>
+        <tr><td><code>text.measure</code></td><td>본문 한 줄 최대 글자수</td><td>68ch</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>활자에는 "어디에 쓰는지"가 붙었습니다</h4>
+  <p>수치만 있고 역할이 없으면 제목과 본문이 다 비슷한 크기로 나옵니다. 이제 스타일마다 자리를 적어 둡니다.</p>
+  <pre>"heading1":  { "size":28, "weight":700, "lineHeight":1.3,
+               "role": "섹션 제목." }
+"display1":  { "size":40, ..., "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다." }</pre>
+  <p>크기를 숫자로 쓰지 않습니다. <code>var(--type-heading1-size)</code>, 또는 한 줄 축약형 <code>font:var(--type-heading1)</code>을 씁니다.</p>
+
+  <p>둘 다 <code>manifest.json</code>의 <code>foundationByTheme.&lt;테마&gt;</code>에 실려 나갑니다 — 폰트·활자·레이아웃·간격·그림자·브레이크포인트가 한 덩어리입니다. 빌더가 만드는 프롬프트에도 <strong>레이아웃 절과 활자 절</strong>이 따로 붙습니다.</p>
+
+  <div class="note warn">
+    <b>라운드 눈금은 둘입니다 <span class="tag">v1.7.1</span></b>
+    <code>sm</code>·<code>md</code>·<code>lg</code>는 <strong>컨트롤</strong>(버튼·입력·칩), <code>xl</code>은 <strong>컨테이너</strong>(카드·표·모달·토스트)입니다.
+    <p>섞으면 사고가 납니다. 알약 버튼을 쓰는 테마는 <code>sm/md/lg</code>가 전부 999px이라, <code>lg</code>를 쓰던 표와 토스트까지 알약이 됐습니다. 표가 알약일 리는 없습니다. <code>build_manifest.py</code>가 이제 검사합니다.</p>
+  </div>
+
+  <h3>페이지를 이루는 덩어리 <span class="tag">v1.8.0</span></h3>
+  <p class="lead">원자(버튼·입력·칩)는 충분한데 <strong>원자를 놓을 판이 없었습니다.</strong> <code>layout</code> 그룹에 <code>section-header-md</code> 하나뿐이라, 화면마다 헤더·히어로·푸터를 손으로 그렸고 그릴 때마다 모양이 달라졌습니다.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>자산</th><th>무엇</th><th>좁은 폭에서</th></tr></thead>
+      <tbody>
+        <tr><td><code>header-gnb-lg</code></td><td>로고 · 주 메뉴 · 주요 액션</td><td>메뉴를 토글로</td></tr>
+        <tr><td><code>hero-split-lg</code></td><td>첫 화면. 제목·리드·액션 + 지표 레일</td><td>세로로 쌓기</td></tr>
+        <tr><td><code>section-header-md</code></td><td>섹션 머리. 아이브로우 · 제목 · 리드</td><td>—</td></tr>
+        <tr><td><code>cta-band-lg</code></td><td>전환 유도 띠. 한 페이지에 하나</td><td>세로로 쌓기</td></tr>
+        <tr><td><code>list-row-md</code></td><td>제목 · 메타 · 값 한 줄 목록</td><td>세로로 쌓기</td></tr>
+        <tr><td><code>form-field-md</code></td><td>라벨 · 입력 · 도움말 묶음</td><td>폭 100%</td></tr>
+        <tr><td><code>footer-lg</code></td><td>로고 · 고지 · 보조 메뉴</td><td>세로로 쌓기</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>이 덩어리들은 <strong>콘텐츠 폭 자체가 규격</strong>이라 <code>spec.width</code>가 <code>container.max</code>를 가리킵니다 — 크기 토큰이 아니라 레이아웃 토큰입니다.</p>
+
+  <h3>상태는 자산이 아닙니다 <span class="tag">v1.9.0</span></h3>
+  <p class="lead">목록에 <code>btn-primary-lg-disabled</code>, <code>input-text-md-error</code> 같은 항목이 자산처럼 섞여 있었습니다. 다섯 개 다 <strong>규격은 부모와 같고 토큰만 다릅니다.</strong> 자산이 아니라 상태 그림입니다.</p>
+  <p>지우지 않고 <strong>부모에 접었습니다.</strong> 지우면 "에러일 때 테두리가 <code>danger</code>"를 다시 알 방법이 없고, 이미 배포된 태그에서 그 ID를 참조할 수도 있습니다.</p>
+  <pre>"input-text-md": {
+  "states":   ["default","focus","error","disabled"],
+  "variants": [{ "id":"input-text-md-error", "state":"error",
+                 "tokens":{ "border":"border.danger", "helper":"danger.text" }}]
+}</pre>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>어디</th><th>어떻게 됩니다</th></tr></thead>
+      <tbody>
+        <tr><td>자산 수</td><td>상태 5개는 <strong>따로 셉니다</strong> — 목록 수에 넣지 않습니다</td></tr>
+        <tr><td>몽타주 시트</td><td>빠집니다 — "이 중에 골라줘"용이라 고르는 물건만</td></tr>
+        <tr><td>빌더 목록</td><td>빠집니다 · 부모 행에 <code>default · focus · error</code>로 표시</td></tr>
+        <tr><td>문서 사이트</td><td>부모 카드 안 "상태" 절에 미리보기와 ID</td></tr>
+        <tr><td>manifest</td><td><code>spec</code>·<code>tokens</code>·이미지 주소 <strong>그대로 남습니다</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <b>프롬프트가 상태를 말합니다</b>
+    전에는 에러·포커스 색을 매번 새로 지어냈습니다. 이제 자산을 미리 지정하면 이렇게 실립니다.
+    <p><code>상태: default · focus · error · disabled</code><br>
+    <code>&nbsp;&nbsp;error — border → border.danger, helper → danger.text</code><br>
+    <code>상태는 따로 고르는 자산이 아니야. 위에 적힌 토큰만 바꿔서 그려.</code></p>
+  </div>
+
+  <h3>한글 조판 <span class="tag">v1.10.0</span></h3>
+  <p class="lead">시스템에 <strong>한글 규칙이 한 줄도 없었습니다.</strong> 그래서 화면마다 다르게 끊겼고, 이 문서를 만드는 동안에도 어중간한 줄바꿈으로 여러 번 걸렸습니다.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>토큰</th><th>무엇</th><th>값</th><th>왜</th></tr></thead>
+      <tbody>
+        <tr><td><code>text.break</code></td><td>어절 단위 줄바꿈</td><td><code>keep-all</code></td><td>한글 낱자 중간에서 자르지 않습니다</td></tr>
+        <tr><td><code>text.overflowWrap</code></td><td>긴 문자열만 끊기</td><td><code>anywhere</code></td><td>긴 영문·URL이 넘치는 것을 막습니다</td></tr>
+        <tr><td><code>text.wrap</code></td><td>줄 끝 고르게</td><td><code>pretty</code></td><td>마지막 줄에 한 어절만 남는 것을 줄입니다</td></tr>
+        <tr><td><code>text.numeric</code></td><td>숫자 자릿수 맞춤</td><td><code>tabular-nums</code></td><td>한글 사이에 낀 숫자가 흔들리지 않습니다</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <b>앞의 둘은 반드시 짝입니다</b>
+    <code>keep-all</code>만 걸면 긴 영문 주소가 컨테이너를 넘쳐 <strong>레이아웃이 통째로 밀립니다.</strong> 반대로 <code>overflow-wrap</code>만 걸면 한글이 낱자에서 잘립니다. 둘을 함께 걸어야 한글은 어절째 남고 긴 라틴 문자열만 끊깁니다.
+    <p>레시피에는 <code>KO</code> 한 벌로 묶어 뒀고, 본문이 들어가는 자산은 전부 이걸 씁니다.</p>
+  </div>
+  <pre>word-break: var(--text-break);
+overflow-wrap: var(--text-overflowWrap);
+text-wrap: var(--text-wrap);</pre>
+
+  <div class="note warn">
+    <b>줄바꿈을 &lt;br&gt;로 넣지 않습니다</b>
+    폭이 바뀌면 <strong>엉뚱한 자리에서 끊깁니다.</strong> 제목에서 의도적으로 줄을 나눌 때만 쓰고, 본문에는 쓰지 않습니다. 한 줄이 길어질 수 있는 항목(경로·목록 제목)은 <code>max-width</code>와 말줄임을 함께 둡니다.
+  </div>
+  <p>값은 <code>foundationByTheme.&lt;테마&gt;.text</code>에 실리고, 프롬프트에 <strong>한글 조판 절</strong>이 따로 붙습니다. 테마가 덮어쓸 수 있습니다 — 영문 위주 산출물이면 다른 값을 줄 수 있습니다.</p>
+
+  <h3>보조 어휘 <span class="tag">v1.10.0</span></h3>
+  <p class="lead">전부 <strong>한글 본문이 실제로 들어가는 자리</strong>라, 위 규칙을 처음부터 안고 만들었습니다.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>자산</th><th>무엇</th><th>한글 때문에 넣은 장치</th></tr></thead>
+      <tbody>
+        <tr><td><code>accordion-md</code></td><td>FAQ · 약관</td><td>본문 <code>68ch</code> 상한. <code>disclosure</code>(접기) 그룹 신설</td></tr>
+        <tr><td><code>breadcrumb-md</code></td><td>경로</td><td><strong>항목마다 max-width + 말줄임.</strong> 한글 항목명이 길면 줄을 통째로 밀어냅니다</td></tr>
+        <tr><td><code>empty-state-md</code></td><td>빈 목록</td><td>"데이터가 없습니다"만 쓰지 않고 <strong>왜 · 다음에 뭘</strong>까지</td></tr>
+        <tr><td><code>desc-list-md</code></td><td>라벨 · 값 목록</td><td>sm 미만 <code>stack</code> — 좁은 폭에서 값이 두 글자씩 끊기는 것을 막습니다</td></tr>
+        <tr><td><code>step-flow-md</code></td><td>번호 붙은 절차</td><td>번호에 <code>tabular-nums</code>. 순서가 없으면 번호를 붙이지 않습니다</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>파이프라인 — 순서가 중요합니다</h3>
+  <p>컴포넌트나 테마를 추가하면 이 순서로 돌립니다. 앞 단계의 산출물을 뒤 단계가 먹기 때문에 <strong>순서를 바꾸면 조용히 어긋납니다.</strong></p>
+  <pre>python3 scripts/build_tokens.py       # 토큰 JSON → CSS 변수
+python3 scripts/check_contrast.py    # WCAG AA 대비비 검사
+python3 scripts/render.py            # 레시피 → @2x PNG + 사이드카
+python3 scripts/build_manifest.py    # 사이드카 → manifest.json
+python3 scripts/build_pb_manifest.py # manifest → docs/eluon.json
+python3 scripts/make_montage.py      # → 몽타주 시트
+python3 scripts/build_measure.py     # → 테마 실측 현황
+python3 scripts/build_docs.py        # → 문서 사이트
+python3 scripts/build_guide.py       # → 이 설명서</pre>
+  <p><code>check_contrast.py</code>가 특히 중요합니다. 새 테마에서 가장 자주 나는 사고가 <strong>브랜드색 위 흰 텍스트가 안 읽히는 것</strong>인데, 이 스크립트가 배포 전에 잡습니다.</p>
+
+  <h3>GitHub에 올리기</h3>
+  <p>자산 이미지 주소는 <strong>릴리즈 태그에 고정</strong>됩니다. 그래서 버전을 올리지 않으면 CDN이 옛 이미지를 계속 내보냅니다.</p>
+  <pre># eluon.config.json 의 version 을 v1.11.2 로 수정
+python3 scripts/build_manifest.py &amp;&amp; python3 scripts/build_pb_manifest.py
+git commit -am "release: v1.11.2" &amp;&amp; git tag v1.11.2 &amp;&amp; git push --tags</pre>
+  <div class="note warn">
+    <b>버전을 올리면 수기 문서 4곳도 같이 고쳐야 합니다</b>
+    파이프라인이 안 건드리는 곳입니다 — <code>README.md</code> · <code>CLAUDE.md</code> · <code>prompts/01</code> · <code>prompts/03</code>.
+    <p>반대로 <code>manifest.json</code>의 <code>since</code>는 <strong>자산이 처음 들어온 시점</strong>이라 올리면 안 됩니다.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">2부 · 피그마 자산 탭</p>
+  <h2>빌더에 자산을 연결한다</h2>
+  <p class="lead">빌더는 자산 목록을 코드에 갖고 있지 않습니다. 자산 파일을 읽어서 그 안에 있는 것만 씁니다. 그래서 처음 한 번은 연결이 필요합니다.</p>
+
+  <h3>이미 연결돼 있습니다</h3>
+  <p><a href="https://frombranch.github.io/eluon/prompt-builder.html">frombranch.github.io/eluon/prompt-builder.html</a>을 열면 <strong>같은 폴더의 <code>eluon.json</code>을 자동으로 읽습니다.</strong> 우리 팀은 이 단계를 할 일이 없습니다. 아래 3단계는 <strong>다른 팀이 자기 디자인 시스템으로 이 빌더를 쓸 때</strong>의 절차입니다.</p>
+
+  <div class="steps">
+    <div class="step">
+      <span class="no">01</span>
+      <div class="body">
+        <h4 style="margin-top:0">피그마 컴포넌트에 설명을 적는다</h4>
+        <p>컴포넌트를 고르고 우측 패널 <strong>Description</strong>에 두 줄만 적습니다. 크기·라운드·여백은 피그마에서 자동으로 읽으므로 적지 않아도 됩니다.</p>
+        <pre>usage: 화면당 주요 액션 1개. 히어로·폼 제출·전환 유도
+dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
+        <p>전부 안 적혀 있어도 진행은 됩니다. 다만 <strong>비어 있으면 Claude가 자산을 고를 근거가 없습니다.</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="no">02</span>
+      <div class="body">
+        <h4 style="margin-top:0">Claude에게 자산 파일을 만들어 달라고 한다</h4>
+        <p>화면에 <strong>Figma 파일 주소</strong> 입력칸이 있습니다. 주소를 넣으면 아래 문장의 <code>[여기에 Figma 링크]</code> 자리에 <strong>그대로 들어갑니다.</strong> <strong>이 문장 복사</strong>를 누르고 Claude에 붙여넣으면 <code>.json</code>이 나옵니다.</p>
+        <p>비워 두면 자리표시자가 남습니다 — 붙여넣은 뒤 직접 바꿔도 됩니다. 자리표시자를 손으로 바꾸게 두면 <strong>그 한 줄을 빠뜨리는 일이 잦아서</strong> 입력칸을 붙였습니다.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="no">03</span>
+      <div class="body">
+        <h4 style="margin-top:0">받은 파일을 끌어다 놓는다</h4>
+        <p>드롭 영역에 놓으면 연결됩니다. 팀 GitHub에 올렸다면 <strong>저장소 주소만</strong> 넣어도 됩니다 — 빌더가 저장소를 뒤져 자산 파일 후보를 찾아 하나씩 열어봅니다. 비공개 저장소는 주소로 못 읽으니 그때는 파일을 놓으십시오.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>소스 바 읽는 법</h3>
+  <p>연결되면 빌더 탭 맨 위에 이렇게 뜹니다.</p>
+  <pre>Eluon Design System        36개 자산 · 12개 그룹 · v1.11.2</pre>
+  <p>여기 <strong>경고가 뜨면 무시하지 마십시오.</strong> 실제로 겪은 두 가지입니다.</p>
+  <div class="defs">
+    <div class="def">
+      <div class="k">예시 값이 그대로 남아 있습니다</div>
+      <div class="v">자산 파일의 <code>source.name</code>·<code>repo</code>가 형식 예시(<code>github.com/팀/저장소</code>) 그대로라는 뜻입니다. 이대로 프롬프트를 만들면 <em>존재하지 않는 저장소와 테마를 가리킵니다.</em></div>
+    </div>
+    <div class="def">
+      <div class="k">usage 설명이 없는 자산 N개</div>
+      <div class="v">피그마 Description을 안 채우고 뽑은 파일입니다. 자산은 목록에 뜨지만 <em>언제 쓰는 것인지가 비어 있어</em> Claude가 고를 수 없습니다.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">3부 · 빌더 탭</p>
+  <h2>설정이 각각 무엇을 바꾸는가</h2>
+  <p class="lead">왼쪽에서 조건을 고르면 오른쪽 프롬프트가 실시간으로 바뀝니다. 설정마다 프롬프트의 어느 부분이 달라지는지를 아래에 적었습니다.</p>
+
+  <h3>작업 유형 — 프롬프트의 뼈대를 정합니다</h3>
+  <p>가장 크게 바뀌는 설정입니다. 유형에 따라 <strong>지시 문단 자체가 통째로 달라지고</strong>, 아래에 뜨는 입력칸도 달라집니다.</p>
+
+  <div class="scroller">
+    <table>
+      <thead><tr><th>작업 유형</th><th>무엇을 시키나</th><th>뜨는 입력칸</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>시안 제작</strong></td>
+          <td>자산 ID 목록을 먼저 보고받고, 승인 후에 단일 HTML로 조립하게 합니다. 토큰 CSS를 <code>&lt;link&gt;</code>로 부르는 방식.</td>
+          <td>화면 이름 · 대상 · 목적 · 섹션 · 폭</td>
+        </tr>
+        <tr>
+          <td><strong>탐색 · 구성안</strong></td>
+          <td><em>코드를 못 쓰게 막고</em> 몽타주 시트에서 골라 섹션별 배치표만 받습니다. 구조를 여러 번 빠르게 보고 싶을 때.</td>
+          <td>화면 이름 · 대상</td>
+        </tr>
+        <tr>
+          <td><strong>아티팩트 발행</strong></td>
+          <td>시안 제작과 같지만, 아티팩트는 외부 파일을 못 읽으므로 <em>저장소를 클론해 CSS를 인라인하고 이미지를 base64로 넣으라</em>고 미리 지시합니다.</td>
+          <td>화면 이름 · 대상 · 목적 · 섹션 · 폭</td>
+        </tr>
+        <tr>
+          <td><strong>제안 레이아웃</strong></td>
+          <td>페이지마다 <em>무엇을 증명하는지</em> 한 줄씩 먼저 쓰게 한 뒤 자산을 붙입니다. 예쁘지만 설득 못 하는 장표를 줄이려는 장치.</td>
+          <td>화면 이름 · 대상 · 목적 · 섹션</td>
+        </tr>
+        <tr>
+          <td><strong>고객사 테마</strong></td>
+          <td>컴포넌트는 그대로 두고 색만 교체하는 테마 파일을 만들게 합니다. 대비비 검증과 대안 색 제시까지 시킵니다.</td>
+          <td>고객사 · <strong>자료 출처</strong></td>
+        </tr>
+        <tr>
+          <td><strong>신규 컴포넌트 추가</strong></td>
+          <td>중복 확인 → 이름 규칙대로 ID 승인 → 레시피에 dict 추가 → 파이프라인 7종 순서대로. <em>이미지를 만들어 넣지 말라</em>고 못박습니다.</td>
+          <td>만들 컴포넌트 · 왜 필요한가</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <b>왜 "자동으로 고치지 마"가 프롬프트에 들어가나</b>
+    QA에서 자동 수정은 검수가 아니라 새로운 변경입니다. 고쳐 놓으면 그것을 다시 검수해야 합니다. 그래서 표만 받습니다. 이런 <strong>금지 문장이 이 빌더의 핵심</strong>입니다 — 무엇을 시킬지보다 무엇을 못 하게 할지가 결과를 좌우합니다.
+  </div>
+
+  <h3>테마</h3>
+  <p>고른 테마가 프롬프트 두 곳에 들어갑니다. <code>테마: eluo</code> 한 줄과, 불러올 토큰 CSS 주소입니다. <strong>시스템 주소는 테마와 무관하게 늘 Eluon을 가리킵니다</strong> — 컴포넌트는 저장소에서 오고 테마는 색만 갈아끼우기 때문입니다.</p>
+  <p>테마 버튼은 <strong>모든 작업 유형에서 늘 보입니다.</strong> 어떤 테마가 있는지 자체가 정보이기 때문입니다. 다만 <code>고객사 테마</code>와 <code>신규 컴포넌트 추가</code>에서는 골라도 프롬프트가 바뀌지 않고, 그 사실이 아래 줄에 적힙니다.</p>
+  <h4>안 쓰는 테마 숨기기</h4>
+  <p>버튼 안의 <strong>×</strong>를 누르면 목록에서 뺍니다. 실수를 막으려고 <strong>확인창을 한 번 거칩니다.</strong> 지금 고른 테마에는 ×가 붙지 않습니다 — 빼면 고르지도 못하는 상태가 남습니다.</p>
+  <div class="note warn">
+    <b>저장소가 바뀌는 것이 아닙니다</b>
+    이 페이지는 GitHub Pages에서 <strong>읽기 전용</strong>으로 돕니다. ×는 <strong>이 브라우저 목록에서만</strong> 감추는 것이고 <code>tokens/theme-*.json</code>은 그대로 있습니다. 아래 <em>숨긴 테마 N개 — 다시 보이기</em>로 언제든 되돌립니다.
+    <p>저장소에서 진짜 지우려면 <code>eluon.config.json</code>의 <code>themes</code>에서 빼고 파이프라인을 돌려야 합니다.</p>
+  </div>
+
+  <h3>조건 입력칸</h3>
+  <p>작업 유형에 따라 나타나는 칸이 다릅니다. <strong>비워 두면 <code>(미입력 — 물어볼 것)</code>으로 나갑니다.</strong></p>
+  <div class="note warn">
+    <b>비운 칸은 예시로 채워지지 않습니다</b>
+    예전에는 빈 칸에 입력 예시가 그대로 실려 나갔습니다. 받는 쪽에서는 그게 요구사항인지 예시인지 구분할 수 없어서, 호텔 소개를 부탁했는데 채용 랜딩으로 읽히는 사고가 있었습니다. 지금은 안 채운 칸이 안 채웠다고 나옵니다. <strong>모르는 항목은 그냥 비워 두는 편이 낫습니다.</strong>
+  </div>
+
+  <h4>자료 출처 <span class="tag">v1.4.0</span></h4>
+  <p><code>고객사 테마</code>에 뜨는 칸입니다. <strong>고객사 웹사이트 주소나 피그마 링크</strong>를 넣으면 프롬프트가 그것을 열어 재라고 지시합니다 — 화면 보고 추측하지 말 것, <code>rem</code>과 고정 <code>px</code>를 구분할 것, 뷰포트 비례면 기준 폭을 정해 환산할 것까지.</p>
+  <div class="note">
+    <b>rem 과 고정 px 를 구분해야 합니다</b>
+    루트 폰트 크기를 두 배로 바꿔 다시 재면 <strong><code>rem</code> 값만 두 배가 됩니다.</strong> 테두리는 보통 고정 <code>px</code>라, 환산하면 1px이 1.6이 됩니다 — 실제로 한 번 틀렸다가 이 방법으로 잡았습니다.
+    <p>비워 두면 자료 후보를 묻고, 자료가 아예 없으면 <em>추정이라는 걸 남기고 대외 제출물에 쓰지 말라</em>고 지시합니다.</p>
+  </div>
+
+  <h3>자산 미리 지정 <span class="tag">선택</span></h3>
+  <p>기본은 <strong>비워 두는 것</strong>입니다. 비워 두면 Claude가 manifest를 읽고 직접 고른 뒤 승인을 받습니다. 그게 이 시스템이 의도한 흐름입니다.</p>
+  <p>체크하는 경우는 <strong>쓸 자산이 이미 정해졌을 때</strong>뿐입니다. 체크하면 프롬프트 끝에 규격까지 붙은 목록이 들어가고, <em>이 안에서 쓰고 부족하면 보고하라</em>는 지시가 따라붙습니다.</p>
+  <pre>미리 지정한 자산 (이 안에서 쓰고, 부족하면 보고해)
+  - btn-primary-lg  (width hug · height 56 · radius lg · paddingX 24)
+  - card-product-md (width 320 · radius xl · paddingX 16 · gap 12)</pre>
+  <p>검색창은 <strong>ID뿐 아니라 용도와 태그까지</strong> 훑습니다. "뱃지"나 "전환"으로 찾으면 됩니다. 각 행에 <code>usage</code>와 <strong>금지</strong> 문구가 같이 보이는데, 이게 고를 때 보라고 넣은 것입니다. 행 오른쪽에는 그 자산이 가진 <strong>상태</strong>가 적혀 있습니다 — 따로 고르는 물건이 아닙니다.</p>
+
+  <h4>고른 것은 칩으로 보입니다</h4>
+  <p><code>4/36</code> 같은 숫자만으로는 무엇을 골랐는지 알 수 없어서, 검색창 아래에 <strong>첨부파일처럼 이름이 늘어섭니다.</strong> 칩의 ×로 바로 뺍니다.</p>
+
+  <h4>목록은 접혀 있습니다</h4>
+  <p>36개를 늘 펼쳐 두면 그 아래 내용이 멀어집니다. <strong>자산 목록 펼치기</strong>를 눌러야 열리고, 고른 것이 있으면 요약이 <em>자산 목록 — 4개 고름</em>으로 바뀝니다.</p>
+
+  <h4>그룹마다 모두 고르기</h4>
+  <p>하나씩 누르는 건 36개짜리 목록에서 할 일이 아닙니다. 그룹 머리의 <strong>모두 고르기 · 모두 빼기</strong>로 한 종류를 통째로 다룹니다. 전부 비우려면 위의 <strong>전체 해제</strong>입니다.</p>
+  <div class="note">
+    <b>전역 "전체 선택"은 뺐습니다</b>
+    36개를 다 고르는 일은 실제로 없습니다. 그런 버튼이 있으면 <strong>눌러 놓고 다시 지우는 일</strong>만 생겨서, 그룹 단위로만 남겼습니다.
+  </div>
+
+  <h4>자산 페이지에서 골라 넘기기</h4>
+  <p>머리의 <strong>자산 페이지 보기</strong>를 누르면 공개 문서 사이트가 열립니다. 거기서 컴포넌트를 실제 모양으로 보며 <strong>고르기</strong>를 체크하면 아래에 띠가 뜨고, <strong>빌더로 보내기</strong>를 누르면 고른 자산과 테마가 그대로 빌더로 넘어옵니다.</p>
+  <pre>prompt-builder.html?tab=builder&amp;theme=cobalt&amp;picked=btn-primary-lg,card-stat-md</pre>
+  <p>넘어온 ID 중 지금 목록에 없는 것이 있으면 <strong>조용히 버리지 않고</strong> 몇 개가 안 맞았는지 알립니다. 자산 파일 버전이 다를 때 실제로 생깁니다.</p>
+
+  <h3>팀 프리셋</h3>
+  <p>지금 고른 조건 전체(작업 유형·테마·입력값·체크한 자산)를 이름 붙여 저장합니다. <strong>브라우저에만 저장됩니다</strong> — 다른 사람에게는 안 보입니다.</p>
+  <p>공유하려면 <strong>파일로 내보내기</strong>로 <code>.json</code>을 뽑아 전달하고, 받은 사람은 <strong>파일 불러오기</strong>로 넣습니다. 매번 같은 조건으로 시안을 뽑는 프로젝트라면 한 번 만들어 돌려쓰는 게 낫습니다.</p>
+
+  <h3>근거 보기</h3>
+  <p>각 문단이 <em>왜</em> 들어갔는지를 회색 글로 보여주는 토글입니다. <strong>복사할 때는 빠지고 프롬프트만 나갑니다.</strong> 프롬프트를 손보고 싶을 때 어느 줄을 건드리면 안 되는지 판단하는 데 씁니다.</p>
+
+  <h3>프롬프트 복사</h3>
+  <p>복사한 문장은 <strong>Claude Code(터미널·웹·데스크톱 앱)든 Claude 앱이든 똑같이 동작합니다.</strong> 다만 시안 HTML을 실제 파일로 받으려면 Claude Code 쪽이 편합니다.</p>
+</section>
+
+<section>
+  <p class="eyebrow">4부 · URL 자산 탭</p>
+  <h2>사이트에서 자산 후보 찾기 <span class="tag">v1.5.0</span></h2>
+  <p class="lead">고객사 웹사이트 주소만 넣으면 <strong>반복되는 UI 조각을 재서</strong> 지금 라이브러리와 대조합니다. <strong>덮이는 표가 본론입니다</strong> — 그 목록이 곧 기존 컴포넌트를 재배치해 페이지를 만들 재료입니다.</p>
+
+  <div class="scroller">
+    <table>
+      <thead><tr><th>탭</th><th>하는 일</th></tr></thead>
+      <tbody>
+        <tr><td><strong>피그마 자산</strong></td><td>피그마에서 자산 파일을 만들어 연결합니다</td></tr>
+        <tr><td><strong>URL 자산</strong></td><td>웹사이트 주소로 <strong>라이브러리를 늘립니다</strong></td></tr>
+        <tr><td><strong>빌더</strong></td><td>화면 하나를 위한 프롬프트를 만듭니다</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>화면에는 <strong>주소 입력 하나와 프롬프트</strong>뿐입니다. 빌더의 조건 칸들(화면 이름·목적·섹션·폭)은 이 일에 필요 없어서 없습니다.</p>
+
+  <h3>결과는 표 두 개로 나옵니다</h3>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>표</th><th>무엇</th><th>왜 나눴나</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A. 우리 자산으로 덮이는 것</strong></td><td>사이트 요소 / 대응 자산 ID / 수치 차이 / 반복 횟수</td><td><strong>본론입니다.</strong> 재배치해 쓸 재료 목록</td></tr>
+        <tr><td><strong>B. 안 덮이는 것</strong></td><td>요소 이름 / 규격 / 반복 횟수 / <strong>가장 가까운 자산</strong> / 그걸로 대체하면 무엇이 달라지는지</td><td>예외 보고입니다. <strong>기본은 대체</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>섞어 놓으면 <strong>이미 있는 걸 또 만듭니다.</strong> 그래서 나눴습니다.</p>
+
+  <div class="note warn">
+    <b>수치가 다른 건 B가 아닙니다</b>
+    크기·색·라운드 차이는 <strong>테마가 흡수하는 축</strong>이라 새 컴포넌트의 근거가 되지 않습니다. A에 넣고 차이만 적습니다. B는 "우리 라이브러리에 이런 종류가 아예 없다"일 때만입니다.
+    <p>처음 만들 때 이 구분을 안 적어서 "없는 것만 골라 만들면 된다"로 읽혔습니다. <strong>우리 목표는 기존 컴포넌트를 재배치해 톤앤매너를 유지하는 것</strong>이지 라이브러리를 늘리는 것이 아닙니다.</p>
+  </div>
+
+  <div class="note">
+    <b>반복 횟수가 판단 근거입니다</b>
+    한 번만 나오는 요소는 자산이 아니라 <strong>그 화면 전용</strong>입니다. 실제로 <code>card-stat-md</code>는 반복 5회라 자산이 됐고, 아코디언은 한 번뿐이라 후보에서 뺐습니다.
+  </div>
+
+  <div class="note warn">
+    <b>라이브러리는 하나입니다</b>
+    컴포넌트는 고객사별로 나뉘어 있지 않습니다. <strong>하나뿐인 라이브러리를 모든 고객사가 함께 쓰고, 테마만 갈아 끼웁니다.</strong> A 고객사 때문에 넣은 자산이 B 고객사 시안의 자산 목록에도 그대로 보입니다. 승인을 두는 이유가 이것입니다.
+  </div>
+
+  <div class="note warn">
+    <b>이 탭은 읽기만 합니다</b>
+    프롬프트가 <em>"아직 레시피는 쓰지 마"</em>라고 막습니다. <strong>저장소는 아무것도 바뀌지 않습니다</strong> — 표 두 개가 화면에 나올 뿐, 파일도 커밋도 없습니다.
+  </div>
+
+  <h3>찾은 다음 — 저장소에 올라가기까지</h3>
+  <p>"프롬프트를 Claude에서 받아서 다시 GitHub에 올리는 것인가"라는 질문을 자주 받습니다. <strong>맞습니다. 다만 발견 단계가 아니라 제작 단계에서 올라갑니다.</strong></p>
+  <p>그리고 여기는 <strong>직선 5단계가 아니라 갈래 둘</strong>입니다. <strong>기본 경로</strong>는 A표를 들고 시안 제작으로 가는 것이고 — 거의 모든 경우 여기서 끝납니다 — <strong>예외 경로</strong>가 아래입니다.</p>
+  <div class="steps">
+    <div class="step"><div class="no">01</div><div class="body">
+      <p><strong>URL 자산 탭</strong>에서 프롬프트를 복사해 Claude에 붙여넣습니다. Claude가 사이트를 열어 재고 표 두 개를 냅니다.</p>
+      <p>결과는 화면에만 나옵니다. <strong>파일도 커밋도 없습니다.</strong></p>
+    </div></div>
+    <div class="step"><div class="no">02</div><div class="body">
+      <p><strong>B(없는 것) 표에서 만들 것을 고릅니다.</strong> 반복 횟수를 보십시오 — 한두 번뿐이면 그 화면 전용일 가능성이 큽니다.</p>
+    </div></div>
+    <div class="step"><div class="no">03</div><div class="body">
+      <p><strong>빌더 탭 → 신규 컴포넌트 추가</strong>에 그 이름을 넣고 프롬프트를 복사합니다.</p>
+    </div></div>
+    <div class="step"><div class="no">04</div><div class="body">
+      <p>Claude가 순서대로 진행하며 <strong>두 번 멈춰 승인을 받습니다.</strong></p>
+      <p><code>manifest</code>에 비슷한 자산이 있는지 확인 → <strong>ID 후보를 제안하고 승인 대기</strong> → <code>recipes/components.py</code>에 dict 추가(치수는 크기 토큰으로) → 파이프라인 7종 실행 → 렌더·manifest·문서 갱신 → <strong>커밋·푸시 여부를 다시 확인</strong></p>
+    </div></div>
+    <div class="step"><div class="no">05</div><div class="body">
+      <p>푸시되면 <strong>그때 GitHub에 올라갑니다.</strong> 자산 수가 늘고 버전이 올라가며, 빌더의 자산 목록에도 다음 로드부터 나타납니다.</p>
+    </div></div>
+  </div>
+  <div class="note">
+    <b>왜 나눴나</b>
+    <strong>한 번 들어온 자산은 모든 고객사 시안이 함께 쓰게 됩니다.</strong> 승인 없이 늘어나면 나중에 빼기가 훨씬 어렵습니다. 그래서 발견은 읽기만 하고, 제작에만 승인을 겁니다.
+  </div>
+
+  <h3>실제로 이렇게 나왔습니다</h3>
+  <p>고객사 사이트 메인 한 장에서 찾은 결과입니다.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>후보</th><th>규격</th><th>반복</th><th>판단</th></tr></thead>
+      <tbody>
+        <tr><td>채움 타일</td><td class="num">w264 h308 · 패딩 55/16 · 배경 채움</td><td class="num">5</td><td><strong><code>card-stat-md</code>로 등록</strong></td></tr>
+        <tr><td>공지 리스트 행</td><td class="num">w1049 h72</td><td class="num">3</td><td>보류 — 표가 아니라 행 목록</td></tr>
+        <tr><td>복합 입력 필드</td><td class="num">h125 · 라벨+값 2줄</td><td class="num">2</td><td>보류 — 근거가 약함</td></tr>
+        <tr><td>캐러셀 인디케이터</td><td>카운터 + 진행 바</td><td class="num">2</td><td>보류</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">5부 · 실제로 해보기</p>
+  <h2>시안 한 장을 뽑는 흐름</h2>
+
+  <div class="steps">
+    <div class="step">
+      <span class="no">01</span>
+      <div class="body">
+        <p style="margin-top:0"><strong>빌더 탭</strong>에서 작업 유형 <span class="tag">시안 제작</span>, 테마 <span class="tag">eluo</span>를 고릅니다.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="no">02</span>
+      <div class="body">
+        <p style="margin-top:0">조건을 채웁니다. <strong>아는 것만</strong> 채우십시오.</p>
+        <pre>화면 이름  호텔 소개 랜딩
+대상       개별 투숙객
+목적       객실 예약 전환
+섹션       히어로 / 객실 3종 / 요금표 / 푸터
+폭         1440</pre>
+      </div>
+    </div>
+    <div class="step">
+      <span class="no">03</span>
+      <div class="body">
+        <p style="margin-top:0">자산 미리 지정은 <strong>비워 둡니다.</strong> <strong>프롬프트 복사</strong>를 누르고 Claude에 붙여넣습니다.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="no">04</span>
+      <div class="body">
+        <p style="margin-top:0">Claude가 <strong>쓸 자산 ID 목록을 먼저 보고합니다.</strong> 여기서 방향을 잡으십시오. manifest에 없는 것이 필요하면 "없음"이라고 말하고 대체안 두 개를 제시합니다.</p>
+        <p>이 관문이 이 시스템에서 가장 중요합니다. <strong>HTML이 나온 뒤에 되돌리는 것보다 훨씬 쌉니다.</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="no">05</span>
+      <div class="body">
+        <p style="margin-top:0">승인하면 단일 HTML이 나옵니다. 마지막에 <strong>사용한 자산 ID 목록과 규격에서 벗어난 부분</strong>이 이유와 함께 적혀 나옵니다. 그걸로 검수하십시오.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">막히는 곳</p>
+  <h2>자주 걸리는 여덟 가지</h2>
+
+  <div class="defs">
+    <div class="def">
+      <div class="k">시안이 규격은 맞는데 허전합니다</div>
+      <div class="v">v1.7.0 전에는 <em>레이아웃과 활자가 manifest에 없었습니다.</em> 폭·그리드·섹션 여백도, 어느 자리에 어떤 활자를 쓸지도 시스템이 말해주지 않아 매번 새로 정했습니다. 지금은 <code>foundationByTheme.&lt;테마&gt;</code>에 실리고 프롬프트에 <strong>레이아웃 절과 활자 절</strong>이 붙습니다. 그래도 허전하면 <strong>헤더·히어로·푸터를 자산으로 쓰고 있는지</strong> 보십시오 — v1.8.0에 생겼습니다.</div>
+    </div>
+    <div class="def">
+      <div class="k">한글이 이상한 데서 끊깁니다</div>
+      <div class="v"><code>word-break: keep-all</code>과 <code>overflow-wrap: anywhere</code>를 <strong>짝으로</strong> 걸었는지 보십시오. 하나만 걸면 한쪽이 깨집니다. <code>&lt;br&gt;</code>로 줄을 나눴다면 그것부터 빼십시오 — 폭이 바뀌면 엉뚱한 자리에서 끊깁니다. v1.10.0부터 프롬프트가 이걸 지시합니다.</div>
+    </div>
+    <div class="def">
+      <div class="k">에러·포커스 색이 매번 다릅니다</div>
+      <div class="v">상태를 안 알려주면 지어냅니다. v1.9.0부터 자산을 미리 지정하면 <code>error — border → border.danger</code>처럼 <strong>무엇이 달라지는지</strong>가 프롬프트에 실립니다. 상태는 따로 고르는 자산이 아니니 목록에서 찾지 마십시오.</div>
+    </div>
+    <div class="def">
+      <div class="k">빌더 탭이 눌리지 않습니다</div>
+      <div class="v">자산 파일이 아직 안 붙었다는 뜻입니다. 탭 오른쪽에 이유가 적혀 있습니다. <em>피그마 자산 탭에서 먼저 연결하십시오.</em></div>
+    </div>
+    <div class="def">
+      <div class="k">자산 수가 적게 보입니다 <span>36개여야 정상</span></div>
+      <div class="v">낡은 자산 파일을 보고 있는 것입니다. 옛 파일에는 커머스 5종과 <code>section-header-md</code>가 없어서, <em>있는 자산을 없다고 잘못 판단하게 됩니다.</em> 소스 바의 버전을 확인하십시오.</div>
+    </div>
+    <div class="def">
+      <div class="k">시안의 색이 다 빠져 나옵니다</div>
+      <div class="v">아티팩트로 발행했는데 작업 유형을 <em>시안 제작</em>으로 골랐을 가능성이 큽니다. 아티팩트는 외부 파일을 못 읽으므로 <span class="tag">아티팩트 발행</span>을 골라야 CSS 인라인 지시가 들어갑니다.</div>
+    </div>
+    <div class="def">
+      <div class="k">자산을 추가했는데 빌더에 안 뜹니다</div>
+      <div class="v"><code>build_pb_manifest.py</code>를 안 돌렸습니다. manifest만 갱신하면 빌더용 변환본이 낡은 채로 남습니다. <em>CI가 <code>--check</code>로 막지만</em> 로컬에서는 그냥 지나갑니다.</div>
+    </div>
+    <div class="def">
+      <div class="k">버튼 높이가 문서와 다릅니다</div>
+      <div class="v">v1.1.0부터 <em>치수가 테마마다 다릅니다.</em> <code>spec</code>의 <code>control.lg.height</code>는 토큰 이름이고 실제 px는 <code>specByTheme.&lt;테마&gt;</code>에 있습니다. 어느 테마로 보고 있는지부터 확인하십시오.</div>
+    </div>
+    <div class="def">
+      <div class="k">시안이 모바일에서 깨집니다</div>
+      <div class="v">v1.4.0부터 <em>반응형이 자산 계약에 들어갔습니다.</em> 프롬프트에 자산별 접기 규칙이 실리고 QA가 <code>responsiveByTheme</code>와 375px 가로 넘침을 대조합니다. 그전에 뽑은 시안이면 다시 뽑으십시오.</div>
+    </div>
+    <div class="def">
+      <div class="k">CDN 이미지가 옛것으로 나옵니다</div>
+      <div class="v">jsDelivr가 태그 주소를 길게 캐싱합니다. <em>버전을 올려 새 태그를 밀어야</em> 실제로 교체됩니다. 그래서 <code>@main</code>을 쓰지 않습니다.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">규칙</p>
+  <h2>하지 않을 것</h2>
+  <p>에이전트에게도, 사람에게도 똑같이 적용됩니다.</p>
+  <div class="defs">
+    <div class="def">
+      <div class="k">manifest에 없는 색·폰트·라운드를 "보기 좋아서" 도입</div>
+      <div class="v">화면마다 버튼 높이가 조금씩 달라지는 것이 여기서 시작합니다.</div>
+    </div>
+    <div class="def">
+      <div class="k">생성물을 직접 편집</div>
+      <div class="v"><code>manifest.json</code>·<code>docs/</code>·<code>index/</code>·PNG. 다음 빌드에 되돌아갑니다.</div>
+    </div>
+    <div class="def">
+      <div class="k">고객사 로고·실제 콘텐츠를 저장소에 추가</div>
+      <div class="v">이 저장소는 public입니다. <em>레시피의 데모 데이터도 공개물입니다</em> — 실제 프로젝트명과 사람 이름을 쓰지 마십시오. 한 번 겪었습니다.</div>
+    </div>
+    <div class="def">
+      <div class="k">승인 없이 <code>tokens/</code>나 <code>recipes/</code> 수정</div>
+      <div class="v">이 둘이 나머지 전부를 만듭니다.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Eluon v1.11.2 기준으로 작성했습니다. 만드는 방식이 바뀌면 이 문서도 그날 같이 고칩니다 — 나중에 몰아서 고치면 무엇이 틀렸는지 찾는 데만 시간이 걸립니다.</p>
+  <p style="margin-top:16px">더 자세한 규칙은 저장소의 <code>CLAUDE.md</code>에, 검증된 프롬프트 템플릿은 <code>prompts/</code>에 있습니다.</p>
+  <p style="margin-top:16px">이 문서의 본문은 <code>docs/guide.src.html</code>에 있습니다. 고친 뒤 <code>build_guide.py</code>를 돌리면 이 페이지가 다시 만들어집니다. <strong>버전과 개수는 손으로 적지 마십시오</strong> — <code>v1.11.2</code>·<code>36</code> 자리표시자를 쓰면 manifest에서 채워집니다.</p>
+  <div class="scroller" style="margin-top:24px">
+    <table>
+      <thead><tr><th>버전</th><th>바뀐 것</th></tr></thead>
+      <tbody>
+        <tr><td><code>v1.4.0</code></td><td>반응형을 자산 계약에 넣음 · 자료 출처 칸 신설</td></tr>
+        <tr><td><code>v1.5.0</code></td><td><code>card-stat-md</code> 추가 · 사이트에서 자산 후보를 찾는 갈래</td></tr>
+        <tr><td><code>v1.6.0</code></td><td><code>card-portrait-md</code> 추가 · 여섯 번째 테마 · 중립 코어 제거</td></tr>
+        <tr><td><code>v1.7.0</code></td><td><strong>레이아웃 토큰 신설</strong> · 활자에 역할 부여 · <code>foundationByTheme</code> 노출</td></tr>
+        <tr><td><code>v1.7.1</code></td><td>컨테이너 라운드를 <code>xl</code>로 분리 — 알약 테마에서 표·토스트가 알약이 됐음</td></tr>
+        <tr><td><code>v1.8.0</code></td><td><strong>페이지를 이루는 덩어리 6종</strong> · 접힘 규칙 <code>stack</code>·<code>menuNav</code></td></tr>
+        <tr><td><code>v1.9.0</code></td><td><strong>상태를 부모의 변형으로 접음</strong> — 목록에서 5개가 빠짐</td></tr>
+        <tr><td><code>v1.10.0</code></td><td><strong>한글 조판을 시스템에</strong> · 보조 어휘 5종 — 자산 36개</td></tr>
+        <tr><td><code>v1.11.0</code></td><td><strong>테마 실측 상태</strong>(<code>$status</code>) · <code>index/MEASURE.md</code> · 파이프라인 8단계</td></tr>
+        <tr><td><code>v1.11.1</code></td><td>CI 스키마에 새 그룹을 안 넣어 검사가 4번 실패했던 것을 고침</td></tr>
+        <tr><td><code>v1.11.2</code></td><td><strong>이 설명서가 저장소로 들어왔습니다</strong> — 버전·개수를 manifest에서 자동으로 채웁니다</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:16px"><strong>저장소 이력을 v1.11.1에서 새로 시작했습니다.</strong> 이전 커밋에 고객사를 특정할 수 있는 문자열이 남아 있었고 이 저장소는 공개입니다. 저장소 이름·주소·문서 사이트는 그대로이고, 파일 내용도 바뀌지 않았습니다. 다만 <strong>예전 태그(v1.0.0~v1.11.0)는 없어졌으니</strong> 그 주소를 쓴 HTML이 있다면 최신 태그로 바꾸십시오.</p>
+  <p style="margin-top:16px">빌더 쪽 — 탭을 <strong>피그마 자산 · URL 자산 · 빌더</strong>로 정리 · 자산 페이지에서 골라 빌더로 넘기기 · 고른 자산 칩 · 전체 선택 · Figma 링크 입력칸 · 안 쓰는 테마 숨기기 · 일관성 QA 버튼 제거(절차는 <code>CLAUDE.md</code>에 남아 있습니다) · 자산 목록 접기 · 전역 전체 선택은 다시 뺐습니다.</p>
+</footer>
+
+</div>
+
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
