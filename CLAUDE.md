@@ -200,7 +200,7 @@ git clone --depth 1 --branch v1.11.2 https://github.com/frombranch/eluon.git
 | 항목 | 값 | 토큰 |
 |---|---|---|
 | 출처 | Lucide 한 세트만 | `semantic.icon.source` |
-| 크기 | 32×32 기준, 2의 배수(32 · 64) | `--size-icon-md` · `--size-icon-lg` |
+| 크기 | 24×24 기준, 2의 배수(24 · 48) | `--size-icon-md` · `--size-icon-lg` |
 | 스타일 | 채우지 않음(`fill:none`), 선만 | `--icon-fill` |
 | 선 굵기 | 1.2 (Lucide 기본 2 는 무겁습니다) | `--icon-strokewidth` |
 | 불투명도 | 0.7 | `--icon-opacity` |
@@ -209,7 +209,7 @@ git clone --depth 1 --branch v1.11.2 https://github.com/frombranch/eluon.git
 ```html
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>[data-lucide]{fill:none;stroke:currentColor;stroke-width:1.2;opacity:.7}</style>
-<i data-lucide="arrow-right" width="32" height="32"></i>
+<i data-lucide="arrow-right" width="24" height="24"></i>
 <script>lucide.createIcons();</script>
 ```
 
