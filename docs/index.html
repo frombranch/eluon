@@ -167,6 +167,7 @@
   --size-stepFlow-rowGap:24px;
   --size-icon-md:24px;
   --size-icon-lg:48px;
+  --size-touch-min:44px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -198,14 +199,33 @@
   --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
+  --layout-container-gutterMd:20px;
+  --layout-container-gutterSm:16px;
   --layout-grid-columns:12;
   --layout-grid-gap:24px;
   --layout-section-padY:96px;
   --layout-section-padYSm:56px;
+  --layout-section-padYMd:72px;
   --layout-section-headGap:40px;
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --motion-duration-fast:120ms;
+  --motion-duration-base:180ms;
+  --motion-duration-slow:280ms;
+  --motion-easing-standard:cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
+  --motion-distance-rise:8px;
+  --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-slow:280ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-exit:120ms cubic-bezier(0.4, 0, 1, 1);
+  --media-ratio-wide:16 / 9;
+  --media-ratio-photo:3 / 2;
+  --media-ratio-portrait:4 / 5;
+  --media-ratio-tall:9 / 16;
+  --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-density:2;
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -261,6 +281,18 @@
   --type-caption-bold-lh:1.4;
   --type-caption-bold-tracking:0;
   --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --motion-duration-fast:1ms; --motion-duration-base:1ms;
+    --motion-duration-slow:1ms; --motion-distance-rise:0px;
+    --motion-fast:1ms linear; --motion-base:1ms linear;
+    --motion-slow:1ms linear; --motion-exit:1ms linear;
+  }
+  *,*::before,*::after{
+    animation-duration:1ms!important; animation-iteration-count:1!important;
+    transition-duration:1ms!important; scroll-behavior:auto!important;
+  }
 }
 
 /* Eluon tokens — theme: atlas. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
@@ -420,6 +452,7 @@
   --size-stepFlow-rowGap:24px;
   --size-icon-md:24px;
   --size-icon-lg:48px;
+  --size-touch-min:44px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -451,14 +484,33 @@
   --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
+  --layout-container-gutterMd:20px;
+  --layout-container-gutterSm:16px;
   --layout-grid-columns:12;
   --layout-grid-gap:24px;
   --layout-section-padY:96px;
   --layout-section-padYSm:56px;
+  --layout-section-padYMd:72px;
   --layout-section-headGap:40px;
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --motion-duration-fast:120ms;
+  --motion-duration-base:180ms;
+  --motion-duration-slow:280ms;
+  --motion-easing-standard:cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
+  --motion-distance-rise:8px;
+  --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-slow:280ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-exit:120ms cubic-bezier(0.4, 0, 1, 1);
+  --media-ratio-wide:16 / 9;
+  --media-ratio-photo:3 / 2;
+  --media-ratio-portrait:4 / 5;
+  --media-ratio-tall:9 / 16;
+  --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-density:2;
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -514,6 +566,18 @@
   --type-caption-bold-lh:1.4;
   --type-caption-bold-tracking:0;
   --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --motion-duration-fast:1ms; --motion-duration-base:1ms;
+    --motion-duration-slow:1ms; --motion-distance-rise:0px;
+    --motion-fast:1ms linear; --motion-base:1ms linear;
+    --motion-slow:1ms linear; --motion-exit:1ms linear;
+  }
+  *,*::before,*::after{
+    animation-duration:1ms!important; animation-iteration-count:1!important;
+    transition-duration:1ms!important; scroll-behavior:auto!important;
+  }
 }
 
 /* Eluon tokens — theme: ember. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
@@ -673,6 +737,7 @@
   --size-stepFlow-rowGap:24px;
   --size-icon-md:24px;
   --size-icon-lg:48px;
+  --size-touch-min:44px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -704,14 +769,33 @@
   --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
+  --layout-container-gutterMd:20px;
+  --layout-container-gutterSm:16px;
   --layout-grid-columns:12;
   --layout-grid-gap:24px;
   --layout-section-padY:96px;
   --layout-section-padYSm:56px;
+  --layout-section-padYMd:72px;
   --layout-section-headGap:40px;
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --motion-duration-fast:120ms;
+  --motion-duration-base:180ms;
+  --motion-duration-slow:280ms;
+  --motion-easing-standard:cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
+  --motion-distance-rise:8px;
+  --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-slow:280ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-exit:120ms cubic-bezier(0.4, 0, 1, 1);
+  --media-ratio-wide:16 / 9;
+  --media-ratio-photo:3 / 2;
+  --media-ratio-portrait:4 / 5;
+  --media-ratio-tall:9 / 16;
+  --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-density:2;
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -767,6 +851,18 @@
   --type-caption-bold-lh:1.4;
   --type-caption-bold-tracking:0;
   --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --motion-duration-fast:1ms; --motion-duration-base:1ms;
+    --motion-duration-slow:1ms; --motion-distance-rise:0px;
+    --motion-fast:1ms linear; --motion-base:1ms linear;
+    --motion-slow:1ms linear; --motion-exit:1ms linear;
+  }
+  *,*::before,*::after{
+    animation-duration:1ms!important; animation-iteration-count:1!important;
+    transition-duration:1ms!important; scroll-behavior:auto!important;
+  }
 }
 
 /* Eluon tokens — theme: harbor. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
@@ -921,6 +1017,7 @@
   --size-stepFlow-rowGap:24px;
   --size-icon-md:24px;
   --size-icon-lg:48px;
+  --size-touch-min:44px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -952,14 +1049,33 @@
   --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
+  --layout-container-gutterMd:20px;
+  --layout-container-gutterSm:16px;
   --layout-grid-columns:12;
   --layout-grid-gap:24px;
   --layout-section-padY:96px;
   --layout-section-padYSm:56px;
+  --layout-section-padYMd:72px;
   --layout-section-headGap:40px;
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --motion-duration-fast:120ms;
+  --motion-duration-base:180ms;
+  --motion-duration-slow:280ms;
+  --motion-easing-standard:cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
+  --motion-distance-rise:8px;
+  --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-slow:280ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-exit:120ms cubic-bezier(0.4, 0, 1, 1);
+  --media-ratio-wide:16 / 9;
+  --media-ratio-photo:3 / 2;
+  --media-ratio-portrait:4 / 5;
+  --media-ratio-tall:9 / 16;
+  --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-density:2;
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -1015,6 +1131,18 @@
   --type-caption-bold-lh:1.4;
   --type-caption-bold-tracking:0;
   --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --motion-duration-fast:1ms; --motion-duration-base:1ms;
+    --motion-duration-slow:1ms; --motion-distance-rise:0px;
+    --motion-fast:1ms linear; --motion-base:1ms linear;
+    --motion-slow:1ms linear; --motion-exit:1ms linear;
+  }
+  *,*::before,*::after{
+    animation-duration:1ms!important; animation-iteration-count:1!important;
+    transition-duration:1ms!important; scroll-behavior:auto!important;
+  }
 }
 
 /* Eluon tokens — theme: tideland. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
@@ -1170,6 +1298,7 @@
   --size-stepFlow-rowGap:24px;
   --size-icon-md:24px;
   --size-icon-lg:48px;
+  --size-touch-min:44px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -1201,14 +1330,33 @@
   --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
+  --layout-container-gutterMd:20px;
+  --layout-container-gutterSm:16px;
   --layout-grid-columns:12;
   --layout-grid-gap:24px;
   --layout-section-padY:96px;
   --layout-section-padYSm:56px;
+  --layout-section-padYMd:72px;
   --layout-section-headGap:40px;
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --motion-duration-fast:120ms;
+  --motion-duration-base:180ms;
+  --motion-duration-slow:280ms;
+  --motion-easing-standard:cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
+  --motion-distance-rise:8px;
+  --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-slow:280ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-exit:120ms cubic-bezier(0.4, 0, 1, 1);
+  --media-ratio-wide:16 / 9;
+  --media-ratio-photo:3 / 2;
+  --media-ratio-portrait:4 / 5;
+  --media-ratio-tall:9 / 16;
+  --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-density:2;
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -1264,6 +1412,18 @@
   --type-caption-bold-lh:1.4;
   --type-caption-bold-tracking:0;
   --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --motion-duration-fast:1ms; --motion-duration-base:1ms;
+    --motion-duration-slow:1ms; --motion-distance-rise:0px;
+    --motion-fast:1ms linear; --motion-base:1ms linear;
+    --motion-slow:1ms linear; --motion-exit:1ms linear;
+  }
+  *,*::before,*::after{
+    animation-duration:1ms!important; animation-iteration-count:1!important;
+    transition-duration:1ms!important; scroll-behavior:auto!important;
+  }
 }
 
 /* Eluon tokens — theme: cobalt. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
@@ -1423,6 +1583,7 @@
   --size-stepFlow-rowGap:24px;
   --size-icon-md:24px;
   --size-icon-lg:48px;
+  --size-touch-min:44px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -1454,14 +1615,33 @@
   --icon-stroke:currentColor;
   --layout-container-max:1200px;
   --layout-container-gutter:24px;
+  --layout-container-gutterMd:20px;
+  --layout-container-gutterSm:16px;
   --layout-grid-columns:12;
   --layout-grid-gap:24px;
   --layout-section-padY:96px;
   --layout-section-padYSm:56px;
+  --layout-section-padYMd:72px;
   --layout-section-headGap:40px;
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --motion-duration-fast:120ms;
+  --motion-duration-base:180ms;
+  --motion-duration-slow:280ms;
+  --motion-easing-standard:cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
+  --motion-distance-rise:8px;
+  --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-slow:280ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-exit:120ms cubic-bezier(0.4, 0, 1, 1);
+  --media-ratio-wide:16 / 9;
+  --media-ratio-photo:3 / 2;
+  --media-ratio-portrait:4 / 5;
+  --media-ratio-tall:9 / 16;
+  --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-density:2;
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -1517,6 +1697,18 @@
   --type-caption-bold-lh:1.4;
   --type-caption-bold-tracking:0;
   --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --motion-duration-fast:1ms; --motion-duration-base:1ms;
+    --motion-duration-slow:1ms; --motion-distance-rise:0px;
+    --motion-fast:1ms linear; --motion-base:1ms linear;
+    --motion-slow:1ms linear; --motion-exit:1ms linear;
+  }
+  *,*::before,*::after{
+    animation-duration:1ms!important; animation-iteration-count:1!important;
+    transition-duration:1ms!important; scroll-behavior:auto!important;
+  }
 }
 
 
@@ -1941,7 +2133,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
     <p class="note">자산이 아무리 정확해도 폭과 리듬이 없으면 성의 없어 보입니다.
       아래 값은 테마가 덮어씁니다 — 고객사 실측이 있으면 그 값이 정답입니다.
       manifest의 <code>foundationByTheme.&lt;테마&gt;.layout</code>에서 읽으십시오.</p>
-    <div class="tw"><table><thead><tr><td>토큰</td><td>무엇</td><td>값</td><td>왜</td></tr></thead><tr><td><code>layout.container.max</code></td><td>콘텐츠 최대폭</td><td class="n">1200px</td><td>캔버스가 더 넓어도 본문은 이 폭 안에 둡니다.</td></tr><tr><td><code>layout.container.gutter</code></td><td>좌우 거터</td><td class="n">24px</td><td>화면 가장자리와 콘텐츠 사이 최소 여백.</td></tr><tr><td><code>layout.grid.columns</code></td><td>그리드 열</td><td class="n">12</td><td>본문 영역을 나누는 열 수.</td></tr><tr><td><code>layout.grid.gap</code></td><td>열 간격</td><td class="n">24px</td><td>열과 열 사이.</td></tr><tr><td><code>layout.section.padY</code></td><td>섹션 상하 여백</td><td class="n">96px</td><td>lg 이상에서. 섹션마다 다르게 주지 않습니다.</td></tr><tr><td><code>layout.section.padYSm</code></td><td>섹션 상하 (sm)</td><td class="n">56px</td><td>sm 미만에서.</td></tr><tr><td><code>layout.section.headGap</code></td><td>제목 ↔ 본문</td><td class="n">40px</td><td>섹션 제목과 그 아래 내용 사이.</td></tr><tr><td><code>layout.block.gap</code></td><td>블록 간격</td><td class="n">24px</td><td>문단·블록 사이 기본값.</td></tr><tr><td><code>layout.card.gap</code></td><td>카드 간격</td><td class="n">24px</td><td>카드 그리드의 가로·세로 간격.</td></tr><tr><td><code>layout.text.measure</code></td><td>본문 한 줄 길이</td><td class="n">68ch</td><td>글자수(ch). 넘기면 읽기 어려워집니다.</td></tr></table></div>
+    <div class="tw"><table><thead><tr><td>토큰</td><td>무엇</td><td>값</td><td>왜</td></tr></thead><tr><td><code>layout.container.max</code></td><td>콘텐츠 최대폭</td><td class="n">1200px</td><td>캔버스가 더 넓어도 본문은 이 폭 안에 둡니다.</td></tr><tr><td><code>layout.container.gutter</code></td><td>좌우 거터</td><td class="n">24px</td><td>화면 가장자리와 콘텐츠 사이 최소 여백.</td></tr><tr><td><code>layout.container.gutterMd</code></td><td>container.gutterMd</td><td class="n">20px</td><td></td></tr><tr><td><code>layout.container.gutterSm</code></td><td>container.gutterSm</td><td class="n">16px</td><td></td></tr><tr><td><code>layout.grid.columns</code></td><td>그리드 열</td><td class="n">12</td><td>본문 영역을 나누는 열 수.</td></tr><tr><td><code>layout.grid.gap</code></td><td>열 간격</td><td class="n">24px</td><td>열과 열 사이.</td></tr><tr><td><code>layout.section.padY</code></td><td>섹션 상하 여백</td><td class="n">96px</td><td>lg 이상에서. 섹션마다 다르게 주지 않습니다.</td></tr><tr><td><code>layout.section.padYSm</code></td><td>섹션 상하 (sm)</td><td class="n">56px</td><td>sm 미만에서.</td></tr><tr><td><code>layout.section.padYMd</code></td><td>section.padYMd</td><td class="n">72px</td><td></td></tr><tr><td><code>layout.section.headGap</code></td><td>제목 ↔ 본문</td><td class="n">40px</td><td>섹션 제목과 그 아래 내용 사이.</td></tr><tr><td><code>layout.block.gap</code></td><td>블록 간격</td><td class="n">24px</td><td>문단·블록 사이 기본값.</td></tr><tr><td><code>layout.card.gap</code></td><td>카드 간격</td><td class="n">24px</td><td>카드 그리드의 가로·세로 간격.</td></tr><tr><td><code>layout.text.measure</code></td><td>본문 한 줄 길이</td><td class="n">68ch</td><td>글자수(ch). 넘기면 읽기 어려워집니다.</td></tr></table></div>
   </div>
 
   <div data-r style="margin-top:56px">

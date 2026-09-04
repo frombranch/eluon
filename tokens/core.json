@@ -164,7 +164,8 @@
       "stepFlow.numberSize": 28,
       "stepFlow.rowGap": 24,
       "icon.md": 24,
-      "icon.lg": 48
+      "icon.lg": 48,
+      "touch.min": 44
     },
     "breakpoint": {
       "sm": 480,
@@ -198,14 +199,33 @@
     "layout": {
       "container.max": 1200,
       "container.gutter": 24,
+      "container.gutterMd": 20,
+      "container.gutterSm": 16,
       "grid.columns": 12,
       "grid.gap": 24,
       "section.padY": 96,
       "section.padYSm": 56,
+      "section.padYMd": 72,
       "section.headGap": 40,
       "block.gap": 24,
       "card.gap": 24,
       "text.measure": 68
+    },
+    "motion": {
+      "duration.fast": 120,
+      "duration.base": 180,
+      "duration.slow": 280,
+      "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
+      "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
+      "distance.rise": 8
+    },
+    "media": {
+      "ratio.wide": "16 / 9",
+      "ratio.photo": "3 / 2",
+      "ratio.portrait": "4 / 5",
+      "ratio.tall": "9 / 16",
+      "scrim": "linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%)",
+      "density": 2
     },
     "text": {
       "break": "keep-all",

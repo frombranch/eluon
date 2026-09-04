@@ -53,6 +53,10 @@ def foundation_maps():
             "space": sem.get("space", {}),
             "elevation": sem.get("elevation", {}),
             "breakpoint": sem.get("breakpoint", {}),
+            # 모션과 이미지도 실어야 manifest 만 읽는 경로에서 값이 보입니다.
+            # 없으면 지속시간과 비율을 그 자리에서 지어냅니다.
+            "motion": sem.get("motion", {}),
+            "media": sem.get("media", {}),
         }
     return out
 

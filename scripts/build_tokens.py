@@ -86,6 +86,22 @@ def to_css(tokens, theme):
     for key, val in sem.get("layout", {}).items():
         unit = "" if key == "grid.columns" else ("ch" if key == "text.measure" else "px")
         lines.append(f"  --layout-{key.replace('.', '-')}:{val}{unit};")
+    # 모션. 단위가 섞여 있어(ms · px · 무단위) 다른 그룹처럼 한 단위로 못 붙입니다.
+    for key, val in sem.get("motion", {}).items():
+        unit = "ms" if key.startswith("duration.") else ("px" if key.startswith("distance.") else "")
+        lines.append(f"  --motion-{key.replace('.', '-')}:{val}{unit};")
+    # 한 줄로 쓰는 축약형. --type-heading1 과 같은 방식입니다.
+    # 시간과 커브를 매번 두 번 쓰다 하나를 빠뜨리는 걸 막습니다.
+    mo = sem.get("motion", {})
+    if mo:
+        std, ext = mo["easing.standard"], mo["easing.exit"]
+        for name, dur in (("fast", "duration.fast"), ("base", "duration.base"),
+                          ("slow", "duration.slow")):
+            lines.append(f"  --motion-{name}:{mo[dur]}ms {std};")
+        lines.append(f"  --motion-exit:{mo['duration.fast']}ms {ext};")
+    # 이미지. 비율과 스크림은 CSS 값 그대로, density 는 배수라 무단위입니다.
+    for key, val in sem.get("media", {}).items():
+        lines.append(f"  --media-{key.replace('.', '-')}:{val};")
 
     for name, d in tokens["typography"].items():
         safe = name.replace(".", "-")
@@ -98,6 +114,26 @@ def to_css(tokens, theme):
                      f"var(--font-family-base);")
 
     lines.append("}")
+
+    # 감속을 켠 사람에게는 토큰 자체가 멈춥니다.
+    # 두 겹인 이유 — 변수 재정의는 토큰을 쓴 CSS 를 고쳐 주고(translateY(var(--motion-distance-rise))
+    # 까지 포함. 이건 !important 로는 못 잡습니다), * 규칙은 시간을 숫자로 쓴 CSS 를 잡습니다.
+    # 시안마다 이 @media 를 기억해서 쓰는 대신, 토큰 파일이 나릅니다.
+    if sem.get("motion"):
+        lines += [
+            "@media (prefers-reduced-motion: reduce){",
+            "  :root{",
+            "    --motion-duration-fast:1ms; --motion-duration-base:1ms;",
+            "    --motion-duration-slow:1ms; --motion-distance-rise:0px;",
+            "    --motion-fast:1ms linear; --motion-base:1ms linear;",
+            "    --motion-slow:1ms linear; --motion-exit:1ms linear;",
+            "  }",
+            "  *,*::before,*::after{",
+            "    animation-duration:1ms!important; animation-iteration-count:1!important;",
+            "    transition-duration:1ms!important; scroll-behavior:auto!important;",
+            "  }",
+            "}",
+        ]
     return "\n".join(lines) + "\n"
 
 
