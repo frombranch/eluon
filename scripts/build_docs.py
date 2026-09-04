@@ -682,19 +682,19 @@ def main():
     <h4>Icons — 만들 때 지키는 것</h4>
     <div class="tw"><table class="iconrule"><tbody>
       <tr><td>출처</td><td>Lucide. 다른 아이콘 세트를 섞지 않습니다</td></tr>
-      <tr><td>크기</td><td>32×32 기준, 2의 배수로만 — <code>--size-icon-md</code> 32 · <code>--size-icon-lg</code> 64</td></tr>
+      <tr><td>크기</td><td>24×24 기준, 2의 배수로만 — <code>--size-icon-md</code> 24 · <code>--size-icon-lg</code> 48</td></tr>
       <tr><td>스타일</td><td>채우지 않습니다. <code>fill:none</code> 에 선만 — 버튼처럼 채운 아이콘은 쓰지 않습니다</td></tr>
       <tr><td>선 굵기</td><td><code>--icon-strokewidth</code> 1.2. Lucide 기본값 2 는 무겁습니다</td></tr>
       <tr><td>불투명도</td><td><code>--icon-opacity</code> 0.7. 글자보다 한 단계 물러나야 옆의 문장이 읽힙니다</td></tr>
       <tr><td>색</td><td><code>currentColor</code>. 부모의 색을 따르므로 테마가 바뀌면 함께 바뀝니다</td></tr>
     </tbody></table></div>
     <div class="icons" style="margin-top:20px">
-      <div><i data-lucide="search" width="32" height="32"></i><b>32 · search</b></div>
-      <div><i data-lucide="check" width="32" height="32"></i><b>32 · check</b></div>
-      <div><i data-lucide="settings" width="32" height="32"></i><b>32 · settings</b></div>
-      <div><i data-lucide="arrow-right" width="64" height="64"></i><b>64 · arrow-right</b></div>
-      <div><i data-lucide="bell" width="64" height="64"></i><b>64 · bell</b></div>
-      <div><i data-lucide="layout-grid" width="64" height="64"></i><b>64 · layout-grid</b></div>
+      <div><i data-lucide="search" width="24" height="24"></i><b>24 · search</b></div>
+      <div><i data-lucide="check" width="24" height="24"></i><b>24 · check</b></div>
+      <div><i data-lucide="settings" width="24" height="24"></i><b>24 · settings</b></div>
+      <div><i data-lucide="arrow-right" width="48" height="48"></i><b>48 · arrow-right</b></div>
+      <div><i data-lucide="bell" width="48" height="48"></i><b>48 · bell</b></div>
+      <div><i data-lucide="layout-grid" width="48" height="48"></i><b>48 · layout-grid</b></div>
     </div>
   </div>
 
