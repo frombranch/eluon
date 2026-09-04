@@ -1,0 +1,40 @@
+{
+  "id": "btn-primary-md",
+  "name": "Primary Button / MD",
+  "group": "button",
+  "tags": [
+    "CTA",
+    "주요액션",
+    "채움형"
+  ],
+  "spec": {
+    "width": "hug",
+    "height": "control.md.height",
+    "radius": "md",
+    "paddingX": "control.md.paddingX",
+    "typography": "body2-bold"
+  },
+  "tokens": {
+    "bg": "brand.primary",
+    "label": "text.inverse"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "hover",
+    "pressed",
+    "disabled"
+  ],
+  "usage": "본문 안 액션. 카드 내부나 테이블 행 액션",
+  "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/button/btn-primary-md--eluo@2x.png",
+    "atlas": "assets/components/button/btn-primary-md--atlas@2x.png",
+    "ember": "assets/components/button/btn-primary-md--ember@2x.png",
+    "harbor": "assets/components/button/btn-primary-md--harbor@2x.png",
+    "tideland": "assets/components/button/btn-primary-md--tideland@2x.png",
+    "cobalt": "assets/components/button/btn-primary-md--cobalt@2x.png"
+  }
+}

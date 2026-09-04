@@ -1,0 +1,39 @@
+{
+  "id": "badge-status-sm",
+  "name": "Status Badge / SM",
+  "group": "badge",
+  "tags": [
+    "뱃지",
+    "상태",
+    "라벨"
+  ],
+  "spec": {
+    "height": "badge.height",
+    "radius": "full",
+    "paddingX": "badge.paddingX",
+    "typography": "caption-bold"
+  },
+  "tokens": {
+    "bg": "success.subtle",
+    "label": "success.default"
+  },
+  "responsive": {},
+  "states": [
+    "success",
+    "warning",
+    "danger",
+    "neutral"
+  ],
+  "usage": "행·카드의 상태 표기. 색과 텍스트를 함께 씀",
+  "dont": "색만으로 상태를 구분하지 않음",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/badge/badge-status-sm--eluo@2x.png",
+    "atlas": "assets/components/badge/badge-status-sm--atlas@2x.png",
+    "ember": "assets/components/badge/badge-status-sm--ember@2x.png",
+    "harbor": "assets/components/badge/badge-status-sm--harbor@2x.png",
+    "tideland": "assets/components/badge/badge-status-sm--tideland@2x.png",
+    "cobalt": "assets/components/badge/badge-status-sm--cobalt@2x.png"
+  }
+}

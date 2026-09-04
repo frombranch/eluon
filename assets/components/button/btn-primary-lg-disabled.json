@@ -1,0 +1,38 @@
+{
+  "id": "btn-primary-lg-disabled",
+  "name": "Primary Button / LG / Disabled",
+  "group": "button",
+  "tags": [
+    "비활성",
+    "disabled"
+  ],
+  "spec": {
+    "width": "hug",
+    "height": "control.lg.height",
+    "radius": "lg",
+    "paddingX": "control.lg.paddingX",
+    "typography": "body1-bold"
+  },
+  "tokens": {
+    "bg": "surface.disabled",
+    "label": "text.disabled"
+  },
+  "responsive": {
+    "sm": "fill"
+  },
+  "states": [],
+  "usage": "필수 입력이 채워지지 않았을 때. 버튼을 감추는 대신 사용",
+  "dont": "이유 안내 없이 단독 노출 금지. 항상 헬퍼 텍스트와 함께",
+  "status": "stable",
+  "since": "v1.0.0",
+  "variantOf": "btn-primary-lg",
+  "variantState": "disabled",
+  "renders": {
+    "eluo": "assets/components/button/btn-primary-lg-disabled--eluo@2x.png",
+    "atlas": "assets/components/button/btn-primary-lg-disabled--atlas@2x.png",
+    "ember": "assets/components/button/btn-primary-lg-disabled--ember@2x.png",
+    "harbor": "assets/components/button/btn-primary-lg-disabled--harbor@2x.png",
+    "tideland": "assets/components/button/btn-primary-lg-disabled--tideland@2x.png",
+    "cobalt": "assets/components/button/btn-primary-lg-disabled--cobalt@2x.png"
+  }
+}

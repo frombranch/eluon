@@ -1,0 +1,41 @@
+{
+  "id": "wish-toggle-md-selected",
+  "name": "Wish Toggle / MD / Selected",
+  "group": "commerce",
+  "tags": [
+    "찜",
+    "관심",
+    "토글",
+    "선택됨"
+  ],
+  "spec": {
+    "width": "toggle.size",
+    "height": "toggle.size",
+    "radius": "full",
+    "borderWidth": "border.width",
+    "iconSize": "toggle.iconSize"
+  },
+  "tokens": {
+    "bg": "brand.subtle",
+    "border": "brand.primary",
+    "icon": "brand.onSubtle"
+  },
+  "responsive": {},
+  "states": [
+    "selected"
+  ],
+  "usage": "관심 등록된 상태. 배경 채움 + 테두리 + 채운 하트로 삼중 표기",
+  "dont": "기본 상태와 하트 모양이 같으면 안 됨. 색각 이상 사용자가 구분하지 못함",
+  "status": "stable",
+  "since": "v1.0.3",
+  "variantOf": "wish-toggle-md",
+  "variantState": "selected",
+  "renders": {
+    "eluo": "assets/components/commerce/wish-toggle-md-selected--eluo@2x.png",
+    "atlas": "assets/components/commerce/wish-toggle-md-selected--atlas@2x.png",
+    "ember": "assets/components/commerce/wish-toggle-md-selected--ember@2x.png",
+    "harbor": "assets/components/commerce/wish-toggle-md-selected--harbor@2x.png",
+    "tideland": "assets/components/commerce/wish-toggle-md-selected--tideland@2x.png",
+    "cobalt": "assets/components/commerce/wish-toggle-md-selected--cobalt@2x.png"
+  }
+}

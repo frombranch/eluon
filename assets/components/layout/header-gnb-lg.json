@@ -1,0 +1,47 @@
+{
+  "id": "header-gnb-lg",
+  "name": "Header / GNB / LG",
+  "group": "layout",
+  "tags": [
+    "헤더",
+    "GNB",
+    "전역내비"
+  ],
+  "spec": {
+    "width": "container.max",
+    "height": "header.height",
+    "itemGap": "header.itemGap",
+    "borderWidth": "border.width",
+    "logoTypography": "heading3",
+    "menuTypography": "body2-bold",
+    "actionHeight": "control.md.height"
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.subtle",
+    "logo": "text.brand",
+    "menu": "text.secondary",
+    "menuActive": "text.primary"
+  },
+  "responsive": {
+    "md": "menuNav"
+  },
+  "states": [
+    "default",
+    "현재 메뉴",
+    "스크롤 고정",
+    "메뉴 접힘"
+  ],
+  "usage": "모든 페이지 최상단. 로고 · 주 메뉴 · 주요 액션 하나",
+  "dont": "메뉴가 7개를 넘기면 여기 다 넣지 않음. 드롭다운이나 2단으로 나눔",
+  "status": "stable",
+  "since": "v1.8.0",
+  "renders": {
+    "eluo": "assets/components/layout/header-gnb-lg--eluo@2x.png",
+    "atlas": "assets/components/layout/header-gnb-lg--atlas@2x.png",
+    "ember": "assets/components/layout/header-gnb-lg--ember@2x.png",
+    "harbor": "assets/components/layout/header-gnb-lg--harbor@2x.png",
+    "tideland": "assets/components/layout/header-gnb-lg--tideland@2x.png",
+    "cobalt": "assets/components/layout/header-gnb-lg--cobalt@2x.png"
+  }
+}

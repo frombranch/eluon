@@ -1,0 +1,37 @@
+{
+  "id": "btn-ghost-md",
+  "name": "Ghost Button / MD",
+  "group": "button",
+  "tags": [
+    "텍스트버튼",
+    "3순위"
+  ],
+  "spec": {
+    "width": "hug",
+    "height": "control.md.height",
+    "radius": "md",
+    "paddingX": "control.ghost.paddingX",
+    "typography": "body2-bold"
+  },
+  "tokens": {
+    "label": "text.brand"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "hover",
+    "disabled"
+  ],
+  "usage": "세 번째 순위 액션. 취소·더보기·되돌리기",
+  "dont": "한 화면에 3개 이상 늘어놓지 않음. 위계가 사라짐",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/button/btn-ghost-md--eluo@2x.png",
+    "atlas": "assets/components/button/btn-ghost-md--atlas@2x.png",
+    "ember": "assets/components/button/btn-ghost-md--ember@2x.png",
+    "harbor": "assets/components/button/btn-ghost-md--harbor@2x.png",
+    "tideland": "assets/components/button/btn-ghost-md--tideland@2x.png",
+    "cobalt": "assets/components/button/btn-ghost-md--cobalt@2x.png"
+  }
+}

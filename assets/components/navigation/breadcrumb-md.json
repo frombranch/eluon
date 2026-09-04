@@ -1,0 +1,38 @@
+{
+  "id": "breadcrumb-md",
+  "name": "Breadcrumb / MD",
+  "group": "navigation",
+  "tags": [
+    "경로",
+    "브레드크럼",
+    "깊은구조"
+  ],
+  "spec": {
+    "gap": "breadcrumb.gap",
+    "itemMaxWidth": "breadcrumb.itemMaxWidth",
+    "typography": "caption"
+  },
+  "tokens": {
+    "link": "text.tertiary",
+    "current": "text.primary",
+    "separator": "text.tertiary"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "현재 위치",
+    "말줄임"
+  ],
+  "usage": "세 단계 이상 깊은 페이지의 현재 위치. 목록 → 분류 → 상세",
+  "dont": "두 단계뿐인 구조에 쓰지 않음. 뒤로 가기 한 번이면 됩니다",
+  "status": "stable",
+  "since": "v1.10.0",
+  "renders": {
+    "eluo": "assets/components/navigation/breadcrumb-md--eluo@2x.png",
+    "atlas": "assets/components/navigation/breadcrumb-md--atlas@2x.png",
+    "ember": "assets/components/navigation/breadcrumb-md--ember@2x.png",
+    "harbor": "assets/components/navigation/breadcrumb-md--harbor@2x.png",
+    "tideland": "assets/components/navigation/breadcrumb-md--tideland@2x.png",
+    "cobalt": "assets/components/navigation/breadcrumb-md--cobalt@2x.png"
+  }
+}

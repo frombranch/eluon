@@ -1,0 +1,43 @@
+{
+  "id": "card-stat-md",
+  "name": "Stat Card / MD",
+  "group": "card",
+  "tags": [
+    "지표",
+    "숫자",
+    "혜택",
+    "채움형"
+  ],
+  "spec": {
+    "width": "card.stat.width",
+    "radius": "xl",
+    "paddingX": "card.stat.paddingX",
+    "paddingY": "card.stat.paddingY",
+    "gap": "card.stat.gap",
+    "typography": "heading2"
+  },
+  "tokens": {
+    "bg": "surface.sunken",
+    "value": "text.primary",
+    "label": "text.primary",
+    "desc": "text.secondary"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [
+    "default"
+  ],
+  "usage": "숫자 하나를 앞세우는 지표 묶음. 혜택·실적을 3~4개 나란히 놓을 때",
+  "dont": "숫자가 없으면 쓰지 않음. 그냥 구획이면 card-basic-md",
+  "status": "stable",
+  "since": "v1.5.0",
+  "renders": {
+    "eluo": "assets/components/card/card-stat-md--eluo@2x.png",
+    "atlas": "assets/components/card/card-stat-md--atlas@2x.png",
+    "ember": "assets/components/card/card-stat-md--ember@2x.png",
+    "harbor": "assets/components/card/card-stat-md--harbor@2x.png",
+    "tideland": "assets/components/card/card-stat-md--tideland@2x.png",
+    "cobalt": "assets/components/card/card-stat-md--cobalt@2x.png"
+  }
+}

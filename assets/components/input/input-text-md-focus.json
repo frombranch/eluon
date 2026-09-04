@@ -1,0 +1,41 @@
+{
+  "id": "input-text-md-focus",
+  "name": "Text Field / MD / Focus",
+  "group": "input",
+  "tags": [
+    "폼",
+    "포커스",
+    "접근성"
+  ],
+  "spec": {
+    "width": "field.width",
+    "height": "field.height",
+    "radius": "md",
+    "paddingX": "field.paddingX",
+    "borderWidth": "border.width",
+    "focusRingWidth": "focusRing.width",
+    "typography": "body2"
+  },
+  "tokens": {
+    "border": "border.brand",
+    "ring": "focusRing"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [],
+  "usage": "키보드 포커스 상태. 링은 테두리 바깥 3px",
+  "dont": "outline:none으로 링을 지우지 않음. 키보드 사용자가 위치를 잃음",
+  "status": "stable",
+  "since": "v1.0.0",
+  "variantOf": "input-text-md",
+  "variantState": "focus",
+  "renders": {
+    "eluo": "assets/components/input/input-text-md-focus--eluo@2x.png",
+    "atlas": "assets/components/input/input-text-md-focus--atlas@2x.png",
+    "ember": "assets/components/input/input-text-md-focus--ember@2x.png",
+    "harbor": "assets/components/input/input-text-md-focus--harbor@2x.png",
+    "tideland": "assets/components/input/input-text-md-focus--tideland@2x.png",
+    "cobalt": "assets/components/input/input-text-md-focus--cobalt@2x.png"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "step-flow-md",
+  "name": "Step Flow / MD",
+  "group": "layout",
+  "tags": [
+    "절차",
+    "단계",
+    "안내"
+  ],
+  "spec": {
+    "gap": "stepFlow.gap",
+    "numberSize": "stepFlow.numberSize",
+    "rowGap": "stepFlow.rowGap",
+    "borderWidth": "border.width",
+    "titleTypography": "body1-bold",
+    "bodyTypography": "body2",
+    "bodyMaxWidth": "text.measure"
+  },
+  "tokens": {
+    "number": "text.inverse",
+    "numberBg": "brand.primary",
+    "title": "text.primary",
+    "body": "text.secondary",
+    "line": "border.subtle"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "완료",
+    "현재 단계"
+  ],
+  "usage": "순서가 있는 절차. 신청 방법·심사 과정·이용 안내",
+  "dont": "순서가 없는 목록에 번호를 붙이지 않음. 번호는 순서가 있다는 약속입니다",
+  "status": "stable",
+  "since": "v1.10.0",
+  "renders": {
+    "eluo": "assets/components/layout/step-flow-md--eluo@2x.png",
+    "atlas": "assets/components/layout/step-flow-md--atlas@2x.png",
+    "ember": "assets/components/layout/step-flow-md--ember@2x.png",
+    "harbor": "assets/components/layout/step-flow-md--harbor@2x.png",
+    "tideland": "assets/components/layout/step-flow-md--tideland@2x.png",
+    "cobalt": "assets/components/layout/step-flow-md--cobalt@2x.png"
+  }
+}

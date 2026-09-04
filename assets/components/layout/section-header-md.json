@@ -1,0 +1,40 @@
+{
+  "id": "section-header-md",
+  "name": "Section Header / MD",
+  "group": "layout",
+  "tags": [
+    "섹션",
+    "제목",
+    "리드문"
+  ],
+  "spec": {
+    "gap": "section.gap",
+    "eyebrowTypography": "label",
+    "eyebrowTracking": "0.1em",
+    "titleTypography": "heading1",
+    "leadTypography": "body1",
+    "leadMaxWidth": "58ch"
+  },
+  "tokens": {
+    "eyebrow": "text.brand",
+    "title": "text.primary",
+    "lead": "text.secondary"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "아이브로우 없음"
+  ],
+  "usage": "섹션 시작의 제목 묶음. 아이브로우(선택) · 제목 · 리드문을 한 덩어리로",
+  "dont": "리드문이 세 줄을 넘기면 리드가 아니라 본문. 본문은 섹션 안으로 내림",
+  "status": "stable",
+  "since": "v1.0.4",
+  "renders": {
+    "eluo": "assets/components/layout/section-header-md--eluo@2x.png",
+    "atlas": "assets/components/layout/section-header-md--atlas@2x.png",
+    "ember": "assets/components/layout/section-header-md--ember@2x.png",
+    "harbor": "assets/components/layout/section-header-md--harbor@2x.png",
+    "tideland": "assets/components/layout/section-header-md--tideland@2x.png",
+    "cobalt": "assets/components/layout/section-header-md--cobalt@2x.png"
+  }
+}

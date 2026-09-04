@@ -1,0 +1,41 @@
+{
+  "id": "card-basic-md",
+  "name": "Basic Card / MD",
+  "group": "card",
+  "tags": [
+    "카드",
+    "컨테이너"
+  ],
+  "spec": {
+    "width": "card.width",
+    "radius": "xl",
+    "paddingX": "card.basic.paddingX",
+    "paddingY": "card.basic.paddingY",
+    "gap": "card.basic.gap",
+    "borderWidth": "border.width",
+    "elevation": 1
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.subtle"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [
+    "default",
+    "hover"
+  ],
+  "usage": "구획을 나누는 기본 컨테이너",
+  "dont": "카드 안에 또 카드를 넣지 않음",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/card/card-basic-md--eluo@2x.png",
+    "atlas": "assets/components/card/card-basic-md--atlas@2x.png",
+    "ember": "assets/components/card/card-basic-md--ember@2x.png",
+    "harbor": "assets/components/card/card-basic-md--harbor@2x.png",
+    "tideland": "assets/components/card/card-basic-md--tideland@2x.png",
+    "cobalt": "assets/components/card/card-basic-md--cobalt@2x.png"
+  }
+}

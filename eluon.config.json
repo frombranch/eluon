@@ -1,0 +1,25 @@
+{
+  "org": "frombranch",
+  "repo": "eluon",
+  "version": "v1.11.1",
+  "cdn": "jsdelivr",
+  "themes": [
+    "eluo",
+    "atlas",
+    "ember",
+    "harbor",
+    "tideland",
+    "cobalt"
+  ],
+  "defaultTheme": "eluo",
+  "_comment": "릴리즈할 때 version만 올리면 manifest의 모든 자산 URL이 함께 갱신됩니다. @main은 CDN 캐시 때문에 쓰지 않습니다.",
+  "sheet": {
+    "columns": 4,
+    "cellWidth": 380,
+    "cellHeight": 290,
+    "background": "#0E0E10",
+    "labelColor": "#FFFFFF",
+    "mutedColor": "#8A8A94",
+    "previewSurface": "#F4F5F8"
+  }
+}

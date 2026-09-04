@@ -1,0 +1,42 @@
+{
+  "id": "desc-list-md",
+  "name": "Description List / MD",
+  "group": "layout",
+  "tags": [
+    "정의목록",
+    "개요",
+    "사양"
+  ],
+  "spec": {
+    "labelWidth": "descList.labelWidth",
+    "rowPaddingY": "descList.rowPaddingY",
+    "gap": "descList.gap",
+    "borderWidth": "border.width",
+    "labelTypography": "body2-bold",
+    "valueTypography": "body2"
+  },
+  "tokens": {
+    "border": "border.subtle",
+    "label": "text.secondary",
+    "value": "text.primary"
+  },
+  "responsive": {
+    "sm": "stack"
+  },
+  "states": [
+    "default",
+    "값 여러 줄"
+  ],
+  "usage": "라벨과 값이 짝인 목록. 회사 개요·사양·계약 조건",
+  "dont": "비교가 필요하면 목록이 아니라 표. table-basic-lg 로",
+  "status": "stable",
+  "since": "v1.10.0",
+  "renders": {
+    "eluo": "assets/components/layout/desc-list-md--eluo@2x.png",
+    "atlas": "assets/components/layout/desc-list-md--atlas@2x.png",
+    "ember": "assets/components/layout/desc-list-md--ember@2x.png",
+    "harbor": "assets/components/layout/desc-list-md--harbor@2x.png",
+    "tideland": "assets/components/layout/desc-list-md--tideland@2x.png",
+    "cobalt": "assets/components/layout/desc-list-md--cobalt@2x.png"
+  }
+}

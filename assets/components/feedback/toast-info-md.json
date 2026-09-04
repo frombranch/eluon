@@ -1,0 +1,40 @@
+{
+  "id": "toast-info-md",
+  "name": "Toast / Info / MD",
+  "group": "feedback",
+  "tags": [
+    "토스트",
+    "알림",
+    "완료"
+  ],
+  "spec": {
+    "width": "toast.width",
+    "radius": "xl",
+    "paddingX": "toast.paddingX",
+    "paddingY": "toast.paddingY",
+    "gap": "toast.gap",
+    "elevation": 2,
+    "typography": "body2",
+    "duration": 4000
+  },
+  "tokens": {
+    "bg": "surface.inverse",
+    "label": "text.inverse"
+  },
+  "responsive": {
+    "sm": "fill"
+  },
+  "states": [],
+  "usage": "되돌릴 필요 없는 결과 통보. 4초 후 자동 사라짐",
+  "dont": "에러나 확인이 필요한 내용에 쓰지 않음. 사용자가 놓침",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/feedback/toast-info-md--eluo@2x.png",
+    "atlas": "assets/components/feedback/toast-info-md--atlas@2x.png",
+    "ember": "assets/components/feedback/toast-info-md--ember@2x.png",
+    "harbor": "assets/components/feedback/toast-info-md--harbor@2x.png",
+    "tideland": "assets/components/feedback/toast-info-md--tideland@2x.png",
+    "cobalt": "assets/components/feedback/toast-info-md--cobalt@2x.png"
+  }
+}

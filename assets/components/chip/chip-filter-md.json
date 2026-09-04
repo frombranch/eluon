@@ -1,0 +1,42 @@
+{
+  "id": "chip-filter-md",
+  "name": "Filter Chip / MD",
+  "group": "chip",
+  "tags": [
+    "필터",
+    "선택",
+    "토글"
+  ],
+  "spec": {
+    "width": "hug",
+    "height": "chip.height",
+    "radius": "full",
+    "paddingX": "chip.paddingX",
+    "borderWidth": "border.width",
+    "gap": "chip.gap",
+    "typography": "label"
+  },
+  "tokens": {
+    "border": "border.default",
+    "label": "text.secondary",
+    "bg": "surface.default"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "selected",
+    "disabled"
+  ],
+  "usage": "목록 상단의 다중 필터. 2~8개까지",
+  "dont": "단일 선택에는 쓰지 않음. 그건 탭이나 셀렉트",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/chip/chip-filter-md--eluo@2x.png",
+    "atlas": "assets/components/chip/chip-filter-md--atlas@2x.png",
+    "ember": "assets/components/chip/chip-filter-md--ember@2x.png",
+    "harbor": "assets/components/chip/chip-filter-md--harbor@2x.png",
+    "tideland": "assets/components/chip/chip-filter-md--tideland@2x.png",
+    "cobalt": "assets/components/chip/chip-filter-md--cobalt@2x.png"
+  }
+}

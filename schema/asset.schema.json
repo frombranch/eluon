@@ -1,0 +1,230 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Eluon Asset",
+  "description": "자산 1개의 메타데이터. render.py가 recipes/components.py에서 생성합니다. 손으로 쓰지 않습니다.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "group",
+    "spec",
+    "usage",
+    "status",
+    "renders"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z]+(-[a-z0-9]+)+$",
+      "description": "NAMING.md 규칙을 따르는 고유 ID. 예: btn-primary-lg"
+    },
+    "name": {
+      "type": "string",
+      "description": "사람이 읽는 이름. 예: Primary Button / LG"
+    },
+    "group": {
+      "type": "string",
+      "enum": [
+        "button",
+        "chip",
+        "input",
+        "card",
+        "navigation",
+        "table",
+        "feedback",
+        "badge",
+        "modal",
+        "layout",
+        "commerce",
+        "disclosure"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "에이전트 검색용 키워드. 한글 가능"
+    },
+    "renders": {
+      "type": "object",
+      "description": "테마별 @2x PNG 상대경로. render.py가 채웁니다",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "minProperties": 1
+    },
+    "cdn": {
+      "type": "object",
+      "description": "[생성됨] 테마별 CDN URL. build_manifest.py가 채웁니다",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "preview": {
+      "type": "string",
+      "description": "[생성됨] 기본 테마의 CDN URL"
+    },
+    "spec": {
+      "type": "object",
+      "description": "코드로 재현할 확정 규격. 치수는 크기 토큰의 '이름'입니다 — 실제 px는 테마가 정하므로 manifest의 specByTheme 을 보십시오.",
+      "properties": {
+        "width": {
+          "type": [
+            "number",
+            "string"
+          ]
+        },
+        "height": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "rowHeight": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "headerHeight": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "itemSize": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "radius": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "description": "라운드 토큰명 (sm/md/lg/xl/full)"
+        },
+        "paddingX": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "paddingY": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "gap": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "borderWidth": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "focusRingWidth": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "indicatorHeight": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "크기 토큰명 (예: control.lg.height). 숫자면 테마가 못 바꾸는 고정값"
+        },
+        "elevation": {
+          "type": "number"
+        },
+        "thumbRatio": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "number"
+        },
+        "typography": {
+          "type": "string",
+          "description": "타이포 토큰명 (body1-bold 등)"
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "description": "시맨틱 토큰 매핑. 헥스를 직접 적지 않습니다",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "usage": {
+      "type": "string",
+      "minLength": 5,
+      "description": "언제 쓰는가. 한 문장"
+    },
+    "dont": {
+      "type": "string",
+      "description": "쓰면 안 되는 상황. 한 문장"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "stable",
+        "deprecated"
+      ]
+    },
+    "replacedBy": {
+      "type": "string",
+      "description": "deprecated일 때 대체 자산 ID"
+    },
+    "since": {
+      "type": "string",
+      "description": "추가된 릴리즈 태그"
+    },
+    "specByTheme": {
+      "type": "object",
+      "description": "테마별로 해석된 실제 수치. build_manifest.py 가 생성합니다."
+    },
+    "responsive": {
+      "type": "object",
+      "description": "좁은 폭에서 접히는 방식. {브레이크포인트 이름: fill|toCard|scrollX}. 비어 있으면 그대로 둡니다."
+    },
+    "responsiveByTheme": {
+      "type": "object",
+      "description": "테마별로 해석된 반응형 규칙. {테마: {px: 동작}}. build_manifest.py 가 생성합니다."
+    },
+    "variantOf": {
+      "type": "string",
+      "description": "이 항목이 상태 그림이면 부모 자산 ID. 자산 수에 세지 않습니다."
+    },
+    "variantState": {
+      "type": "string",
+      "description": "부모의 어느 상태를 그린 것인지. variantOf 와 짝입니다."
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "chip-filter-md-selected",
+  "name": "Filter Chip / MD / Selected",
+  "group": "chip",
+  "tags": [
+    "필터",
+    "선택됨"
+  ],
+  "spec": {
+    "width": "hug",
+    "height": "chip.height",
+    "radius": "full",
+    "paddingX": "chip.paddingX",
+    "borderWidth": "border.width",
+    "gap": "chip.gap",
+    "typography": "label"
+  },
+  "tokens": {
+    "bg": "brand.subtle",
+    "border": "border.brand",
+    "label": "brand.onSubtle"
+  },
+  "responsive": {},
+  "states": [],
+  "usage": "선택된 필터. 배경 채움 + 브랜드 테두리로 상태를 이중 표기",
+  "dont": "색만으로 선택을 표시하지 않음. 색각 이상 사용자가 구분 못 함",
+  "status": "stable",
+  "since": "v1.0.0",
+  "variantOf": "chip-filter-md",
+  "variantState": "selected",
+  "renders": {
+    "eluo": "assets/components/chip/chip-filter-md-selected--eluo@2x.png",
+    "atlas": "assets/components/chip/chip-filter-md-selected--atlas@2x.png",
+    "ember": "assets/components/chip/chip-filter-md-selected--ember@2x.png",
+    "harbor": "assets/components/chip/chip-filter-md-selected--harbor@2x.png",
+    "tideland": "assets/components/chip/chip-filter-md-selected--tideland@2x.png",
+    "cobalt": "assets/components/chip/chip-filter-md-selected--cobalt@2x.png"
+  }
+}

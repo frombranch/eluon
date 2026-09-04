@@ -1,0 +1,39 @@
+{
+  "id": "wish-toggle-md",
+  "name": "Wish Toggle / MD",
+  "group": "commerce",
+  "tags": [
+    "찜",
+    "관심",
+    "토글"
+  ],
+  "spec": {
+    "width": "toggle.size",
+    "height": "toggle.size",
+    "radius": "full",
+    "borderWidth": "border.width",
+    "iconSize": "toggle.iconSize"
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.subtle",
+    "icon": "text.tertiary"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "selected"
+  ],
+  "usage": "목록 카드의 관심 등록. 40x40 터치 영역을 확보한 최소 크기",
+  "dont": "선택 상태를 색으로만 표시하지 않음. 하트를 채워 모양도 함께 바꿈",
+  "status": "stable",
+  "since": "v1.0.3",
+  "renders": {
+    "eluo": "assets/components/commerce/wish-toggle-md--eluo@2x.png",
+    "atlas": "assets/components/commerce/wish-toggle-md--atlas@2x.png",
+    "ember": "assets/components/commerce/wish-toggle-md--ember@2x.png",
+    "harbor": "assets/components/commerce/wish-toggle-md--harbor@2x.png",
+    "tideland": "assets/components/commerce/wish-toggle-md--tideland@2x.png",
+    "cobalt": "assets/components/commerce/wish-toggle-md--cobalt@2x.png"
+  }
+}

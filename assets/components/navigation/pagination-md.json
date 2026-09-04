@@ -1,0 +1,40 @@
+{
+  "id": "pagination-md",
+  "name": "Pagination / MD",
+  "group": "navigation",
+  "tags": [
+    "페이지네이션",
+    "목록"
+  ],
+  "spec": {
+    "height": "pagination.itemSize",
+    "gap": "pagination.gap",
+    "itemSize": "pagination.itemSize",
+    "radius": "md",
+    "typography": "label"
+  },
+  "tokens": {
+    "active": "brand.primary",
+    "label": "text.secondary"
+  },
+  "responsive": {
+    "sm": "scrollX"
+  },
+  "states": [
+    "default",
+    "current",
+    "disabled"
+  ],
+  "usage": "20개 이상 목록. 무한 스크롤이 부적절한 관리 화면",
+  "dont": "10페이지 이상 번호를 다 노출하지 않음. 축약 표기 사용",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/navigation/pagination-md--eluo@2x.png",
+    "atlas": "assets/components/navigation/pagination-md--atlas@2x.png",
+    "ember": "assets/components/navigation/pagination-md--ember@2x.png",
+    "harbor": "assets/components/navigation/pagination-md--harbor@2x.png",
+    "tideland": "assets/components/navigation/pagination-md--tideland@2x.png",
+    "cobalt": "assets/components/navigation/pagination-md--cobalt@2x.png"
+  }
+}

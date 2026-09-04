@@ -1,0 +1,44 @@
+{
+  "id": "table-basic-lg",
+  "name": "Table / Basic / LG",
+  "group": "table",
+  "tags": [
+    "테이블",
+    "목록",
+    "관리화면"
+  ],
+  "spec": {
+    "width": "table.width",
+    "rowHeight": "table.rowHeight",
+    "headerHeight": "table.headerHeight",
+    "paddingX": "table.paddingX",
+    "borderWidth": "border.width",
+    "radius": "xl",
+    "typography": "body2"
+  },
+  "tokens": {
+    "header": "surface.subtle",
+    "border": "border.subtle",
+    "label": "text.secondary"
+  },
+  "responsive": {
+    "md": "toCard"
+  },
+  "states": [
+    "default",
+    "hover",
+    "selected"
+  ],
+  "usage": "비교가 필요한 목록. 열이 3개 이상일 때",
+  "dont": "모바일에서 그대로 쓰지 않음. 카드로 전환",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/table/table-basic-lg--eluo@2x.png",
+    "atlas": "assets/components/table/table-basic-lg--atlas@2x.png",
+    "ember": "assets/components/table/table-basic-lg--ember@2x.png",
+    "harbor": "assets/components/table/table-basic-lg--harbor@2x.png",
+    "tideland": "assets/components/table/table-basic-lg--tideland@2x.png",
+    "cobalt": "assets/components/table/table-basic-lg--cobalt@2x.png"
+  }
+}

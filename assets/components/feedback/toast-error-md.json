@@ -1,0 +1,40 @@
+{
+  "id": "toast-error-md",
+  "name": "Toast / Error / MD",
+  "group": "feedback",
+  "tags": [
+    "토스트",
+    "에러"
+  ],
+  "spec": {
+    "width": "toast.width",
+    "radius": "xl",
+    "paddingX": "toast.paddingX",
+    "paddingY": "toast.paddingY",
+    "gap": "toast.gap",
+    "borderWidth": "border.width",
+    "elevation": 2,
+    "typography": "body2"
+  },
+  "tokens": {
+    "bg": "danger.subtle",
+    "border": "border.danger",
+    "label": "danger.text"
+  },
+  "responsive": {
+    "sm": "fill"
+  },
+  "states": [],
+  "usage": "실패 통보. 자동으로 사라지지 않고 사용자가 닫음",
+  "dont": "원인 설명 없이 '오류가 발생했습니다'만 쓰지 않음",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/feedback/toast-error-md--eluo@2x.png",
+    "atlas": "assets/components/feedback/toast-error-md--atlas@2x.png",
+    "ember": "assets/components/feedback/toast-error-md--ember@2x.png",
+    "harbor": "assets/components/feedback/toast-error-md--harbor@2x.png",
+    "tideland": "assets/components/feedback/toast-error-md--tideland@2x.png",
+    "cobalt": "assets/components/feedback/toast-error-md--cobalt@2x.png"
+  }
+}

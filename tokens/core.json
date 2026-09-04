@@ -1,0 +1,294 @@
+{
+  "$comment": "Eluon 파운데이션 — 브랜드 중립 코어. 컴포넌트는 오직 semantic 토큰만 참조합니다. primitive를 컴포넌트에서 직접 쓰면 테마 교체가 깨집니다.",
+  "name": "Eluon Core",
+  "version": "1.1.0",
+  "primitive": {
+    "gray": {
+      "0": "#FFFFFF",
+      "50": "#F7F8FA",
+      "100": "#EFF1F4",
+      "200": "#E2E5EA",
+      "300": "#CBD0D8",
+      "400": "#8D949E",
+      "500": "#6E7784",
+      "600": "#59626F",
+      "700": "#414954",
+      "800": "#2B313A",
+      "900": "#171B21",
+      "1000": "#0B0D11"
+    },
+    "blue": {
+      "50": "#EEF3FF",
+      "100": "#DAE4FF",
+      "300": "#8FAAF5",
+      "500": "#3A5AF9",
+      "600": "#2B45D4",
+      "700": "#1F33A6"
+    },
+    "red": {
+      "50": "#FDF0EF",
+      "300": "#F0A69F",
+      "500": "#D83C3C",
+      "600": "#BC2E2E",
+      "700": "#951F1F"
+    },
+    "green": {
+      "50": "#EEF8F3",
+      "500": "#1F7A54",
+      "600": "#186345"
+    },
+    "amber": {
+      "50": "#FDF6E8",
+      "500": "#9A6100",
+      "600": "#7C4E00"
+    }
+  },
+  "semantic": {
+    "color": {
+      "brand.primary": "{primitive.blue.500}",
+      "brand.primary.hover": "{primitive.blue.600}",
+      "brand.primary.press": "{primitive.blue.700}",
+      "brand.subtle": "{primitive.blue.50}",
+      "brand.onSubtle": "{primitive.blue.700}",
+      "surface.default": "{primitive.gray.0}",
+      "surface.subtle": "{primitive.gray.50}",
+      "surface.sunken": "{primitive.gray.100}",
+      "surface.disabled": "{primitive.gray.100}",
+      "surface.inverse": "{primitive.gray.900}",
+      "text.primary": "{primitive.gray.900}",
+      "text.secondary": "{primitive.gray.600}",
+      "text.tertiary": "{primitive.gray.500}",
+      "text.disabled": "{primitive.gray.400}",
+      "text.inverse": "{primitive.gray.0}",
+      "text.brand": "{primitive.blue.600}",
+      "border.default": "{primitive.gray.400}",
+      "border.subtle": "{primitive.gray.200}",
+      "border.strong": "{primitive.gray.500}",
+      "border.brand": "{primitive.blue.500}",
+      "border.danger": "{primitive.red.500}",
+      "danger.default": "{primitive.red.500}",
+      "danger.hover": "{primitive.red.600}",
+      "danger.subtle": "{primitive.red.50}",
+      "danger.text": "{primitive.red.600}",
+      "success.default": "{primitive.green.500}",
+      "success.subtle": "{primitive.green.50}",
+      "warning.default": "{primitive.amber.500}",
+      "warning.subtle": "{primitive.amber.50}",
+      "focusRing": "{primitive.blue.500}"
+    },
+    "font": {
+      "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+      "family.display": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+      "family.mono": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+    },
+    "size": {
+      "control.lg.height": 56,
+      "control.lg.paddingX": 24,
+      "control.md.height": 48,
+      "control.md.paddingX": 20,
+      "control.sm.height": 36,
+      "control.sm.paddingX": 14,
+      "control.ghost.paddingX": 14,
+      "field.width": 320,
+      "field.height": 52,
+      "field.paddingX": 16,
+      "field.gap": 6,
+      "chip.height": 36,
+      "chip.paddingX": 14,
+      "chip.gap": 6,
+      "badge.height": 24,
+      "badge.paddingX": 10,
+      "card.width": 320,
+      "card.product.paddingX": 16,
+      "card.product.paddingY": 16,
+      "card.product.gap": 12,
+      "card.basic.paddingX": 20,
+      "card.basic.paddingY": 20,
+      "card.basic.gap": 8,
+      "card.stat.width": 320,
+      "card.stat.paddingX": 20,
+      "card.stat.paddingY": 32,
+      "card.stat.gap": 8,
+      "card.portrait.width": 280,
+      "card.portrait.gap": 12,
+      "toast.width": 360,
+      "toast.paddingX": 16,
+      "toast.paddingY": 14,
+      "toast.gap": 12,
+      "modal.width": 420,
+      "modal.paddingX": 24,
+      "modal.paddingY": 24,
+      "modal.gap": 20,
+      "table.width": 520,
+      "table.rowHeight": 52,
+      "table.headerHeight": 44,
+      "table.paddingX": 16,
+      "tab.width": 360,
+      "tab.height": 52,
+      "tab.gap": 28,
+      "tab.itemPaddingX": 0,
+      "tab.indicatorHeight": 2,
+      "pagination.itemSize": 40,
+      "pagination.gap": 4,
+      "toggle.size": 40,
+      "toggle.iconSize": 18,
+      "section.gap": 8,
+      "price.gap": 8,
+      "border.width": 1,
+      "focusRing.width": 3,
+      "header.height": 72,
+      "header.itemGap": 24,
+      "hero.gap": 24,
+      "hero.actionGap": 12,
+      "hero.railGap": 20,
+      "footer.paddingY": 40,
+      "footer.gap": 24,
+      "field.labelGap": 6,
+      "field.helperGap": 6,
+      "listRow.paddingY": 20,
+      "listRow.gap": 16,
+      "ctaBand.paddingY": 64,
+      "ctaBand.gap": 24,
+      "accordion.paddingY": 20,
+      "accordion.gap": 16,
+      "accordion.iconSize": 20,
+      "breadcrumb.gap": 8,
+      "breadcrumb.itemMaxWidth": 180,
+      "empty.paddingY": 48,
+      "empty.gap": 12,
+      "empty.bodyMaxWidth": 360,
+      "descList.labelWidth": 120,
+      "descList.rowPaddingY": 14,
+      "descList.gap": 20,
+      "stepFlow.gap": 16,
+      "stepFlow.numberSize": 28,
+      "stepFlow.rowGap": 24
+    },
+    "breakpoint": {
+      "sm": 480,
+      "md": 768,
+      "lg": 1024
+    },
+    "radius": {
+      "none": 0,
+      "sm": 6,
+      "md": 10,
+      "lg": 12,
+      "xl": 16,
+      "full": 999
+    },
+    "space": {
+      "1": 4,
+      "2": 8,
+      "3": 12,
+      "4": 16,
+      "5": 20,
+      "6": 24,
+      "8": 32,
+      "10": 40
+    },
+    "elevation": {
+      "0": "none",
+      "1": "0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04)",
+      "2": "0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07)",
+      "3": "0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10)"
+    },
+    "layout": {
+      "container.max": 1200,
+      "container.gutter": 24,
+      "grid.columns": 12,
+      "grid.gap": 24,
+      "section.padY": 96,
+      "section.padYSm": 56,
+      "section.headGap": 40,
+      "block.gap": 24,
+      "card.gap": 24,
+      "text.measure": 68
+    },
+    "text": {
+      "break": "keep-all",
+      "overflowWrap": "anywhere",
+      "wrap": "pretty",
+      "numeric": "tabular-nums"
+    }
+  },
+  "typography": {
+    "display1": {
+      "size": 40,
+      "weight": 800,
+      "lineHeight": 1.2,
+      "tracking": "-0.03em",
+      "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다."
+    },
+    "heading1": {
+      "size": 28,
+      "weight": 700,
+      "lineHeight": 1.3,
+      "tracking": "-0.025em",
+      "role": "섹션 제목."
+    },
+    "heading2": {
+      "size": 22,
+      "weight": 700,
+      "lineHeight": 1.35,
+      "tracking": "-0.02em",
+      "role": "하위 섹션 제목 · 카드 제목."
+    },
+    "heading3": {
+      "size": 18,
+      "weight": 700,
+      "lineHeight": 1.4,
+      "tracking": "-0.015em",
+      "role": "블록 제목 · 표 제목."
+    },
+    "body1": {
+      "size": 16,
+      "weight": 400,
+      "lineHeight": 1.6,
+      "tracking": "-0.005em",
+      "role": "본문 기본."
+    },
+    "body1-bold": {
+      "size": 16,
+      "weight": 700,
+      "lineHeight": 1.5,
+      "tracking": "-0.01em",
+      "role": "본문 안의 강조."
+    },
+    "body2": {
+      "size": 15,
+      "weight": 400,
+      "lineHeight": 1.55,
+      "tracking": "-0.005em",
+      "role": "보조 본문 · 카드 설명 · 목록."
+    },
+    "body2-bold": {
+      "size": 15,
+      "weight": 700,
+      "lineHeight": 1.45,
+      "tracking": "-0.01em",
+      "role": "보조 본문 강조."
+    },
+    "label": {
+      "size": 14,
+      "weight": 600,
+      "lineHeight": 1.4,
+      "tracking": "-0.005em",
+      "role": "폼 라벨 · 버튼 · 탭 · 배지."
+    },
+    "caption": {
+      "size": 13,
+      "weight": 400,
+      "lineHeight": 1.45,
+      "tracking": "0",
+      "role": "주석 · 메타 정보 · 표 각주."
+    },
+    "caption-bold": {
+      "size": 13,
+      "weight": 700,
+      "lineHeight": 1.4,
+      "tracking": "0",
+      "role": "주석 강조."
+    }
+  }
+}

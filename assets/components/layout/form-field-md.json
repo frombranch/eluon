@@ -1,0 +1,49 @@
+{
+  "id": "form-field-md",
+  "name": "Form Field / MD",
+  "group": "layout",
+  "tags": [
+    "폼",
+    "라벨",
+    "도움말"
+  ],
+  "spec": {
+    "width": "field.width",
+    "labelGap": "field.labelGap",
+    "helperGap": "field.helperGap",
+    "inputHeight": "field.height",
+    "radius": "md",
+    "paddingX": "field.paddingX",
+    "borderWidth": "border.width",
+    "labelTypography": "label",
+    "helperTypography": "caption"
+  },
+  "tokens": {
+    "label": "text.primary",
+    "border": "border.default",
+    "placeholder": "text.tertiary",
+    "helper": "text.secondary"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [
+    "default",
+    "focus",
+    "error",
+    "disabled",
+    "도움말 없음"
+  ],
+  "usage": "라벨 · 입력 · 도움말을 한 묶음으로. 폼의 최소 단위",
+  "dont": "라벨을 placeholder 로 대신하지 않음. 입력하면 라벨이 사라짐",
+  "status": "stable",
+  "since": "v1.8.0",
+  "renders": {
+    "eluo": "assets/components/layout/form-field-md--eluo@2x.png",
+    "atlas": "assets/components/layout/form-field-md--atlas@2x.png",
+    "ember": "assets/components/layout/form-field-md--ember@2x.png",
+    "harbor": "assets/components/layout/form-field-md--harbor@2x.png",
+    "tideland": "assets/components/layout/form-field-md--tideland@2x.png",
+    "cobalt": "assets/components/layout/form-field-md--cobalt@2x.png"
+  }
+}

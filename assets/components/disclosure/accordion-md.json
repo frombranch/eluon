@@ -1,0 +1,45 @@
+{
+  "id": "accordion-md",
+  "name": "Accordion / MD",
+  "group": "disclosure",
+  "tags": [
+    "아코디언",
+    "FAQ",
+    "약관",
+    "접기"
+  ],
+  "spec": {
+    "paddingY": "accordion.paddingY",
+    "gap": "accordion.gap",
+    "borderWidth": "border.width",
+    "iconSize": "accordion.iconSize",
+    "titleTypography": "body1-bold",
+    "bodyTypography": "body2",
+    "bodyMaxWidth": "text.measure"
+  },
+  "tokens": {
+    "border": "border.subtle",
+    "title": "text.primary",
+    "body": "text.secondary",
+    "icon": "text.tertiary",
+    "titleOpen": "text.brand"
+  },
+  "responsive": {},
+  "states": [
+    "closed",
+    "open",
+    "hover"
+  ],
+  "usage": "질문·항목이 길어 한 번에 다 보이면 부담스러운 목록. FAQ·약관·상세 사양",
+  "dont": "한 번에 다 읽어야 하는 내용을 접지 않음. 접힌 것은 안 읽습니다",
+  "status": "stable",
+  "since": "v1.10.0",
+  "renders": {
+    "eluo": "assets/components/disclosure/accordion-md--eluo@2x.png",
+    "atlas": "assets/components/disclosure/accordion-md--atlas@2x.png",
+    "ember": "assets/components/disclosure/accordion-md--ember@2x.png",
+    "harbor": "assets/components/disclosure/accordion-md--harbor@2x.png",
+    "tideland": "assets/components/disclosure/accordion-md--tideland@2x.png",
+    "cobalt": "assets/components/disclosure/accordion-md--cobalt@2x.png"
+  }
+}

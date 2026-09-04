@@ -1,0 +1,33 @@
+{
+  "$comment": "ELUO 테마 — core.json의 semantic 토큰만 덮어씁니다. 컴포넌트 구조는 건드리지 않습니다. 고객사 테마도 이 파일을 복제해서 만듭니다.",
+  "name": "ELUO",
+  "extends": "core",
+
+  "primitive": {
+    "navy": { "50":"#EDEEF7","100":"#D6D9EC","300":"#7F87BF","500":"#000080","600":"#00006B","700":"#000052" },
+    "signal": { "500":"#FFFF01", "600":"#E5E500" }
+  },
+
+  "semantic": {
+    "color": {
+      "brand.primary":       "{primitive.navy.500}",
+      "brand.primary.hover": "{primitive.navy.600}",
+      "brand.primary.press": "{primitive.navy.700}",
+      "brand.subtle":        "{primitive.navy.50}",
+      "brand.onSubtle":      "{primitive.navy.700}",
+      "text.brand":          "{primitive.navy.500}",
+      "border.brand":        "{primitive.navy.500}",
+      "focusRing":           "{primitive.navy.500}",
+
+      "accent.default":      "{primitive.signal.500}",
+      "accent.onAccent":     "{primitive.gray.900}"
+    },
+    "radius": { "sm": 4, "md": 6, "lg": 8, "xl": 12 }
+  },
+
+  "rules": [
+    "accent(#FFFF01)는 면적 강조·하이라이트에만 씁니다. 이 색 위의 텍스트는 반드시 text.primary(짙은 회색)여야 하고, 흰 배경 위 텍스트 색으로는 절대 쓰지 않습니다 — 대비비가 1.07:1로 전혀 읽히지 않습니다.",
+    "brand.primary(#000080)는 흰 배경 대비 15.3:1로 본문 텍스트에도 안전합니다.",
+    "ELUO 테마는 core보다 라운드를 작게 가져갑니다. 공공·기업 톤에 맞춘 의도적 선택입니다."
+  ]
+}

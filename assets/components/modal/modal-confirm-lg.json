@@ -1,0 +1,40 @@
+{
+  "id": "modal-confirm-lg",
+  "name": "Confirm Modal / LG",
+  "group": "modal",
+  "tags": [
+    "모달",
+    "확인",
+    "파괴적액션"
+  ],
+  "spec": {
+    "width": "modal.width",
+    "radius": "xl",
+    "paddingX": "modal.paddingX",
+    "paddingY": "modal.paddingY",
+    "gap": "modal.gap",
+    "elevation": 3,
+    "typography": "heading3"
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "title": "text.primary",
+    "body": "text.secondary"
+  },
+  "responsive": {
+    "sm": "fill"
+  },
+  "states": [],
+  "usage": "되돌릴 수 없는 액션 직전의 확인",
+  "dont": "단순 안내에 쓰지 않음. 그건 토스트",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/modal/modal-confirm-lg--eluo@2x.png",
+    "atlas": "assets/components/modal/modal-confirm-lg--atlas@2x.png",
+    "ember": "assets/components/modal/modal-confirm-lg--ember@2x.png",
+    "harbor": "assets/components/modal/modal-confirm-lg--harbor@2x.png",
+    "tideland": "assets/components/modal/modal-confirm-lg--tideland@2x.png",
+    "cobalt": "assets/components/modal/modal-confirm-lg--cobalt@2x.png"
+  }
+}

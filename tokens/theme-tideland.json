@@ -1,0 +1,53 @@
+{
+  "$comment": "Tideland 테마 — 고객사 건. ⚠ 실측이 아닙니다. BI 가이드와 기존 사이트 자료를 받지 못한 상태에서 브랜드 맥락만으로 도출한 추정 테마이므로, 실제 브랜드 색과 다를 수 있습니다. 자료를 받으면 primitive.terracotta 램프만 교체하면 됩니다. 어느 고객사인지는 저장소에 적지 않습니다 — private 노트를 보십시오.",
+  "$status": "estimated",
+  "$derived": [
+    "terracotta 램프 전체 — 실측값이 아니라 브랜드 맥락에서 도출했습니다. 근거는 저장소에 적지 않습니다(고객사가 특정됨).",
+    "terracotta.500 #B44E2B — 흰 텍스트 대비 5.17:1 을 만족하는 선에서 가장 채도가 높은 지점을 잡았습니다",
+    "terracotta.50 #FBF1EC — 500 을 흰색에 8% 섞은 값",
+    "radius — core(6/10/12/16)를 호스피탈리티 관례에 맞춰 8/14/20/28 로 키웠습니다. 실측 근거 없음"
+  ],
+  "$measured": {
+    "상태": "색부터 추정입니다. BI 가이드를 받기 전까지 대외 제출물에 쓰지 마십시오."
+  },
+  "name": "Tideland",
+  "extends": "core",
+  "primitive": {
+    "terracotta": {
+      "50": "#FBF1EC",
+      "100": "#F5DDD2",
+      "300": "#DC9A80",
+      "500": "#B44E2B",
+      "600": "#A94826",
+      "700": "#8F3B1E"
+    }
+  },
+  "semantic": {
+    "color": {
+      "brand.primary": "{primitive.terracotta.500}",
+      "brand.primary.hover": "{primitive.terracotta.600}",
+      "brand.primary.press": "{primitive.terracotta.700}",
+      "brand.subtle": "{primitive.terracotta.50}",
+      "brand.onSubtle": "{primitive.terracotta.700}",
+      "text.brand": "{primitive.terracotta.600}",
+      "border.brand": "{primitive.terracotta.500}",
+      "focusRing": "{primitive.terracotta.500}"
+    },
+    "radius": {
+      "sm": 8,
+      "md": 14,
+      "lg": 20,
+      "xl": 28
+    }
+  },
+  "rules": [
+    "테마 이름 Tideland 는 가명입니다.",
+    "⚠ 실측 테마가 아닙니다. BI 가이드 수령 전까지 대외 제출물에 쓰지 마십시오. 내부 시안·구조 검토용입니다.",
+    "brand.primary(#B44E2B) 위에는 흰색만 씁니다. 회색 텍스트를 올리면 4.5:1 을 못 넘깁니다.",
+    "라운드가 core 보다 큽니다(md 14 · lg 20 · xl 28). 레시피는 var(--radius-*) 를 참조하므로 자동으로 따라오지만, 시안을 손으로 그릴 때 core 감각으로 그리면 어긋납니다.",
+    "무채색·본문색은 core 그대로입니다. 실측 자료가 없어 회색 램프를 흔들 근거가 없었습니다.",
+    "폰트는 core 를 그대로 씁니다.",
+    "terracotta.300(#DC9A80) 위에 흰 텍스트를 올리지 마십시오 — 2.34:1 입니다. 이 단계는 배경·일러스트 면적용이고, 글자를 올려야 하면 text.primary(#171B21, 7.39:1)를 쓰거나 배경을 500 으로 내립니다. 밝은 테라코타에 흰 글씨가 되는 조합은 없습니다.",
+    "border.subtle(#E2E5EA)은 흰 배경 대비 1.26:1 이라 UI 경계 기준(3.0)에 못 미칩니다. core 공통 사안이라 여기서 고치지 않았지만, 카드 자체가 클릭 대상일 때는 border.default(#8D949E, 3.06:1)를 쓰거나 elevation 으로 구분하십시오. border.subtle 은 장식 구분선에만 씁니다."
+  ]
+}

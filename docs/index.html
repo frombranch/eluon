@@ -1,0 +1,2915 @@
+<!doctype html>
+<html lang="ko" data-eluon-theme="eluo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eluon — Design System</title>
+<meta name="description" content="디자인포지션의 에이전틱 디자인 시스템. 컴포넌트 36개, 테마 6종.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+/* Eluon tokens — theme: eluo. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
+[data-eluon-theme="eluo"]{
+  --p-gray-0:#FFFFFF;
+  --p-gray-50:#F7F8FA;
+  --p-gray-100:#EFF1F4;
+  --p-gray-200:#E2E5EA;
+  --p-gray-300:#CBD0D8;
+  --p-gray-400:#8D949E;
+  --p-gray-500:#6E7784;
+  --p-gray-600:#59626F;
+  --p-gray-700:#414954;
+  --p-gray-800:#2B313A;
+  --p-gray-900:#171B21;
+  --p-gray-1000:#0B0D11;
+  --p-blue-50:#EEF3FF;
+  --p-blue-100:#DAE4FF;
+  --p-blue-300:#8FAAF5;
+  --p-blue-500:#3A5AF9;
+  --p-blue-600:#2B45D4;
+  --p-blue-700:#1F33A6;
+  --p-red-50:#FDF0EF;
+  --p-red-300:#F0A69F;
+  --p-red-500:#D83C3C;
+  --p-red-600:#BC2E2E;
+  --p-red-700:#951F1F;
+  --p-green-50:#EEF8F3;
+  --p-green-500:#1F7A54;
+  --p-green-600:#186345;
+  --p-amber-50:#FDF6E8;
+  --p-amber-500:#9A6100;
+  --p-amber-600:#7C4E00;
+  --p-navy-50:#EDEEF7;
+  --p-navy-100:#D6D9EC;
+  --p-navy-300:#7F87BF;
+  --p-navy-500:#000080;
+  --p-navy-600:#00006B;
+  --p-navy-700:#000052;
+  --p-signal-500:#FFFF01;
+  --p-signal-600:#E5E500;
+  --color-brand-primary:#000080;
+  --color-brand-primary-hover:#00006B;
+  --color-brand-primary-press:#000052;
+  --color-brand-subtle:#EDEEF7;
+  --color-brand-onSubtle:#000052;
+  --color-surface-default:#FFFFFF;
+  --color-surface-subtle:#F7F8FA;
+  --color-surface-sunken:#EFF1F4;
+  --color-surface-disabled:#EFF1F4;
+  --color-surface-inverse:#171B21;
+  --color-text-primary:#171B21;
+  --color-text-secondary:#59626F;
+  --color-text-tertiary:#6E7784;
+  --color-text-disabled:#8D949E;
+  --color-text-inverse:#FFFFFF;
+  --color-text-brand:#000080;
+  --color-border-default:#8D949E;
+  --color-border-subtle:#E2E5EA;
+  --color-border-strong:#6E7784;
+  --color-border-brand:#000080;
+  --color-border-danger:#D83C3C;
+  --color-danger-default:#D83C3C;
+  --color-danger-hover:#BC2E2E;
+  --color-danger-subtle:#FDF0EF;
+  --color-danger-text:#BC2E2E;
+  --color-success-default:#1F7A54;
+  --color-success-subtle:#EEF8F3;
+  --color-warning-default:#9A6100;
+  --color-warning-subtle:#FDF6E8;
+  --color-focusRing:#000080;
+  --color-accent-default:#FFFF01;
+  --color-accent-onAccent:#171B21;
+  --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --size-control-lg-height:56px;
+  --size-control-lg-paddingX:24px;
+  --size-control-md-height:48px;
+  --size-control-md-paddingX:20px;
+  --size-control-sm-height:36px;
+  --size-control-sm-paddingX:14px;
+  --size-control-ghost-paddingX:14px;
+  --size-field-width:320px;
+  --size-field-height:52px;
+  --size-field-paddingX:16px;
+  --size-field-gap:6px;
+  --size-chip-height:36px;
+  --size-chip-paddingX:14px;
+  --size-chip-gap:6px;
+  --size-badge-height:24px;
+  --size-badge-paddingX:10px;
+  --size-card-width:320px;
+  --size-card-product-paddingX:16px;
+  --size-card-product-paddingY:16px;
+  --size-card-product-gap:12px;
+  --size-card-basic-paddingX:20px;
+  --size-card-basic-paddingY:20px;
+  --size-card-basic-gap:8px;
+  --size-card-stat-width:320px;
+  --size-card-stat-paddingX:20px;
+  --size-card-stat-paddingY:32px;
+  --size-card-stat-gap:8px;
+  --size-card-portrait-width:280px;
+  --size-card-portrait-gap:12px;
+  --size-toast-width:360px;
+  --size-toast-paddingX:16px;
+  --size-toast-paddingY:14px;
+  --size-toast-gap:12px;
+  --size-modal-width:420px;
+  --size-modal-paddingX:24px;
+  --size-modal-paddingY:24px;
+  --size-modal-gap:20px;
+  --size-table-width:520px;
+  --size-table-rowHeight:52px;
+  --size-table-headerHeight:44px;
+  --size-table-paddingX:16px;
+  --size-tab-width:360px;
+  --size-tab-height:52px;
+  --size-tab-gap:28px;
+  --size-tab-itemPaddingX:0px;
+  --size-tab-indicatorHeight:2px;
+  --size-pagination-itemSize:40px;
+  --size-pagination-gap:4px;
+  --size-toggle-size:40px;
+  --size-toggle-iconSize:18px;
+  --size-section-gap:8px;
+  --size-price-gap:8px;
+  --size-border-width:1px;
+  --size-focusRing-width:3px;
+  --size-header-height:72px;
+  --size-header-itemGap:24px;
+  --size-hero-gap:24px;
+  --size-hero-actionGap:12px;
+  --size-hero-railGap:20px;
+  --size-footer-paddingY:40px;
+  --size-footer-gap:24px;
+  --size-field-labelGap:6px;
+  --size-field-helperGap:6px;
+  --size-listRow-paddingY:20px;
+  --size-listRow-gap:16px;
+  --size-ctaBand-paddingY:64px;
+  --size-ctaBand-gap:24px;
+  --size-accordion-paddingY:20px;
+  --size-accordion-gap:16px;
+  --size-accordion-iconSize:20px;
+  --size-breadcrumb-gap:8px;
+  --size-breadcrumb-itemMaxWidth:180px;
+  --size-empty-paddingY:48px;
+  --size-empty-gap:12px;
+  --size-empty-bodyMaxWidth:360px;
+  --size-descList-labelWidth:120px;
+  --size-descList-rowPaddingY:14px;
+  --size-descList-gap:20px;
+  --size-stepFlow-gap:16px;
+  --size-stepFlow-numberSize:28px;
+  --size-stepFlow-rowGap:24px;
+  --bp-sm:480px;
+  --bp-md:768px;
+  --bp-lg:1024px;
+  --radius-none:0px;
+  --radius-sm:4px;
+  --radius-md:6px;
+  --radius-lg:8px;
+  --radius-xl:12px;
+  --radius-full:999px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --elevation-0:none;
+  --elevation-1:0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04);
+  --elevation-2:0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07);
+  --elevation-3:0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10);
+  --text-break:keep-all;
+  --text-overflowWrap:anywhere;
+  --text-wrap:pretty;
+  --text-numeric:tabular-nums;
+  --layout-container-max:1200px;
+  --layout-container-gutter:24px;
+  --layout-grid-columns:12;
+  --layout-grid-gap:24px;
+  --layout-section-padY:96px;
+  --layout-section-padYSm:56px;
+  --layout-section-headGap:40px;
+  --layout-block-gap:24px;
+  --layout-card-gap:24px;
+  --layout-text-measure:68ch;
+  --type-display1-size:40px;
+  --type-display1-weight:800;
+  --type-display1-lh:1.2;
+  --type-display1-tracking:-0.03em;
+  --type-display1:800 40px/1.2 var(--font-family-base);
+  --type-heading1-size:28px;
+  --type-heading1-weight:700;
+  --type-heading1-lh:1.3;
+  --type-heading1-tracking:-0.025em;
+  --type-heading1:700 28px/1.3 var(--font-family-base);
+  --type-heading2-size:22px;
+  --type-heading2-weight:700;
+  --type-heading2-lh:1.35;
+  --type-heading2-tracking:-0.02em;
+  --type-heading2:700 22px/1.35 var(--font-family-base);
+  --type-heading3-size:18px;
+  --type-heading3-weight:700;
+  --type-heading3-lh:1.4;
+  --type-heading3-tracking:-0.015em;
+  --type-heading3:700 18px/1.4 var(--font-family-base);
+  --type-body1-size:16px;
+  --type-body1-weight:400;
+  --type-body1-lh:1.6;
+  --type-body1-tracking:-0.005em;
+  --type-body1:400 16px/1.6 var(--font-family-base);
+  --type-body1-bold-size:16px;
+  --type-body1-bold-weight:700;
+  --type-body1-bold-lh:1.5;
+  --type-body1-bold-tracking:-0.01em;
+  --type-body1-bold:700 16px/1.5 var(--font-family-base);
+  --type-body2-size:15px;
+  --type-body2-weight:400;
+  --type-body2-lh:1.55;
+  --type-body2-tracking:-0.005em;
+  --type-body2:400 15px/1.55 var(--font-family-base);
+  --type-body2-bold-size:15px;
+  --type-body2-bold-weight:700;
+  --type-body2-bold-lh:1.45;
+  --type-body2-bold-tracking:-0.01em;
+  --type-body2-bold:700 15px/1.45 var(--font-family-base);
+  --type-label-size:14px;
+  --type-label-weight:600;
+  --type-label-lh:1.4;
+  --type-label-tracking:-0.005em;
+  --type-label:600 14px/1.4 var(--font-family-base);
+  --type-caption-size:13px;
+  --type-caption-weight:400;
+  --type-caption-lh:1.45;
+  --type-caption-tracking:0;
+  --type-caption:400 13px/1.45 var(--font-family-base);
+  --type-caption-bold-size:13px;
+  --type-caption-bold-weight:700;
+  --type-caption-bold-lh:1.4;
+  --type-caption-bold-tracking:0;
+  --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+
+/* Eluon tokens — theme: atlas. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
+[data-eluon-theme="atlas"]{
+  --p-gray-0:#FFFFFF;
+  --p-gray-50:#F7F8FA;
+  --p-gray-100:#EFF1F4;
+  --p-gray-200:#E2E5EA;
+  --p-gray-300:#CBD0D8;
+  --p-gray-400:#8D949E;
+  --p-gray-500:#6E7784;
+  --p-gray-600:#59626F;
+  --p-gray-700:#414954;
+  --p-gray-800:#2B313A;
+  --p-gray-900:#171B21;
+  --p-gray-1000:#0B0D11;
+  --p-blue-50:#EEF3FF;
+  --p-blue-100:#DAE4FF;
+  --p-blue-300:#8FAAF5;
+  --p-blue-500:#3A5AF9;
+  --p-blue-600:#2B45D4;
+  --p-blue-700:#1F33A6;
+  --p-red-50:#FDF0EF;
+  --p-red-300:#F0A69F;
+  --p-red-500:#D83C3C;
+  --p-red-600:#BC2E2E;
+  --p-red-700:#951F1F;
+  --p-green-50:#EEF8F3;
+  --p-green-500:#1F7A54;
+  --p-green-600:#186345;
+  --p-amber-50:#FDF6E8;
+  --p-amber-500:#9A6100;
+  --p-amber-600:#7C4E00;
+  --p-atlas-50:#F0F2F4;
+  --p-atlas-100:#DBE0E5;
+  --p-atlas-300:#8C9AAB;
+  --p-atlas-500:#001F45;
+  --p-atlas-600:#001734;
+  --p-atlas-700:#001126;
+  --p-coral-500:#D85640;
+  --p-coral-600:#C24D3A;
+  --color-brand-primary:#001F45;
+  --color-brand-primary-hover:#001734;
+  --color-brand-primary-press:#001126;
+  --color-brand-subtle:#F0F2F4;
+  --color-brand-onSubtle:#001126;
+  --color-surface-default:#FFFFFF;
+  --color-surface-subtle:#F7F8FA;
+  --color-surface-sunken:#EFF1F4;
+  --color-surface-disabled:#EFF1F4;
+  --color-surface-inverse:#171B21;
+  --color-text-primary:#171B21;
+  --color-text-secondary:#59626F;
+  --color-text-tertiary:#6E7784;
+  --color-text-disabled:#8D949E;
+  --color-text-inverse:#FFFFFF;
+  --color-text-brand:#001F45;
+  --color-border-default:#8D949E;
+  --color-border-subtle:#E2E5EA;
+  --color-border-strong:#6E7784;
+  --color-border-brand:#001F45;
+  --color-border-danger:#D83C3C;
+  --color-danger-default:#D83C3C;
+  --color-danger-hover:#BC2E2E;
+  --color-danger-subtle:#FDF0EF;
+  --color-danger-text:#BC2E2E;
+  --color-success-default:#1F7A54;
+  --color-success-subtle:#EEF8F3;
+  --color-warning-default:#9A6100;
+  --color-warning-subtle:#FDF6E8;
+  --color-focusRing:#001F45;
+  --color-accent-default:#C24D3A;
+  --color-accent-onAccent:#FFFFFF;
+  --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --size-control-lg-height:56px;
+  --size-control-lg-paddingX:24px;
+  --size-control-md-height:48px;
+  --size-control-md-paddingX:20px;
+  --size-control-sm-height:36px;
+  --size-control-sm-paddingX:14px;
+  --size-control-ghost-paddingX:14px;
+  --size-field-width:320px;
+  --size-field-height:52px;
+  --size-field-paddingX:16px;
+  --size-field-gap:6px;
+  --size-chip-height:36px;
+  --size-chip-paddingX:14px;
+  --size-chip-gap:6px;
+  --size-badge-height:24px;
+  --size-badge-paddingX:10px;
+  --size-card-width:345px;
+  --size-card-product-paddingX:16px;
+  --size-card-product-paddingY:16px;
+  --size-card-product-gap:12px;
+  --size-card-basic-paddingX:20px;
+  --size-card-basic-paddingY:20px;
+  --size-card-basic-gap:8px;
+  --size-card-stat-width:320px;
+  --size-card-stat-paddingX:20px;
+  --size-card-stat-paddingY:32px;
+  --size-card-stat-gap:8px;
+  --size-card-portrait-width:280px;
+  --size-card-portrait-gap:12px;
+  --size-toast-width:360px;
+  --size-toast-paddingX:16px;
+  --size-toast-paddingY:14px;
+  --size-toast-gap:12px;
+  --size-modal-width:420px;
+  --size-modal-paddingX:24px;
+  --size-modal-paddingY:24px;
+  --size-modal-gap:20px;
+  --size-table-width:520px;
+  --size-table-rowHeight:52px;
+  --size-table-headerHeight:44px;
+  --size-table-paddingX:16px;
+  --size-tab-width:360px;
+  --size-tab-height:52px;
+  --size-tab-gap:28px;
+  --size-tab-itemPaddingX:0px;
+  --size-tab-indicatorHeight:2px;
+  --size-pagination-itemSize:40px;
+  --size-pagination-gap:4px;
+  --size-toggle-size:40px;
+  --size-toggle-iconSize:18px;
+  --size-section-gap:8px;
+  --size-price-gap:8px;
+  --size-border-width:1px;
+  --size-focusRing-width:3px;
+  --size-header-height:72px;
+  --size-header-itemGap:24px;
+  --size-hero-gap:24px;
+  --size-hero-actionGap:12px;
+  --size-hero-railGap:20px;
+  --size-footer-paddingY:40px;
+  --size-footer-gap:24px;
+  --size-field-labelGap:6px;
+  --size-field-helperGap:6px;
+  --size-listRow-paddingY:20px;
+  --size-listRow-gap:16px;
+  --size-ctaBand-paddingY:64px;
+  --size-ctaBand-gap:24px;
+  --size-accordion-paddingY:20px;
+  --size-accordion-gap:16px;
+  --size-accordion-iconSize:20px;
+  --size-breadcrumb-gap:8px;
+  --size-breadcrumb-itemMaxWidth:180px;
+  --size-empty-paddingY:48px;
+  --size-empty-gap:12px;
+  --size-empty-bodyMaxWidth:360px;
+  --size-descList-labelWidth:120px;
+  --size-descList-rowPaddingY:14px;
+  --size-descList-gap:20px;
+  --size-stepFlow-gap:16px;
+  --size-stepFlow-numberSize:28px;
+  --size-stepFlow-rowGap:24px;
+  --bp-sm:480px;
+  --bp-md:768px;
+  --bp-lg:1024px;
+  --radius-none:0px;
+  --radius-sm:2px;
+  --radius-md:4px;
+  --radius-lg:4px;
+  --radius-xl:14px;
+  --radius-full:999px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --elevation-0:none;
+  --elevation-1:0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04);
+  --elevation-2:0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07);
+  --elevation-3:0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10);
+  --text-break:keep-all;
+  --text-overflowWrap:anywhere;
+  --text-wrap:pretty;
+  --text-numeric:tabular-nums;
+  --layout-container-max:1200px;
+  --layout-container-gutter:24px;
+  --layout-grid-columns:12;
+  --layout-grid-gap:24px;
+  --layout-section-padY:96px;
+  --layout-section-padYSm:56px;
+  --layout-section-headGap:40px;
+  --layout-block-gap:24px;
+  --layout-card-gap:24px;
+  --layout-text-measure:68ch;
+  --type-display1-size:40px;
+  --type-display1-weight:800;
+  --type-display1-lh:1.2;
+  --type-display1-tracking:-0.03em;
+  --type-display1:800 40px/1.2 var(--font-family-base);
+  --type-heading1-size:28px;
+  --type-heading1-weight:700;
+  --type-heading1-lh:1.3;
+  --type-heading1-tracking:-0.025em;
+  --type-heading1:700 28px/1.3 var(--font-family-base);
+  --type-heading2-size:22px;
+  --type-heading2-weight:700;
+  --type-heading2-lh:1.35;
+  --type-heading2-tracking:-0.02em;
+  --type-heading2:700 22px/1.35 var(--font-family-base);
+  --type-heading3-size:18px;
+  --type-heading3-weight:700;
+  --type-heading3-lh:1.4;
+  --type-heading3-tracking:-0.015em;
+  --type-heading3:700 18px/1.4 var(--font-family-base);
+  --type-body1-size:16px;
+  --type-body1-weight:400;
+  --type-body1-lh:1.6;
+  --type-body1-tracking:-0.005em;
+  --type-body1:400 16px/1.6 var(--font-family-base);
+  --type-body1-bold-size:16px;
+  --type-body1-bold-weight:700;
+  --type-body1-bold-lh:1.5;
+  --type-body1-bold-tracking:-0.01em;
+  --type-body1-bold:700 16px/1.5 var(--font-family-base);
+  --type-body2-size:15px;
+  --type-body2-weight:400;
+  --type-body2-lh:1.55;
+  --type-body2-tracking:-0.005em;
+  --type-body2:400 15px/1.55 var(--font-family-base);
+  --type-body2-bold-size:15px;
+  --type-body2-bold-weight:700;
+  --type-body2-bold-lh:1.45;
+  --type-body2-bold-tracking:-0.01em;
+  --type-body2-bold:700 15px/1.45 var(--font-family-base);
+  --type-label-size:14px;
+  --type-label-weight:600;
+  --type-label-lh:1.4;
+  --type-label-tracking:-0.005em;
+  --type-label:600 14px/1.4 var(--font-family-base);
+  --type-caption-size:13px;
+  --type-caption-weight:400;
+  --type-caption-lh:1.45;
+  --type-caption-tracking:0;
+  --type-caption:400 13px/1.45 var(--font-family-base);
+  --type-caption-bold-size:13px;
+  --type-caption-bold-weight:700;
+  --type-caption-bold-lh:1.4;
+  --type-caption-bold-tracking:0;
+  --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+
+/* Eluon tokens — theme: ember. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
+[data-eluon-theme="ember"]{
+  --p-gray-0:#FFFFFF;
+  --p-gray-50:#F6F6F3;
+  --p-gray-100:#EEEEE9;
+  --p-gray-200:#E4E4DF;
+  --p-gray-300:#C4C4BE;
+  --p-gray-400:#8E8E88;
+  --p-gray-500:#74746F;
+  --p-gray-600:#5A5A56;
+  --p-gray-700:#43433F;
+  --p-gray-800:#2D2D2A;
+  --p-gray-900:#17171A;
+  --p-gray-1000:#0D0D10;
+  --p-blue-50:#EEF3FF;
+  --p-blue-100:#DAE4FF;
+  --p-blue-300:#8FAAF5;
+  --p-blue-500:#3A5AF9;
+  --p-blue-600:#2B45D4;
+  --p-blue-700:#1F33A6;
+  --p-red-50:#FDF0EF;
+  --p-red-300:#F0A69F;
+  --p-red-500:#D83C3C;
+  --p-red-600:#BC2E2E;
+  --p-red-700:#951F1F;
+  --p-green-50:#EEF8F3;
+  --p-green-500:#1F7A54;
+  --p-green-600:#186345;
+  --p-amber-50:#FDF6E8;
+  --p-amber-500:#9A6100;
+  --p-amber-600:#7C4E00;
+  --p-forest-50:#EAF0ED;
+  --p-forest-500:#12503C;
+  --p-forest-600:#0E4130;
+  --p-forest-700:#0A3226;
+  --p-clay-50:#F9EEEA;
+  --p-clay-500:#A33A1F;
+  --p-clay-600:#852F19;
+  --p-azure-500:#1F4E9C;
+  --color-brand-primary:#12503C;
+  --color-brand-primary-hover:#0E4130;
+  --color-brand-primary-press:#0A3226;
+  --color-brand-subtle:#EAF0ED;
+  --color-brand-onSubtle:#0A3226;
+  --color-surface-default:#FFFFFF;
+  --color-surface-subtle:#F6F6F3;
+  --color-surface-sunken:#EEEEE9;
+  --color-surface-disabled:#EEEEE9;
+  --color-surface-inverse:#17171A;
+  --color-text-primary:#17171A;
+  --color-text-secondary:#5A5A56;
+  --color-text-tertiary:#74746F;
+  --color-text-disabled:#8E8E88;
+  --color-text-inverse:#FFFFFF;
+  --color-text-brand:#12503C;
+  --color-border-default:#8E8E88;
+  --color-border-subtle:#E4E4DF;
+  --color-border-strong:#74746F;
+  --color-border-brand:#12503C;
+  --color-border-danger:#A33A1F;
+  --color-danger-default:#A33A1F;
+  --color-danger-hover:#852F19;
+  --color-danger-subtle:#F9EEEA;
+  --color-danger-text:#852F19;
+  --color-success-default:#1F7A54;
+  --color-success-subtle:#EEF8F3;
+  --color-warning-default:#9A6100;
+  --color-warning-subtle:#FDF6E8;
+  --color-focusRing:#12503C;
+  --color-accent-default:#1F4E9C;
+  --color-accent-onAccent:#FFFFFF;
+  --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --size-control-lg-height:52px;
+  --size-control-lg-paddingX:44px;
+  --size-control-md-height:40px;
+  --size-control-md-paddingX:20px;
+  --size-control-sm-height:39px;
+  --size-control-sm-paddingX:18px;
+  --size-control-ghost-paddingX:14px;
+  --size-field-width:320px;
+  --size-field-height:52px;
+  --size-field-paddingX:16px;
+  --size-field-gap:6px;
+  --size-chip-height:32px;
+  --size-chip-paddingX:15px;
+  --size-chip-gap:7px;
+  --size-badge-height:23px;
+  --size-badge-paddingX:8px;
+  --size-card-width:287.5px;
+  --size-card-product-paddingX:2px;
+  --size-card-product-paddingY:14px;
+  --size-card-product-gap:8px;
+  --size-card-basic-paddingX:20px;
+  --size-card-basic-paddingY:20px;
+  --size-card-basic-gap:8px;
+  --size-card-stat-width:320px;
+  --size-card-stat-paddingX:20px;
+  --size-card-stat-paddingY:32px;
+  --size-card-stat-gap:8px;
+  --size-card-portrait-width:280px;
+  --size-card-portrait-gap:12px;
+  --size-toast-width:360px;
+  --size-toast-paddingX:16px;
+  --size-toast-paddingY:14px;
+  --size-toast-gap:12px;
+  --size-modal-width:420px;
+  --size-modal-paddingX:24px;
+  --size-modal-paddingY:24px;
+  --size-modal-gap:20px;
+  --size-table-width:520px;
+  --size-table-rowHeight:52px;
+  --size-table-headerHeight:44px;
+  --size-table-paddingX:16px;
+  --size-tab-width:360px;
+  --size-tab-height:48px;
+  --size-tab-gap:0px;
+  --size-tab-itemPaddingX:22px;
+  --size-tab-indicatorHeight:2px;
+  --size-pagination-itemSize:40px;
+  --size-pagination-gap:4px;
+  --size-toggle-size:30px;
+  --size-toggle-iconSize:13px;
+  --size-section-gap:8px;
+  --size-price-gap:8px;
+  --size-border-width:1px;
+  --size-focusRing-width:3px;
+  --size-header-height:72px;
+  --size-header-itemGap:24px;
+  --size-hero-gap:24px;
+  --size-hero-actionGap:12px;
+  --size-hero-railGap:20px;
+  --size-footer-paddingY:40px;
+  --size-footer-gap:24px;
+  --size-field-labelGap:6px;
+  --size-field-helperGap:6px;
+  --size-listRow-paddingY:20px;
+  --size-listRow-gap:16px;
+  --size-ctaBand-paddingY:64px;
+  --size-ctaBand-gap:24px;
+  --size-accordion-paddingY:20px;
+  --size-accordion-gap:16px;
+  --size-accordion-iconSize:20px;
+  --size-breadcrumb-gap:8px;
+  --size-breadcrumb-itemMaxWidth:180px;
+  --size-empty-paddingY:48px;
+  --size-empty-gap:12px;
+  --size-empty-bodyMaxWidth:360px;
+  --size-descList-labelWidth:120px;
+  --size-descList-rowPaddingY:14px;
+  --size-descList-gap:20px;
+  --size-stepFlow-gap:16px;
+  --size-stepFlow-numberSize:28px;
+  --size-stepFlow-rowGap:24px;
+  --bp-sm:480px;
+  --bp-md:768px;
+  --bp-lg:1024px;
+  --radius-none:0px;
+  --radius-sm:2px;
+  --radius-md:2px;
+  --radius-lg:2px;
+  --radius-xl:3px;
+  --radius-full:999px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --elevation-0:none;
+  --elevation-1:0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04);
+  --elevation-2:0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07);
+  --elevation-3:0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10);
+  --text-break:keep-all;
+  --text-overflowWrap:anywhere;
+  --text-wrap:pretty;
+  --text-numeric:tabular-nums;
+  --layout-container-max:1200px;
+  --layout-container-gutter:24px;
+  --layout-grid-columns:12;
+  --layout-grid-gap:24px;
+  --layout-section-padY:96px;
+  --layout-section-padYSm:56px;
+  --layout-section-headGap:40px;
+  --layout-block-gap:24px;
+  --layout-card-gap:24px;
+  --layout-text-measure:68ch;
+  --type-display1-size:40px;
+  --type-display1-weight:800;
+  --type-display1-lh:1.2;
+  --type-display1-tracking:-0.03em;
+  --type-display1:800 40px/1.2 var(--font-family-base);
+  --type-heading1-size:28px;
+  --type-heading1-weight:700;
+  --type-heading1-lh:1.3;
+  --type-heading1-tracking:-0.025em;
+  --type-heading1:700 28px/1.3 var(--font-family-base);
+  --type-heading2-size:22px;
+  --type-heading2-weight:700;
+  --type-heading2-lh:1.35;
+  --type-heading2-tracking:-0.02em;
+  --type-heading2:700 22px/1.35 var(--font-family-base);
+  --type-heading3-size:18px;
+  --type-heading3-weight:700;
+  --type-heading3-lh:1.4;
+  --type-heading3-tracking:-0.015em;
+  --type-heading3:700 18px/1.4 var(--font-family-base);
+  --type-body1-size:16px;
+  --type-body1-weight:400;
+  --type-body1-lh:1.6;
+  --type-body1-tracking:-0.005em;
+  --type-body1:400 16px/1.6 var(--font-family-base);
+  --type-body1-bold-size:16px;
+  --type-body1-bold-weight:700;
+  --type-body1-bold-lh:1.5;
+  --type-body1-bold-tracking:-0.01em;
+  --type-body1-bold:700 16px/1.5 var(--font-family-base);
+  --type-body2-size:15px;
+  --type-body2-weight:400;
+  --type-body2-lh:1.55;
+  --type-body2-tracking:-0.005em;
+  --type-body2:400 15px/1.55 var(--font-family-base);
+  --type-body2-bold-size:15px;
+  --type-body2-bold-weight:700;
+  --type-body2-bold-lh:1.45;
+  --type-body2-bold-tracking:-0.01em;
+  --type-body2-bold:700 15px/1.45 var(--font-family-base);
+  --type-label-size:14px;
+  --type-label-weight:600;
+  --type-label-lh:1.4;
+  --type-label-tracking:-0.005em;
+  --type-label:600 14px/1.4 var(--font-family-base);
+  --type-caption-size:13px;
+  --type-caption-weight:400;
+  --type-caption-lh:1.45;
+  --type-caption-tracking:0;
+  --type-caption:400 13px/1.45 var(--font-family-base);
+  --type-caption-bold-size:13px;
+  --type-caption-bold-weight:700;
+  --type-caption-bold-lh:1.4;
+  --type-caption-bold-tracking:0;
+  --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+
+/* Eluon tokens — theme: harbor. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
+[data-eluon-theme="harbor"]{
+  --p-gray-0:#FFFFFF;
+  --p-gray-50:#FAFAFA;
+  --p-gray-100:#F5F5F5;
+  --p-gray-200:#E5E5E5;
+  --p-gray-300:#CCCCCC;
+  --p-gray-400:#999999;
+  --p-gray-500:#666666;
+  --p-gray-600:#444444;
+  --p-gray-700:#333333;
+  --p-gray-800:#222222;
+  --p-gray-900:#111111;
+  --p-gray-1000:#000000;
+  --p-gray-350:#939393;
+  --p-blue-50:#EEF3FF;
+  --p-blue-100:#DAE4FF;
+  --p-blue-300:#8FAAF5;
+  --p-blue-500:#3A5AF9;
+  --p-blue-600:#2B45D4;
+  --p-blue-700:#1F33A6;
+  --p-red-50:#FDF0EF;
+  --p-red-300:#F0A69F;
+  --p-red-500:#D83C3C;
+  --p-red-600:#BC2E2E;
+  --p-red-700:#951F1F;
+  --p-green-50:#EEF8F3;
+  --p-green-500:#1F7A54;
+  --p-green-600:#186345;
+  --p-amber-50:#FDF6E8;
+  --p-amber-500:#9A6100;
+  --p-amber-600:#7C4E00;
+  --p-taupe-50:#F4F1ED;
+  --p-taupe-500:#816C58;
+  --p-taupe-600:#6B5947;
+  --p-taupe-700:#544537;
+  --color-brand-primary:#816C58;
+  --color-brand-primary-hover:#6B5947;
+  --color-brand-primary-press:#544537;
+  --color-brand-subtle:#F4F1ED;
+  --color-brand-onSubtle:#544537;
+  --color-surface-default:#FFFFFF;
+  --color-surface-subtle:#FAFAFA;
+  --color-surface-sunken:#F5F5F5;
+  --color-surface-disabled:#F5F5F5;
+  --color-surface-inverse:#111111;
+  --color-text-primary:#111111;
+  --color-text-secondary:#444444;
+  --color-text-tertiary:#666666;
+  --color-text-disabled:#999999;
+  --color-text-inverse:#FFFFFF;
+  --color-text-brand:#816C58;
+  --color-border-default:#939393;
+  --color-border-subtle:#E5E5E5;
+  --color-border-strong:#666666;
+  --color-border-brand:#816C58;
+  --color-border-danger:#D83C3C;
+  --color-danger-default:#D83C3C;
+  --color-danger-hover:#BC2E2E;
+  --color-danger-subtle:#FDF0EF;
+  --color-danger-text:#BC2E2E;
+  --color-success-default:#1F7A54;
+  --color-success-subtle:#EEF8F3;
+  --color-warning-default:#9A6100;
+  --color-warning-subtle:#FDF6E8;
+  --color-focusRing:#816C58;
+  --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --size-control-lg-height:56px;
+  --size-control-lg-paddingX:40px;
+  --size-control-md-height:48px;
+  --size-control-md-paddingX:20px;
+  --size-control-sm-height:36px;
+  --size-control-sm-paddingX:14px;
+  --size-control-ghost-paddingX:14px;
+  --size-field-width:320px;
+  --size-field-height:52px;
+  --size-field-paddingX:16px;
+  --size-field-gap:6px;
+  --size-chip-height:48px;
+  --size-chip-paddingX:20px;
+  --size-chip-gap:6px;
+  --size-badge-height:36px;
+  --size-badge-paddingX:12px;
+  --size-card-width:445.6px;
+  --size-card-product-paddingX:0px;
+  --size-card-product-paddingY:0px;
+  --size-card-product-gap:12px;
+  --size-card-basic-paddingX:20px;
+  --size-card-basic-paddingY:20px;
+  --size-card-basic-gap:8px;
+  --size-card-stat-width:264px;
+  --size-card-stat-paddingX:16px;
+  --size-card-stat-paddingY:55px;
+  --size-card-stat-gap:8px;
+  --size-card-portrait-width:280px;
+  --size-card-portrait-gap:12px;
+  --size-toast-width:360px;
+  --size-toast-paddingX:16px;
+  --size-toast-paddingY:14px;
+  --size-toast-gap:12px;
+  --size-modal-width:420px;
+  --size-modal-paddingX:24px;
+  --size-modal-paddingY:24px;
+  --size-modal-gap:20px;
+  --size-table-width:520px;
+  --size-table-rowHeight:52px;
+  --size-table-headerHeight:44px;
+  --size-table-paddingX:16px;
+  --size-tab-width:360px;
+  --size-tab-height:52px;
+  --size-tab-gap:28px;
+  --size-tab-itemPaddingX:0px;
+  --size-tab-indicatorHeight:2px;
+  --size-pagination-itemSize:40px;
+  --size-pagination-gap:4px;
+  --size-toggle-size:40px;
+  --size-toggle-iconSize:18px;
+  --size-section-gap:8px;
+  --size-price-gap:8px;
+  --size-border-width:1px;
+  --size-focusRing-width:3px;
+  --size-header-height:72px;
+  --size-header-itemGap:24px;
+  --size-hero-gap:24px;
+  --size-hero-actionGap:12px;
+  --size-hero-railGap:20px;
+  --size-footer-paddingY:40px;
+  --size-footer-gap:24px;
+  --size-field-labelGap:6px;
+  --size-field-helperGap:6px;
+  --size-listRow-paddingY:20px;
+  --size-listRow-gap:16px;
+  --size-ctaBand-paddingY:64px;
+  --size-ctaBand-gap:24px;
+  --size-accordion-paddingY:20px;
+  --size-accordion-gap:16px;
+  --size-accordion-iconSize:20px;
+  --size-breadcrumb-gap:8px;
+  --size-breadcrumb-itemMaxWidth:180px;
+  --size-empty-paddingY:48px;
+  --size-empty-gap:12px;
+  --size-empty-bodyMaxWidth:360px;
+  --size-descList-labelWidth:120px;
+  --size-descList-rowPaddingY:14px;
+  --size-descList-gap:20px;
+  --size-stepFlow-gap:16px;
+  --size-stepFlow-numberSize:28px;
+  --size-stepFlow-rowGap:24px;
+  --bp-sm:480px;
+  --bp-md:768px;
+  --bp-lg:1024px;
+  --radius-none:0px;
+  --radius-sm:0px;
+  --radius-md:4px;
+  --radius-lg:4px;
+  --radius-xl:0px;
+  --radius-full:999px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --elevation-0:none;
+  --elevation-1:0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04);
+  --elevation-2:0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07);
+  --elevation-3:0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10);
+  --text-break:keep-all;
+  --text-overflowWrap:anywhere;
+  --text-wrap:pretty;
+  --text-numeric:tabular-nums;
+  --layout-container-max:1200px;
+  --layout-container-gutter:24px;
+  --layout-grid-columns:12;
+  --layout-grid-gap:24px;
+  --layout-section-padY:96px;
+  --layout-section-padYSm:56px;
+  --layout-section-headGap:40px;
+  --layout-block-gap:24px;
+  --layout-card-gap:24px;
+  --layout-text-measure:68ch;
+  --type-display1-size:40px;
+  --type-display1-weight:800;
+  --type-display1-lh:1.2;
+  --type-display1-tracking:-0.03em;
+  --type-display1:800 40px/1.2 var(--font-family-base);
+  --type-heading1-size:28px;
+  --type-heading1-weight:700;
+  --type-heading1-lh:1.3;
+  --type-heading1-tracking:-0.025em;
+  --type-heading1:700 28px/1.3 var(--font-family-base);
+  --type-heading2-size:22px;
+  --type-heading2-weight:700;
+  --type-heading2-lh:1.35;
+  --type-heading2-tracking:-0.02em;
+  --type-heading2:700 22px/1.35 var(--font-family-base);
+  --type-heading3-size:18px;
+  --type-heading3-weight:700;
+  --type-heading3-lh:1.4;
+  --type-heading3-tracking:-0.015em;
+  --type-heading3:700 18px/1.4 var(--font-family-base);
+  --type-body1-size:16px;
+  --type-body1-weight:400;
+  --type-body1-lh:1.6;
+  --type-body1-tracking:-0.005em;
+  --type-body1:400 16px/1.6 var(--font-family-base);
+  --type-body1-bold-size:16px;
+  --type-body1-bold-weight:700;
+  --type-body1-bold-lh:1.5;
+  --type-body1-bold-tracking:-0.01em;
+  --type-body1-bold:700 16px/1.5 var(--font-family-base);
+  --type-body2-size:15px;
+  --type-body2-weight:400;
+  --type-body2-lh:1.55;
+  --type-body2-tracking:-0.005em;
+  --type-body2:400 15px/1.55 var(--font-family-base);
+  --type-body2-bold-size:15px;
+  --type-body2-bold-weight:700;
+  --type-body2-bold-lh:1.45;
+  --type-body2-bold-tracking:-0.01em;
+  --type-body2-bold:700 15px/1.45 var(--font-family-base);
+  --type-label-size:14px;
+  --type-label-weight:600;
+  --type-label-lh:1.4;
+  --type-label-tracking:-0.005em;
+  --type-label:600 14px/1.4 var(--font-family-base);
+  --type-caption-size:13px;
+  --type-caption-weight:400;
+  --type-caption-lh:1.45;
+  --type-caption-tracking:0;
+  --type-caption:400 13px/1.45 var(--font-family-base);
+  --type-caption-bold-size:13px;
+  --type-caption-bold-weight:700;
+  --type-caption-bold-lh:1.4;
+  --type-caption-bold-tracking:0;
+  --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+
+/* Eluon tokens — theme: tideland. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
+[data-eluon-theme="tideland"]{
+  --p-gray-0:#FFFFFF;
+  --p-gray-50:#F7F8FA;
+  --p-gray-100:#EFF1F4;
+  --p-gray-200:#E2E5EA;
+  --p-gray-300:#CBD0D8;
+  --p-gray-400:#8D949E;
+  --p-gray-500:#6E7784;
+  --p-gray-600:#59626F;
+  --p-gray-700:#414954;
+  --p-gray-800:#2B313A;
+  --p-gray-900:#171B21;
+  --p-gray-1000:#0B0D11;
+  --p-blue-50:#EEF3FF;
+  --p-blue-100:#DAE4FF;
+  --p-blue-300:#8FAAF5;
+  --p-blue-500:#3A5AF9;
+  --p-blue-600:#2B45D4;
+  --p-blue-700:#1F33A6;
+  --p-red-50:#FDF0EF;
+  --p-red-300:#F0A69F;
+  --p-red-500:#D83C3C;
+  --p-red-600:#BC2E2E;
+  --p-red-700:#951F1F;
+  --p-green-50:#EEF8F3;
+  --p-green-500:#1F7A54;
+  --p-green-600:#186345;
+  --p-amber-50:#FDF6E8;
+  --p-amber-500:#9A6100;
+  --p-amber-600:#7C4E00;
+  --p-terracotta-50:#FBF1EC;
+  --p-terracotta-100:#F5DDD2;
+  --p-terracotta-300:#DC9A80;
+  --p-terracotta-500:#B44E2B;
+  --p-terracotta-600:#A94826;
+  --p-terracotta-700:#8F3B1E;
+  --color-brand-primary:#B44E2B;
+  --color-brand-primary-hover:#A94826;
+  --color-brand-primary-press:#8F3B1E;
+  --color-brand-subtle:#FBF1EC;
+  --color-brand-onSubtle:#8F3B1E;
+  --color-surface-default:#FFFFFF;
+  --color-surface-subtle:#F7F8FA;
+  --color-surface-sunken:#EFF1F4;
+  --color-surface-disabled:#EFF1F4;
+  --color-surface-inverse:#171B21;
+  --color-text-primary:#171B21;
+  --color-text-secondary:#59626F;
+  --color-text-tertiary:#6E7784;
+  --color-text-disabled:#8D949E;
+  --color-text-inverse:#FFFFFF;
+  --color-text-brand:#A94826;
+  --color-border-default:#8D949E;
+  --color-border-subtle:#E2E5EA;
+  --color-border-strong:#6E7784;
+  --color-border-brand:#B44E2B;
+  --color-border-danger:#D83C3C;
+  --color-danger-default:#D83C3C;
+  --color-danger-hover:#BC2E2E;
+  --color-danger-subtle:#FDF0EF;
+  --color-danger-text:#BC2E2E;
+  --color-success-default:#1F7A54;
+  --color-success-subtle:#EEF8F3;
+  --color-warning-default:#9A6100;
+  --color-warning-subtle:#FDF6E8;
+  --color-focusRing:#B44E2B;
+  --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --size-control-lg-height:56px;
+  --size-control-lg-paddingX:24px;
+  --size-control-md-height:48px;
+  --size-control-md-paddingX:20px;
+  --size-control-sm-height:36px;
+  --size-control-sm-paddingX:14px;
+  --size-control-ghost-paddingX:14px;
+  --size-field-width:320px;
+  --size-field-height:52px;
+  --size-field-paddingX:16px;
+  --size-field-gap:6px;
+  --size-chip-height:36px;
+  --size-chip-paddingX:14px;
+  --size-chip-gap:6px;
+  --size-badge-height:24px;
+  --size-badge-paddingX:10px;
+  --size-card-width:320px;
+  --size-card-product-paddingX:16px;
+  --size-card-product-paddingY:16px;
+  --size-card-product-gap:12px;
+  --size-card-basic-paddingX:20px;
+  --size-card-basic-paddingY:20px;
+  --size-card-basic-gap:8px;
+  --size-card-stat-width:320px;
+  --size-card-stat-paddingX:20px;
+  --size-card-stat-paddingY:32px;
+  --size-card-stat-gap:8px;
+  --size-card-portrait-width:280px;
+  --size-card-portrait-gap:12px;
+  --size-toast-width:360px;
+  --size-toast-paddingX:16px;
+  --size-toast-paddingY:14px;
+  --size-toast-gap:12px;
+  --size-modal-width:420px;
+  --size-modal-paddingX:24px;
+  --size-modal-paddingY:24px;
+  --size-modal-gap:20px;
+  --size-table-width:520px;
+  --size-table-rowHeight:52px;
+  --size-table-headerHeight:44px;
+  --size-table-paddingX:16px;
+  --size-tab-width:360px;
+  --size-tab-height:52px;
+  --size-tab-gap:28px;
+  --size-tab-itemPaddingX:0px;
+  --size-tab-indicatorHeight:2px;
+  --size-pagination-itemSize:40px;
+  --size-pagination-gap:4px;
+  --size-toggle-size:40px;
+  --size-toggle-iconSize:18px;
+  --size-section-gap:8px;
+  --size-price-gap:8px;
+  --size-border-width:1px;
+  --size-focusRing-width:3px;
+  --size-header-height:72px;
+  --size-header-itemGap:24px;
+  --size-hero-gap:24px;
+  --size-hero-actionGap:12px;
+  --size-hero-railGap:20px;
+  --size-footer-paddingY:40px;
+  --size-footer-gap:24px;
+  --size-field-labelGap:6px;
+  --size-field-helperGap:6px;
+  --size-listRow-paddingY:20px;
+  --size-listRow-gap:16px;
+  --size-ctaBand-paddingY:64px;
+  --size-ctaBand-gap:24px;
+  --size-accordion-paddingY:20px;
+  --size-accordion-gap:16px;
+  --size-accordion-iconSize:20px;
+  --size-breadcrumb-gap:8px;
+  --size-breadcrumb-itemMaxWidth:180px;
+  --size-empty-paddingY:48px;
+  --size-empty-gap:12px;
+  --size-empty-bodyMaxWidth:360px;
+  --size-descList-labelWidth:120px;
+  --size-descList-rowPaddingY:14px;
+  --size-descList-gap:20px;
+  --size-stepFlow-gap:16px;
+  --size-stepFlow-numberSize:28px;
+  --size-stepFlow-rowGap:24px;
+  --bp-sm:480px;
+  --bp-md:768px;
+  --bp-lg:1024px;
+  --radius-none:0px;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:20px;
+  --radius-xl:28px;
+  --radius-full:999px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --elevation-0:none;
+  --elevation-1:0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04);
+  --elevation-2:0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07);
+  --elevation-3:0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10);
+  --text-break:keep-all;
+  --text-overflowWrap:anywhere;
+  --text-wrap:pretty;
+  --text-numeric:tabular-nums;
+  --layout-container-max:1200px;
+  --layout-container-gutter:24px;
+  --layout-grid-columns:12;
+  --layout-grid-gap:24px;
+  --layout-section-padY:96px;
+  --layout-section-padYSm:56px;
+  --layout-section-headGap:40px;
+  --layout-block-gap:24px;
+  --layout-card-gap:24px;
+  --layout-text-measure:68ch;
+  --type-display1-size:40px;
+  --type-display1-weight:800;
+  --type-display1-lh:1.2;
+  --type-display1-tracking:-0.03em;
+  --type-display1:800 40px/1.2 var(--font-family-base);
+  --type-heading1-size:28px;
+  --type-heading1-weight:700;
+  --type-heading1-lh:1.3;
+  --type-heading1-tracking:-0.025em;
+  --type-heading1:700 28px/1.3 var(--font-family-base);
+  --type-heading2-size:22px;
+  --type-heading2-weight:700;
+  --type-heading2-lh:1.35;
+  --type-heading2-tracking:-0.02em;
+  --type-heading2:700 22px/1.35 var(--font-family-base);
+  --type-heading3-size:18px;
+  --type-heading3-weight:700;
+  --type-heading3-lh:1.4;
+  --type-heading3-tracking:-0.015em;
+  --type-heading3:700 18px/1.4 var(--font-family-base);
+  --type-body1-size:16px;
+  --type-body1-weight:400;
+  --type-body1-lh:1.6;
+  --type-body1-tracking:-0.005em;
+  --type-body1:400 16px/1.6 var(--font-family-base);
+  --type-body1-bold-size:16px;
+  --type-body1-bold-weight:700;
+  --type-body1-bold-lh:1.5;
+  --type-body1-bold-tracking:-0.01em;
+  --type-body1-bold:700 16px/1.5 var(--font-family-base);
+  --type-body2-size:15px;
+  --type-body2-weight:400;
+  --type-body2-lh:1.55;
+  --type-body2-tracking:-0.005em;
+  --type-body2:400 15px/1.55 var(--font-family-base);
+  --type-body2-bold-size:15px;
+  --type-body2-bold-weight:700;
+  --type-body2-bold-lh:1.45;
+  --type-body2-bold-tracking:-0.01em;
+  --type-body2-bold:700 15px/1.45 var(--font-family-base);
+  --type-label-size:14px;
+  --type-label-weight:600;
+  --type-label-lh:1.4;
+  --type-label-tracking:-0.005em;
+  --type-label:600 14px/1.4 var(--font-family-base);
+  --type-caption-size:13px;
+  --type-caption-weight:400;
+  --type-caption-lh:1.45;
+  --type-caption-tracking:0;
+  --type-caption:400 13px/1.45 var(--font-family-base);
+  --type-caption-bold-size:13px;
+  --type-caption-bold-weight:700;
+  --type-caption-bold-lh:1.4;
+  --type-caption-bold-tracking:0;
+  --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+
+/* Eluon tokens — theme: cobalt. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
+[data-eluon-theme="cobalt"]{
+  --p-gray-0:#FFFFFF;
+  --p-gray-50:#F7F8FA;
+  --p-gray-100:#EFF1F4;
+  --p-gray-200:#E2E5EA;
+  --p-gray-300:#CBD0D8;
+  --p-gray-400:#8D949E;
+  --p-gray-500:#6E7784;
+  --p-gray-600:#59626F;
+  --p-gray-700:#414954;
+  --p-gray-800:#2B313A;
+  --p-gray-900:#171B21;
+  --p-gray-1000:#0B0D11;
+  --p-blue-50:#EEF3FF;
+  --p-blue-100:#DAE4FF;
+  --p-blue-300:#8FAAF5;
+  --p-blue-500:#3A5AF9;
+  --p-blue-600:#2B45D4;
+  --p-blue-700:#1F33A6;
+  --p-red-50:#FDF0EF;
+  --p-red-300:#F0A69F;
+  --p-red-500:#D83C3C;
+  --p-red-600:#BC2E2E;
+  --p-red-700:#951F1F;
+  --p-green-50:#EEF8F3;
+  --p-green-500:#1F7A54;
+  --p-green-600:#186345;
+  --p-amber-50:#FDF6E8;
+  --p-amber-500:#9A6100;
+  --p-amber-600:#7C4E00;
+  --p-cobalt-50:#E1F0FF;
+  --p-cobalt-100:#C7E0F7;
+  --p-cobalt-300:#A0BED7;
+  --p-cobalt-500:#051469;
+  --p-cobalt-600:#041154;
+  --p-cobalt-700:#030D40;
+  --p-azure-500:#1E64DC;
+  --p-steel-500:#5B7EA3;
+  --color-brand-primary:#051469;
+  --color-brand-primary-hover:#041154;
+  --color-brand-primary-press:#030D40;
+  --color-brand-subtle:#E1F0FF;
+  --color-brand-onSubtle:#051469;
+  --color-surface-default:#FFFFFF;
+  --color-surface-subtle:#F7F8FA;
+  --color-surface-sunken:#EFF1F4;
+  --color-surface-disabled:#EFF1F4;
+  --color-surface-inverse:#171B21;
+  --color-text-primary:#171B21;
+  --color-text-secondary:#59626F;
+  --color-text-tertiary:#6E7784;
+  --color-text-disabled:#8D949E;
+  --color-text-inverse:#FFFFFF;
+  --color-text-brand:#051469;
+  --color-border-default:#5B7EA3;
+  --color-border-subtle:#E2E5EA;
+  --color-border-strong:#6E7784;
+  --color-border-brand:#051469;
+  --color-border-danger:#D83C3C;
+  --color-danger-default:#D83C3C;
+  --color-danger-hover:#BC2E2E;
+  --color-danger-subtle:#FDF0EF;
+  --color-danger-text:#BC2E2E;
+  --color-success-default:#1F7A54;
+  --color-success-subtle:#EEF8F3;
+  --color-warning-default:#9A6100;
+  --color-warning-subtle:#FDF6E8;
+  --color-focusRing:#051469;
+  --color-accent-default:#1E64DC;
+  --color-accent-onAccent:#FFFFFF;
+  --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --size-control-lg-height:56px;
+  --size-control-lg-paddingX:38px;
+  --size-control-md-height:44px;
+  --size-control-md-paddingX:26px;
+  --size-control-sm-height:36px;
+  --size-control-sm-paddingX:14px;
+  --size-control-ghost-paddingX:14px;
+  --size-field-width:320px;
+  --size-field-height:52px;
+  --size-field-paddingX:16px;
+  --size-field-gap:6px;
+  --size-chip-height:36px;
+  --size-chip-paddingX:14px;
+  --size-chip-gap:6px;
+  --size-badge-height:24px;
+  --size-badge-paddingX:10px;
+  --size-card-width:405px;
+  --size-card-product-paddingX:16px;
+  --size-card-product-paddingY:16px;
+  --size-card-product-gap:12px;
+  --size-card-basic-paddingX:20px;
+  --size-card-basic-paddingY:20px;
+  --size-card-basic-gap:8px;
+  --size-card-stat-width:320px;
+  --size-card-stat-paddingX:20px;
+  --size-card-stat-paddingY:32px;
+  --size-card-stat-gap:8px;
+  --size-card-portrait-width:295px;
+  --size-card-portrait-gap:13px;
+  --size-toast-width:360px;
+  --size-toast-paddingX:16px;
+  --size-toast-paddingY:14px;
+  --size-toast-gap:12px;
+  --size-modal-width:420px;
+  --size-modal-paddingX:24px;
+  --size-modal-paddingY:24px;
+  --size-modal-gap:20px;
+  --size-table-width:520px;
+  --size-table-rowHeight:52px;
+  --size-table-headerHeight:44px;
+  --size-table-paddingX:16px;
+  --size-tab-width:360px;
+  --size-tab-height:52px;
+  --size-tab-gap:28px;
+  --size-tab-itemPaddingX:0px;
+  --size-tab-indicatorHeight:2px;
+  --size-pagination-itemSize:40px;
+  --size-pagination-gap:4px;
+  --size-toggle-size:40px;
+  --size-toggle-iconSize:18px;
+  --size-section-gap:8px;
+  --size-price-gap:8px;
+  --size-border-width:2px;
+  --size-focusRing-width:3px;
+  --size-header-height:72px;
+  --size-header-itemGap:24px;
+  --size-hero-gap:24px;
+  --size-hero-actionGap:12px;
+  --size-hero-railGap:20px;
+  --size-footer-paddingY:40px;
+  --size-footer-gap:24px;
+  --size-field-labelGap:6px;
+  --size-field-helperGap:6px;
+  --size-listRow-paddingY:20px;
+  --size-listRow-gap:16px;
+  --size-ctaBand-paddingY:64px;
+  --size-ctaBand-gap:24px;
+  --size-accordion-paddingY:20px;
+  --size-accordion-gap:16px;
+  --size-accordion-iconSize:20px;
+  --size-breadcrumb-gap:8px;
+  --size-breadcrumb-itemMaxWidth:180px;
+  --size-empty-paddingY:48px;
+  --size-empty-gap:12px;
+  --size-empty-bodyMaxWidth:360px;
+  --size-descList-labelWidth:120px;
+  --size-descList-rowPaddingY:14px;
+  --size-descList-gap:20px;
+  --size-stepFlow-gap:16px;
+  --size-stepFlow-numberSize:28px;
+  --size-stepFlow-rowGap:24px;
+  --bp-sm:480px;
+  --bp-md:768px;
+  --bp-lg:1024px;
+  --radius-none:0px;
+  --radius-sm:999px;
+  --radius-md:999px;
+  --radius-lg:999px;
+  --radius-xl:0px;
+  --radius-full:999px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --elevation-0:none;
+  --elevation-1:0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04);
+  --elevation-2:0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07);
+  --elevation-3:0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10);
+  --text-break:keep-all;
+  --text-overflowWrap:anywhere;
+  --text-wrap:pretty;
+  --text-numeric:tabular-nums;
+  --layout-container-max:1200px;
+  --layout-container-gutter:24px;
+  --layout-grid-columns:12;
+  --layout-grid-gap:24px;
+  --layout-section-padY:96px;
+  --layout-section-padYSm:56px;
+  --layout-section-headGap:40px;
+  --layout-block-gap:24px;
+  --layout-card-gap:24px;
+  --layout-text-measure:68ch;
+  --type-display1-size:40px;
+  --type-display1-weight:800;
+  --type-display1-lh:1.2;
+  --type-display1-tracking:-0.03em;
+  --type-display1:800 40px/1.2 var(--font-family-base);
+  --type-heading1-size:28px;
+  --type-heading1-weight:700;
+  --type-heading1-lh:1.3;
+  --type-heading1-tracking:-0.025em;
+  --type-heading1:700 28px/1.3 var(--font-family-base);
+  --type-heading2-size:22px;
+  --type-heading2-weight:700;
+  --type-heading2-lh:1.35;
+  --type-heading2-tracking:-0.02em;
+  --type-heading2:700 22px/1.35 var(--font-family-base);
+  --type-heading3-size:18px;
+  --type-heading3-weight:700;
+  --type-heading3-lh:1.4;
+  --type-heading3-tracking:-0.015em;
+  --type-heading3:700 18px/1.4 var(--font-family-base);
+  --type-body1-size:16px;
+  --type-body1-weight:400;
+  --type-body1-lh:1.6;
+  --type-body1-tracking:-0.005em;
+  --type-body1:400 16px/1.6 var(--font-family-base);
+  --type-body1-bold-size:16px;
+  --type-body1-bold-weight:700;
+  --type-body1-bold-lh:1.5;
+  --type-body1-bold-tracking:-0.01em;
+  --type-body1-bold:700 16px/1.5 var(--font-family-base);
+  --type-body2-size:15px;
+  --type-body2-weight:400;
+  --type-body2-lh:1.55;
+  --type-body2-tracking:-0.005em;
+  --type-body2:400 15px/1.55 var(--font-family-base);
+  --type-body2-bold-size:15px;
+  --type-body2-bold-weight:700;
+  --type-body2-bold-lh:1.45;
+  --type-body2-bold-tracking:-0.01em;
+  --type-body2-bold:700 15px/1.45 var(--font-family-base);
+  --type-label-size:14px;
+  --type-label-weight:600;
+  --type-label-lh:1.4;
+  --type-label-tracking:-0.005em;
+  --type-label:600 14px/1.4 var(--font-family-base);
+  --type-caption-size:13px;
+  --type-caption-weight:400;
+  --type-caption-lh:1.45;
+  --type-caption-tracking:0;
+  --type-caption:400 13px/1.45 var(--font-family-base);
+  --type-caption-bold-size:13px;
+  --type-caption-bold-weight:700;
+  --type-caption-bold-lh:1.4;
+  --type-caption-bold-tracking:0;
+  --type-caption-bold:700 13px/1.4 var(--font-family-base);
+}
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:transparent;-webkit-font-smoothing:antialiased;
+     font-family:var(--font-family-base);color:var(--color-text-primary)}
+.stage{display:inline-block}
+
+#cmp-badge-status-sm .c{display:inline-flex;gap:8px}#cmp-badge-status-sm .b{display:inline-flex;align-items:center;height:var(--size-badge-height);padding:0 var(--size-badge-paddingX);border-radius:var(--radius-full);font-size:13px;font-weight:700;line-height:1.4;letter-spacing:0;}#cmp-badge-status-sm .s{background:var(--color-success-subtle);color:var(--color-success-default)}#cmp-badge-status-sm .w{background:var(--color-warning-subtle);color:var(--color-warning-default)}#cmp-badge-status-sm .d{background:var(--color-danger-subtle);color:var(--color-danger-text)}
+#cmp-btn-danger-md .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-danger-default);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
+#cmp-btn-ghost-md .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-ghost-paddingX);border-radius:var(--radius-md);background:transparent;color:var(--color-text-brand);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
+#cmp-btn-outline-lg .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-brand);color:var(--color-text-brand);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}
+#cmp-btn-outline-md .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-brand);color:var(--color-text-brand);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
+#cmp-btn-primary-lg .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}
+#cmp-btn-primary-lg-disabled .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-surface-disabled);color:var(--color-text-disabled);cursor:not-allowed;font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}
+#cmp-btn-primary-md .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
+#cmp-btn-primary-sm .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-sm-height);padding:0 var(--size-control-sm-paddingX);border-radius:var(--radius-sm);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;}
+#cmp-btn-secondary-lg .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}
+#cmp-card-basic-md .c{width:var(--size-card-width);padding:var(--size-card-basic-paddingY) var(--size-card-basic-paddingX);border-radius:var(--radius-xl);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-subtle);box-shadow:var(--elevation-1);display:flex;flex-direction:column;gap:var(--size-card-basic-gap)}#cmp-card-basic-md .t{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-primary)}#cmp-card-basic-md .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary)}
+#cmp-card-portrait-md .c{width:var(--size-card-portrait-width);display:flex;flex-direction:column;gap:var(--size-card-portrait-gap);background:var(--color-surface-default)}#cmp-card-portrait-md .th{aspect-ratio:9/16;border-radius:var(--radius-xl);background:var(--color-surface-sunken)}#cmp-card-portrait-md .t{font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-primary)}#cmp-card-portrait-md .m{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary)}
+#cmp-card-product-md .c{width:var(--size-card-width);padding:var(--size-card-product-paddingY) var(--size-card-product-paddingX);border-radius:var(--radius-xl);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-subtle);box-shadow:var(--elevation-1);display:flex;flex-direction:column;gap:var(--size-card-product-gap)}#cmp-card-product-md .th{aspect-ratio:16/9;border-radius:var(--radius-md);background:var(--color-surface-sunken)}#cmp-card-product-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary)}#cmp-card-product-md .d{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary)}
+#cmp-card-stat-md .c{width:var(--size-card-stat-width);padding:var(--size-card-stat-paddingY) var(--size-card-stat-paddingX);border-radius:var(--radius-xl);background:var(--color-surface-sunken);display:flex;flex-direction:column;gap:var(--size-card-stat-gap);align-items:center;text-align:center}#cmp-card-stat-md .v{font-size:22px;font-weight:700;line-height:1.35;letter-spacing:-0.02em;color:var(--color-text-primary)}#cmp-card-stat-md .l{font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-primary)}#cmp-card-stat-md .d{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-secondary)}
+#cmp-chip-filter-md .c{display:inline-flex;align-items:center;gap:var(--size-chip-gap);height:var(--size-chip-height);padding:0 var(--size-chip-paddingX);border-radius:var(--radius-full);cursor:pointer;background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-secondary);font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;}
+#cmp-chip-filter-md-selected .c{display:inline-flex;align-items:center;gap:var(--size-chip-gap);height:var(--size-chip-height);padding:0 var(--size-chip-paddingX);border-radius:var(--radius-full);cursor:pointer;background:var(--color-brand-subtle);border:var(--size-border-width) solid var(--color-border-brand);color:var(--color-brand-onSubtle);font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;}
+#cmp-price-discount-md .c{display:inline-flex;align-items:baseline;gap:var(--size-price-gap);white-space:nowrap}#cmp-price-discount-md .r{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-brand)}#cmp-price-discount-md .p{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary)}#cmp-price-discount-md .o{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary);text-decoration:line-through}
+#cmp-wish-toggle-md .c{display:inline-flex;align-items:center;justify-content:center;width:var(--size-toggle-size);height:var(--size-toggle-size);border-radius:var(--radius-full);cursor:pointer;font-family:inherit;font-size:var(--size-toggle-iconSize);line-height:1;background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-subtle);color:var(--color-text-tertiary)}
+#cmp-wish-toggle-md-selected .c{display:inline-flex;align-items:center;justify-content:center;width:var(--size-toggle-size);height:var(--size-toggle-size);border-radius:var(--radius-full);cursor:pointer;font-family:inherit;font-size:var(--size-toggle-iconSize);line-height:1;background:var(--color-brand-subtle);border:var(--size-border-width) solid var(--color-brand-primary);color:var(--color-brand-onSubtle)}
+#cmp-accordion-md .c{display:flex;flex-direction:column}#cmp-accordion-md .it{border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-accordion-md .hd{display:flex;align-items:flex-start;gap:var(--size-accordion-gap);padding:var(--size-accordion-paddingY) 0;cursor:pointer}#cmp-accordion-md .q{flex:1;min-width:0;font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-accordion-md .it.on .q{color:var(--color-text-brand)}#cmp-accordion-md .ic{flex:none;width:var(--size-accordion-iconSize);height:var(--size-accordion-iconSize);line-height:var(--size-accordion-iconSize);text-align:center;color:var(--color-text-tertiary)}#cmp-accordion-md .bd{padding:0 0 var(--size-accordion-paddingY);max-width:var(--layout-text-measure);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}
+#cmp-empty-state-md .c{display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--size-empty-gap);padding:var(--size-empty-paddingY) var(--size-empty-gap);background:var(--color-surface-subtle);border-radius:var(--radius-xl)}#cmp-empty-state-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-empty-state-md .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:var(--size-empty-bodyMaxWidth);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-empty-state-md .b{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;;margin-top:4px}
+#cmp-toast-error-md .c{display:flex;align-items:center;gap:var(--size-toast-gap);width:var(--size-toast-width);padding:var(--size-toast-paddingY) var(--size-toast-paddingX);border-radius:var(--radius-lg);box-shadow:var(--elevation-2);background:var(--color-danger-subtle);border:var(--size-border-width) solid var(--color-border-danger);color:var(--color-danger-text);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}
+#cmp-toast-info-md .c{display:flex;align-items:center;gap:var(--size-toast-gap);width:var(--size-toast-width);padding:var(--size-toast-paddingY) var(--size-toast-paddingX);border-radius:var(--radius-lg);box-shadow:var(--elevation-2);background:var(--color-surface-inverse);color:var(--color-text-inverse);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}
+#cmp-input-text-md .c{display:flex;align-items:center;width:var(--size-field-width);height:var(--size-field-height);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-tertiary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}
+#cmp-input-text-md-error .c{display:flex;flex-direction:column;gap:var(--size-field-gap);width:var(--size-field-width)}#cmp-input-text-md-error .f{display:flex;align-items:center;width:var(--size-field-width);height:var(--size-field-height);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-danger);color:var(--color-text-primary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}#cmp-input-text-md-error .h{color:var(--color-danger-text);font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;}
+#cmp-input-text-md-focus .c{display:flex;align-items:center;width:var(--size-field-width);height:var(--size-field-height);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-brand);box-shadow:0 0 0 var(--size-focusRing-width) color-mix(in srgb, var(--color-focusRing) 24%, transparent);color:var(--color-text-primary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}
+#cmp-select-md .c{display:flex;align-items:center;width:var(--size-field-width);height:var(--size-field-height);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);justify-content:space-between;border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}#cmp-select-md .i{color:var(--color-text-tertiary);font-size:12px}
+#cmp-cta-band-lg .c{width:var(--layout-container-max);padding:var(--size-ctaBand-paddingY) var(--layout-container-gutter);border-radius:var(--radius-xl);background:var(--color-brand-primary);display:flex;align-items:center;justify-content:space-between;gap:var(--size-ctaBand-gap)}#cmp-cta-band-lg .t{font-size:28px;font-weight:700;line-height:1.3;letter-spacing:-0.025em;color:var(--color-text-inverse)}#cmp-cta-band-lg .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-inverse);margin-top:8px}#cmp-cta-band-lg .b{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-surface-default);color:var(--color-text-brand);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;;flex:none}
+#cmp-desc-list-md .c{display:flex;flex-direction:column;margin:0}#cmp-desc-list-md .r{display:flex;gap:var(--size-descList-gap);padding:var(--size-descList-rowPaddingY) 0;border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-desc-list-md .k{flex:0 0 var(--size-descList-labelWidth);margin:0;font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-secondary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-desc-list-md .v{flex:1;min-width:0;margin:0;font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-primary);font-variant-numeric:var(--text-numeric);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}
+#cmp-footer-lg .c{width:var(--layout-container-max);padding:var(--size-footer-paddingY) var(--layout-container-gutter);background:var(--color-surface-inverse);display:flex;justify-content:space-between;align-items:baseline;gap:var(--size-footer-gap)}#cmp-footer-lg .lg{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-inverse)}#cmp-footer-lg .n{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-inverse);max-width:56ch;margin-top:12px;opacity:.72}#cmp-footer-lg .m{display:flex;gap:20px}#cmp-footer-lg .m span{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-inverse);opacity:.72;white-space:nowrap}
+#cmp-form-field-md .c{width:var(--size-field-width);display:flex;flex-direction:column;gap:var(--size-field-labelGap)}#cmp-form-field-md .lb{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;color:var(--color-text-primary)}#cmp-form-field-md .in{height:var(--size-field-height);padding:0 var(--size-field-paddingX);display:flex;align-items:center;border-radius:var(--radius-md);border:var(--size-border-width) solid var(--color-border-default);background:var(--color-surface-default);color:var(--color-text-tertiary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}#cmp-form-field-md .hp{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-secondary);margin-top:calc(var(--size-field-helperGap) - var(--size-field-labelGap))}
+#cmp-header-gnb-lg .c{width:var(--layout-container-max);height:var(--size-header-height);display:flex;align-items:center;gap:var(--size-header-itemGap);padding:0 var(--layout-container-gutter);background:var(--color-surface-default);border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-header-gnb-lg .lg{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-brand);white-space:nowrap}#cmp-header-gnb-lg .nv{display:flex;gap:var(--size-header-itemGap);margin-left:auto}#cmp-header-gnb-lg .nv span{font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-secondary);white-space:nowrap}#cmp-header-gnb-lg .nv span.on{color:var(--color-text-primary)}#cmp-header-gnb-lg .ac{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
+#cmp-hero-split-lg .c{width:var(--layout-container-max);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--size-hero-gap);align-items:end;padding:0 var(--layout-container-gutter)}#cmp-hero-split-lg .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-brand)}#cmp-hero-split-lg .t{font-size:40px;font-weight:800;line-height:1.2;letter-spacing:-0.03em;color:var(--color-text-primary);margin-top:12px}#cmp-hero-split-lg .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:60ch;margin-top:var(--size-hero-railGap)}#cmp-hero-split-lg .a{display:flex;gap:var(--size-hero-actionGap);margin-top:32px}#cmp-hero-split-lg .b1, #cmp-hero-split-lg .b2{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}#cmp-hero-split-lg .b1{background:var(--color-brand-primary);color:var(--color-text-inverse)}#cmp-hero-split-lg .b2{background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary)}#cmp-hero-split-lg .r{border-left:var(--size-border-width) solid var(--color-border-default);padding-left:24px;display:flex;flex-direction:column;gap:var(--size-hero-railGap)}#cmp-hero-split-lg .rl{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary);letter-spacing:0.06em;text-transform:uppercase}#cmp-hero-split-lg .rv{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-primary);font-variant-numeric:tabular-nums}
+#cmp-list-row-md .c{display:flex;flex-direction:column}#cmp-list-row-md .rw{display:flex;align-items:baseline;gap:var(--size-listRow-gap);padding:var(--size-listRow-paddingY) 0;border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-list-row-md .tx{flex:1;min-width:0}#cmp-list-row-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary)}#cmp-list-row-md .m{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary);margin-top:4px}#cmp-list-row-md .v{font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-primary);font-variant-numeric:tabular-nums;white-space:nowrap}
+#cmp-section-header-md .c{display:flex;flex-direction:column;gap:var(--size-section-gap)}#cmp-section-header-md .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-brand)}#cmp-section-header-md .t{font-size:28px;font-weight:700;line-height:1.3;letter-spacing:-0.025em;color:var(--color-text-primary)}#cmp-section-header-md .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:58ch}
+#cmp-step-flow-md .c{display:flex;flex-direction:column;gap:var(--size-stepFlow-rowGap)}#cmp-step-flow-md .s{display:flex;gap:var(--size-stepFlow-gap);align-items:flex-start}#cmp-step-flow-md .n{flex:none;width:var(--size-stepFlow-numberSize);height:var(--size-stepFlow-numberSize);border-radius:var(--radius-full);background:var(--color-brand-primary);color:var(--color-text-inverse);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;line-height:1.4;letter-spacing:0;font-variant-numeric:var(--text-numeric);}#cmp-step-flow-md .tx{flex:1;min-width:0;max-width:var(--layout-text-measure)}#cmp-step-flow-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-step-flow-md .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);margin-top:4px;word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}
+#cmp-modal-confirm-lg .c{width:var(--size-modal-width);padding:var(--size-modal-paddingY) var(--size-modal-paddingX);border-radius:var(--radius-xl);background:var(--color-surface-default);box-shadow:var(--elevation-3);display:flex;flex-direction:column;gap:var(--size-modal-gap)}#cmp-modal-confirm-lg .t{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-primary)}#cmp-modal-confirm-lg .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);margin-top:8px}#cmp-modal-confirm-lg .r{display:flex;gap:8px;justify-content:flex-end}#cmp-modal-confirm-lg .bs, #cmp-modal-confirm-lg .bd{height:44px;padding:0 18px;border:0;border-radius:var(--radius-md);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}#cmp-modal-confirm-lg .bs{background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary)}#cmp-modal-confirm-lg .bd{background:var(--color-danger-default);color:var(--color-text-inverse)}
+#cmp-breadcrumb-md .c{display:flex;align-items:center;gap:var(--size-breadcrumb-gap);flex-wrap:wrap;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;}#cmp-breadcrumb-md .i{max-width:var(--size-breadcrumb-itemMaxWidth);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--color-text-tertiary)}#cmp-breadcrumb-md .i.on{color:var(--color-text-primary);font-weight:700}#cmp-breadcrumb-md .s{color:var(--color-text-tertiary);flex:none}
+#cmp-pagination-md .c{display:flex;gap:var(--size-pagination-gap);align-items:center}#cmp-pagination-md .p{width:var(--size-pagination-itemSize);height:var(--size-pagination-itemSize);display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);color:var(--color-text-secondary);font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;}#cmp-pagination-md .p.on{background:var(--color-brand-primary);color:var(--color-text-inverse)}
+#cmp-tab-underline-md .c{display:flex;gap:var(--size-tab-gap);width:var(--size-tab-width);height:var(--size-tab-height);align-items:flex-end;border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-tab-underline-md .i{padding:0 var(--size-tab-itemPaddingX) 12px;color:var(--color-text-tertiary);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}#cmp-tab-underline-md .i.on{color:var(--color-text-primary);box-shadow:inset 0 calc(-1 * var(--size-tab-indicatorHeight)) 0 var(--color-brand-primary)}
+#cmp-table-basic-lg .c{width:var(--size-table-width);border:var(--size-border-width) solid var(--color-border-subtle);border-radius:var(--radius-lg);overflow:hidden}#cmp-table-basic-lg table{width:100%;border-collapse:collapse}#cmp-table-basic-lg th{height:var(--size-table-headerHeight);padding:0 var(--size-table-paddingX);text-align:left;background:var(--color-surface-subtle);color:var(--color-text-secondary);font-size:13px;font-weight:700;line-height:1.4;letter-spacing:0;}#cmp-table-basic-lg td{height:var(--size-table-rowHeight);padding:0 var(--size-table-paddingX);border-top:var(--size-border-width) solid var(--color-border-subtle);color:var(--color-text-primary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}#cmp-table-basic-lg td.n{font-variant-numeric:tabular-nums;text-align:right}
+
+/* ── 문서 사이트 껍데기 (컴포넌트 토큰과 분리) ──────────────────────────
+   무채색 · 헤어라인 그리드 · 대형 영문 그로테스크. 라운드와 그림자는 쓰지 않습니다.
+   컴포넌트 프리뷰 안쪽은 manifest의 spec을 그대로 따르므로 여기서 건드리지 않습니다. */
+:root{
+  --pg:#FFFFFF; --tx:#141414; --tx2:#757575; --ln:#DCDCDC; --ln2:#141414;
+  --pad:clamp(20px,5vw,120px);
+  --disp:'Helvetica Neue',Helvetica,Arial,'Pretendard Variable',Pretendard,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--pg:#0A0A0A;--tx:#F0F0F0;--tx2:#78787E;--ln:#2B2B2B;--ln2:#F0F0F0}
+}
+body{background:var(--pg);color:var(--tx);
+  font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo',sans-serif;
+  line-height:1.65;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{padding:0 var(--pad)}
+
+/* 상단 고정 바 */
+.barwrap{position:sticky;top:0;z-index:20;margin:0 calc(var(--pad) * -1)}
+.bar{display:flex;align-items:center;gap:28px;
+  height:66px;padding:0 var(--pad);
+  background:color-mix(in srgb,var(--pg) 88%,transparent);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--ln2)}
+/* 색만 바뀌면 어느 테마를 보고 있는지 알 수 없습니다. 이름과 성격을 글로 답니다. */
+.themestrip{display:flex;align-items:baseline;gap:10px;padding:9px var(--pad);
+  background:color-mix(in srgb,var(--pg) 88%,transparent);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--ln);font-size:12.5px;line-height:1.5;
+  white-space:nowrap;overflow:hidden}
+.themestrip .tskey{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx2);font-weight:700;flex:none}
+.themestrip b{font-weight:700;flex:none}
+.themestrip span.tshint{color:var(--tx2);overflow:hidden;text-overflow:ellipsis}
+.logo{font-family:var(--disp);font-size:19px;font-weight:700;letter-spacing:-.03em;
+  text-decoration:none;flex:none}
+.bar nav{display:flex;gap:24px;flex-wrap:wrap;margin:0 auto}
+.bar nav a{color:var(--tx);text-decoration:none;font-size:14px;font-weight:600}
+.bar nav a:hover{color:var(--tx2)}
+.themes{display:flex;flex:none}
+.navtog{display:none;flex:none;margin-left:auto;width:40px;height:40px;
+  align-items:center;justify-content:center;padding:0;
+  border:1px solid var(--ln2);background:transparent;color:var(--tx);cursor:pointer}
+/* 좁은 화면 — 링크와 테마 전환을 햄버거 안으로 접습니다. */
+@media(max-width:899px){
+  .navtog{display:inline-flex}
+  .barmenu{display:none;position:absolute;top:100%;left:0;right:0;z-index:19;
+    flex-direction:column;background:var(--pg);
+    max-height:calc(100dvh - 66px);overflow-y:auto;
+    border-bottom:1px solid var(--ln2);padding:4px var(--pad) 20px}
+  .barmenu[data-open]{display:flex}
+  .bar nav{flex-direction:column;gap:0;margin:0}
+  .bar nav a{padding:13px 0;border-bottom:1px solid var(--ln)}
+  /* 접힌 메뉴 안에서도 같은 처리 — 줄바꿈에 맡기면 가로 경계가 두 겹이 됩니다. */
+  .barmenu .themes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;
+    border-top:1px solid var(--ln2);border-left:1px solid var(--ln2)}
+  .barmenu .themes button{margin:0;border:0;
+    border-right:1px solid var(--ln2);border-bottom:1px solid var(--ln2)}
+}
+/* 넓은 화면에서는 같은 마크업을 왼쪽 레일로 세웁니다.
+   가로 바에 링크 14개를 늘어놓으면 하나하나가 작아지고 순서가 안 읽힙니다.
+   순서는 고르는 차례 그대로 — 로고 → 테마 → 지금 테마 → 링크. */
+@media(min-width:900px){
+  :root{--pad:clamp(24px,3vw,72px);--rail:236px}
+  .barwrap{position:fixed;top:0;left:0;bottom:0;width:var(--rail);margin:0;
+    display:flex;flex-direction:column;overflow-y:auto;
+    background:var(--pg);border-right:1px solid var(--ln2)}
+  /* 바와 메뉴는 껍데기만 벗겨 레일이 직접 순서를 잡게 합니다. */
+  .bar,.barmenu{display:contents}
+  .logo{order:1;padding:28px 24px 20px}
+  .barwrap .themes{order:2;margin:0 24px;
+    display:grid;grid-template-columns:1fr 1fr;
+    border-top:1px solid var(--ln2);border-left:1px solid var(--ln2)}
+  /* 헤어라인이 겹쳐 두 줄로 보이던 것 — 바깥은 컨테이너가, 안쪽은 칸의 오른쪽·아래만. */
+  .barwrap .themes button{margin:0;border:0;
+    border-right:1px solid var(--ln2);border-bottom:1px solid var(--ln2)}
+  .themestrip{order:3;margin:16px 0 0;padding:14px 24px;
+    flex-direction:column;align-items:flex-start;gap:2px;
+    white-space:normal;overflow:visible;font-size:11.5px;line-height:1.5;
+    border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);backdrop-filter:none}
+  .themestrip span.tshint{overflow:visible;text-overflow:clip;line-height:1.5}
+  .bar nav{order:4;flex-direction:column;gap:0;margin:0;padding:20px 24px 28px;width:auto}
+  .bar nav a{display:block;padding:7px 0;font-size:14px}
+  .wrap{margin-left:var(--rail)}
+  .sec{scroll-margin-top:28px}
+}
+.themes button{font:inherit;font-size:12px;font-weight:700;padding:7px 14px;
+  border:1px solid var(--ln2);background:transparent;color:var(--tx);
+  cursor:pointer;margin-left:-1px}
+.themes button[aria-pressed="true"]{background:var(--ln2);color:var(--pg)}
+
+/* 히어로 */
+header.site{padding:clamp(24px,4.3vh,50px) 0 clamp(72px,11vh,130px)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(40px,7.5vw,112px);
+  line-height:.9;letter-spacing:-.045em;margin:0}
+.hero-b{display:grid;grid-template-columns:1fr;gap:22px 48px;margin-top:clamp(40px,6vh,72px)}
+@media(min-width:900px){.hero-b{grid-template-columns:minmax(240px,1fr) 1.1fr 1.1fr}}
+.lead{font-size:clamp(18px,2vw,23px);font-weight:700;letter-spacing:-.03em;
+  line-height:1.5;margin:0;max-width:24ch}
+.body-t{font-size:14.5px;color:var(--tx2);line-height:1.85;margin:0;max-width:44ch}
+/* 한글은 기본값이 어절 중간에서도 끊깁니다. "만든 자/산" 같은 줄바꿈을 막습니다. */
+.lead,.body-t{word-break:keep-all;text-wrap:pretty}
+/* 문서 사이트도 같은 규칙으로. 한 군데씩 고치면 계속 새어 나옵니다. */
+p,li,dd,h3,h4,.use,.dont,caption{word-break:keep-all;text-wrap:pretty}
+/* 히어로는 폭 제한을 걸지 않습니다. 문장이 짧아 열 안에서 한 줄로 앉습니다. */
+.hero-b .lead,.hero-b .body-t{max-width:none}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  margin:clamp(52px,8vh,88px) 0 0;border-top:1px solid var(--ln2)}
+.meta div{padding:18px 20px 0;border-right:1px solid var(--ln)}
+.meta div:first-child{padding-left:0}
+.meta div:last-child{border-right:0}
+.meta dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx2);font-weight:700}
+.meta dd{margin:8px 0 0;font-family:var(--disp);font-size:clamp(26px,3vw,36px);
+  font-weight:700;letter-spacing:-.03em;line-height:1}
+.meta dd a{text-decoration:none;border-bottom:2px solid var(--tx)}
+
+/* 섹션 머리 */
+.sec{padding:clamp(70px,10vh,120px) 0 0;scroll-margin-top:116px}
+.sec-head{display:grid;grid-template-columns:1fr;gap:24px 48px}
+@media(min-width:900px){.sec-head{grid-template-columns:minmax(240px,1fr) 1.1fr 1.1fr}}
+.sec-head .lbl{display:block;font-size:13px;font-weight:700;padding-bottom:14px;
+  border-bottom:1px solid var(--ln2)}
+.sec-head .col-b{border-top:1px solid var(--ln2);padding-top:20px}
+.sec-head .lbl:empty{display:none}
+/* 3열로 펼쳐질 때만 — 빈 레이블이 자리를 잡아 세 열의 헤어라인이 같은 줄에 놓입니다. */
+@media(min-width:900px){
+  .sec-head .col-b{border-top:0;padding-top:0}
+  .sec-head .lbl:empty{display:block}
+  .sec-head .lbl:empty::before{content:"\00a0"}
+  .sec-head .col-b p{margin-top:20px}
+}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(44px,7.5vw,96px);
+  line-height:.88;letter-spacing:-.045em;margin:24px 0 0;
+  hyphens:manual;overflow-wrap:break-word}
+h3{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0}
+h4{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx);margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--ln2)}
+/* 표만 있으면 "이 숫자를 어디에 쓰나" 가 안 보입니다. 표 위에 한 줄로 답니다. */
+p.note{font-size:14px;line-height:24px;color:var(--tx2);margin:-4px 0 18px;
+  max-width:76ch;word-break:keep-all;text-wrap:pretty}
+
+/* 상태는 자산이 아니라 부모의 변형입니다. 카드 안에 함께 둡니다. */
+.states-row{margin-top:20px;padding-top:16px;border-top:1px solid var(--ln)}
+.shd{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tx2);margin-bottom:12px}
+.stiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:12px}
+.stile{display:flex;flex-direction:column;gap:6px;min-width:0}
+.slabel{font-size:12px;font-weight:700;color:var(--tx)}
+.stile .preview{margin:0;overflow-x:auto;padding:24px 16px;min-height:0}
+.sid{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--tx2);
+  overflow:hidden;text-overflow:ellipsis}
+
+/* 고르기 → 빌더. 링크만 걸어두면 보러 갔다가 돌아올 길이 없습니다. */
+.pick{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;
+  font-size:12px;color:var(--tx2);cursor:pointer;user-select:none}
+.pick input{width:15px;height:15px;accent-color:var(--tx);cursor:pointer;margin:0}
+.cmp:has(.pickbox:checked){outline:2px solid var(--ln2);outline-offset:8px}
+.cmp:has(.pickbox:checked) .pick{color:var(--tx);font-weight:700}
+.sendbar{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:40;
+  display:flex;align-items:center;gap:16px;max-width:calc(100vw - 32px);
+  background:var(--tx);color:var(--pg);padding:12px 12px 12px 20px;
+}
+.sendbar[hidden]{display:none}
+.sbcount{font-size:13px;white-space:nowrap}
+.sbids{font-family:ui-monospace,Menlo,monospace;font-size:11px;opacity:.6;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:38vw}
+.sbclear,.sbgo{
+  font-family:inherit;font-size:13px;font-weight:600;padding:8px 14px;
+  border:1px solid var(--pg);background:transparent;color:var(--pg);cursor:pointer;
+  text-decoration:none;white-space:nowrap;
+}
+.sbgo{background:var(--pg);color:var(--tx)}
+@media (max-width:640px){ .sbids{display:none} }
+
+/* 표 · 코드 */
+code{font-family:ui-monospace,Menlo,monospace;font-size:.86em;
+  background:none;border:0;padding:0;color:var(--tx2)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+caption{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx);font-weight:700;padding-bottom:10px}
+td{padding:8px 12px 8px 0;border-bottom:1px solid var(--ln);vertical-align:top}
+td:last-child{padding-right:0}
+td.n{font-variant-numeric:tabular-nums;color:var(--tx2);text-align:right}
+.tw{overflow-x:auto;border-top:1px solid var(--ln2);margin-top:16px}
+/* 예외 — h4 바로 아래 표는 h4의 선을 쓰고 자기 선을 지웁니다. 검은 선이 두 줄로 겹치지 않게. */
+h4 + .tw{border-top:0;margin-top:0}
+.tw thead td{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2)}
+
+/* 스와치 */
+.swrow{margin-top:44px}
+.swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));
+  border-top:1px solid var(--ln);border-left:1px solid var(--ln)}
+.sw{display:flex;align-items:center;gap:10px;font-size:12px;padding:12px 14px;
+  border-right:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.sw span{width:20px;height:20px;border:1px solid var(--ln);flex:none}
+.sw em{font-style:normal;color:var(--tx2);font-variant-numeric:tabular-nums;margin-left:auto}
+.dot{display:inline-block;width:11px;height:11px;border:1px solid var(--ln);
+  margin-right:7px;vertical-align:-1px}
+
+/* 컴포넌트 */
+.cmps{margin-top:clamp(48px,8vh,88px)}
+.cmp{display:grid;grid-template-columns:1fr;gap:24px;
+  border-top:1px solid var(--ln);padding:32px 0 40px}
+@media(min-width:900px){
+  .cmp{grid-template-columns:240px 1fr;gap:0}
+  .c-body{border-left:1px solid var(--ln);padding-left:44px}
+  .c-meta{padding-right:32px}
+}
+.cid{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;
+  color:var(--tx2);margin:7px 0 0}
+.states{margin:16px 0 0;font-size:11px;font-weight:600;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--tx2);line-height:1.9}
+/* 프리뷰는 spec 대로의 실제 폭을 가집니다. 화면보다 넓으면 페이지가 아니라 이 상자가 스크롤합니다. */
+.c-body{min-width:0}
+.preview{display:flex;align-items:center;justify-content:safe center;min-height:160px;
+  padding:44px 24px;border:1px solid var(--ln);background:#FFFFFF;overflow-x:auto}
+.c-detail{display:grid;grid-template-columns:1fr;gap:26px 40px;margin-top:32px}
+@media(min-width:760px){.c-detail{grid-template-columns:1fr 1fr}}
+@media(min-width:1180px){.c-detail{grid-template-columns:1.2fr 1fr 1fr}}
+.usage p{margin:0 0 16px;font-size:14px;color:var(--tx2);line-height:1.75}
+.usage b{display:block;font-size:11px;letter-spacing:.08em;color:var(--tx);
+  font-weight:700;margin-bottom:4px}
+.specs td{padding:6px 12px 6px 0}
+/* 레일이 생겨 본문이 좁아지면서 드러난 넘침 — 그리드 칸은 기본이 min-width:auto 라
+   표가 칸보다 넓어지면 페이지가 밀립니다. 칸은 줄어들 수 있게, 긴 토큰명은 접히게. */
+.c-detail>*{min-width:0}
+.specs td{overflow-wrap:anywhere}
+.url{margin-top:26px;font-size:12.5px;color:var(--tx2)}
+.url summary{cursor:pointer;font-weight:600;color:var(--tx)}
+.url pre{margin:12px 0 0;padding:14px 16px;border:1px solid var(--ln);
+  overflow-x:auto;font-size:11.5px;font-family:ui-monospace,Menlo,monospace}
+pre.prompt{padding:26px 28px;border:1px solid var(--ln);font-size:13px;line-height:1.85;
+  font-family:ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-x:auto}
+
+/* 맨 위로 — 스크롤이 길어 아래에서 올라올 방법이 필요합니다. */
+.totop{position:fixed;right:clamp(16px,3vw,40px);bottom:clamp(16px,3vw,40px);z-index:30;
+  width:48px;height:48px;display:flex;align-items:center;justify-content:center;padding:0;
+  border:1px solid var(--ln2);background:var(--pg);color:var(--tx);cursor:pointer;
+  opacity:0;transform:translateY(8px);pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease}
+.totop.on{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{background:var(--ln2);color:var(--pg)}
+
+footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
+  border-top:1px solid var(--ln2);font-size:12.5px;color:var(--tx2);
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* 스크롤 등장 */
+[data-r]{opacity:0;transform:translateY(28px);
+  transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+[data-r].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  [data-r]{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="barwrap">
+<div class="bar">
+  <a class="logo" href="#top">eluon</a>
+  <button class="navtog" id="navtog" type="button"
+    aria-expanded="false" aria-controls="barmenu" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>
+  <div class="barmenu" id="barmenu">
+    <nav><a href="#foundation">파운데이션</a><a href="#g-badge">뱃지</a><a href="#g-button">버튼</a><a href="#g-card">카드</a><a href="#g-chip">칩</a><a href="#g-commerce">커머스</a><a href="#g-disclosure">접기</a><a href="#g-feedback">피드백</a><a href="#g-input">입력</a><a href="#g-layout">레이아웃</a><a href="#g-modal">모달</a><a href="#g-navigation">내비게이션</a><a href="#g-table">테이블</a><a href="#agent">에이전트</a></nav>
+    <div class="themes" role="group" aria-label="테마 전환">
+      <button data-theme="eluo" aria-pressed="true" data-hint="우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다" title="ELUO — 우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다">ELUO</button><button data-theme="atlas" aria-pressed="false" data-hint="고객사 테마. 진한 남색에 산호색 포인트" title="아틀라스 — 고객사 테마. 진한 남색에 산호색 포인트">아틀라스</button><button data-theme="ember" aria-pressed="false" data-hint="고객사 테마. 진한 초록. 이름과 색이 다르니 주의하세요" title="엠버 — 고객사 테마. 진한 초록. 이름과 색이 다르니 주의하세요">엠버</button><button data-theme="harbor" aria-pressed="false" data-hint="고객사 테마. 따뜻한 갈색. 고객사 웹사이트에서 값을 가져왔습니다" title="하버 — 고객사 테마. 따뜻한 갈색. 고객사 웹사이트에서 값을 가져왔습니다">하버</button><button data-theme="tideland" aria-pressed="false" data-hint="고객사 테마. 주황빛. 색까지 추정이라 대외 제출물에 쓰지 마세요" title="타이드랜드 — 고객사 테마. 주황빛. 색까지 추정이라 대외 제출물에 쓰지 마세요">타이드랜드</button><button data-theme="cobalt" aria-pressed="false" data-hint="고객사 테마. 진한 남색에 파랑 포인트. 버튼이 전부 알약 테두리형입니다" title="코발트 — 고객사 테마. 진한 남색에 파랑 포인트. 버튼이 전부 알약 테두리형입니다">코발트</button>
+    </div>
+  </div>
+</div>
+<p class="themestrip" aria-live="polite">
+  <span class="tskey">Theme</span><b id="themeName">ELUO</b>
+  <span class="tshint" id="themeHint">우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다</span>
+</p>
+</div>
+
+<header class="site" id="top" data-r>
+  <h1 lang="en">Design System</h1>
+  <div class="hero-b">
+    <div></div>
+    <div><p class="lead">에이전트가 읽고 조립하는 자산 라이브러리입니다.</p></div>
+    <div><p class="body-t">정의가 그대로 이미지가 되므로 문서와 자산이 어긋나지 않습니다.</p></div>
+  </div>
+  <dl class="meta">
+    <div><dt>Components</dt><dd>36</dd></div>
+    <div><dt>Themes</dt><dd>6</dd></div>
+    <div><dt>Version</dt><dd>v1.11.1</dd></div>
+    <div><dt>Source</dt><dd><a href="https://github.com/frombranch/eluon">GitHub</a></dd></div>
+  </dl>
+</header>
+
+<section class="sec" id="foundation">
+  <div data-r><div class="sec-head">
+  <div class="col-a"><span class="lbl">Foundation</span><h2 lang="en">Foun&shy;dation</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">컴포넌트는 시맨틱 토큰만 참조합니다.</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">프리미티브를 직접 쓰면 테마 교체가 깨집니다. 색은 헥스로 쓰지 않고 토큰명을 CSS 변수로 선언해 씁니다.</p></div>
+</div></div>
+
+  <div data-r style="margin-top:clamp(48px,8vh,88px)">
+    <h4>Primitive</h4>
+    <div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div>
+  </div>
+
+  <div data-r style="margin-top:56px">
+    <h4>Semantic — ELUO 테마가 덮어쓰는 값</h4>
+    <div class="tw"><table><thead><tr><td>토큰</td><td>코어</td>
+      <td>ELUO 오버라이드</td></tr></thead><tbody><tr><td><code>color.brand.primary</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.brand.primary.hover</code></td><td><span class="dot" style="background:#2B45D4"></span><code>{primitive.blue.600}</code></td><td><span class="dot" style="background:#00006B"></span><code>{primitive.navy.600}</code></td></tr><tr><td><code>color.brand.primary.press</code></td><td><span class="dot" style="background:#1F33A6"></span><code>{primitive.blue.700}</code></td><td><span class="dot" style="background:#000052"></span><code>{primitive.navy.700}</code></td></tr><tr><td><code>color.brand.subtle</code></td><td><span class="dot" style="background:#EEF3FF"></span><code>{primitive.blue.50}</code></td><td><span class="dot" style="background:#EDEEF7"></span><code>{primitive.navy.50}</code></td></tr><tr><td><code>color.brand.onSubtle</code></td><td><span class="dot" style="background:#1F33A6"></span><code>{primitive.blue.700}</code></td><td><span class="dot" style="background:#000052"></span><code>{primitive.navy.700}</code></td></tr><tr><td><code>color.surface.default</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.subtle</code></td><td><span class="dot" style="background:#F7F8FA"></span><code>{primitive.gray.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.sunken</code></td><td><span class="dot" style="background:#EFF1F4"></span><code>{primitive.gray.100}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.disabled</code></td><td><span class="dot" style="background:#EFF1F4"></span><code>{primitive.gray.100}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.inverse</code></td><td><span class="dot" style="background:#171B21"></span><code>{primitive.gray.900}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.primary</code></td><td><span class="dot" style="background:#171B21"></span><code>{primitive.gray.900}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.secondary</code></td><td><span class="dot" style="background:#59626F"></span><code>{primitive.gray.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.tertiary</code></td><td><span class="dot" style="background:#6E7784"></span><code>{primitive.gray.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.disabled</code></td><td><span class="dot" style="background:#8D949E"></span><code>{primitive.gray.400}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.inverse</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.brand</code></td><td><span class="dot" style="background:#2B45D4"></span><code>{primitive.blue.600}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.border.default</code></td><td><span class="dot" style="background:#8D949E"></span><code>{primitive.gray.400}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.subtle</code></td><td><span class="dot" style="background:#E2E5EA"></span><code>{primitive.gray.200}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.strong</code></td><td><span class="dot" style="background:#6E7784"></span><code>{primitive.gray.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.brand</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.border.danger</code></td><td><span class="dot" style="background:#D83C3C"></span><code>{primitive.red.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.default</code></td><td><span class="dot" style="background:#D83C3C"></span><code>{primitive.red.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.hover</code></td><td><span class="dot" style="background:#BC2E2E"></span><code>{primitive.red.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.subtle</code></td><td><span class="dot" style="background:#FDF0EF"></span><code>{primitive.red.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.text</code></td><td><span class="dot" style="background:#BC2E2E"></span><code>{primitive.red.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.success.default</code></td><td><span class="dot" style="background:#1F7A54"></span><code>{primitive.green.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.success.subtle</code></td><td><span class="dot" style="background:#EEF8F3"></span><code>{primitive.green.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.warning.default</code></td><td><span class="dot" style="background:#9A6100"></span><code>{primitive.amber.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.warning.subtle</code></td><td><span class="dot" style="background:#FDF6E8"></span><code>{primitive.amber.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.focusRing</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr></tbody></table></div>
+  </div>
+
+  <div data-r style="margin-top:56px">
+    <h4>Typography — 어느 자리에 무엇을 쓰나</h4>
+    <p class="note">수치만 있고 역할이 없으면 제목과 본문이 다 비슷한 크기로 나옵니다.
+      <code>display1</code>은 한 화면에 하나뿐이고, 위계를 건너뛰지 않습니다.
+      크기는 직접 쓰지 말고 <code>var(--type-heading1-size)</code>, 또는 한 줄 축약형
+      <code>font:var(--type-heading1)</code>을 씁니다.</p>
+    <div class="tw"><table><thead><tr><td>토큰</td><td>어디에 쓰나</td><td>보기</td><td>size / weight / lh / tracking</td></tr></thead><tr><td><code>display1</code></td><td>페이지 제목 · 히어로. 한 화면에 하나만 씁니다.</td><td style="font-size:40px;font-weight:800;line-height:1.2;letter-spacing:-0.03em">디자인은 판단이다 Design</td><td class="n">40 / 800 / 1.2 / -0.03em</td></tr><tr><td><code>heading1</code></td><td>섹션 제목.</td><td style="font-size:28px;font-weight:700;line-height:1.3;letter-spacing:-0.025em">디자인은 판단이다 Design</td><td class="n">28 / 700 / 1.3 / -0.025em</td></tr><tr><td><code>heading2</code></td><td>하위 섹션 제목 · 카드 제목.</td><td style="font-size:22px;font-weight:700;line-height:1.35;letter-spacing:-0.02em">디자인은 판단이다 Design</td><td class="n">22 / 700 / 1.35 / -0.02em</td></tr><tr><td><code>heading3</code></td><td>블록 제목 · 표 제목.</td><td style="font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em">디자인은 판단이다 Design</td><td class="n">18 / 700 / 1.4 / -0.015em</td></tr><tr><td><code>body1</code></td><td>본문 기본.</td><td style="font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em">디자인은 판단이다 Design</td><td class="n">16 / 400 / 1.6 / -0.005em</td></tr><tr><td><code>body1-bold</code></td><td>본문 안의 강조.</td><td style="font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em">디자인은 판단이다 Design</td><td class="n">16 / 700 / 1.5 / -0.01em</td></tr><tr><td><code>body2</code></td><td>보조 본문 · 카드 설명 · 목록.</td><td style="font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em">디자인은 판단이다 Design</td><td class="n">15 / 400 / 1.55 / -0.005em</td></tr><tr><td><code>body2-bold</code></td><td>보조 본문 강조.</td><td style="font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em">디자인은 판단이다 Design</td><td class="n">15 / 700 / 1.45 / -0.01em</td></tr><tr><td><code>label</code></td><td>폼 라벨 · 버튼 · 탭 · 배지.</td><td style="font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em">디자인은 판단이다 Design</td><td class="n">14 / 600 / 1.4 / -0.005em</td></tr><tr><td><code>caption</code></td><td>주석 · 메타 정보 · 표 각주.</td><td style="font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0">디자인은 판단이다 Design</td><td class="n">13 / 400 / 1.45 / 0</td></tr><tr><td><code>caption-bold</code></td><td>주석 강조.</td><td style="font-size:13px;font-weight:700;line-height:1.4;letter-spacing:0">디자인은 판단이다 Design</td><td class="n">13 / 700 / 1.4 / 0</td></tr></table></div>
+  </div>
+
+  <div data-r style="margin-top:56px">
+    <h4>Layout — 어디에 얼마나 놓나</h4>
+    <p class="note">자산이 아무리 정확해도 폭과 리듬이 없으면 성의 없어 보입니다.
+      아래 값은 테마가 덮어씁니다 — 고객사 실측이 있으면 그 값이 정답입니다.
+      manifest의 <code>foundationByTheme.&lt;테마&gt;.layout</code>에서 읽으십시오.</p>
+    <div class="tw"><table><thead><tr><td>토큰</td><td>무엇</td><td>값</td><td>왜</td></tr></thead><tr><td><code>layout.container.max</code></td><td>콘텐츠 최대폭</td><td class="n">1200px</td><td>캔버스가 더 넓어도 본문은 이 폭 안에 둡니다.</td></tr><tr><td><code>layout.container.gutter</code></td><td>좌우 거터</td><td class="n">24px</td><td>화면 가장자리와 콘텐츠 사이 최소 여백.</td></tr><tr><td><code>layout.grid.columns</code></td><td>그리드 열</td><td class="n">12</td><td>본문 영역을 나누는 열 수.</td></tr><tr><td><code>layout.grid.gap</code></td><td>열 간격</td><td class="n">24px</td><td>열과 열 사이.</td></tr><tr><td><code>layout.section.padY</code></td><td>섹션 상하 여백</td><td class="n">96px</td><td>lg 이상에서. 섹션마다 다르게 주지 않습니다.</td></tr><tr><td><code>layout.section.padYSm</code></td><td>섹션 상하 (sm)</td><td class="n">56px</td><td>sm 미만에서.</td></tr><tr><td><code>layout.section.headGap</code></td><td>제목 ↔ 본문</td><td class="n">40px</td><td>섹션 제목과 그 아래 내용 사이.</td></tr><tr><td><code>layout.block.gap</code></td><td>블록 간격</td><td class="n">24px</td><td>문단·블록 사이 기본값.</td></tr><tr><td><code>layout.card.gap</code></td><td>카드 간격</td><td class="n">24px</td><td>카드 그리드의 가로·세로 간격.</td></tr><tr><td><code>layout.text.measure</code></td><td>본문 한 줄 길이</td><td class="n">68ch</td><td>글자수(ch). 넘기면 읽기 어려워집니다.</td></tr></table></div>
+  </div>
+
+  <div data-r style="margin-top:56px">
+    <h4>Korean — 한글 조판</h4>
+    <p class="note">한글은 어절 중간에서 끊기면 읽기가 확 나빠지고, 그렇다고
+      <code>keep-all</code>만 걸면 긴 영문 주소가 레이아웃을 밀어냅니다.
+      <strong>두 속성을 짝으로 겁니다.</strong> 줄바꿈을 <code>&lt;br&gt;</code>로 넣지 않습니다 —
+      폭이 바뀌면 엉뚱한 자리에서 끊깁니다.</p>
+    <div class="tw"><table><thead><tr><td>토큰</td><td>무엇</td><td>값</td><td>왜</td></tr></thead><tr><td><code>text.break</code></td><td>어절 단위 줄바꿈</td><td><code>keep-all</code></td><td>한글 낱자 중간에서 자르지 않습니다.</td></tr><tr><td><code>text.overflowWrap</code></td><td>긴 문자열만 끊기</td><td><code>anywhere</code></td><td>keep-all 만 두면 긴 영문·URL 이 넘칩니다. 둘은 짝입니다.</td></tr><tr><td><code>text.wrap</code></td><td>줄 끝 고르게</td><td><code>pretty</code></td><td>마지막 줄에 한 어절만 남는 것을 줄입니다.</td></tr><tr><td><code>text.numeric</code></td><td>숫자 자릿수 맞춤</td><td><code>tabular-nums</code></td><td>한글 사이에 낀 숫자가 흔들리지 않습니다.</td></tr></table></div>
+    <pre class="prompt">/* 본문에 거는 한 벌 */
+word-break: var(--text-break);
+overflow-wrap: var(--text-overflowWrap);
+text-wrap: var(--text-wrap);</pre>
+  </div>
+
+  <div data-r style="margin-top:56px">
+    <h4>Spacing</h4>
+    <p class="note">간격은 임의값을 쓰지 않습니다. 이 눈금 위에서만 고릅니다.</p>
+    <div class="tw"><table><thead><tr><td>토큰</td><td>값</td><td>보기</td></tr></thead><tr><td><code>space.1</code></td><td class="n">4px</td><td><span style="display:inline-block;height:12px;width:4px;background:var(--color-brand-primary)"></span></td></tr><tr><td><code>space.2</code></td><td class="n">8px</td><td><span style="display:inline-block;height:12px;width:8px;background:var(--color-brand-primary)"></span></td></tr><tr><td><code>space.3</code></td><td class="n">12px</td><td><span style="display:inline-block;height:12px;width:12px;background:var(--color-brand-primary)"></span></td></tr><tr><td><code>space.4</code></td><td class="n">16px</td><td><span style="display:inline-block;height:12px;width:16px;background:var(--color-brand-primary)"></span></td></tr><tr><td><code>space.5</code></td><td class="n">20px</td><td><span style="display:inline-block;height:12px;width:20px;background:var(--color-brand-primary)"></span></td></tr><tr><td><code>space.6</code></td><td class="n">24px</td><td><span style="display:inline-block;height:12px;width:24px;background:var(--color-brand-primary)"></span></td></tr><tr><td><code>space.8</code></td><td class="n">32px</td><td><span style="display:inline-block;height:12px;width:32px;background:var(--color-brand-primary)"></span></td></tr><tr><td><code>space.10</code></td><td class="n">40px</td><td><span style="display:inline-block;height:12px;width:40px;background:var(--color-brand-primary)"></span></td></tr></table></div>
+  </div>
+
+  <div data-r style="margin-top:56px">
+    <h4>Elevation</h4>
+    <div class="tw"><table><thead><tr><td>토큰</td><td>보기</td></tr></thead><tr><td><code>elevation.0</code></td><td><span style="display:inline-block;width:72px;height:34px;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);"></span></td></tr><tr><td><code>elevation.1</code></td><td><span style="display:inline-block;width:72px;height:34px;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);box-shadow:0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04);"></span></td></tr><tr><td><code>elevation.2</code></td><td><span style="display:inline-block;width:72px;height:34px;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);box-shadow:0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07);"></span></td></tr><tr><td><code>elevation.3</code></td><td><span style="display:inline-block;width:72px;height:34px;background:var(--color-bg-surface);border:1px solid var(--color-border-subtle);box-shadow:0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10);"></span></td></tr></table></div>
+  </div>
+</section>
+
+<section class="sec" id="g-badge"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Badges</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">뱃지 1종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="badge-status-sm" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="badge-status-sm"
+      aria-label="Status Badge / SM 고르기"><span>고르기</span></label>
+    <h3>Status Badge / SM</h3>
+    <p class="cid">badge-status-sm</p>
+    <p class="states">success · warning · danger · neutral</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-badge-status-sm"><div class="c"><span class="b s">완료</span><span class="b w">검토중</span><span class="b d">지연</span></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>행·카드의 상태 표기. 색과 텍스트를 함께 씀</p>
+        <p class="dont"><b>금지</b>색만으로 상태를 구분하지 않음</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>height</td><td class='n'>badge.height</td></tr><tr><td>radius</td><td class='n'>full</td></tr><tr><td>paddingX</td><td class='n'>badge.paddingX</td></tr><tr><td>typography</td><td class='n'>caption-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>success.subtle</code></td></tr><tr><td>label</td><td><code>success.default</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/badge/badge-status-sm--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-button"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">But&shy;tons</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">버튼 8종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="btn-danger-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="btn-danger-md"
+      aria-label="Danger Button / MD 고르기"><span>고르기</span></label>
+    <h3>Danger Button / MD</h3>
+    <p class="cid">btn-danger-md</p>
+    <p class="states">default · hover · pressed · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-btn-danger-md"><button class="c">삭제하기</button></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>되돌릴 수 없는 액션. 삭제·탈퇴·영구 해제</p>
+        <p class="dont"><b>금지</b>확인 모달 없이 단독 노출 금지</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>control.md.height</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>paddingX</td><td class='n'>control.md.paddingX</td></tr><tr><td>typography</td><td class='n'>body2-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>danger.default</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-danger-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="btn-ghost-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="btn-ghost-md"
+      aria-label="Ghost Button / MD 고르기"><span>고르기</span></label>
+    <h3>Ghost Button / MD</h3>
+    <p class="cid">btn-ghost-md</p>
+    <p class="states">default · hover · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-btn-ghost-md"><button class="c">더 보기</button></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>세 번째 순위 액션. 취소·더보기·되돌리기</p>
+        <p class="dont"><b>금지</b>한 화면에 3개 이상 늘어놓지 않음. 위계가 사라짐</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>control.md.height</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>paddingX</td><td class='n'>control.ghost.paddingX</td></tr><tr><td>typography</td><td class='n'>body2-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>label</td><td><code>text.brand</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-ghost-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="btn-outline-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="btn-outline-lg"
+      aria-label="Outline Button / LG 고르기"><span>고르기</span></label>
+    <h3>Outline Button / LG</h3>
+    <p class="cid">btn-outline-lg</p>
+    <p class="states">default · hover · pressed · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-btn-outline-lg"><button class="c">장바구니 담기</button></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>채움형이 과한 화면의 주요 액션. 버튼이 화면에서 여러 번 반복될 때</p>
+        <p class="dont"><b>금지</b>btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>control.lg.height</td></tr><tr><td>radius</td><td class='n'>lg</td></tr><tr><td>paddingX</td><td class='n'>control.lg.paddingX</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>typography</td><td class='n'>body1-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.brand</code></td></tr><tr><td>label</td><td><code>text.brand</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="btn-outline-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="btn-outline-md"
+      aria-label="Outline Button / MD 고르기"><span>고르기</span></label>
+    <h3>Outline Button / MD</h3>
+    <p class="cid">btn-outline-md</p>
+    <p class="states">default · hover · pressed · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-btn-outline-md"><button class="c">장바구니 담기</button></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>카드·행 안의 반복 액션. 장바구니 담기·상세 보기</p>
+        <p class="dont"><b>금지</b>btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>control.md.height</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>paddingX</td><td class='n'>control.md.paddingX</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>typography</td><td class='n'>body2-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.brand</code></td></tr><tr><td>label</td><td><code>text.brand</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="btn-primary-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="btn-primary-lg"
+      aria-label="Primary Button / LG 고르기"><span>고르기</span></label>
+    <h3>Primary Button / LG</h3>
+    <p class="cid">btn-primary-lg</p>
+    <p class="states">default · hover · pressed · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-btn-primary-lg"><button class="c">주요 액션</button></div></div>
+      <div class="states-row"><div class="shd">상태</div><div class="stiles"><div class="stile"><div class="slabel">disabled</div><div class="preview"><div id="cmp-btn-primary-lg-disabled"><button class="c" disabled>주요 액션</button></div></div><div class="sid">btn-primary-lg-disabled</div></div></div></div>
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>화면당 주요 액션 1개. 히어로·폼 제출·전환 유도</p>
+        <p class="dont"><b>금지</b>삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>control.lg.height</td></tr><tr><td>radius</td><td class='n'>lg</td></tr><tr><td>paddingX</td><td class='n'>control.lg.paddingX</td></tr><tr><td>typography</td><td class='n'>body1-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>brand.primary</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="btn-primary-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="btn-primary-md"
+      aria-label="Primary Button / MD 고르기"><span>고르기</span></label>
+    <h3>Primary Button / MD</h3>
+    <p class="cid">btn-primary-md</p>
+    <p class="states">default · hover · pressed · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-btn-primary-md"><button class="c">주요 액션</button></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>본문 안 액션. 카드 내부나 테이블 행 액션</p>
+        <p class="dont"><b>금지</b>삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>control.md.height</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>paddingX</td><td class='n'>control.md.paddingX</td></tr><tr><td>typography</td><td class='n'>body2-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>brand.primary</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="btn-primary-sm" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="btn-primary-sm"
+      aria-label="Primary Button / SM 고르기"><span>고르기</span></label>
+    <h3>Primary Button / SM</h3>
+    <p class="cid">btn-primary-sm</p>
+    <p class="states">default · hover · pressed · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-btn-primary-sm"><button class="c">주요 액션</button></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>밀도 높은 영역. 툴바·필터 바</p>
+        <p class="dont"><b>금지</b>삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>control.sm.height</td></tr><tr><td>radius</td><td class='n'>sm</td></tr><tr><td>paddingX</td><td class='n'>control.sm.paddingX</td></tr><tr><td>typography</td><td class='n'>label</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>brand.primary</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-sm--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="btn-secondary-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="btn-secondary-lg"
+      aria-label="Secondary Button / LG 고르기"><span>고르기</span></label>
+    <h3>Secondary Button / LG</h3>
+    <p class="cid">btn-secondary-lg</p>
+    <p class="states">default · hover · pressed · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-btn-secondary-lg"><button class="c">보조 액션</button></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>주요 액션과 나란히 놓는 두 번째 선택지</p>
+        <p class="dont"><b>금지</b>단독으로 쓰지 않음. 항상 primary와 짝</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>control.lg.height</td></tr><tr><td>radius</td><td class='n'>lg</td></tr><tr><td>paddingX</td><td class='n'>control.lg.paddingX</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>typography</td><td class='n'>body1-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>label</td><td><code>text.primary</code></td></tr><tr><td>bg</td><td><code>surface.default</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-secondary-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-card"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Cards</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">카드 4종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="card-basic-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="card-basic-md"
+      aria-label="Basic Card / MD 고르기"><span>고르기</span></label>
+    <h3>Basic Card / MD</h3>
+    <p class="cid">card-basic-md</p>
+    <p class="states">default · hover</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-card-basic-md"><div class="c"><div class="t">카드 제목</div><div class="d">보조 설명이 두 줄까지 들어갑니다. 그 이상은 잘라냅니다.</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>구획을 나누는 기본 컨테이너</p>
+        <p class="dont"><b>금지</b>카드 안에 또 카드를 넣지 않음</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>card.width</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>card.basic.paddingX</td></tr><tr><td>paddingY</td><td class='n'>card.basic.paddingY</td></tr><tr><td>gap</td><td class='n'>card.basic.gap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>elevation</td><td class='n'>1</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-basic-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="card-portrait-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="card-portrait-md"
+      aria-label="Portrait Card / MD 고르기"><span>고르기</span></label>
+    <h3>Portrait Card / MD</h3>
+    <p class="cid">card-portrait-md</p>
+    <p class="states">default · hover</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-card-portrait-md"><div class="c"><div class="th"></div><div><div class="t">여행지에서 보낸 하루</div><div class="m">2026.09 · 브랜드 필름</div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>세로 이미지가 주인공인 목록. SNS·영상·인물 카드. 4~6열로 늘어놓을 때</p>
+        <p class="dont"><b>금지</b>가로 이미지를 억지로 넣지 않음. 16:9 면 card-product-md</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>card.portrait.width</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>gap</td><td class='n'>card.portrait.gap</td></tr><tr><td>thumbRatio</td><td class='n'>9:16</td></tr><tr><td>typography</td><td class='n'>body2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>thumb</td><td><code>surface.sunken</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>meta</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-portrait-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="card-product-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="card-product-md"
+      aria-label="Product Card / MD 고르기"><span>고르기</span></label>
+    <h3>Product Card / MD</h3>
+    <p class="cid">card-product-md</p>
+    <p class="states">default · hover · selected</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-card-product-md"><div class="c"><div class="th"></div><div><div class="t">프로젝트 이름</div><div class="d">2026.08 · 웹사이트 구축</div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>그리드형 목록의 기본 단위. 3~4열 그리드</p>
+        <p class="dont"><b>금지</b>썸네일 비율을 카드마다 다르게 두지 않음</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>card.width</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>card.product.paddingX</td></tr><tr><td>paddingY</td><td class='n'>card.product.paddingY</td></tr><tr><td>gap</td><td class='n'>card.product.gap</td></tr><tr><td>thumbRatio</td><td class='n'>16:9</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>elevation</td><td class='n'>1</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>thumb</td><td><code>surface.sunken</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-product-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="card-stat-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="card-stat-md"
+      aria-label="Stat Card / MD 고르기"><span>고르기</span></label>
+    <h3>Stat Card / MD</h3>
+    <p class="cid">card-stat-md</p>
+    <p class="states">default</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-card-stat-md"><div class="c"><div class="v">최대 10%</div><div class="l">숙박 포인트 적립</div><div class="d">공식 홈페이지 예약 기준</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>숫자 하나를 앞세우는 지표 묶음. 혜택·실적을 3~4개 나란히 놓을 때</p>
+        <p class="dont"><b>금지</b>숫자가 없으면 쓰지 않음. 그냥 구획이면 card-basic-md</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>card.stat.width</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>card.stat.paddingX</td></tr><tr><td>paddingY</td><td class='n'>card.stat.paddingY</td></tr><tr><td>gap</td><td class='n'>card.stat.gap</td></tr><tr><td>typography</td><td class='n'>heading2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.sunken</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr><tr><td>label</td><td><code>text.primary</code></td></tr><tr><td>desc</td><td><code>text.secondary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-stat-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-chip"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Chips</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">칩 1종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="chip-filter-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="chip-filter-md"
+      aria-label="Filter Chip / MD 고르기"><span>고르기</span></label>
+    <h3>Filter Chip / MD</h3>
+    <p class="cid">chip-filter-md</p>
+    <p class="states">default · selected · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-chip-filter-md"><div class="c">진행중</div></div></div>
+      <div class="states-row"><div class="shd">상태</div><div class="stiles"><div class="stile"><div class="slabel">selected</div><div class="preview"><div id="cmp-chip-filter-md-selected"><div class="c">✓ 진행중</div></div></div><div class="sid">chip-filter-md-selected</div></div></div></div>
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>목록 상단의 다중 필터. 2~8개까지</p>
+        <p class="dont"><b>금지</b>단일 선택에는 쓰지 않음. 그건 탭이나 셀렉트</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>hug</td></tr><tr><td>height</td><td class='n'>chip.height</td></tr><tr><td>radius</td><td class='n'>full</td></tr><tr><td>paddingX</td><td class='n'>chip.paddingX</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>gap</td><td class='n'>chip.gap</td></tr><tr><td>typography</td><td class='n'>label</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr><tr><td>bg</td><td><code>surface.default</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-commerce"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Commerce</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">커머스 2종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="price-discount-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="price-discount-md"
+      aria-label="Price / Discount / MD 고르기"><span>고르기</span></label>
+    <h3>Price / Discount / MD</h3>
+    <p class="cid">price-discount-md</p>
+    <p class="states"></p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-price-discount-md"><div class="c"><span class="r">10%</span><span class="p">1,023,000원</span><span class="o">1,137,000원</span></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>할인율·판매가·정가를 한 줄로. 목록과 상세에서 순서를 바꾸지 않음</p>
+        <p class="dont"><b>금지</b>정가에 취소선 없이 두 가격을 나란히 두지 않음. 어느 쪽이 낼 돈인지 알 수 없음</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>gap</td><td class='n'>price.gap</td></tr><tr><td>typography</td><td class='n'>body1-bold</td></tr><tr><td>originalTypography</td><td class='n'>caption</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>rate</td><td><code>text.brand</code></td></tr><tr><td>price</td><td><code>text.primary</code></td></tr><tr><td>original</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/price-discount-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="wish-toggle-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="wish-toggle-md"
+      aria-label="Wish Toggle / MD 고르기"><span>고르기</span></label>
+    <h3>Wish Toggle / MD</h3>
+    <p class="cid">wish-toggle-md</p>
+    <p class="states">default · selected</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-wish-toggle-md"><button class="c" aria-label="관심 등록">♡</button></div></div>
+      <div class="states-row"><div class="shd">상태</div><div class="stiles"><div class="stile"><div class="slabel">selected</div><div class="preview"><div id="cmp-wish-toggle-md-selected"><button class="c" aria-label="관심 해제" aria-pressed="true">♥</button></div></div><div class="sid">wish-toggle-md-selected</div></div></div></div>
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>목록 카드의 관심 등록. 40x40 터치 영역을 확보한 최소 크기</p>
+        <p class="dont"><b>금지</b>선택 상태를 색으로만 표시하지 않음. 하트를 채워 모양도 함께 바꿈</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>toggle.size</td></tr><tr><td>height</td><td class='n'>toggle.size</td></tr><tr><td>radius</td><td class='n'>full</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>iconSize</td><td class='n'>toggle.iconSize</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>icon</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-disclosure"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Dis&shy;closure</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">접기 1종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="accordion-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="accordion-md"
+      aria-label="Accordion / MD 고르기"><span>고르기</span></label>
+    <h3>Accordion / MD</h3>
+    <p class="cid">accordion-md</p>
+    <p class="states">closed · open · hover</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-accordion-md"><div class="c"><div class="it on"><div class="hd"><div class="q">제안서에 들어가는 자산은 어디까지 정해져 있나요?</div><div class="ic">−</div></div><div class="bd">규격·색·라운드·간격까지 manifest 에 적혀 있습니다. 화면을 만드는 사람이 정하는 것은 무엇을 어디에 놓느냐뿐입니다.</div></div><div class="it"><div class="hd"><div class="q">고객사마다 크기가 다른데 컴포넌트를 새로 만들어야 하나요?</div><div class="ic">+</div></div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>질문·항목이 길어 한 번에 다 보이면 부담스러운 목록. FAQ·약관·상세 사양</p>
+        <p class="dont"><b>금지</b>한 번에 다 읽어야 하는 내용을 접지 않음. 접힌 것은 안 읽습니다</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>paddingY</td><td class='n'>accordion.paddingY</td></tr><tr><td>gap</td><td class='n'>accordion.gap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>iconSize</td><td class='n'>accordion.iconSize</td></tr><tr><td>titleTypography</td><td class='n'>body1-bold</td></tr><tr><td>bodyTypography</td><td class='n'>body2</td></tr><tr><td>bodyMaxWidth</td><td class='n'>text.measure</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr><tr><td>icon</td><td><code>text.tertiary</code></td></tr><tr><td>titleOpen</td><td><code>text.brand</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/disclosure/accordion-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-feedback"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Feed&shy;back</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">피드백 3종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="empty-state-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="empty-state-md"
+      aria-label="Empty State / MD 고르기"><span>고르기</span></label>
+    <h3>Empty State / MD</h3>
+    <p class="cid">empty-state-md</p>
+    <p class="states">결과 없음 · 아직 없음 · 권한 없음</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-empty-state-md"><div class="c"><div class="t">조건에 맞는 자료가 없습니다</div><div class="d">기간을 넓히거나 분류를 전체로 바꾸면 더 나올 수 있습니다.</div><button class="b">조건 초기화</button></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>목록이 비었을 때. 왜 비었는지와 다음에 무엇을 할지를 같이 적음</p>
+        <p class="dont"><b>금지</b>'데이터가 없습니다'만 쓰지 않음. 왜 없는지·무엇을 하면 되는지가 빠지면 막힙니다</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>paddingY</td><td class='n'>empty.paddingY</td></tr><tr><td>gap</td><td class='n'>empty.gap</td></tr><tr><td>titleTypography</td><td class='n'>body1-bold</td></tr><tr><td>bodyTypography</td><td class='n'>body2</td></tr><tr><td>bodyMaxWidth</td><td class='n'>empty.bodyMaxWidth</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.subtle</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/empty-state-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="toast-error-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="toast-error-md"
+      aria-label="Toast / Error / MD 고르기"><span>고르기</span></label>
+    <h3>Toast / Error / MD</h3>
+    <p class="cid">toast-error-md</p>
+    <p class="states"></p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-toast-error-md"><div class="c"><span>!</span><span>네트워크 연결을 확인해 주세요</span></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>실패 통보. 자동으로 사라지지 않고 사용자가 닫음</p>
+        <p class="dont"><b>금지</b>원인 설명 없이 '오류가 발생했습니다'만 쓰지 않음</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>toast.width</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>toast.paddingX</td></tr><tr><td>paddingY</td><td class='n'>toast.paddingY</td></tr><tr><td>gap</td><td class='n'>toast.gap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>elevation</td><td class='n'>2</td></tr><tr><td>typography</td><td class='n'>body2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>danger.subtle</code></td></tr><tr><td>border</td><td><code>border.danger</code></td></tr><tr><td>label</td><td><code>danger.text</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-error-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="toast-info-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="toast-info-md"
+      aria-label="Toast / Info / MD 고르기"><span>고르기</span></label>
+    <h3>Toast / Info / MD</h3>
+    <p class="cid">toast-info-md</p>
+    <p class="states"></p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-toast-info-md"><div class="c"><span>✓</span><span>저장했습니다</span></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>되돌릴 필요 없는 결과 통보. 4초 후 자동 사라짐</p>
+        <p class="dont"><b>금지</b>에러나 확인이 필요한 내용에 쓰지 않음. 사용자가 놓침</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>toast.width</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>toast.paddingX</td></tr><tr><td>paddingY</td><td class='n'>toast.paddingY</td></tr><tr><td>gap</td><td class='n'>toast.gap</td></tr><tr><td>elevation</td><td class='n'>2</td></tr><tr><td>typography</td><td class='n'>body2</td></tr><tr><td>duration</td><td class='n'>4000</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.inverse</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-info-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-input"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">In&shy;puts</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">입력 2종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="input-text-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="input-text-md"
+      aria-label="Text Field / MD 고르기"><span>고르기</span></label>
+    <h3>Text Field / MD</h3>
+    <p class="cid">input-text-md</p>
+    <p class="states">default · focus · error · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-input-text-md"><div class="c">입력해 주세요</div></div></div>
+      <div class="states-row"><div class="shd">상태</div><div class="stiles"><div class="stile"><div class="slabel">error</div><div class="preview"><div id="cmp-input-text-md-error"><div class="c"><div class="f">hong@</div><div class="h">이메일 형식이 올바르지 않습니다</div></div></div></div><div class="sid">input-text-md-error</div></div><div class="stile"><div class="slabel">focus</div><div class="preview"><div id="cmp-input-text-md-focus"><div class="c">홍길동</div></div></div><div class="sid">input-text-md-focus</div></div></div></div>
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>한 줄 입력의 기본형</p>
+        <p class="dont"><b>금지</b>라벨 없이 placeholder만으로 쓰지 않음</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>field.width</td></tr><tr><td>height</td><td class='n'>field.height</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>paddingX</td><td class='n'>field.paddingX</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>typography</td><td class='n'>body2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>placeholder</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="select-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="select-md"
+      aria-label="Select / MD 고르기"><span>고르기</span></label>
+    <h3>Select / MD</h3>
+    <p class="cid">select-md</p>
+    <p class="states">default · open · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-select-md"><div class="c"><span>서울특별시</span><span class="i">▼</span></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>선택지 6개 이상의 단일 선택</p>
+        <p class="dont"><b>금지</b>선택지 5개 이하면 탭이나 라디오가 더 빠름</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>field.width</td></tr><tr><td>height</td><td class='n'>field.height</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>paddingX</td><td class='n'>field.paddingX</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>typography</td><td class='n'>body2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>label</td><td><code>text.primary</code></td></tr><tr><td>icon</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/select-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-layout"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Layout</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">레이아웃 9종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="cta-band-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="cta-band-lg"
+      aria-label="CTA Band / LG 고르기"><span>고르기</span></label>
+    <h3>CTA Band / LG</h3>
+    <p class="cid">cta-band-lg</p>
+    <p class="states">default</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-cta-band-lg"><div class="c"><div><div class="t">제안이 필요하신가요</div><div class="l">영업일 기준 2일 안에 담당자가 회신합니다.</div></div><button class="b">문의 보내기</button></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>섹션과 섹션 사이, 또는 페이지 끝의 전환 유도. 한 페이지에 하나</p>
+        <p class="dont"><b>금지</b>본문 정보를 여기 넣지 않음. 제목 한 줄·리드 한 줄·버튼 하나까지</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>paddingY</td><td class='n'>ctaBand.paddingY</td></tr><tr><td>gap</td><td class='n'>ctaBand.gap</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>titleTypography</td><td class='n'>heading1</td></tr><tr><td>leadTypography</td><td class='n'>body1</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>brand.primary</code></td></tr><tr><td>title</td><td><code>text.inverse</code></td></tr><tr><td>lead</td><td><code>text.inverse</code></td></tr><tr><td>actionBg</td><td><code>surface.default</code></td></tr><tr><td>actionLabel</td><td><code>text.brand</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/cta-band-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="desc-list-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="desc-list-md"
+      aria-label="Description List / MD 고르기"><span>고르기</span></label>
+    <h3>Description List / MD</h3>
+    <p class="cid">desc-list-md</p>
+    <p class="states">default · 값 여러 줄</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-desc-list-md"><dl class="c"><div class="r"><dt class="k">설립</dt><dd class="v">1962년 3월 (법인 전환 1978년)</dd></div><div class="r"><dt class="k">본사</dt><dd class="v">서울특별시 중구 세종대로 000, 코발트빌딩 14~17층</dd></div><div class="r"><dt class="k">임직원</dt><dd class="v">27,400명 (2024.12 기준)</dd></div></dl></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>라벨과 값이 짝인 목록. 회사 개요·사양·계약 조건</p>
+        <p class="dont"><b>금지</b>비교가 필요하면 목록이 아니라 표. table-basic-lg 로</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>labelWidth</td><td class='n'>descList.labelWidth</td></tr><tr><td>rowPaddingY</td><td class='n'>descList.rowPaddingY</td></tr><tr><td>gap</td><td class='n'>descList.gap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>labelTypography</td><td class='n'>body2-bold</td></tr><tr><td>valueTypography</td><td class='n'>body2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/desc-list-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="footer-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="footer-lg"
+      aria-label="Footer / LG 고르기"><span>고르기</span></label>
+    <h3>Footer / LG</h3>
+    <p class="cid">footer-lg</p>
+    <p class="states">default</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-footer-lg"><div class="c"><div><div class="lg">ELUON</div><div class="n">서울특별시 · 대표전화 02-0000-0000 · 이 페이지의 내용은 예시입니다.</div></div><div class="m"><span>회사소개</span><span>개인정보처리방침</span><span>이용약관</span></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>모든 페이지 최하단. 로고 · 고지 · 보조 메뉴</p>
+        <p class="dont"><b>금지</b>색을 흐리게 해서 구분하지 않음. 뒤집힌 면에서는 대비가 무너짐. 크기와 굵기로 나눔</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>paddingY</td><td class='n'>footer.paddingY</td></tr><tr><td>gap</td><td class='n'>footer.gap</td></tr><tr><td>logoTypography</td><td class='n'>heading3</td></tr><tr><td>noteTypography</td><td class='n'>caption</td></tr><tr><td>menuTypography</td><td class='n'>caption</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.inverse</code></td></tr><tr><td>logo</td><td><code>text.inverse</code></td></tr><tr><td>note</td><td><code>text.inverse</code></td></tr><tr><td>menu</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/footer-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="form-field-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="form-field-md"
+      aria-label="Form Field / MD 고르기"><span>고르기</span></label>
+    <h3>Form Field / MD</h3>
+    <p class="cid">form-field-md</p>
+    <p class="states">default · focus · error · disabled · 도움말 없음</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-form-field-md"><div class="c"><div class="lb">회신 받을 메일</div><div class="in">name@example.com</div><div class="hp">영업일 기준 2일 안에 회신합니다.</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>라벨 · 입력 · 도움말을 한 묶음으로. 폼의 최소 단위</p>
+        <p class="dont"><b>금지</b>라벨을 placeholder 로 대신하지 않음. 입력하면 라벨이 사라짐</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>field.width</td></tr><tr><td>labelGap</td><td class='n'>field.labelGap</td></tr><tr><td>helperGap</td><td class='n'>field.helperGap</td></tr><tr><td>inputHeight</td><td class='n'>field.height</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>paddingX</td><td class='n'>field.paddingX</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>labelTypography</td><td class='n'>label</td></tr><tr><td>helperTypography</td><td class='n'>caption</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>label</td><td><code>text.primary</code></td></tr><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>placeholder</td><td><code>text.tertiary</code></td></tr><tr><td>helper</td><td><code>text.secondary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/form-field-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="header-gnb-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="header-gnb-lg"
+      aria-label="Header / GNB / LG 고르기"><span>고르기</span></label>
+    <h3>Header / GNB / LG</h3>
+    <p class="cid">header-gnb-lg</p>
+    <p class="states">default · 현재 메뉴 · 스크롤 고정 · 메뉴 접힘</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-header-gnb-lg"><div class="c"><div class="lg">ELUON</div><div class="nv"><span class="on">사업</span><span>계열</span><span>연혁</span><span>뉴스</span></div><button class="ac">문의하기</button></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>모든 페이지 최상단. 로고 · 주 메뉴 · 주요 액션 하나</p>
+        <p class="dont"><b>금지</b>메뉴가 7개를 넘기면 여기 다 넣지 않음. 드롭다운이나 2단으로 나눔</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>height</td><td class='n'>header.height</td></tr><tr><td>itemGap</td><td class='n'>header.itemGap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>logoTypography</td><td class='n'>heading3</td></tr><tr><td>menuTypography</td><td class='n'>body2-bold</td></tr><tr><td>actionHeight</td><td class='n'>control.md.height</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>logo</td><td><code>text.brand</code></td></tr><tr><td>menu</td><td><code>text.secondary</code></td></tr><tr><td>menuActive</td><td><code>text.primary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/header-gnb-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="hero-split-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="hero-split-lg"
+      aria-label="Hero / Split / LG 고르기"><span>고르기</span></label>
+    <h3>Hero / Split / LG</h3>
+    <p class="cid">hero-split-lg</p>
+    <p class="states">default · 레일 없음</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-hero-split-lg"><div class="c"><div><div class="e">Holding Company</div><div class="t">이동을 잇고,<br>머무름을 설계합니다</div><div class="l">항공·물류·호텔 세 축으로 사람과 물자의 이동 전 과정을 연결합니다.</div><div class="a"><button class="b1">사업 구조 보기</button><button class="b2">연차보고서</button></div></div><div class="r"><div><div class="rl">설립</div><div class="rv">1962년</div></div><div><div class="rl">계열사</div><div class="rv">11개사</div></div><div><div class="rl">임직원</div><div class="rv">27,400명</div></div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에</p>
+        <p class="dont"><b>금지</b>한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>gap</td><td class='n'>hero.gap</td></tr><tr><td>actionGap</td><td class='n'>hero.actionGap</td></tr><tr><td>railGap</td><td class='n'>hero.railGap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>titleTypography</td><td class='n'>display1</td></tr><tr><td>leadTypography</td><td class='n'>body1</td></tr><tr><td>leadMaxWidth</td><td class='n'>60ch</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>eyebrow</td><td><code>text.brand</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>lead</td><td><code>text.secondary</code></td></tr><tr><td>rail</td><td><code>border.default</code></td></tr><tr><td>railLabel</td><td><code>text.tertiary</code></td></tr><tr><td>railValue</td><td><code>text.primary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/hero-split-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="list-row-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="list-row-md"
+      aria-label="List Row / MD 고르기"><span>고르기</span></label>
+    <h3>List Row / MD</h3>
+    <p class="cid">list-row-md</p>
+    <p class="states">default · hover · 값 없음</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-list-row-md"><div class="c"><div class="rw"><div class="tx"><div class="t">2024년 3분기 실적 공시</div><div class="m">공시</div></div><div class="v">2024.11.28</div></div><div class="rw"><div class="tx"><div class="t">신규 노선 취항 안내</div><div class="m">보도자료</div></div><div class="v">2024.11.14</div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>제목·메타·값이 한 줄인 목록. 공지·뉴스·자료실</p>
+        <p class="dont"><b>금지</b>열이 셋을 넘게 비교해야 하면 목록이 아니라 표. table-basic-lg 로</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>paddingY</td><td class='n'>listRow.paddingY</td></tr><tr><td>gap</td><td class='n'>listRow.gap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>titleTypography</td><td class='n'>body1-bold</td></tr><tr><td>metaTypography</td><td class='n'>caption</td></tr><tr><td>valueTypography</td><td class='n'>body2-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>meta</td><td><code>text.tertiary</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/list-row-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="section-header-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="section-header-md"
+      aria-label="Section Header / MD 고르기"><span>고르기</span></label>
+    <h3>Section Header / MD</h3>
+    <p class="cid">section-header-md</p>
+    <p class="states">default · 아이브로우 없음</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-section-header-md"><div class="c"><div class="e">오늘 자른 꽃</div><div class="t">이번 주 인기 상품</div><div class="l">계절에 나온 꽃으로 그때그때 다르게 묶습니다.</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>섹션 시작의 제목 묶음. 아이브로우(선택) · 제목 · 리드문을 한 덩어리로</p>
+        <p class="dont"><b>금지</b>리드문이 세 줄을 넘기면 리드가 아니라 본문. 본문은 섹션 안으로 내림</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>gap</td><td class='n'>section.gap</td></tr><tr><td>eyebrowTypography</td><td class='n'>label</td></tr><tr><td>eyebrowTracking</td><td class='n'>0.1em</td></tr><tr><td>titleTypography</td><td class='n'>heading1</td></tr><tr><td>leadTypography</td><td class='n'>body1</td></tr><tr><td>leadMaxWidth</td><td class='n'>58ch</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>eyebrow</td><td><code>text.brand</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>lead</td><td><code>text.secondary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/section-header-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="step-flow-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="step-flow-md"
+      aria-label="Step Flow / MD 고르기"><span>고르기</span></label>
+    <h3>Step Flow / MD</h3>
+    <p class="cid">step-flow-md</p>
+    <p class="states">default · 완료 · 현재 단계</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-step-flow-md"><div class="c"><div class="s"><div class="n">1</div><div class="tx"><div class="t">신청서 접수</div><div class="d">온라인 양식으로만 받습니다. 영업일 기준 2일 안에 접수 확인 메일이 갑니다.</div></div></div><div class="s"><div class="n">2</div><div class="tx"><div class="t">서류 검토</div><div class="d">담당 부서가 사업자등록증과 최근 3개년 재무제표를 확인합니다.</div></div></div><div class="s"><div class="n">3</div><div class="tx"><div class="t">결과 통보</div><div class="d">검토 완료 후 신청 시 적으신 메일로 결과를 보내드립니다.</div></div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>순서가 있는 절차. 신청 방법·심사 과정·이용 안내</p>
+        <p class="dont"><b>금지</b>순서가 없는 목록에 번호를 붙이지 않음. 번호는 순서가 있다는 약속입니다</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>gap</td><td class='n'>stepFlow.gap</td></tr><tr><td>numberSize</td><td class='n'>stepFlow.numberSize</td></tr><tr><td>rowGap</td><td class='n'>stepFlow.rowGap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>titleTypography</td><td class='n'>body1-bold</td></tr><tr><td>bodyTypography</td><td class='n'>body2</td></tr><tr><td>bodyMaxWidth</td><td class='n'>text.measure</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>number</td><td><code>text.inverse</code></td></tr><tr><td>numberBg</td><td><code>brand.primary</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr><tr><td>line</td><td><code>border.subtle</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/step-flow-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-modal"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Modals</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">모달 1종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="modal-confirm-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="modal-confirm-lg"
+      aria-label="Confirm Modal / LG 고르기"><span>고르기</span></label>
+    <h3>Confirm Modal / LG</h3>
+    <p class="cid">modal-confirm-lg</p>
+    <p class="states"></p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-modal-confirm-lg"><div class="c"><div><div class="t">프로젝트를 삭제할까요?</div><div class="d">삭제하면 시안 12건과 이력이 함께 사라집니다. 되돌릴 수 없습니다.</div></div><div class="r"><button class="bs">취소</button><button class="bd">삭제</button></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>되돌릴 수 없는 액션 직전의 확인</p>
+        <p class="dont"><b>금지</b>단순 안내에 쓰지 않음. 그건 토스트</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>modal.width</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>modal.paddingX</td></tr><tr><td>paddingY</td><td class='n'>modal.paddingY</td></tr><tr><td>gap</td><td class='n'>modal.gap</td></tr><tr><td>elevation</td><td class='n'>3</td></tr><tr><td>typography</td><td class='n'>heading3</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/modal/modal-confirm-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-navigation"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Navi&shy;gation</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">내비게이션 3종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="breadcrumb-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="breadcrumb-md"
+      aria-label="Breadcrumb / MD 고르기"><span>고르기</span></label>
+    <h3>Breadcrumb / MD</h3>
+    <p class="cid">breadcrumb-md</p>
+    <p class="states">default · 현재 위치 · 말줄임</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-breadcrumb-md"><div class="c"><span class="i">홈</span><span class="s">/</span><span class="i">사업 소개</span><span class="s">/</span><span class="i">물류·터미널 부문 운영 현황</span><span class="s">/</span><span class="i on">내륙 거점 안내</span></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>세 단계 이상 깊은 페이지의 현재 위치. 목록 → 분류 → 상세</p>
+        <p class="dont"><b>금지</b>두 단계뿐인 구조에 쓰지 않음. 뒤로 가기 한 번이면 됩니다</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>gap</td><td class='n'>breadcrumb.gap</td></tr><tr><td>itemMaxWidth</td><td class='n'>breadcrumb.itemMaxWidth</td></tr><tr><td>typography</td><td class='n'>caption</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>link</td><td><code>text.tertiary</code></td></tr><tr><td>current</td><td><code>text.primary</code></td></tr><tr><td>separator</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/breadcrumb-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="pagination-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="pagination-md"
+      aria-label="Pagination / MD 고르기"><span>고르기</span></label>
+    <h3>Pagination / MD</h3>
+    <p class="cid">pagination-md</p>
+    <p class="states">default · current · disabled</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-pagination-md"><div class="c"><div class="p">‹</div><div class="p on">1</div><div class="p">2</div><div class="p">3</div><div class="p">›</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>20개 이상 목록. 무한 스크롤이 부적절한 관리 화면</p>
+        <p class="dont"><b>금지</b>10페이지 이상 번호를 다 노출하지 않음. 축약 표기 사용</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>height</td><td class='n'>pagination.itemSize</td></tr><tr><td>gap</td><td class='n'>pagination.gap</td></tr><tr><td>itemSize</td><td class='n'>pagination.itemSize</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>typography</td><td class='n'>label</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>active</td><td><code>brand.primary</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/pagination-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="tab-underline-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="tab-underline-md"
+      aria-label="Tab / Underline / MD 고르기"><span>고르기</span></label>
+    <h3>Tab / Underline / MD</h3>
+    <p class="cid">tab-underline-md</p>
+    <p class="states">active · inactive</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-tab-underline-md"><div class="c"><div class="i on">전체</div><div class="i">진행중</div><div class="i">완료</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>같은 층위의 목록을 전환. 2~5개</p>
+        <p class="dont"><b>금지</b>6개 이상이면 탭 대신 드롭다운 필터</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>tab.width</td></tr><tr><td>height</td><td class='n'>tab.height</td></tr><tr><td>gap</td><td class='n'>tab.gap</td></tr><tr><td>itemPaddingX</td><td class='n'>tab.itemPaddingX</td></tr><tr><td>indicatorHeight</td><td class='n'>tab.indicatorHeight</td></tr><tr><td>typography</td><td class='n'>body2-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>indicator</td><td><code>brand.primary</code></td></tr><tr><td>labelActive</td><td><code>text.primary</code></td></tr><tr><td>labelInactive</td><td><code>text.tertiary</code></td></tr><tr><td>line</td><td><code>border.subtle</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/tab-underline-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-table"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Tables</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">테이블 1종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="table-basic-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="table-basic-lg"
+      aria-label="Table / Basic / LG 고르기"><span>고르기</span></label>
+    <h3>Table / Basic / LG</h3>
+    <p class="cid">table-basic-lg</p>
+    <p class="states">default · hover · selected</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-table-basic-lg"><div class="c"><table><thead><tr><th>프로젝트</th><th>담당</th><th style="text-align:right">진행률</th></tr></thead><tbody><tr><td>프로젝트 A</td><td>디자인팀</td><td class="n">72%</td></tr><tr><td>프로젝트 B</td><td>개발팀</td><td class="n">40%</td></tr></tbody></table></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>비교가 필요한 목록. 열이 3개 이상일 때</p>
+        <p class="dont"><b>금지</b>모바일에서 그대로 쓰지 않음. 카드로 전환</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>table.width</td></tr><tr><td>rowHeight</td><td class='n'>table.rowHeight</td></tr><tr><td>headerHeight</td><td class='n'>table.headerHeight</td></tr><tr><td>paddingX</td><td class='n'>table.paddingX</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>typography</td><td class='n'>body2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>header</td><td><code>surface.subtle</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/table/table-basic-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section>
+
+<section class="sec" id="agent">
+  <div data-r><div class="sec-head">
+  <div class="col-a"><span class="lbl">How to use</span><h2 lang="en">Agents</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">클로드에게 이 시스템을 쓰게 하는 가장 짧은 형태입니다.</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">자세한 템플릿은 저장소의 prompts/ 에 있습니다. 자산 ID를 추측하게 두지 말고, 항상 manifest를 먼저 읽히세요.</p></div>
+</div></div>
+  <div data-r style="margin-top:clamp(48px,8vh,88px)">
+    <pre class="prompt">https://github.com/frombranch/eluon 의 CLAUDE.md 와 manifest.json 을 읽고,
+거기 있는 자산으로만 &lt;화면 이름&gt; 시안을 만들어줘.
+테마는 eluo 를 쓰고, 쓸 자산 ID 목록을 먼저 보여준 뒤
+내 승인을 받고 조립해. spec 값은 바꾸지 마.</pre>
+  </div>
+</section>
+
+<footer>
+  <span>Eluon Design System · v1.11.1 · 디자인포지션</span>
+  <span>이 페이지는 <code>scripts/build_docs.py</code>가 manifest와 레시피에서 생성합니다.</span>
+</footer>
+
+</div>
+
+<div class="sendbar" id="sendbar" hidden>
+  <span class="sbcount"><b id="sbN">0</b>개 골랐습니다</span>
+  <span class="sbids" id="sbIds"></span>
+  <button type="button" class="sbclear" id="sbClear">해제</button>
+  <a class="sbgo" id="sbGo" href="#">빌더로 보내기</a>
+</div>
+
+<button class="totop" id="totop" type="button" aria-label="맨 위로"><i data-lucide="arrow-up"></i></button>
+
+<script>
+(function(){
+  var bar=document.getElementById('sendbar');
+  function boxes(){ return Array.prototype.slice.call(document.querySelectorAll('.pickbox')); }
+  function sync(){
+    var ids=boxes().filter(function(b){return b.checked;}).map(function(b){return b.value;});
+    bar.hidden = ids.length===0;
+    document.getElementById('sbN').textContent=ids.length;
+    document.getElementById('sbIds').textContent=ids.join(', ');
+    var th=document.documentElement.getAttribute('data-eluon-theme')||'eluo';
+    document.getElementById('sbGo').href=
+      'prompt-builder.html?tab=builder&theme='+encodeURIComponent(th)+
+      '&picked='+encodeURIComponent(ids.join(','));
+  }
+  boxes().forEach(function(b){ b.addEventListener('change', sync); });
+  document.getElementById('sbClear').addEventListener('click', function(){
+    boxes().forEach(function(b){ b.checked=false; }); sync();
+  });
+  sync();
+  // 테마를 바꾸면 넘길 주소의 테마도 따라가야 합니다.
+  document.querySelectorAll('.themes button').forEach(function(b){
+    b.addEventListener('click', sync);
+  });
+})();
+
+document.querySelectorAll('.themes button').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.dataset.theme;
+    document.documentElement.setAttribute('data-eluon-theme', t);
+    document.querySelectorAll('.themes button').forEach(function(x){
+      x.setAttribute('aria-pressed', String(x === b));
+    });
+    document.getElementById('themeName').textContent = b.textContent;
+    document.getElementById('themeHint').textContent = b.dataset.hint || '';
+  });
+});
+(function(){
+  var els = document.querySelectorAll('[data-r]');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* 햄버거 — 좁은 화면에서만 보입니다. */
+(function(){
+  var tog = document.getElementById('navtog'), menu = document.getElementById('barmenu');
+  function set(open){
+    if (open) menu.setAttribute('data-open',''); else menu.removeAttribute('data-open');
+    tog.setAttribute('aria-expanded', String(open));
+    tog.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    tog.innerHTML = '<i data-lucide="' + (open ? 'x' : 'menu') + '"></i>';
+    if (window.lucide) lucide.createIcons();
+  }
+  tog.addEventListener('click', function(){ set(!menu.hasAttribute('data-open')); });
+  menu.querySelectorAll('nav a').forEach(function(a){
+    a.addEventListener('click', function(){ set(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && menu.hasAttribute('data-open')) { set(false); tog.focus(); }
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth >= 900 && menu.hasAttribute('data-open')) set(false);
+  });
+})();
+
+/* 맨 위로 */
+(function(){
+  var fab = document.getElementById('totop');
+  var smooth = !window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function upd(){ fab.classList.toggle('on', window.scrollY > 600); }
+  window.addEventListener('scroll', upd, { passive: true });
+  upd();
+  fab.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+  });
+})();
+
+if (window.lucide) lucide.createIcons();
+</script>
+</body></html>

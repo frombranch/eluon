@@ -1,0 +1,45 @@
+{
+  "id": "card-product-md",
+  "name": "Product Card / MD",
+  "group": "card",
+  "tags": [
+    "카드",
+    "썸네일",
+    "그리드아이템"
+  ],
+  "spec": {
+    "width": "card.width",
+    "radius": "xl",
+    "paddingX": "card.product.paddingX",
+    "paddingY": "card.product.paddingY",
+    "gap": "card.product.gap",
+    "thumbRatio": "16:9",
+    "borderWidth": "border.width",
+    "elevation": 1
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.subtle",
+    "thumb": "surface.sunken"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [
+    "default",
+    "hover",
+    "selected"
+  ],
+  "usage": "그리드형 목록의 기본 단위. 3~4열 그리드",
+  "dont": "썸네일 비율을 카드마다 다르게 두지 않음",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/card/card-product-md--eluo@2x.png",
+    "atlas": "assets/components/card/card-product-md--atlas@2x.png",
+    "ember": "assets/components/card/card-product-md--ember@2x.png",
+    "harbor": "assets/components/card/card-product-md--harbor@2x.png",
+    "tideland": "assets/components/card/card-product-md--tideland@2x.png",
+    "cobalt": "assets/components/card/card-product-md--cobalt@2x.png"
+  }
+}

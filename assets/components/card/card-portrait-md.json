@@ -1,0 +1,43 @@
+{
+  "id": "card-portrait-md",
+  "name": "Portrait Card / MD",
+  "group": "card",
+  "tags": [
+    "카드",
+    "세로썸네일",
+    "9:16",
+    "SNS"
+  ],
+  "spec": {
+    "width": "card.portrait.width",
+    "radius": "xl",
+    "gap": "card.portrait.gap",
+    "thumbRatio": "9:16",
+    "typography": "body2"
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "thumb": "surface.sunken",
+    "title": "text.primary",
+    "meta": "text.tertiary"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [
+    "default",
+    "hover"
+  ],
+  "usage": "세로 이미지가 주인공인 목록. SNS·영상·인물 카드. 4~6열로 늘어놓을 때",
+  "dont": "가로 이미지를 억지로 넣지 않음. 16:9 면 card-product-md",
+  "status": "stable",
+  "since": "v1.6.0",
+  "renders": {
+    "eluo": "assets/components/card/card-portrait-md--eluo@2x.png",
+    "atlas": "assets/components/card/card-portrait-md--atlas@2x.png",
+    "ember": "assets/components/card/card-portrait-md--ember@2x.png",
+    "harbor": "assets/components/card/card-portrait-md--harbor@2x.png",
+    "tideland": "assets/components/card/card-portrait-md--tideland@2x.png",
+    "cobalt": "assets/components/card/card-portrait-md--cobalt@2x.png"
+  }
+}

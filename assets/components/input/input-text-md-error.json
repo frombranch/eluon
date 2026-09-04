@@ -1,0 +1,41 @@
+{
+  "id": "input-text-md-error",
+  "name": "Text Field / MD / Error",
+  "group": "input",
+  "tags": [
+    "폼",
+    "에러",
+    "유효성"
+  ],
+  "spec": {
+    "width": "field.width",
+    "height": "field.height",
+    "radius": "md",
+    "paddingX": "field.paddingX",
+    "borderWidth": "border.width",
+    "gap": "field.gap",
+    "typography": "body2"
+  },
+  "tokens": {
+    "border": "border.danger",
+    "helper": "danger.text"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [],
+  "usage": "유효성 검사 실패. 아래 헬퍼 텍스트로 무엇을 고칠지 함께 안내",
+  "dont": "빨간 테두리만 주고 이유를 적지 않는 것 금지",
+  "status": "stable",
+  "since": "v1.0.0",
+  "variantOf": "input-text-md",
+  "variantState": "error",
+  "renders": {
+    "eluo": "assets/components/input/input-text-md-error--eluo@2x.png",
+    "atlas": "assets/components/input/input-text-md-error--atlas@2x.png",
+    "ember": "assets/components/input/input-text-md-error--ember@2x.png",
+    "harbor": "assets/components/input/input-text-md-error--harbor@2x.png",
+    "tideland": "assets/components/input/input-text-md-error--tideland@2x.png",
+    "cobalt": "assets/components/input/input-text-md-error--cobalt@2x.png"
+  }
+}

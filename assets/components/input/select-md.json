@@ -1,0 +1,43 @@
+{
+  "id": "select-md",
+  "name": "Select / MD",
+  "group": "input",
+  "tags": [
+    "폼",
+    "드롭다운",
+    "단일선택"
+  ],
+  "spec": {
+    "width": "field.width",
+    "height": "field.height",
+    "radius": "md",
+    "paddingX": "field.paddingX",
+    "borderWidth": "border.width",
+    "typography": "body2"
+  },
+  "tokens": {
+    "border": "border.default",
+    "label": "text.primary",
+    "icon": "text.tertiary"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [
+    "default",
+    "open",
+    "disabled"
+  ],
+  "usage": "선택지 6개 이상의 단일 선택",
+  "dont": "선택지 5개 이하면 탭이나 라디오가 더 빠름",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/input/select-md--eluo@2x.png",
+    "atlas": "assets/components/input/select-md--atlas@2x.png",
+    "ember": "assets/components/input/select-md--ember@2x.png",
+    "harbor": "assets/components/input/select-md--harbor@2x.png",
+    "tideland": "assets/components/input/select-md--tideland@2x.png",
+    "cobalt": "assets/components/input/select-md--cobalt@2x.png"
+  }
+}

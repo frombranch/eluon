@@ -1,0 +1,42 @@
+{
+  "id": "footer-lg",
+  "name": "Footer / LG",
+  "group": "layout",
+  "tags": [
+    "푸터",
+    "전역",
+    "고지"
+  ],
+  "spec": {
+    "width": "container.max",
+    "paddingY": "footer.paddingY",
+    "gap": "footer.gap",
+    "logoTypography": "heading3",
+    "noteTypography": "caption",
+    "menuTypography": "caption"
+  },
+  "tokens": {
+    "bg": "surface.inverse",
+    "logo": "text.inverse",
+    "note": "text.inverse",
+    "menu": "text.inverse"
+  },
+  "responsive": {
+    "md": "stack"
+  },
+  "states": [
+    "default"
+  ],
+  "usage": "모든 페이지 최하단. 로고 · 고지 · 보조 메뉴",
+  "dont": "색을 흐리게 해서 구분하지 않음. 뒤집힌 면에서는 대비가 무너짐. 크기와 굵기로 나눔",
+  "status": "stable",
+  "since": "v1.8.0",
+  "renders": {
+    "eluo": "assets/components/layout/footer-lg--eluo@2x.png",
+    "atlas": "assets/components/layout/footer-lg--atlas@2x.png",
+    "ember": "assets/components/layout/footer-lg--ember@2x.png",
+    "harbor": "assets/components/layout/footer-lg--harbor@2x.png",
+    "tideland": "assets/components/layout/footer-lg--tideland@2x.png",
+    "cobalt": "assets/components/layout/footer-lg--cobalt@2x.png"
+  }
+}

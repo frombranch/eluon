@@ -1,0 +1,61 @@
+name: validate
+
+# 생성물이 낡은 채로 머지되는 사고를 막습니다.
+# 레시피만 고치고 파이프라인을 안 돌린 PR은 여기서 걸립니다.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: install
+        run: |
+          pip install pillow jsonschema playwright
+          playwright install --with-deps chromium
+
+      - name: 토큰 빌드
+        run: python3 scripts/build_tokens.py
+
+      - name: 대비비 검사 (WCAG AA)
+        run: python3 scripts/check_contrast.py
+
+      - name: manifest 최신 여부
+        run: python3 scripts/build_manifest.py --check
+
+      - name: 프롬프트 빌더용 eluon.json 최신 여부
+        run: python3 scripts/build_pb_manifest.py --check
+
+      - name: 문서 사이트 최신 여부
+        run: python3 scripts/build_docs.py --check
+
+      # 실측 현황이 낡으면 "무엇을 더 받아야 하는지" 를 잘못 봅니다.
+      - name: 실측 현황 최신 여부
+        run: |
+          python3 scripts/build_measure.py
+          git diff --exit-code -- index/MEASURE.md
+
+      - name: 사이드카 스키마 검사
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          from jsonschema import Draft7Validator
+          schema = json.load(open("schema/asset.schema.json"))
+          v = Draft7Validator(schema)
+          bad = 0
+          for p in sorted(pathlib.Path("assets").rglob("*.json")):
+              data = json.load(open(p, encoding="utf-8"))
+              for e in v.iter_errors(data):
+                  print(f"  ✗ {p}: {'.'.join(map(str, e.path)) or '(root)'} — {e.message}")
+                  bad += 1
+          sys.exit(1 if bad else 0)
+          PY

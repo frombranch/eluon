@@ -1,0 +1,47 @@
+{
+  "id": "hero-split-lg",
+  "name": "Hero / Split / LG",
+  "group": "layout",
+  "tags": [
+    "히어로",
+    "첫화면",
+    "2단"
+  ],
+  "spec": {
+    "width": "container.max",
+    "gap": "hero.gap",
+    "actionGap": "hero.actionGap",
+    "railGap": "hero.railGap",
+    "borderWidth": "border.width",
+    "titleTypography": "display1",
+    "leadTypography": "body1",
+    "leadMaxWidth": "60ch"
+  },
+  "tokens": {
+    "eyebrow": "text.brand",
+    "title": "text.primary",
+    "lead": "text.secondary",
+    "rail": "border.default",
+    "railLabel": "text.tertiary",
+    "railValue": "text.primary"
+  },
+  "responsive": {
+    "md": "stack"
+  },
+  "states": [
+    "default",
+    "레일 없음"
+  ],
+  "usage": "페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에",
+  "dont": "한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐",
+  "status": "stable",
+  "since": "v1.8.0",
+  "renders": {
+    "eluo": "assets/components/layout/hero-split-lg--eluo@2x.png",
+    "atlas": "assets/components/layout/hero-split-lg--atlas@2x.png",
+    "ember": "assets/components/layout/hero-split-lg--ember@2x.png",
+    "harbor": "assets/components/layout/hero-split-lg--harbor@2x.png",
+    "tideland": "assets/components/layout/hero-split-lg--tideland@2x.png",
+    "cobalt": "assets/components/layout/hero-split-lg--cobalt@2x.png"
+  }
+}

@@ -1,0 +1,5654 @@
+{
+  "$schema": "./schema/asset.schema.json",
+  "name": "Eluon Design System",
+  "version": "v1.11.1",
+  "repo": "https://github.com/frombranch/eluon",
+  "docs": "https://frombranch.github.io/eluon/",
+  "themes": [
+    "eluo",
+    "atlas",
+    "ember",
+    "harbor",
+    "tideland",
+    "cobalt"
+  ],
+  "themeStatus": {
+    "eluo": "measured",
+    "atlas": "partial",
+    "ember": "partial",
+    "harbor": "partial",
+    "tideland": "estimated",
+    "cobalt": "partial"
+  },
+  "defaultTheme": "eluo",
+  "tokens": {
+    "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/docs/tokens/eluon-eluo.css",
+    "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/docs/tokens/eluon-atlas.css",
+    "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/docs/tokens/eluon-ember.css",
+    "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/docs/tokens/eluon-harbor.css",
+    "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/docs/tokens/eluon-tideland.css",
+    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/docs/tokens/eluon-cobalt.css"
+  },
+  "sheet": {
+    "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/index/sheet-eluo.png",
+    "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/index/sheet-atlas.png",
+    "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/index/sheet-ember.png",
+    "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/index/sheet-harbor.png",
+    "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/index/sheet-tideland.png",
+    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/index/sheet-cobalt.png"
+  },
+  "howToUse": "CLAUDE.md 를 먼저 읽으세요. 여기에 없는 ID는 사용하지 않습니다. 자산을 놓기 전에 foundationByTheme.<테마> 의 layout 과 typography 를 먼저 읽으세요.",
+  "foundationByTheme": {
+    "eluo": {
+      "font": {
+        "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.display": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.mono": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+      },
+      "typography": {
+        "display1": {
+          "size": 40,
+          "weight": 800,
+          "lineHeight": 1.2,
+          "tracking": "-0.03em",
+          "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다."
+        },
+        "heading1": {
+          "size": 28,
+          "weight": 700,
+          "lineHeight": 1.3,
+          "tracking": "-0.025em",
+          "role": "섹션 제목."
+        },
+        "heading2": {
+          "size": 22,
+          "weight": 700,
+          "lineHeight": 1.35,
+          "tracking": "-0.02em",
+          "role": "하위 섹션 제목 · 카드 제목."
+        },
+        "heading3": {
+          "size": 18,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "-0.015em",
+          "role": "블록 제목 · 표 제목."
+        },
+        "body1": {
+          "size": 16,
+          "weight": 400,
+          "lineHeight": 1.6,
+          "tracking": "-0.005em",
+          "role": "본문 기본."
+        },
+        "body1-bold": {
+          "size": 16,
+          "weight": 700,
+          "lineHeight": 1.5,
+          "tracking": "-0.01em",
+          "role": "본문 안의 강조."
+        },
+        "body2": {
+          "size": 15,
+          "weight": 400,
+          "lineHeight": 1.55,
+          "tracking": "-0.005em",
+          "role": "보조 본문 · 카드 설명 · 목록."
+        },
+        "body2-bold": {
+          "size": 15,
+          "weight": 700,
+          "lineHeight": 1.45,
+          "tracking": "-0.01em",
+          "role": "보조 본문 강조."
+        },
+        "label": {
+          "size": 14,
+          "weight": 600,
+          "lineHeight": 1.4,
+          "tracking": "-0.005em",
+          "role": "폼 라벨 · 버튼 · 탭 · 배지."
+        },
+        "caption": {
+          "size": 13,
+          "weight": 400,
+          "lineHeight": 1.45,
+          "tracking": "0",
+          "role": "주석 · 메타 정보 · 표 각주."
+        },
+        "caption-bold": {
+          "size": 13,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "0",
+          "role": "주석 강조."
+        }
+      },
+      "layout": {
+        "container.max": 1200,
+        "container.gutter": 24,
+        "grid.columns": 12,
+        "grid.gap": 24,
+        "section.padY": 96,
+        "section.padYSm": 56,
+        "section.headGap": 40,
+        "block.gap": 24,
+        "card.gap": 24,
+        "text.measure": 68
+      },
+      "text": {
+        "break": "keep-all",
+        "overflowWrap": "anywhere",
+        "wrap": "pretty",
+        "numeric": "tabular-nums"
+      },
+      "space": {
+        "1": 4,
+        "2": 8,
+        "3": 12,
+        "4": 16,
+        "5": 20,
+        "6": 24,
+        "8": 32,
+        "10": 40
+      },
+      "elevation": {
+        "0": "none",
+        "1": "0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04)",
+        "2": "0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07)",
+        "3": "0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10)"
+      },
+      "breakpoint": {
+        "sm": 480,
+        "md": 768,
+        "lg": 1024
+      }
+    },
+    "atlas": {
+      "font": {
+        "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.display": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.mono": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+      },
+      "typography": {
+        "display1": {
+          "size": 40,
+          "weight": 800,
+          "lineHeight": 1.2,
+          "tracking": "-0.03em",
+          "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다."
+        },
+        "heading1": {
+          "size": 28,
+          "weight": 700,
+          "lineHeight": 1.3,
+          "tracking": "-0.025em",
+          "role": "섹션 제목."
+        },
+        "heading2": {
+          "size": 22,
+          "weight": 700,
+          "lineHeight": 1.35,
+          "tracking": "-0.02em",
+          "role": "하위 섹션 제목 · 카드 제목."
+        },
+        "heading3": {
+          "size": 18,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "-0.015em",
+          "role": "블록 제목 · 표 제목."
+        },
+        "body1": {
+          "size": 16,
+          "weight": 400,
+          "lineHeight": 1.6,
+          "tracking": "-0.005em",
+          "role": "본문 기본."
+        },
+        "body1-bold": {
+          "size": 16,
+          "weight": 700,
+          "lineHeight": 1.5,
+          "tracking": "-0.01em",
+          "role": "본문 안의 강조."
+        },
+        "body2": {
+          "size": 15,
+          "weight": 400,
+          "lineHeight": 1.55,
+          "tracking": "-0.005em",
+          "role": "보조 본문 · 카드 설명 · 목록."
+        },
+        "body2-bold": {
+          "size": 15,
+          "weight": 700,
+          "lineHeight": 1.45,
+          "tracking": "-0.01em",
+          "role": "보조 본문 강조."
+        },
+        "label": {
+          "size": 14,
+          "weight": 600,
+          "lineHeight": 1.4,
+          "tracking": "-0.005em",
+          "role": "폼 라벨 · 버튼 · 탭 · 배지."
+        },
+        "caption": {
+          "size": 13,
+          "weight": 400,
+          "lineHeight": 1.45,
+          "tracking": "0",
+          "role": "주석 · 메타 정보 · 표 각주."
+        },
+        "caption-bold": {
+          "size": 13,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "0",
+          "role": "주석 강조."
+        }
+      },
+      "layout": {
+        "container.max": 1200,
+        "container.gutter": 24,
+        "grid.columns": 12,
+        "grid.gap": 24,
+        "section.padY": 96,
+        "section.padYSm": 56,
+        "section.headGap": 40,
+        "block.gap": 24,
+        "card.gap": 24,
+        "text.measure": 68
+      },
+      "text": {
+        "break": "keep-all",
+        "overflowWrap": "anywhere",
+        "wrap": "pretty",
+        "numeric": "tabular-nums"
+      },
+      "space": {
+        "1": 4,
+        "2": 8,
+        "3": 12,
+        "4": 16,
+        "5": 20,
+        "6": 24,
+        "8": 32,
+        "10": 40
+      },
+      "elevation": {
+        "0": "none",
+        "1": "0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04)",
+        "2": "0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07)",
+        "3": "0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10)"
+      },
+      "breakpoint": {
+        "sm": 480,
+        "md": 768,
+        "lg": 1024
+      }
+    },
+    "ember": {
+      "font": {
+        "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.display": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.mono": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+      },
+      "typography": {
+        "display1": {
+          "size": 40,
+          "weight": 800,
+          "lineHeight": 1.2,
+          "tracking": "-0.03em",
+          "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다."
+        },
+        "heading1": {
+          "size": 28,
+          "weight": 700,
+          "lineHeight": 1.3,
+          "tracking": "-0.025em",
+          "role": "섹션 제목."
+        },
+        "heading2": {
+          "size": 22,
+          "weight": 700,
+          "lineHeight": 1.35,
+          "tracking": "-0.02em",
+          "role": "하위 섹션 제목 · 카드 제목."
+        },
+        "heading3": {
+          "size": 18,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "-0.015em",
+          "role": "블록 제목 · 표 제목."
+        },
+        "body1": {
+          "size": 16,
+          "weight": 400,
+          "lineHeight": 1.6,
+          "tracking": "-0.005em",
+          "role": "본문 기본."
+        },
+        "body1-bold": {
+          "size": 16,
+          "weight": 700,
+          "lineHeight": 1.5,
+          "tracking": "-0.01em",
+          "role": "본문 안의 강조."
+        },
+        "body2": {
+          "size": 15,
+          "weight": 400,
+          "lineHeight": 1.55,
+          "tracking": "-0.005em",
+          "role": "보조 본문 · 카드 설명 · 목록."
+        },
+        "body2-bold": {
+          "size": 15,
+          "weight": 700,
+          "lineHeight": 1.45,
+          "tracking": "-0.01em",
+          "role": "보조 본문 강조."
+        },
+        "label": {
+          "size": 14,
+          "weight": 600,
+          "lineHeight": 1.4,
+          "tracking": "-0.005em",
+          "role": "폼 라벨 · 버튼 · 탭 · 배지."
+        },
+        "caption": {
+          "size": 13,
+          "weight": 400,
+          "lineHeight": 1.45,
+          "tracking": "0",
+          "role": "주석 · 메타 정보 · 표 각주."
+        },
+        "caption-bold": {
+          "size": 13,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "0",
+          "role": "주석 강조."
+        }
+      },
+      "layout": {
+        "container.max": 1200,
+        "container.gutter": 24,
+        "grid.columns": 12,
+        "grid.gap": 24,
+        "section.padY": 96,
+        "section.padYSm": 56,
+        "section.headGap": 40,
+        "block.gap": 24,
+        "card.gap": 24,
+        "text.measure": 68
+      },
+      "text": {
+        "break": "keep-all",
+        "overflowWrap": "anywhere",
+        "wrap": "pretty",
+        "numeric": "tabular-nums"
+      },
+      "space": {
+        "1": 4,
+        "2": 8,
+        "3": 12,
+        "4": 16,
+        "5": 20,
+        "6": 24,
+        "8": 32,
+        "10": 40
+      },
+      "elevation": {
+        "0": "none",
+        "1": "0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04)",
+        "2": "0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07)",
+        "3": "0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10)"
+      },
+      "breakpoint": {
+        "sm": 480,
+        "md": 768,
+        "lg": 1024
+      }
+    },
+    "harbor": {
+      "font": {
+        "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.display": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.mono": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+      },
+      "typography": {
+        "display1": {
+          "size": 40,
+          "weight": 800,
+          "lineHeight": 1.2,
+          "tracking": "-0.03em",
+          "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다."
+        },
+        "heading1": {
+          "size": 28,
+          "weight": 700,
+          "lineHeight": 1.3,
+          "tracking": "-0.025em",
+          "role": "섹션 제목."
+        },
+        "heading2": {
+          "size": 22,
+          "weight": 700,
+          "lineHeight": 1.35,
+          "tracking": "-0.02em",
+          "role": "하위 섹션 제목 · 카드 제목."
+        },
+        "heading3": {
+          "size": 18,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "-0.015em",
+          "role": "블록 제목 · 표 제목."
+        },
+        "body1": {
+          "size": 16,
+          "weight": 400,
+          "lineHeight": 1.6,
+          "tracking": "-0.005em",
+          "role": "본문 기본."
+        },
+        "body1-bold": {
+          "size": 16,
+          "weight": 700,
+          "lineHeight": 1.5,
+          "tracking": "-0.01em",
+          "role": "본문 안의 강조."
+        },
+        "body2": {
+          "size": 15,
+          "weight": 400,
+          "lineHeight": 1.55,
+          "tracking": "-0.005em",
+          "role": "보조 본문 · 카드 설명 · 목록."
+        },
+        "body2-bold": {
+          "size": 15,
+          "weight": 700,
+          "lineHeight": 1.45,
+          "tracking": "-0.01em",
+          "role": "보조 본문 강조."
+        },
+        "label": {
+          "size": 14,
+          "weight": 600,
+          "lineHeight": 1.4,
+          "tracking": "-0.005em",
+          "role": "폼 라벨 · 버튼 · 탭 · 배지."
+        },
+        "caption": {
+          "size": 13,
+          "weight": 400,
+          "lineHeight": 1.45,
+          "tracking": "0",
+          "role": "주석 · 메타 정보 · 표 각주."
+        },
+        "caption-bold": {
+          "size": 13,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "0",
+          "role": "주석 강조."
+        }
+      },
+      "layout": {
+        "container.max": 1200,
+        "container.gutter": 24,
+        "grid.columns": 12,
+        "grid.gap": 24,
+        "section.padY": 96,
+        "section.padYSm": 56,
+        "section.headGap": 40,
+        "block.gap": 24,
+        "card.gap": 24,
+        "text.measure": 68
+      },
+      "text": {
+        "break": "keep-all",
+        "overflowWrap": "anywhere",
+        "wrap": "pretty",
+        "numeric": "tabular-nums"
+      },
+      "space": {
+        "1": 4,
+        "2": 8,
+        "3": 12,
+        "4": 16,
+        "5": 20,
+        "6": 24,
+        "8": 32,
+        "10": 40
+      },
+      "elevation": {
+        "0": "none",
+        "1": "0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04)",
+        "2": "0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07)",
+        "3": "0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10)"
+      },
+      "breakpoint": {
+        "sm": 480,
+        "md": 768,
+        "lg": 1024
+      }
+    },
+    "tideland": {
+      "font": {
+        "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.display": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.mono": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+      },
+      "typography": {
+        "display1": {
+          "size": 40,
+          "weight": 800,
+          "lineHeight": 1.2,
+          "tracking": "-0.03em",
+          "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다."
+        },
+        "heading1": {
+          "size": 28,
+          "weight": 700,
+          "lineHeight": 1.3,
+          "tracking": "-0.025em",
+          "role": "섹션 제목."
+        },
+        "heading2": {
+          "size": 22,
+          "weight": 700,
+          "lineHeight": 1.35,
+          "tracking": "-0.02em",
+          "role": "하위 섹션 제목 · 카드 제목."
+        },
+        "heading3": {
+          "size": 18,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "-0.015em",
+          "role": "블록 제목 · 표 제목."
+        },
+        "body1": {
+          "size": 16,
+          "weight": 400,
+          "lineHeight": 1.6,
+          "tracking": "-0.005em",
+          "role": "본문 기본."
+        },
+        "body1-bold": {
+          "size": 16,
+          "weight": 700,
+          "lineHeight": 1.5,
+          "tracking": "-0.01em",
+          "role": "본문 안의 강조."
+        },
+        "body2": {
+          "size": 15,
+          "weight": 400,
+          "lineHeight": 1.55,
+          "tracking": "-0.005em",
+          "role": "보조 본문 · 카드 설명 · 목록."
+        },
+        "body2-bold": {
+          "size": 15,
+          "weight": 700,
+          "lineHeight": 1.45,
+          "tracking": "-0.01em",
+          "role": "보조 본문 강조."
+        },
+        "label": {
+          "size": 14,
+          "weight": 600,
+          "lineHeight": 1.4,
+          "tracking": "-0.005em",
+          "role": "폼 라벨 · 버튼 · 탭 · 배지."
+        },
+        "caption": {
+          "size": 13,
+          "weight": 400,
+          "lineHeight": 1.45,
+          "tracking": "0",
+          "role": "주석 · 메타 정보 · 표 각주."
+        },
+        "caption-bold": {
+          "size": 13,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "0",
+          "role": "주석 강조."
+        }
+      },
+      "layout": {
+        "container.max": 1200,
+        "container.gutter": 24,
+        "grid.columns": 12,
+        "grid.gap": 24,
+        "section.padY": 96,
+        "section.padYSm": 56,
+        "section.headGap": 40,
+        "block.gap": 24,
+        "card.gap": 24,
+        "text.measure": 68
+      },
+      "text": {
+        "break": "keep-all",
+        "overflowWrap": "anywhere",
+        "wrap": "pretty",
+        "numeric": "tabular-nums"
+      },
+      "space": {
+        "1": 4,
+        "2": 8,
+        "3": 12,
+        "4": 16,
+        "5": 20,
+        "6": 24,
+        "8": 32,
+        "10": 40
+      },
+      "elevation": {
+        "0": "none",
+        "1": "0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04)",
+        "2": "0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07)",
+        "3": "0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10)"
+      },
+      "breakpoint": {
+        "sm": 480,
+        "md": 768,
+        "lg": 1024
+      }
+    },
+    "cobalt": {
+      "font": {
+        "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.display": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.mono": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+      },
+      "typography": {
+        "display1": {
+          "size": 40,
+          "weight": 800,
+          "lineHeight": 1.2,
+          "tracking": "-0.03em",
+          "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다."
+        },
+        "heading1": {
+          "size": 28,
+          "weight": 700,
+          "lineHeight": 1.3,
+          "tracking": "-0.025em",
+          "role": "섹션 제목."
+        },
+        "heading2": {
+          "size": 22,
+          "weight": 700,
+          "lineHeight": 1.35,
+          "tracking": "-0.02em",
+          "role": "하위 섹션 제목 · 카드 제목."
+        },
+        "heading3": {
+          "size": 18,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "-0.015em",
+          "role": "블록 제목 · 표 제목."
+        },
+        "body1": {
+          "size": 16,
+          "weight": 400,
+          "lineHeight": 1.6,
+          "tracking": "-0.005em",
+          "role": "본문 기본."
+        },
+        "body1-bold": {
+          "size": 16,
+          "weight": 700,
+          "lineHeight": 1.5,
+          "tracking": "-0.01em",
+          "role": "본문 안의 강조."
+        },
+        "body2": {
+          "size": 15,
+          "weight": 400,
+          "lineHeight": 1.55,
+          "tracking": "-0.005em",
+          "role": "보조 본문 · 카드 설명 · 목록."
+        },
+        "body2-bold": {
+          "size": 15,
+          "weight": 700,
+          "lineHeight": 1.45,
+          "tracking": "-0.01em",
+          "role": "보조 본문 강조."
+        },
+        "label": {
+          "size": 14,
+          "weight": 600,
+          "lineHeight": 1.4,
+          "tracking": "-0.005em",
+          "role": "폼 라벨 · 버튼 · 탭 · 배지."
+        },
+        "caption": {
+          "size": 13,
+          "weight": 400,
+          "lineHeight": 1.45,
+          "tracking": "0",
+          "role": "주석 · 메타 정보 · 표 각주."
+        },
+        "caption-bold": {
+          "size": 13,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "0",
+          "role": "주석 강조."
+        }
+      },
+      "layout": {
+        "container.max": 1200,
+        "container.gutter": 24,
+        "grid.columns": 12,
+        "grid.gap": 24,
+        "section.padY": 96,
+        "section.padYSm": 56,
+        "section.headGap": 40,
+        "block.gap": 24,
+        "card.gap": 24,
+        "text.measure": 68
+      },
+      "text": {
+        "break": "keep-all",
+        "overflowWrap": "anywhere",
+        "wrap": "pretty",
+        "numeric": "tabular-nums"
+      },
+      "space": {
+        "1": 4,
+        "2": 8,
+        "3": 12,
+        "4": 16,
+        "5": 20,
+        "6": 24,
+        "8": 32,
+        "10": 40
+      },
+      "elevation": {
+        "0": "none",
+        "1": "0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04)",
+        "2": "0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07)",
+        "3": "0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10)"
+      },
+      "breakpoint": {
+        "sm": 480,
+        "md": 768,
+        "lg": 1024
+      }
+    }
+  },
+  "count": 36,
+  "variantCount": 5,
+  "assets": [
+    {
+      "id": "badge-status-sm",
+      "name": "Status Badge / SM",
+      "group": "badge",
+      "tags": [
+        "뱃지",
+        "상태",
+        "라벨"
+      ],
+      "spec": {
+        "height": "badge.height",
+        "radius": "full",
+        "paddingX": "badge.paddingX",
+        "typography": "caption-bold"
+      },
+      "tokens": {
+        "bg": "success.subtle",
+        "label": "success.default"
+      },
+      "responsive": {},
+      "states": [
+        "success",
+        "warning",
+        "danger",
+        "neutral"
+      ],
+      "usage": "행·카드의 상태 표기. 색과 텍스트를 함께 씀",
+      "dont": "색만으로 상태를 구분하지 않음",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/badge/badge-status-sm--eluo@2x.png",
+        "atlas": "assets/components/badge/badge-status-sm--atlas@2x.png",
+        "ember": "assets/components/badge/badge-status-sm--ember@2x.png",
+        "harbor": "assets/components/badge/badge-status-sm--harbor@2x.png",
+        "tideland": "assets/components/badge/badge-status-sm--tideland@2x.png",
+        "cobalt": "assets/components/badge/badge-status-sm--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/badge/badge-status-sm--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/badge/badge-status-sm--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/badge/badge-status-sm--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/badge/badge-status-sm--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/badge/badge-status-sm--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/badge/badge-status-sm--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "height": 24,
+          "radius": "full",
+          "paddingX": 10,
+          "typography": "caption-bold"
+        },
+        "atlas": {
+          "height": 24,
+          "radius": "full",
+          "paddingX": 10,
+          "typography": "caption-bold"
+        },
+        "ember": {
+          "height": 23,
+          "radius": "full",
+          "paddingX": 8,
+          "typography": "caption-bold"
+        },
+        "harbor": {
+          "height": 36,
+          "radius": "full",
+          "paddingX": 12,
+          "typography": "caption-bold"
+        },
+        "tideland": {
+          "height": 24,
+          "radius": "full",
+          "paddingX": 10,
+          "typography": "caption-bold"
+        },
+        "cobalt": {
+          "height": 24,
+          "radius": "full",
+          "paddingX": 10,
+          "typography": "caption-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/badge/badge-status-sm--eluo%402x.png"
+    },
+    {
+      "id": "btn-danger-md",
+      "name": "Danger Button / MD",
+      "group": "button",
+      "tags": [
+        "파괴적액션",
+        "삭제",
+        "경고"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.md.height",
+        "radius": "md",
+        "paddingX": "control.md.paddingX",
+        "typography": "body2-bold"
+      },
+      "tokens": {
+        "bg": "danger.default",
+        "label": "text.inverse"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "hover",
+        "pressed",
+        "disabled"
+      ],
+      "usage": "되돌릴 수 없는 액션. 삭제·탈퇴·영구 해제",
+      "dont": "확인 모달 없이 단독 노출 금지",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/button/btn-danger-md--eluo@2x.png",
+        "atlas": "assets/components/button/btn-danger-md--atlas@2x.png",
+        "ember": "assets/components/button/btn-danger-md--ember@2x.png",
+        "harbor": "assets/components/button/btn-danger-md--harbor@2x.png",
+        "tideland": "assets/components/button/btn-danger-md--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-danger-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-danger-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-danger-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-danger-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-danger-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-danger-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-danger-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 40,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 44,
+          "radius": "md",
+          "paddingX": 26,
+          "typography": "body2-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-danger-md--eluo%402x.png"
+    },
+    {
+      "id": "btn-ghost-md",
+      "name": "Ghost Button / MD",
+      "group": "button",
+      "tags": [
+        "텍스트버튼",
+        "3순위"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.md.height",
+        "radius": "md",
+        "paddingX": "control.ghost.paddingX",
+        "typography": "body2-bold"
+      },
+      "tokens": {
+        "label": "text.brand"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "hover",
+        "disabled"
+      ],
+      "usage": "세 번째 순위 액션. 취소·더보기·되돌리기",
+      "dont": "한 화면에 3개 이상 늘어놓지 않음. 위계가 사라짐",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/button/btn-ghost-md--eluo@2x.png",
+        "atlas": "assets/components/button/btn-ghost-md--atlas@2x.png",
+        "ember": "assets/components/button/btn-ghost-md--ember@2x.png",
+        "harbor": "assets/components/button/btn-ghost-md--harbor@2x.png",
+        "tideland": "assets/components/button/btn-ghost-md--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-ghost-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-ghost-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-ghost-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-ghost-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-ghost-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-ghost-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-ghost-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 14,
+          "typography": "body2-bold"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 14,
+          "typography": "body2-bold"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 40,
+          "radius": "md",
+          "paddingX": 14,
+          "typography": "body2-bold"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 14,
+          "typography": "body2-bold"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 14,
+          "typography": "body2-bold"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 44,
+          "radius": "md",
+          "paddingX": 14,
+          "typography": "body2-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-ghost-md--eluo%402x.png"
+    },
+    {
+      "id": "btn-outline-lg",
+      "name": "Outline Button / LG",
+      "group": "button",
+      "tags": [
+        "CTA",
+        "테두리형",
+        "반복액션"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.lg.height",
+        "radius": "lg",
+        "paddingX": "control.lg.paddingX",
+        "borderWidth": "border.width",
+        "typography": "body1-bold"
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "border": "border.brand",
+        "label": "text.brand"
+      },
+      "responsive": {
+        "sm": "fill"
+      },
+      "states": [
+        "default",
+        "hover",
+        "pressed",
+        "disabled"
+      ],
+      "usage": "채움형이 과한 화면의 주요 액션. 버튼이 화면에서 여러 번 반복될 때",
+      "dont": "btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐",
+      "status": "stable",
+      "since": "v1.0.3",
+      "renders": {
+        "eluo": "assets/components/button/btn-outline-lg--eluo@2x.png",
+        "atlas": "assets/components/button/btn-outline-lg--atlas@2x.png",
+        "ember": "assets/components/button/btn-outline-lg--ember@2x.png",
+        "harbor": "assets/components/button/btn-outline-lg--harbor@2x.png",
+        "tideland": "assets/components/button/btn-outline-lg--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-outline-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 52,
+          "radius": "lg",
+          "paddingX": 44,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 40,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 38,
+          "borderWidth": 2,
+          "typography": "body1-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "fill"
+        },
+        "atlas": {
+          "480": "fill"
+        },
+        "ember": {
+          "480": "fill"
+        },
+        "harbor": {
+          "480": "fill"
+        },
+        "tideland": {
+          "480": "fill"
+        },
+        "cobalt": {
+          "480": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-lg--eluo%402x.png"
+    },
+    {
+      "id": "btn-outline-md",
+      "name": "Outline Button / MD",
+      "group": "button",
+      "tags": [
+        "CTA",
+        "테두리형",
+        "반복액션"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.md.height",
+        "radius": "md",
+        "paddingX": "control.md.paddingX",
+        "borderWidth": "border.width",
+        "typography": "body2-bold"
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "border": "border.brand",
+        "label": "text.brand"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "hover",
+        "pressed",
+        "disabled"
+      ],
+      "usage": "카드·행 안의 반복 액션. 장바구니 담기·상세 보기",
+      "dont": "btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐",
+      "status": "stable",
+      "since": "v1.0.3",
+      "renders": {
+        "eluo": "assets/components/button/btn-outline-md--eluo@2x.png",
+        "atlas": "assets/components/button/btn-outline-md--atlas@2x.png",
+        "ember": "assets/components/button/btn-outline-md--ember@2x.png",
+        "harbor": "assets/components/button/btn-outline-md--harbor@2x.png",
+        "tideland": "assets/components/button/btn-outline-md--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-outline-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "borderWidth": 1,
+          "typography": "body2-bold"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "borderWidth": 1,
+          "typography": "body2-bold"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 40,
+          "radius": "md",
+          "paddingX": 20,
+          "borderWidth": 1,
+          "typography": "body2-bold"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "borderWidth": 1,
+          "typography": "body2-bold"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "borderWidth": 1,
+          "typography": "body2-bold"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 44,
+          "radius": "md",
+          "paddingX": 26,
+          "borderWidth": 2,
+          "typography": "body2-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-outline-md--eluo%402x.png"
+    },
+    {
+      "id": "btn-primary-lg-disabled",
+      "name": "Primary Button / LG / Disabled",
+      "group": "button",
+      "tags": [
+        "비활성",
+        "disabled"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.lg.height",
+        "radius": "lg",
+        "paddingX": "control.lg.paddingX",
+        "typography": "body1-bold"
+      },
+      "tokens": {
+        "bg": "surface.disabled",
+        "label": "text.disabled"
+      },
+      "responsive": {
+        "sm": "fill"
+      },
+      "states": [],
+      "usage": "필수 입력이 채워지지 않았을 때. 버튼을 감추는 대신 사용",
+      "dont": "이유 안내 없이 단독 노출 금지. 항상 헬퍼 텍스트와 함께",
+      "status": "stable",
+      "since": "v1.0.0",
+      "variantOf": "btn-primary-lg",
+      "variantState": "disabled",
+      "renders": {
+        "eluo": "assets/components/button/btn-primary-lg-disabled--eluo@2x.png",
+        "atlas": "assets/components/button/btn-primary-lg-disabled--atlas@2x.png",
+        "ember": "assets/components/button/btn-primary-lg-disabled--ember@2x.png",
+        "harbor": "assets/components/button/btn-primary-lg-disabled--harbor@2x.png",
+        "tideland": "assets/components/button/btn-primary-lg-disabled--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-primary-lg-disabled--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg-disabled--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg-disabled--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg-disabled--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg-disabled--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg-disabled--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg-disabled--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "typography": "body1-bold"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "typography": "body1-bold"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 52,
+          "radius": "lg",
+          "paddingX": 44,
+          "typography": "body1-bold"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 40,
+          "typography": "body1-bold"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "typography": "body1-bold"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 38,
+          "typography": "body1-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "fill"
+        },
+        "atlas": {
+          "480": "fill"
+        },
+        "ember": {
+          "480": "fill"
+        },
+        "harbor": {
+          "480": "fill"
+        },
+        "tideland": {
+          "480": "fill"
+        },
+        "cobalt": {
+          "480": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg-disabled--eluo%402x.png"
+    },
+    {
+      "id": "btn-primary-lg",
+      "name": "Primary Button / LG",
+      "group": "button",
+      "tags": [
+        "CTA",
+        "주요액션",
+        "채움형"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.lg.height",
+        "radius": "lg",
+        "paddingX": "control.lg.paddingX",
+        "typography": "body1-bold"
+      },
+      "tokens": {
+        "bg": "brand.primary",
+        "label": "text.inverse"
+      },
+      "responsive": {
+        "sm": "fill"
+      },
+      "states": [
+        "default",
+        "hover",
+        "pressed",
+        "disabled"
+      ],
+      "usage": "화면당 주요 액션 1개. 히어로·폼 제출·전환 유도",
+      "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/button/btn-primary-lg--eluo@2x.png",
+        "atlas": "assets/components/button/btn-primary-lg--atlas@2x.png",
+        "ember": "assets/components/button/btn-primary-lg--ember@2x.png",
+        "harbor": "assets/components/button/btn-primary-lg--harbor@2x.png",
+        "tideland": "assets/components/button/btn-primary-lg--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-primary-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "typography": "body1-bold"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "typography": "body1-bold"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 52,
+          "radius": "lg",
+          "paddingX": 44,
+          "typography": "body1-bold"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 40,
+          "typography": "body1-bold"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "typography": "body1-bold"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 38,
+          "typography": "body1-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "fill"
+        },
+        "atlas": {
+          "480": "fill"
+        },
+        "ember": {
+          "480": "fill"
+        },
+        "harbor": {
+          "480": "fill"
+        },
+        "tideland": {
+          "480": "fill"
+        },
+        "cobalt": {
+          "480": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-lg--eluo%402x.png",
+      "variants": [
+        {
+          "id": "btn-primary-lg-disabled",
+          "state": "disabled",
+          "tokens": {
+            "bg": "surface.disabled",
+            "label": "text.disabled"
+          },
+          "spec": {
+            "width": "hug",
+            "height": "control.lg.height",
+            "radius": "lg",
+            "paddingX": "control.lg.paddingX",
+            "typography": "body1-bold"
+          }
+        }
+      ]
+    },
+    {
+      "id": "btn-primary-md",
+      "name": "Primary Button / MD",
+      "group": "button",
+      "tags": [
+        "CTA",
+        "주요액션",
+        "채움형"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.md.height",
+        "radius": "md",
+        "paddingX": "control.md.paddingX",
+        "typography": "body2-bold"
+      },
+      "tokens": {
+        "bg": "brand.primary",
+        "label": "text.inverse"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "hover",
+        "pressed",
+        "disabled"
+      ],
+      "usage": "본문 안 액션. 카드 내부나 테이블 행 액션",
+      "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/button/btn-primary-md--eluo@2x.png",
+        "atlas": "assets/components/button/btn-primary-md--atlas@2x.png",
+        "ember": "assets/components/button/btn-primary-md--ember@2x.png",
+        "harbor": "assets/components/button/btn-primary-md--harbor@2x.png",
+        "tideland": "assets/components/button/btn-primary-md--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-primary-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 40,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 48,
+          "radius": "md",
+          "paddingX": 20,
+          "typography": "body2-bold"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 44,
+          "radius": "md",
+          "paddingX": 26,
+          "typography": "body2-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-md--eluo%402x.png"
+    },
+    {
+      "id": "btn-primary-sm",
+      "name": "Primary Button / SM",
+      "group": "button",
+      "tags": [
+        "CTA",
+        "주요액션",
+        "채움형"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.sm.height",
+        "radius": "sm",
+        "paddingX": "control.sm.paddingX",
+        "typography": "label"
+      },
+      "tokens": {
+        "bg": "brand.primary",
+        "label": "text.inverse"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "hover",
+        "pressed",
+        "disabled"
+      ],
+      "usage": "밀도 높은 영역. 툴바·필터 바",
+      "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/button/btn-primary-sm--eluo@2x.png",
+        "atlas": "assets/components/button/btn-primary-sm--atlas@2x.png",
+        "ember": "assets/components/button/btn-primary-sm--ember@2x.png",
+        "harbor": "assets/components/button/btn-primary-sm--harbor@2x.png",
+        "tideland": "assets/components/button/btn-primary-sm--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-primary-sm--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-sm--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-sm--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-sm--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-sm--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-sm--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-sm--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 36,
+          "radius": "sm",
+          "paddingX": 14,
+          "typography": "label"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 36,
+          "radius": "sm",
+          "paddingX": 14,
+          "typography": "label"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 39,
+          "radius": "sm",
+          "paddingX": 18,
+          "typography": "label"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 36,
+          "radius": "sm",
+          "paddingX": 14,
+          "typography": "label"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 36,
+          "radius": "sm",
+          "paddingX": 14,
+          "typography": "label"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 36,
+          "radius": "sm",
+          "paddingX": 14,
+          "typography": "label"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-primary-sm--eluo%402x.png"
+    },
+    {
+      "id": "btn-secondary-lg",
+      "name": "Secondary Button / LG",
+      "group": "button",
+      "tags": [
+        "보조액션",
+        "외곽선형"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "control.lg.height",
+        "radius": "lg",
+        "paddingX": "control.lg.paddingX",
+        "borderWidth": "border.width",
+        "typography": "body1-bold"
+      },
+      "tokens": {
+        "border": "border.default",
+        "label": "text.primary",
+        "bg": "surface.default"
+      },
+      "responsive": {
+        "sm": "fill"
+      },
+      "states": [
+        "default",
+        "hover",
+        "pressed",
+        "disabled"
+      ],
+      "usage": "주요 액션과 나란히 놓는 두 번째 선택지",
+      "dont": "단독으로 쓰지 않음. 항상 primary와 짝",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/button/btn-secondary-lg--eluo@2x.png",
+        "atlas": "assets/components/button/btn-secondary-lg--atlas@2x.png",
+        "ember": "assets/components/button/btn-secondary-lg--ember@2x.png",
+        "harbor": "assets/components/button/btn-secondary-lg--harbor@2x.png",
+        "tideland": "assets/components/button/btn-secondary-lg--tideland@2x.png",
+        "cobalt": "assets/components/button/btn-secondary-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-secondary-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-secondary-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-secondary-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-secondary-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-secondary-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-secondary-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 52,
+          "radius": "lg",
+          "paddingX": 44,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 40,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 38,
+          "borderWidth": 2,
+          "typography": "body1-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "fill"
+        },
+        "atlas": {
+          "480": "fill"
+        },
+        "ember": {
+          "480": "fill"
+        },
+        "harbor": {
+          "480": "fill"
+        },
+        "tideland": {
+          "480": "fill"
+        },
+        "cobalt": {
+          "480": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/button/btn-secondary-lg--eluo%402x.png"
+    },
+    {
+      "id": "card-basic-md",
+      "name": "Basic Card / MD",
+      "group": "card",
+      "tags": [
+        "카드",
+        "컨테이너"
+      ],
+      "spec": {
+        "width": "card.width",
+        "radius": "xl",
+        "paddingX": "card.basic.paddingX",
+        "paddingY": "card.basic.paddingY",
+        "gap": "card.basic.gap",
+        "borderWidth": "border.width",
+        "elevation": 1
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "border": "border.subtle"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [
+        "default",
+        "hover"
+      ],
+      "usage": "구획을 나누는 기본 컨테이너",
+      "dont": "카드 안에 또 카드를 넣지 않음",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/card/card-basic-md--eluo@2x.png",
+        "atlas": "assets/components/card/card-basic-md--atlas@2x.png",
+        "ember": "assets/components/card/card-basic-md--ember@2x.png",
+        "harbor": "assets/components/card/card-basic-md--harbor@2x.png",
+        "tideland": "assets/components/card/card-basic-md--tideland@2x.png",
+        "cobalt": "assets/components/card/card-basic-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-basic-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-basic-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-basic-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-basic-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-basic-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-basic-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 20,
+          "gap": 8,
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "atlas": {
+          "width": 345,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 20,
+          "gap": 8,
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "ember": {
+          "width": 287.5,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 20,
+          "gap": 8,
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "harbor": {
+          "width": 445.6,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 20,
+          "gap": 8,
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "tideland": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 20,
+          "gap": 8,
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "cobalt": {
+          "width": 405,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 20,
+          "gap": 8,
+          "borderWidth": 2,
+          "elevation": 1
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-basic-md--eluo%402x.png"
+    },
+    {
+      "id": "card-portrait-md",
+      "name": "Portrait Card / MD",
+      "group": "card",
+      "tags": [
+        "카드",
+        "세로썸네일",
+        "9:16",
+        "SNS"
+      ],
+      "spec": {
+        "width": "card.portrait.width",
+        "radius": "xl",
+        "gap": "card.portrait.gap",
+        "thumbRatio": "9:16",
+        "typography": "body2"
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "thumb": "surface.sunken",
+        "title": "text.primary",
+        "meta": "text.tertiary"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [
+        "default",
+        "hover"
+      ],
+      "usage": "세로 이미지가 주인공인 목록. SNS·영상·인물 카드. 4~6열로 늘어놓을 때",
+      "dont": "가로 이미지를 억지로 넣지 않음. 16:9 면 card-product-md",
+      "status": "stable",
+      "since": "v1.6.0",
+      "renders": {
+        "eluo": "assets/components/card/card-portrait-md--eluo@2x.png",
+        "atlas": "assets/components/card/card-portrait-md--atlas@2x.png",
+        "ember": "assets/components/card/card-portrait-md--ember@2x.png",
+        "harbor": "assets/components/card/card-portrait-md--harbor@2x.png",
+        "tideland": "assets/components/card/card-portrait-md--tideland@2x.png",
+        "cobalt": "assets/components/card/card-portrait-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-portrait-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-portrait-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-portrait-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-portrait-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-portrait-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-portrait-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 280,
+          "radius": "xl",
+          "gap": 12,
+          "thumbRatio": "9:16",
+          "typography": "body2"
+        },
+        "atlas": {
+          "width": 280,
+          "radius": "xl",
+          "gap": 12,
+          "thumbRatio": "9:16",
+          "typography": "body2"
+        },
+        "ember": {
+          "width": 280,
+          "radius": "xl",
+          "gap": 12,
+          "thumbRatio": "9:16",
+          "typography": "body2"
+        },
+        "harbor": {
+          "width": 280,
+          "radius": "xl",
+          "gap": 12,
+          "thumbRatio": "9:16",
+          "typography": "body2"
+        },
+        "tideland": {
+          "width": 280,
+          "radius": "xl",
+          "gap": 12,
+          "thumbRatio": "9:16",
+          "typography": "body2"
+        },
+        "cobalt": {
+          "width": 295,
+          "radius": "xl",
+          "gap": 13,
+          "thumbRatio": "9:16",
+          "typography": "body2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-portrait-md--eluo%402x.png"
+    },
+    {
+      "id": "card-product-md",
+      "name": "Product Card / MD",
+      "group": "card",
+      "tags": [
+        "카드",
+        "썸네일",
+        "그리드아이템"
+      ],
+      "spec": {
+        "width": "card.width",
+        "radius": "xl",
+        "paddingX": "card.product.paddingX",
+        "paddingY": "card.product.paddingY",
+        "gap": "card.product.gap",
+        "thumbRatio": "16:9",
+        "borderWidth": "border.width",
+        "elevation": 1
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "border": "border.subtle",
+        "thumb": "surface.sunken"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [
+        "default",
+        "hover",
+        "selected"
+      ],
+      "usage": "그리드형 목록의 기본 단위. 3~4열 그리드",
+      "dont": "썸네일 비율을 카드마다 다르게 두지 않음",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/card/card-product-md--eluo@2x.png",
+        "atlas": "assets/components/card/card-product-md--atlas@2x.png",
+        "ember": "assets/components/card/card-product-md--ember@2x.png",
+        "harbor": "assets/components/card/card-product-md--harbor@2x.png",
+        "tideland": "assets/components/card/card-product-md--tideland@2x.png",
+        "cobalt": "assets/components/card/card-product-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-product-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-product-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-product-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-product-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-product-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-product-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 16,
+          "gap": 12,
+          "thumbRatio": "16:9",
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "atlas": {
+          "width": 345,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 16,
+          "gap": 12,
+          "thumbRatio": "16:9",
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "ember": {
+          "width": 287.5,
+          "radius": "xl",
+          "paddingX": 2,
+          "paddingY": 14,
+          "gap": 8,
+          "thumbRatio": "16:9",
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "harbor": {
+          "width": 445.6,
+          "radius": "xl",
+          "paddingX": 0,
+          "paddingY": 0,
+          "gap": 12,
+          "thumbRatio": "16:9",
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "tideland": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 16,
+          "gap": 12,
+          "thumbRatio": "16:9",
+          "borderWidth": 1,
+          "elevation": 1
+        },
+        "cobalt": {
+          "width": 405,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 16,
+          "gap": 12,
+          "thumbRatio": "16:9",
+          "borderWidth": 2,
+          "elevation": 1
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-product-md--eluo%402x.png"
+    },
+    {
+      "id": "card-stat-md",
+      "name": "Stat Card / MD",
+      "group": "card",
+      "tags": [
+        "지표",
+        "숫자",
+        "혜택",
+        "채움형"
+      ],
+      "spec": {
+        "width": "card.stat.width",
+        "radius": "xl",
+        "paddingX": "card.stat.paddingX",
+        "paddingY": "card.stat.paddingY",
+        "gap": "card.stat.gap",
+        "typography": "heading2"
+      },
+      "tokens": {
+        "bg": "surface.sunken",
+        "value": "text.primary",
+        "label": "text.primary",
+        "desc": "text.secondary"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [
+        "default"
+      ],
+      "usage": "숫자 하나를 앞세우는 지표 묶음. 혜택·실적을 3~4개 나란히 놓을 때",
+      "dont": "숫자가 없으면 쓰지 않음. 그냥 구획이면 card-basic-md",
+      "status": "stable",
+      "since": "v1.5.0",
+      "renders": {
+        "eluo": "assets/components/card/card-stat-md--eluo@2x.png",
+        "atlas": "assets/components/card/card-stat-md--atlas@2x.png",
+        "ember": "assets/components/card/card-stat-md--ember@2x.png",
+        "harbor": "assets/components/card/card-stat-md--harbor@2x.png",
+        "tideland": "assets/components/card/card-stat-md--tideland@2x.png",
+        "cobalt": "assets/components/card/card-stat-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-stat-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-stat-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-stat-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-stat-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-stat-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-stat-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 32,
+          "gap": 8,
+          "typography": "heading2"
+        },
+        "atlas": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 32,
+          "gap": 8,
+          "typography": "heading2"
+        },
+        "ember": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 32,
+          "gap": 8,
+          "typography": "heading2"
+        },
+        "harbor": {
+          "width": 264,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 55,
+          "gap": 8,
+          "typography": "heading2"
+        },
+        "tideland": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 32,
+          "gap": 8,
+          "typography": "heading2"
+        },
+        "cobalt": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 32,
+          "gap": 8,
+          "typography": "heading2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/card/card-stat-md--eluo%402x.png"
+    },
+    {
+      "id": "chip-filter-md-selected",
+      "name": "Filter Chip / MD / Selected",
+      "group": "chip",
+      "tags": [
+        "필터",
+        "선택됨"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "chip.height",
+        "radius": "full",
+        "paddingX": "chip.paddingX",
+        "borderWidth": "border.width",
+        "gap": "chip.gap",
+        "typography": "label"
+      },
+      "tokens": {
+        "bg": "brand.subtle",
+        "border": "border.brand",
+        "label": "brand.onSubtle"
+      },
+      "responsive": {},
+      "states": [],
+      "usage": "선택된 필터. 배경 채움 + 브랜드 테두리로 상태를 이중 표기",
+      "dont": "색만으로 선택을 표시하지 않음. 색각 이상 사용자가 구분 못 함",
+      "status": "stable",
+      "since": "v1.0.0",
+      "variantOf": "chip-filter-md",
+      "variantState": "selected",
+      "renders": {
+        "eluo": "assets/components/chip/chip-filter-md-selected--eluo@2x.png",
+        "atlas": "assets/components/chip/chip-filter-md-selected--atlas@2x.png",
+        "ember": "assets/components/chip/chip-filter-md-selected--ember@2x.png",
+        "harbor": "assets/components/chip/chip-filter-md-selected--harbor@2x.png",
+        "tideland": "assets/components/chip/chip-filter-md-selected--tideland@2x.png",
+        "cobalt": "assets/components/chip/chip-filter-md-selected--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md-selected--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md-selected--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md-selected--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md-selected--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md-selected--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md-selected--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 32,
+          "radius": "full",
+          "paddingX": 15,
+          "borderWidth": 1,
+          "gap": 7,
+          "typography": "label"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 48,
+          "radius": "full",
+          "paddingX": 20,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 2,
+          "gap": 6,
+          "typography": "label"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md-selected--eluo%402x.png"
+    },
+    {
+      "id": "chip-filter-md",
+      "name": "Filter Chip / MD",
+      "group": "chip",
+      "tags": [
+        "필터",
+        "선택",
+        "토글"
+      ],
+      "spec": {
+        "width": "hug",
+        "height": "chip.height",
+        "radius": "full",
+        "paddingX": "chip.paddingX",
+        "borderWidth": "border.width",
+        "gap": "chip.gap",
+        "typography": "label"
+      },
+      "tokens": {
+        "border": "border.default",
+        "label": "text.secondary",
+        "bg": "surface.default"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "selected",
+        "disabled"
+      ],
+      "usage": "목록 상단의 다중 필터. 2~8개까지",
+      "dont": "단일 선택에는 쓰지 않음. 그건 탭이나 셀렉트",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/chip/chip-filter-md--eluo@2x.png",
+        "atlas": "assets/components/chip/chip-filter-md--atlas@2x.png",
+        "ember": "assets/components/chip/chip-filter-md--ember@2x.png",
+        "harbor": "assets/components/chip/chip-filter-md--harbor@2x.png",
+        "tideland": "assets/components/chip/chip-filter-md--tideland@2x.png",
+        "cobalt": "assets/components/chip/chip-filter-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
+        },
+        "atlas": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
+        },
+        "ember": {
+          "width": "hug",
+          "height": 32,
+          "radius": "full",
+          "paddingX": 15,
+          "borderWidth": 1,
+          "gap": 7,
+          "typography": "label"
+        },
+        "harbor": {
+          "width": "hug",
+          "height": 48,
+          "radius": "full",
+          "paddingX": 20,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
+        },
+        "tideland": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
+        },
+        "cobalt": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 2,
+          "gap": 6,
+          "typography": "label"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/chip/chip-filter-md--eluo%402x.png",
+      "variants": [
+        {
+          "id": "chip-filter-md-selected",
+          "state": "selected",
+          "tokens": {
+            "bg": "brand.subtle",
+            "border": "border.brand",
+            "label": "brand.onSubtle"
+          },
+          "spec": {
+            "width": "hug",
+            "height": "chip.height",
+            "radius": "full",
+            "paddingX": "chip.paddingX",
+            "borderWidth": "border.width",
+            "gap": "chip.gap",
+            "typography": "label"
+          }
+        }
+      ]
+    },
+    {
+      "id": "price-discount-md",
+      "name": "Price / Discount / MD",
+      "group": "commerce",
+      "tags": [
+        "가격",
+        "할인",
+        "커머스"
+      ],
+      "spec": {
+        "gap": "price.gap",
+        "typography": "body1-bold",
+        "originalTypography": "caption"
+      },
+      "tokens": {
+        "rate": "text.brand",
+        "price": "text.primary",
+        "original": "text.tertiary"
+      },
+      "responsive": {},
+      "states": [],
+      "usage": "할인율·판매가·정가를 한 줄로. 목록과 상세에서 순서를 바꾸지 않음",
+      "dont": "정가에 취소선 없이 두 가격을 나란히 두지 않음. 어느 쪽이 낼 돈인지 알 수 없음",
+      "status": "stable",
+      "since": "v1.0.3",
+      "renders": {
+        "eluo": "assets/components/commerce/price-discount-md--eluo@2x.png",
+        "atlas": "assets/components/commerce/price-discount-md--atlas@2x.png",
+        "ember": "assets/components/commerce/price-discount-md--ember@2x.png",
+        "harbor": "assets/components/commerce/price-discount-md--harbor@2x.png",
+        "tideland": "assets/components/commerce/price-discount-md--tideland@2x.png",
+        "cobalt": "assets/components/commerce/price-discount-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/price-discount-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/price-discount-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/price-discount-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/price-discount-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/price-discount-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/price-discount-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "gap": 8,
+          "typography": "body1-bold",
+          "originalTypography": "caption"
+        },
+        "atlas": {
+          "gap": 8,
+          "typography": "body1-bold",
+          "originalTypography": "caption"
+        },
+        "ember": {
+          "gap": 8,
+          "typography": "body1-bold",
+          "originalTypography": "caption"
+        },
+        "harbor": {
+          "gap": 8,
+          "typography": "body1-bold",
+          "originalTypography": "caption"
+        },
+        "tideland": {
+          "gap": 8,
+          "typography": "body1-bold",
+          "originalTypography": "caption"
+        },
+        "cobalt": {
+          "gap": 8,
+          "typography": "body1-bold",
+          "originalTypography": "caption"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/price-discount-md--eluo%402x.png"
+    },
+    {
+      "id": "wish-toggle-md-selected",
+      "name": "Wish Toggle / MD / Selected",
+      "group": "commerce",
+      "tags": [
+        "찜",
+        "관심",
+        "토글",
+        "선택됨"
+      ],
+      "spec": {
+        "width": "toggle.size",
+        "height": "toggle.size",
+        "radius": "full",
+        "borderWidth": "border.width",
+        "iconSize": "toggle.iconSize"
+      },
+      "tokens": {
+        "bg": "brand.subtle",
+        "border": "brand.primary",
+        "icon": "brand.onSubtle"
+      },
+      "responsive": {},
+      "states": [
+        "selected"
+      ],
+      "usage": "관심 등록된 상태. 배경 채움 + 테두리 + 채운 하트로 삼중 표기",
+      "dont": "기본 상태와 하트 모양이 같으면 안 됨. 색각 이상 사용자가 구분하지 못함",
+      "status": "stable",
+      "since": "v1.0.3",
+      "variantOf": "wish-toggle-md",
+      "variantState": "selected",
+      "renders": {
+        "eluo": "assets/components/commerce/wish-toggle-md-selected--eluo@2x.png",
+        "atlas": "assets/components/commerce/wish-toggle-md-selected--atlas@2x.png",
+        "ember": "assets/components/commerce/wish-toggle-md-selected--ember@2x.png",
+        "harbor": "assets/components/commerce/wish-toggle-md-selected--harbor@2x.png",
+        "tideland": "assets/components/commerce/wish-toggle-md-selected--tideland@2x.png",
+        "cobalt": "assets/components/commerce/wish-toggle-md-selected--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md-selected--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md-selected--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md-selected--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md-selected--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md-selected--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md-selected--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
+        },
+        "atlas": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
+        },
+        "ember": {
+          "width": 30,
+          "height": 30,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 13
+        },
+        "harbor": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
+        },
+        "tideland": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
+        },
+        "cobalt": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 2,
+          "iconSize": 18
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md-selected--eluo%402x.png"
+    },
+    {
+      "id": "wish-toggle-md",
+      "name": "Wish Toggle / MD",
+      "group": "commerce",
+      "tags": [
+        "찜",
+        "관심",
+        "토글"
+      ],
+      "spec": {
+        "width": "toggle.size",
+        "height": "toggle.size",
+        "radius": "full",
+        "borderWidth": "border.width",
+        "iconSize": "toggle.iconSize"
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "border": "border.subtle",
+        "icon": "text.tertiary"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "selected"
+      ],
+      "usage": "목록 카드의 관심 등록. 40x40 터치 영역을 확보한 최소 크기",
+      "dont": "선택 상태를 색으로만 표시하지 않음. 하트를 채워 모양도 함께 바꿈",
+      "status": "stable",
+      "since": "v1.0.3",
+      "renders": {
+        "eluo": "assets/components/commerce/wish-toggle-md--eluo@2x.png",
+        "atlas": "assets/components/commerce/wish-toggle-md--atlas@2x.png",
+        "ember": "assets/components/commerce/wish-toggle-md--ember@2x.png",
+        "harbor": "assets/components/commerce/wish-toggle-md--harbor@2x.png",
+        "tideland": "assets/components/commerce/wish-toggle-md--tideland@2x.png",
+        "cobalt": "assets/components/commerce/wish-toggle-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
+        },
+        "atlas": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
+        },
+        "ember": {
+          "width": 30,
+          "height": 30,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 13
+        },
+        "harbor": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
+        },
+        "tideland": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
+        },
+        "cobalt": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 2,
+          "iconSize": 18
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/commerce/wish-toggle-md--eluo%402x.png",
+      "variants": [
+        {
+          "id": "wish-toggle-md-selected",
+          "state": "selected",
+          "tokens": {
+            "bg": "brand.subtle",
+            "border": "brand.primary",
+            "icon": "brand.onSubtle"
+          },
+          "spec": {
+            "width": "toggle.size",
+            "height": "toggle.size",
+            "radius": "full",
+            "borderWidth": "border.width",
+            "iconSize": "toggle.iconSize"
+          }
+        }
+      ]
+    },
+    {
+      "id": "accordion-md",
+      "name": "Accordion / MD",
+      "group": "disclosure",
+      "tags": [
+        "아코디언",
+        "FAQ",
+        "약관",
+        "접기"
+      ],
+      "spec": {
+        "paddingY": "accordion.paddingY",
+        "gap": "accordion.gap",
+        "borderWidth": "border.width",
+        "iconSize": "accordion.iconSize",
+        "titleTypography": "body1-bold",
+        "bodyTypography": "body2",
+        "bodyMaxWidth": "text.measure"
+      },
+      "tokens": {
+        "border": "border.subtle",
+        "title": "text.primary",
+        "body": "text.secondary",
+        "icon": "text.tertiary",
+        "titleOpen": "text.brand"
+      },
+      "responsive": {},
+      "states": [
+        "closed",
+        "open",
+        "hover"
+      ],
+      "usage": "질문·항목이 길어 한 번에 다 보이면 부담스러운 목록. FAQ·약관·상세 사양",
+      "dont": "한 번에 다 읽어야 하는 내용을 접지 않음. 접힌 것은 안 읽습니다",
+      "status": "stable",
+      "since": "v1.10.0",
+      "renders": {
+        "eluo": "assets/components/disclosure/accordion-md--eluo@2x.png",
+        "atlas": "assets/components/disclosure/accordion-md--atlas@2x.png",
+        "ember": "assets/components/disclosure/accordion-md--ember@2x.png",
+        "harbor": "assets/components/disclosure/accordion-md--harbor@2x.png",
+        "tideland": "assets/components/disclosure/accordion-md--tideland@2x.png",
+        "cobalt": "assets/components/disclosure/accordion-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/disclosure/accordion-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/disclosure/accordion-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/disclosure/accordion-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/disclosure/accordion-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/disclosure/accordion-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/disclosure/accordion-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "iconSize": 20,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "atlas": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "iconSize": 20,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "ember": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "iconSize": 20,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "harbor": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "iconSize": 20,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "tideland": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "iconSize": 20,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "cobalt": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 2,
+          "iconSize": 20,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/disclosure/accordion-md--eluo%402x.png"
+    },
+    {
+      "id": "empty-state-md",
+      "name": "Empty State / MD",
+      "group": "feedback",
+      "tags": [
+        "빈상태",
+        "결과없음",
+        "안내"
+      ],
+      "spec": {
+        "paddingY": "empty.paddingY",
+        "gap": "empty.gap",
+        "titleTypography": "body1-bold",
+        "bodyTypography": "body2",
+        "bodyMaxWidth": "empty.bodyMaxWidth"
+      },
+      "tokens": {
+        "bg": "surface.subtle",
+        "title": "text.primary",
+        "body": "text.secondary"
+      },
+      "responsive": {},
+      "states": [
+        "결과 없음",
+        "아직 없음",
+        "권한 없음"
+      ],
+      "usage": "목록이 비었을 때. 왜 비었는지와 다음에 무엇을 할지를 같이 적음",
+      "dont": "'데이터가 없습니다'만 쓰지 않음. 왜 없는지·무엇을 하면 되는지가 빠지면 막힙니다",
+      "status": "stable",
+      "since": "v1.10.0",
+      "renders": {
+        "eluo": "assets/components/feedback/empty-state-md--eluo@2x.png",
+        "atlas": "assets/components/feedback/empty-state-md--atlas@2x.png",
+        "ember": "assets/components/feedback/empty-state-md--ember@2x.png",
+        "harbor": "assets/components/feedback/empty-state-md--harbor@2x.png",
+        "tideland": "assets/components/feedback/empty-state-md--tideland@2x.png",
+        "cobalt": "assets/components/feedback/empty-state-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/empty-state-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/empty-state-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/empty-state-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/empty-state-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/empty-state-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/empty-state-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "paddingY": 48,
+          "gap": 12,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 360
+        },
+        "atlas": {
+          "paddingY": 48,
+          "gap": 12,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 360
+        },
+        "ember": {
+          "paddingY": 48,
+          "gap": 12,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 360
+        },
+        "harbor": {
+          "paddingY": 48,
+          "gap": 12,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 360
+        },
+        "tideland": {
+          "paddingY": 48,
+          "gap": 12,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 360
+        },
+        "cobalt": {
+          "paddingY": 48,
+          "gap": 12,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 360
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/empty-state-md--eluo%402x.png"
+    },
+    {
+      "id": "toast-error-md",
+      "name": "Toast / Error / MD",
+      "group": "feedback",
+      "tags": [
+        "토스트",
+        "에러"
+      ],
+      "spec": {
+        "width": "toast.width",
+        "radius": "xl",
+        "paddingX": "toast.paddingX",
+        "paddingY": "toast.paddingY",
+        "gap": "toast.gap",
+        "borderWidth": "border.width",
+        "elevation": 2,
+        "typography": "body2"
+      },
+      "tokens": {
+        "bg": "danger.subtle",
+        "border": "border.danger",
+        "label": "danger.text"
+      },
+      "responsive": {
+        "sm": "fill"
+      },
+      "states": [],
+      "usage": "실패 통보. 자동으로 사라지지 않고 사용자가 닫음",
+      "dont": "원인 설명 없이 '오류가 발생했습니다'만 쓰지 않음",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/feedback/toast-error-md--eluo@2x.png",
+        "atlas": "assets/components/feedback/toast-error-md--atlas@2x.png",
+        "ember": "assets/components/feedback/toast-error-md--ember@2x.png",
+        "harbor": "assets/components/feedback/toast-error-md--harbor@2x.png",
+        "tideland": "assets/components/feedback/toast-error-md--tideland@2x.png",
+        "cobalt": "assets/components/feedback/toast-error-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-error-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-error-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-error-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-error-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-error-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-error-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "borderWidth": 1,
+          "elevation": 2,
+          "typography": "body2"
+        },
+        "atlas": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "borderWidth": 1,
+          "elevation": 2,
+          "typography": "body2"
+        },
+        "ember": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "borderWidth": 1,
+          "elevation": 2,
+          "typography": "body2"
+        },
+        "harbor": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "borderWidth": 1,
+          "elevation": 2,
+          "typography": "body2"
+        },
+        "tideland": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "borderWidth": 1,
+          "elevation": 2,
+          "typography": "body2"
+        },
+        "cobalt": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "borderWidth": 2,
+          "elevation": 2,
+          "typography": "body2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "fill"
+        },
+        "atlas": {
+          "480": "fill"
+        },
+        "ember": {
+          "480": "fill"
+        },
+        "harbor": {
+          "480": "fill"
+        },
+        "tideland": {
+          "480": "fill"
+        },
+        "cobalt": {
+          "480": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-error-md--eluo%402x.png"
+    },
+    {
+      "id": "toast-info-md",
+      "name": "Toast / Info / MD",
+      "group": "feedback",
+      "tags": [
+        "토스트",
+        "알림",
+        "완료"
+      ],
+      "spec": {
+        "width": "toast.width",
+        "radius": "xl",
+        "paddingX": "toast.paddingX",
+        "paddingY": "toast.paddingY",
+        "gap": "toast.gap",
+        "elevation": 2,
+        "typography": "body2",
+        "duration": 4000
+      },
+      "tokens": {
+        "bg": "surface.inverse",
+        "label": "text.inverse"
+      },
+      "responsive": {
+        "sm": "fill"
+      },
+      "states": [],
+      "usage": "되돌릴 필요 없는 결과 통보. 4초 후 자동 사라짐",
+      "dont": "에러나 확인이 필요한 내용에 쓰지 않음. 사용자가 놓침",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/feedback/toast-info-md--eluo@2x.png",
+        "atlas": "assets/components/feedback/toast-info-md--atlas@2x.png",
+        "ember": "assets/components/feedback/toast-info-md--ember@2x.png",
+        "harbor": "assets/components/feedback/toast-info-md--harbor@2x.png",
+        "tideland": "assets/components/feedback/toast-info-md--tideland@2x.png",
+        "cobalt": "assets/components/feedback/toast-info-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-info-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-info-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-info-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-info-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-info-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-info-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "elevation": 2,
+          "typography": "body2",
+          "duration": 4000
+        },
+        "atlas": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "elevation": 2,
+          "typography": "body2",
+          "duration": 4000
+        },
+        "ember": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "elevation": 2,
+          "typography": "body2",
+          "duration": 4000
+        },
+        "harbor": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "elevation": 2,
+          "typography": "body2",
+          "duration": 4000
+        },
+        "tideland": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "elevation": 2,
+          "typography": "body2",
+          "duration": 4000
+        },
+        "cobalt": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "elevation": 2,
+          "typography": "body2",
+          "duration": 4000
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "fill"
+        },
+        "atlas": {
+          "480": "fill"
+        },
+        "ember": {
+          "480": "fill"
+        },
+        "harbor": {
+          "480": "fill"
+        },
+        "tideland": {
+          "480": "fill"
+        },
+        "cobalt": {
+          "480": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/feedback/toast-info-md--eluo%402x.png"
+    },
+    {
+      "id": "input-text-md-error",
+      "name": "Text Field / MD / Error",
+      "group": "input",
+      "tags": [
+        "폼",
+        "에러",
+        "유효성"
+      ],
+      "spec": {
+        "width": "field.width",
+        "height": "field.height",
+        "radius": "md",
+        "paddingX": "field.paddingX",
+        "borderWidth": "border.width",
+        "gap": "field.gap",
+        "typography": "body2"
+      },
+      "tokens": {
+        "border": "border.danger",
+        "helper": "danger.text"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [],
+      "usage": "유효성 검사 실패. 아래 헬퍼 텍스트로 무엇을 고칠지 함께 안내",
+      "dont": "빨간 테두리만 주고 이유를 적지 않는 것 금지",
+      "status": "stable",
+      "since": "v1.0.0",
+      "variantOf": "input-text-md",
+      "variantState": "error",
+      "renders": {
+        "eluo": "assets/components/input/input-text-md-error--eluo@2x.png",
+        "atlas": "assets/components/input/input-text-md-error--atlas@2x.png",
+        "ember": "assets/components/input/input-text-md-error--ember@2x.png",
+        "harbor": "assets/components/input/input-text-md-error--harbor@2x.png",
+        "tideland": "assets/components/input/input-text-md-error--tideland@2x.png",
+        "cobalt": "assets/components/input/input-text-md-error--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-error--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-error--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-error--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-error--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-error--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-error--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "body2"
+        },
+        "atlas": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "body2"
+        },
+        "ember": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "body2"
+        },
+        "harbor": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "body2"
+        },
+        "tideland": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "body2"
+        },
+        "cobalt": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 2,
+          "gap": 6,
+          "typography": "body2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-error--eluo%402x.png"
+    },
+    {
+      "id": "input-text-md-focus",
+      "name": "Text Field / MD / Focus",
+      "group": "input",
+      "tags": [
+        "폼",
+        "포커스",
+        "접근성"
+      ],
+      "spec": {
+        "width": "field.width",
+        "height": "field.height",
+        "radius": "md",
+        "paddingX": "field.paddingX",
+        "borderWidth": "border.width",
+        "focusRingWidth": "focusRing.width",
+        "typography": "body2"
+      },
+      "tokens": {
+        "border": "border.brand",
+        "ring": "focusRing"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [],
+      "usage": "키보드 포커스 상태. 링은 테두리 바깥 3px",
+      "dont": "outline:none으로 링을 지우지 않음. 키보드 사용자가 위치를 잃음",
+      "status": "stable",
+      "since": "v1.0.0",
+      "variantOf": "input-text-md",
+      "variantState": "focus",
+      "renders": {
+        "eluo": "assets/components/input/input-text-md-focus--eluo@2x.png",
+        "atlas": "assets/components/input/input-text-md-focus--atlas@2x.png",
+        "ember": "assets/components/input/input-text-md-focus--ember@2x.png",
+        "harbor": "assets/components/input/input-text-md-focus--harbor@2x.png",
+        "tideland": "assets/components/input/input-text-md-focus--tideland@2x.png",
+        "cobalt": "assets/components/input/input-text-md-focus--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-focus--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-focus--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-focus--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-focus--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-focus--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-focus--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "focusRingWidth": 3,
+          "typography": "body2"
+        },
+        "atlas": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "focusRingWidth": 3,
+          "typography": "body2"
+        },
+        "ember": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "focusRingWidth": 3,
+          "typography": "body2"
+        },
+        "harbor": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "focusRingWidth": 3,
+          "typography": "body2"
+        },
+        "tideland": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "focusRingWidth": 3,
+          "typography": "body2"
+        },
+        "cobalt": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 2,
+          "focusRingWidth": 3,
+          "typography": "body2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md-focus--eluo%402x.png"
+    },
+    {
+      "id": "input-text-md",
+      "name": "Text Field / MD",
+      "group": "input",
+      "tags": [
+        "폼",
+        "텍스트필드"
+      ],
+      "spec": {
+        "width": "field.width",
+        "height": "field.height",
+        "radius": "md",
+        "paddingX": "field.paddingX",
+        "borderWidth": "border.width",
+        "typography": "body2"
+      },
+      "tokens": {
+        "border": "border.default",
+        "placeholder": "text.tertiary"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [
+        "default",
+        "focus",
+        "error",
+        "disabled"
+      ],
+      "usage": "한 줄 입력의 기본형",
+      "dont": "라벨 없이 placeholder만으로 쓰지 않음",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/input/input-text-md--eluo@2x.png",
+        "atlas": "assets/components/input/input-text-md--atlas@2x.png",
+        "ember": "assets/components/input/input-text-md--ember@2x.png",
+        "harbor": "assets/components/input/input-text-md--harbor@2x.png",
+        "tideland": "assets/components/input/input-text-md--tideland@2x.png",
+        "cobalt": "assets/components/input/input-text-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "atlas": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "ember": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "harbor": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "tideland": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "cobalt": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 2,
+          "typography": "body2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/input-text-md--eluo%402x.png",
+      "variants": [
+        {
+          "id": "input-text-md-error",
+          "state": "error",
+          "tokens": {
+            "border": "border.danger",
+            "helper": "danger.text"
+          },
+          "spec": {
+            "width": "field.width",
+            "height": "field.height",
+            "radius": "md",
+            "paddingX": "field.paddingX",
+            "borderWidth": "border.width",
+            "gap": "field.gap",
+            "typography": "body2"
+          }
+        },
+        {
+          "id": "input-text-md-focus",
+          "state": "focus",
+          "tokens": {
+            "border": "border.brand",
+            "ring": "focusRing"
+          },
+          "spec": {
+            "width": "field.width",
+            "height": "field.height",
+            "radius": "md",
+            "paddingX": "field.paddingX",
+            "borderWidth": "border.width",
+            "focusRingWidth": "focusRing.width",
+            "typography": "body2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "select-md",
+      "name": "Select / MD",
+      "group": "input",
+      "tags": [
+        "폼",
+        "드롭다운",
+        "단일선택"
+      ],
+      "spec": {
+        "width": "field.width",
+        "height": "field.height",
+        "radius": "md",
+        "paddingX": "field.paddingX",
+        "borderWidth": "border.width",
+        "typography": "body2"
+      },
+      "tokens": {
+        "border": "border.default",
+        "label": "text.primary",
+        "icon": "text.tertiary"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [
+        "default",
+        "open",
+        "disabled"
+      ],
+      "usage": "선택지 6개 이상의 단일 선택",
+      "dont": "선택지 5개 이하면 탭이나 라디오가 더 빠름",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/input/select-md--eluo@2x.png",
+        "atlas": "assets/components/input/select-md--atlas@2x.png",
+        "ember": "assets/components/input/select-md--ember@2x.png",
+        "harbor": "assets/components/input/select-md--harbor@2x.png",
+        "tideland": "assets/components/input/select-md--tideland@2x.png",
+        "cobalt": "assets/components/input/select-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/select-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/select-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/select-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/select-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/select-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/select-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "atlas": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "ember": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "harbor": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "tideland": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
+        },
+        "cobalt": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 2,
+          "typography": "body2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/input/select-md--eluo%402x.png"
+    },
+    {
+      "id": "cta-band-lg",
+      "name": "CTA Band / LG",
+      "group": "layout",
+      "tags": [
+        "CTA",
+        "전환",
+        "띠"
+      ],
+      "spec": {
+        "width": "container.max",
+        "paddingY": "ctaBand.paddingY",
+        "gap": "ctaBand.gap",
+        "radius": "xl",
+        "titleTypography": "heading1",
+        "leadTypography": "body1"
+      },
+      "tokens": {
+        "bg": "brand.primary",
+        "title": "text.inverse",
+        "lead": "text.inverse",
+        "actionBg": "surface.default",
+        "actionLabel": "text.brand"
+      },
+      "responsive": {
+        "md": "stack"
+      },
+      "states": [
+        "default"
+      ],
+      "usage": "섹션과 섹션 사이, 또는 페이지 끝의 전환 유도. 한 페이지에 하나",
+      "dont": "본문 정보를 여기 넣지 않음. 제목 한 줄·리드 한 줄·버튼 하나까지",
+      "status": "stable",
+      "since": "v1.8.0",
+      "renders": {
+        "eluo": "assets/components/layout/cta-band-lg--eluo@2x.png",
+        "atlas": "assets/components/layout/cta-band-lg--atlas@2x.png",
+        "ember": "assets/components/layout/cta-band-lg--ember@2x.png",
+        "harbor": "assets/components/layout/cta-band-lg--harbor@2x.png",
+        "tideland": "assets/components/layout/cta-band-lg--tideland@2x.png",
+        "cobalt": "assets/components/layout/cta-band-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/cta-band-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/cta-band-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/cta-band-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/cta-band-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/cta-band-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/cta-band-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 1200,
+          "paddingY": 64,
+          "gap": 24,
+          "radius": "xl",
+          "titleTypography": "heading1",
+          "leadTypography": "body1"
+        },
+        "atlas": {
+          "width": 1200,
+          "paddingY": 64,
+          "gap": 24,
+          "radius": "xl",
+          "titleTypography": "heading1",
+          "leadTypography": "body1"
+        },
+        "ember": {
+          "width": 1200,
+          "paddingY": 64,
+          "gap": 24,
+          "radius": "xl",
+          "titleTypography": "heading1",
+          "leadTypography": "body1"
+        },
+        "harbor": {
+          "width": 1200,
+          "paddingY": 64,
+          "gap": 24,
+          "radius": "xl",
+          "titleTypography": "heading1",
+          "leadTypography": "body1"
+        },
+        "tideland": {
+          "width": 1200,
+          "paddingY": 64,
+          "gap": 24,
+          "radius": "xl",
+          "titleTypography": "heading1",
+          "leadTypography": "body1"
+        },
+        "cobalt": {
+          "width": 1200,
+          "paddingY": 64,
+          "gap": 24,
+          "radius": "xl",
+          "titleTypography": "heading1",
+          "leadTypography": "body1"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "stack"
+        },
+        "atlas": {
+          "768": "stack"
+        },
+        "ember": {
+          "768": "stack"
+        },
+        "harbor": {
+          "768": "stack"
+        },
+        "tideland": {
+          "768": "stack"
+        },
+        "cobalt": {
+          "768": "stack"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/cta-band-lg--eluo%402x.png"
+    },
+    {
+      "id": "desc-list-md",
+      "name": "Description List / MD",
+      "group": "layout",
+      "tags": [
+        "정의목록",
+        "개요",
+        "사양"
+      ],
+      "spec": {
+        "labelWidth": "descList.labelWidth",
+        "rowPaddingY": "descList.rowPaddingY",
+        "gap": "descList.gap",
+        "borderWidth": "border.width",
+        "labelTypography": "body2-bold",
+        "valueTypography": "body2"
+      },
+      "tokens": {
+        "border": "border.subtle",
+        "label": "text.secondary",
+        "value": "text.primary"
+      },
+      "responsive": {
+        "sm": "stack"
+      },
+      "states": [
+        "default",
+        "값 여러 줄"
+      ],
+      "usage": "라벨과 값이 짝인 목록. 회사 개요·사양·계약 조건",
+      "dont": "비교가 필요하면 목록이 아니라 표. table-basic-lg 로",
+      "status": "stable",
+      "since": "v1.10.0",
+      "renders": {
+        "eluo": "assets/components/layout/desc-list-md--eluo@2x.png",
+        "atlas": "assets/components/layout/desc-list-md--atlas@2x.png",
+        "ember": "assets/components/layout/desc-list-md--ember@2x.png",
+        "harbor": "assets/components/layout/desc-list-md--harbor@2x.png",
+        "tideland": "assets/components/layout/desc-list-md--tideland@2x.png",
+        "cobalt": "assets/components/layout/desc-list-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/desc-list-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/desc-list-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/desc-list-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/desc-list-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/desc-list-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/desc-list-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "labelWidth": 120,
+          "rowPaddingY": 14,
+          "gap": 20,
+          "borderWidth": 1,
+          "labelTypography": "body2-bold",
+          "valueTypography": "body2"
+        },
+        "atlas": {
+          "labelWidth": 120,
+          "rowPaddingY": 14,
+          "gap": 20,
+          "borderWidth": 1,
+          "labelTypography": "body2-bold",
+          "valueTypography": "body2"
+        },
+        "ember": {
+          "labelWidth": 120,
+          "rowPaddingY": 14,
+          "gap": 20,
+          "borderWidth": 1,
+          "labelTypography": "body2-bold",
+          "valueTypography": "body2"
+        },
+        "harbor": {
+          "labelWidth": 120,
+          "rowPaddingY": 14,
+          "gap": 20,
+          "borderWidth": 1,
+          "labelTypography": "body2-bold",
+          "valueTypography": "body2"
+        },
+        "tideland": {
+          "labelWidth": 120,
+          "rowPaddingY": 14,
+          "gap": 20,
+          "borderWidth": 1,
+          "labelTypography": "body2-bold",
+          "valueTypography": "body2"
+        },
+        "cobalt": {
+          "labelWidth": 120,
+          "rowPaddingY": 14,
+          "gap": 20,
+          "borderWidth": 2,
+          "labelTypography": "body2-bold",
+          "valueTypography": "body2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "stack"
+        },
+        "atlas": {
+          "480": "stack"
+        },
+        "ember": {
+          "480": "stack"
+        },
+        "harbor": {
+          "480": "stack"
+        },
+        "tideland": {
+          "480": "stack"
+        },
+        "cobalt": {
+          "480": "stack"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/desc-list-md--eluo%402x.png"
+    },
+    {
+      "id": "footer-lg",
+      "name": "Footer / LG",
+      "group": "layout",
+      "tags": [
+        "푸터",
+        "전역",
+        "고지"
+      ],
+      "spec": {
+        "width": "container.max",
+        "paddingY": "footer.paddingY",
+        "gap": "footer.gap",
+        "logoTypography": "heading3",
+        "noteTypography": "caption",
+        "menuTypography": "caption"
+      },
+      "tokens": {
+        "bg": "surface.inverse",
+        "logo": "text.inverse",
+        "note": "text.inverse",
+        "menu": "text.inverse"
+      },
+      "responsive": {
+        "md": "stack"
+      },
+      "states": [
+        "default"
+      ],
+      "usage": "모든 페이지 최하단. 로고 · 고지 · 보조 메뉴",
+      "dont": "색을 흐리게 해서 구분하지 않음. 뒤집힌 면에서는 대비가 무너짐. 크기와 굵기로 나눔",
+      "status": "stable",
+      "since": "v1.8.0",
+      "renders": {
+        "eluo": "assets/components/layout/footer-lg--eluo@2x.png",
+        "atlas": "assets/components/layout/footer-lg--atlas@2x.png",
+        "ember": "assets/components/layout/footer-lg--ember@2x.png",
+        "harbor": "assets/components/layout/footer-lg--harbor@2x.png",
+        "tideland": "assets/components/layout/footer-lg--tideland@2x.png",
+        "cobalt": "assets/components/layout/footer-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/footer-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/footer-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/footer-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/footer-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/footer-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/footer-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 1200,
+          "paddingY": 40,
+          "gap": 24,
+          "logoTypography": "heading3",
+          "noteTypography": "caption",
+          "menuTypography": "caption"
+        },
+        "atlas": {
+          "width": 1200,
+          "paddingY": 40,
+          "gap": 24,
+          "logoTypography": "heading3",
+          "noteTypography": "caption",
+          "menuTypography": "caption"
+        },
+        "ember": {
+          "width": 1200,
+          "paddingY": 40,
+          "gap": 24,
+          "logoTypography": "heading3",
+          "noteTypography": "caption",
+          "menuTypography": "caption"
+        },
+        "harbor": {
+          "width": 1200,
+          "paddingY": 40,
+          "gap": 24,
+          "logoTypography": "heading3",
+          "noteTypography": "caption",
+          "menuTypography": "caption"
+        },
+        "tideland": {
+          "width": 1200,
+          "paddingY": 40,
+          "gap": 24,
+          "logoTypography": "heading3",
+          "noteTypography": "caption",
+          "menuTypography": "caption"
+        },
+        "cobalt": {
+          "width": 1200,
+          "paddingY": 40,
+          "gap": 24,
+          "logoTypography": "heading3",
+          "noteTypography": "caption",
+          "menuTypography": "caption"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "stack"
+        },
+        "atlas": {
+          "768": "stack"
+        },
+        "ember": {
+          "768": "stack"
+        },
+        "harbor": {
+          "768": "stack"
+        },
+        "tideland": {
+          "768": "stack"
+        },
+        "cobalt": {
+          "768": "stack"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/footer-lg--eluo%402x.png"
+    },
+    {
+      "id": "form-field-md",
+      "name": "Form Field / MD",
+      "group": "layout",
+      "tags": [
+        "폼",
+        "라벨",
+        "도움말"
+      ],
+      "spec": {
+        "width": "field.width",
+        "labelGap": "field.labelGap",
+        "helperGap": "field.helperGap",
+        "inputHeight": "field.height",
+        "radius": "md",
+        "paddingX": "field.paddingX",
+        "borderWidth": "border.width",
+        "labelTypography": "label",
+        "helperTypography": "caption"
+      },
+      "tokens": {
+        "label": "text.primary",
+        "border": "border.default",
+        "placeholder": "text.tertiary",
+        "helper": "text.secondary"
+      },
+      "responsive": {
+        "md": "fill"
+      },
+      "states": [
+        "default",
+        "focus",
+        "error",
+        "disabled",
+        "도움말 없음"
+      ],
+      "usage": "라벨 · 입력 · 도움말을 한 묶음으로. 폼의 최소 단위",
+      "dont": "라벨을 placeholder 로 대신하지 않음. 입력하면 라벨이 사라짐",
+      "status": "stable",
+      "since": "v1.8.0",
+      "renders": {
+        "eluo": "assets/components/layout/form-field-md--eluo@2x.png",
+        "atlas": "assets/components/layout/form-field-md--atlas@2x.png",
+        "ember": "assets/components/layout/form-field-md--ember@2x.png",
+        "harbor": "assets/components/layout/form-field-md--harbor@2x.png",
+        "tideland": "assets/components/layout/form-field-md--tideland@2x.png",
+        "cobalt": "assets/components/layout/form-field-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/form-field-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/form-field-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/form-field-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/form-field-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/form-field-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/form-field-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "labelGap": 6,
+          "helperGap": 6,
+          "inputHeight": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "helperTypography": "caption"
+        },
+        "atlas": {
+          "width": 320,
+          "labelGap": 6,
+          "helperGap": 6,
+          "inputHeight": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "helperTypography": "caption"
+        },
+        "ember": {
+          "width": 320,
+          "labelGap": 6,
+          "helperGap": 6,
+          "inputHeight": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "helperTypography": "caption"
+        },
+        "harbor": {
+          "width": 320,
+          "labelGap": 6,
+          "helperGap": 6,
+          "inputHeight": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "helperTypography": "caption"
+        },
+        "tideland": {
+          "width": 320,
+          "labelGap": 6,
+          "helperGap": 6,
+          "inputHeight": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "helperTypography": "caption"
+        },
+        "cobalt": {
+          "width": 320,
+          "labelGap": 6,
+          "helperGap": 6,
+          "inputHeight": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 2,
+          "labelTypography": "label",
+          "helperTypography": "caption"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "fill"
+        },
+        "atlas": {
+          "768": "fill"
+        },
+        "ember": {
+          "768": "fill"
+        },
+        "harbor": {
+          "768": "fill"
+        },
+        "tideland": {
+          "768": "fill"
+        },
+        "cobalt": {
+          "768": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/form-field-md--eluo%402x.png"
+    },
+    {
+      "id": "header-gnb-lg",
+      "name": "Header / GNB / LG",
+      "group": "layout",
+      "tags": [
+        "헤더",
+        "GNB",
+        "전역내비"
+      ],
+      "spec": {
+        "width": "container.max",
+        "height": "header.height",
+        "itemGap": "header.itemGap",
+        "borderWidth": "border.width",
+        "logoTypography": "heading3",
+        "menuTypography": "body2-bold",
+        "actionHeight": "control.md.height"
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "border": "border.subtle",
+        "logo": "text.brand",
+        "menu": "text.secondary",
+        "menuActive": "text.primary"
+      },
+      "responsive": {
+        "md": "menuNav"
+      },
+      "states": [
+        "default",
+        "현재 메뉴",
+        "스크롤 고정",
+        "메뉴 접힘"
+      ],
+      "usage": "모든 페이지 최상단. 로고 · 주 메뉴 · 주요 액션 하나",
+      "dont": "메뉴가 7개를 넘기면 여기 다 넣지 않음. 드롭다운이나 2단으로 나눔",
+      "status": "stable",
+      "since": "v1.8.0",
+      "renders": {
+        "eluo": "assets/components/layout/header-gnb-lg--eluo@2x.png",
+        "atlas": "assets/components/layout/header-gnb-lg--atlas@2x.png",
+        "ember": "assets/components/layout/header-gnb-lg--ember@2x.png",
+        "harbor": "assets/components/layout/header-gnb-lg--harbor@2x.png",
+        "tideland": "assets/components/layout/header-gnb-lg--tideland@2x.png",
+        "cobalt": "assets/components/layout/header-gnb-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/header-gnb-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/header-gnb-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/header-gnb-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/header-gnb-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/header-gnb-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/header-gnb-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 1200,
+          "height": 72,
+          "itemGap": 24,
+          "borderWidth": 1,
+          "logoTypography": "heading3",
+          "menuTypography": "body2-bold",
+          "actionHeight": 48
+        },
+        "atlas": {
+          "width": 1200,
+          "height": 72,
+          "itemGap": 24,
+          "borderWidth": 1,
+          "logoTypography": "heading3",
+          "menuTypography": "body2-bold",
+          "actionHeight": 48
+        },
+        "ember": {
+          "width": 1200,
+          "height": 72,
+          "itemGap": 24,
+          "borderWidth": 1,
+          "logoTypography": "heading3",
+          "menuTypography": "body2-bold",
+          "actionHeight": 40
+        },
+        "harbor": {
+          "width": 1200,
+          "height": 72,
+          "itemGap": 24,
+          "borderWidth": 1,
+          "logoTypography": "heading3",
+          "menuTypography": "body2-bold",
+          "actionHeight": 48
+        },
+        "tideland": {
+          "width": 1200,
+          "height": 72,
+          "itemGap": 24,
+          "borderWidth": 1,
+          "logoTypography": "heading3",
+          "menuTypography": "body2-bold",
+          "actionHeight": 48
+        },
+        "cobalt": {
+          "width": 1200,
+          "height": 72,
+          "itemGap": 24,
+          "borderWidth": 2,
+          "logoTypography": "heading3",
+          "menuTypography": "body2-bold",
+          "actionHeight": 44
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "menuNav"
+        },
+        "atlas": {
+          "768": "menuNav"
+        },
+        "ember": {
+          "768": "menuNav"
+        },
+        "harbor": {
+          "768": "menuNav"
+        },
+        "tideland": {
+          "768": "menuNav"
+        },
+        "cobalt": {
+          "768": "menuNav"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/header-gnb-lg--eluo%402x.png"
+    },
+    {
+      "id": "hero-split-lg",
+      "name": "Hero / Split / LG",
+      "group": "layout",
+      "tags": [
+        "히어로",
+        "첫화면",
+        "2단"
+      ],
+      "spec": {
+        "width": "container.max",
+        "gap": "hero.gap",
+        "actionGap": "hero.actionGap",
+        "railGap": "hero.railGap",
+        "borderWidth": "border.width",
+        "titleTypography": "display1",
+        "leadTypography": "body1",
+        "leadMaxWidth": "60ch"
+      },
+      "tokens": {
+        "eyebrow": "text.brand",
+        "title": "text.primary",
+        "lead": "text.secondary",
+        "rail": "border.default",
+        "railLabel": "text.tertiary",
+        "railValue": "text.primary"
+      },
+      "responsive": {
+        "md": "stack"
+      },
+      "states": [
+        "default",
+        "레일 없음"
+      ],
+      "usage": "페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에",
+      "dont": "한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐",
+      "status": "stable",
+      "since": "v1.8.0",
+      "renders": {
+        "eluo": "assets/components/layout/hero-split-lg--eluo@2x.png",
+        "atlas": "assets/components/layout/hero-split-lg--atlas@2x.png",
+        "ember": "assets/components/layout/hero-split-lg--ember@2x.png",
+        "harbor": "assets/components/layout/hero-split-lg--harbor@2x.png",
+        "tideland": "assets/components/layout/hero-split-lg--tideland@2x.png",
+        "cobalt": "assets/components/layout/hero-split-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/hero-split-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/hero-split-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/hero-split-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/hero-split-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/hero-split-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/hero-split-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 1200,
+          "gap": 24,
+          "actionGap": 12,
+          "railGap": 20,
+          "borderWidth": 1,
+          "titleTypography": "display1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "60ch"
+        },
+        "atlas": {
+          "width": 1200,
+          "gap": 24,
+          "actionGap": 12,
+          "railGap": 20,
+          "borderWidth": 1,
+          "titleTypography": "display1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "60ch"
+        },
+        "ember": {
+          "width": 1200,
+          "gap": 24,
+          "actionGap": 12,
+          "railGap": 20,
+          "borderWidth": 1,
+          "titleTypography": "display1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "60ch"
+        },
+        "harbor": {
+          "width": 1200,
+          "gap": 24,
+          "actionGap": 12,
+          "railGap": 20,
+          "borderWidth": 1,
+          "titleTypography": "display1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "60ch"
+        },
+        "tideland": {
+          "width": 1200,
+          "gap": 24,
+          "actionGap": 12,
+          "railGap": 20,
+          "borderWidth": 1,
+          "titleTypography": "display1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "60ch"
+        },
+        "cobalt": {
+          "width": 1200,
+          "gap": 24,
+          "actionGap": 12,
+          "railGap": 20,
+          "borderWidth": 2,
+          "titleTypography": "display1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "60ch"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "stack"
+        },
+        "atlas": {
+          "768": "stack"
+        },
+        "ember": {
+          "768": "stack"
+        },
+        "harbor": {
+          "768": "stack"
+        },
+        "tideland": {
+          "768": "stack"
+        },
+        "cobalt": {
+          "768": "stack"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/hero-split-lg--eluo%402x.png"
+    },
+    {
+      "id": "list-row-md",
+      "name": "List Row / MD",
+      "group": "layout",
+      "tags": [
+        "목록",
+        "행",
+        "뉴스"
+      ],
+      "spec": {
+        "paddingY": "listRow.paddingY",
+        "gap": "listRow.gap",
+        "borderWidth": "border.width",
+        "titleTypography": "body1-bold",
+        "metaTypography": "caption",
+        "valueTypography": "body2-bold"
+      },
+      "tokens": {
+        "border": "border.subtle",
+        "title": "text.primary",
+        "meta": "text.tertiary",
+        "value": "text.primary"
+      },
+      "responsive": {
+        "sm": "stack"
+      },
+      "states": [
+        "default",
+        "hover",
+        "값 없음"
+      ],
+      "usage": "제목·메타·값이 한 줄인 목록. 공지·뉴스·자료실",
+      "dont": "열이 셋을 넘게 비교해야 하면 목록이 아니라 표. table-basic-lg 로",
+      "status": "stable",
+      "since": "v1.8.0",
+      "renders": {
+        "eluo": "assets/components/layout/list-row-md--eluo@2x.png",
+        "atlas": "assets/components/layout/list-row-md--atlas@2x.png",
+        "ember": "assets/components/layout/list-row-md--ember@2x.png",
+        "harbor": "assets/components/layout/list-row-md--harbor@2x.png",
+        "tideland": "assets/components/layout/list-row-md--tideland@2x.png",
+        "cobalt": "assets/components/layout/list-row-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/list-row-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/list-row-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/list-row-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/list-row-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/list-row-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/list-row-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "metaTypography": "caption",
+          "valueTypography": "body2-bold"
+        },
+        "atlas": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "metaTypography": "caption",
+          "valueTypography": "body2-bold"
+        },
+        "ember": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "metaTypography": "caption",
+          "valueTypography": "body2-bold"
+        },
+        "harbor": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "metaTypography": "caption",
+          "valueTypography": "body2-bold"
+        },
+        "tideland": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "metaTypography": "caption",
+          "valueTypography": "body2-bold"
+        },
+        "cobalt": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 2,
+          "titleTypography": "body1-bold",
+          "metaTypography": "caption",
+          "valueTypography": "body2-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "stack"
+        },
+        "atlas": {
+          "480": "stack"
+        },
+        "ember": {
+          "480": "stack"
+        },
+        "harbor": {
+          "480": "stack"
+        },
+        "tideland": {
+          "480": "stack"
+        },
+        "cobalt": {
+          "480": "stack"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/list-row-md--eluo%402x.png"
+    },
+    {
+      "id": "section-header-md",
+      "name": "Section Header / MD",
+      "group": "layout",
+      "tags": [
+        "섹션",
+        "제목",
+        "리드문"
+      ],
+      "spec": {
+        "gap": "section.gap",
+        "eyebrowTypography": "label",
+        "eyebrowTracking": "0.1em",
+        "titleTypography": "heading1",
+        "leadTypography": "body1",
+        "leadMaxWidth": "58ch"
+      },
+      "tokens": {
+        "eyebrow": "text.brand",
+        "title": "text.primary",
+        "lead": "text.secondary"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "아이브로우 없음"
+      ],
+      "usage": "섹션 시작의 제목 묶음. 아이브로우(선택) · 제목 · 리드문을 한 덩어리로",
+      "dont": "리드문이 세 줄을 넘기면 리드가 아니라 본문. 본문은 섹션 안으로 내림",
+      "status": "stable",
+      "since": "v1.0.4",
+      "renders": {
+        "eluo": "assets/components/layout/section-header-md--eluo@2x.png",
+        "atlas": "assets/components/layout/section-header-md--atlas@2x.png",
+        "ember": "assets/components/layout/section-header-md--ember@2x.png",
+        "harbor": "assets/components/layout/section-header-md--harbor@2x.png",
+        "tideland": "assets/components/layout/section-header-md--tideland@2x.png",
+        "cobalt": "assets/components/layout/section-header-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/section-header-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/section-header-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/section-header-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/section-header-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/section-header-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/section-header-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "gap": 8,
+          "eyebrowTypography": "label",
+          "eyebrowTracking": "0.1em",
+          "titleTypography": "heading1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "58ch"
+        },
+        "atlas": {
+          "gap": 8,
+          "eyebrowTypography": "label",
+          "eyebrowTracking": "0.1em",
+          "titleTypography": "heading1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "58ch"
+        },
+        "ember": {
+          "gap": 8,
+          "eyebrowTypography": "label",
+          "eyebrowTracking": "0.1em",
+          "titleTypography": "heading1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "58ch"
+        },
+        "harbor": {
+          "gap": 8,
+          "eyebrowTypography": "label",
+          "eyebrowTracking": "0.1em",
+          "titleTypography": "heading1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "58ch"
+        },
+        "tideland": {
+          "gap": 8,
+          "eyebrowTypography": "label",
+          "eyebrowTracking": "0.1em",
+          "titleTypography": "heading1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "58ch"
+        },
+        "cobalt": {
+          "gap": 8,
+          "eyebrowTypography": "label",
+          "eyebrowTracking": "0.1em",
+          "titleTypography": "heading1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "58ch"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/section-header-md--eluo%402x.png"
+    },
+    {
+      "id": "step-flow-md",
+      "name": "Step Flow / MD",
+      "group": "layout",
+      "tags": [
+        "절차",
+        "단계",
+        "안내"
+      ],
+      "spec": {
+        "gap": "stepFlow.gap",
+        "numberSize": "stepFlow.numberSize",
+        "rowGap": "stepFlow.rowGap",
+        "borderWidth": "border.width",
+        "titleTypography": "body1-bold",
+        "bodyTypography": "body2",
+        "bodyMaxWidth": "text.measure"
+      },
+      "tokens": {
+        "number": "text.inverse",
+        "numberBg": "brand.primary",
+        "title": "text.primary",
+        "body": "text.secondary",
+        "line": "border.subtle"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "완료",
+        "현재 단계"
+      ],
+      "usage": "순서가 있는 절차. 신청 방법·심사 과정·이용 안내",
+      "dont": "순서가 없는 목록에 번호를 붙이지 않음. 번호는 순서가 있다는 약속입니다",
+      "status": "stable",
+      "since": "v1.10.0",
+      "renders": {
+        "eluo": "assets/components/layout/step-flow-md--eluo@2x.png",
+        "atlas": "assets/components/layout/step-flow-md--atlas@2x.png",
+        "ember": "assets/components/layout/step-flow-md--ember@2x.png",
+        "harbor": "assets/components/layout/step-flow-md--harbor@2x.png",
+        "tideland": "assets/components/layout/step-flow-md--tideland@2x.png",
+        "cobalt": "assets/components/layout/step-flow-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/step-flow-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/step-flow-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/step-flow-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/step-flow-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/step-flow-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/step-flow-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "gap": 16,
+          "numberSize": 28,
+          "rowGap": 24,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "atlas": {
+          "gap": 16,
+          "numberSize": 28,
+          "rowGap": 24,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "ember": {
+          "gap": 16,
+          "numberSize": 28,
+          "rowGap": 24,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "harbor": {
+          "gap": 16,
+          "numberSize": 28,
+          "rowGap": 24,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "tideland": {
+          "gap": 16,
+          "numberSize": 28,
+          "rowGap": 24,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        },
+        "cobalt": {
+          "gap": 16,
+          "numberSize": 28,
+          "rowGap": 24,
+          "borderWidth": 2,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/layout/step-flow-md--eluo%402x.png"
+    },
+    {
+      "id": "modal-confirm-lg",
+      "name": "Confirm Modal / LG",
+      "group": "modal",
+      "tags": [
+        "모달",
+        "확인",
+        "파괴적액션"
+      ],
+      "spec": {
+        "width": "modal.width",
+        "radius": "xl",
+        "paddingX": "modal.paddingX",
+        "paddingY": "modal.paddingY",
+        "gap": "modal.gap",
+        "elevation": 3,
+        "typography": "heading3"
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "title": "text.primary",
+        "body": "text.secondary"
+      },
+      "responsive": {
+        "sm": "fill"
+      },
+      "states": [],
+      "usage": "되돌릴 수 없는 액션 직전의 확인",
+      "dont": "단순 안내에 쓰지 않음. 그건 토스트",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/modal/modal-confirm-lg--eluo@2x.png",
+        "atlas": "assets/components/modal/modal-confirm-lg--atlas@2x.png",
+        "ember": "assets/components/modal/modal-confirm-lg--ember@2x.png",
+        "harbor": "assets/components/modal/modal-confirm-lg--harbor@2x.png",
+        "tideland": "assets/components/modal/modal-confirm-lg--tideland@2x.png",
+        "cobalt": "assets/components/modal/modal-confirm-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/modal/modal-confirm-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/modal/modal-confirm-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/modal/modal-confirm-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/modal/modal-confirm-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/modal/modal-confirm-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/modal/modal-confirm-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 420,
+          "radius": "xl",
+          "paddingX": 24,
+          "paddingY": 24,
+          "gap": 20,
+          "elevation": 3,
+          "typography": "heading3"
+        },
+        "atlas": {
+          "width": 420,
+          "radius": "xl",
+          "paddingX": 24,
+          "paddingY": 24,
+          "gap": 20,
+          "elevation": 3,
+          "typography": "heading3"
+        },
+        "ember": {
+          "width": 420,
+          "radius": "xl",
+          "paddingX": 24,
+          "paddingY": 24,
+          "gap": 20,
+          "elevation": 3,
+          "typography": "heading3"
+        },
+        "harbor": {
+          "width": 420,
+          "radius": "xl",
+          "paddingX": 24,
+          "paddingY": 24,
+          "gap": 20,
+          "elevation": 3,
+          "typography": "heading3"
+        },
+        "tideland": {
+          "width": 420,
+          "radius": "xl",
+          "paddingX": 24,
+          "paddingY": 24,
+          "gap": 20,
+          "elevation": 3,
+          "typography": "heading3"
+        },
+        "cobalt": {
+          "width": 420,
+          "radius": "xl",
+          "paddingX": 24,
+          "paddingY": 24,
+          "gap": 20,
+          "elevation": 3,
+          "typography": "heading3"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "fill"
+        },
+        "atlas": {
+          "480": "fill"
+        },
+        "ember": {
+          "480": "fill"
+        },
+        "harbor": {
+          "480": "fill"
+        },
+        "tideland": {
+          "480": "fill"
+        },
+        "cobalt": {
+          "480": "fill"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/modal/modal-confirm-lg--eluo%402x.png"
+    },
+    {
+      "id": "breadcrumb-md",
+      "name": "Breadcrumb / MD",
+      "group": "navigation",
+      "tags": [
+        "경로",
+        "브레드크럼",
+        "깊은구조"
+      ],
+      "spec": {
+        "gap": "breadcrumb.gap",
+        "itemMaxWidth": "breadcrumb.itemMaxWidth",
+        "typography": "caption"
+      },
+      "tokens": {
+        "link": "text.tertiary",
+        "current": "text.primary",
+        "separator": "text.tertiary"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "현재 위치",
+        "말줄임"
+      ],
+      "usage": "세 단계 이상 깊은 페이지의 현재 위치. 목록 → 분류 → 상세",
+      "dont": "두 단계뿐인 구조에 쓰지 않음. 뒤로 가기 한 번이면 됩니다",
+      "status": "stable",
+      "since": "v1.10.0",
+      "renders": {
+        "eluo": "assets/components/navigation/breadcrumb-md--eluo@2x.png",
+        "atlas": "assets/components/navigation/breadcrumb-md--atlas@2x.png",
+        "ember": "assets/components/navigation/breadcrumb-md--ember@2x.png",
+        "harbor": "assets/components/navigation/breadcrumb-md--harbor@2x.png",
+        "tideland": "assets/components/navigation/breadcrumb-md--tideland@2x.png",
+        "cobalt": "assets/components/navigation/breadcrumb-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/breadcrumb-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/breadcrumb-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/breadcrumb-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/breadcrumb-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/breadcrumb-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/breadcrumb-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "gap": 8,
+          "itemMaxWidth": 180,
+          "typography": "caption"
+        },
+        "atlas": {
+          "gap": 8,
+          "itemMaxWidth": 180,
+          "typography": "caption"
+        },
+        "ember": {
+          "gap": 8,
+          "itemMaxWidth": 180,
+          "typography": "caption"
+        },
+        "harbor": {
+          "gap": 8,
+          "itemMaxWidth": 180,
+          "typography": "caption"
+        },
+        "tideland": {
+          "gap": 8,
+          "itemMaxWidth": 180,
+          "typography": "caption"
+        },
+        "cobalt": {
+          "gap": 8,
+          "itemMaxWidth": 180,
+          "typography": "caption"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/breadcrumb-md--eluo%402x.png"
+    },
+    {
+      "id": "pagination-md",
+      "name": "Pagination / MD",
+      "group": "navigation",
+      "tags": [
+        "페이지네이션",
+        "목록"
+      ],
+      "spec": {
+        "height": "pagination.itemSize",
+        "gap": "pagination.gap",
+        "itemSize": "pagination.itemSize",
+        "radius": "md",
+        "typography": "label"
+      },
+      "tokens": {
+        "active": "brand.primary",
+        "label": "text.secondary"
+      },
+      "responsive": {
+        "sm": "scrollX"
+      },
+      "states": [
+        "default",
+        "current",
+        "disabled"
+      ],
+      "usage": "20개 이상 목록. 무한 스크롤이 부적절한 관리 화면",
+      "dont": "10페이지 이상 번호를 다 노출하지 않음. 축약 표기 사용",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/navigation/pagination-md--eluo@2x.png",
+        "atlas": "assets/components/navigation/pagination-md--atlas@2x.png",
+        "ember": "assets/components/navigation/pagination-md--ember@2x.png",
+        "harbor": "assets/components/navigation/pagination-md--harbor@2x.png",
+        "tideland": "assets/components/navigation/pagination-md--tideland@2x.png",
+        "cobalt": "assets/components/navigation/pagination-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/pagination-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/pagination-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/pagination-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/pagination-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/pagination-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/pagination-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "height": 40,
+          "gap": 4,
+          "itemSize": 40,
+          "radius": "md",
+          "typography": "label"
+        },
+        "atlas": {
+          "height": 40,
+          "gap": 4,
+          "itemSize": 40,
+          "radius": "md",
+          "typography": "label"
+        },
+        "ember": {
+          "height": 40,
+          "gap": 4,
+          "itemSize": 40,
+          "radius": "md",
+          "typography": "label"
+        },
+        "harbor": {
+          "height": 40,
+          "gap": 4,
+          "itemSize": 40,
+          "radius": "md",
+          "typography": "label"
+        },
+        "tideland": {
+          "height": 40,
+          "gap": 4,
+          "itemSize": 40,
+          "radius": "md",
+          "typography": "label"
+        },
+        "cobalt": {
+          "height": 40,
+          "gap": 4,
+          "itemSize": 40,
+          "radius": "md",
+          "typography": "label"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "480": "scrollX"
+        },
+        "atlas": {
+          "480": "scrollX"
+        },
+        "ember": {
+          "480": "scrollX"
+        },
+        "harbor": {
+          "480": "scrollX"
+        },
+        "tideland": {
+          "480": "scrollX"
+        },
+        "cobalt": {
+          "480": "scrollX"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/pagination-md--eluo%402x.png"
+    },
+    {
+      "id": "tab-underline-md",
+      "name": "Tab / Underline / MD",
+      "group": "navigation",
+      "tags": [
+        "탭",
+        "전환",
+        "같은층위"
+      ],
+      "spec": {
+        "width": "tab.width",
+        "height": "tab.height",
+        "gap": "tab.gap",
+        "itemPaddingX": "tab.itemPaddingX",
+        "indicatorHeight": "tab.indicatorHeight",
+        "typography": "body2-bold"
+      },
+      "tokens": {
+        "indicator": "brand.primary",
+        "labelActive": "text.primary",
+        "labelInactive": "text.tertiary",
+        "line": "border.subtle"
+      },
+      "responsive": {
+        "md": "scrollX"
+      },
+      "states": [
+        "active",
+        "inactive"
+      ],
+      "usage": "같은 층위의 목록을 전환. 2~5개",
+      "dont": "6개 이상이면 탭 대신 드롭다운 필터",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/navigation/tab-underline-md--eluo@2x.png",
+        "atlas": "assets/components/navigation/tab-underline-md--atlas@2x.png",
+        "ember": "assets/components/navigation/tab-underline-md--ember@2x.png",
+        "harbor": "assets/components/navigation/tab-underline-md--harbor@2x.png",
+        "tideland": "assets/components/navigation/tab-underline-md--tideland@2x.png",
+        "cobalt": "assets/components/navigation/tab-underline-md--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/tab-underline-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/tab-underline-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/tab-underline-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/tab-underline-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/tab-underline-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/tab-underline-md--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 360,
+          "height": 52,
+          "gap": 28,
+          "itemPaddingX": 0,
+          "indicatorHeight": 2,
+          "typography": "body2-bold"
+        },
+        "atlas": {
+          "width": 360,
+          "height": 52,
+          "gap": 28,
+          "itemPaddingX": 0,
+          "indicatorHeight": 2,
+          "typography": "body2-bold"
+        },
+        "ember": {
+          "width": 360,
+          "height": 48,
+          "gap": 0,
+          "itemPaddingX": 22,
+          "indicatorHeight": 2,
+          "typography": "body2-bold"
+        },
+        "harbor": {
+          "width": 360,
+          "height": 52,
+          "gap": 28,
+          "itemPaddingX": 0,
+          "indicatorHeight": 2,
+          "typography": "body2-bold"
+        },
+        "tideland": {
+          "width": 360,
+          "height": 52,
+          "gap": 28,
+          "itemPaddingX": 0,
+          "indicatorHeight": 2,
+          "typography": "body2-bold"
+        },
+        "cobalt": {
+          "width": 360,
+          "height": 52,
+          "gap": 28,
+          "itemPaddingX": 0,
+          "indicatorHeight": 2,
+          "typography": "body2-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "scrollX"
+        },
+        "atlas": {
+          "768": "scrollX"
+        },
+        "ember": {
+          "768": "scrollX"
+        },
+        "harbor": {
+          "768": "scrollX"
+        },
+        "tideland": {
+          "768": "scrollX"
+        },
+        "cobalt": {
+          "768": "scrollX"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/navigation/tab-underline-md--eluo%402x.png"
+    },
+    {
+      "id": "table-basic-lg",
+      "name": "Table / Basic / LG",
+      "group": "table",
+      "tags": [
+        "테이블",
+        "목록",
+        "관리화면"
+      ],
+      "spec": {
+        "width": "table.width",
+        "rowHeight": "table.rowHeight",
+        "headerHeight": "table.headerHeight",
+        "paddingX": "table.paddingX",
+        "borderWidth": "border.width",
+        "radius": "xl",
+        "typography": "body2"
+      },
+      "tokens": {
+        "header": "surface.subtle",
+        "border": "border.subtle",
+        "label": "text.secondary"
+      },
+      "responsive": {
+        "md": "toCard"
+      },
+      "states": [
+        "default",
+        "hover",
+        "selected"
+      ],
+      "usage": "비교가 필요한 목록. 열이 3개 이상일 때",
+      "dont": "모바일에서 그대로 쓰지 않음. 카드로 전환",
+      "status": "stable",
+      "since": "v1.0.0",
+      "renders": {
+        "eluo": "assets/components/table/table-basic-lg--eluo@2x.png",
+        "atlas": "assets/components/table/table-basic-lg--atlas@2x.png",
+        "ember": "assets/components/table/table-basic-lg--ember@2x.png",
+        "harbor": "assets/components/table/table-basic-lg--harbor@2x.png",
+        "tideland": "assets/components/table/table-basic-lg--tideland@2x.png",
+        "cobalt": "assets/components/table/table-basic-lg--cobalt@2x.png"
+      },
+      "cdn": {
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/table/table-basic-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/table/table-basic-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/table/table-basic-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/table/table-basic-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/table/table-basic-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/table/table-basic-lg--cobalt%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 520,
+          "rowHeight": 52,
+          "headerHeight": 44,
+          "paddingX": 16,
+          "borderWidth": 1,
+          "radius": "xl",
+          "typography": "body2"
+        },
+        "atlas": {
+          "width": 520,
+          "rowHeight": 52,
+          "headerHeight": 44,
+          "paddingX": 16,
+          "borderWidth": 1,
+          "radius": "xl",
+          "typography": "body2"
+        },
+        "ember": {
+          "width": 520,
+          "rowHeight": 52,
+          "headerHeight": 44,
+          "paddingX": 16,
+          "borderWidth": 1,
+          "radius": "xl",
+          "typography": "body2"
+        },
+        "harbor": {
+          "width": 520,
+          "rowHeight": 52,
+          "headerHeight": 44,
+          "paddingX": 16,
+          "borderWidth": 1,
+          "radius": "xl",
+          "typography": "body2"
+        },
+        "tideland": {
+          "width": 520,
+          "rowHeight": 52,
+          "headerHeight": 44,
+          "paddingX": 16,
+          "borderWidth": 1,
+          "radius": "xl",
+          "typography": "body2"
+        },
+        "cobalt": {
+          "width": 520,
+          "rowHeight": 52,
+          "headerHeight": 44,
+          "paddingX": 16,
+          "borderWidth": 2,
+          "radius": "xl",
+          "typography": "body2"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {
+          "768": "toCard"
+        },
+        "atlas": {
+          "768": "toCard"
+        },
+        "ember": {
+          "768": "toCard"
+        },
+        "harbor": {
+          "768": "toCard"
+        },
+        "tideland": {
+          "768": "toCard"
+        },
+        "cobalt": {
+          "768": "toCard"
+        }
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.11.1/assets/components/table/table-basic-lg--eluo%402x.png"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "tab-underline-md",
+  "name": "Tab / Underline / MD",
+  "group": "navigation",
+  "tags": [
+    "탭",
+    "전환",
+    "같은층위"
+  ],
+  "spec": {
+    "width": "tab.width",
+    "height": "tab.height",
+    "gap": "tab.gap",
+    "itemPaddingX": "tab.itemPaddingX",
+    "indicatorHeight": "tab.indicatorHeight",
+    "typography": "body2-bold"
+  },
+  "tokens": {
+    "indicator": "brand.primary",
+    "labelActive": "text.primary",
+    "labelInactive": "text.tertiary",
+    "line": "border.subtle"
+  },
+  "responsive": {
+    "md": "scrollX"
+  },
+  "states": [
+    "active",
+    "inactive"
+  ],
+  "usage": "같은 층위의 목록을 전환. 2~5개",
+  "dont": "6개 이상이면 탭 대신 드롭다운 필터",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/navigation/tab-underline-md--eluo@2x.png",
+    "atlas": "assets/components/navigation/tab-underline-md--atlas@2x.png",
+    "ember": "assets/components/navigation/tab-underline-md--ember@2x.png",
+    "harbor": "assets/components/navigation/tab-underline-md--harbor@2x.png",
+    "tideland": "assets/components/navigation/tab-underline-md--tideland@2x.png",
+    "cobalt": "assets/components/navigation/tab-underline-md--cobalt@2x.png"
+  }
+}

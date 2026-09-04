@@ -1,0 +1,44 @@
+{
+  "id": "btn-outline-lg",
+  "name": "Outline Button / LG",
+  "group": "button",
+  "tags": [
+    "CTA",
+    "테두리형",
+    "반복액션"
+  ],
+  "spec": {
+    "width": "hug",
+    "height": "control.lg.height",
+    "radius": "lg",
+    "paddingX": "control.lg.paddingX",
+    "borderWidth": "border.width",
+    "typography": "body1-bold"
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.brand",
+    "label": "text.brand"
+  },
+  "responsive": {
+    "sm": "fill"
+  },
+  "states": [
+    "default",
+    "hover",
+    "pressed",
+    "disabled"
+  ],
+  "usage": "채움형이 과한 화면의 주요 액션. 버튼이 화면에서 여러 번 반복될 때",
+  "dont": "btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐",
+  "status": "stable",
+  "since": "v1.0.3",
+  "renders": {
+    "eluo": "assets/components/button/btn-outline-lg--eluo@2x.png",
+    "atlas": "assets/components/button/btn-outline-lg--atlas@2x.png",
+    "ember": "assets/components/button/btn-outline-lg--ember@2x.png",
+    "harbor": "assets/components/button/btn-outline-lg--harbor@2x.png",
+    "tideland": "assets/components/button/btn-outline-lg--tideland@2x.png",
+    "cobalt": "assets/components/button/btn-outline-lg--cobalt@2x.png"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "input-text-md",
+  "name": "Text Field / MD",
+  "group": "input",
+  "tags": [
+    "폼",
+    "텍스트필드"
+  ],
+  "spec": {
+    "width": "field.width",
+    "height": "field.height",
+    "radius": "md",
+    "paddingX": "field.paddingX",
+    "borderWidth": "border.width",
+    "typography": "body2"
+  },
+  "tokens": {
+    "border": "border.default",
+    "placeholder": "text.tertiary"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [
+    "default",
+    "focus",
+    "error",
+    "disabled"
+  ],
+  "usage": "한 줄 입력의 기본형",
+  "dont": "라벨 없이 placeholder만으로 쓰지 않음",
+  "status": "stable",
+  "since": "v1.0.0",
+  "renders": {
+    "eluo": "assets/components/input/input-text-md--eluo@2x.png",
+    "atlas": "assets/components/input/input-text-md--atlas@2x.png",
+    "ember": "assets/components/input/input-text-md--ember@2x.png",
+    "harbor": "assets/components/input/input-text-md--harbor@2x.png",
+    "tideland": "assets/components/input/input-text-md--tideland@2x.png",
+    "cobalt": "assets/components/input/input-text-md--cobalt@2x.png"
+  }
+}
