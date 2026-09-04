@@ -1,6 +1,6 @@
 # 자산 목록
 
-`frombranch/eluon` · **v1.11.2** · 총 36개(상태 변형 5개 별도) · 테마 eluo, atlas, ember, harbor, tideland, cobalt
+`frombranch/eluon` · **v1.12.0** · 총 36개(상태 변형 5개 별도) · 테마 eluo, atlas, ember, harbor, tideland, cobalt
 
 > `scripts/build_manifest.py`가 생성합니다. 직접 고치지 마세요.
 > 아래 규격은 **eluo** 테마 기준입니다. 치수는 테마마다 다릅니다 — `manifest.json`의 `specByTheme`를 보십시오.
