@@ -215,14 +215,15 @@
       "duration.fast": 120,
       "duration.base": 180,
       "duration.slow": 280,
-      "duration.entrance": 420,
+      "duration.entrance": 640,
+      "duration.zoom": 520,
       "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
       "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
       "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
       "distance.rise": 8,
-      "distance.reveal": 16,
+      "distance.reveal": 24,
       "scale.hover": 1.03,
-      "stagger": 60
+      "stagger": 80
     },
     "media": {
       "ratio.wide": "16 / 9",

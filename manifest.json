@@ -1,7 +1,7 @@
 {
   "$schema": "./schema/asset.schema.json",
   "name": "Eluon Design System",
-  "version": "v1.12.1",
+  "version": "v1.12.2",
   "repo": "https://github.com/frombranch/eluon",
   "docs": "https://frombranch.github.io/eluon/",
   "themes": [
@@ -22,20 +22,20 @@
   },
   "defaultTheme": "eluo",
   "tokens": {
-    "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/docs/tokens/eluon-eluo.css",
-    "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/docs/tokens/eluon-atlas.css",
-    "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/docs/tokens/eluon-ember.css",
-    "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/docs/tokens/eluon-harbor.css",
-    "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/docs/tokens/eluon-tideland.css",
-    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/docs/tokens/eluon-cobalt.css"
+    "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-eluo.css",
+    "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-atlas.css",
+    "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-ember.css",
+    "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-harbor.css",
+    "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-tideland.css",
+    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-cobalt.css"
   },
   "sheet": {
-    "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/index/sheet-eluo.png",
-    "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/index/sheet-atlas.png",
-    "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/index/sheet-ember.png",
-    "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/index/sheet-harbor.png",
-    "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/index/sheet-tideland.png",
-    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/index/sheet-cobalt.png"
+    "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/index/sheet-eluo.png",
+    "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/index/sheet-atlas.png",
+    "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/index/sheet-ember.png",
+    "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/index/sheet-harbor.png",
+    "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/index/sheet-tideland.png",
+    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/index/sheet-cobalt.png"
   },
   "howToUse": "CLAUDE.md 를 먼저 읽으세요. 여기에 없는 ID는 사용하지 않습니다. 자산을 놓기 전에 foundationByTheme.<테마> 의 layout 과 typography 를 먼저 읽으세요.",
   "foundationByTheme": {
@@ -170,14 +170,15 @@
         "duration.fast": 120,
         "duration.base": 180,
         "duration.slow": 280,
-        "duration.entrance": 420,
+        "duration.entrance": 640,
+        "duration.zoom": 520,
         "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
         "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
         "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
         "distance.rise": 8,
-        "distance.reveal": 16,
+        "distance.reveal": 24,
         "scale.hover": 1.03,
-        "stagger": 60
+        "stagger": 80
       },
       "media": {
         "ratio.wide": "16 / 9",
@@ -319,14 +320,15 @@
         "duration.fast": 120,
         "duration.base": 180,
         "duration.slow": 280,
-        "duration.entrance": 420,
+        "duration.entrance": 640,
+        "duration.zoom": 520,
         "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
         "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
         "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
         "distance.rise": 8,
-        "distance.reveal": 16,
+        "distance.reveal": 24,
         "scale.hover": 1.03,
-        "stagger": 60
+        "stagger": 80
       },
       "media": {
         "ratio.wide": "16 / 9",
@@ -468,14 +470,15 @@
         "duration.fast": 120,
         "duration.base": 180,
         "duration.slow": 280,
-        "duration.entrance": 420,
+        "duration.entrance": 640,
+        "duration.zoom": 520,
         "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
         "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
         "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
         "distance.rise": 8,
-        "distance.reveal": 16,
+        "distance.reveal": 24,
         "scale.hover": 1.03,
-        "stagger": 60
+        "stagger": 80
       },
       "media": {
         "ratio.wide": "16 / 9",
@@ -617,14 +620,15 @@
         "duration.fast": 120,
         "duration.base": 180,
         "duration.slow": 280,
-        "duration.entrance": 420,
+        "duration.entrance": 640,
+        "duration.zoom": 520,
         "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
         "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
         "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
         "distance.rise": 8,
-        "distance.reveal": 16,
+        "distance.reveal": 24,
         "scale.hover": 1.03,
-        "stagger": 60
+        "stagger": 80
       },
       "media": {
         "ratio.wide": "16 / 9",
@@ -766,14 +770,15 @@
         "duration.fast": 120,
         "duration.base": 180,
         "duration.slow": 280,
-        "duration.entrance": 420,
+        "duration.entrance": 640,
+        "duration.zoom": 520,
         "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
         "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
         "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
         "distance.rise": 8,
-        "distance.reveal": 16,
+        "distance.reveal": 24,
         "scale.hover": 1.03,
-        "stagger": 60
+        "stagger": 80
       },
       "media": {
         "ratio.wide": "16 / 9",
@@ -915,14 +920,15 @@
         "duration.fast": 120,
         "duration.base": 180,
         "duration.slow": 280,
-        "duration.entrance": 420,
+        "duration.entrance": 640,
+        "duration.zoom": 520,
         "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
         "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
         "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
         "distance.rise": 8,
-        "distance.reveal": 16,
+        "distance.reveal": 24,
         "scale.hover": 1.03,
-        "stagger": 60
+        "stagger": 80
       },
       "media": {
         "ratio.wide": "16 / 9",
@@ -976,12 +982,12 @@
         "cobalt": "assets/components/badge/badge-status-sm--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/badge/badge-status-sm--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/badge/badge-status-sm--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/badge/badge-status-sm--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/badge/badge-status-sm--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/badge/badge-status-sm--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/badge/badge-status-sm--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/badge/badge-status-sm--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/badge/badge-status-sm--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/badge/badge-status-sm--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/badge/badge-status-sm--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/badge/badge-status-sm--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/badge/badge-status-sm--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1029,7 +1035,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/badge/badge-status-sm--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/badge/badge-status-sm--eluo%402x.png"
     },
     {
       "id": "btn-danger-md",
@@ -1071,12 +1077,12 @@
         "cobalt": "assets/components/button/btn-danger-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-danger-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-danger-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-danger-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-danger-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-danger-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-danger-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-danger-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-danger-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-danger-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-danger-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-danger-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-danger-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1130,7 +1136,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-danger-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-danger-md--eluo%402x.png"
     },
     {
       "id": "btn-ghost-md",
@@ -1169,12 +1175,12 @@
         "cobalt": "assets/components/button/btn-ghost-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-ghost-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-ghost-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-ghost-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-ghost-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-ghost-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-ghost-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-ghost-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-ghost-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-ghost-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-ghost-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-ghost-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-ghost-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1228,7 +1234,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-ghost-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-ghost-md--eluo%402x.png"
     },
     {
       "id": "btn-outline-lg",
@@ -1274,12 +1280,12 @@
         "cobalt": "assets/components/button/btn-outline-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1351,7 +1357,7 @@
           "480": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-lg--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-lg--eluo%402x.png"
     },
     {
       "id": "btn-outline-md",
@@ -1395,12 +1401,12 @@
         "cobalt": "assets/components/button/btn-outline-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1460,7 +1466,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-outline-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-outline-md--eluo%402x.png"
     },
     {
       "id": "btn-primary-lg-disabled",
@@ -1500,12 +1506,12 @@
         "cobalt": "assets/components/button/btn-primary-lg-disabled--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg-disabled--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg-disabled--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg-disabled--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg-disabled--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg-disabled--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg-disabled--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg-disabled--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg-disabled--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg-disabled--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg-disabled--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg-disabled--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg-disabled--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1571,7 +1577,7 @@
           "480": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg-disabled--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg-disabled--eluo%402x.png"
     },
     {
       "id": "btn-primary-lg",
@@ -1615,12 +1621,12 @@
         "cobalt": "assets/components/button/btn-primary-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1686,7 +1692,7 @@
           "480": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-lg--eluo%402x.png",
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-lg--eluo%402x.png",
       "variants": [
         {
           "id": "btn-primary-lg-disabled",
@@ -1745,12 +1751,12 @@
         "cobalt": "assets/components/button/btn-primary-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1804,7 +1810,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-md--eluo%402x.png"
     },
     {
       "id": "btn-primary-sm",
@@ -1846,12 +1852,12 @@
         "cobalt": "assets/components/button/btn-primary-sm--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-sm--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-sm--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-sm--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-sm--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-sm--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-sm--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-sm--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-sm--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-sm--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-sm--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-sm--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-sm--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1905,7 +1911,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-primary-sm--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-primary-sm--eluo%402x.png"
     },
     {
       "id": "btn-secondary-lg",
@@ -1950,12 +1956,12 @@
         "cobalt": "assets/components/button/btn-secondary-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-secondary-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-secondary-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-secondary-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-secondary-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-secondary-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-secondary-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-secondary-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-secondary-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-secondary-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-secondary-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-secondary-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-secondary-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2027,7 +2033,7 @@
           "480": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/button/btn-secondary-lg--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/button/btn-secondary-lg--eluo%402x.png"
     },
     {
       "id": "card-basic-md",
@@ -2070,12 +2076,12 @@
         "cobalt": "assets/components/card/card-basic-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-basic-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-basic-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-basic-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-basic-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-basic-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-basic-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-basic-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-basic-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-basic-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-basic-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-basic-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-basic-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2153,7 +2159,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-basic-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-basic-md--eluo%402x.png"
     },
     {
       "id": "card-portrait-md",
@@ -2198,12 +2204,12 @@
         "cobalt": "assets/components/card/card-portrait-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-portrait-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-portrait-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-portrait-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-portrait-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-portrait-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-portrait-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-portrait-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-portrait-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-portrait-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-portrait-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-portrait-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-portrait-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2269,7 +2275,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-portrait-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-portrait-md--eluo%402x.png"
     },
     {
       "id": "card-product-md",
@@ -2316,12 +2322,12 @@
         "cobalt": "assets/components/card/card-product-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-product-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-product-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-product-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-product-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-product-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-product-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-product-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-product-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-product-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-product-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-product-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-product-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2405,7 +2411,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-product-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-product-md--eluo%402x.png"
     },
     {
       "id": "card-stat-md",
@@ -2450,12 +2456,12 @@
         "cobalt": "assets/components/card/card-stat-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-stat-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-stat-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-stat-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-stat-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-stat-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-stat-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-stat-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-stat-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-stat-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-stat-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-stat-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-stat-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2527,7 +2533,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/card/card-stat-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/card/card-stat-md--eluo%402x.png"
     },
     {
       "id": "chip-filter-md-selected",
@@ -2568,12 +2574,12 @@
         "cobalt": "assets/components/chip/chip-filter-md-selected--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md-selected--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md-selected--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md-selected--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md-selected--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md-selected--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md-selected--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md-selected--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md-selected--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md-selected--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md-selected--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md-selected--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md-selected--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2639,7 +2645,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md-selected--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md-selected--eluo%402x.png"
     },
     {
       "id": "chip-filter-md",
@@ -2683,12 +2689,12 @@
         "cobalt": "assets/components/chip/chip-filter-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2754,7 +2760,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/chip/chip-filter-md--eluo%402x.png",
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/chip/chip-filter-md--eluo%402x.png",
       "variants": [
         {
           "id": "chip-filter-md-selected",
@@ -2810,12 +2816,12 @@
         "cobalt": "assets/components/commerce/price-discount-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/price-discount-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/price-discount-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/price-discount-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/price-discount-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/price-discount-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/price-discount-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/price-discount-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/price-discount-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/price-discount-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/price-discount-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/price-discount-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/price-discount-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2857,7 +2863,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/price-discount-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/price-discount-md--eluo%402x.png"
     },
     {
       "id": "wish-toggle-md-selected",
@@ -2900,12 +2906,12 @@
         "cobalt": "assets/components/commerce/wish-toggle-md-selected--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md-selected--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md-selected--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md-selected--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md-selected--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md-selected--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md-selected--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md-selected--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md-selected--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md-selected--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md-selected--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md-selected--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md-selected--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2959,7 +2965,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md-selected--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md-selected--eluo%402x.png"
     },
     {
       "id": "wish-toggle-md",
@@ -3000,12 +3006,12 @@
         "cobalt": "assets/components/commerce/wish-toggle-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3059,7 +3065,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/commerce/wish-toggle-md--eluo%402x.png",
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/commerce/wish-toggle-md--eluo%402x.png",
       "variants": [
         {
           "id": "wish-toggle-md-selected",
@@ -3124,12 +3130,12 @@
         "cobalt": "assets/components/disclosure/accordion-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/disclosure/accordion-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/disclosure/accordion-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/disclosure/accordion-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/disclosure/accordion-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/disclosure/accordion-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/disclosure/accordion-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/disclosure/accordion-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/disclosure/accordion-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/disclosure/accordion-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/disclosure/accordion-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/disclosure/accordion-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/disclosure/accordion-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3195,7 +3201,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/disclosure/accordion-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/disclosure/accordion-md--eluo%402x.png"
     },
     {
       "id": "empty-state-md",
@@ -3237,12 +3243,12 @@
         "cobalt": "assets/components/feedback/empty-state-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/empty-state-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/empty-state-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/empty-state-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/empty-state-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/empty-state-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/empty-state-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/empty-state-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/empty-state-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/empty-state-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/empty-state-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/empty-state-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/empty-state-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3296,7 +3302,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/empty-state-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/empty-state-md--eluo%402x.png"
     },
     {
       "id": "toast-error-md",
@@ -3338,12 +3344,12 @@
         "cobalt": "assets/components/feedback/toast-error-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-error-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-error-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-error-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-error-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-error-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-error-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-error-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-error-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-error-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-error-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-error-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-error-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3427,7 +3433,7 @@
           "480": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-error-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-error-md--eluo%402x.png"
     },
     {
       "id": "toast-info-md",
@@ -3469,12 +3475,12 @@
         "cobalt": "assets/components/feedback/toast-info-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-info-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-info-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-info-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-info-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-info-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-info-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-info-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-info-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-info-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-info-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-info-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-info-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3558,7 +3564,7 @@
           "480": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/feedback/toast-info-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/feedback/toast-info-md--eluo%402x.png"
     },
     {
       "id": "input-text-md-error",
@@ -3601,12 +3607,12 @@
         "cobalt": "assets/components/input/input-text-md-error--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-error--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-error--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-error--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-error--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-error--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-error--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-error--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-error--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-error--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-error--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-error--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-error--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3684,7 +3690,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-error--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-error--eluo%402x.png"
     },
     {
       "id": "input-text-md-focus",
@@ -3727,12 +3733,12 @@
         "cobalt": "assets/components/input/input-text-md-focus--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-focus--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-focus--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-focus--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-focus--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-focus--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-focus--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-focus--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-focus--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-focus--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-focus--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-focus--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-focus--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3810,7 +3816,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md-focus--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md-focus--eluo%402x.png"
     },
     {
       "id": "input-text-md",
@@ -3854,12 +3860,12 @@
         "cobalt": "assets/components/input/input-text-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3931,7 +3937,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/input-text-md--eluo%402x.png",
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/input-text-md--eluo%402x.png",
       "variants": [
         {
           "id": "input-text-md-error",
@@ -4012,12 +4018,12 @@
         "cobalt": "assets/components/input/select-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/select-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/select-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/select-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/select-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/select-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/select-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/select-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/select-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/select-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/select-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/select-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/select-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4089,7 +4095,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/input/select-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/input/select-md--eluo%402x.png"
     },
     {
       "id": "cta-band-lg",
@@ -4134,12 +4140,12 @@
         "cobalt": "assets/components/layout/cta-band-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/cta-band-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/cta-band-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/cta-band-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/cta-band-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/cta-band-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/cta-band-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/cta-band-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/cta-band-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/cta-band-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/cta-band-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/cta-band-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/cta-band-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4211,7 +4217,7 @@
           "768": "stack"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/cta-band-lg--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/cta-band-lg--eluo%402x.png"
     },
     {
       "id": "desc-list-md",
@@ -4255,12 +4261,12 @@
         "cobalt": "assets/components/layout/desc-list-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/desc-list-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/desc-list-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/desc-list-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/desc-list-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/desc-list-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/desc-list-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/desc-list-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/desc-list-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/desc-list-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/desc-list-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/desc-list-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/desc-list-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4332,7 +4338,7 @@
           "480": "stack"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/desc-list-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/desc-list-md--eluo%402x.png"
     },
     {
       "id": "footer-lg",
@@ -4376,12 +4382,12 @@
         "cobalt": "assets/components/layout/footer-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/footer-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/footer-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/footer-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/footer-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/footer-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/footer-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/footer-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/footer-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/footer-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/footer-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/footer-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/footer-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4453,7 +4459,7 @@
           "768": "stack"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/footer-lg--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/footer-lg--eluo%402x.png"
     },
     {
       "id": "form-field-md",
@@ -4504,12 +4510,12 @@
         "cobalt": "assets/components/layout/form-field-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/form-field-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/form-field-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/form-field-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/form-field-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/form-field-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/form-field-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/form-field-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/form-field-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/form-field-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/form-field-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/form-field-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/form-field-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4599,7 +4605,7 @@
           "768": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/form-field-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/form-field-md--eluo%402x.png"
     },
     {
       "id": "header-gnb-lg",
@@ -4648,12 +4654,12 @@
         "cobalt": "assets/components/layout/header-gnb-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/header-gnb-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/header-gnb-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/header-gnb-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/header-gnb-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/header-gnb-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/header-gnb-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/header-gnb-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/header-gnb-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/header-gnb-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/header-gnb-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/header-gnb-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/header-gnb-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4731,7 +4737,7 @@
           "768": "menuNav"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/header-gnb-lg--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/header-gnb-lg--eluo%402x.png"
     },
     {
       "id": "hero-split-lg",
@@ -4780,12 +4786,12 @@
         "cobalt": "assets/components/layout/hero-split-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/hero-split-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/hero-split-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/hero-split-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/hero-split-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/hero-split-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/hero-split-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/hero-split-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/hero-split-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/hero-split-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/hero-split-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/hero-split-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/hero-split-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4869,7 +4875,7 @@
           "768": "stack"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/hero-split-lg--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/hero-split-lg--eluo%402x.png"
     },
     {
       "id": "list-row-md",
@@ -4915,12 +4921,12 @@
         "cobalt": "assets/components/layout/list-row-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/list-row-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/list-row-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/list-row-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/list-row-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/list-row-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/list-row-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/list-row-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/list-row-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/list-row-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/list-row-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/list-row-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/list-row-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4992,7 +4998,7 @@
           "480": "stack"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/list-row-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/list-row-md--eluo%402x.png"
     },
     {
       "id": "section-header-md",
@@ -5034,12 +5040,12 @@
         "cobalt": "assets/components/layout/section-header-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/section-header-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/section-header-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/section-header-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/section-header-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/section-header-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/section-header-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/section-header-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/section-header-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/section-header-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/section-header-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/section-header-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/section-header-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5099,7 +5105,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/section-header-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/section-header-md--eluo%402x.png"
     },
     {
       "id": "step-flow-md",
@@ -5145,12 +5151,12 @@
         "cobalt": "assets/components/layout/step-flow-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/step-flow-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/step-flow-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/step-flow-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/step-flow-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/step-flow-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/step-flow-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/step-flow-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/step-flow-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/step-flow-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/step-flow-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/step-flow-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/step-flow-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5216,7 +5222,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/layout/step-flow-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/layout/step-flow-md--eluo%402x.png"
     },
     {
       "id": "modal-confirm-lg",
@@ -5258,12 +5264,12 @@
         "cobalt": "assets/components/modal/modal-confirm-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/modal/modal-confirm-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/modal/modal-confirm-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/modal/modal-confirm-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/modal/modal-confirm-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/modal/modal-confirm-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/modal/modal-confirm-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/modal/modal-confirm-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/modal/modal-confirm-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/modal/modal-confirm-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/modal/modal-confirm-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/modal/modal-confirm-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/modal/modal-confirm-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5341,7 +5347,7 @@
           "480": "fill"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/modal/modal-confirm-lg--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/modal/modal-confirm-lg--eluo%402x.png"
     },
     {
       "id": "breadcrumb-md",
@@ -5381,12 +5387,12 @@
         "cobalt": "assets/components/navigation/breadcrumb-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/breadcrumb-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/breadcrumb-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/breadcrumb-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/breadcrumb-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/breadcrumb-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/breadcrumb-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/breadcrumb-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/breadcrumb-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/breadcrumb-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/breadcrumb-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/breadcrumb-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/breadcrumb-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5428,7 +5434,7 @@
         "tideland": {},
         "cobalt": {}
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/breadcrumb-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/breadcrumb-md--eluo%402x.png"
     },
     {
       "id": "pagination-md",
@@ -5470,12 +5476,12 @@
         "cobalt": "assets/components/navigation/pagination-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/pagination-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/pagination-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/pagination-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/pagination-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/pagination-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/pagination-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/pagination-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/pagination-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/pagination-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/pagination-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/pagination-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/pagination-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5541,7 +5547,7 @@
           "480": "scrollX"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/pagination-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/pagination-md--eluo%402x.png"
     },
     {
       "id": "tab-underline-md",
@@ -5586,12 +5592,12 @@
         "cobalt": "assets/components/navigation/tab-underline-md--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/tab-underline-md--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/tab-underline-md--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/tab-underline-md--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/tab-underline-md--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/tab-underline-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/tab-underline-md--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/tab-underline-md--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/tab-underline-md--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/tab-underline-md--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/tab-underline-md--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/tab-underline-md--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/tab-underline-md--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5663,7 +5669,7 @@
           "768": "scrollX"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/navigation/tab-underline-md--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/navigation/tab-underline-md--eluo%402x.png"
     },
     {
       "id": "table-basic-lg",
@@ -5709,12 +5715,12 @@
         "cobalt": "assets/components/table/table-basic-lg--cobalt@2x.png"
       },
       "cdn": {
-        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/table/table-basic-lg--eluo%402x.png",
-        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/table/table-basic-lg--atlas%402x.png",
-        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/table/table-basic-lg--ember%402x.png",
-        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/table/table-basic-lg--harbor%402x.png",
-        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/table/table-basic-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/table/table-basic-lg--cobalt%402x.png"
+        "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/table/table-basic-lg--eluo%402x.png",
+        "atlas": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/table/table-basic-lg--atlas%402x.png",
+        "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/table/table-basic-lg--ember%402x.png",
+        "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/table/table-basic-lg--harbor%402x.png",
+        "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/table/table-basic-lg--tideland%402x.png",
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/table/table-basic-lg--cobalt%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5792,7 +5798,7 @@
           "768": "toCard"
         }
       },
-      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/assets/components/table/table-basic-lg--eluo%402x.png"
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/assets/components/table/table-basic-lg--eluo%402x.png"
     }
   ]
 }

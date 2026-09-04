@@ -104,6 +104,9 @@ def to_css(tokens, theme):
         if "duration.entrance" in mo:
             lines.append(f"  --motion-entrance:{mo['duration.entrance']}ms "
                          f"{mo['easing.entrance']};")
+        # 사진 확대는 상태 변화가 아니라 은근한 움직임이라 반응보다 느립니다.
+        if "duration.zoom" in mo:
+            lines.append(f"  --motion-zoom:{mo['duration.zoom']}ms {std};")
     # 이미지. 비율과 스크림은 CSS 값 그대로, density 는 배수라 무단위입니다.
     for key, val in sem.get("media", {}).items():
         lines.append(f"  --media-{key.replace('.', '-')}:{val};")
@@ -134,7 +137,8 @@ def to_css(tokens, theme):
             "    --motion-scale-hover:1; --motion-stagger:0ms;",
             "    --motion-fast:1ms linear; --motion-base:1ms linear;",
             "    --motion-slow:1ms linear; --motion-exit:1ms linear;",
-            "    --motion-entrance:1ms linear;",
+            "    --motion-entrance:1ms linear; --motion-zoom:1ms linear;",
+            "    --motion-duration-zoom:1ms;",
             "  }",
             "  *,*::before,*::after{",
             "    animation-duration:1ms!important; animation-iteration-count:1!important;",

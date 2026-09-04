@@ -1109,8 +1109,9 @@ var RESP_KO={fill:"폭을 100% 로",toCard:"카드 목록으로 전환",scrollX:
 function motionBlock(){
   return {text:"모션 — 시간을 숫자로 쓰지 마. 반응은 var(--motion-fast|base|slow|exit) 로 280ms 가 천장,\n"+
     "    등장만 var(--motion-entrance)(420ms) 를 써. 둘을 섞지 마.\n"+
-    "  사진 hover 확대: 사진에만 scale(var(--motion-scale-hover)) + var(--motion-base),\n"+
+    "  사진 hover 확대: 사진에만 scale(var(--motion-scale-hover)) + var(--motion-zoom),\n"+
     "    부모에 overflow:hidden. 링크·버튼 안의 사진일 때만. 카드 전체를 키우지 마.\n"+
+    "    나란한 같은 종류 카드는 전부 링크이거나 전부 아니어야 해 — 하나만 커지면 어색해.\n"+
     "  스크롤 진입 등장: 섹션 단위로 opacity + translateY(var(--motion-distance-reveal)),\n"+
     "    var(--motion-entrance), IntersectionObserver 로 한 번만. 히어로에는 걸지 마.\n"+
     "    나란한 것만 var(--motion-stagger) 씩 최대 4개. 숨기는 클래스는 JS 가 붙여 —\n"+

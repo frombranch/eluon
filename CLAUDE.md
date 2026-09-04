@@ -146,7 +146,7 @@ prompts/                   ← 검증된 프롬프트 템플릿
 이미지를 붙이지 말고 **토큰 CSS + spec으로 실제 컴포넌트를 만듭니다.**
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.1/docs/tokens/eluon-eluo.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-eluo.css">
 <style>
 .btn-primary-lg{
   height:56px; padding:0 24px; border-radius:var(--radius-lg);
@@ -164,7 +164,7 @@ manifest의 `cdn.<theme>` 값을 그대로 `<img src>`에 씁니다. 손으로 U
 
 ### 경로 C — 저장소 클론 (시각 검수·인라인)
 ```bash
-git clone --depth 1 --branch v1.12.1 https://github.com/frombranch/eluon.git
+git clone --depth 1 --branch v1.12.2 https://github.com/frombranch/eluon.git
 ```
 이미지를 실제로 봐야 할 때, 또는 base64로 인라인해야 할 때만.
 
@@ -314,8 +314,10 @@ position:relative;
 
 1. **모션은 사람의 행동에 대한 대답이다.** hover · focus · press · 상태를 바꾸는 클릭에만 건다.
 2. **시간을 숫자로 쓰지 않는다.** 축약형 다섯 중에서 고른다 —
-   반응은 `var(--motion-fast|base|slow|exit)`, 등장은 `var(--motion-entrance)`.
+   반응은 `var(--motion-fast|base|slow|exit)`, 등장은 `var(--motion-entrance)`,
+   사진 확대는 `var(--motion-zoom)`.
    **반응은 280ms가 천장이다.** 사람이 누른 것에 대한 대답은 빨라야 한다.
+   천장은 **대답에만** 걸린다 — 등장과 사진 확대는 대답이 아니라 분위기라 느려도 된다.
    **등장(`--motion-entrance` 420ms)만 그보다 길다.** 처음 나타나는 것은 여유가 있어야 눈에 밟힌다.
    이 둘을 섞지 않는다 — hover 에 `--motion-entrance` 를 쓰면 굼떠 보이고,
    등장에 `--motion-fast` 를 쓰면 나타난 줄도 모른다.
@@ -329,7 +331,7 @@ position:relative;
    | 열고 닫기 — 아코디언 아이콘, 메뉴 토글, 탭 인디케이터 | `--motion-base` |
    | 화면을 덮는 것 — 모달·토스트 등장, 전면 이미지 전환 | `--motion-slow` |
    | 사라지는 것 — 모달·토스트 퇴장 | `--motion-exit` |
-   | 사진 hover 확대 | `--motion-base` + `--motion-scale-hover` |
+   | 사진 hover 확대 | `--motion-zoom` + `--motion-scale-hover` |
    | 스크롤 진입 등장 | `--motion-entrance` + `--motion-distance-reveal` |
 
    `transition`은 `:hover` 규칙이 아니라 **기본 상태에** 건다. 그래야 돌아올 때도 같은 속도다.
@@ -338,7 +340,7 @@ position:relative;
    | 항목 | 값 |
    |---|---|
    | 배율 | `var(--motion-scale-hover)` (1.03). 더 키우지 않는다 |
-   | 시간 | `var(--motion-base)` |
+   | 시간 | `var(--motion-zoom)` (520ms). **반응이 아니라 은근한 움직임이라 느리다** |
    | 거는 대상 | **사진에만.** 카드 전체를 키우지 않는다 — 옆 카드와 간격이 흔들린다 |
    | 자르기 | 부모에 `overflow:hidden`. 사진이 틀 밖으로 나오지 않는다 |
    | 조건 | **감싼 요소가 링크·버튼일 때만**(§7-9). 아무 데도 안 가는 카드는 반응하지 않는다 |
@@ -413,6 +415,9 @@ position:relative;
 9. **hover로만 알 수 있는 정보를 만들지 않는다.** 터치에는 hover가 없다.
    클릭 가능한 것은 hover 없이도 클릭 가능해 보여야 한다. hover는 이미 보이는 것을 밝히는 데만 쓴다.
    **클릭할 수 없는 요소에는 hover 효과를 걸지 않는다.**
+   ⚠️ 그래서 한 화면 안에서 어떤 사진은 커지고 어떤 사진은 가만히 있으면 **일관성 없어 보인다.**
+   답은 hover 를 빼는 게 아니라 **그 카드를 누를 수 있게 만드는 것**이다.
+   나란히 놓인 같은 종류의 카드는 전부 링크이거나 전부 아니어야 한다.
    ⚠️ 링크가 없는 `<article>` 카드에 hover 확대가 걸린 시안이 나왔다. 아무 데도 가지 않는 카드가 반응했고,
    iOS의 sticky `:hover` 때문에 탭한 뒤 확대된 채로 남았다.
 10. **포커스를 지우지 않는다.** `outline:none` 금지.

@@ -196,19 +196,21 @@
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
-  --motion-duration-entrance:420ms;
+  --motion-duration-entrance:640ms;
+  --motion-duration-zoom:520ms;
   --motion-easing-standard:cubic-bezier(0.2, 0, 0, 1);
   --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
   --motion-easing-entrance:cubic-bezier(0.16, 1, 0.3, 1);
   --motion-distance-rise:8px;
-  --motion-distance-reveal:16px;
+  --motion-distance-reveal:24px;
   --motion-scale-hover:1.03;
-  --motion-stagger:60ms;
+  --motion-stagger:80ms;
   --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
   --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);
   --motion-slow:280ms cubic-bezier(0.2, 0, 0, 1);
   --motion-exit:120ms cubic-bezier(0.4, 0, 1, 1);
-  --motion-entrance:420ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-entrance:640ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-zoom:520ms cubic-bezier(0.2, 0, 0, 1);
   --media-ratio-wide:16 / 9;
   --media-ratio-photo:3 / 2;
   --media-ratio-portrait:4 / 5;
@@ -279,7 +281,8 @@
     --motion-scale-hover:1; --motion-stagger:0ms;
     --motion-fast:1ms linear; --motion-base:1ms linear;
     --motion-slow:1ms linear; --motion-exit:1ms linear;
-    --motion-entrance:1ms linear;
+    --motion-entrance:1ms linear; --motion-zoom:1ms linear;
+    --motion-duration-zoom:1ms;
   }
   *,*::before,*::after{
     animation-duration:1ms!important; animation-iteration-count:1!important;
