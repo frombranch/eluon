@@ -207,8 +207,8 @@
   --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
   --motion-easing-entrance:cubic-bezier(0.16, 1, 0.3, 1);
   --motion-distance-rise:8px;
-  --motion-distance-reveal:24px;
-  --motion-scale-hover:1.03;
+  --motion-distance-reveal:32px;
+  --motion-scale-hover:1.05;
   --motion-stagger:80ms;
   --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
   --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);

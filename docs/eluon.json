@@ -3,8 +3,8 @@
   "source": {
     "name": "Eluon Design System",
     "repo": "https://github.com/frombranch/eluon",
-    "tag": "v1.12.2",
-    "tokensPath": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-{theme}.css",
+    "tag": "v1.12.3",
+    "tokensPath": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/docs/tokens/eluon-{theme}.css",
     "docsSite": "https://frombranch.github.io/eluon/",
     "manifestPath": "manifest.json",
     "docsPath": "CLAUDE.md"

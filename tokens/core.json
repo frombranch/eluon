@@ -221,8 +221,8 @@
       "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
       "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
       "distance.rise": 8,
-      "distance.reveal": 24,
-      "scale.hover": 1.03,
+      "distance.reveal": 32,
+      "scale.hover": 1.05,
       "stagger": 80
     },
     "media": {

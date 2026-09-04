@@ -146,7 +146,7 @@ prompts/                   ← 검증된 프롬프트 템플릿
 이미지를 붙이지 말고 **토큰 CSS + spec으로 실제 컴포넌트를 만듭니다.**
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.2/docs/tokens/eluon-eluo.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/docs/tokens/eluon-eluo.css">
 <style>
 .btn-primary-lg{
   height:56px; padding:0 24px; border-radius:var(--radius-lg);
@@ -164,7 +164,7 @@ manifest의 `cdn.<theme>` 값을 그대로 `<img src>`에 씁니다. 손으로 U
 
 ### 경로 C — 저장소 클론 (시각 검수·인라인)
 ```bash
-git clone --depth 1 --branch v1.12.2 https://github.com/frombranch/eluon.git
+git clone --depth 1 --branch v1.12.3 https://github.com/frombranch/eluon.git
 ```
 이미지를 실제로 봐야 할 때, 또는 base64로 인라인해야 할 때만.
 
@@ -339,7 +339,7 @@ position:relative;
 
    | 항목 | 값 |
    |---|---|
-   | 배율 | `var(--motion-scale-hover)` (1.03). 더 키우지 않는다 |
+   | 배율 | `var(--motion-scale-hover)` (1.05). 더 키우지 않는다 |
    | 시간 | `var(--motion-zoom)` (520ms). **반응이 아니라 은근한 움직임이라 느리다** |
    | 거는 대상 | **사진에만.** 카드 전체를 키우지 않는다 — 옆 카드와 간격이 흔들린다 |
    | 자르기 | 부모에 `overflow:hidden`. 사진이 틀 밖으로 나오지 않는다 |
@@ -353,7 +353,7 @@ position:relative;
 
    | 항목 | 값 |
    |---|---|
-   | 무엇이 움직이나 | `opacity` 0→1 과 `translateY(var(--motion-distance-reveal))` (16px). 둘뿐이다 |
+   | 무엇이 움직이나 | `opacity` 0→1 과 `translateY(var(--motion-distance-reveal))` (32px). 둘뿐이다 |
    | 시간·커브 | `var(--motion-entrance)` |
    | 몇 번 | **한 번.** `IntersectionObserver` 로 한 번 보이면 관찰을 끊는다. 되감기지 않는다 |
    | 단위 | **섹션 단위.** 문단·글자마다 걸지 않는다 |
@@ -367,7 +367,7 @@ position:relative;
 
 5-2. **그래도 넣지 않는 것.** 페이지 로드 시퀀스(요소들이 차례로 튀어나오는 것), 패럴랙스,
    숫자 카운트업, 타이핑 효과, 무한 마퀴, 장식용 `@keyframes`, 커서를 따라다니는 것.
-   ⚠️ 5·5-1 은 **규격 안에서만** 허용이다. 배율을 1.08 로 올리고 문단마다 페이드를 걸면
+   ⚠️ 5·5-1 은 **규격 안에서만** 허용이다. 배율을 더 올리고 문단마다 페이드를 걸면
    그때부터는 기계가 만든 화면으로 읽힌다. 값은 토큰에 있고 토큰을 바꾸지 않는다.
 6. **자동 재생은 조건부로만 허용한다.** 셋을 다 갖추지 않으면 쓰지 않는다.
    1. 멈춤 버튼. **`mouseenter`로 멈추는 것은 터치에서 아예 동작하지 않으므로 이를 대신하지 못한다**
