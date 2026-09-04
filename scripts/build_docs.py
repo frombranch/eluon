@@ -59,16 +59,54 @@ def esc(s):
     return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
+def theme_primitives(theme: str) -> dict:
+    """core 위에 테마 프리미티브를 얹은 결과. 계열 안에서 단계 단위로 덮어씁니다."""
+    t = json.loads((ROOT / "tokens" / f"theme-{theme}.json").read_text(encoding="utf-8"))
+    merged = {fam: dict(steps) for fam, steps in CORE["primitive"].items()}
+    for fam, steps in t.get("primitive", {}).items():
+        merged.setdefault(fam, {}).update(steps)
+    return merged
+
+
 def swatches():
-    prim = CORE["primitive"]
-    rows = []
-    for family, steps in prim.items():
-        chips = "".join(
-            f'<div class="sw"><span style="background:{v}"></span>'
-            f'<code>{family}.{k}</code><em>{v}</em></div>'
-            for k, v in steps.items())
-        rows.append(f'<div class="swrow"><h4>{family}</h4><div class="swgrid">{chips}</div></div>')
-    return "".join(rows)
+    """테마마다 한 벌씩 찍고 활성 테마 것만 CSS 로 보입니다.
+
+    core 값을 그대로 구워 넣으면 하버·엠버처럼 gray 를 덮어쓰는 테마에서
+    화면 값이 틀립니다. 테마가 더한 브랜드 계열(taupe·navy…)도 사라집니다.
+    헥스 글자까지 맞춰야 하므로 CSS 변수 하나로는 안 되고, 벌을 나눕니다.
+    """
+    core = CORE["primitive"]
+    sets = []
+    for theme in CONFIG["themes"]:
+        prim = theme_primitives(theme)
+        # 테마가 더한 계열을 앞에. 그 테마를 그 테마답게 만드는 색이라서.
+        fams = ([f for f in prim if f not in core] +
+                [f for f in prim if f in core])
+        rows = []
+        for family in fams:
+            steps = prim[family]
+            added = family not in core
+            over = [k for k, v in steps.items() if core.get(family, {}).get(k) != v]
+            chips = []
+            for k, v in steps.items():
+                cv = core.get(family, {}).get(k)
+                mark = ' class="sw ovr"' if (not added and cv != v) else ' class="sw"'
+                tip = (f' title="코어 {cv} 에서 덮어썼습니다"' if (not added and cv) else
+                       f' title="코어에 없는 단계입니다"' if (not added and cv is None) else "")
+                chips.append(f'<div{mark}{tip}><span style="background:{v}"></span>'
+                             f'<code>{family}.{k}</code><em>{v}</em></div>')
+            if added:
+                tag = '<span class="swtag">테마 추가</span>'
+                note = ""
+            elif over:
+                tag = f'<span class="swtag">코어에서 {len(over)}개 덮어씀</span>'
+                note = '<p class="swnote">* 표시가 코어와 다른 값입니다.</p>'
+            else:
+                tag, note = "", ""
+            rows.append(f'<div class="swrow"><h4>{family}{tag}</h4>'
+                        f'<div class="swgrid">{"".join(chips)}</div>{note}</div>')
+        sets.append(f'<div class="swset" data-theme="{theme}">{"".join(rows)}</div>')
+    return "".join(sets)
 
 
 def resolve_ref(ref, tokens):
@@ -466,6 +504,12 @@ h4 + .tw{border-top:0;margin-top:0}
   border-right:1px solid var(--ln);border-bottom:1px solid var(--ln)}
 .sw span{width:20px;height:20px;border:1px solid var(--ln);flex:none}
 .sw em{font-style:normal;color:var(--tx2);font-variant-numeric:tabular-nums;margin-left:auto}
+/* 테마마다 한 벌씩 있고, 활성 테마 것만 보입니다. 규칙은 build_docs.py 가 붙입니다. */
+.swset{display:none}
+.swtag{margin-left:10px;font-weight:400;text-transform:none;letter-spacing:0;
+  font-size:11px;color:var(--tx2)}
+.swnote{margin-top:10px;font-size:12px;color:var(--tx2)}
+.sw.ovr code:after{content:"*";margin-left:2px;color:var(--tx2)}
 .dot{display:inline-block;width:11px;height:11px;border:1px solid var(--ln);
   margin-right:7px;vertical-align:-1px}
 
@@ -533,6 +577,8 @@ def main():
     # 예전엔 core·eluo 두 테마만 하드코딩돼 있어서 세 번째 테마는 문서 사이트에서
     # CSS 도 버튼도 없었습니다. CONFIG 를 따라가게 고칩니다.
     all_theme_css = "\n".join(theme_css(t_) for t_ in CONFIG["themes"])
+    swset_css = "".join(f'[data-eluon-theme="{t_}"] .swset[data-theme="{t_}"]{{display:block}}'
+                        for t_ in CONFIG["themes"])
     theme_btns = "".join(
         f'<button data-theme="{t_}" aria-pressed="{str(t_ == CONFIG["defaultTheme"]).lower()}"'
         f' data-hint="{THEME_KO.get(t_, (t_, ""))[1]}"'
@@ -560,6 +606,7 @@ def main():
 {comp_css}
 
 {SITE_CSS}
+{swset_css}
 </style>
 </head>
 <body>
