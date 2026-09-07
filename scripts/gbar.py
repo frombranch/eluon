@@ -9,10 +9,16 @@ gbar.py — 사이트 공통 상단 내비게이션(GNB).
   build_guide.py  → docs/guide.html          (사용설명서)
   docs/prompt-builder.html                    (프롬프트 빌더)
 
-빌더는 손으로 쓰는 파일이라 같은 CSS·마크업을 그대로 베껴 두었습니다.
-여기를 고치면 빌더도 함께 고칩니다 — 파일 안에 그 표시를 남겨 두었습니다.
+빌더는 손으로 쓰는 파일이라 같은 CSS·마크업을 그대로 베껴 둡니다. 손으로 자리를
+세지 말고 아래 명령으로 옮깁니다 — 표시(gbar:start · gbar:end) 사이만 갈아 끼웁니다.
 
-색과 활자는 각 페이지가 이미 선언한 변수만 씁니다. 새 색을 들이지 않습니다.
+    python3 scripts/gbar.py --sync     빌더에 정본을 옮겨 심습니다
+    python3 scripts/gbar.py --check    낡았으면 실패합니다 (CI 용)
+
+2026-09-07 에 이 표시 없이 자리를 세어 갈아 끼웠다가 닫는 중괄호를 두 개 흘렸고,
+파서가 바로 뒤의 .tabs 규칙을 통째로 버려 탭 줄이 sticky 를 잃었습니다.
+
+색은 각 페이지가 이미 선언한 변수만 씁니다. 새 색을 들이지 않습니다.
 페이지마다 변수 이름이 달라서, 이름이 없는 쪽은 :root 에 별칭을 답니다.
 
   --paper  바탕      --ink   글자
@@ -22,13 +28,21 @@ gbar.py — 사이트 공통 상단 내비게이션(GNB).
 행간이 달라서, 상속받으면 로고와 링크의 자리가 몇 px 씩 어긋납니다.
 """
 
-# 상단 바 높이는 다른 sticky 요소가 기준으로 삼습니다(설명서의 차례 등).
+# 자동 교체가 잡는 경계입니다. 세 페이지 모두에 들어갑니다.
+CSS_START = "/* gbar:start */"
+CSS_END = "/* gbar:end */"
+MK_START = "<!-- gbar:start -->"
+MK_END = "<!-- gbar:end -->"
+
+# 상단 바 높이는 다른 sticky 요소가 기준으로 삼습니다(설명서의 차례, 빌더의 탭 줄 등).
 # 그래서 값이 아니라 변수로 나갑니다.
-GBAR_CSS = """
+GBAR_CSS = "\n" + CSS_START + """
 /* ── 상단 내비게이션 — scripts/gbar.py 가 정본입니다 ────────────────
    세 페이지(디자인 시스템 · 프롬프트 빌더 · 사용설명서)가 같은 것을 씁니다.
-   여기만 고쳐서는 안 됩니다. gbar.py 를 고치고 세 곳을 함께 내보냅니다.
+   여기만 고쳐서는 안 됩니다. gbar.py 를 고치고 --sync 로 함께 내보냅니다.
+   위아래 gbar:start · gbar:end 는 그 자동 교체가 잡는 경계입니다. 지우지 마십시오.
    ──────────────────────────────────────────────────────────────── */
+
 /* 글꼴을 바가 직접 정합니다. 페이지의 --sans 를 따르면 설명서만 Noto Sans KR 이라
    같은 글자의 폭이 달라지고, 오른쪽 링크 줄이 페이지마다 어긋납니다.
    설명서에도 이 글꼴을 실어 두었습니다(build_guide.py). 본문은 그대로 둡니다. */
@@ -64,7 +78,11 @@ GBAR_CSS = """
   .gbar nav{gap:14px}
   .gbar nav a{font-size:12px}
 }
-"""
+""" + CSS_END + "\n"
+
+# 로고를 누르면 가는 곳. 사이트 첫 화면이 아니라 빌더입니다 — 이 사이트에서
+# 사람이 실제로 일을 하는 화면이 빌더라서입니다. 2026-09-07 사용자 지시.
+LOGO_HREF = "prompt-builder.html"
 
 PAGES = (
     ("index.html", "디자인 시스템"),
@@ -73,16 +91,65 @@ PAGES = (
 )
 
 
-def gbar_html(current: str) -> str:
-    """current 는 지금 페이지의 파일 이름 — 그 링크에만 aria-current 가 붙습니다."""
+def gbar_html(current: str, docs_attr: str = "") -> str:
+    """current 는 지금 페이지의 파일 이름 — 그 링크에만 aria-current 가 붙습니다.
+
+    docs_attr 은 "디자인 시스템" 링크에 더 붙일 속성입니다. 빌더에만 id="docsTab"
+    이 필요합니다 — 연결한 자산의 문서 사이트로 주소를 바꿔 끼우는 자리입니다.
+    """
     links = "".join(
-        '\n    <a href="%s"%s>%s</a>' % (href, ' aria-current="page"' if href == current else "", label)
+        '\n    <a href="%s"%s%s>%s</a>'
+        % (href,
+           docs_attr if href == "index.html" else "",
+           ' aria-current="page"' if href == current else "",
+           label)
         for href, label in PAGES
     )
     return (
+        MK_START + "\n"
         '<div class="gbar">\n'
-        '  <a class="logo" href="index.html">Eluon</a>\n'
-        '  <nav aria-label="사이트 이동">%s\n'
-        "  </nav>\n"
-        "</div>" % links
+        '  <a class="logo" href="%s">Eluon</a>\n' % LOGO_HREF
+        + '  <nav aria-label="사이트 이동">%s\n' % links
+        + "  </nav>\n"
+        "</div>\n" + MK_END
     )
+
+
+def _between(text: str, start: str, end: str):
+    i = text.index(start)
+    return i, text.index(end, i) + len(end)
+
+
+def sync_builder(check: bool = False) -> int:
+    """docs/prompt-builder.html 의 표시 사이를 정본으로 맞춥니다."""
+    import pathlib
+
+    path = pathlib.Path(__file__).resolve().parents[1] / "docs" / "prompt-builder.html"
+    out = src = path.read_text(encoding="utf-8")
+    for start, end, new in (
+        (CSS_START, CSS_END, GBAR_CSS.strip()),
+        (MK_START, MK_END, gbar_html("prompt-builder.html", ' id="docsTab"')),
+    ):
+        try:
+            i, j = _between(out, start, end)
+        except ValueError:
+            print("표시를 찾지 못했습니다: %s … %s" % (start, end))
+            return 1
+        out = out[:i] + new + out[j:]
+
+    if out == src:
+        print("docs/prompt-builder.html 최신 상태입니다.")
+        return 0
+    if check:
+        print("docs/prompt-builder.html 의 상단 바가 낡았습니다. "
+              "python3 scripts/gbar.py --sync 로 맞추세요.")
+        return 1
+    path.write_text(out, encoding="utf-8")
+    print("✓ docs/prompt-builder.html — 상단 바를 정본으로 맞췄습니다")
+    return 0
+
+
+if __name__ == "__main__":
+    import sys
+
+    raise SystemExit(sync_builder(check="--check" in sys.argv))

@@ -68,10 +68,13 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
 .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:10}
 .skip:focus{left:0}
 
+/* gbar:start */
 /* ── 상단 내비게이션 — scripts/gbar.py 가 정본입니다 ────────────────
    세 페이지(디자인 시스템 · 프롬프트 빌더 · 사용설명서)가 같은 것을 씁니다.
-   여기만 고쳐서는 안 됩니다. gbar.py 를 고치고 세 곳을 함께 내보냅니다.
+   여기만 고쳐서는 안 됩니다. gbar.py 를 고치고 --sync 로 함께 내보냅니다.
+   위아래 gbar:start · gbar:end 는 그 자동 교체가 잡는 경계입니다. 지우지 마십시오.
    ──────────────────────────────────────────────────────────────── */
+
 /* 글꼴을 바가 직접 정합니다. 페이지의 --sans 를 따르면 설명서만 Noto Sans KR 이라
    같은 글자의 폭이 달라지고, 오른쪽 링크 줄이 페이지마다 어긋납니다.
    설명서에도 이 글꼴을 실어 두었습니다(build_guide.py). 본문은 그대로 둡니다. */
@@ -107,6 +110,7 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
   .gbar nav{gap:14px}
   .gbar nav a{font-size:12px}
 }
+/* gbar:end */
 .tabs{
   display:flex;align-items:center;gap:0;position:sticky;top:var(--gbar);z-index:5;
   background:var(--paper);border-bottom:1px solid var(--rule);
@@ -472,17 +476,16 @@ a.linkbtn{text-decoration:none;display:inline-block}
 <body>
 
 <a class="skip" href="#main">본문으로 건너뛰기</a>
-<!-- 상단 바 — scripts/gbar.py 가 정본입니다. 세 페이지가 같은 것을 씁니다.
-     여기만 고치면 안 됩니다. id="docsTab" 만 이 페이지에서 더 붙습니다 —
-     연결한 자산의 문서 사이트로 이 링크를 돌려놓는 자리입니다(아래 스크립트). -->
+<!-- gbar:start -->
 <div class="gbar">
-  <a class="logo" href="index.html">Eluon</a>
+  <a class="logo" href="prompt-builder.html">Eluon</a>
   <nav aria-label="사이트 이동">
     <a href="index.html" id="docsTab">디자인 시스템</a>
     <a href="prompt-builder.html" aria-current="page">프롬프트 빌더</a>
     <a href="guide.html">사용설명서</a>
   </nav>
 </div>
+<!-- gbar:end -->
 
 <div class="shell">
 

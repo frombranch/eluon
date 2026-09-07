@@ -2397,10 +2397,13 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
   [data-r]{opacity:1;transform:none;transition:none}
 }
 
+/* gbar:start */
 /* ── 상단 내비게이션 — scripts/gbar.py 가 정본입니다 ────────────────
    세 페이지(디자인 시스템 · 프롬프트 빌더 · 사용설명서)가 같은 것을 씁니다.
-   여기만 고쳐서는 안 됩니다. gbar.py 를 고치고 세 곳을 함께 내보냅니다.
+   여기만 고쳐서는 안 됩니다. gbar.py 를 고치고 --sync 로 함께 내보냅니다.
+   위아래 gbar:start · gbar:end 는 그 자동 교체가 잡는 경계입니다. 지우지 마십시오.
    ──────────────────────────────────────────────────────────────── */
+
 /* 글꼴을 바가 직접 정합니다. 페이지의 --sans 를 따르면 설명서만 Noto Sans KR 이라
    같은 글자의 폭이 달라지고, 오른쪽 링크 줄이 페이지마다 어긋납니다.
    설명서에도 이 글꼴을 실어 두었습니다(build_guide.py). 본문은 그대로 둡니다. */
@@ -2436,19 +2439,22 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
   .gbar nav{gap:14px}
   .gbar nav a{font-size:12px}
 }
+/* gbar:end */
 
 [data-eluon-theme="eluo"] .swset[data-theme="eluo"]{display:block}[data-eluon-theme="atlas"] .swset[data-theme="atlas"]{display:block}[data-eluon-theme="ember"] .swset[data-theme="ember"]{display:block}[data-eluon-theme="harbor"] .swset[data-theme="harbor"]{display:block}[data-eluon-theme="tideland"] .swset[data-theme="tideland"]{display:block}[data-eluon-theme="cobalt"] .swset[data-theme="cobalt"]{display:block}[data-eluon-theme="noir"] .swset[data-theme="noir"]{display:block}
 </style>
 </head>
 <body>
+<!-- gbar:start -->
 <div class="gbar">
-  <a class="logo" href="index.html">Eluon</a>
+  <a class="logo" href="prompt-builder.html">Eluon</a>
   <nav aria-label="사이트 이동">
     <a href="index.html" aria-current="page">디자인 시스템</a>
     <a href="prompt-builder.html">프롬프트 빌더</a>
     <a href="guide.html">사용설명서</a>
   </nav>
 </div>
+<!-- gbar:end -->
 <div class="wrap">
 
 <div class="barwrap">
