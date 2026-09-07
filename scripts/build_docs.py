@@ -342,6 +342,7 @@ a{color:inherit}
   border-left:1px solid var(--ln)}
 .bar nav.pages a{font-size:13px;color:var(--tx2)}
 .bar nav.pages a:hover{color:var(--tx)}
+.bar nav.pages a[aria-current=page]{color:var(--tx)}
 .themes{display:flex;flex:none}
 .navtog{display:none;flex:none;margin-left:auto;width:40px;height:40px;
   align-items:center;justify-content:center;padding:0;
@@ -627,13 +628,13 @@ def main():
 
 <div class="barwrap">
 <div class="bar">
-  <a class="logo" href="#top">eluon</a>
+  <a class="logo" href="#top">Eluon</a>
   <button class="navtog" id="navtog" type="button"
     aria-expanded="false" aria-controls="barmenu" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>
   <div class="barmenu" id="barmenu">
     <nav><a href="#foundation">파운데이션</a>{nav}<a href="#agent">에이전트</a></nav>
-    <nav class="pages" aria-label="다른 페이지">
-      <a href="guide.html">사용설명서</a><a href="prompt-builder.html">프롬프트 빌더</a>
+    <nav class="pages" aria-label="사이트 이동">
+      <a href="index.html" aria-current="page">디자인 시스템</a><a href="prompt-builder.html">프롬프트 빌더</a><a href="guide.html">사용설명서</a>
     </nav>
     <div class="themes" role="group" aria-label="테마 전환">
       {theme_btns}

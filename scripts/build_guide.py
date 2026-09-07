@@ -348,7 +348,7 @@ def main() -> int:
 <a class="gskip" href="#gmain">본문으로 건너뛰기</a>
 
 <div class="gbar">
-  <a class="logo" href="index.html">eluon</a>
+  <a class="logo" href="index.html">Eluon</a>
   <nav>
     <a href="index.html">디자인 시스템</a>
     <a href="prompt-builder.html">프롬프트 빌더</a>

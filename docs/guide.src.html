@@ -70,7 +70,9 @@ body{
 
 /* ── 머리 ── */
 header{padding:96px 0 40px}
-h1{font-size:56px;font-weight:700;line-height:1.15;letter-spacing:-2.24px;text-wrap:balance}
+/* 제목만 키웁니다. 본문·리드는 그대로 — 대비는 제목 쪽에서 만듭니다. */
+h1{font-size:clamp(56px,7vw,96px);font-weight:700;line-height:1.04;
+   letter-spacing:-.04em;text-wrap:balance}
 .tagline{margin-top:24px;max-width:62ch;color:var(--muted);font-size:13.6px;line-height:23.2px}
 .stamp{
   margin-top:32px;padding-top:20px;border-top:1px solid var(--rule);
@@ -86,7 +88,8 @@ section:first-of-type{border-top:0}
   font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--accent);margin-bottom:14px;
 }
-h2{font-size:32px;font-weight:700;line-height:1.3;letter-spacing:-1.28px;text-wrap:balance}
+h2{font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.12;
+   letter-spacing:-.035em;text-wrap:balance}
 h3{font-size:19px;font-weight:700;line-height:1.4;letter-spacing:-.4px;margin-top:40px}
 h4{font-size:15px;font-weight:700;line-height:24px;margin-top:28px}
 p{margin-top:16px;max-width:68ch}
@@ -185,7 +188,7 @@ footer p{max-width:68ch}
 
 <header>
   <h1>Eluon 사용설명서</h1>
-  <p class="tagline">디자인 시스템을 코드로 만들고, GitHub에 올리고, 자산 파일로 바꿔서, 빌더로 프롬프트를 뽑기까지. 각 단계에서 무엇이 무엇을 만드는지와, 빌더 화면의 설정이 각각 무엇을 바꾸는지를 적었습니다.</p>
+  <p class="tagline">디자인 시스템을 코드로 만들고, GitHub에 올리고, 자산 파일로 바꿔서, 빌더로 프롬프트를 뽑기까지.</p>
   <div class="stamp">
     <span><b>대상</b> Eluon {{version}} · 컴포넌트 {{count}}개(상태 {{variants}}개 별도) · 테마 {{themes}}종</span>
     <span><b>저장소</b> github.com/frombranch/eluon</span>
@@ -648,7 +651,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
 <section id="settings">
   <p class="eyebrow">3부 · 빌더 탭</p>
   <h2>설정이 각각 무엇을 바꾸는가</h2>
-  <p class="lead">왼쪽에서 조건을 고르면 오른쪽 프롬프트가 실시간으로 바뀝니다. 설정마다 프롬프트의 어느 부분이 달라지는지를 아래에 적었습니다.</p>
+  <p class="lead">왼쪽에서 조건을 고르면 오른쪽 프롬프트가 실시간으로 바뀝니다.</p>
 
   <h3>작업 유형 — 프롬프트의 뼈대를 정합니다</h3>
   <p>가장 크게 바뀌는 설정입니다. 유형에 따라 <strong>지시 문단 자체가 통째로 달라지고</strong>, 아래에 뜨는 입력칸도 달라집니다.</p>
@@ -710,7 +713,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
   </div>
 
   <h4>자료 출처 <span class="tag">v1.4.0</span></h4>
-  <p><code>고객사 테마</code>에 뜨는 칸입니다. <strong>고객사 웹사이트 주소나 피그마 링크</strong>를 넣으면 프롬프트가 그것을 열어 재라고 지시합니다 — 화면 보고 추측하지 말 것, <code>rem</code>과 고정 <code>px</code>를 구분할 것, 뷰포트 비례면 기준 폭을 정해 환산할 것까지.</p>
+  <p><code>고객사 테마</code>에 뜨는 칸입니다. <strong>고객사 웹사이트 주소나 피그마 링크</strong>를 넣으면 프롬프트가 그것을 열어 실제 값을 재라고 지시합니다. 화면을 보고 눈대중으로 추측하지 말라는 것까지 들어갑니다.</p>
   <div class="note">
     <b>rem 과 고정 px 를 구분해야 합니다</b>
     루트 폰트 크기를 두 배로 바꿔 다시 재면 <strong><code>rem</code> 값만 두 배가 됩니다.</strong> 테두리는 보통 고정 <code>px</code>라, 환산하면 1px이 1.6이 됩니다 — 실제로 한 번 틀렸다가 이 방법으로 잡았습니다.
@@ -757,7 +760,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
 <section id="discover">
   <p class="eyebrow">4부 · 라이브러리 → 사이트에서</p>
   <h2>사이트에서 자산 후보 찾기 <span class="tag">v1.5.0</span></h2>
-  <p class="lead">고객사 웹사이트 주소만 넣으면 <strong>반복되는 UI 조각을 재서</strong> 지금 라이브러리와 대조합니다. <strong>덮이는 표가 본론입니다</strong> — 그 목록이 곧 기존 컴포넌트를 재배치해 페이지를 만들 재료입니다.</p>
+  <p class="lead">고객사 웹사이트 주소만 넣으면 <strong>반복되는 UI 조각을 재서</strong> 지금 라이브러리와 대조합니다.</p>
 
   <div class="scroller">
     <table>
@@ -986,7 +989,9 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     </table>
   </div>
   <p style="margin-top:16px"><strong>저장소 이력을 v1.11.1에서 새로 시작했습니다.</strong> 이전 커밋에 고객사를 특정할 수 있는 문자열이 남아 있었고 이 저장소는 공개입니다. 저장소 이름·주소·문서 사이트는 그대로이고, 파일 내용도 바뀌지 않았습니다. 다만 <strong>예전 태그(v1.0.0~v1.11.0)는 없어졌으니</strong> 그 주소를 쓴 HTML이 있다면 최신 태그로 바꾸십시오.</p>
-  <p style="margin-top:16px">빌더 쪽 — 화면을 <strong>라이브러리(피그마에서 · 사이트에서) · 빌더</strong> 2단으로 정리 · 모음은 <strong>라이브러리</strong>, 낱개는 <strong>자산</strong>으로 갈라 부릅니다 · 작업 유형에서 아티팩트 발행 제거 · 안 쓰는 작업 유형 숨기기 · 자산 페이지에서 골라 빌더로 넘기기 · 고른 자산 칩 · 전체 선택 · Figma 링크 입력칸 · 안 쓰는 테마 숨기기 · 일관성 QA 버튼 제거(절차는 <code>CLAUDE.md</code>에 남아 있습니다) · 자산 목록 접기 · 전역 전체 선택은 다시 뺐습니다.</p>
+  <p style="margin-top:16px">빌더 쪽 — 화면을 <strong>라이브러리(피그마에서 · 사이트에서) · 빌더</strong> 2단으로 정리했습니다. 모음은 <strong>라이브러리</strong>, 낱개는 <strong>자산</strong>으로 갈라 부릅니다.</p>
+  <p style="margin-top:10px">작업 유형에서 <strong>아티팩트 발행</strong>을 뺐고, 안 쓰는 유형은 숨길 수 있습니다. 일관성 QA 버튼도 뺐습니다 — 절차는 <code>CLAUDE.md</code>에 남아 있습니다.</p>
+  <p style="margin-top:10px">그밖에 — 자산 페이지에서 골라 빌더로 넘기기 · 고른 자산 칩 · 전체 선택 · Figma 링크 입력칸 · 안 쓰는 테마 숨기기 · 자산 목록 접기. 전역 전체 선택은 다시 뺐습니다.</p>
 </footer>
 
 </div>
