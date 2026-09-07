@@ -99,6 +99,21 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
   transition:background .2s ease,color .2s ease;
 }
 .tabdocs:hover{background:var(--ink);color:var(--paper)}
+/* 자산 안의 두 갈래. 상단 탭과 같은 밑줄을 쓰면 어느 줄이 상위인지 알 수 없어
+   더 작게, 채운 칩으로 둡니다. 위계를 색이 아니라 형태로 나눕니다. */
+.subtabs{display:flex;gap:6px;padding:20px 0 4px}
+.subtabs button{
+  appearance:none;border:1px solid var(--hair2);background:none;
+  padding:0 14px;height:34px;font-family:inherit;font-size:14px;font-weight:600;
+  letter-spacing:-.16px;color:var(--muted);cursor:pointer;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.subtabs button:hover{color:var(--ink);border-color:var(--ink)}
+.subtabs button[aria-selected=true]{
+  background:var(--ink);border-color:var(--ink);color:var(--paper);font-weight:700;
+}
+.subtabs button[aria-disabled=true]{color:var(--dim);border-color:var(--hair2);cursor:not-allowed}
+.subtabs button[aria-disabled=true]:hover{color:var(--dim);border-color:var(--hair2)}
 @media (max-width:900px){
   .srcchip .srcmeta{display:none}
 }
@@ -461,10 +476,8 @@ a.linkbtn{text-decoration:none;display:inline-block}
 
   <div class="tabs">
     <div class="tabgroup" role="tablist" aria-label="화면 전환">
-      <button type="button" role="tab" id="tab-source" aria-controls="setup"
-              aria-selected="false" tabindex="-1">피그마 자산</button>
-      <button type="button" role="tab" id="tab-discover" aria-controls="discover"
-              aria-selected="false" tabindex="-1">URL 자산</button>
+      <button type="button" role="tab" id="tab-assets" aria-controls="assetsPane"
+              aria-selected="false" tabindex="-1">자산</button>
       <button type="button" role="tab" id="tab-builder" aria-controls="app"
               aria-selected="false" tabindex="-1">빌더</button>
     </div>
@@ -479,6 +492,14 @@ a.linkbtn{text-decoration:none;display:inline-block}
   <div class="srcwarn hidden" id="srcWarn"></div>
 
   <main id="main">
+  <div class="hidden" id="assetsPane" role="tabpanel" aria-labelledby="tab-assets" tabindex="-1">
+    <div class="subtabs" role="tablist" aria-label="자산 화면 전환">
+      <button type="button" role="tab" id="tab-source" aria-controls="setup"
+              aria-selected="false" tabindex="-1">피그마 자산</button>
+      <button type="button" role="tab" id="tab-discover" aria-controls="discover"
+              aria-selected="false" tabindex="-1">URL 자산</button>
+    </div>
+
   <div class="setup hidden" id="setup" role="tabpanel" aria-labelledby="tab-source" tabindex="-1">
     <div class="setuphd">
       <h2 id="setupTitle">처음 오셨나요</h2>
@@ -625,6 +646,8 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</div>
         <b>라이브러리는 하나</b>이고 테마만 갈아 끼우므로, A 고객사 때문에 넣은 자산이 B 고객사 시안에도 그대로 보입니다.</p>
     </div>
   </div>
+
+  </div><!-- /#assetsPane -->
 
   <div class="cols hidden" id="app" role="tabpanel" aria-labelledby="tab-builder" tabindex="-1">
     <div class="panel">
@@ -1565,21 +1588,43 @@ function download(name,obj){
 /* ── manifest 불러오기 ── */
 /* 화면에 놓인 순서와 같아야 화살표 이동이 눈에 보이는 대로 움직입니다.
    흐름도 이 순서입니다 — 자산을 읽고, 없으면 만들고, 그 다음 빌더로 씁니다. */
-var TABS=[{id:"source",tab:"tab-source",panel:"setup"},
-          {id:"discover",tab:"tab-discover",panel:"discover"},
+/* 화면은 둘로 나뉩니다 — 자산을 들이는 곳과 그것으로 프롬프트를 쓰는 곳.
+   자산 안에서 다시 두 갈래(우리 라이브러리 / 고객사 사이트)입니다.
+   주소의 tab= 값은 예전 그대로 source·discover·builder 셋을 씁니다.
+   밖으로 나간 링크가 있어서 이름을 바꾸지 않습니다. */
+var TABS=[{id:"source",tab:"tab-source",panel:"setup",top:"assets"},
+          {id:"discover",tab:"tab-discover",panel:"discover",top:"assets"},
+          {id:"builder",tab:"tab-builder",panel:"app",top:"builder"}];
+var TOPS=[{id:"assets",tab:"tab-assets",panel:"assetsPane"},
           {id:"builder",tab:"tab-builder",panel:"app"}];
+var SUBS=TABS.filter(function(x){ return x.top==="assets"; });
 var activeTab="source";
+/* 자산으로 돌아왔을 때 보던 갈래로 돌려놓습니다. 늘 첫 갈래로 튕기면
+   URL 자산을 쓰는 사람은 매번 두 번씩 누르게 됩니다. */
+var lastAssetTab="source";
+
+function tabDef(id){ return TABS.filter(function(x){ return x.id===id; })[0]; }
 
 function activateTab(id,moveFocus){
-  // 빌더 탭은 자산을 읽기 전에는 열 수 없습니다.
+  // 빌더와 URL 자산은 자산 파일을 읽기 전에는 열 수 없습니다.
   if((id==="builder"||id==="discover") && !M) id="source";
   activeTab=id;
-  TABS.forEach(function(x){
-    var btn=document.getElementById(x.tab), panel=document.getElementById(x.panel);
+  var def=tabDef(id), top=def.top;
+  if(top==="assets") lastAssetTab=id;
+
+  TOPS.forEach(function(x){
+    var btn=document.getElementById(x.tab);
+    var on = x.id===top;
+    btn.setAttribute("aria-selected",String(on));
+    btn.tabIndex = on ? 0 : -1;
+    document.getElementById(x.panel).classList.toggle("hidden",!on);
+  });
+  SUBS.forEach(function(x){
+    var btn=document.getElementById(x.tab);
     var on = x.id===id;
     btn.setAttribute("aria-selected",String(on));
     btn.tabIndex = on ? 0 : -1;
-    panel.classList.toggle("hidden",!on);
+    document.getElementById(x.panel).classList.toggle("hidden",!on);
   });
   ["tab-builder","tab-discover"].forEach(function(x){
     var b=document.getElementById(x);
@@ -1589,8 +1634,7 @@ function activateTab(id,moveFocus){
   document.getElementById("tabNote").textContent =
     M ? "" : "자산 파일을 연결하면 빌더가 열립니다";
   document.getElementById("srcChip").classList.toggle("hidden",!M);
-  if(moveFocus) document.getElementById(
-    id==="source" ? "tab-source" : "tab-builder").focus();
+  if(moveFocus) document.getElementById(def.tab).focus();
   try{
     var u=new URL(location.href);
     u.searchParams.set("tab",id);
@@ -2018,23 +2062,29 @@ function boot(){
     document.getElementById("found").classList.add("hidden");
   };
 
-  TABS.forEach(function(x,i){
-    var btn=document.getElementById(x.tab);
-    btn.onclick=function(){
-      if(btn.getAttribute("aria-disabled")==="true"){
-        setupStatus("먼저 자산 파일을 연결하세요."); return;
-      }
-      activateTab(x.id);
-    };
-    btn.onkeydown=function(e){
-      var d = e.key==="ArrowRight" ? 1 : e.key==="ArrowLeft" ? -1 : 0;
-      if(!d && e.key!=="Home" && e.key!=="End") return;
-      e.preventDefault();
-      var n = e.key==="Home" ? 0 : e.key==="End" ? TABS.length-1
-            : (i+d+TABS.length)%TABS.length;
-      activateTab(TABS[n].id,true);
-    };
-  });
+  // 두 줄이 각각 제 그룹 안에서만 화살표로 움직입니다.
+  // 상단에서 "자산"을 고르면 보던 갈래로 돌아갑니다.
+  function wireTabs(group, target){
+    group.forEach(function(x,i){
+      var btn=document.getElementById(x.tab);
+      btn.onclick=function(){
+        if(btn.getAttribute("aria-disabled")==="true"){
+          setupStatus("먼저 자산 파일을 연결하세요."); return;
+        }
+        activateTab(target(x));
+      };
+      btn.onkeydown=function(e){
+        var d = e.key==="ArrowRight" ? 1 : e.key==="ArrowLeft" ? -1 : 0;
+        if(!d && e.key!=="Home" && e.key!=="End") return;
+        e.preventDefault();
+        var n = e.key==="Home" ? 0 : e.key==="End" ? group.length-1
+              : (i+d+group.length)%group.length;
+        activateTab(target(group[n]),true);
+      };
+    });
+  }
+  wireTabs(TOPS, function(x){ return x.id==="assets" ? lastAssetTab : "builder"; });
+  wireTabs(SUBS, function(x){ return x.id; });
 
   document.getElementById("presetSel").onchange=function(){
     var p=getPresets(), n=this.value;
