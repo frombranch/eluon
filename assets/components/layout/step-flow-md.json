@@ -39,6 +39,7 @@
     "ember": "assets/components/layout/step-flow-md--ember@2x.png",
     "harbor": "assets/components/layout/step-flow-md--harbor@2x.png",
     "tideland": "assets/components/layout/step-flow-md--tideland@2x.png",
-    "cobalt": "assets/components/layout/step-flow-md--cobalt@2x.png"
+    "cobalt": "assets/components/layout/step-flow-md--cobalt@2x.png",
+    "noir": "assets/components/layout/step-flow-md--noir@2x.png"
   }
 }

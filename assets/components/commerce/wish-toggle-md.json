@@ -34,6 +34,7 @@
     "ember": "assets/components/commerce/wish-toggle-md--ember@2x.png",
     "harbor": "assets/components/commerce/wish-toggle-md--harbor@2x.png",
     "tideland": "assets/components/commerce/wish-toggle-md--tideland@2x.png",
-    "cobalt": "assets/components/commerce/wish-toggle-md--cobalt@2x.png"
+    "cobalt": "assets/components/commerce/wish-toggle-md--cobalt@2x.png",
+    "noir": "assets/components/commerce/wish-toggle-md--noir@2x.png"
   }
 }

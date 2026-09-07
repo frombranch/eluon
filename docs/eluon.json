@@ -436,6 +436,83 @@
           "numeric": "tabular-nums"
         }
       }
+    },
+    {
+      "id": "noir",
+      "label": "느와르",
+      "hint": "고객사 테마. 무채색에 라운드가 전부 0. 각진 인상이 특징입니다",
+      "sizeMeasured": [
+        "버튼",
+        "테두리 두께",
+        "테이블"
+      ],
+      "sizeInherited": [
+        "CTA 띠",
+        "touch",
+        "가격",
+        "경로",
+        "모달",
+        "목록 행",
+        "배지",
+        "빈 상태",
+        "섹션 헤더",
+        "아이콘",
+        "아코디언",
+        "입력 필드",
+        "절차",
+        "정의 목록",
+        "칩",
+        "카드",
+        "탭",
+        "토글",
+        "토스트",
+        "페이지네이션",
+        "포커스 링",
+        "푸터",
+        "헤더",
+        "히어로"
+      ],
+      "layoutMeasured": true,
+      "typeMeasured": true,
+      "fontMeasured": false,
+      "status": "partial",
+      "foundation": {
+        "layout": [
+          "container.max 1200",
+          "container.gutter 24",
+          "container.gutterMd 20",
+          "container.gutterSm 16",
+          "grid.columns 12",
+          "grid.gap 24",
+          "section.padY 100",
+          "section.padYSm 56",
+          "section.padYMd 72",
+          "section.headGap 40",
+          "block.gap 24",
+          "card.gap 24",
+          "text.measure 68"
+        ],
+        "type": [
+          "display1 — 페이지 제목 · 히어로. 한 화면에 하나만 씁니다. 60/700/1.4/-0.007em",
+          "heading1 — 섹션 제목. 36/700/1.33/-0.025em",
+          "heading2 — 하위 섹션 제목 · 카드 제목. 30/700/1.2/-0.013em",
+          "heading3 — 블록 제목 · 표 제목. 20/600/1.4/-0.02em",
+          "body1 — 본문 기본. 16/400/1.6/-0.005em",
+          "body1-bold — 본문 안의 강조. 16/700/1.5/-0.01em",
+          "body2 — 보조 본문 · 카드 설명 · 목록. 15/400/1.55/-0.005em",
+          "body2-bold — 보조 본문 강조. 15/700/1.45/-0.01em",
+          "label — 폼 라벨 · 버튼 · 탭 · 배지. 14/600/1.4/-0.005em",
+          "caption — 주석 · 메타 정보 · 표 각주. 13/400/1.45/0",
+          "caption-bold — 주석 강조. 13/700/1.4/0"
+        ],
+        "fontBase": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "text": {
+          "break": "keep-all",
+          "overflowWrap": "anywhere",
+          "wrap": "pretty",
+          "numeric": "tabular-nums"
+        }
+      }
     }
   ],
   "groups": [
@@ -500,7 +577,8 @@
         "ember": "height 23 · radius full · paddingX 8 · typography caption-bold",
         "harbor": "height 36 · radius full · paddingX 12 · typography caption-bold",
         "tideland": "height 24 · radius full · paddingX 10 · typography caption-bold",
-        "cobalt": "height 24 · radius full · paddingX 10 · typography caption-bold"
+        "cobalt": "height 24 · radius full · paddingX 10 · typography caption-bold",
+        "noir": "height 24 · radius full · paddingX 10 · typography caption-bold"
       },
       "usage": "행·카드의 상태 표기. 색과 텍스트를 함께 씀",
       "dont": "색만으로 상태를 구분하지 않음",
@@ -515,7 +593,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "success",
@@ -536,7 +615,8 @@
         "ember": "width hug · height 40 · radius md · paddingX 20 · typography body2-bold",
         "harbor": "width hug · height 48 · radius md · paddingX 20 · typography body2-bold",
         "tideland": "width hug · height 48 · radius md · paddingX 20 · typography body2-bold",
-        "cobalt": "width hug · height 44 · radius md · paddingX 26 · typography body2-bold"
+        "cobalt": "width hug · height 44 · radius md · paddingX 26 · typography body2-bold",
+        "noir": "width hug · height 46 · radius md · paddingX 16 · typography body2-bold"
       },
       "usage": "되돌릴 수 없는 액션. 삭제·탈퇴·영구 해제",
       "dont": "확인 모달 없이 단독 노출 금지",
@@ -551,7 +631,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -572,7 +653,8 @@
         "ember": "width hug · height 40 · radius md · paddingX 14 · typography body2-bold",
         "harbor": "width hug · height 48 · radius md · paddingX 14 · typography body2-bold",
         "tideland": "width hug · height 48 · radius md · paddingX 14 · typography body2-bold",
-        "cobalt": "width hug · height 44 · radius md · paddingX 14 · typography body2-bold"
+        "cobalt": "width hug · height 44 · radius md · paddingX 14 · typography body2-bold",
+        "noir": "width hug · height 46 · radius md · paddingX 14 · typography body2-bold"
       },
       "usage": "세 번째 순위 액션. 취소·더보기·되돌리기",
       "dont": "한 화면에 3개 이상 늘어놓지 않음. 위계가 사라짐",
@@ -586,7 +668,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -606,7 +689,8 @@
         "ember": "width hug · height 52 · radius lg · paddingX 44 · borderWidth 1 · typography body1-bold",
         "harbor": "width hug · height 56 · radius lg · paddingX 40 · borderWidth 1 · typography body1-bold",
         "tideland": "width hug · height 56 · radius lg · paddingX 24 · borderWidth 1 · typography body1-bold",
-        "cobalt": "width hug · height 56 · radius lg · paddingX 38 · borderWidth 2 · typography body1-bold"
+        "cobalt": "width hug · height 56 · radius lg · paddingX 38 · borderWidth 2 · typography body1-bold",
+        "noir": "width hug · height 56 · radius lg · paddingX 24 · borderWidth 1 · typography body1-bold"
       },
       "usage": "채움형이 과한 화면의 주요 액션. 버튼이 화면에서 여러 번 반복될 때",
       "dont": "btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐",
@@ -633,6 +717,9 @@
         },
         "cobalt": {
           "480": "fill"
+        },
+        "noir": {
+          "480": "fill"
         }
       },
       "states": [
@@ -654,7 +741,8 @@
         "ember": "width hug · height 40 · radius md · paddingX 20 · borderWidth 1 · typography body2-bold",
         "harbor": "width hug · height 48 · radius md · paddingX 20 · borderWidth 1 · typography body2-bold",
         "tideland": "width hug · height 48 · radius md · paddingX 20 · borderWidth 1 · typography body2-bold",
-        "cobalt": "width hug · height 44 · radius md · paddingX 26 · borderWidth 2 · typography body2-bold"
+        "cobalt": "width hug · height 44 · radius md · paddingX 26 · borderWidth 2 · typography body2-bold",
+        "noir": "width hug · height 46 · radius md · paddingX 16 · borderWidth 1 · typography body2-bold"
       },
       "usage": "카드·행 안의 반복 액션. 장바구니 담기·상세 보기",
       "dont": "btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐",
@@ -669,7 +757,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -690,7 +779,8 @@
         "ember": "width hug · height 52 · radius lg · paddingX 44 · typography body1-bold",
         "harbor": "width hug · height 56 · radius lg · paddingX 40 · typography body1-bold",
         "tideland": "width hug · height 56 · radius lg · paddingX 24 · typography body1-bold",
-        "cobalt": "width hug · height 56 · radius lg · paddingX 38 · typography body1-bold"
+        "cobalt": "width hug · height 56 · radius lg · paddingX 38 · typography body1-bold",
+        "noir": "width hug · height 56 · radius lg · paddingX 24 · typography body1-bold"
       },
       "usage": "화면당 주요 액션 1개. 히어로·폼 제출·전환 유도",
       "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
@@ -716,6 +806,9 @@
           "480": "fill"
         },
         "cobalt": {
+          "480": "fill"
+        },
+        "noir": {
           "480": "fill"
         }
       },
@@ -747,7 +840,8 @@
         "ember": "width hug · height 40 · radius md · paddingX 20 · typography body2-bold",
         "harbor": "width hug · height 48 · radius md · paddingX 20 · typography body2-bold",
         "tideland": "width hug · height 48 · radius md · paddingX 20 · typography body2-bold",
-        "cobalt": "width hug · height 44 · radius md · paddingX 26 · typography body2-bold"
+        "cobalt": "width hug · height 44 · radius md · paddingX 26 · typography body2-bold",
+        "noir": "width hug · height 46 · radius md · paddingX 16 · typography body2-bold"
       },
       "usage": "본문 안 액션. 카드 내부나 테이블 행 액션",
       "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
@@ -762,7 +856,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -783,7 +878,8 @@
         "ember": "width hug · height 39 · radius sm · paddingX 18 · typography label",
         "harbor": "width hug · height 36 · radius sm · paddingX 14 · typography label",
         "tideland": "width hug · height 36 · radius sm · paddingX 14 · typography label",
-        "cobalt": "width hug · height 36 · radius sm · paddingX 14 · typography label"
+        "cobalt": "width hug · height 36 · radius sm · paddingX 14 · typography label",
+        "noir": "width hug · height 36 · radius sm · paddingX 14 · typography label"
       },
       "usage": "밀도 높은 영역. 툴바·필터 바",
       "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
@@ -798,7 +894,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -819,7 +916,8 @@
         "ember": "width hug · height 52 · radius lg · paddingX 44 · borderWidth 1 · typography body1-bold",
         "harbor": "width hug · height 56 · radius lg · paddingX 40 · borderWidth 1 · typography body1-bold",
         "tideland": "width hug · height 56 · radius lg · paddingX 24 · borderWidth 1 · typography body1-bold",
-        "cobalt": "width hug · height 56 · radius lg · paddingX 38 · borderWidth 2 · typography body1-bold"
+        "cobalt": "width hug · height 56 · radius lg · paddingX 38 · borderWidth 2 · typography body1-bold",
+        "noir": "width hug · height 56 · radius lg · paddingX 24 · borderWidth 1 · typography body1-bold"
       },
       "usage": "주요 액션과 나란히 놓는 두 번째 선택지",
       "dont": "단독으로 쓰지 않음. 항상 primary와 짝",
@@ -845,6 +943,9 @@
         },
         "cobalt": {
           "480": "fill"
+        },
+        "noir": {
+          "480": "fill"
         }
       },
       "states": [
@@ -866,7 +967,8 @@
         "ember": "width 287.5 · radius xl · paddingX 20 · paddingY 20 · gap 8 · borderWidth 1 · elevation 1",
         "harbor": "width 445.6 · radius xl · paddingX 20 · paddingY 20 · gap 8 · borderWidth 1 · elevation 1",
         "tideland": "width 320 · radius xl · paddingX 20 · paddingY 20 · gap 8 · borderWidth 1 · elevation 1",
-        "cobalt": "width 405 · radius xl · paddingX 20 · paddingY 20 · gap 8 · borderWidth 2 · elevation 1"
+        "cobalt": "width 405 · radius xl · paddingX 20 · paddingY 20 · gap 8 · borderWidth 2 · elevation 1",
+        "noir": "width 320 · radius xl · paddingX 20 · paddingY 20 · gap 8 · borderWidth 1 · elevation 1"
       },
       "usage": "구획을 나누는 기본 컨테이너",
       "dont": "카드 안에 또 카드를 넣지 않음",
@@ -892,6 +994,9 @@
         },
         "cobalt": {
           "768": "fill"
+        },
+        "noir": {
+          "768": "fill"
         }
       },
       "states": [
@@ -911,7 +1016,8 @@
         "ember": "width 280 · radius xl · gap 12 · typography body2 · thumbRatio 9:16",
         "harbor": "width 280 · radius xl · gap 12 · typography body2 · thumbRatio 9:16",
         "tideland": "width 280 · radius xl · gap 12 · typography body2 · thumbRatio 9:16",
-        "cobalt": "width 295 · radius xl · gap 13 · typography body2 · thumbRatio 9:16"
+        "cobalt": "width 295 · radius xl · gap 13 · typography body2 · thumbRatio 9:16",
+        "noir": "width 280 · radius xl · gap 12 · typography body2 · thumbRatio 9:16"
       },
       "usage": "세로 이미지가 주인공인 목록. SNS·영상·인물 카드. 4~6열로 늘어놓을 때",
       "dont": "가로 이미지를 억지로 넣지 않음. 16:9 면 card-product-md",
@@ -939,6 +1045,9 @@
         },
         "cobalt": {
           "768": "fill"
+        },
+        "noir": {
+          "768": "fill"
         }
       },
       "states": [
@@ -958,7 +1067,8 @@
         "ember": "width 287.5 · radius xl · paddingX 2 · paddingY 14 · gap 8 · borderWidth 1 · elevation 1 · thumbRatio 16:9",
         "harbor": "width 445.6 · radius xl · paddingX 0 · paddingY 0 · gap 12 · borderWidth 1 · elevation 1 · thumbRatio 16:9",
         "tideland": "width 320 · radius xl · paddingX 16 · paddingY 16 · gap 12 · borderWidth 1 · elevation 1 · thumbRatio 16:9",
-        "cobalt": "width 405 · radius xl · paddingX 16 · paddingY 16 · gap 12 · borderWidth 2 · elevation 1 · thumbRatio 16:9"
+        "cobalt": "width 405 · radius xl · paddingX 16 · paddingY 16 · gap 12 · borderWidth 2 · elevation 1 · thumbRatio 16:9",
+        "noir": "width 320 · radius xl · paddingX 16 · paddingY 16 · gap 12 · borderWidth 1 · elevation 1 · thumbRatio 16:9"
       },
       "usage": "그리드형 목록의 기본 단위. 3~4열 그리드",
       "dont": "썸네일 비율을 카드마다 다르게 두지 않음",
@@ -985,6 +1095,9 @@
         },
         "cobalt": {
           "768": "fill"
+        },
+        "noir": {
+          "768": "fill"
         }
       },
       "states": [
@@ -1005,7 +1118,8 @@
         "ember": "width 320 · radius xl · paddingX 20 · paddingY 32 · gap 8 · typography heading2",
         "harbor": "width 264 · radius xl · paddingX 16 · paddingY 55 · gap 8 · typography heading2",
         "tideland": "width 320 · radius xl · paddingX 20 · paddingY 32 · gap 8 · typography heading2",
-        "cobalt": "width 320 · radius xl · paddingX 20 · paddingY 32 · gap 8 · typography heading2"
+        "cobalt": "width 320 · radius xl · paddingX 20 · paddingY 32 · gap 8 · typography heading2",
+        "noir": "width 320 · radius xl · paddingX 20 · paddingY 32 · gap 8 · typography heading2"
       },
       "usage": "숫자 하나를 앞세우는 지표 묶음. 혜택·실적을 3~4개 나란히 놓을 때",
       "dont": "숫자가 없으면 쓰지 않음. 그냥 구획이면 card-basic-md",
@@ -1033,6 +1147,9 @@
         },
         "cobalt": {
           "768": "fill"
+        },
+        "noir": {
+          "768": "fill"
         }
       },
       "states": [
@@ -1051,7 +1168,8 @@
         "ember": "width hug · height 32 · radius full · paddingX 15 · gap 7 · borderWidth 1 · typography label",
         "harbor": "width hug · height 48 · radius full · paddingX 20 · gap 6 · borderWidth 1 · typography label",
         "tideland": "width hug · height 36 · radius full · paddingX 14 · gap 6 · borderWidth 1 · typography label",
-        "cobalt": "width hug · height 36 · radius full · paddingX 14 · gap 6 · borderWidth 2 · typography label"
+        "cobalt": "width hug · height 36 · radius full · paddingX 14 · gap 6 · borderWidth 2 · typography label",
+        "noir": "width hug · height 36 · radius full · paddingX 14 · gap 6 · borderWidth 1 · typography label"
       },
       "usage": "목록 상단의 다중 필터. 2~8개까지",
       "dont": "단일 선택에는 쓰지 않음. 그건 탭이나 셀렉트",
@@ -1066,7 +1184,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -1096,7 +1215,8 @@
         "ember": "gap 8 · typography body1-bold · originalTypography caption",
         "harbor": "gap 8 · typography body1-bold · originalTypography caption",
         "tideland": "gap 8 · typography body1-bold · originalTypography caption",
-        "cobalt": "gap 8 · typography body1-bold · originalTypography caption"
+        "cobalt": "gap 8 · typography body1-bold · originalTypography caption",
+        "noir": "gap 8 · typography body1-bold · originalTypography caption"
       },
       "usage": "할인율·판매가·정가를 한 줄로. 목록과 상세에서 순서를 바꾸지 않음",
       "dont": "정가에 취소선 없이 두 가격을 나란히 두지 않음. 어느 쪽이 낼 돈인지 알 수 없음",
@@ -1111,7 +1231,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [],
       "variants": []
@@ -1127,7 +1248,8 @@
         "ember": "width 30 · height 30 · radius full · borderWidth 1 · iconSize 13",
         "harbor": "width 40 · height 40 · radius full · borderWidth 1 · iconSize 18",
         "tideland": "width 40 · height 40 · radius full · borderWidth 1 · iconSize 18",
-        "cobalt": "width 40 · height 40 · radius full · borderWidth 2 · iconSize 18"
+        "cobalt": "width 40 · height 40 · radius full · borderWidth 2 · iconSize 18",
+        "noir": "width 40 · height 40 · radius full · borderWidth 1 · iconSize 18"
       },
       "usage": "목록 카드의 관심 등록. 40x40 터치 영역을 확보한 최소 크기",
       "dont": "선택 상태를 색으로만 표시하지 않음. 하트를 채워 모양도 함께 바꿈",
@@ -1142,7 +1264,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -1171,7 +1294,8 @@
         "ember": "paddingY 20 · gap 16 · borderWidth 1 · iconSize 20 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68",
         "harbor": "paddingY 20 · gap 16 · borderWidth 1 · iconSize 20 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68",
         "tideland": "paddingY 20 · gap 16 · borderWidth 1 · iconSize 20 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68",
-        "cobalt": "paddingY 20 · gap 16 · borderWidth 2 · iconSize 20 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68"
+        "cobalt": "paddingY 20 · gap 16 · borderWidth 2 · iconSize 20 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68",
+        "noir": "paddingY 20 · gap 16 · borderWidth 1 · iconSize 20 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68"
       },
       "usage": "질문·항목이 길어 한 번에 다 보이면 부담스러운 목록. FAQ·약관·상세 사양",
       "dont": "한 번에 다 읽어야 하는 내용을 접지 않음. 접힌 것은 안 읽습니다",
@@ -1187,7 +1311,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "closed",
@@ -1207,7 +1332,8 @@
         "ember": "paddingY 48 · gap 12 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 360",
         "harbor": "paddingY 48 · gap 12 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 360",
         "tideland": "paddingY 48 · gap 12 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 360",
-        "cobalt": "paddingY 48 · gap 12 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 360"
+        "cobalt": "paddingY 48 · gap 12 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 360",
+        "noir": "paddingY 48 · gap 12 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 360"
       },
       "usage": "목록이 비었을 때. 왜 비었는지와 다음에 무엇을 할지를 같이 적음",
       "dont": "'데이터가 없습니다'만 쓰지 않음. 왜 없는지·무엇을 하면 되는지가 빠지면 막힙니다",
@@ -1222,7 +1348,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "결과 없음",
@@ -1242,7 +1369,8 @@
         "ember": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · borderWidth 1 · elevation 2 · typography body2",
         "harbor": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · borderWidth 1 · elevation 2 · typography body2",
         "tideland": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · borderWidth 1 · elevation 2 · typography body2",
-        "cobalt": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · borderWidth 2 · elevation 2 · typography body2"
+        "cobalt": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · borderWidth 2 · elevation 2 · typography body2",
+        "noir": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · borderWidth 1 · elevation 2 · typography body2"
       },
       "usage": "실패 통보. 자동으로 사라지지 않고 사용자가 닫음",
       "dont": "원인 설명 없이 '오류가 발생했습니다'만 쓰지 않음",
@@ -1268,6 +1396,9 @@
         },
         "cobalt": {
           "480": "fill"
+        },
+        "noir": {
+          "480": "fill"
         }
       },
       "states": [],
@@ -1284,7 +1415,8 @@
         "ember": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · elevation 2 · typography body2 · duration 4000",
         "harbor": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · elevation 2 · typography body2 · duration 4000",
         "tideland": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · elevation 2 · typography body2 · duration 4000",
-        "cobalt": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · elevation 2 · typography body2 · duration 4000"
+        "cobalt": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · elevation 2 · typography body2 · duration 4000",
+        "noir": "width 360 · radius xl · paddingX 16 · paddingY 14 · gap 12 · elevation 2 · typography body2 · duration 4000"
       },
       "usage": "되돌릴 필요 없는 결과 통보. 4초 후 자동 사라짐",
       "dont": "에러나 확인이 필요한 내용에 쓰지 않음. 사용자가 놓침",
@@ -1311,6 +1443,9 @@
         },
         "cobalt": {
           "480": "fill"
+        },
+        "noir": {
+          "480": "fill"
         }
       },
       "states": [],
@@ -1327,7 +1462,8 @@
         "ember": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 1 · typography body2",
         "harbor": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 1 · typography body2",
         "tideland": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 1 · typography body2",
-        "cobalt": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 2 · typography body2"
+        "cobalt": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 2 · typography body2",
+        "noir": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 1 · typography body2"
       },
       "usage": "한 줄 입력의 기본형",
       "dont": "라벨 없이 placeholder만으로 쓰지 않음",
@@ -1352,6 +1488,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -1391,7 +1530,8 @@
         "ember": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 1 · typography body2",
         "harbor": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 1 · typography body2",
         "tideland": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 1 · typography body2",
-        "cobalt": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 2 · typography body2"
+        "cobalt": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 2 · typography body2",
+        "noir": "width 320 · height 52 · radius md · paddingX 16 · borderWidth 1 · typography body2"
       },
       "usage": "선택지 6개 이상의 단일 선택",
       "dont": "선택지 5개 이하면 탭이나 라디오가 더 빠름",
@@ -1418,6 +1558,9 @@
         },
         "cobalt": {
           "768": "fill"
+        },
+        "noir": {
+          "768": "fill"
         }
       },
       "states": [
@@ -1438,7 +1581,8 @@
         "ember": "width 1200 · radius xl · paddingY 64 · gap 24 · titleTypography heading1 · leadTypography body1",
         "harbor": "width 1200 · radius xl · paddingY 64 · gap 24 · titleTypography heading1 · leadTypography body1",
         "tideland": "width 1200 · radius xl · paddingY 64 · gap 24 · titleTypography heading1 · leadTypography body1",
-        "cobalt": "width 1200 · radius xl · paddingY 64 · gap 24 · titleTypography heading1 · leadTypography body1"
+        "cobalt": "width 1200 · radius xl · paddingY 64 · gap 24 · titleTypography heading1 · leadTypography body1",
+        "noir": "width 1200 · radius xl · paddingY 64 · gap 24 · titleTypography heading1 · leadTypography body1"
       },
       "usage": "섹션과 섹션 사이, 또는 페이지 끝의 전환 유도. 한 페이지에 하나",
       "dont": "본문 정보를 여기 넣지 않음. 제목 한 줄·리드 한 줄·버튼 하나까지",
@@ -1465,6 +1609,9 @@
         },
         "cobalt": {
           "768": "stack"
+        },
+        "noir": {
+          "768": "stack"
         }
       },
       "states": [
@@ -1483,7 +1630,8 @@
         "ember": "gap 20 · borderWidth 1 · labelWidth 120 · rowPaddingY 14 · labelTypography body2-bold · valueTypography body2",
         "harbor": "gap 20 · borderWidth 1 · labelWidth 120 · rowPaddingY 14 · labelTypography body2-bold · valueTypography body2",
         "tideland": "gap 20 · borderWidth 1 · labelWidth 120 · rowPaddingY 14 · labelTypography body2-bold · valueTypography body2",
-        "cobalt": "gap 20 · borderWidth 2 · labelWidth 120 · rowPaddingY 14 · labelTypography body2-bold · valueTypography body2"
+        "cobalt": "gap 20 · borderWidth 2 · labelWidth 120 · rowPaddingY 14 · labelTypography body2-bold · valueTypography body2",
+        "noir": "gap 20 · borderWidth 1 · labelWidth 120 · rowPaddingY 14 · labelTypography body2-bold · valueTypography body2"
       },
       "usage": "라벨과 값이 짝인 목록. 회사 개요·사양·계약 조건",
       "dont": "비교가 필요하면 목록이 아니라 표. table-basic-lg 로",
@@ -1510,6 +1658,9 @@
         },
         "cobalt": {
           "480": "stack"
+        },
+        "noir": {
+          "480": "stack"
         }
       },
       "states": [
@@ -1529,7 +1680,8 @@
         "ember": "width 1200 · paddingY 40 · gap 24 · logoTypography heading3 · noteTypography caption · menuTypography caption",
         "harbor": "width 1200 · paddingY 40 · gap 24 · logoTypography heading3 · noteTypography caption · menuTypography caption",
         "tideland": "width 1200 · paddingY 40 · gap 24 · logoTypography heading3 · noteTypography caption · menuTypography caption",
-        "cobalt": "width 1200 · paddingY 40 · gap 24 · logoTypography heading3 · noteTypography caption · menuTypography caption"
+        "cobalt": "width 1200 · paddingY 40 · gap 24 · logoTypography heading3 · noteTypography caption · menuTypography caption",
+        "noir": "width 1200 · paddingY 40 · gap 24 · logoTypography heading3 · noteTypography caption · menuTypography caption"
       },
       "usage": "모든 페이지 최하단. 로고 · 고지 · 보조 메뉴",
       "dont": "색을 흐리게 해서 구분하지 않음. 뒤집힌 면에서는 대비가 무너짐. 크기와 굵기로 나눔",
@@ -1556,6 +1708,9 @@
         },
         "cobalt": {
           "768": "stack"
+        },
+        "noir": {
+          "768": "stack"
         }
       },
       "states": [
@@ -1574,7 +1729,8 @@
         "ember": "width 320 · radius md · paddingX 16 · borderWidth 1 · labelGap 6 · helperGap 6 · inputHeight 52 · labelTypography label · helperTypography caption",
         "harbor": "width 320 · radius md · paddingX 16 · borderWidth 1 · labelGap 6 · helperGap 6 · inputHeight 52 · labelTypography label · helperTypography caption",
         "tideland": "width 320 · radius md · paddingX 16 · borderWidth 1 · labelGap 6 · helperGap 6 · inputHeight 52 · labelTypography label · helperTypography caption",
-        "cobalt": "width 320 · radius md · paddingX 16 · borderWidth 2 · labelGap 6 · helperGap 6 · inputHeight 52 · labelTypography label · helperTypography caption"
+        "cobalt": "width 320 · radius md · paddingX 16 · borderWidth 2 · labelGap 6 · helperGap 6 · inputHeight 52 · labelTypography label · helperTypography caption",
+        "noir": "width 320 · radius md · paddingX 16 · borderWidth 1 · labelGap 6 · helperGap 6 · inputHeight 52 · labelTypography label · helperTypography caption"
       },
       "usage": "라벨 · 입력 · 도움말을 한 묶음으로. 폼의 최소 단위",
       "dont": "라벨을 placeholder 로 대신하지 않음. 입력하면 라벨이 사라짐",
@@ -1601,6 +1757,9 @@
         },
         "cobalt": {
           "768": "fill"
+        },
+        "noir": {
+          "768": "fill"
         }
       },
       "states": [
@@ -1623,7 +1782,8 @@
         "ember": "width 1200 · height 72 · borderWidth 1 · itemGap 24 · logoTypography heading3 · menuTypography body2-bold · actionHeight 40",
         "harbor": "width 1200 · height 72 · borderWidth 1 · itemGap 24 · logoTypography heading3 · menuTypography body2-bold · actionHeight 48",
         "tideland": "width 1200 · height 72 · borderWidth 1 · itemGap 24 · logoTypography heading3 · menuTypography body2-bold · actionHeight 48",
-        "cobalt": "width 1200 · height 72 · borderWidth 2 · itemGap 24 · logoTypography heading3 · menuTypography body2-bold · actionHeight 44"
+        "cobalt": "width 1200 · height 72 · borderWidth 2 · itemGap 24 · logoTypography heading3 · menuTypography body2-bold · actionHeight 44",
+        "noir": "width 1200 · height 72 · borderWidth 1 · itemGap 24 · logoTypography heading3 · menuTypography body2-bold · actionHeight 46"
       },
       "usage": "모든 페이지 최상단. 로고 · 주 메뉴 · 주요 액션 하나",
       "dont": "메뉴가 7개를 넘기면 여기 다 넣지 않음. 드롭다운이나 2단으로 나눔",
@@ -1650,6 +1810,9 @@
         },
         "cobalt": {
           "768": "menuNav"
+        },
+        "noir": {
+          "768": "menuNav"
         }
       },
       "states": [
@@ -1671,7 +1834,8 @@
         "ember": "width 1200 · gap 24 · borderWidth 1 · actionGap 12 · railGap 20 · titleTypography display1 · leadTypography body1 · leadMaxWidth 60ch",
         "harbor": "width 1200 · gap 24 · borderWidth 1 · actionGap 12 · railGap 20 · titleTypography display1 · leadTypography body1 · leadMaxWidth 60ch",
         "tideland": "width 1200 · gap 24 · borderWidth 1 · actionGap 12 · railGap 20 · titleTypography display1 · leadTypography body1 · leadMaxWidth 60ch",
-        "cobalt": "width 1200 · gap 24 · borderWidth 2 · actionGap 12 · railGap 20 · titleTypography display1 · leadTypography body1 · leadMaxWidth 60ch"
+        "cobalt": "width 1200 · gap 24 · borderWidth 2 · actionGap 12 · railGap 20 · titleTypography display1 · leadTypography body1 · leadMaxWidth 60ch",
+        "noir": "width 1200 · gap 24 · borderWidth 1 · actionGap 12 · railGap 20 · titleTypography display1 · leadTypography body1 · leadMaxWidth 60ch"
       },
       "usage": "페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에",
       "dont": "한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐",
@@ -1698,6 +1862,9 @@
         },
         "cobalt": {
           "768": "stack"
+        },
+        "noir": {
+          "768": "stack"
         }
       },
       "states": [
@@ -1717,7 +1884,8 @@
         "ember": "paddingY 20 · gap 16 · borderWidth 1 · titleTypography body1-bold · metaTypography caption · valueTypography body2-bold",
         "harbor": "paddingY 20 · gap 16 · borderWidth 1 · titleTypography body1-bold · metaTypography caption · valueTypography body2-bold",
         "tideland": "paddingY 20 · gap 16 · borderWidth 1 · titleTypography body1-bold · metaTypography caption · valueTypography body2-bold",
-        "cobalt": "paddingY 20 · gap 16 · borderWidth 2 · titleTypography body1-bold · metaTypography caption · valueTypography body2-bold"
+        "cobalt": "paddingY 20 · gap 16 · borderWidth 2 · titleTypography body1-bold · metaTypography caption · valueTypography body2-bold",
+        "noir": "paddingY 20 · gap 16 · borderWidth 1 · titleTypography body1-bold · metaTypography caption · valueTypography body2-bold"
       },
       "usage": "제목·메타·값이 한 줄인 목록. 공지·뉴스·자료실",
       "dont": "열이 셋을 넘게 비교해야 하면 목록이 아니라 표. table-basic-lg 로",
@@ -1744,6 +1912,9 @@
         },
         "cobalt": {
           "480": "stack"
+        },
+        "noir": {
+          "480": "stack"
         }
       },
       "states": [
@@ -1764,7 +1935,8 @@
         "ember": "gap 8 · eyebrowTypography label · eyebrowTracking 0.1em · titleTypography heading1 · leadTypography body1 · leadMaxWidth 58ch",
         "harbor": "gap 8 · eyebrowTypography label · eyebrowTracking 0.1em · titleTypography heading1 · leadTypography body1 · leadMaxWidth 58ch",
         "tideland": "gap 8 · eyebrowTypography label · eyebrowTracking 0.1em · titleTypography heading1 · leadTypography body1 · leadMaxWidth 58ch",
-        "cobalt": "gap 8 · eyebrowTypography label · eyebrowTracking 0.1em · titleTypography heading1 · leadTypography body1 · leadMaxWidth 58ch"
+        "cobalt": "gap 8 · eyebrowTypography label · eyebrowTracking 0.1em · titleTypography heading1 · leadTypography body1 · leadMaxWidth 58ch",
+        "noir": "gap 8 · eyebrowTypography label · eyebrowTracking 0.1em · titleTypography heading1 · leadTypography body1 · leadMaxWidth 58ch"
       },
       "usage": "섹션 시작의 제목 묶음. 아이브로우(선택) · 제목 · 리드문을 한 덩어리로",
       "dont": "리드문이 세 줄을 넘기면 리드가 아니라 본문. 본문은 섹션 안으로 내림",
@@ -1779,7 +1951,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -1798,7 +1971,8 @@
         "ember": "gap 16 · borderWidth 1 · numberSize 28 · rowGap 24 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68",
         "harbor": "gap 16 · borderWidth 1 · numberSize 28 · rowGap 24 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68",
         "tideland": "gap 16 · borderWidth 1 · numberSize 28 · rowGap 24 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68",
-        "cobalt": "gap 16 · borderWidth 2 · numberSize 28 · rowGap 24 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68"
+        "cobalt": "gap 16 · borderWidth 2 · numberSize 28 · rowGap 24 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68",
+        "noir": "gap 16 · borderWidth 1 · numberSize 28 · rowGap 24 · titleTypography body1-bold · bodyTypography body2 · bodyMaxWidth 68"
       },
       "usage": "순서가 있는 절차. 신청 방법·심사 과정·이용 안내",
       "dont": "순서가 없는 목록에 번호를 붙이지 않음. 번호는 순서가 있다는 약속입니다",
@@ -1813,7 +1987,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -1833,7 +2008,8 @@
         "ember": "width 420 · radius xl · paddingX 24 · paddingY 24 · gap 20 · elevation 3 · typography heading3",
         "harbor": "width 420 · radius xl · paddingX 24 · paddingY 24 · gap 20 · elevation 3 · typography heading3",
         "tideland": "width 420 · radius xl · paddingX 24 · paddingY 24 · gap 20 · elevation 3 · typography heading3",
-        "cobalt": "width 420 · radius xl · paddingX 24 · paddingY 24 · gap 20 · elevation 3 · typography heading3"
+        "cobalt": "width 420 · radius xl · paddingX 24 · paddingY 24 · gap 20 · elevation 3 · typography heading3",
+        "noir": "width 420 · radius xl · paddingX 24 · paddingY 24 · gap 20 · elevation 3 · typography heading3"
       },
       "usage": "되돌릴 수 없는 액션 직전의 확인",
       "dont": "단순 안내에 쓰지 않음. 그건 토스트",
@@ -1860,6 +2036,9 @@
         },
         "cobalt": {
           "480": "fill"
+        },
+        "noir": {
+          "480": "fill"
         }
       },
       "states": [],
@@ -1876,7 +2055,8 @@
         "ember": "gap 8 · typography caption · itemMaxWidth 180",
         "harbor": "gap 8 · typography caption · itemMaxWidth 180",
         "tideland": "gap 8 · typography caption · itemMaxWidth 180",
-        "cobalt": "gap 8 · typography caption · itemMaxWidth 180"
+        "cobalt": "gap 8 · typography caption · itemMaxWidth 180",
+        "noir": "gap 8 · typography caption · itemMaxWidth 180"
       },
       "usage": "세 단계 이상 깊은 페이지의 현재 위치. 목록 → 분류 → 상세",
       "dont": "두 단계뿐인 구조에 쓰지 않음. 뒤로 가기 한 번이면 됩니다",
@@ -1891,7 +2071,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "states": [
         "default",
@@ -1911,7 +2092,8 @@
         "ember": "height 40 · radius md · gap 4 · typography label · itemSize 40",
         "harbor": "height 40 · radius md · gap 4 · typography label · itemSize 40",
         "tideland": "height 40 · radius md · gap 4 · typography label · itemSize 40",
-        "cobalt": "height 40 · radius md · gap 4 · typography label · itemSize 40"
+        "cobalt": "height 40 · radius md · gap 4 · typography label · itemSize 40",
+        "noir": "height 40 · radius md · gap 4 · typography label · itemSize 40"
       },
       "usage": "20개 이상 목록. 무한 스크롤이 부적절한 관리 화면",
       "dont": "10페이지 이상 번호를 다 노출하지 않음. 축약 표기 사용",
@@ -1937,6 +2119,9 @@
         },
         "cobalt": {
           "480": "scrollX"
+        },
+        "noir": {
+          "480": "scrollX"
         }
       },
       "states": [
@@ -1957,7 +2142,8 @@
         "ember": "width 360 · height 48 · gap 0 · typography body2-bold · itemPaddingX 22 · indicatorHeight 2",
         "harbor": "width 360 · height 52 · gap 28 · typography body2-bold · itemPaddingX 0 · indicatorHeight 2",
         "tideland": "width 360 · height 52 · gap 28 · typography body2-bold · itemPaddingX 0 · indicatorHeight 2",
-        "cobalt": "width 360 · height 52 · gap 28 · typography body2-bold · itemPaddingX 0 · indicatorHeight 2"
+        "cobalt": "width 360 · height 52 · gap 28 · typography body2-bold · itemPaddingX 0 · indicatorHeight 2",
+        "noir": "width 360 · height 52 · gap 28 · typography body2-bold · itemPaddingX 0 · indicatorHeight 2"
       },
       "usage": "같은 층위의 목록을 전환. 2~5개",
       "dont": "6개 이상이면 탭 대신 드롭다운 필터",
@@ -1984,6 +2170,9 @@
         },
         "cobalt": {
           "768": "scrollX"
+        },
+        "noir": {
+          "768": "scrollX"
         }
       },
       "states": [
@@ -2003,7 +2192,8 @@
         "ember": "width 520 · radius xl · paddingX 16 · borderWidth 1 · typography body2 · rowHeight 52 · headerHeight 44",
         "harbor": "width 520 · radius xl · paddingX 16 · borderWidth 1 · typography body2 · rowHeight 52 · headerHeight 44",
         "tideland": "width 520 · radius xl · paddingX 16 · borderWidth 1 · typography body2 · rowHeight 52 · headerHeight 44",
-        "cobalt": "width 520 · radius xl · paddingX 16 · borderWidth 2 · typography body2 · rowHeight 52 · headerHeight 44"
+        "cobalt": "width 520 · radius xl · paddingX 16 · borderWidth 2 · typography body2 · rowHeight 52 · headerHeight 44",
+        "noir": "width 520 · radius xl · paddingX 16 · borderWidth 1 · typography body2 · rowHeight 46 · headerHeight 64"
       },
       "usage": "비교가 필요한 목록. 열이 3개 이상일 때",
       "dont": "모바일에서 그대로 쓰지 않음. 카드로 전환",
@@ -2029,6 +2219,9 @@
           "768": "toCard"
         },
         "cobalt": {
+          "768": "toCard"
+        },
+        "noir": {
           "768": "toCard"
         }
       },

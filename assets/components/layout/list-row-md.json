@@ -39,6 +39,7 @@
     "ember": "assets/components/layout/list-row-md--ember@2x.png",
     "harbor": "assets/components/layout/list-row-md--harbor@2x.png",
     "tideland": "assets/components/layout/list-row-md--tideland@2x.png",
-    "cobalt": "assets/components/layout/list-row-md--cobalt@2x.png"
+    "cobalt": "assets/components/layout/list-row-md--cobalt@2x.png",
+    "noir": "assets/components/layout/list-row-md--noir@2x.png"
   }
 }

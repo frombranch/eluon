@@ -34,6 +34,7 @@
     "ember": "assets/components/badge/badge-status-sm--ember@2x.png",
     "harbor": "assets/components/badge/badge-status-sm--harbor@2x.png",
     "tideland": "assets/components/badge/badge-status-sm--tideland@2x.png",
-    "cobalt": "assets/components/badge/badge-status-sm--cobalt@2x.png"
+    "cobalt": "assets/components/badge/badge-status-sm--cobalt@2x.png",
+    "noir": "assets/components/badge/badge-status-sm--noir@2x.png"
   }
 }

@@ -9,7 +9,8 @@
     "ember",
     "harbor",
     "tideland",
-    "cobalt"
+    "cobalt",
+    "noir"
   ],
   "defaultTheme": "eluo",
   "_comment": "릴리즈할 때 version만 올리면 manifest의 모든 자산 URL이 함께 갱신됩니다. @main은 CDN 캐시 때문에 쓰지 않습니다.",

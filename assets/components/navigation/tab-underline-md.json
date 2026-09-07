@@ -38,6 +38,7 @@
     "ember": "assets/components/navigation/tab-underline-md--ember@2x.png",
     "harbor": "assets/components/navigation/tab-underline-md--harbor@2x.png",
     "tideland": "assets/components/navigation/tab-underline-md--tideland@2x.png",
-    "cobalt": "assets/components/navigation/tab-underline-md--cobalt@2x.png"
+    "cobalt": "assets/components/navigation/tab-underline-md--cobalt@2x.png",
+    "noir": "assets/components/navigation/tab-underline-md--noir@2x.png"
   }
 }

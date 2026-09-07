@@ -10,7 +10,8 @@
     "ember",
     "harbor",
     "tideland",
-    "cobalt"
+    "cobalt",
+    "noir"
   ],
   "themeStatus": {
     "eluo": "measured",
@@ -18,7 +19,8 @@
     "ember": "partial",
     "harbor": "partial",
     "tideland": "estimated",
-    "cobalt": "partial"
+    "cobalt": "partial",
+    "noir": "partial"
   },
   "defaultTheme": "eluo",
   "tokens": {
@@ -27,7 +29,8 @@
     "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/docs/tokens/eluon-ember.css",
     "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/docs/tokens/eluon-harbor.css",
     "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/docs/tokens/eluon-tideland.css",
-    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/docs/tokens/eluon-cobalt.css"
+    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/docs/tokens/eluon-cobalt.css",
+    "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/docs/tokens/eluon-noir.css"
   },
   "sheet": {
     "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/index/sheet-eluo.png",
@@ -35,7 +38,8 @@
     "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/index/sheet-ember.png",
     "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/index/sheet-harbor.png",
     "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/index/sheet-tideland.png",
-    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/index/sheet-cobalt.png"
+    "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/index/sheet-cobalt.png",
+    "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/index/sheet-noir.png"
   },
   "howToUse": "CLAUDE.md 를 먼저 읽으세요. 여기에 없는 ID는 사용하지 않습니다. 자산을 놓기 전에 foundationByTheme.<테마> 의 layout 과 typography 를 먼저 읽으세요.",
   "foundationByTheme": {
@@ -938,6 +942,156 @@
         "scrim": "linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%)",
         "density": 2
       }
+    },
+    "noir": {
+      "font": {
+        "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.display": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
+        "family.mono": "'JetBrains Mono', ui-monospace, Menlo, monospace"
+      },
+      "typography": {
+        "display1": {
+          "size": 60,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "-0.007em",
+          "role": "페이지 제목 · 히어로. 한 화면에 하나만 씁니다."
+        },
+        "heading1": {
+          "size": 36,
+          "weight": 700,
+          "lineHeight": 1.33,
+          "tracking": "-0.025em",
+          "role": "섹션 제목."
+        },
+        "heading2": {
+          "size": 30,
+          "weight": 700,
+          "lineHeight": 1.2,
+          "tracking": "-0.013em",
+          "role": "하위 섹션 제목 · 카드 제목."
+        },
+        "heading3": {
+          "size": 20,
+          "weight": 600,
+          "lineHeight": 1.4,
+          "tracking": "-0.02em",
+          "role": "블록 제목 · 표 제목."
+        },
+        "body1": {
+          "size": 16,
+          "weight": 400,
+          "lineHeight": 1.6,
+          "tracking": "-0.005em",
+          "role": "본문 기본."
+        },
+        "body1-bold": {
+          "size": 16,
+          "weight": 700,
+          "lineHeight": 1.5,
+          "tracking": "-0.01em",
+          "role": "본문 안의 강조."
+        },
+        "body2": {
+          "size": 15,
+          "weight": 400,
+          "lineHeight": 1.55,
+          "tracking": "-0.005em",
+          "role": "보조 본문 · 카드 설명 · 목록."
+        },
+        "body2-bold": {
+          "size": 15,
+          "weight": 700,
+          "lineHeight": 1.45,
+          "tracking": "-0.01em",
+          "role": "보조 본문 강조."
+        },
+        "label": {
+          "size": 14,
+          "weight": 600,
+          "lineHeight": 1.4,
+          "tracking": "-0.005em",
+          "role": "폼 라벨 · 버튼 · 탭 · 배지."
+        },
+        "caption": {
+          "size": 13,
+          "weight": 400,
+          "lineHeight": 1.45,
+          "tracking": "0",
+          "role": "주석 · 메타 정보 · 표 각주."
+        },
+        "caption-bold": {
+          "size": 13,
+          "weight": 700,
+          "lineHeight": 1.4,
+          "tracking": "0",
+          "role": "주석 강조."
+        }
+      },
+      "layout": {
+        "container.max": 1200,
+        "container.gutter": 24,
+        "container.gutterMd": 20,
+        "container.gutterSm": 16,
+        "grid.columns": 12,
+        "grid.gap": 24,
+        "section.padY": 100,
+        "section.padYSm": 56,
+        "section.padYMd": 72,
+        "section.headGap": 40,
+        "block.gap": 24,
+        "card.gap": 24,
+        "text.measure": 68
+      },
+      "text": {
+        "break": "keep-all",
+        "overflowWrap": "anywhere",
+        "wrap": "pretty",
+        "numeric": "tabular-nums"
+      },
+      "space": {
+        "1": 4,
+        "2": 8,
+        "3": 12,
+        "4": 16,
+        "5": 20,
+        "6": 24,
+        "8": 32,
+        "10": 40
+      },
+      "elevation": {
+        "0": "none",
+        "1": "0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04)",
+        "2": "0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07)",
+        "3": "0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10)"
+      },
+      "breakpoint": {
+        "sm": 480,
+        "md": 768,
+        "lg": 1024
+      },
+      "motion": {
+        "duration.fast": 120,
+        "duration.base": 180,
+        "duration.slow": 280,
+        "duration.entrance": 640,
+        "duration.zoom": 520,
+        "easing.standard": "cubic-bezier(0.2, 0, 0, 1)",
+        "easing.exit": "cubic-bezier(0.4, 0, 1, 1)",
+        "easing.entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "distance.rise": 8,
+        "distance.reveal": 32,
+        "scale.hover": 1.05,
+        "stagger": 80
+      },
+      "media": {
+        "ratio.wide": "16 / 9",
+        "ratio.photo": "3 / 2",
+        "ratio.portrait": "4 / 5",
+        "ratio.tall": "9 / 16",
+        "scrim": "linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%)",
+        "density": 2
+      }
     }
   },
   "count": 36,
@@ -979,7 +1133,8 @@
         "ember": "assets/components/badge/badge-status-sm--ember@2x.png",
         "harbor": "assets/components/badge/badge-status-sm--harbor@2x.png",
         "tideland": "assets/components/badge/badge-status-sm--tideland@2x.png",
-        "cobalt": "assets/components/badge/badge-status-sm--cobalt@2x.png"
+        "cobalt": "assets/components/badge/badge-status-sm--cobalt@2x.png",
+        "noir": "assets/components/badge/badge-status-sm--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--eluo%402x.png",
@@ -987,7 +1142,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1025,6 +1181,12 @@
           "radius": "full",
           "paddingX": 10,
           "typography": "caption-bold"
+        },
+        "noir": {
+          "height": 24,
+          "radius": "full",
+          "paddingX": 10,
+          "typography": "caption-bold"
         }
       },
       "responsiveByTheme": {
@@ -1033,7 +1195,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--eluo%402x.png"
     },
@@ -1074,7 +1237,8 @@
         "ember": "assets/components/button/btn-danger-md--ember@2x.png",
         "harbor": "assets/components/button/btn-danger-md--harbor@2x.png",
         "tideland": "assets/components/button/btn-danger-md--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-danger-md--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-danger-md--cobalt@2x.png",
+        "noir": "assets/components/button/btn-danger-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--eluo%402x.png",
@@ -1082,7 +1246,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1126,6 +1291,13 @@
           "radius": "md",
           "paddingX": 26,
           "typography": "body2-bold"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 46,
+          "radius": "md",
+          "paddingX": 16,
+          "typography": "body2-bold"
         }
       },
       "responsiveByTheme": {
@@ -1134,7 +1306,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--eluo%402x.png"
     },
@@ -1172,7 +1345,8 @@
         "ember": "assets/components/button/btn-ghost-md--ember@2x.png",
         "harbor": "assets/components/button/btn-ghost-md--harbor@2x.png",
         "tideland": "assets/components/button/btn-ghost-md--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-ghost-md--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-ghost-md--cobalt@2x.png",
+        "noir": "assets/components/button/btn-ghost-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--eluo%402x.png",
@@ -1180,7 +1354,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1224,6 +1399,13 @@
           "radius": "md",
           "paddingX": 14,
           "typography": "body2-bold"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 46,
+          "radius": "md",
+          "paddingX": 14,
+          "typography": "body2-bold"
         }
       },
       "responsiveByTheme": {
@@ -1232,7 +1414,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--eluo%402x.png"
     },
@@ -1277,7 +1460,8 @@
         "ember": "assets/components/button/btn-outline-lg--ember@2x.png",
         "harbor": "assets/components/button/btn-outline-lg--harbor@2x.png",
         "tideland": "assets/components/button/btn-outline-lg--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-outline-lg--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-outline-lg--cobalt@2x.png",
+        "noir": "assets/components/button/btn-outline-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-lg--eluo%402x.png",
@@ -1285,7 +1469,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1335,6 +1520,14 @@
           "paddingX": 38,
           "borderWidth": 2,
           "typography": "body1-bold"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "borderWidth": 1,
+          "typography": "body1-bold"
         }
       },
       "responsiveByTheme": {
@@ -1354,6 +1547,9 @@
           "480": "fill"
         },
         "cobalt": {
+          "480": "fill"
+        },
+        "noir": {
           "480": "fill"
         }
       },
@@ -1398,7 +1594,8 @@
         "ember": "assets/components/button/btn-outline-md--ember@2x.png",
         "harbor": "assets/components/button/btn-outline-md--harbor@2x.png",
         "tideland": "assets/components/button/btn-outline-md--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-outline-md--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-outline-md--cobalt@2x.png",
+        "noir": "assets/components/button/btn-outline-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--eluo%402x.png",
@@ -1406,7 +1603,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1456,6 +1654,14 @@
           "paddingX": 26,
           "borderWidth": 2,
           "typography": "body2-bold"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 46,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2-bold"
         }
       },
       "responsiveByTheme": {
@@ -1464,7 +1670,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--eluo%402x.png"
     },
@@ -1503,7 +1710,8 @@
         "ember": "assets/components/button/btn-primary-lg-disabled--ember@2x.png",
         "harbor": "assets/components/button/btn-primary-lg-disabled--harbor@2x.png",
         "tideland": "assets/components/button/btn-primary-lg-disabled--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-primary-lg-disabled--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-primary-lg-disabled--cobalt@2x.png",
+        "noir": "assets/components/button/btn-primary-lg-disabled--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg-disabled--eluo%402x.png",
@@ -1511,7 +1719,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg-disabled--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg-disabled--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg-disabled--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg-disabled--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg-disabled--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg-disabled--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1555,6 +1764,13 @@
           "radius": "lg",
           "paddingX": 38,
           "typography": "body1-bold"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "typography": "body1-bold"
         }
       },
       "responsiveByTheme": {
@@ -1574,6 +1790,9 @@
           "480": "fill"
         },
         "cobalt": {
+          "480": "fill"
+        },
+        "noir": {
           "480": "fill"
         }
       },
@@ -1618,7 +1837,8 @@
         "ember": "assets/components/button/btn-primary-lg--ember@2x.png",
         "harbor": "assets/components/button/btn-primary-lg--harbor@2x.png",
         "tideland": "assets/components/button/btn-primary-lg--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-primary-lg--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-primary-lg--cobalt@2x.png",
+        "noir": "assets/components/button/btn-primary-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg--eluo%402x.png",
@@ -1626,7 +1846,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1670,6 +1891,13 @@
           "radius": "lg",
           "paddingX": 38,
           "typography": "body1-bold"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "typography": "body1-bold"
         }
       },
       "responsiveByTheme": {
@@ -1689,6 +1917,9 @@
           "480": "fill"
         },
         "cobalt": {
+          "480": "fill"
+        },
+        "noir": {
           "480": "fill"
         }
       },
@@ -1748,7 +1979,8 @@
         "ember": "assets/components/button/btn-primary-md--ember@2x.png",
         "harbor": "assets/components/button/btn-primary-md--harbor@2x.png",
         "tideland": "assets/components/button/btn-primary-md--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-primary-md--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-primary-md--cobalt@2x.png",
+        "noir": "assets/components/button/btn-primary-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--eluo%402x.png",
@@ -1756,7 +1988,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1800,6 +2033,13 @@
           "radius": "md",
           "paddingX": 26,
           "typography": "body2-bold"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 46,
+          "radius": "md",
+          "paddingX": 16,
+          "typography": "body2-bold"
         }
       },
       "responsiveByTheme": {
@@ -1808,7 +2048,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--eluo%402x.png"
     },
@@ -1849,7 +2090,8 @@
         "ember": "assets/components/button/btn-primary-sm--ember@2x.png",
         "harbor": "assets/components/button/btn-primary-sm--harbor@2x.png",
         "tideland": "assets/components/button/btn-primary-sm--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-primary-sm--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-primary-sm--cobalt@2x.png",
+        "noir": "assets/components/button/btn-primary-sm--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--eluo%402x.png",
@@ -1857,7 +2099,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -1901,6 +2144,13 @@
           "radius": "sm",
           "paddingX": 14,
           "typography": "label"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 36,
+          "radius": "sm",
+          "paddingX": 14,
+          "typography": "label"
         }
       },
       "responsiveByTheme": {
@@ -1909,7 +2159,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--eluo%402x.png"
     },
@@ -1953,7 +2204,8 @@
         "ember": "assets/components/button/btn-secondary-lg--ember@2x.png",
         "harbor": "assets/components/button/btn-secondary-lg--harbor@2x.png",
         "tideland": "assets/components/button/btn-secondary-lg--tideland@2x.png",
-        "cobalt": "assets/components/button/btn-secondary-lg--cobalt@2x.png"
+        "cobalt": "assets/components/button/btn-secondary-lg--cobalt@2x.png",
+        "noir": "assets/components/button/btn-secondary-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-secondary-lg--eluo%402x.png",
@@ -1961,7 +2213,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-secondary-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-secondary-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-secondary-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-secondary-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-secondary-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-secondary-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2011,6 +2264,14 @@
           "paddingX": 38,
           "borderWidth": 2,
           "typography": "body1-bold"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 56,
+          "radius": "lg",
+          "paddingX": 24,
+          "borderWidth": 1,
+          "typography": "body1-bold"
         }
       },
       "responsiveByTheme": {
@@ -2030,6 +2291,9 @@
           "480": "fill"
         },
         "cobalt": {
+          "480": "fill"
+        },
+        "noir": {
           "480": "fill"
         }
       },
@@ -2073,7 +2337,8 @@
         "ember": "assets/components/card/card-basic-md--ember@2x.png",
         "harbor": "assets/components/card/card-basic-md--harbor@2x.png",
         "tideland": "assets/components/card/card-basic-md--tideland@2x.png",
-        "cobalt": "assets/components/card/card-basic-md--cobalt@2x.png"
+        "cobalt": "assets/components/card/card-basic-md--cobalt@2x.png",
+        "noir": "assets/components/card/card-basic-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-basic-md--eluo%402x.png",
@@ -2081,7 +2346,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-basic-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-basic-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-basic-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-basic-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-basic-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-basic-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2137,6 +2403,15 @@
           "gap": 8,
           "borderWidth": 2,
           "elevation": 1
+        },
+        "noir": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 20,
+          "gap": 8,
+          "borderWidth": 1,
+          "elevation": 1
         }
       },
       "responsiveByTheme": {
@@ -2156,6 +2431,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -2201,7 +2479,8 @@
         "ember": "assets/components/card/card-portrait-md--ember@2x.png",
         "harbor": "assets/components/card/card-portrait-md--harbor@2x.png",
         "tideland": "assets/components/card/card-portrait-md--tideland@2x.png",
-        "cobalt": "assets/components/card/card-portrait-md--cobalt@2x.png"
+        "cobalt": "assets/components/card/card-portrait-md--cobalt@2x.png",
+        "noir": "assets/components/card/card-portrait-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-portrait-md--eluo%402x.png",
@@ -2209,7 +2488,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-portrait-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-portrait-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-portrait-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-portrait-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-portrait-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-portrait-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2253,6 +2533,13 @@
           "gap": 13,
           "thumbRatio": "9:16",
           "typography": "body2"
+        },
+        "noir": {
+          "width": 280,
+          "radius": "xl",
+          "gap": 12,
+          "thumbRatio": "9:16",
+          "typography": "body2"
         }
       },
       "responsiveByTheme": {
@@ -2272,6 +2559,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -2319,7 +2609,8 @@
         "ember": "assets/components/card/card-product-md--ember@2x.png",
         "harbor": "assets/components/card/card-product-md--harbor@2x.png",
         "tideland": "assets/components/card/card-product-md--tideland@2x.png",
-        "cobalt": "assets/components/card/card-product-md--cobalt@2x.png"
+        "cobalt": "assets/components/card/card-product-md--cobalt@2x.png",
+        "noir": "assets/components/card/card-product-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-product-md--eluo%402x.png",
@@ -2327,7 +2618,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-product-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-product-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-product-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-product-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-product-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-product-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2389,6 +2681,16 @@
           "thumbRatio": "16:9",
           "borderWidth": 2,
           "elevation": 1
+        },
+        "noir": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 16,
+          "gap": 12,
+          "thumbRatio": "16:9",
+          "borderWidth": 1,
+          "elevation": 1
         }
       },
       "responsiveByTheme": {
@@ -2408,6 +2710,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -2453,7 +2758,8 @@
         "ember": "assets/components/card/card-stat-md--ember@2x.png",
         "harbor": "assets/components/card/card-stat-md--harbor@2x.png",
         "tideland": "assets/components/card/card-stat-md--tideland@2x.png",
-        "cobalt": "assets/components/card/card-stat-md--cobalt@2x.png"
+        "cobalt": "assets/components/card/card-stat-md--cobalt@2x.png",
+        "noir": "assets/components/card/card-stat-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-stat-md--eluo%402x.png",
@@ -2461,7 +2767,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-stat-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-stat-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-stat-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-stat-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-stat-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-stat-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2511,6 +2818,14 @@
           "paddingY": 32,
           "gap": 8,
           "typography": "heading2"
+        },
+        "noir": {
+          "width": 320,
+          "radius": "xl",
+          "paddingX": 20,
+          "paddingY": 32,
+          "gap": 8,
+          "typography": "heading2"
         }
       },
       "responsiveByTheme": {
@@ -2530,6 +2845,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -2571,7 +2889,8 @@
         "ember": "assets/components/chip/chip-filter-md-selected--ember@2x.png",
         "harbor": "assets/components/chip/chip-filter-md-selected--harbor@2x.png",
         "tideland": "assets/components/chip/chip-filter-md-selected--tideland@2x.png",
-        "cobalt": "assets/components/chip/chip-filter-md-selected--cobalt@2x.png"
+        "cobalt": "assets/components/chip/chip-filter-md-selected--cobalt@2x.png",
+        "noir": "assets/components/chip/chip-filter-md-selected--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md-selected--eluo%402x.png",
@@ -2579,7 +2898,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md-selected--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md-selected--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md-selected--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md-selected--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md-selected--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md-selected--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2635,6 +2955,15 @@
           "borderWidth": 2,
           "gap": 6,
           "typography": "label"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
         }
       },
       "responsiveByTheme": {
@@ -2643,7 +2972,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md-selected--eluo%402x.png"
     },
@@ -2686,7 +3016,8 @@
         "ember": "assets/components/chip/chip-filter-md--ember@2x.png",
         "harbor": "assets/components/chip/chip-filter-md--harbor@2x.png",
         "tideland": "assets/components/chip/chip-filter-md--tideland@2x.png",
-        "cobalt": "assets/components/chip/chip-filter-md--cobalt@2x.png"
+        "cobalt": "assets/components/chip/chip-filter-md--cobalt@2x.png",
+        "noir": "assets/components/chip/chip-filter-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--eluo%402x.png",
@@ -2694,7 +3025,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2750,6 +3082,15 @@
           "borderWidth": 2,
           "gap": 6,
           "typography": "label"
+        },
+        "noir": {
+          "width": "hug",
+          "height": 36,
+          "radius": "full",
+          "paddingX": 14,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "label"
         }
       },
       "responsiveByTheme": {
@@ -2758,7 +3099,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--eluo%402x.png",
       "variants": [
@@ -2813,7 +3155,8 @@
         "ember": "assets/components/commerce/price-discount-md--ember@2x.png",
         "harbor": "assets/components/commerce/price-discount-md--harbor@2x.png",
         "tideland": "assets/components/commerce/price-discount-md--tideland@2x.png",
-        "cobalt": "assets/components/commerce/price-discount-md--cobalt@2x.png"
+        "cobalt": "assets/components/commerce/price-discount-md--cobalt@2x.png",
+        "noir": "assets/components/commerce/price-discount-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--eluo%402x.png",
@@ -2821,7 +3164,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2853,6 +3197,11 @@
           "gap": 8,
           "typography": "body1-bold",
           "originalTypography": "caption"
+        },
+        "noir": {
+          "gap": 8,
+          "typography": "body1-bold",
+          "originalTypography": "caption"
         }
       },
       "responsiveByTheme": {
@@ -2861,7 +3210,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--eluo%402x.png"
     },
@@ -2903,7 +3253,8 @@
         "ember": "assets/components/commerce/wish-toggle-md-selected--ember@2x.png",
         "harbor": "assets/components/commerce/wish-toggle-md-selected--harbor@2x.png",
         "tideland": "assets/components/commerce/wish-toggle-md-selected--tideland@2x.png",
-        "cobalt": "assets/components/commerce/wish-toggle-md-selected--cobalt@2x.png"
+        "cobalt": "assets/components/commerce/wish-toggle-md-selected--cobalt@2x.png",
+        "noir": "assets/components/commerce/wish-toggle-md-selected--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md-selected--eluo%402x.png",
@@ -2911,7 +3262,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md-selected--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md-selected--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md-selected--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md-selected--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md-selected--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md-selected--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -2955,6 +3307,13 @@
           "radius": "full",
           "borderWidth": 2,
           "iconSize": 18
+        },
+        "noir": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
         }
       },
       "responsiveByTheme": {
@@ -2963,7 +3322,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md-selected--eluo%402x.png"
     },
@@ -3003,7 +3363,8 @@
         "ember": "assets/components/commerce/wish-toggle-md--ember@2x.png",
         "harbor": "assets/components/commerce/wish-toggle-md--harbor@2x.png",
         "tideland": "assets/components/commerce/wish-toggle-md--tideland@2x.png",
-        "cobalt": "assets/components/commerce/wish-toggle-md--cobalt@2x.png"
+        "cobalt": "assets/components/commerce/wish-toggle-md--cobalt@2x.png",
+        "noir": "assets/components/commerce/wish-toggle-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--eluo%402x.png",
@@ -3011,7 +3372,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3055,6 +3417,13 @@
           "radius": "full",
           "borderWidth": 2,
           "iconSize": 18
+        },
+        "noir": {
+          "width": 40,
+          "height": 40,
+          "radius": "full",
+          "borderWidth": 1,
+          "iconSize": 18
         }
       },
       "responsiveByTheme": {
@@ -3063,7 +3432,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--eluo%402x.png",
       "variants": [
@@ -3127,7 +3497,8 @@
         "ember": "assets/components/disclosure/accordion-md--ember@2x.png",
         "harbor": "assets/components/disclosure/accordion-md--harbor@2x.png",
         "tideland": "assets/components/disclosure/accordion-md--tideland@2x.png",
-        "cobalt": "assets/components/disclosure/accordion-md--cobalt@2x.png"
+        "cobalt": "assets/components/disclosure/accordion-md--cobalt@2x.png",
+        "noir": "assets/components/disclosure/accordion-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--eluo%402x.png",
@@ -3135,7 +3506,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3191,6 +3563,15 @@
           "titleTypography": "body1-bold",
           "bodyTypography": "body2",
           "bodyMaxWidth": 68
+        },
+        "noir": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "iconSize": 20,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
         }
       },
       "responsiveByTheme": {
@@ -3199,7 +3580,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--eluo%402x.png"
     },
@@ -3240,7 +3622,8 @@
         "ember": "assets/components/feedback/empty-state-md--ember@2x.png",
         "harbor": "assets/components/feedback/empty-state-md--harbor@2x.png",
         "tideland": "assets/components/feedback/empty-state-md--tideland@2x.png",
-        "cobalt": "assets/components/feedback/empty-state-md--cobalt@2x.png"
+        "cobalt": "assets/components/feedback/empty-state-md--cobalt@2x.png",
+        "noir": "assets/components/feedback/empty-state-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--eluo%402x.png",
@@ -3248,7 +3631,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3292,6 +3676,13 @@
           "titleTypography": "body1-bold",
           "bodyTypography": "body2",
           "bodyMaxWidth": 360
+        },
+        "noir": {
+          "paddingY": 48,
+          "gap": 12,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 360
         }
       },
       "responsiveByTheme": {
@@ -3300,7 +3691,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--eluo%402x.png"
     },
@@ -3341,7 +3733,8 @@
         "ember": "assets/components/feedback/toast-error-md--ember@2x.png",
         "harbor": "assets/components/feedback/toast-error-md--harbor@2x.png",
         "tideland": "assets/components/feedback/toast-error-md--tideland@2x.png",
-        "cobalt": "assets/components/feedback/toast-error-md--cobalt@2x.png"
+        "cobalt": "assets/components/feedback/toast-error-md--cobalt@2x.png",
+        "noir": "assets/components/feedback/toast-error-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-error-md--eluo%402x.png",
@@ -3349,7 +3742,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-error-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-error-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-error-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-error-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-error-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-error-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3411,6 +3805,16 @@
           "borderWidth": 2,
           "elevation": 2,
           "typography": "body2"
+        },
+        "noir": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "borderWidth": 1,
+          "elevation": 2,
+          "typography": "body2"
         }
       },
       "responsiveByTheme": {
@@ -3430,6 +3834,9 @@
           "480": "fill"
         },
         "cobalt": {
+          "480": "fill"
+        },
+        "noir": {
           "480": "fill"
         }
       },
@@ -3472,7 +3879,8 @@
         "ember": "assets/components/feedback/toast-info-md--ember@2x.png",
         "harbor": "assets/components/feedback/toast-info-md--harbor@2x.png",
         "tideland": "assets/components/feedback/toast-info-md--tideland@2x.png",
-        "cobalt": "assets/components/feedback/toast-info-md--cobalt@2x.png"
+        "cobalt": "assets/components/feedback/toast-info-md--cobalt@2x.png",
+        "noir": "assets/components/feedback/toast-info-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-info-md--eluo%402x.png",
@@ -3480,7 +3888,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-info-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-info-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-info-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-info-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-info-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-info-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3542,6 +3951,16 @@
           "elevation": 2,
           "typography": "body2",
           "duration": 4000
+        },
+        "noir": {
+          "width": 360,
+          "radius": "xl",
+          "paddingX": 16,
+          "paddingY": 14,
+          "gap": 12,
+          "elevation": 2,
+          "typography": "body2",
+          "duration": 4000
         }
       },
       "responsiveByTheme": {
@@ -3561,6 +3980,9 @@
           "480": "fill"
         },
         "cobalt": {
+          "480": "fill"
+        },
+        "noir": {
           "480": "fill"
         }
       },
@@ -3604,7 +4026,8 @@
         "ember": "assets/components/input/input-text-md-error--ember@2x.png",
         "harbor": "assets/components/input/input-text-md-error--harbor@2x.png",
         "tideland": "assets/components/input/input-text-md-error--tideland@2x.png",
-        "cobalt": "assets/components/input/input-text-md-error--cobalt@2x.png"
+        "cobalt": "assets/components/input/input-text-md-error--cobalt@2x.png",
+        "noir": "assets/components/input/input-text-md-error--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-error--eluo%402x.png",
@@ -3612,7 +4035,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-error--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-error--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-error--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-error--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-error--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-error--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3668,6 +4092,15 @@
           "borderWidth": 2,
           "gap": 6,
           "typography": "body2"
+        },
+        "noir": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "gap": 6,
+          "typography": "body2"
         }
       },
       "responsiveByTheme": {
@@ -3687,6 +4120,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -3730,7 +4166,8 @@
         "ember": "assets/components/input/input-text-md-focus--ember@2x.png",
         "harbor": "assets/components/input/input-text-md-focus--harbor@2x.png",
         "tideland": "assets/components/input/input-text-md-focus--tideland@2x.png",
-        "cobalt": "assets/components/input/input-text-md-focus--cobalt@2x.png"
+        "cobalt": "assets/components/input/input-text-md-focus--cobalt@2x.png",
+        "noir": "assets/components/input/input-text-md-focus--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-focus--eluo%402x.png",
@@ -3738,7 +4175,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-focus--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-focus--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-focus--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-focus--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-focus--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md-focus--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3794,6 +4232,15 @@
           "borderWidth": 2,
           "focusRingWidth": 3,
           "typography": "body2"
+        },
+        "noir": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "focusRingWidth": 3,
+          "typography": "body2"
         }
       },
       "responsiveByTheme": {
@@ -3813,6 +4260,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -3857,7 +4307,8 @@
         "ember": "assets/components/input/input-text-md--ember@2x.png",
         "harbor": "assets/components/input/input-text-md--harbor@2x.png",
         "tideland": "assets/components/input/input-text-md--tideland@2x.png",
-        "cobalt": "assets/components/input/input-text-md--cobalt@2x.png"
+        "cobalt": "assets/components/input/input-text-md--cobalt@2x.png",
+        "noir": "assets/components/input/input-text-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md--eluo%402x.png",
@@ -3865,7 +4316,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -3915,6 +4367,14 @@
           "paddingX": 16,
           "borderWidth": 2,
           "typography": "body2"
+        },
+        "noir": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
         }
       },
       "responsiveByTheme": {
@@ -3934,6 +4394,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -4015,7 +4478,8 @@
         "ember": "assets/components/input/select-md--ember@2x.png",
         "harbor": "assets/components/input/select-md--harbor@2x.png",
         "tideland": "assets/components/input/select-md--tideland@2x.png",
-        "cobalt": "assets/components/input/select-md--cobalt@2x.png"
+        "cobalt": "assets/components/input/select-md--cobalt@2x.png",
+        "noir": "assets/components/input/select-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/select-md--eluo%402x.png",
@@ -4023,7 +4487,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/select-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/select-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/select-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/select-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/select-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/select-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4073,6 +4538,14 @@
           "paddingX": 16,
           "borderWidth": 2,
           "typography": "body2"
+        },
+        "noir": {
+          "width": 320,
+          "height": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "typography": "body2"
         }
       },
       "responsiveByTheme": {
@@ -4092,6 +4565,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -4137,7 +4613,8 @@
         "ember": "assets/components/layout/cta-band-lg--ember@2x.png",
         "harbor": "assets/components/layout/cta-band-lg--harbor@2x.png",
         "tideland": "assets/components/layout/cta-band-lg--tideland@2x.png",
-        "cobalt": "assets/components/layout/cta-band-lg--cobalt@2x.png"
+        "cobalt": "assets/components/layout/cta-band-lg--cobalt@2x.png",
+        "noir": "assets/components/layout/cta-band-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/cta-band-lg--eluo%402x.png",
@@ -4145,7 +4622,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/cta-band-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/cta-band-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/cta-band-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/cta-band-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/cta-band-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/cta-band-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4195,6 +4673,14 @@
           "radius": "xl",
           "titleTypography": "heading1",
           "leadTypography": "body1"
+        },
+        "noir": {
+          "width": 1200,
+          "paddingY": 64,
+          "gap": 24,
+          "radius": "xl",
+          "titleTypography": "heading1",
+          "leadTypography": "body1"
         }
       },
       "responsiveByTheme": {
@@ -4214,6 +4700,9 @@
           "768": "stack"
         },
         "cobalt": {
+          "768": "stack"
+        },
+        "noir": {
           "768": "stack"
         }
       },
@@ -4258,7 +4747,8 @@
         "ember": "assets/components/layout/desc-list-md--ember@2x.png",
         "harbor": "assets/components/layout/desc-list-md--harbor@2x.png",
         "tideland": "assets/components/layout/desc-list-md--tideland@2x.png",
-        "cobalt": "assets/components/layout/desc-list-md--cobalt@2x.png"
+        "cobalt": "assets/components/layout/desc-list-md--cobalt@2x.png",
+        "noir": "assets/components/layout/desc-list-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/desc-list-md--eluo%402x.png",
@@ -4266,7 +4756,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/desc-list-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/desc-list-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/desc-list-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/desc-list-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/desc-list-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/desc-list-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4316,6 +4807,14 @@
           "borderWidth": 2,
           "labelTypography": "body2-bold",
           "valueTypography": "body2"
+        },
+        "noir": {
+          "labelWidth": 120,
+          "rowPaddingY": 14,
+          "gap": 20,
+          "borderWidth": 1,
+          "labelTypography": "body2-bold",
+          "valueTypography": "body2"
         }
       },
       "responsiveByTheme": {
@@ -4335,6 +4834,9 @@
           "480": "stack"
         },
         "cobalt": {
+          "480": "stack"
+        },
+        "noir": {
           "480": "stack"
         }
       },
@@ -4379,7 +4881,8 @@
         "ember": "assets/components/layout/footer-lg--ember@2x.png",
         "harbor": "assets/components/layout/footer-lg--harbor@2x.png",
         "tideland": "assets/components/layout/footer-lg--tideland@2x.png",
-        "cobalt": "assets/components/layout/footer-lg--cobalt@2x.png"
+        "cobalt": "assets/components/layout/footer-lg--cobalt@2x.png",
+        "noir": "assets/components/layout/footer-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/footer-lg--eluo%402x.png",
@@ -4387,7 +4890,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/footer-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/footer-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/footer-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/footer-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/footer-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/footer-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4437,6 +4941,14 @@
           "logoTypography": "heading3",
           "noteTypography": "caption",
           "menuTypography": "caption"
+        },
+        "noir": {
+          "width": 1200,
+          "paddingY": 40,
+          "gap": 24,
+          "logoTypography": "heading3",
+          "noteTypography": "caption",
+          "menuTypography": "caption"
         }
       },
       "responsiveByTheme": {
@@ -4456,6 +4968,9 @@
           "768": "stack"
         },
         "cobalt": {
+          "768": "stack"
+        },
+        "noir": {
           "768": "stack"
         }
       },
@@ -4507,7 +5022,8 @@
         "ember": "assets/components/layout/form-field-md--ember@2x.png",
         "harbor": "assets/components/layout/form-field-md--harbor@2x.png",
         "tideland": "assets/components/layout/form-field-md--tideland@2x.png",
-        "cobalt": "assets/components/layout/form-field-md--cobalt@2x.png"
+        "cobalt": "assets/components/layout/form-field-md--cobalt@2x.png",
+        "noir": "assets/components/layout/form-field-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/form-field-md--eluo%402x.png",
@@ -4515,7 +5031,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/form-field-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/form-field-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/form-field-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/form-field-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/form-field-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/form-field-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4583,6 +5100,17 @@
           "borderWidth": 2,
           "labelTypography": "label",
           "helperTypography": "caption"
+        },
+        "noir": {
+          "width": 320,
+          "labelGap": 6,
+          "helperGap": 6,
+          "inputHeight": 52,
+          "radius": "md",
+          "paddingX": 16,
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "helperTypography": "caption"
         }
       },
       "responsiveByTheme": {
@@ -4602,6 +5130,9 @@
           "768": "fill"
         },
         "cobalt": {
+          "768": "fill"
+        },
+        "noir": {
           "768": "fill"
         }
       },
@@ -4651,7 +5182,8 @@
         "ember": "assets/components/layout/header-gnb-lg--ember@2x.png",
         "harbor": "assets/components/layout/header-gnb-lg--harbor@2x.png",
         "tideland": "assets/components/layout/header-gnb-lg--tideland@2x.png",
-        "cobalt": "assets/components/layout/header-gnb-lg--cobalt@2x.png"
+        "cobalt": "assets/components/layout/header-gnb-lg--cobalt@2x.png",
+        "noir": "assets/components/layout/header-gnb-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/header-gnb-lg--eluo%402x.png",
@@ -4659,7 +5191,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/header-gnb-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/header-gnb-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/header-gnb-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/header-gnb-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/header-gnb-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/header-gnb-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4715,6 +5248,15 @@
           "logoTypography": "heading3",
           "menuTypography": "body2-bold",
           "actionHeight": 44
+        },
+        "noir": {
+          "width": 1200,
+          "height": 72,
+          "itemGap": 24,
+          "borderWidth": 1,
+          "logoTypography": "heading3",
+          "menuTypography": "body2-bold",
+          "actionHeight": 46
         }
       },
       "responsiveByTheme": {
@@ -4734,6 +5276,9 @@
           "768": "menuNav"
         },
         "cobalt": {
+          "768": "menuNav"
+        },
+        "noir": {
           "768": "menuNav"
         }
       },
@@ -4783,7 +5328,8 @@
         "ember": "assets/components/layout/hero-split-lg--ember@2x.png",
         "harbor": "assets/components/layout/hero-split-lg--harbor@2x.png",
         "tideland": "assets/components/layout/hero-split-lg--tideland@2x.png",
-        "cobalt": "assets/components/layout/hero-split-lg--cobalt@2x.png"
+        "cobalt": "assets/components/layout/hero-split-lg--cobalt@2x.png",
+        "noir": "assets/components/layout/hero-split-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/hero-split-lg--eluo%402x.png",
@@ -4791,7 +5337,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/hero-split-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/hero-split-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/hero-split-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/hero-split-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/hero-split-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/hero-split-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4853,6 +5400,16 @@
           "titleTypography": "display1",
           "leadTypography": "body1",
           "leadMaxWidth": "60ch"
+        },
+        "noir": {
+          "width": 1200,
+          "gap": 24,
+          "actionGap": 12,
+          "railGap": 20,
+          "borderWidth": 1,
+          "titleTypography": "display1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "60ch"
         }
       },
       "responsiveByTheme": {
@@ -4872,6 +5429,9 @@
           "768": "stack"
         },
         "cobalt": {
+          "768": "stack"
+        },
+        "noir": {
           "768": "stack"
         }
       },
@@ -4918,7 +5478,8 @@
         "ember": "assets/components/layout/list-row-md--ember@2x.png",
         "harbor": "assets/components/layout/list-row-md--harbor@2x.png",
         "tideland": "assets/components/layout/list-row-md--tideland@2x.png",
-        "cobalt": "assets/components/layout/list-row-md--cobalt@2x.png"
+        "cobalt": "assets/components/layout/list-row-md--cobalt@2x.png",
+        "noir": "assets/components/layout/list-row-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/list-row-md--eluo%402x.png",
@@ -4926,7 +5487,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/list-row-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/list-row-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/list-row-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/list-row-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/list-row-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/list-row-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -4976,6 +5538,14 @@
           "titleTypography": "body1-bold",
           "metaTypography": "caption",
           "valueTypography": "body2-bold"
+        },
+        "noir": {
+          "paddingY": 20,
+          "gap": 16,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "metaTypography": "caption",
+          "valueTypography": "body2-bold"
         }
       },
       "responsiveByTheme": {
@@ -4995,6 +5565,9 @@
           "480": "stack"
         },
         "cobalt": {
+          "480": "stack"
+        },
+        "noir": {
           "480": "stack"
         }
       },
@@ -5037,7 +5610,8 @@
         "ember": "assets/components/layout/section-header-md--ember@2x.png",
         "harbor": "assets/components/layout/section-header-md--harbor@2x.png",
         "tideland": "assets/components/layout/section-header-md--tideland@2x.png",
-        "cobalt": "assets/components/layout/section-header-md--cobalt@2x.png"
+        "cobalt": "assets/components/layout/section-header-md--cobalt@2x.png",
+        "noir": "assets/components/layout/section-header-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--eluo%402x.png",
@@ -5045,7 +5619,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5095,6 +5670,14 @@
           "titleTypography": "heading1",
           "leadTypography": "body1",
           "leadMaxWidth": "58ch"
+        },
+        "noir": {
+          "gap": 8,
+          "eyebrowTypography": "label",
+          "eyebrowTracking": "0.1em",
+          "titleTypography": "heading1",
+          "leadTypography": "body1",
+          "leadMaxWidth": "58ch"
         }
       },
       "responsiveByTheme": {
@@ -5103,7 +5686,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--eluo%402x.png"
     },
@@ -5148,7 +5732,8 @@
         "ember": "assets/components/layout/step-flow-md--ember@2x.png",
         "harbor": "assets/components/layout/step-flow-md--harbor@2x.png",
         "tideland": "assets/components/layout/step-flow-md--tideland@2x.png",
-        "cobalt": "assets/components/layout/step-flow-md--cobalt@2x.png"
+        "cobalt": "assets/components/layout/step-flow-md--cobalt@2x.png",
+        "noir": "assets/components/layout/step-flow-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--eluo%402x.png",
@@ -5156,7 +5741,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5212,6 +5798,15 @@
           "titleTypography": "body1-bold",
           "bodyTypography": "body2",
           "bodyMaxWidth": 68
+        },
+        "noir": {
+          "gap": 16,
+          "numberSize": 28,
+          "rowGap": 24,
+          "borderWidth": 1,
+          "titleTypography": "body1-bold",
+          "bodyTypography": "body2",
+          "bodyMaxWidth": 68
         }
       },
       "responsiveByTheme": {
@@ -5220,7 +5815,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--eluo%402x.png"
     },
@@ -5261,7 +5857,8 @@
         "ember": "assets/components/modal/modal-confirm-lg--ember@2x.png",
         "harbor": "assets/components/modal/modal-confirm-lg--harbor@2x.png",
         "tideland": "assets/components/modal/modal-confirm-lg--tideland@2x.png",
-        "cobalt": "assets/components/modal/modal-confirm-lg--cobalt@2x.png"
+        "cobalt": "assets/components/modal/modal-confirm-lg--cobalt@2x.png",
+        "noir": "assets/components/modal/modal-confirm-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/modal/modal-confirm-lg--eluo%402x.png",
@@ -5269,7 +5866,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/modal/modal-confirm-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/modal/modal-confirm-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/modal/modal-confirm-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/modal/modal-confirm-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/modal/modal-confirm-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/modal/modal-confirm-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5325,6 +5923,15 @@
           "gap": 20,
           "elevation": 3,
           "typography": "heading3"
+        },
+        "noir": {
+          "width": 420,
+          "radius": "xl",
+          "paddingX": 24,
+          "paddingY": 24,
+          "gap": 20,
+          "elevation": 3,
+          "typography": "heading3"
         }
       },
       "responsiveByTheme": {
@@ -5344,6 +5951,9 @@
           "480": "fill"
         },
         "cobalt": {
+          "480": "fill"
+        },
+        "noir": {
           "480": "fill"
         }
       },
@@ -5384,7 +5994,8 @@
         "ember": "assets/components/navigation/breadcrumb-md--ember@2x.png",
         "harbor": "assets/components/navigation/breadcrumb-md--harbor@2x.png",
         "tideland": "assets/components/navigation/breadcrumb-md--tideland@2x.png",
-        "cobalt": "assets/components/navigation/breadcrumb-md--cobalt@2x.png"
+        "cobalt": "assets/components/navigation/breadcrumb-md--cobalt@2x.png",
+        "noir": "assets/components/navigation/breadcrumb-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--eluo%402x.png",
@@ -5392,7 +6003,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5424,6 +6036,11 @@
           "gap": 8,
           "itemMaxWidth": 180,
           "typography": "caption"
+        },
+        "noir": {
+          "gap": 8,
+          "itemMaxWidth": 180,
+          "typography": "caption"
         }
       },
       "responsiveByTheme": {
@@ -5432,7 +6049,8 @@
         "ember": {},
         "harbor": {},
         "tideland": {},
-        "cobalt": {}
+        "cobalt": {},
+        "noir": {}
       },
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--eluo%402x.png"
     },
@@ -5473,7 +6091,8 @@
         "ember": "assets/components/navigation/pagination-md--ember@2x.png",
         "harbor": "assets/components/navigation/pagination-md--harbor@2x.png",
         "tideland": "assets/components/navigation/pagination-md--tideland@2x.png",
-        "cobalt": "assets/components/navigation/pagination-md--cobalt@2x.png"
+        "cobalt": "assets/components/navigation/pagination-md--cobalt@2x.png",
+        "noir": "assets/components/navigation/pagination-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/pagination-md--eluo%402x.png",
@@ -5481,7 +6100,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/pagination-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/pagination-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/pagination-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/pagination-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/pagination-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/pagination-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5525,6 +6145,13 @@
           "itemSize": 40,
           "radius": "md",
           "typography": "label"
+        },
+        "noir": {
+          "height": 40,
+          "gap": 4,
+          "itemSize": 40,
+          "radius": "md",
+          "typography": "label"
         }
       },
       "responsiveByTheme": {
@@ -5544,6 +6171,9 @@
           "480": "scrollX"
         },
         "cobalt": {
+          "480": "scrollX"
+        },
+        "noir": {
           "480": "scrollX"
         }
       },
@@ -5589,7 +6219,8 @@
         "ember": "assets/components/navigation/tab-underline-md--ember@2x.png",
         "harbor": "assets/components/navigation/tab-underline-md--harbor@2x.png",
         "tideland": "assets/components/navigation/tab-underline-md--tideland@2x.png",
-        "cobalt": "assets/components/navigation/tab-underline-md--cobalt@2x.png"
+        "cobalt": "assets/components/navigation/tab-underline-md--cobalt@2x.png",
+        "noir": "assets/components/navigation/tab-underline-md--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/tab-underline-md--eluo%402x.png",
@@ -5597,7 +6228,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/tab-underline-md--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/tab-underline-md--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/tab-underline-md--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/tab-underline-md--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/tab-underline-md--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/tab-underline-md--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5647,6 +6279,14 @@
           "itemPaddingX": 0,
           "indicatorHeight": 2,
           "typography": "body2-bold"
+        },
+        "noir": {
+          "width": 360,
+          "height": 52,
+          "gap": 28,
+          "itemPaddingX": 0,
+          "indicatorHeight": 2,
+          "typography": "body2-bold"
         }
       },
       "responsiveByTheme": {
@@ -5666,6 +6306,9 @@
           "768": "scrollX"
         },
         "cobalt": {
+          "768": "scrollX"
+        },
+        "noir": {
           "768": "scrollX"
         }
       },
@@ -5712,7 +6355,8 @@
         "ember": "assets/components/table/table-basic-lg--ember@2x.png",
         "harbor": "assets/components/table/table-basic-lg--harbor@2x.png",
         "tideland": "assets/components/table/table-basic-lg--tideland@2x.png",
-        "cobalt": "assets/components/table/table-basic-lg--cobalt@2x.png"
+        "cobalt": "assets/components/table/table-basic-lg--cobalt@2x.png",
+        "noir": "assets/components/table/table-basic-lg--noir@2x.png"
       },
       "cdn": {
         "eluo": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/table/table-basic-lg--eluo%402x.png",
@@ -5720,7 +6364,8 @@
         "ember": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/table/table-basic-lg--ember%402x.png",
         "harbor": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/table/table-basic-lg--harbor%402x.png",
         "tideland": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/table/table-basic-lg--tideland%402x.png",
-        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/table/table-basic-lg--cobalt%402x.png"
+        "cobalt": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/table/table-basic-lg--cobalt%402x.png",
+        "noir": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/table/table-basic-lg--noir%402x.png"
       },
       "specByTheme": {
         "eluo": {
@@ -5776,6 +6421,15 @@
           "borderWidth": 2,
           "radius": "xl",
           "typography": "body2"
+        },
+        "noir": {
+          "width": 520,
+          "rowHeight": 46,
+          "headerHeight": 64,
+          "paddingX": 16,
+          "borderWidth": 1,
+          "radius": "xl",
+          "typography": "body2"
         }
       },
       "responsiveByTheme": {
@@ -5795,6 +6449,9 @@
           "768": "toCard"
         },
         "cobalt": {
+          "768": "toCard"
+        },
+        "noir": {
           "768": "toCard"
         }
       },

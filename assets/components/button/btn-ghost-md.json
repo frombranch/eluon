@@ -32,6 +32,7 @@
     "ember": "assets/components/button/btn-ghost-md--ember@2x.png",
     "harbor": "assets/components/button/btn-ghost-md--harbor@2x.png",
     "tideland": "assets/components/button/btn-ghost-md--tideland@2x.png",
-    "cobalt": "assets/components/button/btn-ghost-md--cobalt@2x.png"
+    "cobalt": "assets/components/button/btn-ghost-md--cobalt@2x.png",
+    "noir": "assets/components/button/btn-ghost-md--noir@2x.png"
   }
 }

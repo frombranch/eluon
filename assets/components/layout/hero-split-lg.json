@@ -42,6 +42,7 @@
     "ember": "assets/components/layout/hero-split-lg--ember@2x.png",
     "harbor": "assets/components/layout/hero-split-lg--harbor@2x.png",
     "tideland": "assets/components/layout/hero-split-lg--tideland@2x.png",
-    "cobalt": "assets/components/layout/hero-split-lg--cobalt@2x.png"
+    "cobalt": "assets/components/layout/hero-split-lg--cobalt@2x.png",
+    "noir": "assets/components/layout/hero-split-lg--noir@2x.png"
   }
 }

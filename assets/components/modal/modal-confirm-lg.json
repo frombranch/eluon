@@ -35,6 +35,7 @@
     "ember": "assets/components/modal/modal-confirm-lg--ember@2x.png",
     "harbor": "assets/components/modal/modal-confirm-lg--harbor@2x.png",
     "tideland": "assets/components/modal/modal-confirm-lg--tideland@2x.png",
-    "cobalt": "assets/components/modal/modal-confirm-lg--cobalt@2x.png"
+    "cobalt": "assets/components/modal/modal-confirm-lg--cobalt@2x.png",
+    "noir": "assets/components/modal/modal-confirm-lg--noir@2x.png"
   }
 }

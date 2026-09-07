@@ -35,6 +35,7 @@
     "ember": "assets/components/layout/section-header-md--ember@2x.png",
     "harbor": "assets/components/layout/section-header-md--harbor@2x.png",
     "tideland": "assets/components/layout/section-header-md--tideland@2x.png",
-    "cobalt": "assets/components/layout/section-header-md--cobalt@2x.png"
+    "cobalt": "assets/components/layout/section-header-md--cobalt@2x.png",
+    "noir": "assets/components/layout/section-header-md--noir@2x.png"
   }
 }

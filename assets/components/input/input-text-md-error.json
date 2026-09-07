@@ -36,6 +36,7 @@
     "ember": "assets/components/input/input-text-md-error--ember@2x.png",
     "harbor": "assets/components/input/input-text-md-error--harbor@2x.png",
     "tideland": "assets/components/input/input-text-md-error--tideland@2x.png",
-    "cobalt": "assets/components/input/input-text-md-error--cobalt@2x.png"
+    "cobalt": "assets/components/input/input-text-md-error--cobalt@2x.png",
+    "noir": "assets/components/input/input-text-md-error--noir@2x.png"
   }
 }

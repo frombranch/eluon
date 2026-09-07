@@ -34,6 +34,7 @@
     "ember": "assets/components/chip/chip-filter-md-selected--ember@2x.png",
     "harbor": "assets/components/chip/chip-filter-md-selected--harbor@2x.png",
     "tideland": "assets/components/chip/chip-filter-md-selected--tideland@2x.png",
-    "cobalt": "assets/components/chip/chip-filter-md-selected--cobalt@2x.png"
+    "cobalt": "assets/components/chip/chip-filter-md-selected--cobalt@2x.png",
+    "noir": "assets/components/chip/chip-filter-md-selected--noir@2x.png"
   }
 }

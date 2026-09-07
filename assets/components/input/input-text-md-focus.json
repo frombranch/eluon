@@ -36,6 +36,7 @@
     "ember": "assets/components/input/input-text-md-focus--ember@2x.png",
     "harbor": "assets/components/input/input-text-md-focus--harbor@2x.png",
     "tideland": "assets/components/input/input-text-md-focus--tideland@2x.png",
-    "cobalt": "assets/components/input/input-text-md-focus--cobalt@2x.png"
+    "cobalt": "assets/components/input/input-text-md-focus--cobalt@2x.png",
+    "noir": "assets/components/input/input-text-md-focus--noir@2x.png"
   }
 }

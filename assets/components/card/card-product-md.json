@@ -40,6 +40,7 @@
     "ember": "assets/components/card/card-product-md--ember@2x.png",
     "harbor": "assets/components/card/card-product-md--harbor@2x.png",
     "tideland": "assets/components/card/card-product-md--tideland@2x.png",
-    "cobalt": "assets/components/card/card-product-md--cobalt@2x.png"
+    "cobalt": "assets/components/card/card-product-md--cobalt@2x.png",
+    "noir": "assets/components/card/card-product-md--noir@2x.png"
   }
 }

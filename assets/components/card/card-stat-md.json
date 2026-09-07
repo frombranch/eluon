@@ -38,6 +38,7 @@
     "ember": "assets/components/card/card-stat-md--ember@2x.png",
     "harbor": "assets/components/card/card-stat-md--harbor@2x.png",
     "tideland": "assets/components/card/card-stat-md--tideland@2x.png",
-    "cobalt": "assets/components/card/card-stat-md--cobalt@2x.png"
+    "cobalt": "assets/components/card/card-stat-md--cobalt@2x.png",
+    "noir": "assets/components/card/card-stat-md--noir@2x.png"
   }
 }

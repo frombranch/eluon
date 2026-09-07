@@ -38,6 +38,7 @@
     "ember": "assets/components/button/btn-secondary-lg--ember@2x.png",
     "harbor": "assets/components/button/btn-secondary-lg--harbor@2x.png",
     "tideland": "assets/components/button/btn-secondary-lg--tideland@2x.png",
-    "cobalt": "assets/components/button/btn-secondary-lg--cobalt@2x.png"
+    "cobalt": "assets/components/button/btn-secondary-lg--cobalt@2x.png",
+    "noir": "assets/components/button/btn-secondary-lg--noir@2x.png"
   }
 }

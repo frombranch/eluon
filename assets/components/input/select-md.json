@@ -38,6 +38,7 @@
     "ember": "assets/components/input/select-md--ember@2x.png",
     "harbor": "assets/components/input/select-md--harbor@2x.png",
     "tideland": "assets/components/input/select-md--tideland@2x.png",
-    "cobalt": "assets/components/input/select-md--cobalt@2x.png"
+    "cobalt": "assets/components/input/select-md--cobalt@2x.png",
+    "noir": "assets/components/input/select-md--noir@2x.png"
   }
 }
