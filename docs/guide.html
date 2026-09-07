@@ -326,11 +326,11 @@ footer p{max-width:68ch}
         <ol class="sub"><li><a href="#overview-1">왜 이렇게 만들었나</a></li></ol></li>
       <li data-sec="system"><span class="kicker">1부 · 디자인 시스템</span><a href="#system">저장소에 무엇이 들어 있나</a>
         <ol class="sub"><li><a href="#system-1">테마 = 그 고객의 데이터</a></li><li><a href="#system-2">테마마다 얼마나 믿을 수 있나</a></li><li><a href="#system-3">반응형도 자산이 갖습니다</a></li><li><a href="#system-4">레이아웃과 활자도 시스템이 정합니다</a></li><li><a href="#system-5">페이지를 이루는 덩어리</a></li><li><a href="#system-6">상태는 자산이 아닙니다</a></li><li><a href="#system-7">한글 조판</a></li><li><a href="#system-8">보조 어휘</a></li><li><a href="#system-9">파이프라인 — 순서가 중요합니다</a></li><li><a href="#system-10">GitHub에 올리기</a></li></ol></li>
-      <li data-sec="connect"><span class="kicker">2부 · 자산 → 피그마에서</span><a href="#connect">빌더에 자산을 연결한다</a>
+      <li data-sec="connect"><span class="kicker">2부 · 라이브러리 → 피그마에서</span><a href="#connect">빌더에 자산을 연결한다</a>
         <ol class="sub"><li><a href="#connect-1">이미 연결돼 있습니다</a></li><li><a href="#connect-2">소스 바 읽는 법</a></li></ol></li>
       <li data-sec="settings"><span class="kicker">3부 · 빌더 탭</span><a href="#settings">설정이 각각 무엇을 바꾸는가</a>
         <ol class="sub"><li><a href="#settings-1">작업 유형 — 프롬프트의 뼈대를 정합니다</a></li><li><a href="#settings-2">테마</a></li><li><a href="#settings-3">조건 입력칸</a></li><li><a href="#settings-4">자산 미리 지정</a></li><li><a href="#settings-5">팀 프리셋</a></li><li><a href="#settings-6">근거 보기</a></li><li><a href="#settings-7">프롬프트 복사</a></li></ol></li>
-      <li data-sec="discover"><span class="kicker">4부 · 자산 → 사이트에서</span><a href="#discover">사이트에서 자산 후보 찾기</a>
+      <li data-sec="discover"><span class="kicker">4부 · 라이브러리 → 사이트에서</span><a href="#discover">사이트에서 자산 후보 찾기</a>
         <ol class="sub"><li><a href="#discover-1">결과는 표 두 개로 나옵니다</a></li><li><a href="#discover-2">찾은 다음 — 저장소에 올라가기까지</a></li><li><a href="#discover-3">실제로 이렇게 나왔습니다</a></li></ol></li>
       <li data-sec="walkthrough"><span class="kicker">5부 · 실제로 해보기</span><a href="#walkthrough">시안 한 장을 뽑는 흐름</a></li>
       <li data-sec="troubleshoot"><span class="kicker">막히는 곳</span><a href="#troubleshoot">자주 걸리는 여덟 가지</a></li>
@@ -758,7 +758,7 @@ git commit -am "release: v1.11.2" &amp;&amp; git tag v1.11.2 &amp;&amp; git push
 </section>
 
 <section id="connect">
-  <p class="eyebrow">2부 · 자산 → 피그마에서</p>
+  <p class="eyebrow">2부 · 라이브러리 → 피그마에서</p>
   <h2>빌더에 자산을 연결한다</h2>
   <p class="lead">빌더는 자산 목록을 코드에 갖고 있지 않습니다. 자산 파일을 읽어서 그 안에 있는 것만 씁니다. 그래서 처음 한 번은 연결이 필요합니다.</p>
 
@@ -919,7 +919,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
 </section>
 
 <section id="discover">
-  <p class="eyebrow">4부 · 자산 → 사이트에서</p>
+  <p class="eyebrow">4부 · 라이브러리 → 사이트에서</p>
   <h2>사이트에서 자산 후보 찾기 <span class="tag">v1.5.0</span></h2>
   <p class="lead">고객사 웹사이트 주소만 넣으면 <strong>반복되는 UI 조각을 재서</strong> 지금 라이브러리와 대조합니다. <strong>덮이는 표가 본론입니다</strong> — 그 목록이 곧 기존 컴포넌트를 재배치해 페이지를 만들 재료입니다.</p>
 
@@ -927,8 +927,8 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     <table>
       <thead><tr><th>화면</th><th>하는 일</th></tr></thead>
       <tbody>
-        <tr><td><strong>자산 → 피그마에서</strong></td><td>피그마에서 자산 파일을 만들어 연결합니다</td></tr>
-        <tr><td><strong>자산 → 사이트에서</strong></td><td>웹사이트 주소로 <strong>라이브러리를 늘립니다</strong></td></tr>
+        <tr><td><strong>라이브러리 → 피그마에서</strong></td><td>피그마에서 자산 파일을 만들어 연결합니다</td></tr>
+        <tr><td><strong>라이브러리 → 사이트에서</strong></td><td>웹사이트 주소로 <strong>라이브러리를 늘립니다</strong></td></tr>
         <tr><td><strong>빌더</strong></td><td>화면 하나를 위한 프롬프트를 만듭니다</td></tr>
       </tbody>
     </table>
@@ -974,7 +974,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
   <p>그리고 여기는 <strong>직선 5단계가 아니라 갈래 둘</strong>입니다. <strong>기본 경로</strong>는 A표를 들고 시안 제작으로 가는 것이고 — 거의 모든 경우 여기서 끝납니다 — <strong>예외 경로</strong>가 아래입니다.</p>
   <div class="steps">
     <div class="step"><div class="no">01</div><div class="body">
-      <p><strong>자산 → 사이트에서</strong> 프롬프트를 복사해 Claude에 붙여넣습니다. Claude가 사이트를 열어 재고 표 두 개를 냅니다.</p>
+      <p><strong>라이브러리 → 사이트에서</strong> 프롬프트를 복사해 Claude에 붙여넣습니다. Claude가 사이트를 열어 재고 표 두 개를 냅니다.</p>
       <p>결과는 화면에만 나옵니다. <strong>파일도 커밋도 없습니다.</strong></p>
     </div></div>
     <div class="step"><div class="no">02</div><div class="body">
@@ -1074,7 +1074,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     </div>
     <div class="def">
       <div class="k">빌더 탭이 눌리지 않습니다</div>
-      <div class="v">자산 파일이 아직 안 붙었다는 뜻입니다. 탭 오른쪽에 이유가 적혀 있습니다. <em>자산 → 피그마에서 먼저 연결하십시오.</em></div>
+      <div class="v">자산 파일이 아직 안 붙었다는 뜻입니다. 탭 오른쪽에 이유가 적혀 있습니다. <em>라이브러리 → 피그마에서 먼저 연결하십시오.</em></div>
     </div>
     <div class="def">
       <div class="k">자산 수가 적게 보입니다 <span>36개여야 정상</span></div>
@@ -1150,7 +1150,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
     </table>
   </div>
   <p style="margin-top:16px"><strong>저장소 이력을 v1.11.1에서 새로 시작했습니다.</strong> 이전 커밋에 고객사를 특정할 수 있는 문자열이 남아 있었고 이 저장소는 공개입니다. 저장소 이름·주소·문서 사이트는 그대로이고, 파일 내용도 바뀌지 않았습니다. 다만 <strong>예전 태그(v1.0.0~v1.11.0)는 없어졌으니</strong> 그 주소를 쓴 HTML이 있다면 최신 태그로 바꾸십시오.</p>
-  <p style="margin-top:16px">빌더 쪽 — 화면을 <strong>자산(피그마에서 · 사이트에서) · 빌더</strong> 2단으로 정리 · 작업 유형에서 아티팩트 발행 제거 · 안 쓰는 작업 유형 숨기기 · 자산 페이지에서 골라 빌더로 넘기기 · 고른 자산 칩 · 전체 선택 · Figma 링크 입력칸 · 안 쓰는 테마 숨기기 · 일관성 QA 버튼 제거(절차는 <code>CLAUDE.md</code>에 남아 있습니다) · 자산 목록 접기 · 전역 전체 선택은 다시 뺐습니다.</p>
+  <p style="margin-top:16px">빌더 쪽 — 화면을 <strong>라이브러리(피그마에서 · 사이트에서) · 빌더</strong> 2단으로 정리 · 모음은 <strong>라이브러리</strong>, 낱개는 <strong>자산</strong>으로 갈라 부릅니다 · 작업 유형에서 아티팩트 발행 제거 · 안 쓰는 작업 유형 숨기기 · 자산 페이지에서 골라 빌더로 넘기기 · 고른 자산 칩 · 전체 선택 · Figma 링크 입력칸 · 안 쓰는 테마 숨기기 · 일관성 QA 버튼 제거(절차는 <code>CLAUDE.md</code>에 남아 있습니다) · 자산 목록 접기 · 전역 전체 선택은 다시 뺐습니다.</p>
 </footer>
 
 </div>
