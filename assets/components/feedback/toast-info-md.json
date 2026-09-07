@@ -29,6 +29,7 @@
   "dont": "에러나 확인이 필요한 내용에 쓰지 않음. 사용자가 놓침",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/feedback/toast-info-md--eluo@2x.png",
     "atlas": "assets/components/feedback/toast-info-md--atlas@2x.png",

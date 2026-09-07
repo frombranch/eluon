@@ -32,6 +32,7 @@
   "dont": "6개 이상이면 탭 대신 드롭다운 필터",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/navigation/tab-underline-md--eluo@2x.png",
     "atlas": "assets/components/navigation/tab-underline-md--atlas@2x.png",

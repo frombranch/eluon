@@ -29,6 +29,7 @@
   "dont": "단순 안내에 쓰지 않음. 그건 토스트",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/modal/modal-confirm-lg--eluo@2x.png",
     "atlas": "assets/components/modal/modal-confirm-lg--atlas@2x.png",

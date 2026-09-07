@@ -28,6 +28,7 @@
   "dont": "선택 상태를 색으로만 표시하지 않음. 하트를 채워 모양도 함께 바꿈",
   "status": "stable",
   "since": "v1.0.3",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/commerce/wish-toggle-md--eluo@2x.png",
     "atlas": "assets/components/commerce/wish-toggle-md--atlas@2x.png",

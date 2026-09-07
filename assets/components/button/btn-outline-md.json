@@ -31,6 +31,7 @@
   "dont": "btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐",
   "status": "stable",
   "since": "v1.0.3",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/button/btn-outline-md--eluo@2x.png",
     "atlas": "assets/components/button/btn-outline-md--atlas@2x.png",

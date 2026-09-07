@@ -28,6 +28,7 @@
   "dont": "색만으로 상태를 구분하지 않음",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/badge/badge-status-sm--eluo@2x.png",
     "atlas": "assets/components/badge/badge-status-sm--atlas@2x.png",

@@ -30,7 +30,7 @@ GROUP_KO = {
     "button": "버튼", "chip": "칩", "input": "입력", "card": "카드",
     "navigation": "내비게이션", "table": "테이블", "feedback": "피드백",
     "badge": "뱃지", "modal": "모달", "commerce": "커머스", "layout": "레이아웃",
-    "disclosure": "접기",
+    "disclosure": "접기", "booking": "예약",
 }
 
 # 빌더의 테마 선택 버튼에 그대로 나갑니다. CLAUDE.md 2절의 설명을 따릅니다.
@@ -58,6 +58,7 @@ SIZE_GROUP_KO = {
     # v1.8.0 페이지 블록 · v1.10.0 보조 어휘
     "header": "헤더", "hero": "히어로", "footer": "푸터", "ctaBand": "CTA 띠",
     "listRow": "목록 행", "accordion": "아코디언", "breadcrumb": "경로",
+    "booking": "예약", "tooltip": "툴팁",
     "empty": "빈 상태", "descList": "정의 목록", "stepFlow": "절차",
 }
 

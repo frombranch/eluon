@@ -1,0 +1,41 @@
+{
+  "id": "date-range-md",
+  "name": "Date Range / MD",
+  "group": "booking",
+  "tags": [
+    "예약",
+    "날짜",
+    "기간"
+  ],
+  "spec": {
+    "width": "field.width",
+    "height": "field.height",
+    "paddingX": "field.paddingX",
+    "radius": "md",
+    "borderWidth": "border.width",
+    "gap": "booking.fieldGap",
+    "typography": "body1-bold",
+    "nightsTypography": "caption"
+  },
+  "tokens": {
+    "border": "border.default",
+    "value": "text.primary",
+    "separator": "text.tertiary",
+    "nights": "brand.onSubtle",
+    "nightsBg": "brand.subtle"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "focus",
+    "미선택"
+  ],
+  "usage": "체크인과 체크아웃을 한 입력으로. 며칠 묵는지를 함께 보여 줌",
+  "dont": "날짜 입력 두 개로 쪼개지 않음 — 사람은 기간 하나로 생각함",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "hotel",
+  "renders": {
+    "linen": "assets/components/booking/date-range-md--linen@2x.png"
+  }
+}

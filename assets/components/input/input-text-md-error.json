@@ -28,6 +28,7 @@
   "dont": "빨간 테두리만 주고 이유를 적지 않는 것 금지",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "variantOf": "input-text-md",
   "variantState": "error",
   "renders": {

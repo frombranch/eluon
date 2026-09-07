@@ -34,6 +34,7 @@
   "dont": "썸네일 비율을 카드마다 다르게 두지 않음",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/card/card-product-md--eluo@2x.png",
     "atlas": "assets/components/card/card-product-md--atlas@2x.png",

@@ -26,6 +26,7 @@
   "dont": "한 화면에 3개 이상 늘어놓지 않음. 위계가 사라짐",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/button/btn-ghost-md--eluo@2x.png",
     "atlas": "assets/components/button/btn-ghost-md--atlas@2x.png",

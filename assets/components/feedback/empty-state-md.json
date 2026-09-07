@@ -29,6 +29,7 @@
   "dont": "'데이터가 없습니다'만 쓰지 않음. 왜 없는지·무엇을 하면 되는지가 빠지면 막힙니다",
   "status": "stable",
   "since": "v1.10.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/feedback/empty-state-md--eluo@2x.png",
     "atlas": "assets/components/feedback/empty-state-md--atlas@2x.png",

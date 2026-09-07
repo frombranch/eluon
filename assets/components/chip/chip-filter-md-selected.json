@@ -26,6 +26,7 @@
   "dont": "색만으로 선택을 표시하지 않음. 색각 이상 사용자가 구분 못 함",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "variantOf": "chip-filter-md",
   "variantState": "selected",
   "renders": {

@@ -33,6 +33,7 @@
   "dont": "순서가 없는 목록에 번호를 붙이지 않음. 번호는 순서가 있다는 약속입니다",
   "status": "stable",
   "since": "v1.10.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/step-flow-md--eluo@2x.png",
     "atlas": "assets/components/layout/step-flow-md--atlas@2x.png",

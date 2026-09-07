@@ -32,6 +32,7 @@
   "dont": "가로 이미지를 억지로 넣지 않음. 16:9 면 card-product-md",
   "status": "stable",
   "since": "v1.6.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/card/card-portrait-md--eluo@2x.png",
     "atlas": "assets/components/card/card-portrait-md--atlas@2x.png",

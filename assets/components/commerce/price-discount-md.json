@@ -23,6 +23,7 @@
   "dont": "정가에 취소선 없이 두 가격을 나란히 두지 않음. 어느 쪽이 낼 돈인지 알 수 없음",
   "status": "stable",
   "since": "v1.0.3",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/commerce/price-discount-md--eluo@2x.png",
     "atlas": "assets/components/commerce/price-discount-md--atlas@2x.png",

@@ -32,6 +32,7 @@
   "dont": "선택지 5개 이하면 탭이나 라디오가 더 빠름",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/input/select-md--eluo@2x.png",
     "atlas": "assets/components/input/select-md--atlas@2x.png",

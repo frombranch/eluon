@@ -378,7 +378,7 @@ footer p{max-width:68ch}
   <h1>Eluon 사용설명서</h1>
   <p class="tagline">디자인 시스템을 코드로 만들고, GitHub에 올리고, 자산 파일로 바꿔서, 빌더로 프롬프트를 뽑기까지.</p>
   <div class="stamp">
-    <span><b>대상</b> Eluon v1.12.4 · 컴포넌트 37개(상태 5개 별도) · 테마 8종</span>
+    <span><b>대상</b> Eluon v1.12.4 · 컴포넌트 44개(상태 5개 별도) · 테마 8종</span>
     <span><b>저장소</b> github.com/frombranch/eluon</span>
     <span><b>빌더</b> frombranch.github.io/eluon/prompt-builder.html</span>
   </div>
@@ -405,7 +405,7 @@ footer p{max-width:68ch}
     <div class="node">
       <span class="n">03</span>
       <span class="t">manifest.json</span>
-      <span class="d">자산 37개의 규격·토큰·용도. 수치·활자·레이아웃·조판이 테마별로 갈라져 담깁니다.</span>
+      <span class="d">자산 44개의 규격·토큰·용도. 수치·활자·레이아웃·조판이 테마별로 갈라져 담깁니다.</span>
       <span class="who">자동</span>
     </div>
     <div class="node">
@@ -452,12 +452,12 @@ footer p{max-width:68ch}
         <tr><td><code>tokens/theme-*.json</code></td><td>테마별 색·라운드·<strong>크기</strong> 덮어쓰기 = 그 고객의 데이터</td><td>사람</td></tr>
         <tr><td><code>recipes/components.py</code></td><td>컴포넌트 정의. 규격이 곧 CSS이고 곧 이미지입니다</td><td>사람</td></tr>
         <tr><td><code>eluon.config.json</code></td><td>조직·저장소·버전·테마 목록</td><td>사람</td></tr>
-        <tr><td><code>manifest.json</code></td><td>자산 37개. <code>spec</code>=토큰 이름 · <code>specByTheme</code>=테마별 실제 수치</td><td>자동</td></tr>
+        <tr><td><code>manifest.json</code></td><td>자산 44개. <code>spec</code>=토큰 이름 · <code>specByTheme</code>=테마별 실제 수치</td><td>자동</td></tr>
         <tr><td><code>docs/tokens/eluon-*.css</code></td><td>테마별 CSS 변수. 시안에 그대로 붙여 씁니다</td><td>자동</td></tr>
         <tr><td><code>docs/eluon.json</code></td><td>빌더가 읽는 변환본</td><td>자동</td></tr>
         <tr><td><code>docs/prompt-builder.html</code></td><td>프롬프트 빌더 자체</td><td>사람</td></tr>
         <tr><td><code>assets/components/</code></td><td>테마별 @2x PNG + 사이드카 JSON</td><td>자동</td></tr>
-        <tr><td><code>index/sheet-*.png</code></td><td>37개가 라벨과 함께 든 엘루온 시트. 상태 변형은 빠져 있습니다</td><td>자동</td></tr>
+        <tr><td><code>index/sheet-*.png</code></td><td>44개가 라벨과 함께 든 엘루온 시트. 상태 변형은 빠져 있습니다</td><td>자동</td></tr>
         <tr><td><code>CLAUDE.md</code></td><td>에이전트가 먼저 읽는 작업 계약서</td><td>사람</td></tr>
       </tbody>
     </table>
@@ -496,7 +496,7 @@ footer p{max-width:68ch}
       </tbody>
     </table>
   </div>
-  <p><code>ember</code>의 <span class="num">h52 · padX44</span>와 <span class="num">287.5</span>는 <strong>고객사 화면에서 실제로 잰 값</strong>입니다. 원본 피그마 좌표로 14개 값을 역산 대조해 전부 일치를 확인했습니다. 자산 37개 중 <strong>30개가 테마마다 치수가 다릅니다.</strong></p>
+  <p><code>ember</code>의 <span class="num">h52 · padX44</span>와 <span class="num">287.5</span>는 <strong>고객사 화면에서 실제로 잰 값</strong>입니다. 원본 피그마 좌표로 14개 값을 역산 대조해 전부 일치를 확인했습니다. 자산 44개 중 <strong>37개가 테마마다 치수가 다릅니다.</strong></p>
 
   <h4>그래서 spec 읽는 법이 바뀌었습니다 <span class="tag">v1.1.0</span></h4>
   <p>치수가 테마마다 다르므로, <code>manifest.json</code>의 <code>spec</code>은 <strong>토큰 이름</strong>만 말하고 실제 수치는 <code>specByTheme</code>에 테마별로 들어 있습니다.</p>
@@ -822,7 +822,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
 
   <h3 id="connect-2">소스 바 읽는 법</h3>
   <p>연결되면 빌더 탭 맨 위에 이렇게 뜹니다.</p>
-  <pre>Eluon Design System        37개 자산 · 12개 그룹 · v1.12.4</pre>
+  <pre>Eluon Design System        44개 자산 · 13개 그룹 · v1.12.4</pre>
   <p>여기 <strong>경고가 뜨면 무시하지 마십시오.</strong> 실제로 겪은 두 가지입니다.</p>
   <div class="defs">
     <div class="def">
@@ -917,16 +917,16 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
   <p>검색창은 <strong>ID뿐 아니라 용도와 태그까지</strong> 훑습니다. "뱃지"나 "전환"으로 찾으면 됩니다. 각 행에 <code>usage</code>와 <strong>금지</strong> 문구가 같이 보이는데, 이게 고를 때 보라고 넣은 것입니다. 행 오른쪽에는 그 자산이 가진 <strong>상태</strong>가 적혀 있습니다 — 따로 고르는 물건이 아닙니다.</p>
 
   <h4>고른 것은 칩으로 보입니다</h4>
-  <p><code>4/37</code> 같은 숫자만으로는 무엇을 골랐는지 알 수 없어서, 검색창 아래에 <strong>첨부파일처럼 이름이 늘어섭니다.</strong> 칩의 ×로 바로 뺍니다.</p>
+  <p><code>4/44</code> 같은 숫자만으로는 무엇을 골랐는지 알 수 없어서, 검색창 아래에 <strong>첨부파일처럼 이름이 늘어섭니다.</strong> 칩의 ×로 바로 뺍니다.</p>
 
   <h4>목록은 접혀 있습니다</h4>
-  <p>37개를 늘 펼쳐 두면 그 아래 내용이 멀어집니다. <strong>자산 목록 펼치기</strong>를 눌러야 열리고, 고른 것이 있으면 요약이 <em>자산 목록 — 4개 고름</em>으로 바뀝니다.</p>
+  <p>44개를 늘 펼쳐 두면 그 아래 내용이 멀어집니다. <strong>자산 목록 펼치기</strong>를 눌러야 열리고, 고른 것이 있으면 요약이 <em>자산 목록 — 4개 고름</em>으로 바뀝니다.</p>
 
   <h4>그룹마다 모두 고르기</h4>
-  <p>하나씩 누르는 건 37개짜리 목록에서 할 일이 아닙니다. 그룹 머리의 <strong>모두 고르기 · 모두 빼기</strong>로 한 종류를 통째로 다룹니다. 전부 비우려면 위의 <strong>전체 해제</strong>입니다.</p>
+  <p>하나씩 누르는 건 44개짜리 목록에서 할 일이 아닙니다. 그룹 머리의 <strong>모두 고르기 · 모두 빼기</strong>로 한 종류를 통째로 다룹니다. 전부 비우려면 위의 <strong>전체 해제</strong>입니다.</p>
   <div class="note">
     <b>전역 "전체 선택"은 뺐습니다</b>
-    37개를 다 고르는 일은 실제로 없습니다. 그런 버튼이 있으면 <strong>눌러 놓고 다시 지우는 일</strong>만 생겨서, 그룹 단위로만 남겼습니다.
+    44개를 다 고르는 일은 실제로 없습니다. 그런 버튼이 있으면 <strong>눌러 놓고 다시 지우는 일</strong>만 생겨서, 그룹 단위로만 남겼습니다.
   </div>
 
   <h4>자산 페이지에서 골라 넘기기</h4>
@@ -1104,7 +1104,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
       <div class="v">자산 파일이 아직 안 붙었다는 뜻입니다. 탭 오른쪽에 이유가 적혀 있습니다. <em>라이브러리 → 피그마에서 먼저 연결하십시오.</em></div>
     </div>
     <div class="def">
-      <div class="k">자산 수가 적게 보입니다 <span>37개여야 정상</span></div>
+      <div class="k">자산 수가 적게 보입니다 <span>44개여야 정상</span></div>
       <div class="v">낡은 자산 파일을 보고 있는 것입니다. 옛 파일에는 커머스 5종과 <code>section-header-md</code>가 없어서, <em>있는 자산을 없다고 잘못 판단하게 됩니다.</em> 소스 바의 버전을 확인하십시오.</div>
     </div>
     <div class="def">
@@ -1157,7 +1157,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
 <footer>
   <p>Eluon v1.12.4 기준으로 작성했습니다. 만드는 방식이 바뀌면 이 문서도 그날 같이 고칩니다 — 나중에 몰아서 고치면 무엇이 틀렸는지 찾는 데만 시간이 걸립니다.</p>
   <p style="margin-top:16px">더 자세한 규칙은 저장소의 <code>CLAUDE.md</code>에, 검증된 프롬프트 템플릿은 <code>prompts/</code>에 있습니다.</p>
-  <p style="margin-top:16px">이 문서의 본문은 <code>docs/guide.src.html</code>에 있습니다. 고친 뒤 <code>build_guide.py</code>를 돌리면 이 페이지가 다시 만들어집니다. <strong>버전과 개수는 손으로 적지 마십시오</strong> — <code>v1.12.4</code>·<code>37</code> 자리표시자를 쓰면 manifest에서 채워집니다.</p>
+  <p style="margin-top:16px">이 문서의 본문은 <code>docs/guide.src.html</code>에 있습니다. 고친 뒤 <code>build_guide.py</code>를 돌리면 이 페이지가 다시 만들어집니다. <strong>버전과 개수는 손으로 적지 마십시오</strong> — <code>v1.12.4</code>·<code>44</code> 자리표시자를 쓰면 manifest에서 채워집니다.</p>
   <div class="scroller" style="margin-top:24px">
     <table>
       <thead><tr><th>버전</th><th>바뀐 것</th></tr></thead>

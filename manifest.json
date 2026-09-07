@@ -1248,7 +1248,7 @@
       }
     }
   },
-  "count": 37,
+  "count": 44,
   "variantCount": 5,
   "assets": [
     {
@@ -1281,6 +1281,7 @@
       "dont": "색만으로 상태를 구분하지 않음",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/badge/badge-status-sm--eluo@2x.png",
         "atlas": "assets/components/badge/badge-status-sm--atlas@2x.png",
@@ -1364,6 +1365,771 @@
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/badge/badge-status-sm--eluo%402x.png"
     },
     {
+      "id": "booking-bar-lg",
+      "name": "Booking Bar / LG",
+      "group": "booking",
+      "tags": [
+        "예약",
+        "검색",
+        "숙박"
+      ],
+      "spec": {
+        "width": "container.max",
+        "paddingY": "booking.barPaddingY",
+        "gap": "booking.barGap",
+        "fieldGap": "booking.fieldGap",
+        "borderWidth": "border.width",
+        "labelTypography": "label",
+        "valueTypography": "body1-bold",
+        "actionHeight": "control.lg.height",
+        "actionPaddingX": "control.lg.paddingX"
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "border": "border.subtle",
+        "label": "text.secondary",
+        "value": "text.primary",
+        "divider": "border.subtle",
+        "actionBg": "brand.primary",
+        "actionLabel": "text.inverse"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "필수 미입력(검색 비활성)"
+      ],
+      "usage": "숙박 검색의 시작점. 지점·날짜·인원을 한 줄로. 첫 화면 바로 아래에 둠",
+      "dont": "필드를 다섯 개 넘기지 않음. 그 이상은 상세 검색으로 넘김",
+      "status": "stable",
+      "since": "v1.13.0",
+      "pack": "hotel",
+      "renders": {
+        "linen": "assets/components/booking/booking-bar-lg--linen@2x.png"
+      },
+      "cdn": {
+        "linen": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/booking-bar-lg--linen%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 1200,
+          "paddingY": "booking.barPaddingY",
+          "gap": "booking.barGap",
+          "fieldGap": "booking.fieldGap",
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "valueTypography": "body1-bold",
+          "actionHeight": 56,
+          "actionPaddingX": 24
+        },
+        "atlas": {
+          "width": 1200,
+          "paddingY": "booking.barPaddingY",
+          "gap": "booking.barGap",
+          "fieldGap": "booking.fieldGap",
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "valueTypography": "body1-bold",
+          "actionHeight": 56,
+          "actionPaddingX": 24
+        },
+        "ember": {
+          "width": 1200,
+          "paddingY": "booking.barPaddingY",
+          "gap": "booking.barGap",
+          "fieldGap": "booking.fieldGap",
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "valueTypography": "body1-bold",
+          "actionHeight": 52,
+          "actionPaddingX": 44
+        },
+        "harbor": {
+          "width": 1200,
+          "paddingY": "booking.barPaddingY",
+          "gap": "booking.barGap",
+          "fieldGap": "booking.fieldGap",
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "valueTypography": "body1-bold",
+          "actionHeight": 56,
+          "actionPaddingX": 40
+        },
+        "tideland": {
+          "width": 1200,
+          "paddingY": "booking.barPaddingY",
+          "gap": "booking.barGap",
+          "fieldGap": "booking.fieldGap",
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "valueTypography": "body1-bold",
+          "actionHeight": 56,
+          "actionPaddingX": 24
+        },
+        "cobalt": {
+          "width": 1200,
+          "paddingY": "booking.barPaddingY",
+          "gap": "booking.barGap",
+          "fieldGap": "booking.fieldGap",
+          "borderWidth": 2,
+          "labelTypography": "label",
+          "valueTypography": "body1-bold",
+          "actionHeight": 56,
+          "actionPaddingX": 38
+        },
+        "noir": {
+          "width": 1200,
+          "paddingY": "booking.barPaddingY",
+          "gap": "booking.barGap",
+          "fieldGap": "booking.fieldGap",
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "valueTypography": "body1-bold",
+          "actionHeight": 56,
+          "actionPaddingX": 24
+        },
+        "linen": {
+          "width": 1488,
+          "paddingY": 24,
+          "gap": 24,
+          "fieldGap": 8,
+          "borderWidth": 1,
+          "labelTypography": "label",
+          "valueTypography": "body1-bold",
+          "actionHeight": 64,
+          "actionPaddingX": 24
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {},
+        "noir": {},
+        "linen": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/booking-bar-lg--linen%402x.png"
+    },
+    {
+      "id": "date-range-md",
+      "name": "Date Range / MD",
+      "group": "booking",
+      "tags": [
+        "예약",
+        "날짜",
+        "기간"
+      ],
+      "spec": {
+        "width": "field.width",
+        "height": "field.height",
+        "paddingX": "field.paddingX",
+        "radius": "md",
+        "borderWidth": "border.width",
+        "gap": "booking.fieldGap",
+        "typography": "body1-bold",
+        "nightsTypography": "caption"
+      },
+      "tokens": {
+        "border": "border.default",
+        "value": "text.primary",
+        "separator": "text.tertiary",
+        "nights": "brand.onSubtle",
+        "nightsBg": "brand.subtle"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "focus",
+        "미선택"
+      ],
+      "usage": "체크인과 체크아웃을 한 입력으로. 며칠 묵는지를 함께 보여 줌",
+      "dont": "날짜 입력 두 개로 쪼개지 않음 — 사람은 기간 하나로 생각함",
+      "status": "stable",
+      "since": "v1.13.0",
+      "pack": "hotel",
+      "renders": {
+        "linen": "assets/components/booking/date-range-md--linen@2x.png"
+      },
+      "cdn": {
+        "linen": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/date-range-md--linen%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 320,
+          "height": 52,
+          "paddingX": 16,
+          "radius": "md",
+          "borderWidth": 1,
+          "gap": "booking.fieldGap",
+          "typography": "body1-bold",
+          "nightsTypography": "caption"
+        },
+        "atlas": {
+          "width": 320,
+          "height": 52,
+          "paddingX": 16,
+          "radius": "md",
+          "borderWidth": 1,
+          "gap": "booking.fieldGap",
+          "typography": "body1-bold",
+          "nightsTypography": "caption"
+        },
+        "ember": {
+          "width": 320,
+          "height": 52,
+          "paddingX": 16,
+          "radius": "md",
+          "borderWidth": 1,
+          "gap": "booking.fieldGap",
+          "typography": "body1-bold",
+          "nightsTypography": "caption"
+        },
+        "harbor": {
+          "width": 320,
+          "height": 52,
+          "paddingX": 16,
+          "radius": "md",
+          "borderWidth": 1,
+          "gap": "booking.fieldGap",
+          "typography": "body1-bold",
+          "nightsTypography": "caption"
+        },
+        "tideland": {
+          "width": 320,
+          "height": 52,
+          "paddingX": 16,
+          "radius": "md",
+          "borderWidth": 1,
+          "gap": "booking.fieldGap",
+          "typography": "body1-bold",
+          "nightsTypography": "caption"
+        },
+        "cobalt": {
+          "width": 320,
+          "height": 52,
+          "paddingX": 16,
+          "radius": "md",
+          "borderWidth": 2,
+          "gap": "booking.fieldGap",
+          "typography": "body1-bold",
+          "nightsTypography": "caption"
+        },
+        "noir": {
+          "width": 320,
+          "height": 52,
+          "paddingX": 16,
+          "radius": "md",
+          "borderWidth": 1,
+          "gap": "booking.fieldGap",
+          "typography": "body1-bold",
+          "nightsTypography": "caption"
+        },
+        "linen": {
+          "width": 320,
+          "height": 52,
+          "paddingX": 16,
+          "radius": "md",
+          "borderWidth": 1,
+          "gap": 8,
+          "typography": "body1-bold",
+          "nightsTypography": "caption"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {},
+        "noir": {},
+        "linen": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/date-range-md--linen%402x.png"
+    },
+    {
+      "id": "price-member-md",
+      "name": "Price / Member / MD",
+      "group": "booking",
+      "tags": [
+        "예약",
+        "가격",
+        "회원가"
+      ],
+      "spec": {
+        "gap": "booking.priceGap",
+        "listTypography": "body2",
+        "memberTypography": "heading3",
+        "noteTypography": "caption"
+      },
+      "tokens": {
+        "listLabel": "text.tertiary",
+        "list": "text.secondary",
+        "memberLabel": "text.brand",
+        "member": "text.brand",
+        "note": "text.tertiary"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "회원가 없음"
+      ],
+      "usage": "일반가와 회원가를 나란히. 회원가를 크고 굵게 둬서 가입 동기를 만듦",
+      "dont": "회원가만 단독으로 쓰지 않음 — 비교 대상이 없으면 싼지 알 수 없음. 할인율·정가 구조는 이것이 아니라 price-discount-md",
+      "status": "stable",
+      "since": "v1.13.0",
+      "pack": "hotel",
+      "renders": {
+        "linen": "assets/components/booking/price-member-md--linen@2x.png"
+      },
+      "cdn": {
+        "linen": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/price-member-md--linen%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "gap": "booking.priceGap",
+          "listTypography": "body2",
+          "memberTypography": "heading3",
+          "noteTypography": "caption"
+        },
+        "atlas": {
+          "gap": "booking.priceGap",
+          "listTypography": "body2",
+          "memberTypography": "heading3",
+          "noteTypography": "caption"
+        },
+        "ember": {
+          "gap": "booking.priceGap",
+          "listTypography": "body2",
+          "memberTypography": "heading3",
+          "noteTypography": "caption"
+        },
+        "harbor": {
+          "gap": "booking.priceGap",
+          "listTypography": "body2",
+          "memberTypography": "heading3",
+          "noteTypography": "caption"
+        },
+        "tideland": {
+          "gap": "booking.priceGap",
+          "listTypography": "body2",
+          "memberTypography": "heading3",
+          "noteTypography": "caption"
+        },
+        "cobalt": {
+          "gap": "booking.priceGap",
+          "listTypography": "body2",
+          "memberTypography": "heading3",
+          "noteTypography": "caption"
+        },
+        "noir": {
+          "gap": "booking.priceGap",
+          "listTypography": "body2",
+          "memberTypography": "heading3",
+          "noteTypography": "caption"
+        },
+        "linen": {
+          "gap": 4,
+          "listTypography": "body2",
+          "memberTypography": "heading3",
+          "noteTypography": "caption"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {},
+        "noir": {},
+        "linen": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/price-member-md--linen%402x.png"
+    },
+    {
+      "id": "rate-card-lg",
+      "name": "Rate Card / LG",
+      "group": "booking",
+      "tags": [
+        "예약",
+        "요금",
+        "상품"
+      ],
+      "spec": {
+        "width": "container.max",
+        "paddingX": "booking.ratePaddingX",
+        "paddingY": "booking.ratePaddingY",
+        "gap": "booking.rateGap",
+        "radius": "xl",
+        "borderWidth": "border.width",
+        "titleTypography": "heading3",
+        "bodyTypography": "body2",
+        "actionHeight": "control.md.height"
+      },
+      "tokens": {
+        "bg": "surface.default",
+        "border": "border.subtle",
+        "title": "text.primary",
+        "body": "text.secondary",
+        "actionBg": "brand.primary",
+        "actionLabel": "text.inverse"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "hover",
+        "매진"
+      ],
+      "usage": "요금 상품 한 줄. 상품명 · 포함 내역 · 가격 · 선택 버튼",
+      "dont": "포함 내역을 세 줄 넘기지 않음. 나머지는 상세로 넘김",
+      "status": "stable",
+      "since": "v1.13.0",
+      "pack": "hotel",
+      "renders": {
+        "linen": "assets/components/booking/rate-card-lg--linen@2x.png"
+      },
+      "cdn": {
+        "linen": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/rate-card-lg--linen%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 1200,
+          "paddingX": "booking.ratePaddingX",
+          "paddingY": "booking.ratePaddingY",
+          "gap": "booking.rateGap",
+          "radius": "xl",
+          "borderWidth": 1,
+          "titleTypography": "heading3",
+          "bodyTypography": "body2",
+          "actionHeight": 48
+        },
+        "atlas": {
+          "width": 1200,
+          "paddingX": "booking.ratePaddingX",
+          "paddingY": "booking.ratePaddingY",
+          "gap": "booking.rateGap",
+          "radius": "xl",
+          "borderWidth": 1,
+          "titleTypography": "heading3",
+          "bodyTypography": "body2",
+          "actionHeight": 48
+        },
+        "ember": {
+          "width": 1200,
+          "paddingX": "booking.ratePaddingX",
+          "paddingY": "booking.ratePaddingY",
+          "gap": "booking.rateGap",
+          "radius": "xl",
+          "borderWidth": 1,
+          "titleTypography": "heading3",
+          "bodyTypography": "body2",
+          "actionHeight": 40
+        },
+        "harbor": {
+          "width": 1200,
+          "paddingX": "booking.ratePaddingX",
+          "paddingY": "booking.ratePaddingY",
+          "gap": "booking.rateGap",
+          "radius": "xl",
+          "borderWidth": 1,
+          "titleTypography": "heading3",
+          "bodyTypography": "body2",
+          "actionHeight": 48
+        },
+        "tideland": {
+          "width": 1200,
+          "paddingX": "booking.ratePaddingX",
+          "paddingY": "booking.ratePaddingY",
+          "gap": "booking.rateGap",
+          "radius": "xl",
+          "borderWidth": 1,
+          "titleTypography": "heading3",
+          "bodyTypography": "body2",
+          "actionHeight": 48
+        },
+        "cobalt": {
+          "width": 1200,
+          "paddingX": "booking.ratePaddingX",
+          "paddingY": "booking.ratePaddingY",
+          "gap": "booking.rateGap",
+          "radius": "xl",
+          "borderWidth": 2,
+          "titleTypography": "heading3",
+          "bodyTypography": "body2",
+          "actionHeight": 44
+        },
+        "noir": {
+          "width": 1200,
+          "paddingX": "booking.ratePaddingX",
+          "paddingY": "booking.ratePaddingY",
+          "gap": "booking.rateGap",
+          "radius": "xl",
+          "borderWidth": 1,
+          "titleTypography": "heading3",
+          "bodyTypography": "body2",
+          "actionHeight": 46
+        },
+        "linen": {
+          "width": 1488,
+          "paddingX": 24,
+          "paddingY": 24,
+          "gap": 16,
+          "radius": "xl",
+          "borderWidth": 1,
+          "titleTypography": "heading3",
+          "bodyTypography": "body2",
+          "actionHeight": 46
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {},
+        "noir": {},
+        "linen": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/rate-card-lg--linen%402x.png"
+    },
+    {
+      "id": "stay-summary-md",
+      "name": "Stay Summary / MD",
+      "group": "booking",
+      "tags": [
+        "예약",
+        "요약",
+        "투숙조건"
+      ],
+      "spec": {
+        "width": "container.max",
+        "paddingY": "booking.summaryPaddingY",
+        "gap": "booking.barGap",
+        "borderWidth": "border.width",
+        "labelTypography": "caption",
+        "valueTypography": "body1-bold"
+      },
+      "tokens": {
+        "bg": "surface.subtle",
+        "border": "border.subtle",
+        "label": "text.tertiary",
+        "value": "text.primary"
+      },
+      "responsive": {},
+      "states": [
+        "default"
+      ],
+      "usage": "예약 단계 상단에 고른 조건을 고정 표시. 지점·날짜·박수·인원",
+      "dont": "여기서 값을 고치게 하지 않음. 고치려면 검색으로 되돌림",
+      "status": "stable",
+      "since": "v1.13.0",
+      "pack": "hotel",
+      "renders": {
+        "linen": "assets/components/booking/stay-summary-md--linen@2x.png"
+      },
+      "cdn": {
+        "linen": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/stay-summary-md--linen%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "width": 1200,
+          "paddingY": "booking.summaryPaddingY",
+          "gap": "booking.barGap",
+          "borderWidth": 1,
+          "labelTypography": "caption",
+          "valueTypography": "body1-bold"
+        },
+        "atlas": {
+          "width": 1200,
+          "paddingY": "booking.summaryPaddingY",
+          "gap": "booking.barGap",
+          "borderWidth": 1,
+          "labelTypography": "caption",
+          "valueTypography": "body1-bold"
+        },
+        "ember": {
+          "width": 1200,
+          "paddingY": "booking.summaryPaddingY",
+          "gap": "booking.barGap",
+          "borderWidth": 1,
+          "labelTypography": "caption",
+          "valueTypography": "body1-bold"
+        },
+        "harbor": {
+          "width": 1200,
+          "paddingY": "booking.summaryPaddingY",
+          "gap": "booking.barGap",
+          "borderWidth": 1,
+          "labelTypography": "caption",
+          "valueTypography": "body1-bold"
+        },
+        "tideland": {
+          "width": 1200,
+          "paddingY": "booking.summaryPaddingY",
+          "gap": "booking.barGap",
+          "borderWidth": 1,
+          "labelTypography": "caption",
+          "valueTypography": "body1-bold"
+        },
+        "cobalt": {
+          "width": 1200,
+          "paddingY": "booking.summaryPaddingY",
+          "gap": "booking.barGap",
+          "borderWidth": 2,
+          "labelTypography": "caption",
+          "valueTypography": "body1-bold"
+        },
+        "noir": {
+          "width": 1200,
+          "paddingY": "booking.summaryPaddingY",
+          "gap": "booking.barGap",
+          "borderWidth": 1,
+          "labelTypography": "caption",
+          "valueTypography": "body1-bold"
+        },
+        "linen": {
+          "width": 1488,
+          "paddingY": 16,
+          "gap": 24,
+          "borderWidth": 1,
+          "labelTypography": "caption",
+          "valueTypography": "body1-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {},
+        "noir": {},
+        "linen": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/stay-summary-md--linen%402x.png"
+    },
+    {
+      "id": "stepper-md",
+      "name": "Stepper / MD",
+      "group": "booking",
+      "tags": [
+        "예약",
+        "인원",
+        "수량"
+      ],
+      "spec": {
+        "buttonSize": "booking.stepperSize",
+        "valueWidth": "booking.stepperValueWidth",
+        "gap": "booking.stepperGap",
+        "radius": "sm",
+        "borderWidth": "border.width",
+        "typography": "body1-bold"
+      },
+      "tokens": {
+        "border": "border.default",
+        "icon": "text.primary",
+        "value": "text.primary",
+        "disabled": "text.disabled"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "최소값(감소 비활성)",
+        "최대값(증가 비활성)"
+      ],
+      "usage": "객실 수·성인·어린이처럼 작은 정수를 세는 자리",
+      "dont": "열을 넘길 수 있는 값에는 쓰지 않음. 그때는 select 로",
+      "status": "stable",
+      "since": "v1.13.0",
+      "pack": "hotel",
+      "renders": {
+        "linen": "assets/components/booking/stepper-md--linen@2x.png"
+      },
+      "cdn": {
+        "linen": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/stepper-md--linen%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "buttonSize": "booking.stepperSize",
+          "valueWidth": "booking.stepperValueWidth",
+          "gap": "booking.stepperGap",
+          "radius": "sm",
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "atlas": {
+          "buttonSize": "booking.stepperSize",
+          "valueWidth": "booking.stepperValueWidth",
+          "gap": "booking.stepperGap",
+          "radius": "sm",
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "ember": {
+          "buttonSize": "booking.stepperSize",
+          "valueWidth": "booking.stepperValueWidth",
+          "gap": "booking.stepperGap",
+          "radius": "sm",
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "harbor": {
+          "buttonSize": "booking.stepperSize",
+          "valueWidth": "booking.stepperValueWidth",
+          "gap": "booking.stepperGap",
+          "radius": "sm",
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "tideland": {
+          "buttonSize": "booking.stepperSize",
+          "valueWidth": "booking.stepperValueWidth",
+          "gap": "booking.stepperGap",
+          "radius": "sm",
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "cobalt": {
+          "buttonSize": "booking.stepperSize",
+          "valueWidth": "booking.stepperValueWidth",
+          "gap": "booking.stepperGap",
+          "radius": "sm",
+          "borderWidth": 2,
+          "typography": "body1-bold"
+        },
+        "noir": {
+          "buttonSize": "booking.stepperSize",
+          "valueWidth": "booking.stepperValueWidth",
+          "gap": "booking.stepperGap",
+          "radius": "sm",
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        },
+        "linen": {
+          "buttonSize": 36,
+          "valueWidth": 40,
+          "gap": 8,
+          "radius": "sm",
+          "borderWidth": 1,
+          "typography": "body1-bold"
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {},
+        "noir": {},
+        "linen": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/stepper-md--linen%402x.png"
+    },
+    {
       "id": "btn-danger-md",
       "name": "Danger Button / MD",
       "group": "button",
@@ -1394,6 +2160,7 @@
       "dont": "확인 모달 없이 단독 노출 금지",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/button/btn-danger-md--eluo@2x.png",
         "atlas": "assets/components/button/btn-danger-md--atlas@2x.png",
@@ -1512,6 +2279,7 @@
       "dont": "한 화면에 3개 이상 늘어놓지 않음. 위계가 사라짐",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/button/btn-ghost-md--eluo@2x.png",
         "atlas": "assets/components/button/btn-ghost-md--atlas@2x.png",
@@ -1637,6 +2405,7 @@
       "dont": "btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐",
       "status": "stable",
       "since": "v1.0.3",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/button/btn-outline-lg--eluo@2x.png",
         "atlas": "assets/components/button/btn-outline-lg--atlas@2x.png",
@@ -1784,6 +2553,7 @@
       "dont": "btn-primary와 같은 화면에 섞지 않음. 어느 쪽이 주요 액션인지 흐려짐",
       "status": "stable",
       "since": "v1.0.3",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/button/btn-outline-md--eluo@2x.png",
         "atlas": "assets/components/button/btn-outline-md--atlas@2x.png",
@@ -1909,6 +2679,7 @@
       "dont": "이유 안내 없이 단독 노출 금지. 항상 헬퍼 텍스트와 함께",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "variantOf": "btn-primary-lg",
       "variantState": "disabled",
       "renders": {
@@ -2050,6 +2821,7 @@
       "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/button/btn-primary-lg--eluo@2x.png",
         "atlas": "assets/components/button/btn-primary-lg--atlas@2x.png",
@@ -2204,6 +2976,7 @@
       "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/button/btn-primary-md--eluo@2x.png",
         "atlas": "assets/components/button/btn-primary-md--atlas@2x.png",
@@ -2325,6 +3098,7 @@
       "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/button/btn-primary-sm--eluo@2x.png",
         "atlas": "assets/components/button/btn-primary-sm--atlas@2x.png",
@@ -2449,6 +3223,7 @@
       "dont": "단독으로 쓰지 않음. 항상 primary와 짝",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/button/btn-secondary-lg--eluo@2x.png",
         "atlas": "assets/components/button/btn-secondary-lg--atlas@2x.png",
@@ -2595,6 +3370,7 @@
       "dont": "카드 안에 또 카드를 넣지 않음",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/card/card-basic-md--eluo@2x.png",
         "atlas": "assets/components/card/card-basic-md--atlas@2x.png",
@@ -2751,6 +3527,7 @@
       "dont": "가로 이미지를 억지로 넣지 않음. 16:9 면 card-product-md",
       "status": "stable",
       "since": "v1.6.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/card/card-portrait-md--eluo@2x.png",
         "atlas": "assets/components/card/card-portrait-md--atlas@2x.png",
@@ -2893,6 +3670,7 @@
       "dont": "썸네일 비율을 카드마다 다르게 두지 않음",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/card/card-product-md--eluo@2x.png",
         "atlas": "assets/components/card/card-product-md--atlas@2x.png",
@@ -3057,6 +3835,7 @@
       "dont": "숫자가 없으면 쓰지 않음. 그냥 구획이면 card-basic-md",
       "status": "stable",
       "since": "v1.5.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/card/card-stat-md--eluo@2x.png",
         "atlas": "assets/components/card/card-stat-md--atlas@2x.png",
@@ -3199,6 +3978,7 @@
       "dont": "색만으로 선택을 표시하지 않음. 색각 이상 사용자가 구분 못 함",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "variantOf": "chip-filter-md",
       "variantState": "selected",
       "renders": {
@@ -3340,6 +4120,7 @@
       "dont": "단일 선택에는 쓰지 않음. 그건 탭이나 셀렉트",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/chip/chip-filter-md--eluo@2x.png",
         "atlas": "assets/components/chip/chip-filter-md--atlas@2x.png",
@@ -3491,6 +4272,7 @@
       "dont": "정가에 취소선 없이 두 가격을 나란히 두지 않음. 어느 쪽이 낼 돈인지 알 수 없음",
       "status": "stable",
       "since": "v1.0.3",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/commerce/price-discount-md--eluo@2x.png",
         "atlas": "assets/components/commerce/price-discount-md--atlas@2x.png",
@@ -3595,6 +4377,7 @@
       "dont": "기본 상태와 하트 모양이 같으면 안 됨. 색각 이상 사용자가 구분하지 못함",
       "status": "stable",
       "since": "v1.0.3",
+      "pack": "core",
       "variantOf": "wish-toggle-md",
       "variantState": "selected",
       "renders": {
@@ -3717,6 +4500,7 @@
       "dont": "선택 상태를 색으로만 표시하지 않음. 하트를 채워 모양도 함께 바꿈",
       "status": "stable",
       "since": "v1.0.3",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/commerce/wish-toggle-md--eluo@2x.png",
         "atlas": "assets/components/commerce/wish-toggle-md--atlas@2x.png",
@@ -3861,6 +4645,7 @@
       "dont": "한 번에 다 읽어야 하는 내용을 접지 않음. 접힌 것은 안 읽습니다",
       "status": "stable",
       "since": "v1.10.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/disclosure/accordion-md--eluo@2x.png",
         "atlas": "assets/components/disclosure/accordion-md--atlas@2x.png",
@@ -3998,6 +4783,7 @@
       "dont": "'데이터가 없습니다'만 쓰지 않음. 왜 없는지·무엇을 하면 되는지가 빠지면 막힙니다",
       "status": "stable",
       "since": "v1.10.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/feedback/empty-state-md--eluo@2x.png",
         "atlas": "assets/components/feedback/empty-state-md--atlas@2x.png",
@@ -4119,6 +4905,7 @@
       "dont": "원인 설명 없이 '오류가 발생했습니다'만 쓰지 않음",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/feedback/toast-error-md--eluo@2x.png",
         "atlas": "assets/components/feedback/toast-error-md--atlas@2x.png",
@@ -4280,6 +5067,7 @@
       "dont": "에러나 확인이 필요한 내용에 쓰지 않음. 사용자가 놓침",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/feedback/toast-info-md--eluo@2x.png",
         "atlas": "assets/components/feedback/toast-info-md--atlas@2x.png",
@@ -4411,6 +5199,131 @@
       "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/feedback/toast-info-md--eluo%402x.png"
     },
     {
+      "id": "tooltip-md",
+      "name": "Tooltip / MD",
+      "group": "feedback",
+      "tags": [
+        "툴팁",
+        "보조설명",
+        "규정"
+      ],
+      "spec": {
+        "iconSize": "tooltip.iconSize",
+        "paddingX": "tooltip.paddingX",
+        "paddingY": "tooltip.paddingY",
+        "maxWidth": "tooltip.maxWidth",
+        "radius": "xl",
+        "typography": "caption",
+        "elevation": 2
+      },
+      "tokens": {
+        "icon": "text.tertiary",
+        "bg": "surface.inverse",
+        "label": "text.inverse"
+      },
+      "responsive": {},
+      "states": [
+        "default",
+        "열림"
+      ],
+      "usage": "연령 기준·취소 규정처럼 짧은 보조 설명. 아이콘을 누르거나 포커스하면 열림",
+      "dont": "여기에만 있는 정보를 두지 않음(§7-9). 본문으로도 알 수 있어야 함",
+      "status": "stable",
+      "since": "v1.13.0",
+      "pack": "hotel",
+      "renders": {
+        "linen": "assets/components/feedback/tooltip-md--linen@2x.png"
+      },
+      "cdn": {
+        "linen": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/feedback/tooltip-md--linen%402x.png"
+      },
+      "specByTheme": {
+        "eluo": {
+          "iconSize": "tooltip.iconSize",
+          "paddingX": "tooltip.paddingX",
+          "paddingY": "tooltip.paddingY",
+          "maxWidth": "tooltip.maxWidth",
+          "radius": "xl",
+          "typography": "caption",
+          "elevation": 2
+        },
+        "atlas": {
+          "iconSize": "tooltip.iconSize",
+          "paddingX": "tooltip.paddingX",
+          "paddingY": "tooltip.paddingY",
+          "maxWidth": "tooltip.maxWidth",
+          "radius": "xl",
+          "typography": "caption",
+          "elevation": 2
+        },
+        "ember": {
+          "iconSize": "tooltip.iconSize",
+          "paddingX": "tooltip.paddingX",
+          "paddingY": "tooltip.paddingY",
+          "maxWidth": "tooltip.maxWidth",
+          "radius": "xl",
+          "typography": "caption",
+          "elevation": 2
+        },
+        "harbor": {
+          "iconSize": "tooltip.iconSize",
+          "paddingX": "tooltip.paddingX",
+          "paddingY": "tooltip.paddingY",
+          "maxWidth": "tooltip.maxWidth",
+          "radius": "xl",
+          "typography": "caption",
+          "elevation": 2
+        },
+        "tideland": {
+          "iconSize": "tooltip.iconSize",
+          "paddingX": "tooltip.paddingX",
+          "paddingY": "tooltip.paddingY",
+          "maxWidth": "tooltip.maxWidth",
+          "radius": "xl",
+          "typography": "caption",
+          "elevation": 2
+        },
+        "cobalt": {
+          "iconSize": "tooltip.iconSize",
+          "paddingX": "tooltip.paddingX",
+          "paddingY": "tooltip.paddingY",
+          "maxWidth": "tooltip.maxWidth",
+          "radius": "xl",
+          "typography": "caption",
+          "elevation": 2
+        },
+        "noir": {
+          "iconSize": "tooltip.iconSize",
+          "paddingX": "tooltip.paddingX",
+          "paddingY": "tooltip.paddingY",
+          "maxWidth": "tooltip.maxWidth",
+          "radius": "xl",
+          "typography": "caption",
+          "elevation": 2
+        },
+        "linen": {
+          "iconSize": 16,
+          "paddingX": 12,
+          "paddingY": 8,
+          "maxWidth": 240,
+          "radius": "xl",
+          "typography": "caption",
+          "elevation": 2
+        }
+      },
+      "responsiveByTheme": {
+        "eluo": {},
+        "atlas": {},
+        "ember": {},
+        "harbor": {},
+        "tideland": {},
+        "cobalt": {},
+        "noir": {},
+        "linen": {}
+      },
+      "preview": "https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/feedback/tooltip-md--linen%402x.png"
+    },
+    {
       "id": "input-text-md-error",
       "name": "Text Field / MD / Error",
       "group": "input",
@@ -4440,6 +5353,7 @@
       "dont": "빨간 테두리만 주고 이유를 적지 않는 것 금지",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "variantOf": "input-text-md",
       "variantState": "error",
       "renders": {
@@ -4594,6 +5508,7 @@
       "dont": "outline:none으로 링을 지우지 않음. 키보드 사용자가 위치를 잃음",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "variantOf": "input-text-md",
       "variantState": "focus",
       "renders": {
@@ -4751,6 +5666,7 @@
       "dont": "라벨 없이 placeholder만으로 쓰지 않음",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/input/input-text-md--eluo@2x.png",
         "atlas": "assets/components/input/input-text-md--atlas@2x.png",
@@ -4935,6 +5851,7 @@
       "dont": "선택지 5개 이하면 탭이나 라디오가 더 빠름",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/input/select-md--eluo@2x.png",
         "atlas": "assets/components/input/select-md--atlas@2x.png",
@@ -5083,6 +6000,7 @@
       "dont": "본문 정보를 여기 넣지 않음. 제목 한 줄·리드 한 줄·버튼 하나까지",
       "status": "stable",
       "since": "v1.8.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/cta-band-lg--eluo@2x.png",
         "atlas": "assets/components/layout/cta-band-lg--atlas@2x.png",
@@ -5230,6 +6148,7 @@
       "dont": "비교가 필요하면 목록이 아니라 표. table-basic-lg 로",
       "status": "stable",
       "since": "v1.10.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/desc-list-md--eluo@2x.png",
         "atlas": "assets/components/layout/desc-list-md--atlas@2x.png",
@@ -5377,6 +6296,7 @@
       "dont": "색을 흐리게 해서 구분하지 않음. 뒤집힌 면에서는 대비가 무너짐. 크기와 굵기로 나눔",
       "status": "stable",
       "since": "v1.8.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/footer-lg--eluo@2x.png",
         "atlas": "assets/components/layout/footer-lg--atlas@2x.png",
@@ -5531,6 +6451,7 @@
       "dont": "라벨을 placeholder 로 대신하지 않음. 입력하면 라벨이 사라짐",
       "status": "stable",
       "since": "v1.8.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/form-field-md--eluo@2x.png",
         "atlas": "assets/components/layout/form-field-md--atlas@2x.png",
@@ -5707,6 +6628,7 @@
       "dont": "메뉴가 7개를 넘기면 여기 다 넣지 않음. 드롭다운이나 2단으로 나눔",
       "status": "stable",
       "since": "v1.8.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/header-gnb-lg--eluo@2x.png",
         "atlas": "assets/components/layout/header-gnb-lg--atlas@2x.png",
@@ -5878,6 +6800,7 @@
       "dont": "한 화면에 두 번 쓰지 않음. hero-split-lg 와 같이 쓰지 않음 — 첫 화면은 하나. 요소 전체에 opacity 를 걸지 않음. 어둡게 하는 것은 스크림뿐",
       "status": "stable",
       "since": "v1.12.4",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/hero-media-lg--eluo@2x.png",
         "atlas": "assets/components/layout/hero-media-lg--atlas@2x.png",
@@ -6123,6 +7046,7 @@
       "dont": "한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐. 사진을 넣지 않음 — 사진이 주인공인 첫 화면은 hero-media-lg",
       "status": "stable",
       "since": "v1.8.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/hero-split-lg--eluo@2x.png",
         "atlas": "assets/components/layout/hero-split-lg--atlas@2x.png",
@@ -6392,6 +7316,7 @@
       "dont": "열이 셋을 넘게 비교해야 하면 목록이 아니라 표. table-basic-lg 로",
       "status": "stable",
       "since": "v1.8.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/list-row-md--eluo@2x.png",
         "atlas": "assets/components/layout/list-row-md--atlas@2x.png",
@@ -6537,6 +7462,7 @@
       "dont": "리드문이 세 줄을 넘기면 리드가 아니라 본문. 본문은 섹션 안으로 내림",
       "status": "stable",
       "since": "v1.0.4",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/section-header-md--eluo@2x.png",
         "atlas": "assets/components/layout/section-header-md--atlas@2x.png",
@@ -6670,6 +7596,7 @@
       "dont": "순서가 없는 목록에 번호를 붙이지 않음. 번호는 순서가 있다는 약속입니다",
       "status": "stable",
       "since": "v1.10.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/layout/step-flow-md--eluo@2x.png",
         "atlas": "assets/components/layout/step-flow-md--atlas@2x.png",
@@ -6807,6 +7734,7 @@
       "dont": "단순 안내에 쓰지 않음. 그건 토스트",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/modal/modal-confirm-lg--eluo@2x.png",
         "atlas": "assets/components/modal/modal-confirm-lg--atlas@2x.png",
@@ -6958,6 +7886,7 @@
       "dont": "두 단계뿐인 구조에 쓰지 않음. 뒤로 가기 한 번이면 됩니다",
       "status": "stable",
       "since": "v1.10.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/navigation/breadcrumb-md--eluo@2x.png",
         "atlas": "assets/components/navigation/breadcrumb-md--atlas@2x.png",
@@ -7063,6 +7992,7 @@
       "dont": "10페이지 이상 번호를 다 노출하지 않음. 축약 표기 사용",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/navigation/pagination-md--eluo@2x.png",
         "atlas": "assets/components/navigation/pagination-md--atlas@2x.png",
@@ -7203,6 +8133,7 @@
       "dont": "6개 이상이면 탭 대신 드롭다운 필터",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/navigation/tab-underline-md--eluo@2x.png",
         "atlas": "assets/components/navigation/tab-underline-md--atlas@2x.png",
@@ -7352,6 +8283,7 @@
       "dont": "모바일에서 그대로 쓰지 않음. 카드로 전환",
       "status": "stable",
       "since": "v1.0.0",
+      "pack": "core",
       "renders": {
         "eluo": "assets/components/table/table-basic-lg--eluo@2x.png",
         "atlas": "assets/components/table/table-basic-lg--atlas@2x.png",

@@ -32,6 +32,7 @@
   "dont": "본문 정보를 여기 넣지 않음. 제목 한 줄·리드 한 줄·버튼 하나까지",
   "status": "stable",
   "since": "v1.8.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/cta-band-lg--eluo@2x.png",
     "atlas": "assets/components/layout/cta-band-lg--atlas@2x.png",

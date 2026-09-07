@@ -1,0 +1,36 @@
+{
+  "id": "stay-summary-md",
+  "name": "Stay Summary / MD",
+  "group": "booking",
+  "tags": [
+    "예약",
+    "요약",
+    "투숙조건"
+  ],
+  "spec": {
+    "width": "container.max",
+    "paddingY": "booking.summaryPaddingY",
+    "gap": "booking.barGap",
+    "borderWidth": "border.width",
+    "labelTypography": "caption",
+    "valueTypography": "body1-bold"
+  },
+  "tokens": {
+    "bg": "surface.subtle",
+    "border": "border.subtle",
+    "label": "text.tertiary",
+    "value": "text.primary"
+  },
+  "responsive": {},
+  "states": [
+    "default"
+  ],
+  "usage": "예약 단계 상단에 고른 조건을 고정 표시. 지점·날짜·박수·인원",
+  "dont": "여기서 값을 고치게 하지 않음. 고치려면 검색으로 되돌림",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "hotel",
+  "renders": {
+    "linen": "assets/components/booking/stay-summary-md--linen@2x.png"
+  }
+}

@@ -34,6 +34,7 @@
   "dont": "한 번에 다 읽어야 하는 내용을 접지 않음. 접힌 것은 안 읽습니다",
   "status": "stable",
   "since": "v1.10.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/disclosure/accordion-md--eluo@2x.png",
     "atlas": "assets/components/disclosure/accordion-md--atlas@2x.png",

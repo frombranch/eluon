@@ -30,6 +30,7 @@
   "dont": "카드 안에 또 카드를 넣지 않음",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/card/card-basic-md--eluo@2x.png",
     "atlas": "assets/components/card/card-basic-md--atlas@2x.png",

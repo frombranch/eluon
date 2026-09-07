@@ -29,6 +29,7 @@
   "dont": "10페이지 이상 번호를 다 노출하지 않음. 축약 표기 사용",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/navigation/pagination-md--eluo@2x.png",
     "atlas": "assets/components/navigation/pagination-md--atlas@2x.png",

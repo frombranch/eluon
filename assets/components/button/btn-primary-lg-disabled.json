@@ -25,6 +25,7 @@
   "dont": "이유 안내 없이 단독 노출 금지. 항상 헬퍼 텍스트와 함께",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "variantOf": "btn-primary-lg",
   "variantState": "disabled",
   "renders": {

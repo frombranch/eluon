@@ -64,6 +64,10 @@ def contain(im, box_w, box_h):
 
 
 def sheet_for(assets, theme, out_rel, subtitle):
+    # pack 자산은 그 pack 을 드는 테마에만 있습니다. 시트에서 통째로 뺍니다 —
+    # 걸러내기 전에 행 수를 세면 빈 칸이 생깁니다.
+    assets = [a for a in assets if theme in a["renders"]]
+
     cols, cw, ch = S["columns"], S["cellWidth"], S["cellHeight"]
     pad, header, label_h = 40, 132, 64
     rows = (len(assets) + cols - 1) // cols

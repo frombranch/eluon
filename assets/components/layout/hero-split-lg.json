@@ -49,6 +49,7 @@
   "dont": "한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐. 사진을 넣지 않음 — 사진이 주인공인 첫 화면은 hero-media-lg",
   "status": "stable",
   "since": "v1.8.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/hero-split-lg--eluo@2x.png",
     "atlas": "assets/components/layout/hero-split-lg--atlas@2x.png",

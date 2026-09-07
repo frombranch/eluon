@@ -32,6 +32,7 @@
   "dont": "단독으로 쓰지 않음. 항상 primary와 짝",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/button/btn-secondary-lg--eluo@2x.png",
     "atlas": "assets/components/button/btn-secondary-lg--atlas@2x.png",

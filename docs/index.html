@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Eluon — Design System</title>
-<meta name="description" content="디자인포지션의 에이전틱 디자인 시스템. 컴포넌트 37개, 테마 8종.">
+<meta name="description" content="디자인포지션의 에이전틱 디자인 시스템. 컴포넌트 44개, 테마 8종.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -2258,6 +2258,21 @@
   --size-icon-md:24px;
   --size-icon-lg:48px;
   --size-touch-min:44px;
+  --size-booking-barPaddingY:24px;
+  --size-booking-barGap:24px;
+  --size-booking-fieldGap:8px;
+  --size-booking-stepperSize:36px;
+  --size-booking-stepperGap:8px;
+  --size-booking-stepperValueWidth:40px;
+  --size-booking-summaryPaddingY:16px;
+  --size-booking-ratePaddingX:24px;
+  --size-booking-ratePaddingY:24px;
+  --size-booking-rateGap:16px;
+  --size-booking-priceGap:4px;
+  --size-tooltip-paddingX:12px;
+  --size-tooltip-paddingY:8px;
+  --size-tooltip-maxWidth:240px;
+  --size-tooltip-iconSize:16px;
   --bp-sm:480px;
   --bp-md:768px;
   --bp-lg:1024px;
@@ -2404,6 +2419,12 @@ body{background:transparent;-webkit-font-smoothing:antialiased;
 .stage{display:inline-block}
 
 #cmp-badge-status-sm .c{display:inline-flex;gap:8px}#cmp-badge-status-sm .b{display:inline-flex;align-items:center;height:var(--size-badge-height);padding:0 var(--size-badge-paddingX);border-radius:var(--radius-full);font-size:13px;font-weight:700;line-height:1.4;letter-spacing:0;}#cmp-badge-status-sm .s{background:var(--color-success-subtle);color:var(--color-success-default)}#cmp-badge-status-sm .w{background:var(--color-warning-subtle);color:var(--color-warning-default)}#cmp-badge-status-sm .d{background:var(--color-danger-subtle);color:var(--color-danger-text)}
+#cmp-booking-bar-lg .c{width:var(--layout-container-max);display:flex;align-items:flex-end;gap:var(--size-booking-barGap);padding:var(--size-booking-barPaddingY) var(--layout-container-gutter);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-subtle)}#cmp-booking-bar-lg .f{display:flex;flex-direction:column;gap:var(--size-booking-fieldGap);flex:1;min-width:0}#cmp-booking-bar-lg .f + .f{border-left:var(--size-border-width) solid var(--color-border-subtle);padding-left:var(--size-booking-barGap)}#cmp-booking-bar-lg .l{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;color:var(--color-text-secondary)}#cmp-booking-bar-lg .v{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);font-variant-numeric:var(--text-numeric);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cmp-booking-bar-lg .b{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;flex:none;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}
+#cmp-date-range-md .c{width:var(--size-field-width);height:var(--size-field-height);display:flex;align-items:center;gap:var(--size-booking-fieldGap);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);border:var(--size-border-width) solid var(--color-border-default);background:var(--color-surface-default)}#cmp-date-range-md .v{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);font-variant-numeric:var(--text-numeric);}#cmp-date-range-md .s{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-tertiary)}#cmp-date-range-md .n{margin-left:auto;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;font-variant-numeric:var(--text-numeric);padding:0 var(--size-badge-paddingX);height:var(--size-badge-height);display:inline-flex;align-items:center;border-radius:var(--radius-full);background:var(--color-brand-subtle);color:var(--color-brand-onSubtle)}
+#cmp-price-member-md .c{display:flex;flex-direction:column;gap:var(--size-booking-priceGap);align-items:flex-end}#cmp-price-member-md .r{display:flex;align-items:baseline;gap:var(--size-price-gap)}#cmp-price-member-md .ll{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-tertiary)}#cmp-price-member-md .lv{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);font-variant-numeric:var(--text-numeric);}#cmp-price-member-md .ml{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-brand)}#cmp-price-member-md .mv{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-brand);font-variant-numeric:var(--text-numeric);}#cmp-price-member-md .n{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary)}
+#cmp-rate-card-lg .c{width:var(--layout-container-max);display:flex;align-items:center;gap:var(--size-booking-ratePaddingX);padding:var(--size-booking-ratePaddingY) var(--size-booking-ratePaddingX);border-radius:var(--radius-xl);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-subtle)}#cmp-rate-card-lg .m{flex:1;min-width:0;display:flex;flex-direction:column;gap:var(--size-booking-rateGap)}#cmp-rate-card-lg .t{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-primary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-rate-card-lg .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-rate-card-lg .d li{list-style:none}#cmp-rate-card-lg .p{flex:none;display:flex;align-items:center;gap:var(--size-booking-ratePaddingX)}#cmp-rate-card-lg .b{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}#cmp-rate-card-lg .pr{display:flex;flex-direction:column;align-items:flex-end;gap:var(--size-booking-priceGap)}#cmp-rate-card-lg .ll{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-tertiary);font-variant-numeric:var(--text-numeric);}#cmp-rate-card-lg .mv{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-brand);font-variant-numeric:var(--text-numeric);}
+#cmp-stay-summary-md .c{width:var(--layout-container-max);display:flex;gap:var(--size-booking-barGap);align-items:center;padding:var(--size-booking-summaryPaddingY) var(--layout-container-gutter);background:var(--color-surface-subtle);border-block:var(--size-border-width) solid var(--color-border-subtle)}#cmp-stay-summary-md .i{display:flex;flex-direction:column;gap:2px}#cmp-stay-summary-md .l{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary)}#cmp-stay-summary-md .v{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);font-variant-numeric:var(--text-numeric);}
+#cmp-stepper-md .c{display:inline-flex;align-items:center;gap:var(--size-booking-stepperGap)}#cmp-stepper-md .s{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;width:var(--size-booking-stepperSize);height:var(--size-booking-stepperSize);border-radius:var(--radius-sm);border:var(--size-border-width) solid var(--color-border-default);background:var(--color-surface-default);color:var(--color-text-primary);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}#cmp-stepper-md .s.off{color:var(--color-text-disabled);border-color:var(--color-border-subtle)}#cmp-stepper-md .v{min-width:var(--size-booking-stepperValueWidth);text-align:center;font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);font-variant-numeric:var(--text-numeric);}
 #cmp-btn-danger-md .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-danger-default);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
 #cmp-btn-ghost-md .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-ghost-paddingX);border-radius:var(--radius-md);background:transparent;color:var(--color-text-brand);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
 #cmp-btn-outline-lg .c{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-brand);color:var(--color-text-brand);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}
@@ -2426,6 +2447,7 @@ body{background:transparent;-webkit-font-smoothing:antialiased;
 #cmp-empty-state-md .c{display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--size-empty-gap);padding:var(--size-empty-paddingY) var(--size-empty-gap);background:var(--color-surface-subtle);border-radius:var(--radius-xl)}#cmp-empty-state-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-empty-state-md .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:var(--size-empty-bodyMaxWidth);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-empty-state-md .b{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;;margin-top:4px}
 #cmp-toast-error-md .c{display:flex;align-items:center;gap:var(--size-toast-gap);width:var(--size-toast-width);padding:var(--size-toast-paddingY) var(--size-toast-paddingX);border-radius:var(--radius-lg);box-shadow:var(--elevation-2);background:var(--color-danger-subtle);border:var(--size-border-width) solid var(--color-border-danger);color:var(--color-danger-text);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}
 #cmp-toast-info-md .c{display:flex;align-items:center;gap:var(--size-toast-gap);width:var(--size-toast-width);padding:var(--size-toast-paddingY) var(--size-toast-paddingX);border-radius:var(--radius-lg);box-shadow:var(--elevation-2);background:var(--color-surface-inverse);color:var(--color-text-inverse);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}
+#cmp-tooltip-md .c{display:inline-flex;align-items:center;gap:var(--size-chip-gap)}#cmp-tooltip-md .t{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-primary)}#cmp-tooltip-md .i{width:var(--size-tooltip-iconSize);height:var(--size-tooltip-iconSize);border-radius:var(--radius-full);display:inline-flex;align-items:center;justify-content:center;border:var(--size-border-width) solid var(--color-text-tertiary);color:var(--color-text-tertiary);font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;}#cmp-tooltip-md .p{max-width:var(--size-tooltip-maxWidth);padding:var(--size-tooltip-paddingY) var(--size-tooltip-paddingX);border-radius:var(--radius-xl);background:var(--color-surface-inverse);color:var(--color-text-inverse);font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);box-shadow:var(--elevation-2)}
 #cmp-input-text-md .c{display:flex;align-items:center;width:var(--size-field-width);height:var(--size-field-height);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-tertiary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}
 #cmp-input-text-md-error .c{display:flex;flex-direction:column;gap:var(--size-field-gap);width:var(--size-field-width)}#cmp-input-text-md-error .f{display:flex;align-items:center;width:var(--size-field-width);height:var(--size-field-height);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-danger);color:var(--color-text-primary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}#cmp-input-text-md-error .h{color:var(--color-danger-text);font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;}
 #cmp-input-text-md-focus .c{display:flex;align-items:center;width:var(--size-field-width);height:var(--size-field-height);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-brand);box-shadow:0 0 0 var(--size-focusRing-width) color-mix(in srgb, var(--color-focusRing) 24%, transparent);color:var(--color-text-primary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}
@@ -2790,7 +2812,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
   <button class="navtog" id="navtog" type="button"
     aria-expanded="false" aria-controls="barmenu" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>
   <div class="barmenu" id="barmenu">
-    <nav><a href="#foundation">파운데이션</a><a href="#g-badge">뱃지</a><a href="#g-button">버튼</a><a href="#g-card">카드</a><a href="#g-chip">칩</a><a href="#g-commerce">커머스</a><a href="#g-disclosure">접기</a><a href="#g-feedback">피드백</a><a href="#g-input">입력</a><a href="#g-layout">레이아웃</a><a href="#g-modal">모달</a><a href="#g-navigation">내비게이션</a><a href="#g-table">테이블</a><a href="#agent">에이전트</a></nav>
+    <nav><a href="#foundation">파운데이션</a><a href="#g-badge">뱃지</a><a href="#g-booking">예약</a><a href="#g-button">버튼</a><a href="#g-card">카드</a><a href="#g-chip">칩</a><a href="#g-commerce">커머스</a><a href="#g-disclosure">접기</a><a href="#g-feedback">피드백</a><a href="#g-input">입력</a><a href="#g-layout">레이아웃</a><a href="#g-modal">모달</a><a href="#g-navigation">내비게이션</a><a href="#g-table">테이블</a><a href="#agent">에이전트</a></nav>
     <div class="themes" role="group" aria-label="테마 전환">
       <button data-theme="eluo" aria-pressed="true" data-hint="우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다" title="ELUO — 우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다">ELUO</button><button data-theme="atlas" aria-pressed="false" data-hint="고객사 테마. 진한 남색에 산호색 포인트" title="아틀라스 — 고객사 테마. 진한 남색에 산호색 포인트">아틀라스</button><button data-theme="ember" aria-pressed="false" data-hint="고객사 테마. 진한 초록. 이름과 색이 다르니 주의하세요" title="엠버 — 고객사 테마. 진한 초록. 이름과 색이 다르니 주의하세요">엠버</button><button data-theme="harbor" aria-pressed="false" data-hint="고객사 테마. 따뜻한 갈색. 고객사 웹사이트에서 값을 가져왔습니다" title="하버 — 고객사 테마. 따뜻한 갈색. 고객사 웹사이트에서 값을 가져왔습니다">하버</button><button data-theme="tideland" aria-pressed="false" data-hint="고객사 테마. 주황빛. 색까지 추정이라 대외 제출물에 쓰지 마세요" title="타이드랜드 — 고객사 테마. 주황빛. 색까지 추정이라 대외 제출물에 쓰지 마세요">타이드랜드</button><button data-theme="cobalt" aria-pressed="false" data-hint="고객사 테마. 진한 남색에 파랑 포인트. 버튼이 전부 알약 테두리형입니다" title="코발트 — 고객사 테마. 진한 남색에 파랑 포인트. 버튼이 전부 알약 테두리형입니다">코발트</button><button data-theme="noir" aria-pressed="false" data-hint="고객사 테마. 무채색에 라운드가 전부 0. 각진 인상이 특징입니다" title="느와르 — 고객사 테마. 무채색에 라운드가 전부 0. 각진 인상이 특징입니다">느와르</button><button data-theme="linen" aria-pressed="false" data-hint="고객사 테마. 따뜻한 먹색에 딥브라운 강조. 굵기 400 중심이라 굵게 쓰면 인상이 무너집니다" title="리넨 — 고객사 테마. 따뜻한 먹색에 딥브라운 강조. 굵기 400 중심이라 굵게 쓰면 인상이 무너집니다">리넨</button>
     </div>
@@ -2810,7 +2832,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
     <div><p class="body-t">정의가 그대로 이미지가 되므로 문서와 자산이 어긋나지 않습니다.</p></div>
   </div>
   <dl class="meta">
-    <div><dt>Components</dt><dd>37</dd></div>
+    <div><dt>Components</dt><dd>44</dd></div>
     <div><dt>Themes</dt><dd>8</dd></div>
     <div><dt>Version</dt><dd>v1.12.4</dd></div>
     <div><dt>Source</dt><dd><a href="https://github.com/frombranch/eluon">GitHub</a></dd></div>
@@ -2923,6 +2945,154 @@ text-wrap: var(--text-wrap);</pre>
     </div>
     <details class="url"><summary>자산 URL</summary>
       <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/badge/badge-status-sm--eluo%402x.png</pre>
+    </details>
+  </div>
+</article></div></section><section class="sec" id="g-booking"><div class="sec-head">
+  <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Book&shy;ing</h2></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">예약 6종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
+</div><div class="cmps">
+<article class="cmp" id="booking-bar-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="booking-bar-lg"
+      aria-label="Booking Bar / LG 고르기"><span>고르기</span></label>
+    <h3>Booking Bar / LG</h3>
+    <p class="cid">booking-bar-lg</p>
+    <p class="states">default · 필수 미입력(검색 비활성)</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-booking-bar-lg"><div class="c"><div class="f"><div class="l">지점</div><div class="v">전체 지점</div></div><div class="f"><div class="l">체크인 – 체크아웃</div><div class="v">09.12 – 09.14</div></div><div class="f"><div class="l">객실 · 인원</div><div class="v">1실 · 성인 2</div></div><button class="b">검색</button></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>숙박 검색의 시작점. 지점·날짜·인원을 한 줄로. 첫 화면 바로 아래에 둠</p>
+        <p class="dont"><b>금지</b>필드를 다섯 개 넘기지 않음. 그 이상은 상세 검색으로 넘김</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>paddingY</td><td class='n'>booking.barPaddingY</td></tr><tr><td>gap</td><td class='n'>booking.barGap</td></tr><tr><td>fieldGap</td><td class='n'>booking.fieldGap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>labelTypography</td><td class='n'>label</td></tr><tr><td>valueTypography</td><td class='n'>body1-bold</td></tr><tr><td>actionHeight</td><td class='n'>control.lg.height</td></tr><tr><td>actionPaddingX</td><td class='n'>control.lg.paddingX</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr><tr><td>divider</td><td><code>border.subtle</code></td></tr><tr><td>actionBg</td><td><code>brand.primary</code></td></tr><tr><td>actionLabel</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/booking-bar-lg--linen%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="date-range-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="date-range-md"
+      aria-label="Date Range / MD 고르기"><span>고르기</span></label>
+    <h3>Date Range / MD</h3>
+    <p class="cid">date-range-md</p>
+    <p class="states">default · focus · 미선택</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-date-range-md"><div class="c"><span class="v">09.12</span><span class="s">–</span><span class="v">09.14</span><span class="n">2박</span></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>체크인과 체크아웃을 한 입력으로. 며칠 묵는지를 함께 보여 줌</p>
+        <p class="dont"><b>금지</b>날짜 입력 두 개로 쪼개지 않음 — 사람은 기간 하나로 생각함</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>field.width</td></tr><tr><td>height</td><td class='n'>field.height</td></tr><tr><td>paddingX</td><td class='n'>field.paddingX</td></tr><tr><td>radius</td><td class='n'>md</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>gap</td><td class='n'>booking.fieldGap</td></tr><tr><td>typography</td><td class='n'>body1-bold</td></tr><tr><td>nightsTypography</td><td class='n'>caption</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr><tr><td>separator</td><td><code>text.tertiary</code></td></tr><tr><td>nights</td><td><code>brand.onSubtle</code></td></tr><tr><td>nightsBg</td><td><code>brand.subtle</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/date-range-md--linen%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="price-member-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="price-member-md"
+      aria-label="Price / Member / MD 고르기"><span>고르기</span></label>
+    <h3>Price / Member / MD</h3>
+    <p class="cid">price-member-md</p>
+    <p class="states">default · 회원가 없음</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-price-member-md"><div class="c"><div class="r"><span class="ll">일반가</span><span class="lv">₩ 283,000~</span></div><div class="r"><span class="ml">회원가</span><span class="mv">₩ 254,600~</span></div><div class="n">1박 기준 · 세금 봉사료 포함</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>일반가와 회원가를 나란히. 회원가를 크고 굵게 둬서 가입 동기를 만듦</p>
+        <p class="dont"><b>금지</b>회원가만 단독으로 쓰지 않음 — 비교 대상이 없으면 싼지 알 수 없음. 할인율·정가 구조는 이것이 아니라 price-discount-md</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>gap</td><td class='n'>booking.priceGap</td></tr><tr><td>listTypography</td><td class='n'>body2</td></tr><tr><td>memberTypography</td><td class='n'>heading3</td></tr><tr><td>noteTypography</td><td class='n'>caption</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>listLabel</td><td><code>text.tertiary</code></td></tr><tr><td>list</td><td><code>text.secondary</code></td></tr><tr><td>memberLabel</td><td><code>text.brand</code></td></tr><tr><td>member</td><td><code>text.brand</code></td></tr><tr><td>note</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/price-member-md--linen%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="rate-card-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="rate-card-lg"
+      aria-label="Rate Card / LG 고르기"><span>고르기</span></label>
+    <h3>Rate Card / LG</h3>
+    <p class="cid">rate-card-lg</p>
+    <p class="states">default · hover · 매진</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-rate-card-lg"><div class="c"><div class="m"><div class="t">조식 포함 · 레이트 체크아웃</div><ul class="d"><li>조식 2인 · 오후 2시 퇴실</li><li>투숙 3일 전까지 무료 취소</li></ul></div><div class="p"><div class="pr"><span class="ll">일반가 ₩ 283,000~</span><span class="mv">₩ 254,600~</span></div><button class="b">객실 선택</button></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>요금 상품 한 줄. 상품명 · 포함 내역 · 가격 · 선택 버튼</p>
+        <p class="dont"><b>금지</b>포함 내역을 세 줄 넘기지 않음. 나머지는 상세로 넘김</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>paddingX</td><td class='n'>booking.ratePaddingX</td></tr><tr><td>paddingY</td><td class='n'>booking.ratePaddingY</td></tr><tr><td>gap</td><td class='n'>booking.rateGap</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>titleTypography</td><td class='n'>heading3</td></tr><tr><td>bodyTypography</td><td class='n'>body2</td></tr><tr><td>actionHeight</td><td class='n'>control.md.height</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr><tr><td>actionBg</td><td><code>brand.primary</code></td></tr><tr><td>actionLabel</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/rate-card-lg--linen%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="stay-summary-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="stay-summary-md"
+      aria-label="Stay Summary / MD 고르기"><span>고르기</span></label>
+    <h3>Stay Summary / MD</h3>
+    <p class="cid">stay-summary-md</p>
+    <p class="states">default</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-stay-summary-md"><div class="c"><div class="i"><div class="l">지점</div><div class="v">도심 지점</div></div><div class="i"><div class="l">체크인</div><div class="v">09.12 금</div></div><div class="i"><div class="l">숙박</div><div class="v">2박</div></div><div class="i"><div class="l">체크아웃</div><div class="v">09.14 일</div></div><div class="i"><div class="l">인원</div><div class="v">1실 · 성인 2</div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>예약 단계 상단에 고른 조건을 고정 표시. 지점·날짜·박수·인원</p>
+        <p class="dont"><b>금지</b>여기서 값을 고치게 하지 않음. 고치려면 검색으로 되돌림</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>paddingY</td><td class='n'>booking.summaryPaddingY</td></tr><tr><td>gap</td><td class='n'>booking.barGap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>labelTypography</td><td class='n'>caption</td></tr><tr><td>valueTypography</td><td class='n'>body1-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.subtle</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>label</td><td><code>text.tertiary</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/stay-summary-md--linen%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="stepper-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="stepper-md"
+      aria-label="Stepper / MD 고르기"><span>고르기</span></label>
+    <h3>Stepper / MD</h3>
+    <p class="cid">stepper-md</p>
+    <p class="states">default · 최소값(감소 비활성) · 최대값(증가 비활성)</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-stepper-md"><div class="c"><button class="s off">−</button><span class="v">2</span><button class="s">+</button></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>객실 수·성인·어린이처럼 작은 정수를 세는 자리</p>
+        <p class="dont"><b>금지</b>열을 넘길 수 있는 값에는 쓰지 않음. 그때는 select 로</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>buttonSize</td><td class='n'>booking.stepperSize</td></tr><tr><td>valueWidth</td><td class='n'>booking.stepperValueWidth</td></tr><tr><td>gap</td><td class='n'>booking.stepperGap</td></tr><tr><td>radius</td><td class='n'>sm</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>typography</td><td class='n'>body1-bold</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>icon</td><td><code>text.primary</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr><tr><td>disabled</td><td><code>text.disabled</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/booking/stepper-md--linen%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-button"><div class="sec-head">
@@ -3331,7 +3501,7 @@ text-wrap: var(--text-wrap);</pre>
   </div>
 </article></div></section><section class="sec" id="g-feedback"><div class="sec-head">
   <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Feed&shy;back</h2></div>
-  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">피드백 3종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">피드백 4종</p></div>
   <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
 </div><div class="cmps">
 <article class="cmp" id="empty-state-md" data-r>
@@ -3403,6 +3573,30 @@ text-wrap: var(--text-wrap);</pre>
     </div>
     <details class="url"><summary>자산 URL</summary>
       <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/feedback/toast-info-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="tooltip-md" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="tooltip-md"
+      aria-label="Tooltip / MD 고르기"><span>고르기</span></label>
+    <h3>Tooltip / MD</h3>
+    <p class="cid">tooltip-md</p>
+    <p class="states">default · 열림</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-tooltip-md"><div class="c"><span class="t">어린이</span><span class="i">i</span><span class="p">만 12세 이하는 어린이 요금이 적용됩니다.</span></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>연령 기준·취소 규정처럼 짧은 보조 설명. 아이콘을 누르거나 포커스하면 열림</p>
+        <p class="dont"><b>금지</b>여기에만 있는 정보를 두지 않음(§7-9). 본문으로도 알 수 있어야 함</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>iconSize</td><td class='n'>tooltip.iconSize</td></tr><tr><td>paddingX</td><td class='n'>tooltip.paddingX</td></tr><tr><td>paddingY</td><td class='n'>tooltip.paddingY</td></tr><tr><td>maxWidth</td><td class='n'>tooltip.maxWidth</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>typography</td><td class='n'>caption</td></tr><tr><td>elevation</td><td class='n'>2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>icon</td><td><code>text.tertiary</code></td></tr><tr><td>bg</td><td><code>surface.inverse</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/feedback/tooltip-md--linen%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-input"><div class="sec-head">

@@ -27,6 +27,7 @@
   "dont": "두 단계뿐인 구조에 쓰지 않음. 뒤로 가기 한 번이면 됩니다",
   "status": "stable",
   "since": "v1.10.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/navigation/breadcrumb-md--eluo@2x.png",
     "atlas": "assets/components/navigation/breadcrumb-md--atlas@2x.png",

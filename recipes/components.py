@@ -109,6 +109,7 @@ def build(tokens):
     C = []
 
     def add(**kw):
+        kw.setdefault("pack", "core")   # 업종 어휘는 pack 으로. CLAUDE.md §D
         C.append(kw)
 
     # ── button ──────────────────────────────────────────────────────────
@@ -1069,4 +1070,11 @@ def build(tokens):
 
     for c in C:
         c["responsive"] = RESPONSIVE.get(c["id"], {})
+    # ── 업종 pack ──────────────────────────────────────────────────
+    # core 는 업종이 바뀌어도 참인 것만 담습니다. 예약 같은 업종 어휘는 pack 입니다.
+    from recipes import packs as _packs
+    for _name, _mod in _packs.modules().items():
+        _mod.build(tokens, add, t, sz, lay, btn_base, KO, NUM)
+        RESPONSIVE.update(_mod.RESPONSIVE)
+
     return C

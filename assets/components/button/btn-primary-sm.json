@@ -29,6 +29,7 @@
   "dont": "삭제·탈퇴 등 파괴적 액션에는 사용 금지 (btn-danger-md 사용)",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/button/btn-primary-sm--eluo@2x.png",
     "atlas": "assets/components/button/btn-primary-sm--atlas@2x.png",

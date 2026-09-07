@@ -20,13 +20,22 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from recipes.components import BASE_CSS, build  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-THEMES = json.loads((ROOT / "eluon.config.json").read_text(encoding="utf-8"))["themes"]
+CONFIG = json.loads((ROOT / "eluon.config.json").read_text(encoding="utf-8"))
+THEMES = CONFIG["themes"]
+SITES = CONFIG.get("sites", {})
+
+
+def themes_for(pack):
+    """이 pack 을 드는 테마들. core 는 전부. CLAUDE.md §D."""
+    if pack == "core":
+        return list(THEMES)
+    return [t for t in THEMES if pack in (SITES.get(t, {}).get("packs") or [])]
 
 GROUP_DIR = {
     "button": "button", "chip": "chip", "input": "input", "card": "card",
     "navigation": "navigation", "table": "table", "feedback": "feedback",
     "badge": "badge", "modal": "modal", "commerce": "commerce", "layout": "layout",
-    "disclosure": "disclosure",
+    "disclosure": "disclosure", "booking": "booking",
 }
 
 PAGE = """<!doctype html><html><head><meta charset="utf-8">
@@ -58,6 +67,7 @@ def main():
         raise SystemExit("렌더할 컴포넌트가 없습니다.")
 
     made = 0
+    wrote_sidecar = set()
     with sync_playwright() as p:
         browser = p.chromium.launch()
         for theme in themes:
@@ -68,6 +78,9 @@ def main():
             page = browser.new_page(device_scale_factor=2)
 
             for c in comps:
+                # 그 pack 을 안 드는 테마는 이 자산을 렌더하지 않습니다.
+                if theme not in themes_for(c.get("pack", "core")):
+                    continue
                 page.set_content(PAGE.format(tokens=token_css, base=BASE_CSS,
                                              css=c["css"], html=c["html"]))
                 page.wait_for_timeout(60)
@@ -77,10 +90,11 @@ def main():
                 page.locator("#shot").screenshot(path=str(ROOT / rel), omit_background=True)
                 made += 1
 
-                # 사이드카는 첫 테마 렌더 때 한 번만 씁니다 (테마와 무관한 정의이므로).
-                # 예전엔 "core" 로 못박혀 있어서, core 를 테마 목록에서 빼면
-                # 사이드카가 영영 갱신되지 않았습니다.
-                if theme == themes[0]:
+                # 사이드카는 이 자산을 처음 렌더할 때 한 번만 씁니다.
+                # "첫 테마" 로 못박으면, 그 테마가 이 자산의 pack 을 안 들 때
+                # 사이드카가 영영 안 써집니다(FAILURES.md#sidecar-first-theme).
+                if c["id"] not in wrote_sidecar:
+                    wrote_sidecar.add(c["id"])
                     sidecar = {
                         "id": c["id"], "name": c["name"], "group": c["group"],
                         "tags": c.get("tags", []),
@@ -89,11 +103,13 @@ def main():
                         "states": c.get("states", []),
                         "usage": c["usage"], "dont": c.get("dont", ""),
                         "status": c.get("status", "stable"), "since": c.get("since", "v1.0.0"),
+                        "pack": c.get("pack", "core"),
                         # 상태 변형은 부모에 매답니다. 없으면 키 자체를 넣지 않습니다.
                         **({"variantOf": c["variantOf"],
                             "variantState": c["variantState"]} if c.get("variantOf") else {}),
                         "renders": {t: f"assets/components/{GROUP_DIR[c['group']]}/"
-                                       f"{c['id']}--{t}@2x.png" for t in THEMES},
+                                       f"{c['id']}--{t}@2x.png"
+                                    for t in themes_for(c.get("pack", "core"))},
                     }
                     (folder / f"{c['id']}.json").write_text(
                         json.dumps(sidecar, ensure_ascii=False, indent=2) + "\n",

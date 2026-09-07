@@ -33,6 +33,7 @@
   "dont": "열이 셋을 넘게 비교해야 하면 목록이 아니라 표. table-basic-lg 로",
   "status": "stable",
   "since": "v1.8.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/list-row-md--eluo@2x.png",
     "atlas": "assets/components/layout/list-row-md--atlas@2x.png",

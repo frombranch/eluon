@@ -31,6 +31,7 @@
   "dont": "라벨 없이 placeholder만으로 쓰지 않음",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/input/input-text-md--eluo@2x.png",
     "atlas": "assets/components/input/input-text-md--atlas@2x.png",

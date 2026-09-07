@@ -1,0 +1,37 @@
+{
+  "id": "tooltip-md",
+  "name": "Tooltip / MD",
+  "group": "feedback",
+  "tags": [
+    "툴팁",
+    "보조설명",
+    "규정"
+  ],
+  "spec": {
+    "iconSize": "tooltip.iconSize",
+    "paddingX": "tooltip.paddingX",
+    "paddingY": "tooltip.paddingY",
+    "maxWidth": "tooltip.maxWidth",
+    "radius": "xl",
+    "typography": "caption",
+    "elevation": 2
+  },
+  "tokens": {
+    "icon": "text.tertiary",
+    "bg": "surface.inverse",
+    "label": "text.inverse"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "열림"
+  ],
+  "usage": "연령 기준·취소 규정처럼 짧은 보조 설명. 아이콘을 누르거나 포커스하면 열림",
+  "dont": "여기에만 있는 정보를 두지 않음(§7-9). 본문으로도 알 수 있어야 함",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "hotel",
+  "renders": {
+    "linen": "assets/components/feedback/tooltip-md--linen@2x.png"
+  }
+}

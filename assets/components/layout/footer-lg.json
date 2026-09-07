@@ -31,6 +31,7 @@
   "dont": "색을 흐리게 해서 구분하지 않음. 뒤집힌 면에서는 대비가 무너짐. 크기와 굵기로 나눔",
   "status": "stable",
   "since": "v1.8.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/footer-lg--eluo@2x.png",
     "atlas": "assets/components/layout/footer-lg--atlas@2x.png",

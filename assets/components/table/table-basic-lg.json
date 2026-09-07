@@ -33,6 +33,7 @@
   "dont": "모바일에서 그대로 쓰지 않음. 카드로 전환",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/table/table-basic-lg--eluo@2x.png",
     "atlas": "assets/components/table/table-basic-lg--atlas@2x.png",

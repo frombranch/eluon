@@ -29,6 +29,7 @@
   "dont": "리드문이 세 줄을 넘기면 리드가 아니라 본문. 본문은 섹션 안으로 내림",
   "status": "stable",
   "since": "v1.0.4",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/section-header-md--eluo@2x.png",
     "atlas": "assets/components/layout/section-header-md--atlas@2x.png",

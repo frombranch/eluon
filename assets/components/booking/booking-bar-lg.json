@@ -1,0 +1,43 @@
+{
+  "id": "booking-bar-lg",
+  "name": "Booking Bar / LG",
+  "group": "booking",
+  "tags": [
+    "예약",
+    "검색",
+    "숙박"
+  ],
+  "spec": {
+    "width": "container.max",
+    "paddingY": "booking.barPaddingY",
+    "gap": "booking.barGap",
+    "fieldGap": "booking.fieldGap",
+    "borderWidth": "border.width",
+    "labelTypography": "label",
+    "valueTypography": "body1-bold",
+    "actionHeight": "control.lg.height",
+    "actionPaddingX": "control.lg.paddingX"
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.subtle",
+    "label": "text.secondary",
+    "value": "text.primary",
+    "divider": "border.subtle",
+    "actionBg": "brand.primary",
+    "actionLabel": "text.inverse"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "필수 미입력(검색 비활성)"
+  ],
+  "usage": "숙박 검색의 시작점. 지점·날짜·인원을 한 줄로. 첫 화면 바로 아래에 둠",
+  "dont": "필드를 다섯 개 넘기지 않음. 그 이상은 상세 검색으로 넘김",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "hotel",
+  "renders": {
+    "linen": "assets/components/booking/booking-bar-lg--linen@2x.png"
+  }
+}

@@ -31,6 +31,7 @@
   "dont": "비교가 필요하면 목록이 아니라 표. table-basic-lg 로",
   "status": "stable",
   "since": "v1.10.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/desc-list-md--eluo@2x.png",
     "atlas": "assets/components/layout/desc-list-md--atlas@2x.png",

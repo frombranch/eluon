@@ -28,6 +28,7 @@
   "dont": "outline:none으로 링을 지우지 않음. 키보드 사용자가 위치를 잃음",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "variantOf": "input-text-md",
   "variantState": "focus",
   "renders": {

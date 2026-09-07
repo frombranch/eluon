@@ -29,6 +29,7 @@
   "dont": "확인 모달 없이 단독 노출 금지",
   "status": "stable",
   "since": "v1.0.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/button/btn-danger-md--eluo@2x.png",
     "atlas": "assets/components/button/btn-danger-md--atlas@2x.png",

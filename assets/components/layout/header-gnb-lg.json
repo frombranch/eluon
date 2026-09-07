@@ -36,6 +36,7 @@
   "dont": "메뉴가 7개를 넘기면 여기 다 넣지 않음. 드롭다운이나 2단으로 나눔",
   "status": "stable",
   "since": "v1.8.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/header-gnb-lg--eluo@2x.png",
     "atlas": "assets/components/layout/header-gnb-lg--atlas@2x.png",

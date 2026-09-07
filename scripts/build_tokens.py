@@ -28,10 +28,22 @@ def deep_merge(base, over):
     return out
 
 
+def packs_of(theme):
+    """이 테마가 드는 업종 pack 목록. CLAUDE.md §D."""
+    cfg = json.loads((ROOT / "eluon.config.json").read_text(encoding="utf-8"))
+    return (cfg.get("sites", {}).get(theme) or {}).get("packs", [])
+
+
 def load(theme):
     core = json.loads((TOKENS / "core.json").read_text(encoding="utf-8"))
     if theme == "core":
         return core
+    # core → pack → theme 순으로 얹습니다. pack 은 업종 어휘라 core 에 두지 않습니다.
+    for pk in packs_of(theme):
+        pf = TOKENS / f"pack-{pk}.json"
+        if not pf.exists():
+            raise SystemExit(f"{theme} 가 부른 pack 이 없습니다: {pf}")
+        core = deep_merge(core, json.loads(pf.read_text(encoding="utf-8")))
     path = TOKENS / f"theme-{theme}.json"
     if not path.exists():
         raise SystemExit(f"테마 파일이 없습니다: {path.name}")

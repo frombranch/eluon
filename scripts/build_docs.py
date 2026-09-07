@@ -27,7 +27,7 @@ GROUP_KO = {
     "button": "버튼", "chip": "칩", "input": "입력", "card": "카드",
     "navigation": "내비게이션", "table": "테이블", "feedback": "피드백",
     "badge": "뱃지", "modal": "모달", "commerce": "커머스", "layout": "레이아웃",
-    "disclosure": "접기",
+    "disclosure": "접기", "booking": "예약",
 }
 
 # 디스플레이 타입에 쓸 영문 이름. &shy;는 열 폭이 좁을 때만 하이픈으로 끊깁니다.
@@ -35,6 +35,7 @@ GROUP_EN = {
     "button": "But&shy;tons", "chip": "Chips", "input": "In&shy;puts", "card": "Cards",
     "navigation": "Navi&shy;gation", "table": "Tables", "feedback": "Feed&shy;back",
     "badge": "Badges", "modal": "Modals", "disclosure": "Dis&shy;closure",
+    "booking": "Book&shy;ing",
 }
 
 
@@ -287,7 +288,7 @@ def component_sections(comps, manifest):
       <div class="specs"><table><caption>tokens</caption><tbody>{token_rows}</tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>{esc(a['cdn'][CONFIG['defaultTheme']])}</pre>
+      <pre>{esc(a['cdn'].get(CONFIG['defaultTheme']) or next(iter(a['cdn'].values())))}</pre>
     </details>
   </div>
 </article>""")

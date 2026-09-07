@@ -1,0 +1,43 @@
+{
+  "id": "rate-card-lg",
+  "name": "Rate Card / LG",
+  "group": "booking",
+  "tags": [
+    "예약",
+    "요금",
+    "상품"
+  ],
+  "spec": {
+    "width": "container.max",
+    "paddingX": "booking.ratePaddingX",
+    "paddingY": "booking.ratePaddingY",
+    "gap": "booking.rateGap",
+    "radius": "xl",
+    "borderWidth": "border.width",
+    "titleTypography": "heading3",
+    "bodyTypography": "body2",
+    "actionHeight": "control.md.height"
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.subtle",
+    "title": "text.primary",
+    "body": "text.secondary",
+    "actionBg": "brand.primary",
+    "actionLabel": "text.inverse"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "hover",
+    "매진"
+  ],
+  "usage": "요금 상품 한 줄. 상품명 · 포함 내역 · 가격 · 선택 버튼",
+  "dont": "포함 내역을 세 줄 넘기지 않음. 나머지는 상세로 넘김",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "hotel",
+  "renders": {
+    "linen": "assets/components/booking/rate-card-lg--linen@2x.png"
+  }
+}

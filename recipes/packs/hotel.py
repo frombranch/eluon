@@ -21,7 +21,7 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
     # 커머스(장바구니·할인율)와 다른 물건입니다 — 그쪽은 commerce 그룹입니다.
 
     add(
-        id="booking-bar-lg", name="Booking Bar / LG", group="booking",
+        id="booking-bar-lg", name="Booking Bar / LG", group="booking", pack="hotel",
         tags=["예약", "검색", "숙박"], since="v1.13.0",
         spec={"width": "container.max", "paddingY": "booking.barPaddingY",
               "gap": "booking.barGap", "fieldGap": "booking.fieldGap",
@@ -59,7 +59,7 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
     )
 
     add(
-        id="date-range-md", name="Date Range / MD", group="booking",
+        id="date-range-md", name="Date Range / MD", group="booking", pack="hotel",
         tags=["예약", "날짜", "기간"], since="v1.13.0",
         spec={"width": "field.width", "height": "field.height",
               "paddingX": "field.paddingX", "radius": "md",
@@ -87,7 +87,7 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
     )
 
     add(
-        id="stepper-md", name="Stepper / MD", group="booking",
+        id="stepper-md", name="Stepper / MD", group="booking", pack="hotel",
         tags=["예약", "인원", "수량"], since="v1.13.0",
         spec={"buttonSize": "booking.stepperSize",
               "valueWidth": "booking.stepperValueWidth",
@@ -113,7 +113,7 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
     )
 
     add(
-        id="stay-summary-md", name="Stay Summary / MD", group="booking",
+        id="stay-summary-md", name="Stay Summary / MD", group="booking", pack="hotel",
         tags=["예약", "요약", "투숙조건"], since="v1.13.0",
         spec={"width": "container.max", "paddingY": "booking.summaryPaddingY",
               "gap": "booking.barGap", "borderWidth": "border.width",
@@ -140,7 +140,7 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
     )
 
     add(
-        id="price-member-md", name="Price / Member / MD", group="booking",
+        id="price-member-md", name="Price / Member / MD", group="booking", pack="hotel",
         tags=["예약", "가격", "회원가"], since="v1.13.0",
         spec={"gap": "booking.priceGap", "listTypography": "body2",
               "memberTypography": "heading3", "noteTypography": "caption"},
@@ -166,7 +166,7 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
     )
 
     add(
-        id="rate-card-lg", name="Rate Card / LG", group="booking",
+        id="rate-card-lg", name="Rate Card / LG", group="booking", pack="hotel",
         tags=["예약", "요금", "상품"], since="v1.13.0",
         spec={"width": "container.max", "paddingX": "booking.ratePaddingX",
               "paddingY": "booking.ratePaddingY", "gap": "booking.rateGap",
@@ -210,11 +210,11 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
     )
 
     add(
-        id="tooltip-md", name="Tooltip / MD", group="feedback",
+        id="tooltip-md", name="Tooltip / MD", group="feedback", pack="hotel",
         tags=["툴팁", "보조설명", "규정"], since="v1.13.0",
         spec={"iconSize": "tooltip.iconSize", "paddingX": "tooltip.paddingX",
               "paddingY": "tooltip.paddingY", "maxWidth": "tooltip.maxWidth",
-              "radius": "md", "typography": "caption", "elevation": 2},
+              "radius": "xl", "typography": "caption", "elevation": 2},
         tokens={"icon": "text.tertiary", "bg": "surface.inverse",
                 "label": "text.inverse"},
         states=["default", "열림"],
@@ -229,7 +229,7 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
             f"color:var(--color-text-tertiary);{t('caption', tokens)}}}"
             f".p{{max-width:{sz('tooltip.maxWidth')};"
             f"padding:{sz('tooltip.paddingY')} {sz('tooltip.paddingX')};"
-            f"border-radius:var(--radius-md);background:var(--color-surface-inverse);"
+            f"border-radius:var(--radius-xl);background:var(--color-surface-inverse);"
             f"color:var(--color-text-inverse);{t('caption', tokens)}{KO}"
             f"box-shadow:var(--elevation-2)}}",
         html='<div class="c"><span class="t">어린이</span>'

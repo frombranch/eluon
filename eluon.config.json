@@ -23,5 +23,19 @@
     "labelColor": "#FFFFFF",
     "mutedColor": "#8A8A94",
     "previewSurface": "#F4F5F8"
-  }
+  },
+  "sites": {
+    "linen": {
+      "packs": [
+        "hotel"
+      ],
+      "coreFlow": "예약",
+      "requiredAssets": [
+        "booking-bar-lg",
+        "date-range-md",
+        "rate-card-lg"
+      ]
+    }
+  },
+  "_comment_sites": "테마가 어느 업종 pack 을 드는지. requiredAssets 가 자물쇠입니다 — 어느 pack 도 주지 못하면 빌드가 실패합니다. CLAUDE.md §D."
 }

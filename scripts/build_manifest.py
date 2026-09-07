@@ -153,7 +153,11 @@ def collect():
         missing = [t for t, p in renders.items() if not (ROOT / p).exists()]
         # 테마만 config 에 추가하고 렌더를 안 돌리면 사이드카에 그 키가 아예 없습니다.
         # 키가 없으면 위의 '이미지 없음' 검사가 작동하지 않아 그냥 통과합니다.
-        untouched = [th for th in CONFIG["themes"] if th not in renders]
+        pack = data.get("pack", "core")
+        expected = (CONFIG["themes"] if pack == "core"
+                    else [t for t in CONFIG["themes"]
+                          if pack in ((CONFIG.get("sites", {}).get(t) or {}).get("packs") or [])])
+        untouched = [th for th in expected if th not in renders]
         if not renders:
             errors.append(f"{aid}: renders 없음")
             continue
@@ -173,7 +177,8 @@ def collect():
             unknown = [n for n in (data.get("responsive") or {}) if n not in bp]
             if unknown:
                 errors.append(f"{aid}: {th} 테마에 없는 브레이크포인트 → {', '.join(unknown)}")
-        data["preview"] = data["cdn"].get(CONFIG["defaultTheme"])
+        data["preview"] = (data["cdn"].get(CONFIG["defaultTheme"])
+                           or next(iter(data["cdn"].values()), None))
         if not data.get("usage"):
             errors.append(f"{aid}: usage 비어 있음")
         # 컨테이너와 컨트롤은 라운드 눈금이 다릅니다. 알약 버튼을 쓰는 테마에서
@@ -305,6 +310,18 @@ def main() -> int:
     # 그룹 이름이 다섯 군데에 흩어져 있습니다 — 렌더 폴더 · 빌더 한글명 ·
     # 문서 한글명 · 문서 영문명 · 스키마 enum. 하나만 빠뜨리면 CI 에서만 터집니다.
     # 실제로 v1.10.0 에서 disclosure 를 스키마에 안 넣어 푸시 4건이 연달아 실패했습니다.
+    # 사이트가 신고한 필수 자산이 실제로 있는가. 이 검사가 자물쇠입니다 —
+    # "호텔인데 예약 자산이 없다"가 사람의 주의력이 아니라 빌드 실패로 드러납니다.
+    # FAILURES.md#gate-skipped · CLAUDE.md §D
+    have = {a["id"] for a in assets}
+    for site, meta in (CONFIG.get("sites") or {}).items():
+        want = meta.get("requiredAssets") or []
+        gap = [i for i in want if i not in have]
+        if gap:
+            errors.append(f"{site}: requiredAssets 가 해소되지 않았습니다 → {', '.join(gap)} "
+                          f"(핵심 흐름은 '{meta.get('coreFlow', '?')}'. "
+                          f"비슷한 자산으로 메꾸지 말고 pack 에 만드세요)")
+
     try:
         sch = json.loads((ROOT / "schema" / "asset.schema.json").read_text(encoding="utf-8"))
         allowed = set(sch["properties"]["group"].get("enum") or [])

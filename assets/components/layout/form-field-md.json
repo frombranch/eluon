@@ -38,6 +38,7 @@
   "dont": "라벨을 placeholder 로 대신하지 않음. 입력하면 라벨이 사라짐",
   "status": "stable",
   "since": "v1.8.0",
+  "pack": "core",
   "renders": {
     "eluo": "assets/components/layout/form-field-md--eluo@2x.png",
     "atlas": "assets/components/layout/form-field-md--atlas@2x.png",
