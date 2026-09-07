@@ -121,15 +121,17 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
   header{padding:48px 0 24px}
 }
 
+/* 절 제목 아래 hairline 을 걷어냈습니다. 여백만으로 절이 이미 나뉘는데
+   줄까지 있으면 화면이 표처럼 읽힙니다(§7-4·§7-5 — 나누는 장치는 하나로). */
 .legend{
-  display:flex;align-items:baseline;gap:16px;
+  display:flex;align-items:baseline;gap:8px;
   font-size:17px;font-weight:700;line-height:1.4;letter-spacing:-.16px;
-  color:var(--ink);margin:0 0 16px;padding-bottom:14px;
-  border-bottom:1px solid var(--hair2);
+  color:var(--ink);margin:0 0 18px;
 }
-/* 피그마 자산 탭의 단계 번호와 같은 형태. 순서가 있는 절에만 붙습니다. */
+/* 피그마 자산 탭의 단계 번호와 같은 형태. 순서가 있는 절에만 붙습니다.
+   번호와 제목은 한 덩어리로 읽혀야 해서 칸을 넓게 잡지 않습니다. */
 .legend .no{
-  flex:none;width:36px;font-size:13px;font-weight:700;letter-spacing:0;
+  flex:none;width:26px;font-size:13px;font-weight:700;letter-spacing:0;
   color:var(--faint);
 }
 .legend .no:empty{display:none}
@@ -652,6 +654,9 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</div>
         <h2 class="legend" data-step><span class="no"></span>작업 유형</h2>
         <div class="seg" id="kind"></div>
         <p class="hint" id="kindHint" style="margin-top:8px"></p>
+        <p class="hint hidden" id="kindRestoreWrap" style="margin-top:6px">
+          <button type="button" class="linkbtn" id="kindRestore"></button>
+        </p>
       </div>
 
       <div id="themeBlock">
@@ -736,12 +741,12 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</div>
    ══════════════════════════════════════════════════════════ */
 
 var KEY_SRC="eluon-pb-src", KEY_STATE="eluon-pb-state", KEY_PRESETS="eluon-pb-presets",
-    KEY_HIDDEN="eluon-pb-hidden", KEY_FIGMA="eluon-pb-figma";
+    KEY_HIDDEN="eluon-pb-hidden", KEY_HIDDENKIND="eluon-pb-hiddenkind",
+    KEY_FIGMA="eluon-pb-figma";
 
 var KINDS=[
   {id:"mockup",  label:"시안 제작"},
   {id:"explore", label:"탐색 · 구성안"},
-  {id:"artifact",label:"아티팩트 발행"},
   {id:"layout",  label:"제안 레이아웃"},
   {id:"theme",   label:"고객사 테마"},
   {id:"component",label:"신규 컴포넌트 추가"}
@@ -751,7 +756,6 @@ var KINDS=[
 var KIND_HINT={
   mockup:"화면 하나를 실제 HTML로 만듭니다. 자산 목록을 먼저 보고받고 승인한 뒤 조립합니다.",
   explore:"코드 없이 구성안만 받습니다. 자료 출처에 주소를 넣으면 그 사이트를 열어 자산 후보를 찾아 줍니다.",
-  artifact:"시안 제작과 같지만 클로드 아티팩트로 발행할 수 있게 CSS·이미지를 인라인합니다.",
   layout:"페이지마다 무엇을 증명하는지 먼저 적고 자산을 붙입니다. 제안서용입니다.",
   theme:"고객사 브랜드로 테마를 새로 만듭니다. 자료 출처에 웹사이트 주소나 피그마 링크를 넣으세요. "+
         "이 페이지는 프롬프트까지만 만듭니다 — 복사해서 Claude 에 붙여넣으면 그때 테마 파일이 만들어집니다.",
@@ -773,14 +777,13 @@ var FIELDS={
 var FIELDSETS={
   mockup:["screen","target","goal","sections","width","extra"],
   explore:["screen","target","extra"],
-  artifact:["screen","target","goal","sections","width","extra"],
   layout:["screen","target","goal","sections","extra"],
   theme:["client","source","extra"],
   component:["component","why","extra"]
 };
 
 /* 자산 미리 지정이 뜻을 갖는 작업 종류. 테마·QA·컴포넌트 추가에는 붙이지 않습니다. */
-var PICK_KINDS={mockup:1,artifact:1,explore:1,layout:1};
+var PICK_KINDS={mockup:1,explore:1,layout:1};
 function pickable(){ return !!PICK_KINDS[state.kind]; }
 
 var M=null;
@@ -801,6 +804,16 @@ function hideTheme(id){
   ls(KEY_HIDDEN, JSON.stringify(a));
 }
 function showAllThemes(){ ls(KEY_HIDDEN, null); }
+/* 작업 유형도 같은 방식으로 감춥니다. 여섯 개를 다 쓰는 사람은 없고,
+   안 쓰는 것이 늘 보이면 매번 훑어야 합니다. 이 브라우저에만 남습니다. */
+function hiddenKinds(){
+  try{ var a=JSON.parse(ls(KEY_HIDDENKIND)||"[]"); return Array.isArray(a)?a:[]; }catch(e){ return []; }
+}
+function hideKind(id){
+  var a=hiddenKinds(); if(a.indexOf(id)<0) a.push(id);
+  ls(KEY_HIDDENKIND, JSON.stringify(a));
+}
+function showAllKinds(){ ls(KEY_HIDDENKIND, null); }
 /* 렌더된 자산을 눈으로 볼 수 있는 공개 문서 사이트. manifest 가 주소를 주면 그걸 쓰고,
    없으면 저장소 주소에서 GitHub Pages 규칙대로 만듭니다. */
 function docsSite(){
@@ -886,7 +899,7 @@ function applyManifest(m,srcLabel){
 }
 
 /* ── 렌더 ── */
-function seg(el,items,cur,on,rm){
+function seg(el,items,cur,on,rm,rmWhat){
   el.textContent="";
   el.setAttribute("role","radiogroup");
   var btns=[];
@@ -914,7 +927,7 @@ function seg(el,items,cur,on,rm){
       b.className="segmain";
       var x=document.createElement("button");
       x.type="button"; x.className="segx"; x.textContent="\u00D7";
-      x.setAttribute("aria-label", it.label+" 테마를 목록에서 빼기");
+      x.setAttribute("aria-label", it.label+" "+(rmWhat||"항목을")+" 목록에서 빼기");
       x.onclick=function(e){ e.stopPropagation(); rm(it.id); };
       w.appendChild(b); w.appendChild(x); el.appendChild(w);
     }else{
@@ -1287,10 +1300,10 @@ function tokensLine(){
 }
 
 function blocks(){
-  var b=[], k=state.kind, repo=M.source.repo, tag=M.source.tag||"main";
+  var b=[], k=state.kind, repo=M.source.repo;
   var docs=M.source.docsPath||"CLAUDE.md", mf=M.source.manifestPath||"manifest.json";
 
-  if(k==="mockup"||k==="artifact"){
+  if(k==="mockup"){
     b.push({text:(M.source.name||"디자인 시스템")+"으로 "+orPh("screen")+" 시안을 만들어줘.\n\n시스템: "+repo+"\n테마: "+state.theme});
     b.push({text:"순서\n1. "+docs+" 와 "+mf+" 을 먼저 읽어.",
       why:"자산 계약을 먼저 읽게 합니다. 이걸 건너뛰면 Claude가 자기 기본값으로 그립니다."});
@@ -1302,19 +1315,7 @@ function blocks(){
         why:"방향이 틀렸을 때 HTML이 나오기 전에 잡습니다. 다 그린 뒤 되돌리는 것보다 훨씬 쌉니다."});
     }
     var step3=state.picked.length ? "3. 바로 단일 HTML로 조립해." : "3. 승인 후 단일 HTML로 조립해.";
-    if(k==="artifact"){
-      b.push({text:step3+"\n   - 클로드 아티팩트로 발행할 거야. 아티팩트는 외부 리소스를 못 불러오니:\n"+
-        "     a) git clone --depth 1 --branch "+tag+" "+repo+".git\n"+
-        "     b) 클론한 docs/tokens/eluon-"+state.theme+".css 내용을 <style>에 통째로 인라인\n"+
-        "     c) 이미지가 필요하면 PNG를 base64 data: URI로 인라인",
-        why:"아티팩트는 외부 파일을 못 읽습니다. 미리 알려주지 않으면 링크만 걸고 색이 다 빠진 채로 나옵니다."});
-      b.push({text:"   - 폰트 주의: 아티팩트는 스타일시트를 Google Fonts 에서만 불러올 수 있어.\n"+
-        "     토큰의 Pretendard 는 못 불러오니 Noto Sans KR 을 Google Fonts 로 링크하고,\n"+
-        "     굵기가 토큰과 다를 수 있다는 걸 결과에 적어줘.",
-        why:"이걸 안 알려주면 서체가 조용히 기본값으로 떨어집니다. 다 만든 뒤에야 굵기가 어긋난 걸 발견합니다."});
-    }else{
-      b.push({text:step3+"\n   - <link>로 "+tokensLine()+" 를 불러오고, 색은 전부 var(--color-*) 로."});
-    }
+    b.push({text:step3+"\n   - <link>로 "+tokensLine()+" 를 불러오고, 색은 전부 var(--color-*) 로."});
     b.push({text:"   - 수치는 "+mf+"의 specByTheme."+state.theme+" 값 그대로. 바꾸지 마.\n"+
       "     (spec 은 토큰 이름이라 숫자가 아니야. 실제 px 는 specByTheme 에 있어.)\n"+
       "   - "+mf+"에 없는 색·라운드·폰트를 새로 도입하지 마.",
@@ -1420,24 +1421,24 @@ function blocks(){
   // 규격 수치를 실제로 소비하는 작업에만 붙입니다.
   // (고객사 테마 만들기·컴포넌트 추가는 수치를 받아 쓰는 쪽이 아닙니다.)
   var tw=themeWarn();
-  if(tw && ["mockup","artifact"].indexOf(k)>=0) b.splice(1,0,tw);
+  if(tw && ["mockup"].indexOf(k)>=0) b.splice(1,0,tw);
   // 추정 테마 경고는 실측 경고보다도 앞입니다.
   var eb=estimatedBlock();
   if(eb && ["theme","component"].indexOf(k)<0) b.splice(1,0,eb);
 
   // 반응형은 실제로 화면을 그리는 유형에만.
   // 자산을 실제로 배치하는 유형에만. 폭·리듬·활자 위계가 없으면 화면이 허전해집니다.
-  if(["mockup","artifact","layout"].indexOf(k)>=0){
+  if(["mockup","layout"].indexOf(k)>=0){
     var fb=fndBlock(); if(fb) b.push(fb);
     var tb=typeBlock(); if(tb) b.push(tb);
     var kb=koBlock(); if(kb) b.push(kb);
   }
 
   var rb=respBlock();
-  if(rb && ["mockup","artifact","layout"].indexOf(k)>=0) b.push(rb);
+  if(rb && ["mockup","layout"].indexOf(k)>=0) b.push(rb);
 
   // 모션은 실제로 HTML 이 나오는 유형에만. 구성안(layout)에는 움직임이 없습니다.
-  if(["mockup","artifact"].indexOf(k)>=0) b.push(motionBlock());
+  if(["mockup"].indexOf(k)>=0) b.push(motionBlock());
 
   var pb=pickedBlock(); if(pb) b.push(pb);
   var eb=extraBlock(); if(eb) b.push(eb);
@@ -1831,7 +1832,26 @@ function readFile(file){
 
 /* ── 초기화 ── */
 function renderAll(){
-  seg(document.getElementById("kind"),KINDS,state.kind,function(id){ state.kind=id; renderAll(); });
+  // 지금 고른 유형은 뺄 수 없습니다 — 목록이 비어 고르지도 못하는 상태가 남습니다.
+  var hidK = hiddenKinds();
+  var shownK = KINDS.filter(function(k){ return hidK.indexOf(k.id)<0 || k.id===state.kind; });
+  seg(document.getElementById("kind"),
+    shownK.map(function(k){ return {id:k.id, label:k.label, removable: k.id!==state.kind}; }),
+    state.kind,
+    function(id){ state.kind=id; renderAll(); },
+    function(id){
+      var kd=KINDS.filter(function(x){ return x.id===id; })[0]||{};
+      ask("\u201C"+(kd.label||id)+"\u201D 작업 유형을 목록에서 뺄까요?",
+          "이 브라우저 목록에서만 감춥니다. 바로 아래 되돌리기로 다시 꺼낼 수 있습니다.",
+          "목록에서 빼기",
+          function(){ hideKind(id); renderAll(); });
+    },
+    "작업 유형을");
+  var kw=document.getElementById("kindRestoreWrap");
+  var hidKNow=hiddenKinds().filter(function(id){ return id!==state.kind; });
+  kw.classList.toggle("hidden", hidKNow.length===0);
+  document.getElementById("kindRestore").textContent =
+    "숨긴 작업 유형 "+hidKNow.length+"개 — 다시 보이기";
   document.getElementById("kindHint").textContent=KIND_HINT[state.kind]||"";
   // 지금 고른 테마만 뺄 수 없습니다 — 목록이 비어 고르지도 못하는 상태가 남습니다.
   // 기본 테마도 뺄 수 있습니다. 되돌리기로 언제든 다시 꺼냅니다.
@@ -1851,7 +1871,8 @@ function renderAll(){
           "바로 아래 되돌리기로 다시 꺼낼 수 있습니다.",
           "목록에서 빼기",
           function(){ hideTheme(id); renderAll(); });
-    });
+    },
+    "테마를");
   var ds=docsSite();
   ["docsTab"].forEach(function(id){
     var a=document.getElementById(id);
@@ -1973,6 +1994,9 @@ function boot(){
   });
   document.getElementById("themeRestore").onclick=function(){
     showAllThemes(); renderAll();
+  };
+  document.getElementById("kindRestore").onclick=function(){
+    showAllKinds(); renderAll();
   };
 
   document.getElementById("copy").onclick=copy;
