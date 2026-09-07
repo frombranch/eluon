@@ -143,7 +143,7 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
   font-size:17px;font-weight:700;line-height:1.4;letter-spacing:-.16px;
   color:var(--ink);margin:0 0 18px;
 }
-/* 피그마 자산 탭의 단계 번호와 같은 형태. 순서가 있는 절에만 붙습니다.
+/* 자산 · 피그마에서 화면의 단계 번호와 같은 형태. 순서가 있는 절에만 붙습니다.
    번호와 제목은 한 덩어리로 읽혀야 해서 칸을 넓게 잡지 않습니다. */
 .legend .no{
   flex:none;width:26px;font-size:13px;font-weight:700;letter-spacing:0;
@@ -495,9 +495,9 @@ a.linkbtn{text-decoration:none;display:inline-block}
   <div class="hidden" id="assetsPane" role="tabpanel" aria-labelledby="tab-assets" tabindex="-1">
     <div class="subtabs" role="tablist" aria-label="자산 화면 전환">
       <button type="button" role="tab" id="tab-source" aria-controls="setup"
-              aria-selected="false" tabindex="-1">피그마 자산</button>
+              aria-selected="false" tabindex="-1">피그마에서</button>
       <button type="button" role="tab" id="tab-discover" aria-controls="discover"
-              aria-selected="false" tabindex="-1">URL 자산</button>
+              aria-selected="false" tabindex="-1">사이트에서</button>
     </div>
 
   <div class="setup hidden" id="setup" role="tabpanel" aria-labelledby="tab-source" tabindex="-1">
@@ -1468,7 +1468,7 @@ function blocks(){
   return b;
 }
 
-/* URL 자산 탭. 빌더가 "화면 하나를 위한 프롬프트" 라면 이쪽은
+/* 자산 · 사이트에서. 빌더가 "화면 하나를 위한 프롬프트" 라면 이쪽은
    "라이브러리를 늘리는 일" 이라 탭을 나눴습니다. */
 function discoverBlocks(url){
   if(!M) return [];
@@ -1600,13 +1600,13 @@ var TOPS=[{id:"assets",tab:"tab-assets",panel:"assetsPane"},
 var SUBS=TABS.filter(function(x){ return x.top==="assets"; });
 var activeTab="source";
 /* 자산으로 돌아왔을 때 보던 갈래로 돌려놓습니다. 늘 첫 갈래로 튕기면
-   URL 자산을 쓰는 사람은 매번 두 번씩 누르게 됩니다. */
+   사이트에서를 쓰는 사람은 매번 두 번씩 누르게 됩니다. */
 var lastAssetTab="source";
 
 function tabDef(id){ return TABS.filter(function(x){ return x.id===id; })[0]; }
 
 function activateTab(id,moveFocus){
-  // 빌더와 URL 자산은 자산 파일을 읽기 전에는 열 수 없습니다.
+  // 빌더와 「사이트에서」는 자산 파일을 읽기 전에는 열 수 없습니다.
   if((id==="builder"||id==="discover") && !M) id="source";
   activeTab=id;
   var def=tabDef(id), top=def.top;
