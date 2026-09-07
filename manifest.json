@@ -157,7 +157,11 @@
         "overlap.sm": 32,
         "overlap.md": 56,
         "overlap.lg": 88,
-        "text.measureCenter": 46
+        "text.measureCenter": 46,
+        "container.narrow": 720,
+        "container.wide": 1440,
+        "section.padYTight": 48,
+        "section.padYLoose": 144
       },
       "text": {
         "break": "keep-all",
@@ -325,7 +329,11 @@
         "overlap.sm": 32,
         "overlap.md": 56,
         "overlap.lg": 88,
-        "text.measureCenter": 46
+        "text.measureCenter": 46,
+        "container.narrow": 720,
+        "container.wide": 1440,
+        "section.padYTight": 48,
+        "section.padYLoose": 144
       },
       "text": {
         "break": "keep-all",
@@ -493,7 +501,11 @@
         "overlap.sm": 32,
         "overlap.md": 56,
         "overlap.lg": 88,
-        "text.measureCenter": 46
+        "text.measureCenter": 46,
+        "container.narrow": 720,
+        "container.wide": 1440,
+        "section.padYTight": 48,
+        "section.padYLoose": 144
       },
       "text": {
         "break": "keep-all",
@@ -661,7 +673,11 @@
         "overlap.sm": 32,
         "overlap.md": 56,
         "overlap.lg": 88,
-        "text.measureCenter": 46
+        "text.measureCenter": 46,
+        "container.narrow": 720,
+        "container.wide": 1440,
+        "section.padYTight": 48,
+        "section.padYLoose": 144
       },
       "text": {
         "break": "keep-all",
@@ -829,7 +845,11 @@
         "overlap.sm": 32,
         "overlap.md": 56,
         "overlap.lg": 88,
-        "text.measureCenter": 46
+        "text.measureCenter": 46,
+        "container.narrow": 720,
+        "container.wide": 1440,
+        "section.padYTight": 48,
+        "section.padYLoose": 144
       },
       "text": {
         "break": "keep-all",
@@ -997,7 +1017,11 @@
         "overlap.sm": 32,
         "overlap.md": 56,
         "overlap.lg": 88,
-        "text.measureCenter": 46
+        "text.measureCenter": 46,
+        "container.narrow": 720,
+        "container.wide": 1440,
+        "section.padYTight": 48,
+        "section.padYLoose": 144
       },
       "text": {
         "break": "keep-all",
@@ -1165,7 +1189,11 @@
         "overlap.sm": 32,
         "overlap.md": 56,
         "overlap.lg": 88,
-        "text.measureCenter": 46
+        "text.measureCenter": 46,
+        "container.narrow": 720,
+        "container.wide": 1440,
+        "section.padYTight": 48,
+        "section.padYLoose": 144
       },
       "text": {
         "break": "keep-all",
@@ -1333,7 +1361,11 @@
         "overlap.sm": 32,
         "overlap.md": 56,
         "overlap.lg": 88,
-        "text.measureCenter": 46
+        "text.measureCenter": 46,
+        "container.narrow": 720,
+        "container.wide": 1440,
+        "section.padYTight": 48,
+        "section.padYLoose": 144
       },
       "text": {
         "break": "keep-all",

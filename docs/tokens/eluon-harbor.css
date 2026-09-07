@@ -212,6 +212,10 @@
   --layout-overlap-md:56px;
   --layout-overlap-lg:88px;
   --layout-text-measureCenter:46ch;
+  --layout-container-narrow:720px;
+  --layout-container-wide:1440px;
+  --layout-section-padYTight:48px;
+  --layout-section-padYLoose:144px;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
