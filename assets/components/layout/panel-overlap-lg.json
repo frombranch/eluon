@@ -1,0 +1,44 @@
+{
+  "id": "panel-overlap-lg",
+  "name": "Panel / Overlap / LG",
+  "group": "layout",
+  "tags": [
+    "겹침",
+    "패널",
+    "그릇"
+  ],
+  "spec": {
+    "width": "container.max",
+    "overlap": "overlap.lg",
+    "overlapTarget": "hero-stage-xl",
+    "radius": "xl",
+    "paddingX": "container.gutter",
+    "paddingY": "booking.barPaddingY",
+    "elevation": 2
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.subtle"
+  },
+  "responsive": {
+    "sm": "stack"
+  },
+  "states": [
+    "default"
+  ],
+  "usage": "히어로 하단에 겹쳐 올리는 그릇. 안에 검색 바나 요약 줄을 담는다",
+  "dont": "480 미만에서는 겹치지 않음 — 겹침을 풀고 위아래로 쌓는다. 겹칠 대상을 spec 의 overlapTarget 에 적지 않은 겹침은 만들지 않음",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "core",
+  "renders": {
+    "eluo": "assets/components/layout/panel-overlap-lg--eluo@2x.png",
+    "atlas": "assets/components/layout/panel-overlap-lg--atlas@2x.png",
+    "ember": "assets/components/layout/panel-overlap-lg--ember@2x.png",
+    "harbor": "assets/components/layout/panel-overlap-lg--harbor@2x.png",
+    "tideland": "assets/components/layout/panel-overlap-lg--tideland@2x.png",
+    "cobalt": "assets/components/layout/panel-overlap-lg--cobalt@2x.png",
+    "noir": "assets/components/layout/panel-overlap-lg--noir@2x.png",
+    "linen": "assets/components/layout/panel-overlap-lg--linen@2x.png"
+  }
+}

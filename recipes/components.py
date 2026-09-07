@@ -63,6 +63,10 @@ RESPONSIVE = {
     "header-gnb-lg":       {"md": "menuNav"},
     # 라벨과 값이 나란히 있으면 좁은 폭에서 값이 두 글자씩 끊깁니다
     "desc-list-md":        {"sm": "stack"},
+    # media-led 구조 자산 — 겹침은 좁은 폭에서 풀고 세로로 쌓습니다
+    "panel-overlap-lg":    {"sm": "stack"},
+    "feature-overlap-lg":  {"sm": "stack"},
+    "gallery-mosaic-lg":   {"md": "fill"},
 }
 
 BASE_CSS = """
@@ -798,6 +802,156 @@ def build(tokens):
              '글자는 스크림 위에 올려 대비를 지킵니다.</div>'
              '<div class="a"><button class="b1">둘러보기</button>'
              '<button class="b2">브로슈어</button></div></div></div>',
+    )
+
+    # ── media-led 구조 자산 ────────────────────────────────────────
+    # 풀블리드·겹침·스크림 변형은 media-led 를 선언한 페이지에서만 씁니다(CLAUDE.md §E-12).
+    # document 유형에서는 잠깁니다 — 컨테이너 안에만 그립니다.
+
+    add(
+        id="hero-stage-xl", name="Hero / Stage / XL", group="layout",
+        tags=["히어로", "첫화면", "풀블리드", "KV"], since="v1.13.0",
+        spec={"bleed": "full", "height": "stage.height", "minHeight": "stage.minHeight",
+              "contentMax": "stage.contentMax", "contentAlign": "center",
+              "paddingX": "bleed.inset", "scrim": "media.scrim.edge",
+              "titleTypography": "display1", "leadTypography": "body1",
+              "leadMaxWidth": "text.measureCenter",
+              "actionGap": "hero.actionGap", "actionTopGap": "hero.actionTopGap",
+              "overlapSlot": "overlap.lg", "slides": "3-5"},
+        tokens={"media": "surface.sunken", "scrim": "media.scrim.edge",
+                "title": "text.inverse", "lead": "text.inverse",
+                "actionBg": "surface.default", "actionLabel": "text.brand",
+                "indicator": "text.inverse"},
+        states=["default", "재생중", "정지"],
+        usage="사진이 화면을 지배하는 첫 화면. 뷰포트 전폭·전높이. media-led 선언이 있어야 쓴다",
+        dont="document 유형에 쓰지 않음. 자동 재생은 멈춤 버튼·reduced-motion·document.hidden "
+             "셋을 다 갖추고 화면당 하나까지. 글자는 세 줄·한 줄 40자를 넘기지 않음",
+        css=f".c{{width:100vw;height:{lay('stage.height')};"
+            f"min-height:{lay('stage.minHeight')};position:relative;overflow:hidden;"
+            f"background:var(--color-surface-sunken);display:flex;align-items:center;"
+            f"justify-content:center}}"
+            f".sc{{position:absolute;inset:0;background:var(--media-scrim-edge)}}"
+            f".in{{position:relative;max-width:{lay('stage.contentMax')};"
+            f"padding:0 {lay('bleed.inset')};text-align:center}}"
+            f".t{{{t('display1', tokens)}color:var(--color-text-inverse);{KO}}}"
+            f".l{{{t('body1', tokens)}color:var(--color-text-inverse);"
+            f"max-width:{lay('text.measureCenter')};margin:{sz('hero.leadGap')} auto 0;{KO}}}"
+            f".a{{display:flex;gap:{sz('hero.actionGap')};justify-content:center;"
+            f"margin-top:{sz('hero.actionTopGap')}}}"
+            f".b{{{btn_base}height:{sz('control.lg.height')};"
+            f"padding:0 {sz('control.lg.paddingX')};border-radius:var(--radius-lg);"
+            f"background:var(--color-surface-default);color:var(--color-text-brand);"
+            f"{t('body1-bold', tokens)}}}"
+            f".dots{{position:absolute;left:0;right:0;bottom:{lay('bleed.inset')};"
+            f"display:flex;gap:{sz('chip.gap')};align-items:center;justify-content:center}}"
+            f".d{{width:8px;height:8px;border-radius:var(--radius-full);"
+            f"background:var(--color-text-inverse);opacity:.4}}"
+            f".d.on{{opacity:1}}"
+            f".p{{{btn_base}width:{sz('touch.min')};height:{sz('touch.min')};"
+            f"color:var(--color-text-inverse);{t('caption', tokens)}}}",
+        html='<div class="c"><div class="sc"></div><div class="in">'
+             '<div class="t">머무는 자리에 여백을 둡니다</div>'
+             '<div class="l">사진이 먼저 말하는 첫 화면입니다.</div>'
+             '<div class="a"><button class="b">둘러보기</button></div></div>'
+             '<div class="dots"><span class="d on"></span><span class="d"></span>'
+             '<span class="d"></span><button class="p">❙❙</button></div></div>',
+    )
+
+    add(
+        id="media-band-xl", name="Media Band / XL", group="layout",
+        tags=["풀블리드", "사진띠", "호흡"], since="v1.13.0",
+        spec={"bleed": "full", "height": "stage.heightMd",
+              "contentMax": "stage.contentMax", "contentAlign": "center",
+              "paddingX": "bleed.inset", "scrim": "media.scrim.even",
+              "titleTypography": "heading1"},
+        tokens={"media": "surface.sunken", "scrim": "media.scrim.even",
+                "title": "text.inverse"},
+        states=["default"],
+        usage="섹션과 섹션 사이의 호흡. 풀블리드 사진 위에 문장 하나. 액션을 두지 않는다",
+        dont="전환 유도를 여기 넣지 않음 — 그건 cta-band-lg 다. 한 페이지에 풀블리드는 2~4개까지",
+        css=f".c{{width:100vw;height:{lay('stage.heightMd')};position:relative;"
+            f"overflow:hidden;background:var(--color-surface-sunken);"
+            f"display:flex;align-items:center;justify-content:center}}"
+            f".sc{{position:absolute;inset:0;background:var(--media-scrim-even)}}"
+            f".t{{position:relative;max-width:{lay('stage.contentMax')};"
+            f"padding:0 {lay('bleed.inset')};text-align:center;{KO}"
+            f"{t('heading1', tokens)}color:var(--color-text-inverse)}}",
+        html='<div class="c"><div class="sc"></div>'
+             '<div class="t">계절이 바뀌면 창밖도 바뀝니다</div></div>',
+    )
+
+    add(
+        id="panel-overlap-lg", name="Panel / Overlap / LG", group="layout",
+        tags=["겹침", "패널", "그릇"], since="v1.13.0",
+        spec={"width": "container.max", "overlap": "overlap.lg",
+              "overlapTarget": "hero-stage-xl", "radius": "xl",
+              "paddingX": "container.gutter", "paddingY": "booking.barPaddingY",
+              "elevation": 2},
+        tokens={"bg": "surface.default", "border": "border.subtle"},
+        states=["default"],
+        usage="히어로 하단에 겹쳐 올리는 그릇. 안에 검색 바나 요약 줄을 담는다",
+        dont="480 미만에서는 겹치지 않음 — 겹침을 풀고 위아래로 쌓는다. "
+             "겹칠 대상을 spec 의 overlapTarget 에 적지 않은 겹침은 만들지 않음",
+        css=f".stage{{width:{lay('container.max')};height:180px;"
+            f"background:var(--color-surface-sunken);border-radius:var(--radius-xl)}}"
+            f".c{{width:{lay('container.max')};position:relative;"
+            f"margin-top:calc({lay('overlap.lg')} * -1);"
+            f"padding:{sz('space.6') if False else '24px'} {lay('container.gutter')};"
+            f"border-radius:var(--radius-xl);background:var(--color-surface-default);"
+            f"border:{sz('border.width')} solid var(--color-border-subtle);"
+            f"box-shadow:var(--elevation-2);{t('body2', tokens)}"
+            f"color:var(--color-text-secondary);text-align:center}}",
+        html='<div><div class="stage"></div>'
+             '<div class="c">여기에 검색 바나 요약 줄이 들어갑니다</div></div>',
+    )
+
+    add(
+        id="gallery-mosaic-lg", name="Gallery / Mosaic / LG", group="layout",
+        tags=["갤러리", "사진", "크기단계"], since="v1.13.0",
+        spec={"width": "container.max", "gap": "card.gap", "radius": "xl",
+              "tiers": 3, "items": "5-7"},
+        tokens={"thumb": "surface.sunken"},
+        states=["default"],
+        usage="사진을 크기를 달리해 늘어놓는다. 전폭 1 + 절반 2 + 1/3 3",
+        dont="모든 칸을 같은 크기로 두지 않음 — 그러면 카드 그리드이지 갤러리가 아니다",
+        css=f".c{{width:{lay('container.max')};display:grid;"
+            f"grid-template-columns:repeat(6,1fr);gap:{lay('card.gap')}}}"
+            f".i{{background:var(--color-surface-sunken);border-radius:var(--radius-xl);"
+            f"aspect-ratio:var(--media-ratio-wide)}}"
+            f".w6{{grid-column:span 6}}.w3{{grid-column:span 3}}.w2{{grid-column:span 2}}",
+        html='<div class="c"><div class="i w6"></div>'
+             '<div class="i w3"></div><div class="i w3"></div>'
+             '<div class="i w2"></div><div class="i w2"></div><div class="i w2"></div></div>',
+    )
+
+    add(
+        id="feature-overlap-lg", name="Feature / Overlap / LG", group="layout",
+        tags=["좌우교차", "겹침", "본문"], since="v1.13.0",
+        spec={"width": "container.max", "overlap": "overlap.md",
+              "overlapTarget": "self", "radius": "xl",
+              "paddingX": "card.basic.paddingX", "paddingY": "card.basic.paddingY",
+              "thumbRatio": "3:2", "titleTypography": "heading2",
+              "bodyTypography": "body2", "elevation": 1},
+        tokens={"bg": "surface.default", "border": "border.subtle",
+                "thumb": "surface.sunken", "title": "text.primary", "body": "text.secondary"},
+        states=["default", "좌우 반전"],
+        usage="사진과 글자 패널이 겹치는 2단. 섹션마다 좌우를 뒤집어 같은 틀 반복을 깬다",
+        dont="480 미만에서는 겹침을 풀고 사진 아래로 글자를 내린다",
+        css=f".c{{width:{lay('container.max')};display:grid;"
+            f"grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center}}"
+            f".m{{aspect-ratio:3/2;background:var(--color-surface-sunken);"
+            f"border-radius:var(--radius-xl)}}"
+            f".p{{margin-left:calc({lay('overlap.md')} * -1);position:relative;"
+            f"padding:{sz('card.basic.paddingY')} {sz('card.basic.paddingX')};"
+            f"background:var(--color-surface-default);border-radius:var(--radius-xl);"
+            f"border:{sz('border.width')} solid var(--color-border-subtle);"
+            f"box-shadow:var(--elevation-1)}}"
+            f".t{{{t('heading2', tokens)}color:var(--color-text-primary);{KO}}}"
+            f".d{{{t('body2', tokens)}color:var(--color-text-secondary);"
+            f"margin-top:{sz('card.basic.gap')};{KO}}}",
+        html='<div class="c"><div class="m"></div><div class="p">'
+             '<div class="t">창을 크게 낸 이유</div>'
+             '<div class="d">빛이 드는 시간을 길게 두려고 했습니다.</div></div></div>',
     )
 
     add(

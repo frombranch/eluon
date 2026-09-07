@@ -8,7 +8,7 @@
 - 자산 목록 → [`index/ASSETS.md`](./index/ASSETS.md)
 - 엘루온 시트 → [`index/sheet-eluo.png`](./index/sheet-eluo.png)
 
-컴포넌트 44개(core 37 + hotel pack 7) · 테마 8종(ELUO / 아틀라스 / 엠버 / 하버 / 타이드랜드 / 코발트 / 느와르 / 리넨) · v1.12.4
+컴포넌트 49개(core 42 + hotel pack 7) · 테마 8종(ELUO / 아틀라스 / 엠버 / 하버 / 타이드랜드 / 코발트 / 느와르 / 리넨) · v1.12.4
 
 ---
 

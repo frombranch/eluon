@@ -1,0 +1,43 @@
+{
+  "id": "media-band-xl",
+  "name": "Media Band / XL",
+  "group": "layout",
+  "tags": [
+    "풀블리드",
+    "사진띠",
+    "호흡"
+  ],
+  "spec": {
+    "bleed": "full",
+    "height": "stage.heightMd",
+    "contentMax": "stage.contentMax",
+    "contentAlign": "center",
+    "paddingX": "bleed.inset",
+    "scrim": "media.scrim.even",
+    "titleTypography": "heading1"
+  },
+  "tokens": {
+    "media": "surface.sunken",
+    "scrim": "media.scrim.even",
+    "title": "text.inverse"
+  },
+  "responsive": {},
+  "states": [
+    "default"
+  ],
+  "usage": "섹션과 섹션 사이의 호흡. 풀블리드 사진 위에 문장 하나. 액션을 두지 않는다",
+  "dont": "전환 유도를 여기 넣지 않음 — 그건 cta-band-lg 다. 한 페이지에 풀블리드는 2~4개까지",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "core",
+  "renders": {
+    "eluo": "assets/components/layout/media-band-xl--eluo@2x.png",
+    "atlas": "assets/components/layout/media-band-xl--atlas@2x.png",
+    "ember": "assets/components/layout/media-band-xl--ember@2x.png",
+    "harbor": "assets/components/layout/media-band-xl--harbor@2x.png",
+    "tideland": "assets/components/layout/media-band-xl--tideland@2x.png",
+    "cobalt": "assets/components/layout/media-band-xl--cobalt@2x.png",
+    "noir": "assets/components/layout/media-band-xl--noir@2x.png",
+    "linen": "assets/components/layout/media-band-xl--linen@2x.png"
+  }
+}

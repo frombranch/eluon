@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Eluon — Design System</title>
-<meta name="description" content="디자인포지션의 에이전틱 디자인 시스템. 컴포넌트 44개, 테마 8종.">
+<meta name="description" content="디자인포지션의 에이전틱 디자인 시스템. 컴포넌트 49개, 테마 8종.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -79,6 +79,9 @@
   --color-warning-default:#9A6100;
   --color-warning-subtle:#FDF6E8;
   --color-focusRing:#000080;
+  --color-surface-onMedia:transparent;
+  --color-surface-onMediaScrolled:#FFFFFF;
+  --color-border-onMedia:rgba(255,255,255,.28);
   --color-accent-default:#FFFF01;
   --color-accent-onAccent:#171B21;
   --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
@@ -214,6 +217,18 @@
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --layout-bleed-inset:40px;
+  --layout-bleed-insetMd:24px;
+  --layout-bleed-insetSm:16px;
+  --layout-stage-height:88svh;
+  --layout-stage-heightMd:72svh;
+  --layout-stage-heightSm:78svh;
+  --layout-stage-minHeight:560px;
+  --layout-stage-contentMax:880px;
+  --layout-overlap-sm:32px;
+  --layout-overlap-md:56px;
+  --layout-overlap-lg:88px;
+  --layout-text-measureCenter:46ch;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
@@ -238,6 +253,12 @@
   --media-ratio-tall:9 / 16;
   --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
   --media-density:2;
+  --media-scrim-bottom:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-scrim-top:linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%);
+  --media-scrim-edge:linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%);
+  --media-scrim-even:linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34));
+  --media-scrim-side:linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%);
+  --media-scrim-plate:rgba(11,13,17,.62);
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -380,6 +401,9 @@
   --color-warning-default:#9A6100;
   --color-warning-subtle:#FDF6E8;
   --color-focusRing:#001F45;
+  --color-surface-onMedia:transparent;
+  --color-surface-onMediaScrolled:#FFFFFF;
+  --color-border-onMedia:rgba(255,255,255,.28);
   --color-accent-default:#C24D3A;
   --color-accent-onAccent:#FFFFFF;
   --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
@@ -515,6 +539,18 @@
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --layout-bleed-inset:40px;
+  --layout-bleed-insetMd:24px;
+  --layout-bleed-insetSm:16px;
+  --layout-stage-height:88svh;
+  --layout-stage-heightMd:72svh;
+  --layout-stage-heightSm:78svh;
+  --layout-stage-minHeight:560px;
+  --layout-stage-contentMax:880px;
+  --layout-overlap-sm:32px;
+  --layout-overlap-md:56px;
+  --layout-overlap-lg:88px;
+  --layout-text-measureCenter:46ch;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
@@ -539,6 +575,12 @@
   --media-ratio-tall:9 / 16;
   --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
   --media-density:2;
+  --media-scrim-bottom:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-scrim-top:linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%);
+  --media-scrim-edge:linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%);
+  --media-scrim-even:linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34));
+  --media-scrim-side:linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%);
+  --media-scrim-plate:rgba(11,13,17,.62);
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -681,6 +723,9 @@
   --color-warning-default:#9A6100;
   --color-warning-subtle:#FDF6E8;
   --color-focusRing:#12503C;
+  --color-surface-onMedia:transparent;
+  --color-surface-onMediaScrolled:#FFFFFF;
+  --color-border-onMedia:rgba(255,255,255,.28);
   --color-accent-default:#1F4E9C;
   --color-accent-onAccent:#FFFFFF;
   --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
@@ -816,6 +861,18 @@
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --layout-bleed-inset:40px;
+  --layout-bleed-insetMd:24px;
+  --layout-bleed-insetSm:16px;
+  --layout-stage-height:88svh;
+  --layout-stage-heightMd:72svh;
+  --layout-stage-heightSm:78svh;
+  --layout-stage-minHeight:560px;
+  --layout-stage-contentMax:880px;
+  --layout-overlap-sm:32px;
+  --layout-overlap-md:56px;
+  --layout-overlap-lg:88px;
+  --layout-text-measureCenter:46ch;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
@@ -840,6 +897,12 @@
   --media-ratio-tall:9 / 16;
   --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
   --media-density:2;
+  --media-scrim-bottom:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-scrim-top:linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%);
+  --media-scrim-edge:linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%);
+  --media-scrim-even:linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34));
+  --media-scrim-side:linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%);
+  --media-scrim-plate:rgba(11,13,17,.62);
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -979,6 +1042,9 @@
   --color-warning-default:#9A6100;
   --color-warning-subtle:#FDF6E8;
   --color-focusRing:#816C58;
+  --color-surface-onMedia:transparent;
+  --color-surface-onMediaScrolled:#FFFFFF;
+  --color-border-onMedia:rgba(255,255,255,.28);
   --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
@@ -1112,6 +1178,18 @@
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --layout-bleed-inset:40px;
+  --layout-bleed-insetMd:24px;
+  --layout-bleed-insetSm:16px;
+  --layout-stage-height:88svh;
+  --layout-stage-heightMd:72svh;
+  --layout-stage-heightSm:78svh;
+  --layout-stage-minHeight:560px;
+  --layout-stage-contentMax:880px;
+  --layout-overlap-sm:32px;
+  --layout-overlap-md:56px;
+  --layout-overlap-lg:88px;
+  --layout-text-measureCenter:46ch;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
@@ -1136,6 +1214,12 @@
   --media-ratio-tall:9 / 16;
   --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
   --media-density:2;
+  --media-scrim-bottom:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-scrim-top:linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%);
+  --media-scrim-edge:linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%);
+  --media-scrim-even:linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34));
+  --media-scrim-side:linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%);
+  --media-scrim-plate:rgba(11,13,17,.62);
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -1276,6 +1360,9 @@
   --color-warning-default:#9A6100;
   --color-warning-subtle:#FDF6E8;
   --color-focusRing:#B44E2B;
+  --color-surface-onMedia:transparent;
+  --color-surface-onMediaScrolled:#FFFFFF;
+  --color-border-onMedia:rgba(255,255,255,.28);
   --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
@@ -1409,6 +1496,18 @@
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --layout-bleed-inset:40px;
+  --layout-bleed-insetMd:24px;
+  --layout-bleed-insetSm:16px;
+  --layout-stage-height:88svh;
+  --layout-stage-heightMd:72svh;
+  --layout-stage-heightSm:78svh;
+  --layout-stage-minHeight:560px;
+  --layout-stage-contentMax:880px;
+  --layout-overlap-sm:32px;
+  --layout-overlap-md:56px;
+  --layout-overlap-lg:88px;
+  --layout-text-measureCenter:46ch;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
@@ -1433,6 +1532,12 @@
   --media-ratio-tall:9 / 16;
   --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
   --media-density:2;
+  --media-scrim-bottom:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-scrim-top:linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%);
+  --media-scrim-edge:linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%);
+  --media-scrim-even:linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34));
+  --media-scrim-side:linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%);
+  --media-scrim-plate:rgba(11,13,17,.62);
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -1575,6 +1680,9 @@
   --color-warning-default:#9A6100;
   --color-warning-subtle:#FDF6E8;
   --color-focusRing:#051469;
+  --color-surface-onMedia:transparent;
+  --color-surface-onMediaScrolled:#FFFFFF;
+  --color-border-onMedia:rgba(255,255,255,.28);
   --color-accent-default:#1E64DC;
   --color-accent-onAccent:#FFFFFF;
   --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
@@ -1710,6 +1818,18 @@
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --layout-bleed-inset:40px;
+  --layout-bleed-insetMd:24px;
+  --layout-bleed-insetSm:16px;
+  --layout-stage-height:88svh;
+  --layout-stage-heightMd:72svh;
+  --layout-stage-heightSm:78svh;
+  --layout-stage-minHeight:560px;
+  --layout-stage-contentMax:880px;
+  --layout-overlap-sm:32px;
+  --layout-overlap-md:56px;
+  --layout-overlap-lg:88px;
+  --layout-text-measureCenter:46ch;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
@@ -1734,6 +1854,12 @@
   --media-ratio-tall:9 / 16;
   --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
   --media-density:2;
+  --media-scrim-bottom:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-scrim-top:linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%);
+  --media-scrim-edge:linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%);
+  --media-scrim-even:linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34));
+  --media-scrim-side:linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%);
+  --media-scrim-plate:rgba(11,13,17,.62);
   --type-display1-size:40px;
   --type-display1-weight:800;
   --type-display1-lh:1.2;
@@ -1869,6 +1995,9 @@
   --color-warning-default:#9A6100;
   --color-warning-subtle:#FDF6E8;
   --color-focusRing:#000000;
+  --color-surface-onMedia:transparent;
+  --color-surface-onMediaScrolled:#FFFFFF;
+  --color-border-onMedia:rgba(255,255,255,.28);
   --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
@@ -2002,6 +2131,18 @@
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --layout-bleed-inset:40px;
+  --layout-bleed-insetMd:24px;
+  --layout-bleed-insetSm:16px;
+  --layout-stage-height:88svh;
+  --layout-stage-heightMd:72svh;
+  --layout-stage-heightSm:78svh;
+  --layout-stage-minHeight:560px;
+  --layout-stage-contentMax:880px;
+  --layout-overlap-sm:32px;
+  --layout-overlap-md:56px;
+  --layout-overlap-lg:88px;
+  --layout-text-measureCenter:46ch;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
@@ -2026,6 +2167,12 @@
   --media-ratio-tall:9 / 16;
   --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
   --media-density:2;
+  --media-scrim-bottom:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-scrim-top:linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%);
+  --media-scrim-edge:linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%);
+  --media-scrim-even:linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34));
+  --media-scrim-side:linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%);
+  --media-scrim-plate:rgba(11,13,17,.62);
   --type-display1-size:60px;
   --type-display1-weight:700;
   --type-display1-lh:1.4;
@@ -2167,6 +2314,9 @@
   --color-warning-default:#9A6100;
   --color-warning-subtle:#FDF6E8;
   --color-focusRing:#3B2412;
+  --color-surface-onMedia:transparent;
+  --color-surface-onMediaScrolled:#FFFFFF;
+  --color-border-onMedia:rgba(255,255,255,.28);
   --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
@@ -2315,6 +2465,18 @@
   --layout-block-gap:24px;
   --layout-card-gap:24px;
   --layout-text-measure:68ch;
+  --layout-bleed-inset:40px;
+  --layout-bleed-insetMd:24px;
+  --layout-bleed-insetSm:16px;
+  --layout-stage-height:88svh;
+  --layout-stage-heightMd:72svh;
+  --layout-stage-heightSm:78svh;
+  --layout-stage-minHeight:560px;
+  --layout-stage-contentMax:880px;
+  --layout-overlap-sm:32px;
+  --layout-overlap-md:56px;
+  --layout-overlap-lg:88px;
+  --layout-text-measureCenter:46ch;
   --motion-duration-fast:120ms;
   --motion-duration-base:180ms;
   --motion-duration-slow:280ms;
@@ -2339,6 +2501,12 @@
   --media-ratio-tall:9 / 16;
   --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
   --media-density:2;
+  --media-scrim-bottom:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-scrim-top:linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%);
+  --media-scrim-edge:linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%);
+  --media-scrim-even:linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34));
+  --media-scrim-side:linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%);
+  --media-scrim-plate:rgba(11,13,17,.62);
   --type-display1-size:60px;
   --type-display1-weight:400;
   --type-display1-lh:1.34;
@@ -2454,12 +2622,17 @@ body{background:transparent;-webkit-font-smoothing:antialiased;
 #cmp-select-md .c{display:flex;align-items:center;width:var(--size-field-width);height:var(--size-field-height);padding:0 var(--size-field-paddingX);border-radius:var(--radius-md);background:var(--color-surface-default);justify-content:space-between;border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}#cmp-select-md .i{color:var(--color-text-tertiary);font-size:12px}
 #cmp-cta-band-lg .c{width:var(--layout-container-max);padding:var(--size-ctaBand-paddingY) var(--layout-container-gutter);border-radius:var(--radius-xl);background:var(--color-brand-primary);display:flex;align-items:center;justify-content:space-between;gap:var(--size-ctaBand-gap)}#cmp-cta-band-lg .t{font-size:28px;font-weight:700;line-height:1.3;letter-spacing:-0.025em;color:var(--color-text-inverse)}#cmp-cta-band-lg .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-inverse);margin-top:8px}#cmp-cta-band-lg .b{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-surface-default);color:var(--color-text-brand);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;;flex:none}
 #cmp-desc-list-md .c{display:flex;flex-direction:column;margin:0}#cmp-desc-list-md .r{display:flex;gap:var(--size-descList-gap);padding:var(--size-descList-rowPaddingY) 0;border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-desc-list-md .k{flex:0 0 var(--size-descList-labelWidth);margin:0;font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-secondary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-desc-list-md .v{flex:1;min-width:0;margin:0;font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-primary);font-variant-numeric:var(--text-numeric);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}
+#cmp-feature-overlap-lg .c{width:var(--layout-container-max);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center}#cmp-feature-overlap-lg .m{aspect-ratio:3/2;background:var(--color-surface-sunken);border-radius:var(--radius-xl)}#cmp-feature-overlap-lg .p{margin-left:calc(var(--layout-overlap-md) * -1);position:relative;padding:var(--size-card-basic-paddingY) var(--size-card-basic-paddingX);background:var(--color-surface-default);border-radius:var(--radius-xl);border:var(--size-border-width) solid var(--color-border-subtle);box-shadow:var(--elevation-1)}#cmp-feature-overlap-lg .t{font-size:22px;font-weight:700;line-height:1.35;letter-spacing:-0.02em;color:var(--color-text-primary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-feature-overlap-lg .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);margin-top:var(--size-card-basic-gap);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}
 #cmp-footer-lg .c{width:var(--layout-container-max);padding:var(--size-footer-paddingY) var(--layout-container-gutter);background:var(--color-surface-inverse);display:flex;justify-content:space-between;align-items:baseline;gap:var(--size-footer-gap)}#cmp-footer-lg .lg{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-inverse)}#cmp-footer-lg .n{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-inverse);max-width:56ch;margin-top:12px;opacity:.72}#cmp-footer-lg .m{display:flex;gap:20px}#cmp-footer-lg .m span{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-inverse);opacity:.72;white-space:nowrap}
 #cmp-form-field-md .c{width:var(--size-field-width);display:flex;flex-direction:column;gap:var(--size-field-labelGap)}#cmp-form-field-md .lb{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;color:var(--color-text-primary)}#cmp-form-field-md .in{height:var(--size-field-height);padding:0 var(--size-field-paddingX);display:flex;align-items:center;border-radius:var(--radius-md);border:var(--size-border-width) solid var(--color-border-default);background:var(--color-surface-default);color:var(--color-text-tertiary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}#cmp-form-field-md .hp{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-secondary);margin-top:calc(var(--size-field-helperGap) - var(--size-field-labelGap))}
+#cmp-gallery-mosaic-lg .c{width:var(--layout-container-max);display:grid;grid-template-columns:repeat(6,1fr);gap:var(--layout-card-gap)}#cmp-gallery-mosaic-lg .i{background:var(--color-surface-sunken);border-radius:var(--radius-xl);aspect-ratio:var(--media-ratio-wide)}#cmp-gallery-mosaic-lg .w6{grid-column:span 6}#cmp-gallery-mosaic-lg .w3{grid-column:span 3}#cmp-gallery-mosaic-lg .w2{grid-column:span 2}
 #cmp-header-gnb-lg .c{width:var(--layout-container-max);height:var(--size-header-height);display:flex;align-items:center;gap:var(--size-header-itemGap);padding:0 var(--layout-container-gutter);background:var(--color-surface-default);border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-header-gnb-lg .lg{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-brand);white-space:nowrap}#cmp-header-gnb-lg .nv{display:flex;gap:var(--size-header-itemGap);margin-left:auto}#cmp-header-gnb-lg .nv span{font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-secondary);white-space:nowrap}#cmp-header-gnb-lg .nv span.on{color:var(--color-text-primary)}#cmp-header-gnb-lg .ac{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
 #cmp-hero-media-lg .c{width:var(--layout-container-max);position:relative;aspect-ratio:var(--media-ratio-wide);overflow:hidden;border-radius:var(--radius-xl);background:var(--color-surface-sunken);display:flex;align-items:flex-end}#cmp-hero-media-lg .sc{position:absolute;inset:0;background:var(--media-scrim)}#cmp-hero-media-lg .in{position:relative;width:100%;padding:var(--size-ctaBand-paddingY) var(--layout-container-gutter)}#cmp-hero-media-lg .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-inverse)}#cmp-hero-media-lg .t{font-size:40px;font-weight:800;line-height:1.2;letter-spacing:-0.03em;color:var(--color-text-inverse);margin-top:var(--size-hero-titleGap);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-hero-media-lg .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-inverse);max-width:60ch;margin-top:var(--size-hero-leadGap);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-hero-media-lg .a{display:flex;gap:var(--size-hero-actionGap);margin-top:var(--size-hero-actionTopGap)}#cmp-hero-media-lg .b1, #cmp-hero-media-lg .b2{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}#cmp-hero-media-lg .b1{background:var(--color-surface-default);color:var(--color-text-brand)}#cmp-hero-media-lg .b2{background:transparent;color:var(--color-text-inverse);border:var(--size-border-width) solid var(--color-text-inverse)}
 #cmp-hero-split-lg .c{width:var(--layout-container-max);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--size-hero-gap);align-items:end;padding:0 var(--layout-container-gutter)}#cmp-hero-split-lg .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-brand)}#cmp-hero-split-lg .t{font-size:40px;font-weight:800;line-height:1.2;letter-spacing:-0.03em;color:var(--color-text-primary);margin-top:var(--size-hero-titleGap)}#cmp-hero-split-lg .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:60ch;margin-top:var(--size-hero-leadGap)}#cmp-hero-split-lg .a{display:flex;gap:var(--size-hero-actionGap);margin-top:var(--size-hero-actionTopGap)}#cmp-hero-split-lg .b1, #cmp-hero-split-lg .b2{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}#cmp-hero-split-lg .b1{background:var(--color-brand-primary);color:var(--color-text-inverse)}#cmp-hero-split-lg .b2{background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary)}#cmp-hero-split-lg .r{border-left:var(--size-border-width) solid var(--color-border-default);padding-left:var(--size-hero-railPad);display:flex;flex-direction:column;gap:var(--size-hero-railGap)}#cmp-hero-split-lg .rl{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary);letter-spacing:0.06em;text-transform:uppercase}#cmp-hero-split-lg .rv{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-primary);font-variant-numeric:tabular-nums}
+#cmp-hero-stage-xl .c{width:100vw;height:var(--layout-stage-height);min-height:var(--layout-stage-minHeight);position:relative;overflow:hidden;background:var(--color-surface-sunken);display:flex;align-items:center;justify-content:center}#cmp-hero-stage-xl .sc{position:absolute;inset:0;background:var(--media-scrim-edge)}#cmp-hero-stage-xl .in{position:relative;max-width:var(--layout-stage-contentMax);padding:0 var(--layout-bleed-inset);text-align:center}#cmp-hero-stage-xl .t{font-size:40px;font-weight:800;line-height:1.2;letter-spacing:-0.03em;color:var(--color-text-inverse);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-hero-stage-xl .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-inverse);max-width:var(--layout-text-measureCenter);margin:var(--size-hero-leadGap) auto 0;word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-hero-stage-xl .a{display:flex;gap:var(--size-hero-actionGap);justify-content:center;margin-top:var(--size-hero-actionTopGap)}#cmp-hero-stage-xl .b{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);background:var(--color-surface-default);color:var(--color-text-brand);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}#cmp-hero-stage-xl .dots{position:absolute;left:0;right:0;bottom:var(--layout-bleed-inset);display:flex;gap:var(--size-chip-gap);align-items:center;justify-content:center}#cmp-hero-stage-xl .d{width:8px;height:8px;border-radius:var(--radius-full);background:var(--color-text-inverse);opacity:.4}#cmp-hero-stage-xl .d.on{opacity:1}#cmp-hero-stage-xl .p{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;width:var(--size-touch-min);height:var(--size-touch-min);color:var(--color-text-inverse);font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;}
 #cmp-list-row-md .c{display:flex;flex-direction:column}#cmp-list-row-md .rw{display:flex;align-items:baseline;gap:var(--size-listRow-gap);padding:var(--size-listRow-paddingY) 0;border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-list-row-md .tx{flex:1;min-width:0}#cmp-list-row-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary)}#cmp-list-row-md .m{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary);margin-top:4px}#cmp-list-row-md .v{font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-primary);font-variant-numeric:tabular-nums;white-space:nowrap}
+#cmp-media-band-xl .c{width:100vw;height:var(--layout-stage-heightMd);position:relative;overflow:hidden;background:var(--color-surface-sunken);display:flex;align-items:center;justify-content:center}#cmp-media-band-xl .sc{position:absolute;inset:0;background:var(--media-scrim-even)}#cmp-media-band-xl .t{position:relative;max-width:var(--layout-stage-contentMax);padding:0 var(--layout-bleed-inset);text-align:center;word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);font-size:28px;font-weight:700;line-height:1.3;letter-spacing:-0.025em;color:var(--color-text-inverse)}
+#cmp-panel-overlap-lg .stage{width:var(--layout-container-max);height:180px;background:var(--color-surface-sunken);border-radius:var(--radius-xl)}#cmp-panel-overlap-lg .c{width:var(--layout-container-max);position:relative;margin-top:calc(var(--layout-overlap-lg) * -1);padding:24px var(--layout-container-gutter);border-radius:var(--radius-xl);background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-subtle);box-shadow:var(--elevation-2);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);text-align:center}
 #cmp-section-header-md .c{display:flex;flex-direction:column;gap:var(--size-section-gap)}#cmp-section-header-md .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-brand)}#cmp-section-header-md .t{font-size:28px;font-weight:700;line-height:1.3;letter-spacing:-0.025em;color:var(--color-text-primary)}#cmp-section-header-md .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:58ch}
 #cmp-step-flow-md .c{display:flex;flex-direction:column;gap:var(--size-stepFlow-rowGap)}#cmp-step-flow-md .s{display:flex;gap:var(--size-stepFlow-gap);align-items:flex-start}#cmp-step-flow-md .n{flex:none;width:var(--size-stepFlow-numberSize);height:var(--size-stepFlow-numberSize);border-radius:var(--radius-full);background:var(--color-brand-primary);color:var(--color-text-inverse);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;line-height:1.4;letter-spacing:0;font-variant-numeric:var(--text-numeric);}#cmp-step-flow-md .tx{flex:1;min-width:0;max-width:var(--layout-text-measure)}#cmp-step-flow-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-step-flow-md .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);margin-top:4px;word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}
 #cmp-modal-confirm-lg .c{width:var(--size-modal-width);padding:var(--size-modal-paddingY) var(--size-modal-paddingX);border-radius:var(--radius-xl);background:var(--color-surface-default);box-shadow:var(--elevation-3);display:flex;flex-direction:column;gap:var(--size-modal-gap)}#cmp-modal-confirm-lg .t{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-primary)}#cmp-modal-confirm-lg .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);margin-top:8px}#cmp-modal-confirm-lg .r{display:flex;gap:8px;justify-content:flex-end}#cmp-modal-confirm-lg .bs, #cmp-modal-confirm-lg .bd{height:44px;padding:0 18px;border:0;border-radius:var(--radius-md);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}#cmp-modal-confirm-lg .bs{background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary)}#cmp-modal-confirm-lg .bd{background:var(--color-danger-default);color:var(--color-text-inverse)}
@@ -2832,7 +3005,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
     <div><p class="body-t">정의가 그대로 이미지가 되므로 문서와 자산이 어긋나지 않습니다.</p></div>
   </div>
   <dl class="meta">
-    <div><dt>Components</dt><dd>44</dd></div>
+    <div><dt>Components</dt><dd>49</dd></div>
     <div><dt>Themes</dt><dd>8</dd></div>
     <div><dt>Version</dt><dd>v1.12.4</dd></div>
     <div><dt>Source</dt><dd><a href="https://github.com/frombranch/eluon">GitHub</a></dd></div>
@@ -2854,7 +3027,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
   <div data-r style="margin-top:56px">
     <h4>Semantic — ELUO 테마가 덮어쓰는 값</h4>
     <div class="tw"><table><thead><tr><td>토큰</td><td>코어</td>
-      <td>ELUO 오버라이드</td></tr></thead><tbody><tr><td><code>color.brand.primary</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.brand.primary.hover</code></td><td><span class="dot" style="background:#2B45D4"></span><code>{primitive.blue.600}</code></td><td><span class="dot" style="background:#00006B"></span><code>{primitive.navy.600}</code></td></tr><tr><td><code>color.brand.primary.press</code></td><td><span class="dot" style="background:#1F33A6"></span><code>{primitive.blue.700}</code></td><td><span class="dot" style="background:#000052"></span><code>{primitive.navy.700}</code></td></tr><tr><td><code>color.brand.subtle</code></td><td><span class="dot" style="background:#EEF3FF"></span><code>{primitive.blue.50}</code></td><td><span class="dot" style="background:#EDEEF7"></span><code>{primitive.navy.50}</code></td></tr><tr><td><code>color.brand.onSubtle</code></td><td><span class="dot" style="background:#1F33A6"></span><code>{primitive.blue.700}</code></td><td><span class="dot" style="background:#000052"></span><code>{primitive.navy.700}</code></td></tr><tr><td><code>color.surface.default</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.subtle</code></td><td><span class="dot" style="background:#F7F8FA"></span><code>{primitive.gray.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.sunken</code></td><td><span class="dot" style="background:#EFF1F4"></span><code>{primitive.gray.100}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.disabled</code></td><td><span class="dot" style="background:#EFF1F4"></span><code>{primitive.gray.100}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.inverse</code></td><td><span class="dot" style="background:#171B21"></span><code>{primitive.gray.900}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.primary</code></td><td><span class="dot" style="background:#171B21"></span><code>{primitive.gray.900}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.secondary</code></td><td><span class="dot" style="background:#59626F"></span><code>{primitive.gray.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.tertiary</code></td><td><span class="dot" style="background:#6E7784"></span><code>{primitive.gray.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.disabled</code></td><td><span class="dot" style="background:#8D949E"></span><code>{primitive.gray.400}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.inverse</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.brand</code></td><td><span class="dot" style="background:#2B45D4"></span><code>{primitive.blue.600}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.border.default</code></td><td><span class="dot" style="background:#8D949E"></span><code>{primitive.gray.400}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.subtle</code></td><td><span class="dot" style="background:#E2E5EA"></span><code>{primitive.gray.200}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.strong</code></td><td><span class="dot" style="background:#6E7784"></span><code>{primitive.gray.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.brand</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.border.danger</code></td><td><span class="dot" style="background:#D83C3C"></span><code>{primitive.red.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.default</code></td><td><span class="dot" style="background:#D83C3C"></span><code>{primitive.red.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.hover</code></td><td><span class="dot" style="background:#BC2E2E"></span><code>{primitive.red.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.subtle</code></td><td><span class="dot" style="background:#FDF0EF"></span><code>{primitive.red.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.text</code></td><td><span class="dot" style="background:#BC2E2E"></span><code>{primitive.red.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.success.default</code></td><td><span class="dot" style="background:#1F7A54"></span><code>{primitive.green.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.success.subtle</code></td><td><span class="dot" style="background:#EEF8F3"></span><code>{primitive.green.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.warning.default</code></td><td><span class="dot" style="background:#9A6100"></span><code>{primitive.amber.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.warning.subtle</code></td><td><span class="dot" style="background:#FDF6E8"></span><code>{primitive.amber.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.focusRing</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr></tbody></table></div>
+      <td>ELUO 오버라이드</td></tr></thead><tbody><tr><td><code>color.brand.primary</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.brand.primary.hover</code></td><td><span class="dot" style="background:#2B45D4"></span><code>{primitive.blue.600}</code></td><td><span class="dot" style="background:#00006B"></span><code>{primitive.navy.600}</code></td></tr><tr><td><code>color.brand.primary.press</code></td><td><span class="dot" style="background:#1F33A6"></span><code>{primitive.blue.700}</code></td><td><span class="dot" style="background:#000052"></span><code>{primitive.navy.700}</code></td></tr><tr><td><code>color.brand.subtle</code></td><td><span class="dot" style="background:#EEF3FF"></span><code>{primitive.blue.50}</code></td><td><span class="dot" style="background:#EDEEF7"></span><code>{primitive.navy.50}</code></td></tr><tr><td><code>color.brand.onSubtle</code></td><td><span class="dot" style="background:#1F33A6"></span><code>{primitive.blue.700}</code></td><td><span class="dot" style="background:#000052"></span><code>{primitive.navy.700}</code></td></tr><tr><td><code>color.surface.default</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.subtle</code></td><td><span class="dot" style="background:#F7F8FA"></span><code>{primitive.gray.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.sunken</code></td><td><span class="dot" style="background:#EFF1F4"></span><code>{primitive.gray.100}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.disabled</code></td><td><span class="dot" style="background:#EFF1F4"></span><code>{primitive.gray.100}</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.inverse</code></td><td><span class="dot" style="background:#171B21"></span><code>{primitive.gray.900}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.primary</code></td><td><span class="dot" style="background:#171B21"></span><code>{primitive.gray.900}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.secondary</code></td><td><span class="dot" style="background:#59626F"></span><code>{primitive.gray.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.tertiary</code></td><td><span class="dot" style="background:#6E7784"></span><code>{primitive.gray.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.disabled</code></td><td><span class="dot" style="background:#8D949E"></span><code>{primitive.gray.400}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.inverse</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.text.brand</code></td><td><span class="dot" style="background:#2B45D4"></span><code>{primitive.blue.600}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.border.default</code></td><td><span class="dot" style="background:#8D949E"></span><code>{primitive.gray.400}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.subtle</code></td><td><span class="dot" style="background:#E2E5EA"></span><code>{primitive.gray.200}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.strong</code></td><td><span class="dot" style="background:#6E7784"></span><code>{primitive.gray.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.brand</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.border.danger</code></td><td><span class="dot" style="background:#D83C3C"></span><code>{primitive.red.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.default</code></td><td><span class="dot" style="background:#D83C3C"></span><code>{primitive.red.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.hover</code></td><td><span class="dot" style="background:#BC2E2E"></span><code>{primitive.red.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.subtle</code></td><td><span class="dot" style="background:#FDF0EF"></span><code>{primitive.red.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.danger.text</code></td><td><span class="dot" style="background:#BC2E2E"></span><code>{primitive.red.600}</code></td><td><em>동일</em></td></tr><tr><td><code>color.success.default</code></td><td><span class="dot" style="background:#1F7A54"></span><code>{primitive.green.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.success.subtle</code></td><td><span class="dot" style="background:#EEF8F3"></span><code>{primitive.green.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.warning.default</code></td><td><span class="dot" style="background:#9A6100"></span><code>{primitive.amber.500}</code></td><td><em>동일</em></td></tr><tr><td><code>color.warning.subtle</code></td><td><span class="dot" style="background:#FDF6E8"></span><code>{primitive.amber.50}</code></td><td><em>동일</em></td></tr><tr><td><code>color.focusRing</code></td><td><span class="dot" style="background:#3A5AF9"></span><code>{primitive.blue.500}</code></td><td><span class="dot" style="background:#000080"></span><code>{primitive.navy.500}</code></td></tr><tr><td><code>color.surface.onMedia</code></td><td><code>transparent</code></td><td><em>동일</em></td></tr><tr><td><code>color.surface.onMediaScrolled</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>{primitive.gray.0}</code></td><td><em>동일</em></td></tr><tr><td><code>color.border.onMedia</code></td><td><code>rgba(255,255,255,.28)</code></td><td><em>동일</em></td></tr></tbody></table></div>
   </div>
 
   <div data-r style="margin-top:56px">
@@ -2891,7 +3064,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
     <p class="note">자산이 아무리 정확해도 폭과 리듬이 없으면 성의 없어 보입니다.
       아래 값은 테마가 덮어씁니다 — 고객사 실측이 있으면 그 값이 정답입니다.
       manifest의 <code>foundationByTheme.&lt;테마&gt;.layout</code>에서 읽으십시오.</p>
-    <div class="tw"><table><thead><tr><td>토큰</td><td>무엇</td><td>값</td><td>왜</td></tr></thead><tr><td><code>layout.container.max</code></td><td>콘텐츠 최대폭</td><td class="n">1200px</td><td>캔버스가 더 넓어도 본문은 이 폭 안에 둡니다.</td></tr><tr><td><code>layout.container.gutter</code></td><td>좌우 거터</td><td class="n">24px</td><td>화면 가장자리와 콘텐츠 사이 최소 여백.</td></tr><tr><td><code>layout.container.gutterMd</code></td><td>container.gutterMd</td><td class="n">20px</td><td></td></tr><tr><td><code>layout.container.gutterSm</code></td><td>container.gutterSm</td><td class="n">16px</td><td></td></tr><tr><td><code>layout.grid.columns</code></td><td>그리드 열</td><td class="n">12</td><td>본문 영역을 나누는 열 수.</td></tr><tr><td><code>layout.grid.gap</code></td><td>열 간격</td><td class="n">24px</td><td>열과 열 사이.</td></tr><tr><td><code>layout.section.padY</code></td><td>섹션 상하 여백</td><td class="n">96px</td><td>lg 이상에서. 섹션마다 다르게 주지 않습니다.</td></tr><tr><td><code>layout.section.padYSm</code></td><td>섹션 상하 (sm)</td><td class="n">56px</td><td>sm 미만에서.</td></tr><tr><td><code>layout.section.padYMd</code></td><td>section.padYMd</td><td class="n">72px</td><td></td></tr><tr><td><code>layout.section.headGap</code></td><td>제목 ↔ 본문</td><td class="n">40px</td><td>섹션 제목과 그 아래 내용 사이.</td></tr><tr><td><code>layout.block.gap</code></td><td>블록 간격</td><td class="n">24px</td><td>문단·블록 사이 기본값.</td></tr><tr><td><code>layout.card.gap</code></td><td>카드 간격</td><td class="n">24px</td><td>카드 그리드의 가로·세로 간격.</td></tr><tr><td><code>layout.text.measure</code></td><td>본문 한 줄 길이</td><td class="n">68ch</td><td>글자수(ch). 넘기면 읽기 어려워집니다.</td></tr></table></div>
+    <div class="tw"><table><thead><tr><td>토큰</td><td>무엇</td><td>값</td><td>왜</td></tr></thead><tr><td><code>layout.container.max</code></td><td>콘텐츠 최대폭</td><td class="n">1200px</td><td>캔버스가 더 넓어도 본문은 이 폭 안에 둡니다.</td></tr><tr><td><code>layout.container.gutter</code></td><td>좌우 거터</td><td class="n">24px</td><td>화면 가장자리와 콘텐츠 사이 최소 여백.</td></tr><tr><td><code>layout.container.gutterMd</code></td><td>container.gutterMd</td><td class="n">20px</td><td></td></tr><tr><td><code>layout.container.gutterSm</code></td><td>container.gutterSm</td><td class="n">16px</td><td></td></tr><tr><td><code>layout.grid.columns</code></td><td>그리드 열</td><td class="n">12</td><td>본문 영역을 나누는 열 수.</td></tr><tr><td><code>layout.grid.gap</code></td><td>열 간격</td><td class="n">24px</td><td>열과 열 사이.</td></tr><tr><td><code>layout.section.padY</code></td><td>섹션 상하 여백</td><td class="n">96px</td><td>lg 이상에서. 섹션마다 다르게 주지 않습니다.</td></tr><tr><td><code>layout.section.padYSm</code></td><td>섹션 상하 (sm)</td><td class="n">56px</td><td>sm 미만에서.</td></tr><tr><td><code>layout.section.padYMd</code></td><td>section.padYMd</td><td class="n">72px</td><td></td></tr><tr><td><code>layout.section.headGap</code></td><td>제목 ↔ 본문</td><td class="n">40px</td><td>섹션 제목과 그 아래 내용 사이.</td></tr><tr><td><code>layout.block.gap</code></td><td>블록 간격</td><td class="n">24px</td><td>문단·블록 사이 기본값.</td></tr><tr><td><code>layout.card.gap</code></td><td>카드 간격</td><td class="n">24px</td><td>카드 그리드의 가로·세로 간격.</td></tr><tr><td><code>layout.text.measure</code></td><td>본문 한 줄 길이</td><td class="n">68ch</td><td>글자수(ch). 넘기면 읽기 어려워집니다.</td></tr><tr><td><code>layout.bleed.inset</code></td><td>bleed.inset</td><td class="n">40px</td><td></td></tr><tr><td><code>layout.bleed.insetMd</code></td><td>bleed.insetMd</td><td class="n">24px</td><td></td></tr><tr><td><code>layout.bleed.insetSm</code></td><td>bleed.insetSm</td><td class="n">16px</td><td></td></tr><tr><td><code>layout.stage.height</code></td><td>stage.height</td><td class="n">88svhpx</td><td></td></tr><tr><td><code>layout.stage.heightMd</code></td><td>stage.heightMd</td><td class="n">72svhpx</td><td></td></tr><tr><td><code>layout.stage.heightSm</code></td><td>stage.heightSm</td><td class="n">78svhpx</td><td></td></tr><tr><td><code>layout.stage.minHeight</code></td><td>stage.minHeight</td><td class="n">560px</td><td></td></tr><tr><td><code>layout.stage.contentMax</code></td><td>stage.contentMax</td><td class="n">880px</td><td></td></tr><tr><td><code>layout.overlap.sm</code></td><td>overlap.sm</td><td class="n">32px</td><td></td></tr><tr><td><code>layout.overlap.md</code></td><td>overlap.md</td><td class="n">56px</td><td></td></tr><tr><td><code>layout.overlap.lg</code></td><td>overlap.lg</td><td class="n">88px</td><td></td></tr><tr><td><code>layout.text.measureCenter</code></td><td>text.measureCenter</td><td class="n">46px</td><td></td></tr></table></div>
   </div>
 
   <div data-r style="margin-top:56px">
@@ -3653,7 +3826,7 @@ text-wrap: var(--text-wrap);</pre>
   </div>
 </article></div></section><section class="sec" id="g-layout"><div class="sec-head">
   <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Layout</h2></div>
-  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">레이아웃 10종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">레이아웃 15종</p></div>
   <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
 </div><div class="cmps">
 <article class="cmp" id="cta-band-lg" data-r>
@@ -3704,6 +3877,30 @@ text-wrap: var(--text-wrap);</pre>
     </details>
   </div>
 </article>
+<article class="cmp" id="feature-overlap-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="feature-overlap-lg"
+      aria-label="Feature / Overlap / LG 고르기"><span>고르기</span></label>
+    <h3>Feature / Overlap / LG</h3>
+    <p class="cid">feature-overlap-lg</p>
+    <p class="states">default · 좌우 반전</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-feature-overlap-lg"><div class="c"><div class="m"></div><div class="p"><div class="t">창을 크게 낸 이유</div><div class="d">빛이 드는 시간을 길게 두려고 했습니다.</div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>사진과 글자 패널이 겹치는 2단. 섹션마다 좌우를 뒤집어 같은 틀 반복을 깬다</p>
+        <p class="dont"><b>금지</b>480 미만에서는 겹침을 풀고 사진 아래로 글자를 내린다</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>overlap</td><td class='n'>overlap.md</td></tr><tr><td>overlapTarget</td><td class='n'>self</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>card.basic.paddingX</td></tr><tr><td>paddingY</td><td class='n'>card.basic.paddingY</td></tr><tr><td>thumbRatio</td><td class='n'>3:2</td></tr><tr><td>titleTypography</td><td class='n'>heading2</td></tr><tr><td>bodyTypography</td><td class='n'>body2</td></tr><tr><td>elevation</td><td class='n'>1</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>thumb</td><td><code>surface.sunken</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/feature-overlap-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
 <article class="cmp" id="footer-lg" data-r>
   <div class="c-meta">
     <label class="pick"><input type="checkbox" class="pickbox" value="footer-lg"
@@ -3749,6 +3946,30 @@ text-wrap: var(--text-wrap);</pre>
     </div>
     <details class="url"><summary>자산 URL</summary>
       <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/form-field-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="gallery-mosaic-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="gallery-mosaic-lg"
+      aria-label="Gallery / Mosaic / LG 고르기"><span>고르기</span></label>
+    <h3>Gallery / Mosaic / LG</h3>
+    <p class="cid">gallery-mosaic-lg</p>
+    <p class="states">default</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-gallery-mosaic-lg"><div class="c"><div class="i w6"></div><div class="i w3"></div><div class="i w3"></div><div class="i w2"></div><div class="i w2"></div><div class="i w2"></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>사진을 크기를 달리해 늘어놓는다. 전폭 1 + 절반 2 + 1/3 3</p>
+        <p class="dont"><b>금지</b>모든 칸을 같은 크기로 두지 않음 — 그러면 카드 그리드이지 갤러리가 아니다</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>gap</td><td class='n'>card.gap</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>tiers</td><td class='n'>3</td></tr><tr><td>items</td><td class='n'>5-7</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>thumb</td><td><code>surface.sunken</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/gallery-mosaic-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3824,6 +4045,30 @@ text-wrap: var(--text-wrap);</pre>
     </details>
   </div>
 </article>
+<article class="cmp" id="hero-stage-xl" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="hero-stage-xl"
+      aria-label="Hero / Stage / XL 고르기"><span>고르기</span></label>
+    <h3>Hero / Stage / XL</h3>
+    <p class="cid">hero-stage-xl</p>
+    <p class="states">default · 재생중 · 정지</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-hero-stage-xl"><div class="c"><div class="sc"></div><div class="in"><div class="t">머무는 자리에 여백을 둡니다</div><div class="l">사진이 먼저 말하는 첫 화면입니다.</div><div class="a"><button class="b">둘러보기</button></div></div><div class="dots"><span class="d on"></span><span class="d"></span><span class="d"></span><button class="p">❙❙</button></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>사진이 화면을 지배하는 첫 화면. 뷰포트 전폭·전높이. media-led 선언이 있어야 쓴다</p>
+        <p class="dont"><b>금지</b>document 유형에 쓰지 않음. 자동 재생은 멈춤 버튼·reduced-motion·document.hidden 셋을 다 갖추고 화면당 하나까지. 글자는 세 줄·한 줄 40자를 넘기지 않음</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>bleed</td><td class='n'>full</td></tr><tr><td>height</td><td class='n'>stage.height</td></tr><tr><td>minHeight</td><td class='n'>stage.minHeight</td></tr><tr><td>contentMax</td><td class='n'>stage.contentMax</td></tr><tr><td>contentAlign</td><td class='n'>center</td></tr><tr><td>paddingX</td><td class='n'>bleed.inset</td></tr><tr><td>scrim</td><td class='n'>media.scrim.edge</td></tr><tr><td>titleTypography</td><td class='n'>display1</td></tr><tr><td>leadTypography</td><td class='n'>body1</td></tr><tr><td>leadMaxWidth</td><td class='n'>text.measureCenter</td></tr><tr><td>actionGap</td><td class='n'>hero.actionGap</td></tr><tr><td>actionTopGap</td><td class='n'>hero.actionTopGap</td></tr><tr><td>overlapSlot</td><td class='n'>overlap.lg</td></tr><tr><td>slides</td><td class='n'>3-5</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>media</td><td><code>surface.sunken</code></td></tr><tr><td>scrim</td><td><code>media.scrim.edge</code></td></tr><tr><td>title</td><td><code>text.inverse</code></td></tr><tr><td>lead</td><td><code>text.inverse</code></td></tr><tr><td>actionBg</td><td><code>surface.default</code></td></tr><tr><td>actionLabel</td><td><code>text.brand</code></td></tr><tr><td>indicator</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/hero-stage-xl--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
 <article class="cmp" id="list-row-md" data-r>
   <div class="c-meta">
     <label class="pick"><input type="checkbox" class="pickbox" value="list-row-md"
@@ -3845,6 +4090,54 @@ text-wrap: var(--text-wrap);</pre>
     </div>
     <details class="url"><summary>자산 URL</summary>
       <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/list-row-md--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="media-band-xl" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="media-band-xl"
+      aria-label="Media Band / XL 고르기"><span>고르기</span></label>
+    <h3>Media Band / XL</h3>
+    <p class="cid">media-band-xl</p>
+    <p class="states">default</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-media-band-xl"><div class="c"><div class="sc"></div><div class="t">계절이 바뀌면 창밖도 바뀝니다</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>섹션과 섹션 사이의 호흡. 풀블리드 사진 위에 문장 하나. 액션을 두지 않는다</p>
+        <p class="dont"><b>금지</b>전환 유도를 여기 넣지 않음 — 그건 cta-band-lg 다. 한 페이지에 풀블리드는 2~4개까지</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>bleed</td><td class='n'>full</td></tr><tr><td>height</td><td class='n'>stage.heightMd</td></tr><tr><td>contentMax</td><td class='n'>stage.contentMax</td></tr><tr><td>contentAlign</td><td class='n'>center</td></tr><tr><td>paddingX</td><td class='n'>bleed.inset</td></tr><tr><td>scrim</td><td class='n'>media.scrim.even</td></tr><tr><td>titleTypography</td><td class='n'>heading1</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>media</td><td><code>surface.sunken</code></td></tr><tr><td>scrim</td><td><code>media.scrim.even</code></td></tr><tr><td>title</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/media-band-xl--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="panel-overlap-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="panel-overlap-lg"
+      aria-label="Panel / Overlap / LG 고르기"><span>고르기</span></label>
+    <h3>Panel / Overlap / LG</h3>
+    <p class="cid">panel-overlap-lg</p>
+    <p class="states">default</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-panel-overlap-lg"><div><div class="stage"></div><div class="c">여기에 검색 바나 요약 줄이 들어갑니다</div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>히어로 하단에 겹쳐 올리는 그릇. 안에 검색 바나 요약 줄을 담는다</p>
+        <p class="dont"><b>금지</b>480 미만에서는 겹치지 않음 — 겹침을 풀고 위아래로 쌓는다. 겹칠 대상을 spec 의 overlapTarget 에 적지 않은 겹침은 만들지 않음</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>overlap</td><td class='n'>overlap.lg</td></tr><tr><td>overlapTarget</td><td class='n'>hero-stage-xl</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>container.gutter</td></tr><tr><td>paddingY</td><td class='n'>booking.barPaddingY</td></tr><tr><td>elevation</td><td class='n'>2</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/panel-overlap-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article>

@@ -1,0 +1,51 @@
+{
+  "id": "feature-overlap-lg",
+  "name": "Feature / Overlap / LG",
+  "group": "layout",
+  "tags": [
+    "좌우교차",
+    "겹침",
+    "본문"
+  ],
+  "spec": {
+    "width": "container.max",
+    "overlap": "overlap.md",
+    "overlapTarget": "self",
+    "radius": "xl",
+    "paddingX": "card.basic.paddingX",
+    "paddingY": "card.basic.paddingY",
+    "thumbRatio": "3:2",
+    "titleTypography": "heading2",
+    "bodyTypography": "body2",
+    "elevation": 1
+  },
+  "tokens": {
+    "bg": "surface.default",
+    "border": "border.subtle",
+    "thumb": "surface.sunken",
+    "title": "text.primary",
+    "body": "text.secondary"
+  },
+  "responsive": {
+    "sm": "stack"
+  },
+  "states": [
+    "default",
+    "좌우 반전"
+  ],
+  "usage": "사진과 글자 패널이 겹치는 2단. 섹션마다 좌우를 뒤집어 같은 틀 반복을 깬다",
+  "dont": "480 미만에서는 겹침을 풀고 사진 아래로 글자를 내린다",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "core",
+  "renders": {
+    "eluo": "assets/components/layout/feature-overlap-lg--eluo@2x.png",
+    "atlas": "assets/components/layout/feature-overlap-lg--atlas@2x.png",
+    "ember": "assets/components/layout/feature-overlap-lg--ember@2x.png",
+    "harbor": "assets/components/layout/feature-overlap-lg--harbor@2x.png",
+    "tideland": "assets/components/layout/feature-overlap-lg--tideland@2x.png",
+    "cobalt": "assets/components/layout/feature-overlap-lg--cobalt@2x.png",
+    "noir": "assets/components/layout/feature-overlap-lg--noir@2x.png",
+    "linen": "assets/components/layout/feature-overlap-lg--linen@2x.png"
+  }
+}

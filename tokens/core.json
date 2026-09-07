@@ -74,7 +74,10 @@
       "success.subtle": "{primitive.green.50}",
       "warning.default": "{primitive.amber.500}",
       "warning.subtle": "{primitive.amber.50}",
-      "focusRing": "{primitive.blue.500}"
+      "focusRing": "{primitive.blue.500}",
+      "surface.onMedia": "transparent",
+      "surface.onMediaScrolled": "{primitive.gray.0}",
+      "border.onMedia": "rgba(255,255,255,.28)"
     },
     "font": {
       "family.base": "Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif",
@@ -213,7 +216,19 @@
       "section.headGap": 40,
       "block.gap": 24,
       "card.gap": 24,
-      "text.measure": 68
+      "text.measure": 68,
+      "bleed.inset": 40,
+      "bleed.insetMd": 24,
+      "bleed.insetSm": 16,
+      "stage.height": "88svh",
+      "stage.heightMd": "72svh",
+      "stage.heightSm": "78svh",
+      "stage.minHeight": 560,
+      "stage.contentMax": 880,
+      "overlap.sm": 32,
+      "overlap.md": 56,
+      "overlap.lg": 88,
+      "text.measureCenter": 46
     },
     "motion": {
       "duration.fast": 120,
@@ -235,7 +250,13 @@
       "ratio.portrait": "4 / 5",
       "ratio.tall": "9 / 16",
       "scrim": "linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%)",
-      "density": 2
+      "density": 2,
+      "scrim.bottom": "linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%)",
+      "scrim.top": "linear-gradient(to bottom, rgba(11,13,17,.46) 0%, rgba(11,13,17,.12) 44%, rgba(11,13,17,0) 78%)",
+      "scrim.edge": "linear-gradient(rgba(11,13,17,.46) 0%, rgba(11,13,17,.06) 34%, rgba(11,13,17,.10) 62%, rgba(11,13,17,.66) 100%)",
+      "scrim.even": "linear-gradient(rgba(11,13,17,.34), rgba(11,13,17,.34))",
+      "scrim.side": "linear-gradient(to right, rgba(11,13,17,.68) 0%, rgba(11,13,17,.28) 46%, rgba(11,13,17,0) 76%)",
+      "scrim.plate": "rgba(11,13,17,.62)"
     },
     "text": {
       "break": "keep-all",

@@ -1,0 +1,57 @@
+{
+  "id": "hero-stage-xl",
+  "name": "Hero / Stage / XL",
+  "group": "layout",
+  "tags": [
+    "히어로",
+    "첫화면",
+    "풀블리드",
+    "KV"
+  ],
+  "spec": {
+    "bleed": "full",
+    "height": "stage.height",
+    "minHeight": "stage.minHeight",
+    "contentMax": "stage.contentMax",
+    "contentAlign": "center",
+    "paddingX": "bleed.inset",
+    "scrim": "media.scrim.edge",
+    "titleTypography": "display1",
+    "leadTypography": "body1",
+    "leadMaxWidth": "text.measureCenter",
+    "actionGap": "hero.actionGap",
+    "actionTopGap": "hero.actionTopGap",
+    "overlapSlot": "overlap.lg",
+    "slides": "3-5"
+  },
+  "tokens": {
+    "media": "surface.sunken",
+    "scrim": "media.scrim.edge",
+    "title": "text.inverse",
+    "lead": "text.inverse",
+    "actionBg": "surface.default",
+    "actionLabel": "text.brand",
+    "indicator": "text.inverse"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "재생중",
+    "정지"
+  ],
+  "usage": "사진이 화면을 지배하는 첫 화면. 뷰포트 전폭·전높이. media-led 선언이 있어야 쓴다",
+  "dont": "document 유형에 쓰지 않음. 자동 재생은 멈춤 버튼·reduced-motion·document.hidden 셋을 다 갖추고 화면당 하나까지. 글자는 세 줄·한 줄 40자를 넘기지 않음",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "core",
+  "renders": {
+    "eluo": "assets/components/layout/hero-stage-xl--eluo@2x.png",
+    "atlas": "assets/components/layout/hero-stage-xl--atlas@2x.png",
+    "ember": "assets/components/layout/hero-stage-xl--ember@2x.png",
+    "harbor": "assets/components/layout/hero-stage-xl--harbor@2x.png",
+    "tideland": "assets/components/layout/hero-stage-xl--tideland@2x.png",
+    "cobalt": "assets/components/layout/hero-stage-xl--cobalt@2x.png",
+    "noir": "assets/components/layout/hero-stage-xl--noir@2x.png",
+    "linen": "assets/components/layout/hero-stage-xl--linen@2x.png"
+  }
+}

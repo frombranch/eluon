@@ -1,0 +1,41 @@
+{
+  "id": "gallery-mosaic-lg",
+  "name": "Gallery / Mosaic / LG",
+  "group": "layout",
+  "tags": [
+    "갤러리",
+    "사진",
+    "크기단계"
+  ],
+  "spec": {
+    "width": "container.max",
+    "gap": "card.gap",
+    "radius": "xl",
+    "tiers": 3,
+    "items": "5-7"
+  },
+  "tokens": {
+    "thumb": "surface.sunken"
+  },
+  "responsive": {
+    "md": "fill"
+  },
+  "states": [
+    "default"
+  ],
+  "usage": "사진을 크기를 달리해 늘어놓는다. 전폭 1 + 절반 2 + 1/3 3",
+  "dont": "모든 칸을 같은 크기로 두지 않음 — 그러면 카드 그리드이지 갤러리가 아니다",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "core",
+  "renders": {
+    "eluo": "assets/components/layout/gallery-mosaic-lg--eluo@2x.png",
+    "atlas": "assets/components/layout/gallery-mosaic-lg--atlas@2x.png",
+    "ember": "assets/components/layout/gallery-mosaic-lg--ember@2x.png",
+    "harbor": "assets/components/layout/gallery-mosaic-lg--harbor@2x.png",
+    "tideland": "assets/components/layout/gallery-mosaic-lg--tideland@2x.png",
+    "cobalt": "assets/components/layout/gallery-mosaic-lg--cobalt@2x.png",
+    "noir": "assets/components/layout/gallery-mosaic-lg--noir@2x.png",
+    "linen": "assets/components/layout/gallery-mosaic-lg--linen@2x.png"
+  }
+}

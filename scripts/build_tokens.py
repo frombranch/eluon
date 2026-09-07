@@ -50,6 +50,12 @@ def load(theme):
     return deep_merge(core, json.loads(path.read_text(encoding="utf-8")))
 
 
+def px(val, unit="px"):
+    """숫자에만 단위를 붙입니다. 문자열은 이미 단위를 갖고 있으므로 그대로 둡니다.
+    이게 없으면 '88svh' 가 '88svhpx' 가 되어 조용히 깨집니다."""
+    return f"{val}{unit}" if isinstance(val, (int, float)) else str(val)
+
+
 def resolve(value, prim):
     """{primitive.blue.500} 참조를 실제 값으로 바꿉니다."""
     m = REF.match(value) if isinstance(value, str) else None
@@ -77,13 +83,13 @@ def to_css(tokens, theme):
     for key, val in sem["font"].items():
         lines.append(f"  --font-{key.replace('.', '-')}:{val};")
     for key, val in sem.get("size", {}).items():
-        lines.append(f"  --size-{key.replace('.', '-')}:{val}px;")
+        lines.append(f"  --size-{key.replace('.', '-')}:{px(val)};")
     for key, val in sem.get("breakpoint", {}).items():
-        lines.append(f"  --bp-{key}:{val}px;")
+        lines.append(f"  --bp-{key}:{px(val)};")
     for key, val in sem["radius"].items():
-        lines.append(f"  --radius-{key}:{val}px;")
+        lines.append(f"  --radius-{key}:{px(val)};")
     for key, val in sem["space"].items():
-        lines.append(f"  --space-{key}:{val}px;")
+        lines.append(f"  --space-{key}:{px(val)};")
     for key, val in sem["elevation"].items():
         lines.append(f"  --elevation-{key}:{val};")
     # 레이아웃. 열 개수는 단위가 없고, 본문 길이는 ch 입니다.
@@ -96,8 +102,8 @@ def to_css(tokens, theme):
         if key in icon:
             lines.append(f"  --icon-{key.lower()}:{icon[key]};")
     for key, val in sem.get("layout", {}).items():
-        unit = "" if key == "grid.columns" else ("ch" if key == "text.measure" else "px")
-        lines.append(f"  --layout-{key.replace('.', '-')}:{val}{unit};")
+        unit = "" if key == "grid.columns" else ("ch" if key.startswith("text.measure") else "px")
+        lines.append(f"  --layout-{key.replace('.', '-')}:{px(val, unit)};")
     # 모션. 단위가 섞여 있어(ms · px · 무단위) 다른 그룹처럼 한 단위로 못 붙입니다.
     for key, val in sem.get("motion", {}).items():
         unit = ("ms" if key.startswith("duration.") or key == "stagger"
