@@ -63,12 +63,12 @@ GBAR_CSS = "\n" + CSS_START + """
 /* line-height 를 못박습니다 — 본문 행간(페이지마다 1.5~1.65)이 상속되면
    글자 상자 높이가 달라져 세로 중심이 페이지마다 몇 px 씩 어긋납니다. */
 .gbar .logo{
-  font-family:var(--gfont);font-size:19px;font-weight:700;letter-spacing:-.04em;
+  font-family:var(--gfont);font-size:20px;font-weight:700;letter-spacing:-.04em;
   line-height:1;color:var(--ink);text-decoration:none;
 }
 .gbar nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
 .gbar nav a{
-  font-family:var(--gfont);font-size:13px;font-weight:700;line-height:1;
+  font-family:var(--gfont);font-size:14px;font-weight:700;line-height:1;
   color:var(--muted);text-decoration:none;white-space:nowrap;letter-spacing:-.01em;
 }
 .gbar nav a:hover{color:var(--ink)}

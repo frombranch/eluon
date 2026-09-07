@@ -38,7 +38,7 @@ CHROME_CSS = GBAR_CSS + """
 .gskip{
   position:absolute;left:-9999px;top:0;z-index:60;
   padding:10px 16px;background:var(--ink);color:var(--paper);
-  font-size:13px;font-weight:700;text-decoration:none;
+  font-size:14px;font-weight:700;text-decoration:none;
 }
 .gskip:focus{left:var(--gpad);top:8px}
 
@@ -59,14 +59,14 @@ CHROME_CSS = GBAR_CSS + """
 .gside::-webkit-scrollbar-thumb{background:var(--hair)}
 .gtoggle{display:none}
 .gnavttl{
-  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--faint);margin-bottom:14px;
 }
 .gnav ol{list-style:none}
 .gnav > ol > li + li{margin-top:2px}
 .gnav .kicker{
   display:block;margin:18px 0 2px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--faint);
 }
 .gnav > ol > li:first-child .kicker{margin-top:0}
@@ -78,7 +78,7 @@ CHROME_CSS = GBAR_CSS + """
 .gnav > ol > li > a[aria-current=true]{color:var(--ink);font-weight:700}
 .gnav .sub{display:none;margin:2px 0 4px;padding-left:12px;border-left:1px solid var(--hair)}
 .gnav li.is-open > .sub{display:block}
-.gnav .sub a{font-size:13px;line-height:20px;padding:4px 0;color:var(--faint)}
+.gnav .sub a{font-size:14px;line-height:20px;padding:4px 0;color:var(--faint)}
 .gnav .sub a:hover{color:var(--ink)}
 .gnav .sub a[aria-current=true]{color:var(--accent);font-weight:700}
 
@@ -97,10 +97,10 @@ CHROME_CSS = GBAR_CSS + """
     max-height:none;overflow:visible;padding:0;
     border-right:0;border-bottom:1px solid var(--hair);background:var(--paper);
   }
-  .gtoggle{
+.gtoggle{
     display:flex;align-items:center;gap:10px;width:100%;
     height:56px;padding:0;border:0;background:none;cursor:pointer;
-    font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink);
+    font-family:var(--sans);font-size:14px;font-weight:700;color:var(--ink);
     letter-spacing:-.2px;
   }
   /* 아이콘 — CLAUDE.md 규칙: Lucide · 24 기준 · fill 없음 · 굵기 1.2 · 불투명도 .7 */

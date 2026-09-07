@@ -55,7 +55,7 @@
 *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
 body{
   background:var(--paper);color:var(--ink);
-  font-family:var(--sans);font-size:12px;line-height:20px;letter-spacing:-.16px;
+  font-family:var(--sans);font-size:16px;line-height:26px;letter-spacing:-.16px;
   -webkit-font-smoothing:antialiased;
   /* 한글 조판 — CLAUDE.md §0-8. 이 문서가 가르치는 규칙을 이 문서에도 겁니다.
      keep-all 만 걸면 긴 영문·URL 이 컨테이너를 넘치고,
@@ -73,11 +73,11 @@ header{padding:96px 0 40px}
 /* 제목만 키웁니다. 본문·리드는 그대로 — 대비는 제목 쪽에서 만듭니다. */
 h1{font-size:clamp(56px,7vw,96px);font-weight:700;line-height:1.04;
    letter-spacing:-.04em;text-wrap:balance}
-.tagline{margin-top:24px;max-width:62ch;color:var(--muted);font-size:13.6px;line-height:23.2px}
+.tagline{margin-top:24px;max-width:62ch;color:var(--muted);font-size:18px;line-height:30px}
 .stamp{
   margin-top:32px;padding-top:20px;border-top:1px solid var(--rule);
   display:flex;flex-wrap:wrap;gap:8px 32px;
-  font-family:var(--mono);font-size:9.6px;color:var(--faint);letter-spacing:0;
+  font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:0;
 }
 .stamp b{color:var(--muted);font-weight:500}
 
@@ -85,17 +85,17 @@ h1{font-size:clamp(56px,7vw,96px);font-weight:700;line-height:1.04;
 section{padding:64px 0;border-top:1px solid var(--hair)}
 section:first-of-type{border-top:0}
 .eyebrow{
-  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  font-family:var(--mono);font-size:14px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--accent);margin-bottom:14px;
 }
 h2{font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.12;
    letter-spacing:-.035em;text-wrap:balance}
-h3{font-size:19px;font-weight:700;line-height:1.4;letter-spacing:-.4px;margin-top:40px}
-h4{font-size:15px;font-weight:700;line-height:24px;margin-top:28px}
+h3{font-size:24px;font-weight:700;line-height:1.4;letter-spacing:-.4px;margin-top:40px}
+h4{font-size:18px;font-weight:700;line-height:28px;margin-top:28px}
 p{margin-top:16px;max-width:68ch}
-p.lead{margin-top:20px;font-size:13.6px;line-height:23.2px;color:var(--muted);max-width:64ch}
+p.lead{margin-top:20px;font-size:18px;line-height:30px;color:var(--muted);max-width:64ch}
 strong{font-weight:700}
-code{font-family:var(--mono);font-size:.88em;background:var(--mist);padding:2px 5px;letter-spacing:0}
+code{font-family:var(--mono);font-size:.875em;background:var(--mist);padding:2px 5px;letter-spacing:0}
 a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
@@ -110,11 +110,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 }
 .flow .node:last-child{border-right:0}
 .flow .node.is-tool{background:var(--mist)}
-.flow .n{font-family:var(--mono);font-size:8.8px;color:var(--faint);letter-spacing:0}
-.flow .t{font-size:11.2px;font-weight:700;line-height:16.8px}
-.flow .d{font-size:10.4px;line-height:16.8px;color:var(--muted)}
+.flow .n{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:0}
+.flow .t{font-size:16px;font-weight:700;line-height:24px}
+.flow .d{font-size:14px;line-height:22px;color:var(--muted)}
 .flow .who{
-  margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:8.8px;letter-spacing:0;
+  margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:12px;letter-spacing:0;
   color:var(--accent);
 }
 @media (max-width:720px){
@@ -124,9 +124,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 /* ── 표 ── */
 .scroller{overflow-x:auto;margin-top:24px;border-top:1px solid var(--rule)}
-table{width:100%;border-collapse:collapse;font-size:11.2px;line-height:17.6px}
+table{width:100%;border-collapse:collapse;font-size:14px;line-height:22px}
 th{
-  text-align:left;font-weight:700;font-size:9.6px;letter-spacing:.08em;text-transform:uppercase;
+  text-align:left;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;
   color:var(--muted);padding:14px 16px 14px 0;border-bottom:1px solid var(--rule);
   white-space:nowrap;
 }
@@ -139,7 +139,7 @@ td code{white-space:nowrap}
 .steps{margin-top:32px;border-top:1px solid var(--rule)}
 .step{display:flex;gap:28px;padding:28px 0;border-bottom:1px solid var(--hair)}
 .step .no{
-  flex:none;width:32px;font-family:var(--mono);font-size:10.4px;color:var(--faint);
+  flex:none;width:32px;font-family:var(--mono);font-size:14px;color:var(--faint);
   letter-spacing:0;padding-top:2px;
 }
 .step .body{flex:1;min-width:0}
@@ -149,7 +149,7 @@ td code{white-space:nowrap}
 /* ── 코드 블록 ── */
 pre{
   margin-top:20px;background:var(--ink);color:var(--paper);padding:20px 22px;
-  overflow-x:auto;font-family:var(--mono);font-size:10px;line-height:17.6px;letter-spacing:0;
+  overflow-x:auto;font-family:var(--mono);font-size:14px;line-height:22px;letter-spacing:0;
 }
 :root[data-theme="dark"] pre,
 :root:not([data-theme="light"]) pre{background:#000;color:#EDEDED}
@@ -158,7 +158,7 @@ pre{
 /* ── 주의 박스 ── */
 .note{
   margin-top:24px;padding:18px 20px;border-left:2px solid var(--accent);
-  background:var(--accent-soft);font-size:11.2px;line-height:19.2px;
+  background:var(--accent-soft);font-size:16px;line-height:26px;
 }
 .note.warn{border-left-color:var(--warn);background:var(--warn-soft)}
 .note b{display:block;margin-bottom:4px}
@@ -167,17 +167,17 @@ pre{
 /* ── 정의 목록 ── */
 .defs{margin-top:24px;border-top:1px solid var(--rule)}
 .def{padding:20px 0;border-bottom:1px solid var(--hair)}
-.def .k{font-size:12px;font-weight:700;line-height:19.2px}
-.def .k span{font-family:var(--mono);font-size:9.6px;color:var(--faint);margin-left:10px;letter-spacing:0;font-weight:400}
-.def .v{margin-top:6px;font-size:11.2px;line-height:18.4px;color:var(--muted);max-width:70ch}
+.def .k{font-size:18px;font-weight:700;line-height:28px}
+.def .k span{font-family:var(--mono);font-size:14px;color:var(--faint);margin-left:10px;letter-spacing:0;font-weight:400}
+.def .v{margin-top:6px;font-size:16px;line-height:26px;color:var(--muted);max-width:70ch}
 .def .v em{font-style:normal;color:var(--ink);font-weight:500}
 
 .tag{
-  display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:0;
+  display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:0;
   padding:2px 7px;border:1px solid var(--hair);color:var(--muted);white-space:nowrap;
 }
 footer{padding:56px 0 96px;border-top:1px solid var(--rule);margin-top:64px;
-  font-size:10.4px;line-height:18.4px;color:var(--faint)}
+  font-size:14px;line-height:24px;color:var(--faint)}
 footer p{max-width:68ch}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -300,11 +300,11 @@ footer p{max-width:68ch}
       <tbody>
         <tr><td><code>eluo</code></td><td>네이비 <span class="num">#000080</span></td><td class="num">4 / 6 / 8 / 12</td><td class="num">h56 · padX24</td><td class="num">320</td></tr>
         <tr><td><code>atlas</code></td><td>딥네이비 <span class="num">#001F45</span></td><td class="num">2 / 4 / 4 / 14</td><td class="num">h56 · padX24</td><td class="num">345</td></tr>
-        <tr><td colspan="5" style="color:var(--warn);font-size:10.4px;line-height:17.6px;padding-top:0"><strong>↑ atlas의 h56 · padX24는 고객사 값이 아닙니다.</strong> 원본 실측이 보류 상태라 Eluon 기본값을 쓰고 있습니다. 카드 폭 345와 라운드만 고객사 값입니다.</td></tr>
+        <tr><td colspan="5" style="color:var(--warn);font-size:12px;line-height:20px;padding-top:0"><strong>↑ atlas의 h56 · padX24는 고객사 값이 아닙니다.</strong> 원본 실측이 보류 상태라 Eluon 기본값을 쓰고 있습니다. 카드 폭 345와 라운드만 고객사 값입니다.</td></tr>
         <tr><td><code>ember</code></td><td>딥그린 <span class="num">#12503C</span></td><td class="num">2 / 2 / 2 / 3</td><td class="num">h52 · padX44</td><td class="num">287.5</td></tr>
         <tr><td><code>harbor</code></td><td>웜 토프 <span class="num">#816C58</span></td><td class="num">0 / 4 / 4 / 4</td><td class="num">h56 · padX40</td><td>—</td></tr>
         <tr><td><code>tideland</code></td><td>테라코타 <span class="num">#B44E2B</span></td><td class="num">8 / 14 / 20 / 28</td><td class="num">h56 · padX24</td><td class="num">320</td></tr>
-        <tr><td colspan="5" style="color:var(--warn);font-size:10.4px;line-height:17.6px;padding-top:0"><strong>↑ tideland는 색조차 추정값입니다.</strong> BI 가이드도 기존 사이트도 없이 브랜드 맥락만으로 도출했습니다. 치수는 실측 축이 하나도 없어 전부 Eluon 기본값입니다. 대외 제출물에 쓰지 마십시오.</td></tr>
+        <tr><td colspan="5" style="color:var(--warn);font-size:12px;line-height:20px;padding-top:0"><strong>↑ tideland는 색조차 추정값입니다.</strong> BI 가이드도 기존 사이트도 없이 브랜드 맥락만으로 도출했습니다. 치수는 실측 축이 하나도 없어 전부 Eluon 기본값입니다. 대외 제출물에 쓰지 마십시오.</td></tr>
       </tbody>
     </table>
   </div>
