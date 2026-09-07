@@ -53,7 +53,7 @@ html{-webkit-text-size-adjust:100%}
 button,a,label,summary,input,select,textarea{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 body{
   background:var(--paper);color:var(--ink);font-family:var(--sans);
-  font-size:15px;line-height:25px;letter-spacing:-.16px;-webkit-font-smoothing:antialiased;
+  font-size:16px;line-height:25px;letter-spacing:-.16px;-webkit-font-smoothing:antialiased;
 }
 ::selection{background:var(--ink);color:var(--paper)}
 .shell{width:100%;max-width:1440px;margin-inline:auto;padding-inline:var(--pad)}
@@ -61,9 +61,9 @@ body{
 header{padding:96px 0 56px}
 h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
    line-height:.92;letter-spacing:-.035em;text-wrap:balance}
-.ver{font-family:var(--mono);font-size:13px;line-height:23px;color:var(--faint);letter-spacing:0}
+.ver{font-family:var(--mono);font-size:14px;line-height:23px;color:var(--faint);letter-spacing:0}
 .hrow{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
-.sub{max-width:none;margin:24px 0 0;color:var(--muted);font-size:15px;line-height:25px}
+.sub{max-width:none;margin:24px 0 0;color:var(--muted);font-size:16px;line-height:25px}
 
 .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:10}
 .skip:focus{left:0}
@@ -95,12 +95,12 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
 /* line-height 를 못박습니다 — 본문 행간(페이지마다 1.5~1.65)이 상속되면
    글자 상자 높이가 달라져 세로 중심이 페이지마다 몇 px 씩 어긋납니다. */
 .gbar .logo{
-  font-family:var(--gfont);font-size:19px;font-weight:700;letter-spacing:-.04em;
+  font-family:var(--gfont);font-size:20px;font-weight:700;letter-spacing:-.04em;
   line-height:1;color:var(--ink);text-decoration:none;
 }
 .gbar nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
 .gbar nav a{
-  font-family:var(--gfont);font-size:13px;font-weight:700;line-height:1;
+  font-family:var(--gfont);font-size:14px;font-weight:700;line-height:1;
   color:var(--muted);text-decoration:none;white-space:nowrap;letter-spacing:-.01em;
 }
 .gbar nav a:hover{color:var(--ink)}
@@ -119,18 +119,18 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
 .tabs button{
   appearance:none;background:none;border:0;border-bottom:2px solid transparent;
   margin-bottom:-1px;padding:0 4px;height:63px;margin-right:50px;
-  font-family:inherit;font-size:17px;font-weight:600;letter-spacing:-.16px;color:var(--muted);
+  font-family:inherit;font-size:18px;font-weight:600;letter-spacing:-.16px;color:var(--muted);
   cursor:pointer;transition:color .2s ease,border-color .2s ease;
 }
 .tabs button:last-of-type{margin-right:0}
 .tabs button:hover{color:var(--ink)}
 .tabs button[aria-selected=true]{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
 .tabs button[aria-disabled=true]{color:var(--dim);cursor:not-allowed}
-.tabs .tabnote{margin-left:auto;margin-right:14px;font-size:13px;color:var(--faint)}
+.tabs .tabnote{margin-left:auto;margin-right:14px;font-size:14px;color:var(--faint)}
 /* 자산 페이지는 이 도구의 짝입니다. 본문에 묻어두지 않고 탭 줄 끝에 둡니다. */
 /* 지금 무슨 자산으로 만들고 있는지. 세 탭 모두에서 같은 자리에 있어야 하므로 탭 줄에 둡니다. */
 .srcchip{display:flex;align-items:baseline;gap:10px;margin-right:16px;min-width:0}
-.srcchip .srcname{font-size:13px;font-weight:700;letter-spacing:-.16px;
+.srcchip .srcname{font-size:14px;font-weight:700;letter-spacing:-.16px;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .srcchip .srcmeta{font-family:var(--mono);font-size:12px;color:var(--faint);
   letter-spacing:0;white-space:nowrap}
@@ -138,7 +138,7 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
 .tabdocs{
   display:inline-flex;align-items:center;height:34px;padding:0 14px;
   border:1px solid var(--ink);color:var(--ink);text-decoration:none;white-space:nowrap;
-  font-size:13px;font-weight:700;letter-spacing:-.16px;
+  font-size:14px;font-weight:700;letter-spacing:-.16px;
   transition:background .2s ease,color .2s ease;
 }
 .tabdocs:hover{background:var(--ink);color:var(--paper)}
@@ -163,7 +163,7 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
 @media (max-width:640px){
   .tabs .tabnote{display:none}
   .srcchip{display:none}
-  .tabs button{margin-right:22px;font-size:15px}
+  .tabs button{margin-right:22px;font-size:16px}
   /* 오른쪽으로 미는 힘은 .tabnote 에 걸려 있었는데 여기서 그게 숨습니다.
      미는 역할을 버튼 자신이 갖게 해서, 옆의 무엇이 사라져도 오른쪽에 남습니다. */
   .tabdocs{height:30px;padding:0 10px;font-size:12px;margin-left:auto}
@@ -173,7 +173,7 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
 /* 빌더도 라이브러리 두 화면과 같은 제목을 갖습니다. 두 칸 위에 통으로 걸쳐서
    어느 칸의 것도 아닌 화면 전체의 제목이 되게 합니다. 제목 활자는 .setuphd 가 씁니다. */
 .bhd{grid-column:1/-1;padding:40px 0 0;display:flex;flex-direction:column;gap:22px}
-.bhd p{font-size:15px;line-height:25px;color:var(--muted);max-width:64ch;
+.bhd p{font-size:16px;line-height:25px;color:var(--muted);max-width:64ch;
    letter-spacing:-.16px;word-break:keep-all;margin:0}
 .bhd b{color:var(--ink);font-weight:700}
 .bhd ~ .panel{padding-top:32px}
@@ -192,27 +192,30 @@ h1{font-family:var(--disp);font-size:clamp(40px,6vw,88px);font-weight:700;
    줄까지 있으면 화면이 표처럼 읽힙니다(§7-4·§7-5 — 나누는 장치는 하나로). */
 .legend{
   display:flex;align-items:baseline;gap:8px;
-  font-size:17px;font-weight:700;line-height:1.4;letter-spacing:-.16px;
+  font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-.16px;
   color:var(--ink);margin:0 0 18px;
 }
 /* 자산 · 피그마에서 화면의 단계 번호와 같은 형태. 순서가 있는 절에만 붙습니다.
    번호와 제목은 한 덩어리로 읽혀야 해서 칸을 넓게 잡지 않습니다. */
 .legend .no{
-  flex:none;width:26px;font-size:13px;font-weight:700;letter-spacing:0;
+  flex:none;width:26px;font-size:14px;font-weight:700;letter-spacing:0;
   color:var(--faint);
 }
 .legend .no:empty{display:none}
 .opt{font-size:14px;font-weight:400;color:var(--muted);margin-left:8px}
 .field{display:flex;flex-direction:column;gap:8px}
 label{font-size:14px;line-height:24px;font-weight:600;color:var(--ink);letter-spacing:-.16px}
-.hint{font-size:13px;line-height:23px;color:var(--faint);letter-spacing:-.16px}
+.hint{font-size:14px;line-height:23px;color:var(--faint);letter-spacing:-.16px}
+/* .setup p / .bhd p 가 특정도로 이겨서 그 안의 힌트가 본문 크기로 나왔습니다.
+   힌트는 본문보다 작아야 힌트로 읽힙니다. */
+.setup p.hint, .bhd p.hint{font-size:14px;line-height:23px}
 .count{font-family:var(--mono);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
 
 /* type 을 하나씩 적어두면 새 입력칸이 늘 때마다 빠집니다. text 말고도 함께 받습니다. */
 input[type=text],input[type=url],input[type=search],input[type=email],textarea,select{
   width:100%;height:52px;padding:0 2px;
   border:0;border-bottom:1px solid var(--ink);background:transparent;
-  color:var(--ink);font-family:inherit;font-size:15px;letter-spacing:-.16px;
+  color:var(--ink);font-family:inherit;font-size:16px;letter-spacing:-.16px;
   transition:border-color .2s ease;
 }
 select{cursor:pointer}
@@ -225,7 +228,7 @@ input:hover,textarea:hover,select:hover{border-bottom-color:var(--muted)}
 .seg button{
   height:40px;padding:0 16px;margin:0 -1px -1px 0;
   border:1px solid var(--ink);background:transparent;color:var(--ink);
-  font-family:inherit;font-size:13px;font-weight:500;letter-spacing:-.01em;
+  font-family:inherit;font-size:14px;font-weight:500;letter-spacing:-.01em;
   cursor:pointer;transition:background .2s ease,color .2s ease;
 }
 .seg button:hover{background:var(--mist)}
@@ -252,12 +255,12 @@ input:hover,textarea:hover,select:hover{border-bottom-color:var(--muted)}
   max-width:420px;width:100%;padding:24px;
 }
 .mdl h3{font-size:16px;font-weight:700;letter-spacing:-.02em;margin:0 0 10px;text-wrap:balance}
-.mdl p{font-size:13px;line-height:1.7;color:var(--faint);margin:0 0 20px}
+.mdl p{font-size:14px;line-height:1.7;color:var(--faint);margin:0 0 20px}
 .mdlrow{display:flex;gap:0;justify-content:flex-end}
 .mbtn{
   height:38px;padding:0 18px;margin:0 -1px 0 0;
   border:1px solid var(--ink);background:transparent;color:var(--ink);
-  font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;
+  font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;
 }
 .mbtn:hover{background:var(--mist)}
 .mbtn.go{background:var(--ink);color:var(--paper)}
@@ -274,7 +277,7 @@ h1, h2, p, li, .hint, .lead, .note, h3, h4, .setup h3, dd{
 p, li, .hint{ max-width:82ch }
 
 .aid .astates{
-  font-family:inherit;font-size:11px;font-weight:500;color:var(--faint);
+  font-family:inherit;font-size:12px;font-weight:500;color:var(--faint);
   margin-left:8px;letter-spacing:0;
 }
 
@@ -293,7 +296,7 @@ p, li, .hint{ max-width:82ch }
 }
 .chipx{
   border:0;background:transparent;color:var(--faint);cursor:pointer;
-  font-family:inherit;font-size:13px;line-height:1;padding:0 8px 0 2px;
+  font-family:inherit;font-size:14px;line-height:1;padding:0 8px 0 2px;
 }
 .chip:hover .chipx{color:var(--ink)}
 .chipx:focus-visible{outline:2px solid var(--ink);outline-offset:-3px}
@@ -304,14 +307,14 @@ p, li, .hint{ max-width:82ch }
 }
 .linkbtn[disabled]{color:var(--faint);border-bottom-color:var(--faint);cursor:default}
 
-.srcwarn{margin:18px 0 0;font-size:13px;color:var(--ink);padding-left:10px;
+.srcwarn{margin:18px 0 0;font-size:14px;color:var(--ink);padding-left:10px;
   border-left:1px solid var(--ink);line-height:1.6}
 
 .presets{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
 .presets select{flex:1 1 200px;min-width:0}
 
 /* 목록은 접어 둡니다. 선택은 쓰는 사람이 적고, 펼쳐두면 조건과 결과 사이를 막습니다. */
-.assetbox summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--ink);
+.assetbox summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--ink);
   padding:10px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
 .assetbox[open] summary{margin-bottom:16px}
 .searchwrap{position:relative;margin-bottom:16px}
@@ -326,12 +329,12 @@ p, li, .hint{ max-width:82ch }
 .agroup{display:flex;flex-direction:column}
 .aglabel{
   display:flex;align-items:baseline;justify-content:space-between;gap:12px;
-  font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
   color:var(--faint);padding-bottom:8px;border-bottom:1px solid var(--rule);margin-bottom:2px;
 }
 .agtoggle{
   border:0;background:none;color:var(--faint);cursor:pointer;
-  font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.06em;
+  font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.06em;
   text-transform:none;padding:0;border-bottom:1px solid currentColor;
 }
 .agtoggle:hover{color:var(--ink)}
@@ -343,27 +346,27 @@ p, li, .hint{ max-width:82ch }
 .arow:hover,.arow.on{background:var(--mist)}
 .arow:focus-within{background:var(--mist);outline:2px solid var(--ink);outline-offset:-2px}
 .arow input{width:15px;height:15px;margin-top:5px;flex:none;accent-color:var(--ink)}
-.aid{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:0}
-.ause{font-size:13px;line-height:23px;color:var(--muted);margin-top:4px;letter-spacing:-.16px}
+.aid{font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:0}
+.ause{font-size:14px;line-height:23px;color:var(--muted);margin-top:4px;letter-spacing:-.16px}
 .adont{
-  font-size:13px;color:var(--ink);margin-top:6px;line-height:23px;
+  font-size:14px;color:var(--ink);margin-top:6px;line-height:23px;
   padding-left:10px;border-left:1px solid var(--ink);
 }
 .amiss{font-size:12px;color:var(--faint);margin-top:4px;font-style:italic}
-.empty{font-size:13px;color:var(--faint);padding:20px 0}
+.empty{font-size:14px;color:var(--faint);padding:20px 0}
 
 .outhd{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:0}
 #dprompt{
   width:100%;min-height:300px;max-height:520px;overflow:auto;padding:28px;
   background:var(--code-bg);color:var(--code-fg);
-  font-family:var(--mono);font-size:12.5px;line-height:1.85;letter-spacing:0;
+  font-family:var(--mono);font-size:12px;line-height:1.85;letter-spacing:0;
   white-space:pre-wrap;word-break:break-word;
 }
 #dprompt::selection{background:var(--code-fg);color:var(--code-bg)}
 #prompt{
   width:100%;min-height:460px;max-height:640px;overflow:auto;padding:28px;
   background:var(--code-bg);color:var(--code-fg);border:0;
-  font-family:var(--mono);font-size:12.5px;line-height:1.85;letter-spacing:0;
+  font-family:var(--mono);font-size:12px;line-height:1.85;letter-spacing:0;
 }
 #prompt::selection{background:var(--code-fg);color:var(--code-bg)}
 #prompt::-webkit-scrollbar{width:10px;height:10px}
@@ -375,7 +378,7 @@ p, li, .hint{ max-width:82ch }
   letter-spacing:-.01em;padding:6px 0 10px 12px;border-left:1px solid var(--dim);
   margin:6px 0 10px;white-space:normal;
 }
-.whytoggle{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);cursor:pointer;user-select:none}
+.whytoggle{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);cursor:pointer;user-select:none}
 .whytoggle input{width:15px;height:15px;accent-color:var(--ink);cursor:pointer}
 
 .btn-primary-md{
@@ -392,13 +395,13 @@ p, li, .hint{ max-width:82ch }
   cursor:pointer;transition:background .2s ease;
 }
 .btn-ghost-md:hover{background:var(--mist)}
-.status{font-size:13px;color:var(--muted);min-height:1.5em}
+.status{font-size:14px;color:var(--muted);min-height:1.5em}
 .status.ok,.status.warn{color:var(--ink);font-weight:700}
 .status.warn{padding-left:10px;border-left:1px solid var(--ink)}
 
 .note{
   border-top:1px solid var(--hair2);padding-top:26px;
-  font-size:12.5px;color:var(--muted);line-height:1.85;letter-spacing:-.01em;
+  font-size:12px;color:var(--muted);line-height:1.85;letter-spacing:-.01em;
 }
 .note b{color:var(--ink);font-weight:700}
 
@@ -409,11 +412,11 @@ p, li, .hint{ max-width:82ch }
    88px 은 h1(Eluon) 과 같은 천장이라 새 눈금을 만들지 않습니다.
    .setup h2 가 아니라 .setuphd h2 입니다 — 화면 맨 위 제목만 이 크기를 씁니다.
    판 안쪽의 절 제목(완성된 프롬프트 등)은 .legend 눈금 17px 그대로 둡니다. */
-.setuphd h2{font-family:var(--disp);font-size:clamp(40px,6.5vw,88px);font-weight:700;
-   line-height:.98;letter-spacing:-.04em;word-break:keep-all;text-wrap:balance}
-.setup p{font-size:15px;line-height:25px;color:var(--muted);max-width:64ch;letter-spacing:-.16px;
+.setuphd h2{font-family:var(--disp);font-size:38px;font-weight:700;
+   line-height:1.1;letter-spacing:-.03em;word-break:keep-all;text-wrap:balance}
+.setup p{font-size:16px;line-height:25px;color:var(--muted);max-width:64ch;letter-spacing:-.16px;
    word-break:keep-all}
-.setup h3{font-size:17px;font-weight:700;line-height:1.4;letter-spacing:-.16px;margin-bottom:10px;
+.setup h3{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-.16px;margin-bottom:10px;
   white-space:nowrap}
 .setup b{color:var(--ink);font-weight:700}
 
@@ -421,14 +424,14 @@ p, li, .hint{ max-width:82ch }
 .step{display:flex;align-items:baseline;gap:28px;padding:36px 0;border-bottom:1px solid var(--hair)}
 .step:last-child{border-bottom:0;padding-bottom:0}
 .stepno{
-  font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink);
+  font-family:var(--sans);font-size:14px;font-weight:700;color:var(--ink);
   flex:none;width:36px;letter-spacing:0;
 }
 .stepbody{flex:1;min-width:0;display:flex;flex-direction:column;gap:16px}
 .stepbody p{margin:0}
 .sample{
   background:var(--mist);padding:18px 20px;
-  font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--ink);
+  font-family:var(--mono);font-size:12px;line-height:1.9;color:var(--ink);
   white-space:pre-wrap;word-break:break-word;letter-spacing:0;
 }
 .gen{
@@ -441,7 +444,7 @@ p, li, .hint{ max-width:82ch }
 .gen::-webkit-scrollbar-track{background:var(--code-bg)}
 .gen::-webkit-scrollbar-thumb{background:var(--dim)}
 .alt summary{
-  font-size:13px;color:var(--muted);cursor:pointer;padding:10px 0;
+  font-size:14px;color:var(--muted);cursor:pointer;padding:10px 0;
   border-top:1px solid var(--hair);
 }
 .alt summary:hover{color:var(--ink)}
@@ -467,7 +470,7 @@ a.linkbtn{text-decoration:none;display:inline-block}
   transition:background .2s ease,padding .2s ease;
 }
 .frow:hover{background:var(--mist)}
-.fpath{font-family:var(--mono);font-size:13px}
+.fpath{font-family:var(--mono);font-size:14px}
 .fmeta{font-size:12px;color:var(--muted)}
 .hidden{display:none!important}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
