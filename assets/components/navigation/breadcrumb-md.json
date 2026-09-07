@@ -34,6 +34,7 @@
     "harbor": "assets/components/navigation/breadcrumb-md--harbor@2x.png",
     "tideland": "assets/components/navigation/breadcrumb-md--tideland@2x.png",
     "cobalt": "assets/components/navigation/breadcrumb-md--cobalt@2x.png",
-    "noir": "assets/components/navigation/breadcrumb-md--noir@2x.png"
+    "noir": "assets/components/navigation/breadcrumb-md--noir@2x.png",
+    "linen": "assets/components/navigation/breadcrumb-md--linen@2x.png"
   }
 }

@@ -1,0 +1,60 @@
+{
+  "id": "hero-media-lg",
+  "name": "Hero / Media / LG",
+  "group": "layout",
+  "tags": [
+    "히어로",
+    "첫화면",
+    "전면사진",
+    "KV"
+  ],
+  "spec": {
+    "width": "container.max",
+    "ratio": "16:9",
+    "radius": "xl",
+    "paddingX": "container.gutter",
+    "paddingY": "ctaBand.paddingY",
+    "titleGap": "hero.titleGap",
+    "leadGap": "hero.leadGap",
+    "actionTopGap": "hero.actionTopGap",
+    "actionGap": "hero.actionGap",
+    "borderWidth": "border.width",
+    "eyebrowTypography": "label",
+    "eyebrowTracking": "0.1em",
+    "titleTypography": "display1",
+    "leadTypography": "body1",
+    "leadMaxWidth": "60ch",
+    "scrim": "media.scrim"
+  },
+  "tokens": {
+    "media": "surface.sunken",
+    "scrim": "media.scrim",
+    "eyebrow": "text.inverse",
+    "title": "text.inverse",
+    "lead": "text.inverse",
+    "actionBg": "surface.default",
+    "actionLabel": "text.brand",
+    "actionAltBorder": "text.inverse"
+  },
+  "responsive": {
+    "md": "stack"
+  },
+  "states": [
+    "default",
+    "리드 없음"
+  ],
+  "usage": "페이지 첫 화면. 사진이 주인공일 때. 제목·리드·액션을 사진 위에 얹음",
+  "dont": "한 화면에 두 번 쓰지 않음. hero-split-lg 와 같이 쓰지 않음 — 첫 화면은 하나. 요소 전체에 opacity 를 걸지 않음. 어둡게 하는 것은 스크림뿐",
+  "status": "stable",
+  "since": "v1.12.4",
+  "renders": {
+    "eluo": "assets/components/layout/hero-media-lg--eluo@2x.png",
+    "atlas": "assets/components/layout/hero-media-lg--atlas@2x.png",
+    "ember": "assets/components/layout/hero-media-lg--ember@2x.png",
+    "harbor": "assets/components/layout/hero-media-lg--harbor@2x.png",
+    "tideland": "assets/components/layout/hero-media-lg--tideland@2x.png",
+    "cobalt": "assets/components/layout/hero-media-lg--cobalt@2x.png",
+    "noir": "assets/components/layout/hero-media-lg--noir@2x.png",
+    "linen": "assets/components/layout/hero-media-lg--linen@2x.png"
+  }
+}

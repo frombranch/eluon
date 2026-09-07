@@ -1,6 +1,6 @@
 # 자산 목록
 
-`frombranch/eluon` · **v1.12.3** · 총 36개(상태 변형 5개 별도) · 테마 eluo, atlas, ember, harbor, tideland, cobalt, noir
+`frombranch/eluon` · **v1.12.4** · 총 37개(상태 변형 5개 별도) · 테마 eluo, atlas, ember, harbor, tideland, cobalt, noir, linen
 
 > `scripts/build_manifest.py`가 생성합니다. 직접 고치지 마세요.
 > 아래 규격은 **eluo** 테마 기준입니다. 치수는 테마마다 다릅니다 — `manifest.json`의 `specByTheme`를 보십시오.
@@ -67,7 +67,7 @@
 | `input-text-md` | Text Field / MD<br><small>상태 · `input-text-md-error` · `input-text-md-focus`</small> | h52 w320 r:md | 한 줄 입력의 기본형 | 라벨 없이 placeholder만으로 쓰지 않음 |
 | `select-md` | Select / MD | h52 w320 r:md | 선택지 6개 이상의 단일 선택 | 선택지 5개 이하면 탭이나 라디오가 더 빠름 |
 
-## layout (9)
+## layout (10)
 
 | ID | 이름 | 규격 | 언제 쓰나 | 쓰면 안 되는 때 |
 |---|---|---|---|---|
@@ -76,7 +76,8 @@
 | `footer-lg` | Footer / LG | w1200 | 모든 페이지 최하단. 로고 · 고지 · 보조 메뉴 | 색을 흐리게 해서 구분하지 않음. 뒤집힌 면에서는 대비가 무너짐. 크기와 굵기로 나눔 |
 | `form-field-md` | Form Field / MD | w320 r:md | 라벨 · 입력 · 도움말을 한 묶음으로. 폼의 최소 단위 | 라벨을 placeholder 로 대신하지 않음. 입력하면 라벨이 사라짐 |
 | `header-gnb-lg` | Header / GNB / LG | h72 w1200 | 모든 페이지 최상단. 로고 · 주 메뉴 · 주요 액션 하나 | 메뉴가 7개를 넘기면 여기 다 넣지 않음. 드롭다운이나 2단으로 나눔 |
-| `hero-split-lg` | Hero / Split / LG | w1200 | 페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에 | 한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐 |
+| `hero-media-lg` | Hero / Media / LG | w1200 r:xl | 페이지 첫 화면. 사진이 주인공일 때. 제목·리드·액션을 사진 위에 얹음 | 한 화면에 두 번 쓰지 않음. hero-split-lg 와 같이 쓰지 않음 — 첫 화면은 하나. 요소 전체에 opacity 를 걸지 않음. 어둡게 하는 것은 스크림뿐 |
+| `hero-split-lg` | Hero / Split / LG | w1200 | 페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에 | 한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐. 사진을 넣지 않음 — 사진이 주인공인 첫 화면은 hero-media-lg |
 | `list-row-md` | List Row / MD | — | 제목·메타·값이 한 줄인 목록. 공지·뉴스·자료실 | 열이 셋을 넘게 비교해야 하면 목록이 아니라 표. table-basic-lg 로 |
 | `section-header-md` | Section Header / MD | — | 섹션 시작의 제목 묶음. 아이브로우(선택) · 제목 · 리드문을 한 덩어리로 | 리드문이 세 줄을 넘기면 리드가 아니라 본문. 본문은 섹션 안으로 내림 |
 | `step-flow-md` | Step Flow / MD | — | 순서가 있는 절차. 신청 방법·심사 과정·이용 안내 | 순서가 없는 목록에 번호를 붙이지 않음. 번호는 순서가 있다는 약속입니다 |

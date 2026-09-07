@@ -9,13 +9,26 @@
   ],
   "spec": {
     "width": "container.max",
+    "columns": "7/5",
+    "align": "end",
     "gap": "hero.gap",
+    "titleGap": "hero.titleGap",
+    "leadGap": "hero.leadGap",
+    "actionTopGap": "hero.actionTopGap",
     "actionGap": "hero.actionGap",
+    "railBorder": "left",
+    "railPad": "hero.railPad",
     "railGap": "hero.railGap",
+    "railItems": "2-4",
     "borderWidth": "border.width",
+    "eyebrowTypography": "label",
+    "eyebrowTracking": "0.1em",
     "titleTypography": "display1",
     "leadTypography": "body1",
-    "leadMaxWidth": "60ch"
+    "leadMaxWidth": "60ch",
+    "railLabelTypography": "caption",
+    "railLabelTracking": "0.06em",
+    "railValueTypography": "heading3"
   },
   "tokens": {
     "eyebrow": "text.brand",
@@ -33,7 +46,7 @@
     "레일 없음"
   ],
   "usage": "페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에",
-  "dont": "한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐",
+  "dont": "한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐. 사진을 넣지 않음 — 사진이 주인공인 첫 화면은 hero-media-lg",
   "status": "stable",
   "since": "v1.8.0",
   "renders": {
@@ -43,6 +56,7 @@
     "harbor": "assets/components/layout/hero-split-lg--harbor@2x.png",
     "tideland": "assets/components/layout/hero-split-lg--tideland@2x.png",
     "cobalt": "assets/components/layout/hero-split-lg--cobalt@2x.png",
-    "noir": "assets/components/layout/hero-split-lg--noir@2x.png"
+    "noir": "assets/components/layout/hero-split-lg--noir@2x.png",
+    "linen": "assets/components/layout/hero-split-lg--linen@2x.png"
   }
 }

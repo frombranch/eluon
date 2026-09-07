@@ -1,0 +1,23 @@
+{
+  "$comment": "hotel pack 치수 토큰 — 주차 중. core 는 업종이 바뀌어도 참인 것만 담는다.",
+  "pack": "hotel",
+  "semantic": {
+    "size": {
+      "booking.barPaddingY": 24,
+      "booking.barGap": 24,
+      "booking.fieldGap": 8,
+      "booking.stepperSize": 36,
+      "booking.stepperGap": 8,
+      "booking.stepperValueWidth": 40,
+      "booking.summaryPaddingY": 16,
+      "booking.ratePaddingX": 24,
+      "booking.ratePaddingY": 24,
+      "booking.rateGap": 16,
+      "booking.priceGap": 4,
+      "tooltip.paddingX": 12,
+      "tooltip.paddingY": 8,
+      "tooltip.maxWidth": 240,
+      "tooltip.iconSize": 16
+    }
+  }
+}

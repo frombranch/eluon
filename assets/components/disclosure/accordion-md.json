@@ -41,6 +41,7 @@
     "harbor": "assets/components/disclosure/accordion-md--harbor@2x.png",
     "tideland": "assets/components/disclosure/accordion-md--tideland@2x.png",
     "cobalt": "assets/components/disclosure/accordion-md--cobalt@2x.png",
-    "noir": "assets/components/disclosure/accordion-md--noir@2x.png"
+    "noir": "assets/components/disclosure/accordion-md--noir@2x.png",
+    "linen": "assets/components/disclosure/accordion-md--linen@2x.png"
   }
 }

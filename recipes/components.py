@@ -52,6 +52,9 @@ RESPONSIVE = {
     "table-basic-lg":      {"md": "toCard"},
     # 가로 칼럼 → 세로로 쌓기
     "hero-split-lg":       {"md": "stack"},
+    # 좁은 폭에서 16:9 는 너무 납작하고 스크림 위 글자도 읽기 어렵습니다.
+    # 사진을 위로, 글자를 그 아래로 내립니다.
+    "hero-media-lg":       {"md": "stack"},
     "footer-lg":           {"md": "stack"},
     "cta-band-lg":         {"md": "stack"},
     "list-row-md":         {"sm": "stack"},
@@ -688,26 +691,37 @@ def build(tokens):
     add(
         id="hero-split-lg", name="Hero / Split / LG", group="layout",
         tags=["히어로", "첫화면", "2단"], since="v1.8.0",
-        spec={"width": "container.max", "gap": "hero.gap",
-              "actionGap": "hero.actionGap", "railGap": "hero.railGap",
-              "borderWidth": "border.width", "titleTypography": "display1",
-              "leadTypography": "body1", "leadMaxWidth": "60ch"},
+        spec={"width": "container.max", "columns": "7/5", "align": "end",
+              "gap": "hero.gap", "titleGap": "hero.titleGap",
+              "leadGap": "hero.leadGap", "actionTopGap": "hero.actionTopGap",
+              "actionGap": "hero.actionGap",
+              "railBorder": "left", "railPad": "hero.railPad",
+              "railGap": "hero.railGap", "railItems": "2-4",
+              "borderWidth": "border.width",
+              "eyebrowTypography": "label", "eyebrowTracking": "0.1em",
+              "titleTypography": "display1",
+              "leadTypography": "body1", "leadMaxWidth": "60ch",
+              "railLabelTypography": "caption", "railLabelTracking": "0.06em",
+              "railValueTypography": "heading3"},
         tokens={"eyebrow": "text.brand", "title": "text.primary",
                 "lead": "text.secondary", "rail": "border.default",
                 "railLabel": "text.tertiary", "railValue": "text.primary"},
         states=["default", "레일 없음"],
         usage="페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에",
-        dont="한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐",
+        dont="한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐. "
+             "사진을 넣지 않음 — 사진이 주인공인 첫 화면은 hero-media-lg",
         css=f".c{{width:{lay('container.max')};display:grid;"
             f"grid-template-columns:minmax(0,7fr) minmax(0,5fr);"
             f"gap:{sz('hero.gap')};align-items:end;"
             f"padding:0 {lay('container.gutter')}}}"
             f".e{{{t('label', tokens)}letter-spacing:0.1em;text-transform:uppercase;"
             f"color:var(--color-text-brand)}}"
-            f".t{{{t('display1', tokens)}color:var(--color-text-primary);margin-top:12px}}"
+            f".t{{{t('display1', tokens)}color:var(--color-text-primary);"
+            f"margin-top:{sz('hero.titleGap')}}}"
             f".l{{{t('body1', tokens)}color:var(--color-text-secondary);"
-            f"max-width:60ch;margin-top:{sz('hero.railGap')}}}"
-            f".a{{display:flex;gap:{sz('hero.actionGap')};margin-top:32px}}"
+            f"max-width:60ch;margin-top:{sz('hero.leadGap')}}}"
+            f".a{{display:flex;gap:{sz('hero.actionGap')};"
+            f"margin-top:{sz('hero.actionTopGap')}}}"
             f".b1,.b2{{{btn_base}height:{sz('control.lg.height')};"
             f"padding:0 {sz('control.lg.paddingX')};border-radius:var(--radius-lg);"
             f"{t('body1-bold', tokens)}}}"
@@ -716,7 +730,7 @@ def build(tokens):
             f"border:{sz('border.width')} solid var(--color-border-default);"
             f"color:var(--color-text-primary)}}"
             f".r{{border-left:{sz('border.width')} solid var(--color-border-default);"
-            f"padding-left:24px;display:flex;flex-direction:column;"
+            f"padding-left:{sz('hero.railPad')};display:flex;flex-direction:column;"
             f"gap:{sz('hero.railGap')}}}"
             f".rl{{{t('caption', tokens)}color:var(--color-text-tertiary);"
             f"letter-spacing:0.06em;text-transform:uppercase}}"
@@ -730,6 +744,59 @@ def build(tokens):
              '<div class="r"><div><div class="rl">설립</div><div class="rv">1962년</div></div>'
              '<div><div class="rl">계열사</div><div class="rv">11개사</div></div>'
              '<div><div class="rl">임직원</div><div class="rv">27,400명</div></div></div></div>',
+    )
+
+    # 사진이 주인공인 첫 화면. hero-split-lg 와 형제이고 둘 중 하나만 씁니다.
+    # split 은 수치를 앞세우고(지주회사·B2B), media 는 장소를 앞세웁니다(호텔·공간·리테일).
+    # 글자는 스크림 위에 100% 불투명으로 올립니다 — 요소 전체에 opacity 를 걸지 않습니다.
+    add(
+        id="hero-media-lg", name="Hero / Media / LG", group="layout",
+        tags=["히어로", "첫화면", "전면사진", "KV"], since="v1.12.4",
+        spec={"width": "container.max", "ratio": "16:9", "radius": "xl",
+              "paddingX": "container.gutter", "paddingY": "ctaBand.paddingY",
+              "titleGap": "hero.titleGap", "leadGap": "hero.leadGap",
+              "actionTopGap": "hero.actionTopGap", "actionGap": "hero.actionGap",
+              "borderWidth": "border.width",
+              "eyebrowTypography": "label", "eyebrowTracking": "0.1em",
+              "titleTypography": "display1",
+              "leadTypography": "body1", "leadMaxWidth": "60ch",
+              "scrim": "media.scrim"},
+        tokens={"media": "surface.sunken", "scrim": "media.scrim",
+                "eyebrow": "text.inverse", "title": "text.inverse",
+                "lead": "text.inverse", "actionBg": "surface.default",
+                "actionLabel": "text.brand", "actionAltBorder": "text.inverse"},
+        states=["default", "리드 없음"],
+        usage="페이지 첫 화면. 사진이 주인공일 때. 제목·리드·액션을 사진 위에 얹음",
+        dont="한 화면에 두 번 쓰지 않음. hero-split-lg 와 같이 쓰지 않음 — 첫 화면은 하나. "
+             "요소 전체에 opacity 를 걸지 않음. 어둡게 하는 것은 스크림뿐",
+        css=f".c{{width:{lay('container.max')};position:relative;"
+            f"aspect-ratio:var(--media-ratio-wide);overflow:hidden;"
+            f"border-radius:var(--radius-xl);background:var(--color-surface-sunken);"
+            f"display:flex;align-items:flex-end}}"
+            f".sc{{position:absolute;inset:0;background:var(--media-scrim)}}"
+            f".in{{position:relative;width:100%;"
+            f"padding:{sz('ctaBand.paddingY')} {lay('container.gutter')}}}"
+            f".e{{{t('label', tokens)}letter-spacing:0.1em;text-transform:uppercase;"
+            f"color:var(--color-text-inverse)}}"
+            f".t{{{t('display1', tokens)}color:var(--color-text-inverse);"
+            f"margin-top:{sz('hero.titleGap')};{KO}}}"
+            f".l{{{t('body1', tokens)}color:var(--color-text-inverse);"
+            f"max-width:60ch;margin-top:{sz('hero.leadGap')};{KO}}}"
+            f".a{{display:flex;gap:{sz('hero.actionGap')};"
+            f"margin-top:{sz('hero.actionTopGap')}}}"
+            f".b1,.b2{{{btn_base}height:{sz('control.lg.height')};"
+            f"padding:0 {sz('control.lg.paddingX')};border-radius:var(--radius-lg);"
+            f"{t('body1-bold', tokens)}}}"
+            f".b1{{background:var(--color-surface-default);color:var(--color-text-brand)}}"
+            f".b2{{background:transparent;color:var(--color-text-inverse);"
+            f"border:{sz('border.width')} solid var(--color-text-inverse)}}",
+        html='<div class="c"><div class="sc"></div><div class="in">'
+             '<div class="e">Brand Story</div>'
+             '<div class="t">머무는 자리에<br>여백을 둡니다</div>'
+             '<div class="l">사진이 먼저 말하는 첫 화면입니다. '
+             '글자는 스크림 위에 올려 대비를 지킵니다.</div>'
+             '<div class="a"><button class="b1">둘러보기</button>'
+             '<button class="b2">브로슈어</button></div></div></div>',
     )
 
     add(

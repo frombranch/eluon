@@ -34,7 +34,7 @@ python3 scripts/check_contrast.py
 ```
 - [ ] 여섯 스크립트가 모두 성공
 - [ ] 생성물(`manifest.json` `index/` `docs/` `assets/**/*.png`)을 함께 커밋
-- [ ] 몽타주 시트에서 새 컴포넌트가 제대로 보이는지 눈으로 확인
+- [ ] 엘루온 시트에서 새 컴포넌트가 제대로 보이는지 눈으로 확인
 
 ---
 

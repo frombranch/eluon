@@ -861,7 +861,7 @@ if (window.lucide) lucide.createIcons();
     missing = [th for th in CONFIG["themes"]
                if not (ROOT / "index" / f"sheet-{th}.png").exists()]
     if missing:
-        print("몽타주 시트가 없습니다 — make_montage.py 를 돌리세요: "
+        print("엘루온 시트가 없습니다 — make_montage.py 를 돌리세요: "
               + ", ".join(f"sheet-{th}.png" for th in missing))
         return 1
 

@@ -6,9 +6,9 @@
 - 문서 사이트 → https://frombranch.github.io/eluon/
 - 에이전트 규칙 → [`CLAUDE.md`](./CLAUDE.md) *(클로드는 항상 여기부터 읽습니다)*
 - 자산 목록 → [`index/ASSETS.md`](./index/ASSETS.md)
-- 몽타주 시트 → [`index/sheet-eluo.png`](./index/sheet-eluo.png)
+- 엘루온 시트 → [`index/sheet-eluo.png`](./index/sheet-eluo.png)
 
-컴포넌트 30개 · 테마 6종(ELUO / 아틀라스 / 엠버 / 하버 / 타이드랜드 / 코발트) · v1.12.3
+컴포넌트 37개 · 테마 8종(ELUO / 아틀라스 / 엠버 / 하버 / 타이드랜드 / 코발트 / 느와르 / 리넨) · v1.12.4
 
 ---
 
@@ -104,7 +104,7 @@ python3 scripts/build_tokens.py    # 토큰 → CSS 변수 (--size-* · --bp-* �
 python3 scripts/render.py          # 레시피 → @2x PNG (테마별) + 사이드카
 python3 scripts/build_manifest.py  # 사이드카 → manifest.json + 목록
 python3 scripts/build_pb_manifest.py  # → docs/eluon.json (프롬프트 빌더용)
-python3 scripts/make_montage.py    # → 몽타주 시트
+python3 scripts/make_montage.py    # → 엘루온 시트
 python3 scripts/build_docs.py      # → 문서 사이트
 python3 scripts/check_contrast.py  # 대비비 검사
 ```
@@ -116,9 +116,9 @@ python3 scripts/check_contrast.py  # 대비비 검사
 자산 URL은 릴리즈 태그에 고정됩니다.
 
 ```bash
-# eluon.config.json 의 version 을 v1.12.3 으로 수정
+# eluon.config.json 의 version 을 v1.12.4 으로 수정
 python3 scripts/build_manifest.py && python3 scripts/build_pb_manifest.py
-git commit -am "release: v1.12.3" && git tag v1.12.3 && git push --tags
+git commit -am "release: v1.12.4" && git tag v1.12.4 && git push --tags
 ```
 
 `@main`을 쓰지 않는 이유: jsDelivr가 브랜치 URL을 길게 캐싱해서, 자산을 교체해도
@@ -139,7 +139,7 @@ scripts/                   빌드 파이프라인 7종
 manifest.json              단일 진실 공급원
 assets/components/         테마별 @2x PNG + 사이드카 JSON
 index/ASSETS.md            사람이 읽는 목록
-index/sheet-<theme>.png    몽타주 시트
+index/sheet-<theme>.png    엘루온 시트
 docs/index.html            공개 문서 사이트 (GitHub Pages)
 docs/eluon.json            프롬프트 빌더가 읽는 변환본
 docs/prompt-builder.html   프롬프트 빌더 (생성물 아님. 손으로 고침)

@@ -39,6 +39,7 @@
     "harbor": "assets/components/card/card-portrait-md--harbor@2x.png",
     "tideland": "assets/components/card/card-portrait-md--tideland@2x.png",
     "cobalt": "assets/components/card/card-portrait-md--cobalt@2x.png",
-    "noir": "assets/components/card/card-portrait-md--noir@2x.png"
+    "noir": "assets/components/card/card-portrait-md--noir@2x.png",
+    "linen": "assets/components/card/card-portrait-md--linen@2x.png"
   }
 }

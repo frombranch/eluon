@@ -36,6 +36,7 @@
     "harbor": "assets/components/feedback/toast-error-md--harbor@2x.png",
     "tideland": "assets/components/feedback/toast-error-md--tideland@2x.png",
     "cobalt": "assets/components/feedback/toast-error-md--cobalt@2x.png",
-    "noir": "assets/components/feedback/toast-error-md--noir@2x.png"
+    "noir": "assets/components/feedback/toast-error-md--noir@2x.png",
+    "linen": "assets/components/feedback/toast-error-md--linen@2x.png"
   }
 }

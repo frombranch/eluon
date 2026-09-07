@@ -36,6 +36,7 @@
     "harbor": "assets/components/feedback/empty-state-md--harbor@2x.png",
     "tideland": "assets/components/feedback/empty-state-md--tideland@2x.png",
     "cobalt": "assets/components/feedback/empty-state-md--cobalt@2x.png",
-    "noir": "assets/components/feedback/empty-state-md--noir@2x.png"
+    "noir": "assets/components/feedback/empty-state-md--noir@2x.png",
+    "linen": "assets/components/feedback/empty-state-md--linen@2x.png"
   }
 }

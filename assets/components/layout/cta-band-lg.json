@@ -39,6 +39,7 @@
     "harbor": "assets/components/layout/cta-band-lg--harbor@2x.png",
     "tideland": "assets/components/layout/cta-band-lg--tideland@2x.png",
     "cobalt": "assets/components/layout/cta-band-lg--cobalt@2x.png",
-    "noir": "assets/components/layout/cta-band-lg--noir@2x.png"
+    "noir": "assets/components/layout/cta-band-lg--noir@2x.png",
+    "linen": "assets/components/layout/cta-band-lg--linen@2x.png"
   }
 }

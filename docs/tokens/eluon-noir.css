@@ -120,8 +120,12 @@
   --size-header-height:72px;
   --size-header-itemGap:24px;
   --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
   --size-hero-actionGap:12px;
   --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
   --size-footer-paddingY:40px;
   --size-footer-gap:24px;
   --size-field-labelGap:6px;

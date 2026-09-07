@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Eluon — Design System</title>
-<meta name="description" content="디자인포지션의 에이전틱 디자인 시스템. 컴포넌트 36개, 테마 7종.">
+<meta name="description" content="디자인포지션의 에이전틱 디자인 시스템. 컴포넌트 37개, 테마 8종.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -141,8 +141,12 @@
   --size-header-height:72px;
   --size-header-itemGap:24px;
   --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
   --size-hero-actionGap:12px;
   --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
   --size-footer-paddingY:40px;
   --size-footer-gap:24px;
   --size-field-labelGap:6px;
@@ -438,8 +442,12 @@
   --size-header-height:72px;
   --size-header-itemGap:24px;
   --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
   --size-hero-actionGap:12px;
   --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
   --size-footer-paddingY:40px;
   --size-footer-gap:24px;
   --size-field-labelGap:6px;
@@ -735,8 +743,12 @@
   --size-header-height:72px;
   --size-header-itemGap:24px;
   --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
   --size-hero-actionGap:12px;
   --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
   --size-footer-paddingY:40px;
   --size-footer-gap:24px;
   --size-field-labelGap:6px;
@@ -1027,8 +1039,12 @@
   --size-header-height:72px;
   --size-header-itemGap:24px;
   --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
   --size-hero-actionGap:12px;
   --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
   --size-footer-paddingY:40px;
   --size-footer-gap:24px;
   --size-field-labelGap:6px;
@@ -1320,8 +1336,12 @@
   --size-header-height:72px;
   --size-header-itemGap:24px;
   --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
   --size-hero-actionGap:12px;
   --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
   --size-footer-paddingY:40px;
   --size-footer-gap:24px;
   --size-field-labelGap:6px;
@@ -1617,8 +1637,12 @@
   --size-header-height:72px;
   --size-header-itemGap:24px;
   --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
   --size-hero-actionGap:12px;
   --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
   --size-footer-paddingY:40px;
   --size-footer-gap:24px;
   --size-field-labelGap:6px;
@@ -1905,8 +1929,12 @@
   --size-header-height:72px;
   --size-header-itemGap:24px;
   --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
   --size-hero-actionGap:12px;
   --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
   --size-footer-paddingY:40px;
   --size-footer-gap:24px;
   --size-field-labelGap:6px;
@@ -2071,6 +2099,304 @@
   }
 }
 
+/* Eluon tokens — theme: linen. build_tokens.py가 생성합니다. 직접 고치지 마세요. */
+[data-eluon-theme="linen"]{
+  --p-gray-0:#FFFFFF;
+  --p-gray-50:#FAFAF9;
+  --p-gray-100:#EEEEEE;
+  --p-gray-200:#DAD9D7;
+  --p-gray-300:#CCCCCC;
+  --p-gray-400:#B5B2B0;
+  --p-gray-500:#7A7671;
+  --p-gray-600:#78736E;
+  --p-gray-700:#4A4643;
+  --p-gray-800:#302D2A;
+  --p-gray-900:#1B1A18;
+  --p-gray-1000:#111111;
+  --p-gray-350:#96928E;
+  --p-blue-50:#EEF3FF;
+  --p-blue-100:#DAE4FF;
+  --p-blue-300:#8FAAF5;
+  --p-blue-500:#3A5AF9;
+  --p-blue-600:#2B45D4;
+  --p-blue-700:#1F33A6;
+  --p-red-50:#FDF0EF;
+  --p-red-300:#F0A69F;
+  --p-red-500:#D83C3C;
+  --p-red-600:#BC2E2E;
+  --p-red-700:#951F1F;
+  --p-green-50:#EEF8F3;
+  --p-green-500:#1F7A54;
+  --p-green-600:#186345;
+  --p-amber-50:#FDF6E8;
+  --p-amber-500:#9A6100;
+  --p-amber-600:#7C4E00;
+  --p-brand-50:#F3F2F1;
+  --p-brand-500:#3B2412;
+  --p-brand-600:#301E0F;
+  --p-brand-700:#27180C;
+  --p-copper-500:#B7733B;
+  --p-forest-500:#2E3331;
+  --color-brand-primary:#3B2412;
+  --color-brand-primary-hover:#301E0F;
+  --color-brand-primary-press:#27180C;
+  --color-brand-subtle:#F3F2F1;
+  --color-brand-onSubtle:#3B2412;
+  --color-surface-default:#FFFFFF;
+  --color-surface-subtle:#FAFAF9;
+  --color-surface-sunken:#EEEEEE;
+  --color-surface-disabled:#EEEEEE;
+  --color-surface-inverse:#111111;
+  --color-text-primary:#1B1A18;
+  --color-text-secondary:#78736E;
+  --color-text-tertiary:#7A7671;
+  --color-text-disabled:#B5B2B0;
+  --color-text-inverse:#FFFFFF;
+  --color-text-brand:#3B2412;
+  --color-border-default:#96928E;
+  --color-border-subtle:#DAD9D7;
+  --color-border-strong:#7A7671;
+  --color-border-brand:#3B2412;
+  --color-border-danger:#D83C3C;
+  --color-danger-default:#D83C3C;
+  --color-danger-hover:#BC2E2E;
+  --color-danger-subtle:#FDF0EF;
+  --color-danger-text:#BC2E2E;
+  --color-success-default:#1F7A54;
+  --color-success-subtle:#EEF8F3;
+  --color-warning-default:#9A6100;
+  --color-warning-subtle:#FDF6E8;
+  --color-focusRing:#3B2412;
+  --font-family-base:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-display:Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-family-mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --size-control-lg-height:64px;
+  --size-control-lg-paddingX:24px;
+  --size-control-md-height:46px;
+  --size-control-md-paddingX:20px;
+  --size-control-sm-height:36px;
+  --size-control-sm-paddingX:14px;
+  --size-control-ghost-paddingX:14px;
+  --size-field-width:320px;
+  --size-field-height:52px;
+  --size-field-paddingX:16px;
+  --size-field-gap:6px;
+  --size-chip-height:36px;
+  --size-chip-paddingX:14px;
+  --size-chip-gap:6px;
+  --size-badge-height:24px;
+  --size-badge-paddingX:10px;
+  --size-card-width:320px;
+  --size-card-product-paddingX:16px;
+  --size-card-product-paddingY:16px;
+  --size-card-product-gap:12px;
+  --size-card-basic-paddingX:20px;
+  --size-card-basic-paddingY:20px;
+  --size-card-basic-gap:8px;
+  --size-card-stat-width:320px;
+  --size-card-stat-paddingX:20px;
+  --size-card-stat-paddingY:32px;
+  --size-card-stat-gap:8px;
+  --size-card-portrait-width:280px;
+  --size-card-portrait-gap:12px;
+  --size-toast-width:360px;
+  --size-toast-paddingX:16px;
+  --size-toast-paddingY:14px;
+  --size-toast-gap:12px;
+  --size-modal-width:420px;
+  --size-modal-paddingX:24px;
+  --size-modal-paddingY:24px;
+  --size-modal-gap:20px;
+  --size-table-width:520px;
+  --size-table-rowHeight:52px;
+  --size-table-headerHeight:44px;
+  --size-table-paddingX:16px;
+  --size-tab-width:360px;
+  --size-tab-height:52px;
+  --size-tab-gap:28px;
+  --size-tab-itemPaddingX:0px;
+  --size-tab-indicatorHeight:2px;
+  --size-pagination-itemSize:40px;
+  --size-pagination-gap:4px;
+  --size-toggle-size:40px;
+  --size-toggle-iconSize:18px;
+  --size-section-gap:8px;
+  --size-price-gap:8px;
+  --size-border-width:1px;
+  --size-focusRing-width:3px;
+  --size-header-height:72px;
+  --size-header-itemGap:24px;
+  --size-hero-gap:24px;
+  --size-hero-titleGap:12px;
+  --size-hero-leadGap:20px;
+  --size-hero-actionTopGap:32px;
+  --size-hero-actionGap:12px;
+  --size-hero-railGap:20px;
+  --size-hero-railPad:24px;
+  --size-footer-paddingY:40px;
+  --size-footer-gap:24px;
+  --size-field-labelGap:6px;
+  --size-field-helperGap:6px;
+  --size-listRow-paddingY:20px;
+  --size-listRow-gap:16px;
+  --size-ctaBand-paddingY:64px;
+  --size-ctaBand-gap:24px;
+  --size-accordion-paddingY:20px;
+  --size-accordion-gap:16px;
+  --size-accordion-iconSize:20px;
+  --size-breadcrumb-gap:8px;
+  --size-breadcrumb-itemMaxWidth:180px;
+  --size-empty-paddingY:48px;
+  --size-empty-gap:12px;
+  --size-empty-bodyMaxWidth:360px;
+  --size-descList-labelWidth:120px;
+  --size-descList-rowPaddingY:14px;
+  --size-descList-gap:20px;
+  --size-stepFlow-gap:16px;
+  --size-stepFlow-numberSize:28px;
+  --size-stepFlow-rowGap:24px;
+  --size-icon-md:24px;
+  --size-icon-lg:48px;
+  --size-touch-min:44px;
+  --bp-sm:480px;
+  --bp-md:768px;
+  --bp-lg:1024px;
+  --radius-none:0px;
+  --radius-sm:0px;
+  --radius-md:0px;
+  --radius-lg:0px;
+  --radius-xl:8px;
+  --radius-full:0px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --elevation-0:none;
+  --elevation-1:0 1px 2px rgba(11,13,17,.06), 0 1px 3px rgba(11,13,17,.04);
+  --elevation-2:0 2px 4px rgba(11,13,17,.06), 0 8px 20px rgba(11,13,17,.07);
+  --elevation-3:0 8px 16px rgba(11,13,17,.08), 0 24px 48px rgba(11,13,17,.10);
+  --text-break:keep-all;
+  --text-overflowWrap:anywhere;
+  --text-wrap:pretty;
+  --text-numeric:tabular-nums;
+  --icon-strokewidth:1.2;
+  --icon-opacity:0.7;
+  --icon-fill:none;
+  --icon-stroke:currentColor;
+  --layout-container-max:1488px;
+  --layout-container-gutter:32px;
+  --layout-container-gutterMd:40px;
+  --layout-container-gutterSm:40px;
+  --layout-grid-columns:12;
+  --layout-grid-gap:24px;
+  --layout-section-padY:70px;
+  --layout-section-padYSm:40px;
+  --layout-section-padYMd:56px;
+  --layout-section-headGap:40px;
+  --layout-block-gap:24px;
+  --layout-card-gap:24px;
+  --layout-text-measure:68ch;
+  --motion-duration-fast:120ms;
+  --motion-duration-base:180ms;
+  --motion-duration-slow:280ms;
+  --motion-duration-entrance:640ms;
+  --motion-duration-zoom:520ms;
+  --motion-easing-standard:cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-exit:cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-entrance:cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-distance-rise:8px;
+  --motion-distance-reveal:32px;
+  --motion-scale-hover:1.05;
+  --motion-stagger:80ms;
+  --motion-fast:120ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-base:180ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-slow:280ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-exit:120ms cubic-bezier(0.4, 0, 1, 1);
+  --motion-entrance:640ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-zoom:520ms cubic-bezier(0.2, 0, 0, 1);
+  --media-ratio-wide:16 / 9;
+  --media-ratio-photo:3 / 2;
+  --media-ratio-portrait:4 / 5;
+  --media-ratio-tall:9 / 16;
+  --media-scrim:linear-gradient(to top, rgba(11,13,17,.72) 0%, rgba(11,13,17,.34) 38%, rgba(11,13,17,0) 72%);
+  --media-density:2;
+  --type-display1-size:60px;
+  --type-display1-weight:400;
+  --type-display1-lh:1.34;
+  --type-display1-tracking:-0.03em;
+  --type-display1:400 60px/1.34 var(--font-family-base);
+  --type-heading1-size:50px;
+  --type-heading1-weight:500;
+  --type-heading1-lh:1.48;
+  --type-heading1-tracking:0;
+  --type-heading1:500 50px/1.48 var(--font-family-base);
+  --type-heading2-size:40px;
+  --type-heading2-weight:500;
+  --type-heading2-lh:1.4;
+  --type-heading2-tracking:0;
+  --type-heading2:500 40px/1.4 var(--font-family-base);
+  --type-heading3-size:28px;
+  --type-heading3-weight:600;
+  --type-heading3-lh:1.5;
+  --type-heading3-tracking:0;
+  --type-heading3:600 28px/1.5 var(--font-family-base);
+  --type-body1-size:18px;
+  --type-body1-weight:400;
+  --type-body1-lh:1.5;
+  --type-body1-tracking:0;
+  --type-body1:400 18px/1.5 var(--font-family-base);
+  --type-body1-bold-size:18px;
+  --type-body1-bold-weight:600;
+  --type-body1-bold-lh:1.5;
+  --type-body1-bold-tracking:0;
+  --type-body1-bold:600 18px/1.5 var(--font-family-base);
+  --type-body2-size:16px;
+  --type-body2-weight:400;
+  --type-body2-lh:1.5;
+  --type-body2-tracking:0;
+  --type-body2:400 16px/1.5 var(--font-family-base);
+  --type-body2-bold-size:16px;
+  --type-body2-bold-weight:600;
+  --type-body2-bold-lh:1.5;
+  --type-body2-bold-tracking:0;
+  --type-body2-bold:600 16px/1.5 var(--font-family-base);
+  --type-label-size:14px;
+  --type-label-weight:500;
+  --type-label-lh:1.4;
+  --type-label-tracking:0;
+  --type-label:500 14px/1.4 var(--font-family-base);
+  --type-caption-size:14px;
+  --type-caption-weight:400;
+  --type-caption-lh:1.4;
+  --type-caption-tracking:0;
+  --type-caption:400 14px/1.4 var(--font-family-base);
+  --type-caption-bold-size:14px;
+  --type-caption-bold-weight:600;
+  --type-caption-bold-lh:1.4;
+  --type-caption-bold-tracking:0;
+  --type-caption-bold:600 14px/1.4 var(--font-family-base);
+}
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --motion-duration-fast:1ms; --motion-duration-base:1ms;
+    --motion-duration-slow:1ms; --motion-duration-entrance:1ms;
+    --motion-distance-rise:0px; --motion-distance-reveal:0px;
+    --motion-scale-hover:1; --motion-stagger:0ms;
+    --motion-fast:1ms linear; --motion-base:1ms linear;
+    --motion-slow:1ms linear; --motion-exit:1ms linear;
+    --motion-entrance:1ms linear; --motion-zoom:1ms linear;
+    --motion-duration-zoom:1ms;
+  }
+  *,*::before,*::after{
+    animation-duration:1ms!important; animation-iteration-count:1!important;
+    transition-duration:1ms!important; scroll-behavior:auto!important;
+  }
+}
+
 
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:transparent;-webkit-font-smoothing:antialiased;
@@ -2109,7 +2435,8 @@ body{background:transparent;-webkit-font-smoothing:antialiased;
 #cmp-footer-lg .c{width:var(--layout-container-max);padding:var(--size-footer-paddingY) var(--layout-container-gutter);background:var(--color-surface-inverse);display:flex;justify-content:space-between;align-items:baseline;gap:var(--size-footer-gap)}#cmp-footer-lg .lg{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-inverse)}#cmp-footer-lg .n{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-inverse);max-width:56ch;margin-top:12px;opacity:.72}#cmp-footer-lg .m{display:flex;gap:20px}#cmp-footer-lg .m span{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-inverse);opacity:.72;white-space:nowrap}
 #cmp-form-field-md .c{width:var(--size-field-width);display:flex;flex-direction:column;gap:var(--size-field-labelGap)}#cmp-form-field-md .lb{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;color:var(--color-text-primary)}#cmp-form-field-md .in{height:var(--size-field-height);padding:0 var(--size-field-paddingX);display:flex;align-items:center;border-radius:var(--radius-md);border:var(--size-border-width) solid var(--color-border-default);background:var(--color-surface-default);color:var(--color-text-tertiary);font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;}#cmp-form-field-md .hp{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-secondary);margin-top:calc(var(--size-field-helperGap) - var(--size-field-labelGap))}
 #cmp-header-gnb-lg .c{width:var(--layout-container-max);height:var(--size-header-height);display:flex;align-items:center;gap:var(--size-header-itemGap);padding:0 var(--layout-container-gutter);background:var(--color-surface-default);border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-header-gnb-lg .lg{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-brand);white-space:nowrap}#cmp-header-gnb-lg .nv{display:flex;gap:var(--size-header-itemGap);margin-left:auto}#cmp-header-gnb-lg .nv span{font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-secondary);white-space:nowrap}#cmp-header-gnb-lg .nv span.on{color:var(--color-text-primary)}#cmp-header-gnb-lg .ac{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-md-height);padding:0 var(--size-control-md-paddingX);border-radius:var(--radius-md);background:var(--color-brand-primary);color:var(--color-text-inverse);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;}
-#cmp-hero-split-lg .c{width:var(--layout-container-max);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--size-hero-gap);align-items:end;padding:0 var(--layout-container-gutter)}#cmp-hero-split-lg .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-brand)}#cmp-hero-split-lg .t{font-size:40px;font-weight:800;line-height:1.2;letter-spacing:-0.03em;color:var(--color-text-primary);margin-top:12px}#cmp-hero-split-lg .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:60ch;margin-top:var(--size-hero-railGap)}#cmp-hero-split-lg .a{display:flex;gap:var(--size-hero-actionGap);margin-top:32px}#cmp-hero-split-lg .b1, #cmp-hero-split-lg .b2{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}#cmp-hero-split-lg .b1{background:var(--color-brand-primary);color:var(--color-text-inverse)}#cmp-hero-split-lg .b2{background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary)}#cmp-hero-split-lg .r{border-left:var(--size-border-width) solid var(--color-border-default);padding-left:24px;display:flex;flex-direction:column;gap:var(--size-hero-railGap)}#cmp-hero-split-lg .rl{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary);letter-spacing:0.06em;text-transform:uppercase}#cmp-hero-split-lg .rv{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-primary);font-variant-numeric:tabular-nums}
+#cmp-hero-media-lg .c{width:var(--layout-container-max);position:relative;aspect-ratio:var(--media-ratio-wide);overflow:hidden;border-radius:var(--radius-xl);background:var(--color-surface-sunken);display:flex;align-items:flex-end}#cmp-hero-media-lg .sc{position:absolute;inset:0;background:var(--media-scrim)}#cmp-hero-media-lg .in{position:relative;width:100%;padding:var(--size-ctaBand-paddingY) var(--layout-container-gutter)}#cmp-hero-media-lg .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-inverse)}#cmp-hero-media-lg .t{font-size:40px;font-weight:800;line-height:1.2;letter-spacing:-0.03em;color:var(--color-text-inverse);margin-top:var(--size-hero-titleGap);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-hero-media-lg .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-inverse);max-width:60ch;margin-top:var(--size-hero-leadGap);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-hero-media-lg .a{display:flex;gap:var(--size-hero-actionGap);margin-top:var(--size-hero-actionTopGap)}#cmp-hero-media-lg .b1, #cmp-hero-media-lg .b2{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}#cmp-hero-media-lg .b1{background:var(--color-surface-default);color:var(--color-text-brand)}#cmp-hero-media-lg .b2{background:transparent;color:var(--color-text-inverse);border:var(--size-border-width) solid var(--color-text-inverse)}
+#cmp-hero-split-lg .c{width:var(--layout-container-max);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--size-hero-gap);align-items:end;padding:0 var(--layout-container-gutter)}#cmp-hero-split-lg .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-brand)}#cmp-hero-split-lg .t{font-size:40px;font-weight:800;line-height:1.2;letter-spacing:-0.03em;color:var(--color-text-primary);margin-top:var(--size-hero-titleGap)}#cmp-hero-split-lg .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:60ch;margin-top:var(--size-hero-leadGap)}#cmp-hero-split-lg .a{display:flex;gap:var(--size-hero-actionGap);margin-top:var(--size-hero-actionTopGap)}#cmp-hero-split-lg .b1, #cmp-hero-split-lg .b2{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;white-space:nowrap;font-family:inherit;height:var(--size-control-lg-height);padding:0 var(--size-control-lg-paddingX);border-radius:var(--radius-lg);font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;}#cmp-hero-split-lg .b1{background:var(--color-brand-primary);color:var(--color-text-inverse)}#cmp-hero-split-lg .b2{background:var(--color-surface-default);border:var(--size-border-width) solid var(--color-border-default);color:var(--color-text-primary)}#cmp-hero-split-lg .r{border-left:var(--size-border-width) solid var(--color-border-default);padding-left:var(--size-hero-railPad);display:flex;flex-direction:column;gap:var(--size-hero-railGap)}#cmp-hero-split-lg .rl{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary);letter-spacing:0.06em;text-transform:uppercase}#cmp-hero-split-lg .rv{font-size:18px;font-weight:700;line-height:1.4;letter-spacing:-0.015em;color:var(--color-text-primary);font-variant-numeric:tabular-nums}
 #cmp-list-row-md .c{display:flex;flex-direction:column}#cmp-list-row-md .rw{display:flex;align-items:baseline;gap:var(--size-listRow-gap);padding:var(--size-listRow-paddingY) 0;border-bottom:var(--size-border-width) solid var(--color-border-subtle)}#cmp-list-row-md .tx{flex:1;min-width:0}#cmp-list-row-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary)}#cmp-list-row-md .m{font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;color:var(--color-text-tertiary);margin-top:4px}#cmp-list-row-md .v{font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-0.01em;color:var(--color-text-primary);font-variant-numeric:tabular-nums;white-space:nowrap}
 #cmp-section-header-md .c{display:flex;flex-direction:column;gap:var(--size-section-gap)}#cmp-section-header-md .e{font-size:14px;font-weight:600;line-height:1.4;letter-spacing:-0.005em;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-brand)}#cmp-section-header-md .t{font-size:28px;font-weight:700;line-height:1.3;letter-spacing:-0.025em;color:var(--color-text-primary)}#cmp-section-header-md .l{font-size:16px;font-weight:400;line-height:1.6;letter-spacing:-0.005em;color:var(--color-text-secondary);max-width:58ch}
 #cmp-step-flow-md .c{display:flex;flex-direction:column;gap:var(--size-stepFlow-rowGap)}#cmp-step-flow-md .s{display:flex;gap:var(--size-stepFlow-gap);align-items:flex-start}#cmp-step-flow-md .n{flex:none;width:var(--size-stepFlow-numberSize);height:var(--size-stepFlow-numberSize);border-radius:var(--radius-full);background:var(--color-brand-primary);color:var(--color-text-inverse);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;line-height:1.4;letter-spacing:0;font-variant-numeric:var(--text-numeric);}#cmp-step-flow-md .tx{flex:1;min-width:0;max-width:var(--layout-text-measure)}#cmp-step-flow-md .t{font-size:16px;font-weight:700;line-height:1.5;letter-spacing:-0.01em;color:var(--color-text-primary);word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}#cmp-step-flow-md .d{font-size:15px;font-weight:400;line-height:1.55;letter-spacing:-0.005em;color:var(--color-text-secondary);margin-top:4px;word-break:var(--text-break);overflow-wrap:var(--text-overflowWrap);text-wrap:var(--text-wrap);}
@@ -2441,7 +2768,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
 }
 /* gbar:end */
 
-[data-eluon-theme="eluo"] .swset[data-theme="eluo"]{display:block}[data-eluon-theme="atlas"] .swset[data-theme="atlas"]{display:block}[data-eluon-theme="ember"] .swset[data-theme="ember"]{display:block}[data-eluon-theme="harbor"] .swset[data-theme="harbor"]{display:block}[data-eluon-theme="tideland"] .swset[data-theme="tideland"]{display:block}[data-eluon-theme="cobalt"] .swset[data-theme="cobalt"]{display:block}[data-eluon-theme="noir"] .swset[data-theme="noir"]{display:block}
+[data-eluon-theme="eluo"] .swset[data-theme="eluo"]{display:block}[data-eluon-theme="atlas"] .swset[data-theme="atlas"]{display:block}[data-eluon-theme="ember"] .swset[data-theme="ember"]{display:block}[data-eluon-theme="harbor"] .swset[data-theme="harbor"]{display:block}[data-eluon-theme="tideland"] .swset[data-theme="tideland"]{display:block}[data-eluon-theme="cobalt"] .swset[data-theme="cobalt"]{display:block}[data-eluon-theme="noir"] .swset[data-theme="noir"]{display:block}[data-eluon-theme="linen"] .swset[data-theme="linen"]{display:block}
 </style>
 </head>
 <body>
@@ -2465,7 +2792,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
   <div class="barmenu" id="barmenu">
     <nav><a href="#foundation">파운데이션</a><a href="#g-badge">뱃지</a><a href="#g-button">버튼</a><a href="#g-card">카드</a><a href="#g-chip">칩</a><a href="#g-commerce">커머스</a><a href="#g-disclosure">접기</a><a href="#g-feedback">피드백</a><a href="#g-input">입력</a><a href="#g-layout">레이아웃</a><a href="#g-modal">모달</a><a href="#g-navigation">내비게이션</a><a href="#g-table">테이블</a><a href="#agent">에이전트</a></nav>
     <div class="themes" role="group" aria-label="테마 전환">
-      <button data-theme="eluo" aria-pressed="true" data-hint="우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다" title="ELUO — 우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다">ELUO</button><button data-theme="atlas" aria-pressed="false" data-hint="고객사 테마. 진한 남색에 산호색 포인트" title="아틀라스 — 고객사 테마. 진한 남색에 산호색 포인트">아틀라스</button><button data-theme="ember" aria-pressed="false" data-hint="고객사 테마. 진한 초록. 이름과 색이 다르니 주의하세요" title="엠버 — 고객사 테마. 진한 초록. 이름과 색이 다르니 주의하세요">엠버</button><button data-theme="harbor" aria-pressed="false" data-hint="고객사 테마. 따뜻한 갈색. 고객사 웹사이트에서 값을 가져왔습니다" title="하버 — 고객사 테마. 따뜻한 갈색. 고객사 웹사이트에서 값을 가져왔습니다">하버</button><button data-theme="tideland" aria-pressed="false" data-hint="고객사 테마. 주황빛. 색까지 추정이라 대외 제출물에 쓰지 마세요" title="타이드랜드 — 고객사 테마. 주황빛. 색까지 추정이라 대외 제출물에 쓰지 마세요">타이드랜드</button><button data-theme="cobalt" aria-pressed="false" data-hint="고객사 테마. 진한 남색에 파랑 포인트. 버튼이 전부 알약 테두리형입니다" title="코발트 — 고객사 테마. 진한 남색에 파랑 포인트. 버튼이 전부 알약 테두리형입니다">코발트</button><button data-theme="noir" aria-pressed="false" data-hint="고객사 테마. 무채색에 라운드가 전부 0. 각진 인상이 특징입니다" title="느와르 — 고객사 테마. 무채색에 라운드가 전부 0. 각진 인상이 특징입니다">느와르</button>
+      <button data-theme="eluo" aria-pressed="true" data-hint="우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다" title="ELUO — 우리 회사 기본값. 자사 제안서와 내부 산출물에 씁니다">ELUO</button><button data-theme="atlas" aria-pressed="false" data-hint="고객사 테마. 진한 남색에 산호색 포인트" title="아틀라스 — 고객사 테마. 진한 남색에 산호색 포인트">아틀라스</button><button data-theme="ember" aria-pressed="false" data-hint="고객사 테마. 진한 초록. 이름과 색이 다르니 주의하세요" title="엠버 — 고객사 테마. 진한 초록. 이름과 색이 다르니 주의하세요">엠버</button><button data-theme="harbor" aria-pressed="false" data-hint="고객사 테마. 따뜻한 갈색. 고객사 웹사이트에서 값을 가져왔습니다" title="하버 — 고객사 테마. 따뜻한 갈색. 고객사 웹사이트에서 값을 가져왔습니다">하버</button><button data-theme="tideland" aria-pressed="false" data-hint="고객사 테마. 주황빛. 색까지 추정이라 대외 제출물에 쓰지 마세요" title="타이드랜드 — 고객사 테마. 주황빛. 색까지 추정이라 대외 제출물에 쓰지 마세요">타이드랜드</button><button data-theme="cobalt" aria-pressed="false" data-hint="고객사 테마. 진한 남색에 파랑 포인트. 버튼이 전부 알약 테두리형입니다" title="코발트 — 고객사 테마. 진한 남색에 파랑 포인트. 버튼이 전부 알약 테두리형입니다">코발트</button><button data-theme="noir" aria-pressed="false" data-hint="고객사 테마. 무채색에 라운드가 전부 0. 각진 인상이 특징입니다" title="느와르 — 고객사 테마. 무채색에 라운드가 전부 0. 각진 인상이 특징입니다">느와르</button><button data-theme="linen" aria-pressed="false" data-hint="고객사 테마. 따뜻한 먹색에 딥브라운 강조. 굵기 400 중심이라 굵게 쓰면 인상이 무너집니다" title="리넨 — 고객사 테마. 따뜻한 먹색에 딥브라운 강조. 굵기 400 중심이라 굵게 쓰면 인상이 무너집니다">리넨</button>
     </div>
   </div>
 </div>
@@ -2483,9 +2810,9 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
     <div><p class="body-t">정의가 그대로 이미지가 되므로 문서와 자산이 어긋나지 않습니다.</p></div>
   </div>
   <dl class="meta">
-    <div><dt>Components</dt><dd>36</dd></div>
-    <div><dt>Themes</dt><dd>7</dd></div>
-    <div><dt>Version</dt><dd>v1.12.3</dd></div>
+    <div><dt>Components</dt><dd>37</dd></div>
+    <div><dt>Themes</dt><dd>8</dd></div>
+    <div><dt>Version</dt><dd>v1.12.4</dd></div>
     <div><dt>Source</dt><dd><a href="https://github.com/frombranch/eluon">GitHub</a></dd></div>
   </dl>
 </header>
@@ -2499,7 +2826,7 @@ footer{margin-top:clamp(90px,14vh,160px);padding:26px 0 72px;
 
   <div data-r style="margin-top:clamp(48px,8vh,88px)">
     <h4>Primitive</h4>
-    <div class="swset" data-theme="eluo"><div class="swrow"><h4>navy<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#EDEEF7"></span><code>navy.50</code><em>#EDEEF7</em></div><div class="sw"><span style="background:#D6D9EC"></span><code>navy.100</code><em>#D6D9EC</em></div><div class="sw"><span style="background:#7F87BF"></span><code>navy.300</code><em>#7F87BF</em></div><div class="sw"><span style="background:#000080"></span><code>navy.500</code><em>#000080</em></div><div class="sw"><span style="background:#00006B"></span><code>navy.600</code><em>#00006B</em></div><div class="sw"><span style="background:#000052"></span><code>navy.700</code><em>#000052</em></div></div></div><div class="swrow"><h4>signal<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#FFFF01"></span><code>signal.500</code><em>#FFFF01</em></div><div class="sw"><span style="background:#E5E500"></span><code>signal.600</code><em>#E5E500</em></div></div></div><div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw" title="코어 #414954 에서 덮어썼습니다"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="atlas"><div class="swrow"><h4>atlas<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#F0F2F4"></span><code>atlas.50</code><em>#F0F2F4</em></div><div class="sw"><span style="background:#DBE0E5"></span><code>atlas.100</code><em>#DBE0E5</em></div><div class="sw"><span style="background:#8C9AAB"></span><code>atlas.300</code><em>#8C9AAB</em></div><div class="sw"><span style="background:#001F45"></span><code>atlas.500</code><em>#001F45</em></div><div class="sw"><span style="background:#001734"></span><code>atlas.600</code><em>#001734</em></div><div class="sw"><span style="background:#001126"></span><code>atlas.700</code><em>#001126</em></div></div></div><div class="swrow"><h4>coral<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#D85640"></span><code>coral.500</code><em>#D85640</em></div><div class="sw"><span style="background:#C24D3A"></span><code>coral.600</code><em>#C24D3A</em></div></div></div><div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw" title="코어 #414954 에서 덮어썼습니다"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="ember"><div class="swrow"><h4>forest<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#EAF0ED"></span><code>forest.50</code><em>#EAF0ED</em></div><div class="sw"><span style="background:#12503C"></span><code>forest.500</code><em>#12503C</em></div><div class="sw"><span style="background:#0E4130"></span><code>forest.600</code><em>#0E4130</em></div><div class="sw"><span style="background:#0A3226"></span><code>forest.700</code><em>#0A3226</em></div></div></div><div class="swrow"><h4>clay<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#F9EEEA"></span><code>clay.50</code><em>#F9EEEA</em></div><div class="sw"><span style="background:#A33A1F"></span><code>clay.500</code><em>#A33A1F</em></div><div class="sw"><span style="background:#852F19"></span><code>clay.600</code><em>#852F19</em></div></div></div><div class="swrow"><h4>azure<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#1F4E9C"></span><code>azure.500</code><em>#1F4E9C</em></div></div></div><div class="swrow"><h4>gray<span class="swtag">코어에서 11개 덮어씀</span></h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw ovr" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F6F6F3"></span><code>gray.50</code><em>#F6F6F3</em></div><div class="sw ovr" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EEEEE9"></span><code>gray.100</code><em>#EEEEE9</em></div><div class="sw ovr" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E4E4DF"></span><code>gray.200</code><em>#E4E4DF</em></div><div class="sw ovr" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#C4C4BE"></span><code>gray.300</code><em>#C4C4BE</em></div><div class="sw ovr" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8E8E88"></span><code>gray.400</code><em>#8E8E88</em></div><div class="sw ovr" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#74746F"></span><code>gray.500</code><em>#74746F</em></div><div class="sw ovr" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#5A5A56"></span><code>gray.600</code><em>#5A5A56</em></div><div class="sw ovr" title="코어 #414954 에서 덮어썼습니다"><span style="background:#43433F"></span><code>gray.700</code><em>#43433F</em></div><div class="sw ovr" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2D2D2A"></span><code>gray.800</code><em>#2D2D2A</em></div><div class="sw ovr" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#17171A"></span><code>gray.900</code><em>#17171A</em></div><div class="sw ovr" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0D0D10"></span><code>gray.1000</code><em>#0D0D10</em></div></div><p class="swnote">* 표시가 코어와 다른 값입니다.</p></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="harbor"><div class="swrow"><h4>taupe<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#F4F1ED"></span><code>taupe.50</code><em>#F4F1ED</em></div><div class="sw"><span style="background:#816C58"></span><code>taupe.500</code><em>#816C58</em></div><div class="sw"><span style="background:#6B5947"></span><code>taupe.600</code><em>#6B5947</em></div><div class="sw"><span style="background:#544537"></span><code>taupe.700</code><em>#544537</em></div></div></div><div class="swrow"><h4>gray<span class="swtag">코어에서 12개 덮어씀</span></h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw ovr" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#FAFAFA"></span><code>gray.50</code><em>#FAFAFA</em></div><div class="sw ovr" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#F5F5F5"></span><code>gray.100</code><em>#F5F5F5</em></div><div class="sw ovr" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E5E5E5"></span><code>gray.200</code><em>#E5E5E5</em></div><div class="sw ovr" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CCCCCC"></span><code>gray.300</code><em>#CCCCCC</em></div><div class="sw ovr" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#999999"></span><code>gray.400</code><em>#999999</em></div><div class="sw ovr" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#666666"></span><code>gray.500</code><em>#666666</em></div><div class="sw ovr" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#444444"></span><code>gray.600</code><em>#444444</em></div><div class="sw ovr" title="코어 #414954 에서 덮어썼습니다"><span style="background:#333333"></span><code>gray.700</code><em>#333333</em></div><div class="sw ovr" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#222222"></span><code>gray.800</code><em>#222222</em></div><div class="sw ovr" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#111111"></span><code>gray.900</code><em>#111111</em></div><div class="sw ovr" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#000000"></span><code>gray.1000</code><em>#000000</em></div><div class="sw ovr" title="코어에 없는 단계입니다"><span style="background:#939393"></span><code>gray.350</code><em>#939393</em></div></div><p class="swnote">* 표시가 코어와 다른 값입니다.</p></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="tideland"><div class="swrow"><h4>terracotta<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#FBF1EC"></span><code>terracotta.50</code><em>#FBF1EC</em></div><div class="sw"><span style="background:#F5DDD2"></span><code>terracotta.100</code><em>#F5DDD2</em></div><div class="sw"><span style="background:#DC9A80"></span><code>terracotta.300</code><em>#DC9A80</em></div><div class="sw"><span style="background:#B44E2B"></span><code>terracotta.500</code><em>#B44E2B</em></div><div class="sw"><span style="background:#A94826"></span><code>terracotta.600</code><em>#A94826</em></div><div class="sw"><span style="background:#8F3B1E"></span><code>terracotta.700</code><em>#8F3B1E</em></div></div></div><div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw" title="코어 #414954 에서 덮어썼습니다"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="cobalt"><div class="swrow"><h4>cobalt<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#E1F0FF"></span><code>cobalt.50</code><em>#E1F0FF</em></div><div class="sw"><span style="background:#C7E0F7"></span><code>cobalt.100</code><em>#C7E0F7</em></div><div class="sw"><span style="background:#A0BED7"></span><code>cobalt.300</code><em>#A0BED7</em></div><div class="sw"><span style="background:#051469"></span><code>cobalt.500</code><em>#051469</em></div><div class="sw"><span style="background:#041154"></span><code>cobalt.600</code><em>#041154</em></div><div class="sw"><span style="background:#030D40"></span><code>cobalt.700</code><em>#030D40</em></div></div></div><div class="swrow"><h4>azure<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#1E64DC"></span><code>azure.500</code><em>#1E64DC</em></div></div></div><div class="swrow"><h4>steel<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#5B7EA3"></span><code>steel.500</code><em>#5B7EA3</em></div></div></div><div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw" title="코어 #414954 에서 덮어썼습니다"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="noir"><div class="swrow"><h4>gray<span class="swtag">코어에서 12개 덮어씀</span></h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw ovr" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#FAFAFA"></span><code>gray.50</code><em>#FAFAFA</em></div><div class="sw ovr" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#F2F2F2"></span><code>gray.100</code><em>#F2F2F2</em></div><div class="sw ovr" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E4E4E4"></span><code>gray.200</code><em>#E4E4E4</em></div><div class="sw ovr" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBCBCB"></span><code>gray.300</code><em>#CBCBCB</em></div><div class="sw ovr" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#999999"></span><code>gray.400</code><em>#999999</em></div><div class="sw ovr" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#767575"></span><code>gray.500</code><em>#767575</em></div><div class="sw ovr" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#656666"></span><code>gray.600</code><em>#656666</em></div><div class="sw ovr" title="코어 #414954 에서 덮어썼습니다"><span style="background:#4A4748"></span><code>gray.700</code><em>#4A4748</em></div><div class="sw ovr" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#322E2F"></span><code>gray.800</code><em>#322E2F</em></div><div class="sw ovr" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#1E1A1B"></span><code>gray.900</code><em>#1E1A1B</em></div><div class="sw ovr" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#000000"></span><code>gray.1000</code><em>#000000</em></div><div class="sw ovr" title="코어에 없는 단계입니다"><span style="background:#939393"></span><code>gray.350</code><em>#939393</em></div></div><p class="swnote">* 표시가 코어와 다른 값입니다.</p></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div>
+    <div class="swset" data-theme="eluo"><div class="swrow"><h4>navy<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#EDEEF7"></span><code>navy.50</code><em>#EDEEF7</em></div><div class="sw"><span style="background:#D6D9EC"></span><code>navy.100</code><em>#D6D9EC</em></div><div class="sw"><span style="background:#7F87BF"></span><code>navy.300</code><em>#7F87BF</em></div><div class="sw"><span style="background:#000080"></span><code>navy.500</code><em>#000080</em></div><div class="sw"><span style="background:#00006B"></span><code>navy.600</code><em>#00006B</em></div><div class="sw"><span style="background:#000052"></span><code>navy.700</code><em>#000052</em></div></div></div><div class="swrow"><h4>signal<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#FFFF01"></span><code>signal.500</code><em>#FFFF01</em></div><div class="sw"><span style="background:#E5E500"></span><code>signal.600</code><em>#E5E500</em></div></div></div><div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw" title="코어 #414954 에서 덮어썼습니다"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="atlas"><div class="swrow"><h4>atlas<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#F0F2F4"></span><code>atlas.50</code><em>#F0F2F4</em></div><div class="sw"><span style="background:#DBE0E5"></span><code>atlas.100</code><em>#DBE0E5</em></div><div class="sw"><span style="background:#8C9AAB"></span><code>atlas.300</code><em>#8C9AAB</em></div><div class="sw"><span style="background:#001F45"></span><code>atlas.500</code><em>#001F45</em></div><div class="sw"><span style="background:#001734"></span><code>atlas.600</code><em>#001734</em></div><div class="sw"><span style="background:#001126"></span><code>atlas.700</code><em>#001126</em></div></div></div><div class="swrow"><h4>coral<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#D85640"></span><code>coral.500</code><em>#D85640</em></div><div class="sw"><span style="background:#C24D3A"></span><code>coral.600</code><em>#C24D3A</em></div></div></div><div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw" title="코어 #414954 에서 덮어썼습니다"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="ember"><div class="swrow"><h4>forest<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#EAF0ED"></span><code>forest.50</code><em>#EAF0ED</em></div><div class="sw"><span style="background:#12503C"></span><code>forest.500</code><em>#12503C</em></div><div class="sw"><span style="background:#0E4130"></span><code>forest.600</code><em>#0E4130</em></div><div class="sw"><span style="background:#0A3226"></span><code>forest.700</code><em>#0A3226</em></div></div></div><div class="swrow"><h4>clay<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#F9EEEA"></span><code>clay.50</code><em>#F9EEEA</em></div><div class="sw"><span style="background:#A33A1F"></span><code>clay.500</code><em>#A33A1F</em></div><div class="sw"><span style="background:#852F19"></span><code>clay.600</code><em>#852F19</em></div></div></div><div class="swrow"><h4>azure<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#1F4E9C"></span><code>azure.500</code><em>#1F4E9C</em></div></div></div><div class="swrow"><h4>gray<span class="swtag">코어에서 11개 덮어씀</span></h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw ovr" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F6F6F3"></span><code>gray.50</code><em>#F6F6F3</em></div><div class="sw ovr" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EEEEE9"></span><code>gray.100</code><em>#EEEEE9</em></div><div class="sw ovr" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E4E4DF"></span><code>gray.200</code><em>#E4E4DF</em></div><div class="sw ovr" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#C4C4BE"></span><code>gray.300</code><em>#C4C4BE</em></div><div class="sw ovr" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8E8E88"></span><code>gray.400</code><em>#8E8E88</em></div><div class="sw ovr" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#74746F"></span><code>gray.500</code><em>#74746F</em></div><div class="sw ovr" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#5A5A56"></span><code>gray.600</code><em>#5A5A56</em></div><div class="sw ovr" title="코어 #414954 에서 덮어썼습니다"><span style="background:#43433F"></span><code>gray.700</code><em>#43433F</em></div><div class="sw ovr" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2D2D2A"></span><code>gray.800</code><em>#2D2D2A</em></div><div class="sw ovr" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#17171A"></span><code>gray.900</code><em>#17171A</em></div><div class="sw ovr" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0D0D10"></span><code>gray.1000</code><em>#0D0D10</em></div></div><p class="swnote">* 표시가 코어와 다른 값입니다.</p></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="harbor"><div class="swrow"><h4>taupe<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#F4F1ED"></span><code>taupe.50</code><em>#F4F1ED</em></div><div class="sw"><span style="background:#816C58"></span><code>taupe.500</code><em>#816C58</em></div><div class="sw"><span style="background:#6B5947"></span><code>taupe.600</code><em>#6B5947</em></div><div class="sw"><span style="background:#544537"></span><code>taupe.700</code><em>#544537</em></div></div></div><div class="swrow"><h4>gray<span class="swtag">코어에서 12개 덮어씀</span></h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw ovr" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#FAFAFA"></span><code>gray.50</code><em>#FAFAFA</em></div><div class="sw ovr" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#F5F5F5"></span><code>gray.100</code><em>#F5F5F5</em></div><div class="sw ovr" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E5E5E5"></span><code>gray.200</code><em>#E5E5E5</em></div><div class="sw ovr" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CCCCCC"></span><code>gray.300</code><em>#CCCCCC</em></div><div class="sw ovr" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#999999"></span><code>gray.400</code><em>#999999</em></div><div class="sw ovr" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#666666"></span><code>gray.500</code><em>#666666</em></div><div class="sw ovr" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#444444"></span><code>gray.600</code><em>#444444</em></div><div class="sw ovr" title="코어 #414954 에서 덮어썼습니다"><span style="background:#333333"></span><code>gray.700</code><em>#333333</em></div><div class="sw ovr" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#222222"></span><code>gray.800</code><em>#222222</em></div><div class="sw ovr" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#111111"></span><code>gray.900</code><em>#111111</em></div><div class="sw ovr" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#000000"></span><code>gray.1000</code><em>#000000</em></div><div class="sw ovr" title="코어에 없는 단계입니다"><span style="background:#939393"></span><code>gray.350</code><em>#939393</em></div></div><p class="swnote">* 표시가 코어와 다른 값입니다.</p></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="tideland"><div class="swrow"><h4>terracotta<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#FBF1EC"></span><code>terracotta.50</code><em>#FBF1EC</em></div><div class="sw"><span style="background:#F5DDD2"></span><code>terracotta.100</code><em>#F5DDD2</em></div><div class="sw"><span style="background:#DC9A80"></span><code>terracotta.300</code><em>#DC9A80</em></div><div class="sw"><span style="background:#B44E2B"></span><code>terracotta.500</code><em>#B44E2B</em></div><div class="sw"><span style="background:#A94826"></span><code>terracotta.600</code><em>#A94826</em></div><div class="sw"><span style="background:#8F3B1E"></span><code>terracotta.700</code><em>#8F3B1E</em></div></div></div><div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw" title="코어 #414954 에서 덮어썼습니다"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="cobalt"><div class="swrow"><h4>cobalt<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#E1F0FF"></span><code>cobalt.50</code><em>#E1F0FF</em></div><div class="sw"><span style="background:#C7E0F7"></span><code>cobalt.100</code><em>#C7E0F7</em></div><div class="sw"><span style="background:#A0BED7"></span><code>cobalt.300</code><em>#A0BED7</em></div><div class="sw"><span style="background:#051469"></span><code>cobalt.500</code><em>#051469</em></div><div class="sw"><span style="background:#041154"></span><code>cobalt.600</code><em>#041154</em></div><div class="sw"><span style="background:#030D40"></span><code>cobalt.700</code><em>#030D40</em></div></div></div><div class="swrow"><h4>azure<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#1E64DC"></span><code>azure.500</code><em>#1E64DC</em></div></div></div><div class="swrow"><h4>steel<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#5B7EA3"></span><code>steel.500</code><em>#5B7EA3</em></div></div></div><div class="swrow"><h4>gray</h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#F7F8FA"></span><code>gray.50</code><em>#F7F8FA</em></div><div class="sw" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EFF1F4"></span><code>gray.100</code><em>#EFF1F4</em></div><div class="sw" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E2E5EA"></span><code>gray.200</code><em>#E2E5EA</em></div><div class="sw" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBD0D8"></span><code>gray.300</code><em>#CBD0D8</em></div><div class="sw" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#8D949E"></span><code>gray.400</code><em>#8D949E</em></div><div class="sw" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#6E7784"></span><code>gray.500</code><em>#6E7784</em></div><div class="sw" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#59626F"></span><code>gray.600</code><em>#59626F</em></div><div class="sw" title="코어 #414954 에서 덮어썼습니다"><span style="background:#414954"></span><code>gray.700</code><em>#414954</em></div><div class="sw" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#2B313A"></span><code>gray.800</code><em>#2B313A</em></div><div class="sw" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#171B21"></span><code>gray.900</code><em>#171B21</em></div><div class="sw" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#0B0D11"></span><code>gray.1000</code><em>#0B0D11</em></div></div></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="noir"><div class="swrow"><h4>gray<span class="swtag">코어에서 12개 덮어씀</span></h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw ovr" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#FAFAFA"></span><code>gray.50</code><em>#FAFAFA</em></div><div class="sw ovr" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#F2F2F2"></span><code>gray.100</code><em>#F2F2F2</em></div><div class="sw ovr" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#E4E4E4"></span><code>gray.200</code><em>#E4E4E4</em></div><div class="sw ovr" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CBCBCB"></span><code>gray.300</code><em>#CBCBCB</em></div><div class="sw ovr" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#999999"></span><code>gray.400</code><em>#999999</em></div><div class="sw ovr" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#767575"></span><code>gray.500</code><em>#767575</em></div><div class="sw ovr" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#656666"></span><code>gray.600</code><em>#656666</em></div><div class="sw ovr" title="코어 #414954 에서 덮어썼습니다"><span style="background:#4A4748"></span><code>gray.700</code><em>#4A4748</em></div><div class="sw ovr" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#322E2F"></span><code>gray.800</code><em>#322E2F</em></div><div class="sw ovr" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#1E1A1B"></span><code>gray.900</code><em>#1E1A1B</em></div><div class="sw ovr" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#000000"></span><code>gray.1000</code><em>#000000</em></div><div class="sw ovr" title="코어에 없는 단계입니다"><span style="background:#939393"></span><code>gray.350</code><em>#939393</em></div></div><p class="swnote">* 표시가 코어와 다른 값입니다.</p></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div><div class="swset" data-theme="linen"><div class="swrow"><h4>brand<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#F3F2F1"></span><code>brand.50</code><em>#F3F2F1</em></div><div class="sw"><span style="background:#3B2412"></span><code>brand.500</code><em>#3B2412</em></div><div class="sw"><span style="background:#301E0F"></span><code>brand.600</code><em>#301E0F</em></div><div class="sw"><span style="background:#27180C"></span><code>brand.700</code><em>#27180C</em></div></div></div><div class="swrow"><h4>copper<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#B7733B"></span><code>copper.500</code><em>#B7733B</em></div></div></div><div class="swrow"><h4>forest<span class="swtag">테마 추가</span></h4><div class="swgrid"><div class="sw"><span style="background:#2E3331"></span><code>forest.500</code><em>#2E3331</em></div></div></div><div class="swrow"><h4>gray<span class="swtag">코어에서 12개 덮어씀</span></h4><div class="swgrid"><div class="sw" title="코어 #FFFFFF 에서 덮어썼습니다"><span style="background:#FFFFFF"></span><code>gray.0</code><em>#FFFFFF</em></div><div class="sw ovr" title="코어 #F7F8FA 에서 덮어썼습니다"><span style="background:#FAFAF9"></span><code>gray.50</code><em>#FAFAF9</em></div><div class="sw ovr" title="코어 #EFF1F4 에서 덮어썼습니다"><span style="background:#EEEEEE"></span><code>gray.100</code><em>#EEEEEE</em></div><div class="sw ovr" title="코어 #E2E5EA 에서 덮어썼습니다"><span style="background:#DAD9D7"></span><code>gray.200</code><em>#DAD9D7</em></div><div class="sw ovr" title="코어 #CBD0D8 에서 덮어썼습니다"><span style="background:#CCCCCC"></span><code>gray.300</code><em>#CCCCCC</em></div><div class="sw ovr" title="코어 #8D949E 에서 덮어썼습니다"><span style="background:#B5B2B0"></span><code>gray.400</code><em>#B5B2B0</em></div><div class="sw ovr" title="코어 #6E7784 에서 덮어썼습니다"><span style="background:#7A7671"></span><code>gray.500</code><em>#7A7671</em></div><div class="sw ovr" title="코어 #59626F 에서 덮어썼습니다"><span style="background:#78736E"></span><code>gray.600</code><em>#78736E</em></div><div class="sw ovr" title="코어 #414954 에서 덮어썼습니다"><span style="background:#4A4643"></span><code>gray.700</code><em>#4A4643</em></div><div class="sw ovr" title="코어 #2B313A 에서 덮어썼습니다"><span style="background:#302D2A"></span><code>gray.800</code><em>#302D2A</em></div><div class="sw ovr" title="코어 #171B21 에서 덮어썼습니다"><span style="background:#1B1A18"></span><code>gray.900</code><em>#1B1A18</em></div><div class="sw ovr" title="코어 #0B0D11 에서 덮어썼습니다"><span style="background:#111111"></span><code>gray.1000</code><em>#111111</em></div><div class="sw ovr" title="코어에 없는 단계입니다"><span style="background:#96928E"></span><code>gray.350</code><em>#96928E</em></div></div><p class="swnote">* 표시가 코어와 다른 값입니다.</p></div><div class="swrow"><h4>blue</h4><div class="swgrid"><div class="sw" title="코어 #EEF3FF 에서 덮어썼습니다"><span style="background:#EEF3FF"></span><code>blue.50</code><em>#EEF3FF</em></div><div class="sw" title="코어 #DAE4FF 에서 덮어썼습니다"><span style="background:#DAE4FF"></span><code>blue.100</code><em>#DAE4FF</em></div><div class="sw" title="코어 #8FAAF5 에서 덮어썼습니다"><span style="background:#8FAAF5"></span><code>blue.300</code><em>#8FAAF5</em></div><div class="sw" title="코어 #3A5AF9 에서 덮어썼습니다"><span style="background:#3A5AF9"></span><code>blue.500</code><em>#3A5AF9</em></div><div class="sw" title="코어 #2B45D4 에서 덮어썼습니다"><span style="background:#2B45D4"></span><code>blue.600</code><em>#2B45D4</em></div><div class="sw" title="코어 #1F33A6 에서 덮어썼습니다"><span style="background:#1F33A6"></span><code>blue.700</code><em>#1F33A6</em></div></div></div><div class="swrow"><h4>red</h4><div class="swgrid"><div class="sw" title="코어 #FDF0EF 에서 덮어썼습니다"><span style="background:#FDF0EF"></span><code>red.50</code><em>#FDF0EF</em></div><div class="sw" title="코어 #F0A69F 에서 덮어썼습니다"><span style="background:#F0A69F"></span><code>red.300</code><em>#F0A69F</em></div><div class="sw" title="코어 #D83C3C 에서 덮어썼습니다"><span style="background:#D83C3C"></span><code>red.500</code><em>#D83C3C</em></div><div class="sw" title="코어 #BC2E2E 에서 덮어썼습니다"><span style="background:#BC2E2E"></span><code>red.600</code><em>#BC2E2E</em></div><div class="sw" title="코어 #951F1F 에서 덮어썼습니다"><span style="background:#951F1F"></span><code>red.700</code><em>#951F1F</em></div></div></div><div class="swrow"><h4>green</h4><div class="swgrid"><div class="sw" title="코어 #EEF8F3 에서 덮어썼습니다"><span style="background:#EEF8F3"></span><code>green.50</code><em>#EEF8F3</em></div><div class="sw" title="코어 #1F7A54 에서 덮어썼습니다"><span style="background:#1F7A54"></span><code>green.500</code><em>#1F7A54</em></div><div class="sw" title="코어 #186345 에서 덮어썼습니다"><span style="background:#186345"></span><code>green.600</code><em>#186345</em></div></div></div><div class="swrow"><h4>amber</h4><div class="swgrid"><div class="sw" title="코어 #FDF6E8 에서 덮어썼습니다"><span style="background:#FDF6E8"></span><code>amber.50</code><em>#FDF6E8</em></div><div class="sw" title="코어 #9A6100 에서 덮어썼습니다"><span style="background:#9A6100"></span><code>amber.500</code><em>#9A6100</em></div><div class="sw" title="코어 #7C4E00 에서 덮어썼습니다"><span style="background:#7C4E00"></span><code>amber.600</code><em>#7C4E00</em></div></div></div></div>
   </div>
 
   <div data-r style="margin-top:56px">
@@ -2595,7 +2922,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>success.subtle</code></td></tr><tr><td>label</td><td><code>success.default</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/badge/badge-status-sm--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/badge/badge-status-sm--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-button"><div class="sec-head">
@@ -2623,7 +2950,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>danger.default</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-danger-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/button/btn-danger-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2647,7 +2974,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>label</td><td><code>text.brand</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-ghost-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/button/btn-ghost-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2671,7 +2998,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.brand</code></td></tr><tr><td>label</td><td><code>text.brand</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/button/btn-outline-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2695,7 +3022,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.brand</code></td></tr><tr><td>label</td><td><code>text.brand</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-outline-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/button/btn-outline-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2719,7 +3046,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>brand.primary</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/button/btn-primary-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2743,7 +3070,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>brand.primary</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/button/btn-primary-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2767,7 +3094,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>brand.primary</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-primary-sm--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/button/btn-primary-sm--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2791,7 +3118,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>label</td><td><code>text.primary</code></td></tr><tr><td>bg</td><td><code>surface.default</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/button/btn-secondary-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/button/btn-secondary-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-card"><div class="sec-head">
@@ -2819,7 +3146,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-basic-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/card/card-basic-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2843,7 +3170,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>thumb</td><td><code>surface.sunken</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>meta</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-portrait-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/card/card-portrait-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2867,7 +3194,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>thumb</td><td><code>surface.sunken</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-product-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/card/card-product-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2891,7 +3218,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.sunken</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr><tr><td>label</td><td><code>text.primary</code></td></tr><tr><td>desc</td><td><code>text.secondary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/card/card-stat-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/card/card-stat-md--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-chip"><div class="sec-head">
@@ -2919,7 +3246,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr><tr><td>bg</td><td><code>surface.default</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/chip/chip-filter-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/chip/chip-filter-md--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-commerce"><div class="sec-head">
@@ -2947,7 +3274,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>rate</td><td><code>text.brand</code></td></tr><tr><td>price</td><td><code>text.primary</code></td></tr><tr><td>original</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/price-discount-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/commerce/price-discount-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -2971,7 +3298,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>icon</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/commerce/wish-toggle-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/commerce/wish-toggle-md--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-disclosure"><div class="sec-head">
@@ -2999,7 +3326,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr><tr><td>icon</td><td><code>text.tertiary</code></td></tr><tr><td>titleOpen</td><td><code>text.brand</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/disclosure/accordion-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/disclosure/accordion-md--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-feedback"><div class="sec-head">
@@ -3027,7 +3354,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.subtle</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/empty-state-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/feedback/empty-state-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3051,7 +3378,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>danger.subtle</code></td></tr><tr><td>border</td><td><code>border.danger</code></td></tr><tr><td>label</td><td><code>danger.text</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-error-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/feedback/toast-error-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3075,7 +3402,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.inverse</code></td></tr><tr><td>label</td><td><code>text.inverse</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/feedback/toast-info-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/feedback/toast-info-md--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-input"><div class="sec-head">
@@ -3103,7 +3430,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>placeholder</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/input-text-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/input/input-text-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3127,12 +3454,12 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>label</td><td><code>text.primary</code></td></tr><tr><td>icon</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/input/select-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/input/select-md--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-layout"><div class="sec-head">
   <div class="col-a"><span class="lbl">Components</span><h2 lang="en">Layout</h2></div>
-  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">레이아웃 9종</p></div>
+  <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="lead">레이아웃 10종</p></div>
   <div class="col-b"><span class="lbl" aria-hidden="true"></span><p class="body-t">규격과 토큰은 manifest가 정답입니다. 이미지에서 눈대중으로 재지 않습니다.</p></div>
 </div><div class="cmps">
 <article class="cmp" id="cta-band-lg" data-r>
@@ -3155,7 +3482,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>brand.primary</code></td></tr><tr><td>title</td><td><code>text.inverse</code></td></tr><tr><td>lead</td><td><code>text.inverse</code></td></tr><tr><td>actionBg</td><td><code>surface.default</code></td></tr><tr><td>actionLabel</td><td><code>text.brand</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/cta-band-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/cta-band-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3179,7 +3506,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/desc-list-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/desc-list-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3203,7 +3530,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.inverse</code></td></tr><tr><td>logo</td><td><code>text.inverse</code></td></tr><tr><td>note</td><td><code>text.inverse</code></td></tr><tr><td>menu</td><td><code>text.inverse</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/footer-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/footer-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3227,7 +3554,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>label</td><td><code>text.primary</code></td></tr><tr><td>border</td><td><code>border.default</code></td></tr><tr><td>placeholder</td><td><code>text.tertiary</code></td></tr><tr><td>helper</td><td><code>text.secondary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/form-field-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/form-field-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3251,7 +3578,31 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>logo</td><td><code>text.brand</code></td></tr><tr><td>menu</td><td><code>text.secondary</code></td></tr><tr><td>menuActive</td><td><code>text.primary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/header-gnb-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/header-gnb-lg--eluo%402x.png</pre>
+    </details>
+  </div>
+</article>
+<article class="cmp" id="hero-media-lg" data-r>
+  <div class="c-meta">
+    <label class="pick"><input type="checkbox" class="pickbox" value="hero-media-lg"
+      aria-label="Hero / Media / LG 고르기"><span>고르기</span></label>
+    <h3>Hero / Media / LG</h3>
+    <p class="cid">hero-media-lg</p>
+    <p class="states">default · 리드 없음</p>
+  </div>
+  <div class="c-body">
+    <div class="preview"><div id="cmp-hero-media-lg"><div class="c"><div class="sc"></div><div class="in"><div class="e">Brand Story</div><div class="t">머무는 자리에<br>여백을 둡니다</div><div class="l">사진이 먼저 말하는 첫 화면입니다. 글자는 스크림 위에 올려 대비를 지킵니다.</div><div class="a"><button class="b1">둘러보기</button><button class="b2">브로슈어</button></div></div></div></div></div>
+      
+    <div class="c-detail">
+      <div class="usage">
+        <p class="use"><b>언제</b>페이지 첫 화면. 사진이 주인공일 때. 제목·리드·액션을 사진 위에 얹음</p>
+        <p class="dont"><b>금지</b>한 화면에 두 번 쓰지 않음. hero-split-lg 와 같이 쓰지 않음 — 첫 화면은 하나. 요소 전체에 opacity 를 걸지 않음. 어둡게 하는 것은 스크림뿐</p>
+      </div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>ratio</td><td class='n'>16:9</td></tr><tr><td>radius</td><td class='n'>xl</td></tr><tr><td>paddingX</td><td class='n'>container.gutter</td></tr><tr><td>paddingY</td><td class='n'>ctaBand.paddingY</td></tr><tr><td>titleGap</td><td class='n'>hero.titleGap</td></tr><tr><td>leadGap</td><td class='n'>hero.leadGap</td></tr><tr><td>actionTopGap</td><td class='n'>hero.actionTopGap</td></tr><tr><td>actionGap</td><td class='n'>hero.actionGap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>eyebrowTypography</td><td class='n'>label</td></tr><tr><td>eyebrowTracking</td><td class='n'>0.1em</td></tr><tr><td>titleTypography</td><td class='n'>display1</td></tr><tr><td>leadTypography</td><td class='n'>body1</td></tr><tr><td>leadMaxWidth</td><td class='n'>60ch</td></tr><tr><td>scrim</td><td class='n'>media.scrim</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>tokens</caption><tbody><tr><td>media</td><td><code>surface.sunken</code></td></tr><tr><td>scrim</td><td><code>media.scrim</code></td></tr><tr><td>eyebrow</td><td><code>text.inverse</code></td></tr><tr><td>title</td><td><code>text.inverse</code></td></tr><tr><td>lead</td><td><code>text.inverse</code></td></tr><tr><td>actionBg</td><td><code>surface.default</code></td></tr><tr><td>actionLabel</td><td><code>text.brand</code></td></tr><tr><td>actionAltBorder</td><td><code>text.inverse</code></td></tr></tbody></table></div>
+    </div>
+    <details class="url"><summary>자산 URL</summary>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/hero-media-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3269,13 +3620,13 @@ text-wrap: var(--text-wrap);</pre>
     <div class="c-detail">
       <div class="usage">
         <p class="use"><b>언제</b>페이지 첫 화면. 제목·리드·액션을 왼쪽에, 핵심 수치 레일을 오른쪽에</p>
-        <p class="dont"><b>금지</b>한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐</p>
+        <p class="dont"><b>금지</b>한 화면에 두 번 쓰지 않음. 무엇이 이 페이지의 주제인지 흐려짐. 사진을 넣지 않음 — 사진이 주인공인 첫 화면은 hero-media-lg</p>
       </div>
-      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>gap</td><td class='n'>hero.gap</td></tr><tr><td>actionGap</td><td class='n'>hero.actionGap</td></tr><tr><td>railGap</td><td class='n'>hero.railGap</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>titleTypography</td><td class='n'>display1</td></tr><tr><td>leadTypography</td><td class='n'>body1</td></tr><tr><td>leadMaxWidth</td><td class='n'>60ch</td></tr></tbody></table></div>
+      <div class="specs"><table><caption>spec</caption><tbody><tr><td>width</td><td class='n'>container.max</td></tr><tr><td>columns</td><td class='n'>7/5</td></tr><tr><td>align</td><td class='n'>end</td></tr><tr><td>gap</td><td class='n'>hero.gap</td></tr><tr><td>titleGap</td><td class='n'>hero.titleGap</td></tr><tr><td>leadGap</td><td class='n'>hero.leadGap</td></tr><tr><td>actionTopGap</td><td class='n'>hero.actionTopGap</td></tr><tr><td>actionGap</td><td class='n'>hero.actionGap</td></tr><tr><td>railBorder</td><td class='n'>left</td></tr><tr><td>railPad</td><td class='n'>hero.railPad</td></tr><tr><td>railGap</td><td class='n'>hero.railGap</td></tr><tr><td>railItems</td><td class='n'>2-4</td></tr><tr><td>borderWidth</td><td class='n'>border.width</td></tr><tr><td>eyebrowTypography</td><td class='n'>label</td></tr><tr><td>eyebrowTracking</td><td class='n'>0.1em</td></tr><tr><td>titleTypography</td><td class='n'>display1</td></tr><tr><td>leadTypography</td><td class='n'>body1</td></tr><tr><td>leadMaxWidth</td><td class='n'>60ch</td></tr><tr><td>railLabelTypography</td><td class='n'>caption</td></tr><tr><td>railLabelTracking</td><td class='n'>0.06em</td></tr><tr><td>railValueTypography</td><td class='n'>heading3</td></tr></tbody></table></div>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>eyebrow</td><td><code>text.brand</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>lead</td><td><code>text.secondary</code></td></tr><tr><td>rail</td><td><code>border.default</code></td></tr><tr><td>railLabel</td><td><code>text.tertiary</code></td></tr><tr><td>railValue</td><td><code>text.primary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/hero-split-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/hero-split-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3299,7 +3650,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>meta</td><td><code>text.tertiary</code></td></tr><tr><td>value</td><td><code>text.primary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/list-row-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/list-row-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3323,7 +3674,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>eyebrow</td><td><code>text.brand</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>lead</td><td><code>text.secondary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/section-header-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/section-header-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3347,7 +3698,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>number</td><td><code>text.inverse</code></td></tr><tr><td>numberBg</td><td><code>brand.primary</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr><tr><td>line</td><td><code>border.subtle</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/layout/step-flow-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/layout/step-flow-md--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-modal"><div class="sec-head">
@@ -3375,7 +3726,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>bg</td><td><code>surface.default</code></td></tr><tr><td>title</td><td><code>text.primary</code></td></tr><tr><td>body</td><td><code>text.secondary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/modal/modal-confirm-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/modal/modal-confirm-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-navigation"><div class="sec-head">
@@ -3403,7 +3754,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>link</td><td><code>text.tertiary</code></td></tr><tr><td>current</td><td><code>text.primary</code></td></tr><tr><td>separator</td><td><code>text.tertiary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/breadcrumb-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/navigation/breadcrumb-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3427,7 +3778,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>active</td><td><code>brand.primary</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/pagination-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/navigation/pagination-md--eluo%402x.png</pre>
     </details>
   </div>
 </article>
@@ -3451,7 +3802,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>indicator</td><td><code>brand.primary</code></td></tr><tr><td>labelActive</td><td><code>text.primary</code></td></tr><tr><td>labelInactive</td><td><code>text.tertiary</code></td></tr><tr><td>line</td><td><code>border.subtle</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/navigation/tab-underline-md--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/navigation/tab-underline-md--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section><section class="sec" id="g-table"><div class="sec-head">
@@ -3479,7 +3830,7 @@ text-wrap: var(--text-wrap);</pre>
       <div class="specs"><table><caption>tokens</caption><tbody><tr><td>header</td><td><code>surface.subtle</code></td></tr><tr><td>border</td><td><code>border.subtle</code></td></tr><tr><td>label</td><td><code>text.secondary</code></td></tr></tbody></table></div>
     </div>
     <details class="url"><summary>자산 URL</summary>
-      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.3/assets/components/table/table-basic-lg--eluo%402x.png</pre>
+      <pre>https://cdn.jsdelivr.net/gh/frombranch/eluon@v1.12.4/assets/components/table/table-basic-lg--eluo%402x.png</pre>
     </details>
   </div>
 </article></div></section>
@@ -3499,7 +3850,7 @@ text-wrap: var(--text-wrap);</pre>
 </section>
 
 <footer>
-  <span>Eluon Design System · v1.12.3 · 디자인포지션</span>
+  <span>Eluon Design System · v1.12.4 · 디자인포지션</span>
   <span>이 페이지는 <code>scripts/build_docs.py</code>가 manifest와 레시피에서 생성합니다.</span>
 </footer>
 

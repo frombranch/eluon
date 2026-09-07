@@ -281,7 +281,7 @@ def main() -> int:
         if other_stale:
             version_notes.append(f"{f}: {', '.join(other_stale)}")
 
-    # 몽타주 시트는 여기서 검사하지 않습니다 — make_montage.py 가 이 뒤에 돌기 때문에
+    # 엘루온 시트는 여기서 검사하지 않습니다 — make_montage.py 가 이 뒤에 돌기 때문에
     # 새 테마 첫 빌드가 반드시 실패합니다. 시트 검사는 build_docs.py(마지막 단계)에 있습니다.
     for th in CONFIG["themes"]:
         if not (ROOT / "docs" / "tokens" / f"eluon-{th}.css").exists():

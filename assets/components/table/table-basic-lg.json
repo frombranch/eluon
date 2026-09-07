@@ -40,6 +40,7 @@
     "harbor": "assets/components/table/table-basic-lg--harbor@2x.png",
     "tideland": "assets/components/table/table-basic-lg--tideland@2x.png",
     "cobalt": "assets/components/table/table-basic-lg--cobalt@2x.png",
-    "noir": "assets/components/table/table-basic-lg--noir@2x.png"
+    "noir": "assets/components/table/table-basic-lg--noir@2x.png",
+    "linen": "assets/components/table/table-basic-lg--linen@2x.png"
   }
 }

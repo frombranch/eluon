@@ -43,6 +43,7 @@
     "harbor": "assets/components/layout/header-gnb-lg--harbor@2x.png",
     "tideland": "assets/components/layout/header-gnb-lg--tideland@2x.png",
     "cobalt": "assets/components/layout/header-gnb-lg--cobalt@2x.png",
-    "noir": "assets/components/layout/header-gnb-lg--noir@2x.png"
+    "noir": "assets/components/layout/header-gnb-lg--noir@2x.png",
+    "linen": "assets/components/layout/header-gnb-lg--linen@2x.png"
   }
 }

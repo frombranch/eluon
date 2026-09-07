@@ -269,7 +269,7 @@ footer p{max-width:68ch}
         <tr><td><code>docs/eluon.json</code></td><td>빌더가 읽는 변환본</td><td>자동</td></tr>
         <tr><td><code>docs/prompt-builder.html</code></td><td>프롬프트 빌더 자체</td><td>사람</td></tr>
         <tr><td><code>assets/components/</code></td><td>테마별 @2x PNG + 사이드카 JSON</td><td>자동</td></tr>
-        <tr><td><code>index/sheet-*.png</code></td><td>{{count}}개가 라벨과 함께 든 몽타주 시트. 상태 변형은 빠져 있습니다</td><td>자동</td></tr>
+        <tr><td><code>index/sheet-*.png</code></td><td>{{count}}개가 라벨과 함께 든 엘루온 시트. 상태 변형은 빠져 있습니다</td><td>자동</td></tr>
         <tr><td><code>CLAUDE.md</code></td><td>에이전트가 먼저 읽는 작업 계약서</td><td>사람</td></tr>
       </tbody>
     </table>
@@ -512,7 +512,7 @@ footer p{max-width:68ch}
       <thead><tr><th>어디</th><th>어떻게 됩니다</th></tr></thead>
       <tbody>
         <tr><td>자산 수</td><td>상태 5개는 <strong>따로 셉니다</strong> — 목록 수에 넣지 않습니다</td></tr>
-        <tr><td>몽타주 시트</td><td>빠집니다 — "이 중에 골라줘"용이라 고르는 물건만</td></tr>
+        <tr><td>엘루온 시트</td><td>빠집니다 — "이 중에 골라줘"용이라 고르는 물건만</td></tr>
         <tr><td>빌더 목록</td><td>빠집니다 · 부모 행에 <code>default · focus · error</code>로 표시</td></tr>
         <tr><td>문서 사이트</td><td>부모 카드 안 "상태" 절에 미리보기와 ID</td></tr>
         <tr><td>manifest</td><td><code>spec</code>·<code>tokens</code>·이미지 주소 <strong>그대로 남습니다</strong></td></tr>
@@ -578,7 +578,7 @@ python3 scripts/check_contrast.py    # WCAG AA 대비비 검사
 python3 scripts/render.py            # 레시피 → @2x PNG + 사이드카
 python3 scripts/build_manifest.py    # 사이드카 → manifest.json
 python3 scripts/build_pb_manifest.py # manifest → docs/eluon.json
-python3 scripts/make_montage.py      # → 몽타주 시트
+python3 scripts/make_montage.py      # → 엘루온 시트
 python3 scripts/build_measure.py     # → 테마 실측 현황
 python3 scripts/build_docs.py        # → 문서 사이트
 python3 scripts/build_guide.py       # → 이 설명서</pre>
@@ -667,7 +667,7 @@ dont: 삭제·탈퇴 등 파괴적 액션에는 쓰지 않음</pre>
         </tr>
         <tr>
           <td><strong>탐색 · 구성안</strong></td>
-          <td><em>코드를 못 쓰게 막고</em> 몽타주 시트에서 골라 섹션별 배치표만 받습니다. 구조를 여러 번 빠르게 보고 싶을 때.</td>
+          <td><em>코드를 못 쓰게 막고</em> 엘루온 시트에서 골라 섹션별 배치표만 받습니다. 구조를 여러 번 빠르게 보고 싶을 때.</td>
           <td>화면 이름 · 대상</td>
         </tr>
         <tr>
