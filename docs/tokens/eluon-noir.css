@@ -6,7 +6,7 @@
   --p-gray-200:#E4E4E4;
   --p-gray-300:#CBCBCB;
   --p-gray-400:#999999;
-  --p-gray-500:#7C7B7B;
+  --p-gray-500:#767575;
   --p-gray-600:#656666;
   --p-gray-700:#4A4748;
   --p-gray-800:#322E2F;
@@ -42,13 +42,13 @@
   --color-surface-inverse:#1E1A1B;
   --color-text-primary:#1E1A1B;
   --color-text-secondary:#656666;
-  --color-text-tertiary:#7C7B7B;
+  --color-text-tertiary:#767575;
   --color-text-disabled:#999999;
   --color-text-inverse:#FFFFFF;
   --color-text-brand:#000000;
   --color-border-default:#939393;
   --color-border-subtle:#E4E4E4;
-  --color-border-strong:#7C7B7B;
+  --color-border-strong:#767575;
   --color-border-brand:#000000;
   --color-border-danger:#D83C3C;
   --color-danger-default:#D83C3C;
