@@ -25,36 +25,14 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "eluon.config.json").read_text(encoding="utf-8"))
 
-CHROME_CSS = """
+from gbar import GBAR_CSS, gbar_html  # noqa: E402  상단 바는 세 페이지 공용입니다
+
+CHROME_CSS = GBAR_CSS + """
 /* ─────────────────────────────────────────────────────────────
-   상단 바 · 왼쪽 차례 — build_guide.py 가 얹습니다.
+   왼쪽 차례 — build_guide.py 가 얹습니다. 상단 바는 gbar.py 가 냅니다.
    색과 활자는 본문이 이미 선언한 변수만 씁니다. 새 색을 들이지 않습니다.
    ───────────────────────────────────────────────────────────── */
-:root{ --gbar:64px; --gside:264px; --gpad:clamp(20px,5vw,120px) }
-@media (max-width:640px){ :root{ --gbar:56px } }
-
-/* 상단 바 — docs/index.html 과 같은 모양. 설명서가 사이트의 일부로 읽히게 합니다. */
-.gbar{
-  position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:28px;
-  height:var(--gbar);padding:0 var(--gpad);
-  background:var(--paper);border-bottom:1px solid var(--rule);
-}
-.gbar .logo{
-  font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:-.04em;
-  color:var(--ink);text-decoration:none;
-}
-.gbar nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
-.gbar nav a{
-  font-size:13px;font-weight:700;color:var(--muted);text-decoration:none;
-  white-space:nowrap;letter-spacing:-.01em;
-}
-.gbar nav a:hover{color:var(--ink)}
-.gbar nav a[aria-current=page]{color:var(--ink)}
-@media (max-width:640px){
-  .gbar{gap:16px}
-  .gbar nav{gap:14px}
-  .gbar nav a{font-size:12px}
-}
+:root{ --gside:264px }
 
 /* 본문으로 건너뛰기 — 차례가 본문 앞에 오므로 키보드 사용자에게 필요합니다. */
 .gskip{
@@ -340,6 +318,8 @@ def main() -> int:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<!-- 상단 바 전용. 본문은 계속 Noto Sans KR 이고, 이것은 세 페이지의 바를 같은 글꼴로 맞추려고 싣습니다. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 {style}
 </head>
@@ -347,14 +327,7 @@ def main() -> int:
 
 <a class="gskip" href="#gmain">본문으로 건너뛰기</a>
 
-<div class="gbar">
-  <a class="logo" href="index.html">Eluon</a>
-  <nav>
-    <a href="index.html">디자인 시스템</a>
-    <a href="prompt-builder.html">프롬프트 빌더</a>
-    <a href="guide.html" aria-current="page">사용설명서</a>
-  </nav>
-</div>
+{gbar_html("guide.html")}
 
 <div class="gshell">
   <aside class="gside" id="gside">

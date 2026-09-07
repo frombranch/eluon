@@ -21,6 +21,7 @@ CORE = json.loads((ROOT / "tokens" / "core.json").read_text(encoding="utf-8"))
 ELUO = json.loads((ROOT / "tokens" / "theme-eluo.json").read_text(encoding="utf-8"))
 
 from build_pb_manifest import THEME_KO  # 테마 라벨은 한 곳에서만 관리합니다
+from gbar import GBAR_CSS, gbar_html  # 상단 바는 세 페이지가 같은 것을 씁니다
 
 GROUP_KO = {
     "button": "버튼", "chip": "칩", "input": "입력", "card": "카드",
@@ -307,6 +308,9 @@ SITE_CSS = """/* ── 문서 사이트 껍데기 (컴포넌트 토큰과 분�
   --pg:#FFFFFF; --tx:#141414; --tx2:#757575; --ln:#DCDCDC; --ln2:#141414;
   --pad:clamp(20px,5vw,120px);
   --disp:'Helvetica Neue',Helvetica,Arial,'Pretendard Variable',Pretendard,sans-serif;
+  /* 상단 바(scripts/gbar.py)가 쓰는 이름. 값은 이 페이지 것을 그대로 가리킵니다 —
+     var() 라서 다크 모드에서도 알아서 따라갑니다. 새 색은 들이지 않습니다. */
+  --paper:var(--pg); --ink:var(--tx); --rule:var(--ln2); --muted:var(--tx2);
 }
 @media (prefers-color-scheme:dark){
   :root{--pg:#0A0A0A;--tx:#F0F0F0;--tx2:#78787E;--ln:#2B2B2B;--ln2:#F0F0F0}
@@ -317,8 +321,9 @@ body{background:var(--pg);color:var(--tx);
 a{color:inherit}
 .wrap{padding:0 var(--pad)}
 
-/* 상단 고정 바 */
-.barwrap{position:sticky;top:0;z-index:20;margin:0 calc(var(--pad) * -1)}
+/* 섹션 레일 — 이 페이지 안에서만 쓰는 목차입니다.
+   사이트 사이를 오가는 상단 바(.gbar)는 gbar.py 가 따로 냅니다. 레일은 그 아래로 붙습니다. */
+.barwrap{position:sticky;top:var(--gbar);z-index:20;margin:0 calc(var(--pad) * -1)}
 .bar{display:flex;align-items:center;gap:28px;
   height:66px;padding:0 var(--pad);
   background:color-mix(in srgb,var(--pg) 88%,transparent);backdrop-filter:blur(10px);
@@ -332,17 +337,12 @@ a{color:inherit}
   color:var(--tx2);font-weight:700;flex:none}
 .themestrip b{font-weight:700;flex:none}
 .themestrip span.tshint{color:var(--tx2);overflow:hidden;text-overflow:ellipsis}
-.logo{font-family:var(--disp);font-size:19px;font-weight:700;letter-spacing:-.03em;
-  text-decoration:none;flex:none}
+/* 로고는 상단 바로 갔습니다. 남은 것은 레일이 무엇인지 알려 주는 이름표입니다. */
+.railttl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tx2);flex:none}
 .bar nav{display:flex;gap:24px;flex-wrap:wrap;margin:0 auto}
 .bar nav a{color:var(--tx);text-decoration:none;font-size:14px;font-weight:600}
 .bar nav a:hover{color:var(--tx2)}
-/* 다른 페이지로 나가는 링크. 섹션 앵커와 성격이 달라 세로줄로 갈라 둡니다. */
-.bar nav.pages{margin:0;flex:none;gap:18px;padding-left:22px;
-  border-left:1px solid var(--ln)}
-.bar nav.pages a{font-size:13px;color:var(--tx2)}
-.bar nav.pages a:hover{color:var(--tx)}
-.bar nav.pages a[aria-current=page]{color:var(--tx)}
 .themes{display:flex;flex:none}
 .navtog{display:none;flex:none;margin-left:auto;width:40px;height:40px;
   align-items:center;justify-content:center;padding:0;
@@ -352,13 +352,10 @@ a{color:inherit}
   .navtog{display:inline-flex}
   .barmenu{display:none;position:absolute;top:100%;left:0;right:0;z-index:19;
     flex-direction:column;background:var(--pg);
-    max-height:calc(100dvh - 66px);overflow-y:auto;
+    max-height:calc(100dvh - 66px - var(--gbar));overflow-y:auto;
     border-bottom:1px solid var(--ln2);padding:4px var(--pad) 20px}
   .barmenu[data-open]{display:flex}
   .bar nav{flex-direction:column;gap:0;margin:0}
-  /* 접힌 메뉴에서는 세로줄이 의미가 없습니다. 위쪽 경계로 갈라 둡니다. */
-  .bar nav.pages{padding-left:0;border-left:0;border-top:1px solid var(--ln2);
-    margin-top:10px;padding-top:4px}
   .bar nav a{padding:13px 0;border-bottom:1px solid var(--ln)}
   /* 접힌 메뉴 안에서도 같은 처리 — 줄바꿈에 맡기면 가로 경계가 두 겹이 됩니다. */
   .barmenu .themes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;
@@ -371,12 +368,12 @@ a{color:inherit}
    순서는 고르는 차례 그대로 — 로고 → 테마 → 지금 테마 → 링크. */
 @media(min-width:900px){
   :root{--pad:clamp(24px,3vw,72px);--rail:236px}
-  .barwrap{position:fixed;top:0;left:0;bottom:0;width:var(--rail);margin:0;
+  .barwrap{position:fixed;top:var(--gbar);left:0;bottom:0;width:var(--rail);margin:0;
     display:flex;flex-direction:column;overflow-y:auto;
     background:var(--pg);border-right:1px solid var(--ln2)}
   /* 바와 메뉴는 껍데기만 벗겨 레일이 직접 순서를 잡게 합니다. */
   .bar,.barmenu{display:contents}
-  .logo{order:1;padding:28px 24px 20px}
+  .railttl{order:1;padding:26px 24px 16px}
   .barwrap .themes{order:2;margin:0 24px;
     display:grid;grid-template-columns:1fr 1fr;
     border-top:1px solid var(--ln2);border-left:1px solid var(--ln2)}
@@ -391,7 +388,7 @@ a{color:inherit}
   .bar nav{order:4;flex-direction:column;gap:0;margin:0;padding:20px 24px 28px;width:auto}
   .bar nav a{display:block;padding:7px 0;font-size:14px}
   .wrap{margin-left:var(--rail)}
-  .sec{scroll-margin-top:28px}
+  .sec{scroll-margin-top:calc(var(--gbar) + 28px)}
 }
 .themes button{font:inherit;font-size:12px;font-weight:700;padding:7px 14px;
   border:1px solid var(--ln2);background:transparent;color:var(--tx);
@@ -425,7 +422,7 @@ p,li,dd,h3,h4,.use,.dont,caption{word-break:keep-all;text-wrap:pretty}
 .meta dd a{text-decoration:none;border-bottom:2px solid var(--tx)}
 
 /* 섹션 머리 */
-.sec{padding:clamp(70px,10vh,120px) 0 0;scroll-margin-top:116px}
+.sec{padding:clamp(70px,10vh,120px) 0 0;scroll-margin-top:calc(116px + var(--gbar))}
 .sec-head{display:grid;grid-template-columns:1fr;gap:24px 48px}
 @media(min-width:900px){.sec-head{grid-template-columns:minmax(240px,1fr) 1.1fr 1.1fr}}
 .sec-head .lbl{display:block;font-size:13px;font-weight:700;padding-bottom:14px;
@@ -602,6 +599,7 @@ def main():
     dflt_label, dflt_hint = THEME_KO.get(dflt, (dflt, ""))
     nav = "".join(f'<a href="#g-{g}">{GROUP_KO.get(g,g)}</a>'
                   for g in sorted({c["group"] for c in comps}))
+    gbar = gbar_html("index.html")
 
     page = f"""<!doctype html>
 <html lang="ko" data-eluon-theme="{CONFIG['defaultTheme']}">
@@ -620,22 +618,21 @@ def main():
 {comp_css}
 
 {SITE_CSS}
+{GBAR_CSS}
 {swset_css}
 </style>
 </head>
 <body>
+{gbar}
 <div class="wrap">
 
 <div class="barwrap">
 <div class="bar">
-  <a class="logo" href="#top">Eluon</a>
+  <span class="railttl">섹션</span>
   <button class="navtog" id="navtog" type="button"
     aria-expanded="false" aria-controls="barmenu" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>
   <div class="barmenu" id="barmenu">
     <nav><a href="#foundation">파운데이션</a>{nav}<a href="#agent">에이전트</a></nav>
-    <nav class="pages" aria-label="사이트 이동">
-      <a href="index.html" aria-current="page">디자인 시스템</a><a href="prompt-builder.html">프롬프트 빌더</a><a href="guide.html">사용설명서</a>
-    </nav>
     <div class="themes" role="group" aria-label="테마 전환">
       {theme_btns}
     </div>
