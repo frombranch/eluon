@@ -32,6 +32,7 @@
   "pack": "hotel",
   "renders": {
     "atlas": "assets/components/booking/stay-summary-md--atlas@2x.png",
+    "ember": "assets/components/booking/stay-summary-md--ember@2x.png",
     "harbor": "assets/components/booking/stay-summary-md--harbor@2x.png",
     "tideland": "assets/components/booking/stay-summary-md--tideland@2x.png",
     "cobalt": "assets/components/booking/stay-summary-md--cobalt@2x.png",

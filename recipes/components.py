@@ -77,11 +77,17 @@ body{background:transparent;-webkit-font-smoothing:antialiased;
 """
 
 
-def t(typ, tokens):
-    """타이포 토큰을 CSS 선언으로 펼칩니다."""
-    d = tokens["typography"][typ]
-    return (f"font-size:{d['size']}px;font-weight:{d['weight']};"
-            f"line-height:{d['lineHeight']};letter-spacing:{d['tracking']};")
+def t(typ, tokens=None):
+    """타이포 토큰을 CSS 선언으로 펼칩니다.
+
+    값을 숫자로 박지 않고 var(--type-*) 로 넘깁니다.
+    render.py 는 build() 를 테마 루프 밖에서 한 번만 부르고 테마 CSS 만 갈아 끼우기
+    때문에, 여기서 크기를 숫자로 박으면 활자를 덮어쓴 테마(noir·linen·ember)가
+    core 크기로 그려집니다 — 토큰과 갤러리 그림이 어긋납니다.
+    tokens 인자는 호출부 호환을 위해 남겨 두고 쓰지 않습니다.
+    """
+    return (f"font-size:var(--type-{typ}-size);font-weight:var(--type-{typ}-weight);"
+            f"line-height:var(--type-{typ}-lh);letter-spacing:var(--type-{typ}-tracking);")
 
 
 def sz(name):

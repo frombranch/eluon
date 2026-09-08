@@ -1,7 +1,7 @@
 {
   "org": "frombranch",
   "repo": "eluon",
-  "version": "v1.14.0",
+  "version": "v1.14.1",
   "cdn": "jsdelivr",
   "themes": [
     "eluo",
@@ -93,15 +93,13 @@
     },
     "ember": {
       "packs": [
-        "commerce"
+        "hotel"
       ],
-      "coreFlow": "상품 탐색 → 옵션 선택 → 장바구니 → 결제",
+      "coreFlow": "예약",
       "requiredAssets": [
-        "card-product-md",
-        "chip-filter-md",
-        "option-select-md",
-        "stepper-md",
-        "cart-summary-lg"
+        "booking-bar-lg",
+        "date-range-md",
+        "rate-card-lg"
       ]
     }
   },

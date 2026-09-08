@@ -37,6 +37,7 @@
   "pack": "hotel",
   "renders": {
     "atlas": "assets/components/booking/date-range-md--atlas@2x.png",
+    "ember": "assets/components/booking/date-range-md--ember@2x.png",
     "harbor": "assets/components/booking/date-range-md--harbor@2x.png",
     "tideland": "assets/components/booking/date-range-md--tideland@2x.png",
     "cobalt": "assets/components/booking/date-range-md--cobalt@2x.png",
