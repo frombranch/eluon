@@ -437,7 +437,7 @@ p,li,dd,h3,h4,.use,.dont,caption{word-break:keep-all;text-wrap:pretty}
   .sec-head .lbl:empty::before{content:"\\00a0"}
   .sec-head .col-b p{margin-top:20px}
 }
-h2{font-family:var(--disp);font-weight:700;font-size:clamp(44px,7.5vw,96px);
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(15px,2.5vw,32px);
   line-height:.88;letter-spacing:-.045em;margin:24px 0 0;
   hyphens:manual;overflow-wrap:break-word}
 h3{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0}

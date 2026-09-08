@@ -1898,11 +1898,12 @@ function renderAll(){
     },
     "테마를");
   // 연결된 자산 저장소의 문서 사이트가 있으면 그쪽으로, 없으면 이 사이트로.
+  // 상단 바는 어느 쪽이든 같은 창에서 엽니다 — 세 페이지를 오가는 링크가
+  // 새 창을 띄우면 탭이 계속 쌓입니다.
   var ds=docsSite(), dt=document.getElementById("docsTab");
   if(dt){
     dt.href = ds || "index.html";
-    if(ds){ dt.target="_blank"; dt.rel="noopener"; }
-    else  { dt.removeAttribute("target"); dt.removeAttribute("rel"); }
+    dt.removeAttribute("target"); dt.removeAttribute("rel");
   }
   var rw=document.getElementById("themeRestoreWrap");
   var hidNow=hiddenThemes().filter(function(id){ return id!==state.theme; });
