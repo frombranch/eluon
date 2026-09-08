@@ -1,0 +1,44 @@
+{
+  "id": "option-select-md",
+  "name": "Option Select / MD",
+  "group": "commerce",
+  "tags": [
+    "커머스",
+    "옵션",
+    "재고"
+  ],
+  "spec": {
+    "groupGap": "option.groupGap",
+    "rowGap": "option.rowGap",
+    "gap": "option.gap",
+    "height": "option.height",
+    "paddingX": "option.paddingX",
+    "radius": "sm",
+    "borderWidth": "border.width",
+    "labelTypography": "label",
+    "valueTypography": "body2"
+  },
+  "tokens": {
+    "label": "text.secondary",
+    "border": "border.default",
+    "value": "text.primary",
+    "selectedBorder": "brand.primary",
+    "selectedBg": "brand.subtle",
+    "selectedLabel": "text.brand",
+    "soldOut": "text.disabled"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "선택됨",
+    "품절"
+  ],
+  "usage": "상품 옵션을 한눈에 펼쳐 고르게 함. 색상·사이즈처럼 선택지가 5개 이하일 때",
+  "dont": "품절을 목록에서 빼지 않음 — 살 수 없다는 것도 정보임. 취소선·회색만으로 품절을 알리지 않음 — 「품절」을 글자로 함께 적음. 선택지가 6개를 넘으면 이것이 아니라 select-md",
+  "status": "stable",
+  "since": "v1.14.0",
+  "pack": "commerce",
+  "renders": {
+    "ember": "assets/components/commerce/option-select-md--ember@2x.png"
+  }
+}

@@ -1,6 +1,6 @@
 # 자산 목록
 
-`frombranch/eluon` · **v1.13.1** · 총 49개(상태 변형 5개 별도) · 테마 eluo, atlas, ember, harbor, tideland, cobalt, noir, linen
+`frombranch/eluon` · **v1.14.0** · 총 51개(상태 변형 5개 별도) · 테마 eluo, atlas, ember, harbor, tideland, cobalt, noir, linen
 
 > `scripts/build_manifest.py`가 생성합니다. 직접 고치지 마세요.
 > 아래 규격은 **eluo** 테마 기준입니다. 치수는 테마마다 다릅니다 — `manifest.json`의 `specByTheme`를 보십시오.
@@ -11,7 +11,7 @@
 |---|---|---|---|---|
 | `badge-status-sm` | Status Badge / SM | h24 r:full | 행·카드의 상태 표기. 색과 텍스트를 함께 씀 | 색만으로 상태를 구분하지 않음 |
 
-## booking (6)
+## booking (5)
 
 | ID | 이름 | 규격 | 언제 쓰나 | 쓰면 안 되는 때 |
 |---|---|---|---|---|
@@ -20,7 +20,6 @@
 | `price-member-md` | Price / Member / MD | — | 일반가와 회원가를 나란히. 회원가를 크고 굵게 둬서 가입 동기를 만듦 | 회원가만 단독으로 쓰지 않음 — 비교 대상이 없으면 싼지 알 수 없음. 할인율·정가 구조는 이것이 아니라 price-discount-md |
 | `rate-card-lg` | Rate Card / LG | w1200 r:xl | 요금 상품 한 줄. 상품명 · 포함 내역 · 가격 · 선택 버튼 | 포함 내역을 세 줄 넘기지 않음. 나머지는 상세로 넘김 |
 | `stay-summary-md` | Stay Summary / MD | w1200 | 예약 단계 상단에 고른 조건을 고정 표시. 지점·날짜·박수·인원 | 여기서 값을 고치게 하지 않음. 고치려면 검색으로 되돌림 |
-| `stepper-md` | Stepper / MD | r:sm | 객실 수·성인·어린이처럼 작은 정수를 세는 자리 | 열을 넘길 수 있는 값에는 쓰지 않음. 그때는 select 로 |
 
 ## button (8)
 
@@ -50,10 +49,12 @@
 |---|---|---|---|---|
 | `chip-filter-md` | Filter Chip / MD<br><small>상태 · `chip-filter-md-selected`</small> | h36 r:full | 목록 상단의 다중 필터. 2~8개까지 | 단일 선택에는 쓰지 않음. 그건 탭이나 셀렉트 |
 
-## commerce (2)
+## commerce (4)
 
 | ID | 이름 | 규격 | 언제 쓰나 | 쓰면 안 되는 때 |
 |---|---|---|---|---|
+| `cart-summary-lg` | Cart Summary / LG | r:xl | 장바구니·주문서에서 낼 돈을 확정하는 자리. 상품 금액 · 배송비 · 할인 · 총액 순서를 바꾸지 않음 | 총액을 다른 줄과 같은 활자로 두지 않음 — 어느 것이 낼 돈인지 알 수 없음. 여기에만 있는 금액을 두지 않음(§7-9) |
+| `option-select-md` | Option Select / MD | hoption.height r:sm | 상품 옵션을 한눈에 펼쳐 고르게 함. 색상·사이즈처럼 선택지가 5개 이하일 때 | 품절을 목록에서 빼지 않음 — 살 수 없다는 것도 정보임. 취소선·회색만으로 품절을 알리지 않음 — 「품절」을 글자로 함께 적음. 선택지가 6개를 넘으면 이것이 아니라 select-md |
 | `price-discount-md` | Price / Discount / MD | — | 할인율·판매가·정가를 한 줄로. 목록과 상세에서 순서를 바꾸지 않음 | 정가에 취소선 없이 두 가격을 나란히 두지 않음. 어느 쪽이 낼 돈인지 알 수 없음 |
 | `wish-toggle-md` | Wish Toggle / MD<br><small>상태 · `wish-toggle-md-selected`</small> | h40 w40 r:full | 목록 카드의 관심 등록. 40x40 터치 영역을 확보한 최소 크기 | 선택 상태를 색으로만 표시하지 않음. 하트를 채워 모양도 함께 바꿈 |
 
@@ -72,12 +73,13 @@
 | `toast-info-md` | Toast / Info / MD | w360 r:xl | 되돌릴 필요 없는 결과 통보. 4초 후 자동 사라짐 | 에러나 확인이 필요한 내용에 쓰지 않음. 사용자가 놓침 |
 | `tooltip-md` | Tooltip / MD | r:xl | 연령 기준·취소 규정처럼 짧은 보조 설명. 아이콘을 누르거나 포커스하면 열림 | 여기에만 있는 정보를 두지 않음(§7-9). 본문으로도 알 수 있어야 함 |
 
-## input (2)
+## input (3)
 
 | ID | 이름 | 규격 | 언제 쓰나 | 쓰면 안 되는 때 |
 |---|---|---|---|---|
 | `input-text-md` | Text Field / MD<br><small>상태 · `input-text-md-error` · `input-text-md-focus`</small> | h52 w320 r:md | 한 줄 입력의 기본형 | 라벨 없이 placeholder만으로 쓰지 않음 |
 | `select-md` | Select / MD | h52 w320 r:md | 선택지 6개 이상의 단일 선택 | 선택지 5개 이하면 탭이나 라디오가 더 빠름 |
+| `stepper-md` | Stepper / MD | r:sm | 객실 수·인원·구매 수량처럼 작은 정수를 세는 자리 | 열을 넘길 수 있는 값에는 쓰지 않음. 그때는 select 로 |
 
 ## layout (15)
 

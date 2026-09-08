@@ -1,7 +1,7 @@
 {
   "org": "frombranch",
   "repo": "eluon",
-  "version": "v1.13.1",
+  "version": "v1.14.0",
   "cdn": "jsdelivr",
   "themes": [
     "eluo",
@@ -89,6 +89,19 @@
         "booking-bar-lg",
         "date-range-md",
         "rate-card-lg"
+      ]
+    },
+    "ember": {
+      "packs": [
+        "commerce"
+      ],
+      "coreFlow": "상품 탐색 → 옵션 선택 → 장바구니 → 결제",
+      "requiredAssets": [
+        "card-product-md",
+        "chip-filter-md",
+        "option-select-md",
+        "stepper-md",
+        "cart-summary-lg"
       ]
     }
   },

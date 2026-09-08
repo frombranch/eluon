@@ -87,32 +87,6 @@ def build(tokens, add, t, sz, lay, btn_base, KO, NUM):
     )
 
     add(
-        id="stepper-md", name="Stepper / MD", group="booking", pack="hotel",
-        tags=["예약", "인원", "수량"], since="v1.13.0",
-        spec={"buttonSize": "booking.stepperSize",
-              "valueWidth": "booking.stepperValueWidth",
-              "gap": "booking.stepperGap", "radius": "sm",
-              "borderWidth": "border.width", "typography": "body1-bold"},
-        tokens={"border": "border.default", "icon": "text.primary",
-                "value": "text.primary", "disabled": "text.disabled"},
-        states=["default", "최소값(감소 비활성)", "최대값(증가 비활성)"],
-        usage="객실 수·성인·어린이처럼 작은 정수를 세는 자리",
-        dont="열을 넘길 수 있는 값에는 쓰지 않음. 그때는 select 로",
-        css=f".c{{display:inline-flex;align-items:center;gap:{sz('booking.stepperGap')}}}"
-            f".s{{{btn_base}width:{sz('booking.stepperSize')};"
-            f"height:{sz('booking.stepperSize')};border-radius:var(--radius-sm);"
-            f"border:{sz('border.width')} solid var(--color-border-default);"
-            f"background:var(--color-surface-default);color:var(--color-text-primary);"
-            f"{t('body1-bold', tokens)}}}"
-            f".s.off{{color:var(--color-text-disabled);"
-            f"border-color:var(--color-border-subtle)}}"
-            f".v{{min-width:{sz('booking.stepperValueWidth')};text-align:center;"
-            f"{t('body1-bold', tokens)}color:var(--color-text-primary);{NUM}}}",
-        html='<div class="c"><button class="s off">−</button>'
-             '<span class="v">2</span><button class="s">+</button></div>',
-    )
-
-    add(
         id="stay-summary-md", name="Stay Summary / MD", group="booking", pack="hotel",
         tags=["예약", "요약", "투숙조건"], since="v1.13.0",
         spec={"width": "container.max", "paddingY": "booking.summaryPaddingY",

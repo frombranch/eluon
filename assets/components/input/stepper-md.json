@@ -1,0 +1,45 @@
+{
+  "id": "stepper-md",
+  "name": "Stepper / MD",
+  "group": "input",
+  "tags": [
+    "폼",
+    "수량",
+    "인원"
+  ],
+  "spec": {
+    "buttonSize": "stepper.size",
+    "valueWidth": "stepper.valueWidth",
+    "gap": "stepper.gap",
+    "radius": "sm",
+    "borderWidth": "border.width",
+    "typography": "body1-bold"
+  },
+  "tokens": {
+    "border": "border.default",
+    "icon": "text.primary",
+    "value": "text.primary",
+    "disabled": "text.disabled"
+  },
+  "responsive": {},
+  "states": [
+    "default",
+    "최소값(감소 비활성)",
+    "최대값(증가 비활성)"
+  ],
+  "usage": "객실 수·인원·구매 수량처럼 작은 정수를 세는 자리",
+  "dont": "열을 넘길 수 있는 값에는 쓰지 않음. 그때는 select 로",
+  "status": "stable",
+  "since": "v1.13.0",
+  "pack": "core",
+  "renders": {
+    "eluo": "assets/components/input/stepper-md--eluo@2x.png",
+    "atlas": "assets/components/input/stepper-md--atlas@2x.png",
+    "ember": "assets/components/input/stepper-md--ember@2x.png",
+    "harbor": "assets/components/input/stepper-md--harbor@2x.png",
+    "tideland": "assets/components/input/stepper-md--tideland@2x.png",
+    "cobalt": "assets/components/input/stepper-md--cobalt@2x.png",
+    "noir": "assets/components/input/stepper-md--noir@2x.png",
+    "linen": "assets/components/input/stepper-md--linen@2x.png"
+  }
+}

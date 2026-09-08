@@ -307,6 +307,32 @@ def build(tokens):
             f".i{{color:var(--color-text-tertiary);font-size:12px}}",
         html='<div class="c"><span>서울특별시</span><span class="i">▼</span></div>',
     )
+    # 수량 세기는 업종이 바뀌어도 같은 물건입니다. 예약의 인원도, 커머스의 수량도
+    # 같은 부품을 씁니다 — 그래서 pack 이 아니라 core 입니다(CLAUDE.md §D).
+    add(
+        id="stepper-md", name="Stepper / MD", group="input",
+        tags=["폼", "수량", "인원"], since="v1.13.0",
+        spec={"buttonSize": "stepper.size", "valueWidth": "stepper.valueWidth",
+              "gap": "stepper.gap", "radius": "sm",
+              "borderWidth": "border.width", "typography": "body1-bold"},
+        tokens={"border": "border.default", "icon": "text.primary",
+                "value": "text.primary", "disabled": "text.disabled"},
+        states=["default", "최소값(감소 비활성)", "최대값(증가 비활성)"],
+        usage="객실 수·인원·구매 수량처럼 작은 정수를 세는 자리",
+        dont="열을 넘길 수 있는 값에는 쓰지 않음. 그때는 select 로",
+        css=f".c{{display:inline-flex;align-items:center;gap:{sz('stepper.gap')}}}"
+            f".s{{{btn_base}width:{sz('stepper.size')};"
+            f"height:{sz('stepper.size')};border-radius:var(--radius-sm);"
+            f"border:{sz('border.width')} solid var(--color-border-default);"
+            f"background:var(--color-surface-default);color:var(--color-text-primary);"
+            f"{t('body1-bold', tokens)}}}"
+            f".s.off{{color:var(--color-text-disabled);"
+            f"border-color:var(--color-border-subtle)}}"
+            f".v{{min-width:{sz('stepper.valueWidth')};text-align:center;"
+            f"{t('body1-bold', tokens)}color:var(--color-text-primary);{NUM}}}",
+        html='<div class="c"><button class="s off">−</button>'
+             '<span class="v">2</span><button class="s">+</button></div>',
+    )
 
     # ── card ────────────────────────────────────────────────────────────
     add(

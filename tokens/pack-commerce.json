@@ -1,0 +1,18 @@
+{
+  "$comment": "commerce pack 치수 토큰. core 는 업종이 바뀌어도 참인 것만 담는다 — 옵션·장바구니는 커머스의 어휘다. 수량 세기는 업종 불문이라 core 의 stepper.* 를 쓴다.",
+  "pack": "commerce",
+  "semantic": {
+    "size": {
+      "option.groupGap": 20,
+      "option.rowGap": 10,
+      "option.gap": 8,
+      "option.height": 36,
+      "option.paddingX": 14,
+      "cart.width": 400,
+      "cart.paddingX": 24,
+      "cart.paddingY": 24,
+      "cart.rowGap": 12,
+      "cart.totalGap": 16
+    }
+  }
+}
