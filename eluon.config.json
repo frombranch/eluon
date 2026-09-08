@@ -1,7 +1,7 @@
 {
   "org": "frombranch",
   "repo": "eluon",
-  "version": "v1.13.0",
+  "version": "v1.13.1",
   "cdn": "jsdelivr",
   "themes": [
     "eluo",
@@ -25,6 +25,61 @@
     "previewSurface": "#F4F5F8"
   },
   "sites": {
+    "atlas": {
+      "packs": [
+        "hotel"
+      ],
+      "coreFlow": "예약",
+      "requiredAssets": [
+        "booking-bar-lg",
+        "date-range-md",
+        "rate-card-lg"
+      ]
+    },
+    "harbor": {
+      "packs": [
+        "hotel"
+      ],
+      "coreFlow": "예약",
+      "requiredAssets": [
+        "booking-bar-lg",
+        "date-range-md",
+        "rate-card-lg"
+      ]
+    },
+    "tideland": {
+      "packs": [
+        "hotel"
+      ],
+      "coreFlow": "예약",
+      "requiredAssets": [
+        "booking-bar-lg",
+        "date-range-md",
+        "rate-card-lg"
+      ]
+    },
+    "cobalt": {
+      "packs": [
+        "hotel"
+      ],
+      "coreFlow": "예약",
+      "requiredAssets": [
+        "booking-bar-lg",
+        "date-range-md",
+        "rate-card-lg"
+      ]
+    },
+    "noir": {
+      "packs": [
+        "hotel"
+      ],
+      "coreFlow": "예약",
+      "requiredAssets": [
+        "booking-bar-lg",
+        "date-range-md",
+        "rate-card-lg"
+      ]
+    },
     "linen": {
       "packs": [
         "hotel"

@@ -38,6 +38,11 @@
   "since": "v1.13.0",
   "pack": "hotel",
   "renders": {
+    "atlas": "assets/components/booking/booking-bar-lg--atlas@2x.png",
+    "harbor": "assets/components/booking/booking-bar-lg--harbor@2x.png",
+    "tideland": "assets/components/booking/booking-bar-lg--tideland@2x.png",
+    "cobalt": "assets/components/booking/booking-bar-lg--cobalt@2x.png",
+    "noir": "assets/components/booking/booking-bar-lg--noir@2x.png",
     "linen": "assets/components/booking/booking-bar-lg--linen@2x.png"
   }
 }

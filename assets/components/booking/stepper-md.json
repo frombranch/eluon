@@ -33,6 +33,11 @@
   "since": "v1.13.0",
   "pack": "hotel",
   "renders": {
+    "atlas": "assets/components/booking/stepper-md--atlas@2x.png",
+    "harbor": "assets/components/booking/stepper-md--harbor@2x.png",
+    "tideland": "assets/components/booking/stepper-md--tideland@2x.png",
+    "cobalt": "assets/components/booking/stepper-md--cobalt@2x.png",
+    "noir": "assets/components/booking/stepper-md--noir@2x.png",
     "linen": "assets/components/booking/stepper-md--linen@2x.png"
   }
 }

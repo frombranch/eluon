@@ -36,6 +36,11 @@
   "since": "v1.13.0",
   "pack": "hotel",
   "renders": {
+    "atlas": "assets/components/booking/date-range-md--atlas@2x.png",
+    "harbor": "assets/components/booking/date-range-md--harbor@2x.png",
+    "tideland": "assets/components/booking/date-range-md--tideland@2x.png",
+    "cobalt": "assets/components/booking/date-range-md--cobalt@2x.png",
+    "noir": "assets/components/booking/date-range-md--noir@2x.png",
     "linen": "assets/components/booking/date-range-md--linen@2x.png"
   }
 }
