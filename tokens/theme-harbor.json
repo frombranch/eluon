@@ -85,6 +85,39 @@
     "brand.primary(#816C58)는 흰 텍스트 대비 4.98:1 로 AA 를 아슬아슬하게 넘깁니다. 이 색 위에는 반드시 흰색만 쓰고, 회색 계열 텍스트를 올리지 마십시오.",
     "원본이 뷰포트 비례 배치라 Eluon 의 고정 px 와 모델이 다릅니다. 1920 이 아닌 폭으로 시안을 만들면 원본과 비율이 어긋납니다.",
     "폰트는 원본도 Pretendard 라 core 를 그대로 씁니다.",
-    "radius xl 을 0 으로 내렸습니다. 원본 카드가 라운드 0 이기 때문입니다. xl 은 모달도 함께 쓰므로 모달도 각지게 나옵니다 — 원본에 모달이 없어 확인하지 못했습니다."
-  ]
+    "radius xl 을 0 으로 내렸습니다. 원본 카드가 라운드 0 이기 때문입니다. xl 은 모달도 함께 쓰므로 모달도 각지게 나옵니다 — 원본에 모달이 없어 확인하지 못했습니다.",
+    "활자 크기를 core 에서 덮어썼습니다. core 기본값(display1 40 / body1 16)은 최대÷본문이 2.50 이라 CLAUDE.md §E-15 의 3.0 에 못 미치고, display1 굵기 800 은 media-led 판정선(히어로 제목 ≤400)을 넘습니다. 60/400 으로 올려 3.75 · 400 을 맞췄습니다. 크기는 전부 짝수로 통일했습니다(body2 15→14, caption 13→12). 이 값은 실측이 아니라 규칙을 맞춘 파생값입니다 — 원본을 재면 여기를 덮어쓰십시오."
+  ],
+  "typography": {
+    "display1": {
+      "size": 60,
+      "weight": 400,
+      "lineHeight": 1.34,
+      "tracking": "-0.03em"
+    },
+    "body2": {
+      "size": 14,
+      "weight": 400,
+      "lineHeight": 1.55,
+      "tracking": "-0.005em"
+    },
+    "body2-bold": {
+      "size": 14,
+      "weight": 700,
+      "lineHeight": 1.45,
+      "tracking": "-0.01em"
+    },
+    "caption": {
+      "size": 12,
+      "weight": 400,
+      "lineHeight": 1.45,
+      "tracking": "0"
+    },
+    "caption-bold": {
+      "size": 12,
+      "weight": 700,
+      "lineHeight": 1.4,
+      "tracking": "0"
+    }
+  }
 }

@@ -48,6 +48,39 @@
     "무채색·본문색은 core 그대로입니다. 실측 자료가 없어 회색 램프를 흔들 근거가 없었습니다.",
     "폰트는 core 를 그대로 씁니다.",
     "terracotta.300(#DC9A80) 위에 흰 텍스트를 올리지 마십시오 — 2.34:1 입니다. 이 단계는 배경·일러스트 면적용이고, 글자를 올려야 하면 text.primary(#171B21, 7.39:1)를 쓰거나 배경을 500 으로 내립니다. 밝은 테라코타에 흰 글씨가 되는 조합은 없습니다.",
-    "border.subtle(#E2E5EA)은 흰 배경 대비 1.26:1 이라 UI 경계 기준(3.0)에 못 미칩니다. core 공통 사안이라 여기서 고치지 않았지만, 카드 자체가 클릭 대상일 때는 border.default(#8D949E, 3.06:1)를 쓰거나 elevation 으로 구분하십시오. border.subtle 은 장식 구분선에만 씁니다."
-  ]
+    "border.subtle(#E2E5EA)은 흰 배경 대비 1.26:1 이라 UI 경계 기준(3.0)에 못 미칩니다. core 공통 사안이라 여기서 고치지 않았지만, 카드 자체가 클릭 대상일 때는 border.default(#8D949E, 3.06:1)를 쓰거나 elevation 으로 구분하십시오. border.subtle 은 장식 구분선에만 씁니다.",
+    "활자 크기를 core 에서 덮어썼습니다. core 기본값(display1 40 / body1 16)은 최대÷본문이 2.50 이라 CLAUDE.md §E-15 의 3.0 에 못 미치고, display1 굵기 800 은 media-led 판정선(히어로 제목 ≤400)을 넘습니다. 60/400 으로 올려 3.75 · 400 을 맞췄습니다. 크기는 전부 짝수로 통일했습니다(body2 15→14, caption 13→12). 이 값은 실측이 아니라 규칙을 맞춘 파생값입니다 — 원본을 재면 여기를 덮어쓰십시오."
+  ],
+  "typography": {
+    "display1": {
+      "size": 60,
+      "weight": 400,
+      "lineHeight": 1.34,
+      "tracking": "-0.03em"
+    },
+    "body2": {
+      "size": 14,
+      "weight": 400,
+      "lineHeight": 1.55,
+      "tracking": "-0.005em"
+    },
+    "body2-bold": {
+      "size": 14,
+      "weight": 700,
+      "lineHeight": 1.45,
+      "tracking": "-0.01em"
+    },
+    "caption": {
+      "size": 12,
+      "weight": 400,
+      "lineHeight": 1.45,
+      "tracking": "0"
+    },
+    "caption-bold": {
+      "size": 12,
+      "weight": 700,
+      "lineHeight": 1.4,
+      "tracking": "0"
+    }
+  }
 }
