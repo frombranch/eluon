@@ -437,8 +437,10 @@ p,li,dd,h3,h4,.use,.dont,caption{word-break:keep-all;text-wrap:pretty}
   .sec-head .lbl:empty::before{content:"\\00a0"}
   .sec-head .col-b p{margin-top:20px}
 }
-h2{font-family:var(--disp);font-weight:700;font-size:clamp(15px,2.5vw,32px);
-  line-height:.88;letter-spacing:-.045em;margin:24px 0 0;
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,2.5vw,32px);
+  /* 자간은 크기를 따릅니다 — -.045em 은 96px 시절 값이라 32px 에서는 붙어 보이고,
+     최솟값 15px 은 좁은 화면에서 제목이 본문(16px)보다 작아져 24px 로 세웁니다. */
+  line-height:.88;letter-spacing:-.02em;margin:24px 0 0;
   hyphens:manual;overflow-wrap:break-word}
 h3{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0}
 h4{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
